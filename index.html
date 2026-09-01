@@ -51,14 +51,19 @@
     filter: drop-shadow(0 0 26px rgba(224,163,65,.42)) saturate(1.05);
   }
   .logo-plate {
-    width: 148px; height: 148px;
+    width: 158px; height: 158px;
     margin: 0 auto 26px;
     display: grid; place-items: center;
     border-radius: 50%;
+    /* Clip anything that reaches past the circle. The mark is square art on
+       white, so without this its corners and the katakana sit outside. */
+    overflow: hidden;
     background: radial-gradient(circle at 50% 42%, #fdf6ea 0%, #f6e7cd 62%, #eddcbd 100%);
     box-shadow: 0 0 0 1px rgba(224,163,65,.28), 0 18px 50px rgba(0,0,0,.5);
   }
-  .logo-plate .logo { margin: 0; width: 118px; height: 118px; }
+  /* A square inscribed in a circle is diameter / sqrt(2) ~= 0.707. Staying
+     under that keeps every corner of the artwork inside the plate. */
+  .logo-plate .logo { margin: 0; width: 108px; height: 108px; }
 
   h1 {
     margin: 0 0 20px;
