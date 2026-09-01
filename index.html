@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Waffuru — Iron &amp; Butter</title>
 <meta name="description" content="Iron, a Rust kernel DSL that compiles one definition to Metal, CUDA, HIP and Vulkan. Butter, a dependency-light LLM inference library for Apple Silicon built on it. Releasing soon.">
-<link rel="icon" href="waffle.png">
+<link rel="icon" href="favicon.png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Waffuru — Iron &amp; Butter">
 <meta property="og:description" content="A Rust kernel DSL and a dependency-light inference library for Apple Silicon. Releasing soon.">
-<meta property="og:image" content="waffle.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://waffuru.ai/waffle.png">
+<meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://waffuru.ai/">
 <style>
   /* Warm golds against a dark roast, taken from the waffle mark. */
   :root {
@@ -41,35 +43,28 @@
   }
   main { width: 100%; max-width: 680px; text-align: center; }
 
+  /* The mark has a real alpha channel, so it sits straight on the ground:
+     no plate, no blend mode, nothing to clip. */
   .logo {
-    width: 132px; height: 132px;
-    margin: 0 auto 26px;
+    width: 150px; height: 150px;
+    margin: 0 auto 18px;
     display: block;
-    /* The source mark sits on white; multiply drops the paper, and a warm
-       glow behind it keeps the edges from going muddy on the dark ground. */
-    mix-blend-mode: multiply;
-    filter: drop-shadow(0 0 26px rgba(224,163,65,.42)) saturate(1.05);
+    filter: drop-shadow(0 14px 28px rgba(0,0,0,.45))
+            drop-shadow(0 0 34px rgba(224,163,65,.28));
   }
-  .logo-plate {
-    width: 158px; height: 158px;
-    margin: 0 auto 26px;
-    display: grid; place-items: center;
-    border-radius: 50%;
-    /* Clip anything that reaches past the circle. The mark is square art on
-       white, so without this its corners and the katakana sit outside. */
-    overflow: hidden;
-    background: radial-gradient(circle at 50% 42%, #fdf6ea 0%, #f6e7cd 62%, #eddcbd 100%);
-    box-shadow: 0 0 0 1px rgba(224,163,65,.28), 0 18px 50px rgba(0,0,0,.5);
-  }
-  /* A square inscribed in a circle is diameter / sqrt(2) ~= 0.707. Staying
-     under that keeps every corner of the artwork inside the plate. */
-  .logo-plate .logo { margin: 0; width: 108px; height: 108px; }
 
   h1 {
-    margin: 0 0 20px;
+    margin: 0 0 6px;
     font-size: clamp(2.3rem, 7vw, 3.4rem);
     letter-spacing: -0.03em;
     font-weight: 700;
+  }
+  .kana {
+    margin: 0 0 22px;
+    color: var(--gold);
+    font-size: .95rem;
+    letter-spacing: .38em;
+    text-indent: .38em; /* offset the trailing letter-space so it stays centred */
   }
   .lede { margin: 0 auto 40px; max-width: 30rem; color: var(--muted); font-size: 1.06rem; }
 
@@ -113,8 +108,12 @@
 </head>
 <body>
 <main>
-  <div class="logo-plate"><img class="logo" src="waffle.png" alt="The Waffuru waffle mark"></div>
+  <picture>
+    <source srcset="waffle.webp" type="image/webp">
+    <img class="logo" src="waffle.png" width="150" height="150" alt="The Waffuru waffle mark: a syrup-drenched waffle with a pat of melting butter">
+  </picture>
   <h1>Waffuru</h1>
+  <p class="kana" lang="ja">ワッフル</p>
   <p class="lede">Low-level tools for running models fast on the hardware you already own.</p>
 
   <div class="cards">
