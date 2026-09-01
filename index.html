@@ -10,8 +10,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Waffuru — Iron &amp; Butter">
 <meta property="og:description" content="A Rust kernel DSL and a dependency-light inference library for Apple Silicon. Releasing soon.">
-<meta property="og:image" content="https://waffuru.ai/waffle.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://waffuru.ai/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Waffuru — Iron and Butter. Low-level tools for running models fast on the hardware you already own.">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://waffuru.ai/">
 <style>
   /* Warm golds against a dark roast, taken from the waffle mark. */
@@ -30,9 +33,7 @@
     margin: 0;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 24px;
+    flex-direction: column;
     background: var(--bg);
     background-image:
       radial-gradient(60rem 40rem at 50% -10%, rgba(224,163,65,.13), transparent 70%);
@@ -41,7 +42,19 @@
       Helvetica, "Liberation Sans", Arial, sans-serif;
     line-height: 1.6;
   }
-  main { width: 100%; max-width: 680px; text-align: center; }
+  /* main takes the leftover height and centres itself in it, so the footer
+     stays on the bottom edge without being fixed. */
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 
   /* The mark has a real alpha channel, so it sits straight on the ground:
      no plate, no blend mode, nothing to clip. */
@@ -96,7 +109,28 @@
     text-transform: uppercase;
   }
 
-  footer { margin-top: 42px; color: var(--muted); font-size: .9rem; }
+  .note { margin: 42px 0 0; color: var(--muted); font-size: .9rem; }
+
+  .site-footer {
+    border-top: 1px solid var(--edge);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #8c7d6d;
+    font-size: .78rem;
+  }
+  /* The three cells are equal width so the middle line is centred against the
+     page, not against whatever the side text happens to measure. */
+  .site-footer > * { flex: 1 1 0; }
+  .site-footer .mid { text-align: center; }
+  .site-footer .right { text-align: right; font-variant-numeric: tabular-nums; }
+  @media (max-width: 560px) {
+    .site-footer { flex-direction: column; gap: 6px; }
+    .site-footer > * { flex: none; text-align: center; }
+    .site-footer .right { text-align: center; }
+  }
   a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid rgba(242,200,119,.32); }
   a:hover { border-bottom-color: var(--gold-soft); }
 
@@ -129,9 +163,16 @@
     </div>
   </div>
 
-  <footer>
+  <p class="note">
     Releasing shortly · <a href="https://github.com/waffuruai">github.com/waffuruai</a>
-  </footer>
+  </p>
 </main>
+
+<!-- Version is duplicated in package.json; bump both together. -->
+<footer class="site-footer">
+  <span class="left">&copy; 2026 Waffuru</span>
+  <span class="mid">Made with 🤖 in North America 🇺🇸 🤝 🇨🇦</span>
+  <span class="right">v0.1.0</span>
+</footer>
 </body>
 </html>
