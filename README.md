@@ -145,11 +145,14 @@ repos are public, not before.
 
 ### Variable: `RELEASE_VERIFY_ATTESTATION`
 
-Optional Actions variable, default `true`. Set it to `false` to publish on the
-checksum alone, skipping *only* the attestation check; the run then prints a loud
-warning and the header of every served file says `attestation skipped`. This is an
-escape hatch for the case where attestations are not available on the org's plan
-for private repos — remove the variable as soon as they are.
+Optional Actions variable, default `auto`. GitHub stores build-provenance
+attestations for private repositories only on a higher plan ("Feature not
+available for the waffuruai organization"), so `auto` verifies provenance for
+public product repos and publishes private ones on their checksum alone, with a
+warning in the log and `attestation skipped` in the served file's header. `true`
+forces verification for every repo (a private one then fails the deploy); `false`
+skips it for every repo. A repo that goes public is verified from its next deploy
+with no change here.
 
 ### Token the product repos need
 

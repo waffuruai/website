@@ -68,19 +68,30 @@ while [ $# -gt 0 ]; do
     --repo) repo=$2; shift 2 ;;
     --dir) dir=$2; shift 2 ;;
     --pattern) patterns="$patterns$2"$'\n'; shift 2 ;;
-    --limit | --json) shift 2 ;;
+    --limit | --json | --jq) shift 2 ;;
     --exclude-drafts | --exclude-pre-releases | --clobber) shift ;;
     -*) shift ;;
     *) tag=$1; shift ;;
   esac
 done
 
+[ -n "$repo" ] || repo=$tag
 [ -n "$repo" ] || { echo "gh stub: no --repo given" >&2; exit 2; }
 fixtures="$GH_STUB_FIXTURES/${repo//\//__}"
 
 case "$cmd/$sub" in
+  repo/view)
+    # `--json visibility --jq .visibility`; a `public` marker file makes the
+    # repo public, otherwise it is private.
+    if [ -f "$fixtures/public" ]; then echo PUBLIC; else echo PRIVATE; fi
+    ;;
   release/list)
     cat "$fixtures/releases.json"
+    ;;
+  release/view)
+    # `--json assets --jq '.assets[].name'`: one asset name per line.
+    [ -d "$fixtures/$tag" ] || { echo "gh stub: no release $tag" >&2; exit 1; }
+    ls -1 "$fixtures/$tag"
     ;;
   release/download)
     [ -d "$fixtures/$tag" ] || { echo "gh stub: no release $tag" >&2; exit 1; }
@@ -158,6 +169,7 @@ test_good_product() {
   make_release "$dir/fixtures" waffuruai/ops v0.2.0 bootstrap.sh 'echo new'
   make_release_list "$dir/fixtures" waffuruai/ops v0.2.0 v0.2.0 v0.1.0
   make_manifest "$dir/products.json" ops waffuruai/ops bootstrap.sh
+  touch "$dir/fixtures/waffuruai__ops/public"
 
   if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
     pass "good product: exits zero"
@@ -255,6 +267,7 @@ test_failed_attestation() {
   make_release_list "$dir/fixtures" waffuruai/butter v3.1.0 v3.1.0
   make_manifest "$dir/products.json" butter waffuruai/butter install.sh
   touch "$dir/fixtures/waffuruai__butter/attestation-fail"
+  touch "$dir/fixtures/waffuruai__butter/public"
 
   if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
     fail "failed attestation: exits non-zero"
@@ -287,6 +300,81 @@ test_no_releases() {
   check "no releases: publishes nothing for the product" test ! -e "$out/iron"
 }
 
+# (f) a release that predates the installer has no asset: skipped, the newest
+#     release that has one is served, and a product with none is skipped whole
+test_release_without_asset() {
+  local dir out log
+  dir=$(new_case no-asset)
+  out="$dir/out"
+  log="$dir/run.log"
+  make_release "$dir/fixtures" waffuruai/butter v0.2.0 install.sh 'echo butter'
+  mkdir -p "$dir/fixtures/waffuruai__butter/v0.3.0" "$dir/fixtures/waffuruai__butter/v0.1.0"
+  # v0.3.0 is marked latest but carries no install.sh; v0.1.0 has none either.
+  make_release_list "$dir/fixtures" waffuruai/butter v0.3.0 v0.3.0 v0.2.0 v0.1.0
+  make_manifest "$dir/products.json" butter waffuruai/butter install.sh
+
+  if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
+    pass "release without asset: exits zero"
+  else
+    fail "release without asset: exits zero"
+    cat "$log"
+    return
+  fi
+  check_contains "release without asset: says it skipped v0.1.0" "$log" "butter v0.1.0: waffuruai/butter published no install.sh"
+  check_contains "release without asset: serves the newest release that has one" "$log" "serving v0.2.0"
+  check "release without asset: serves v0.2.0 unversioned" grep -q "echo butter" "$out/butter/install.sh"
+  check "release without asset: pins v0.2.0" test -f "$out/butter/v0.2.0/install.sh"
+  check "release without asset: pins nothing for v0.3.0" test ! -e "$out/butter/v0.3.0"
+  check "release without asset: releases.json marks v0.2.0 latest" \
+    jq -e '.latest == "v0.2.0" and (.releases | length == 1) and .releases[0].latest' "$out/butter/releases.json"
+
+  dir=$(new_case only-old)
+  out="$dir/out"
+  log="$dir/run.log"
+  mkdir -p "$dir/fixtures/waffuruai__iron/v0.1.0"
+  make_release_list "$dir/fixtures" waffuruai/iron v0.1.0 v0.1.0
+  make_manifest "$dir/products.json" iron waffuruai/iron install.sh
+  if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
+    pass "only old releases: exits zero"
+  else
+    fail "only old releases: exits zero"
+    cat "$log"
+    return
+  fi
+  check_contains "only old releases: says the product was skipped" "$log" "no release of waffuruai/iron carries install.sh yet"
+  check "only old releases: publishes nothing for the product" test ! -e "$out/iron"
+}
+
+# (g) auto mode: a private repo is published on its checksum, since GitHub holds
+#     no attestations for it, even when an attestation check would fail
+test_private_repo_auto() {
+  local dir out log
+  dir=$(new_case private-auto)
+  out="$dir/out"
+  log="$dir/run.log"
+  make_release "$dir/fixtures" waffuruai/wrunner v1.0.0 install.sh 'echo wrunner'
+  make_release_list "$dir/fixtures" waffuruai/wrunner v1.0.0 v1.0.0
+  make_manifest "$dir/products.json" wrunner waffuruai/wrunner install.sh
+  touch "$dir/fixtures/waffuruai__wrunner/attestation-fail"
+
+  if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
+    pass "private repo, auto: exits zero"
+  else
+    fail "private repo, auto: exits zero"
+    cat "$log"
+    return
+  fi
+  check_contains "private repo, auto: says why" "$log" "is private, so GitHub holds no attestations"
+  check_contains "private repo, auto: header says skipped" "$out/wrunner/install.sh" "attestation skipped"
+
+  # Forcing verification on a private repo fails, as it should.
+  if RELEASE_VERIFY_ATTESTATION=true GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$dir/out2" >"$log" 2>&1; then
+    fail "private repo, forced: exits non-zero"
+  else
+    pass "private repo, forced: exits non-zero"
+  fi
+}
+
 main() {
   command -v jq >/dev/null 2>&1 || { echo "jq is required" >&2; exit 1; }
   [ -x "$FETCH" ] || { echo "not executable: $FETCH" >&2; exit 1; }
@@ -303,6 +391,8 @@ main() {
   test_tampered_asset
   test_failed_attestation
   test_no_releases
+  test_release_without_asset
+  test_private_repo_auto
 
   printf '\n%s passed, %s failed\n' "$PASSED" "$FAILED"
   [ "$FAILED" -eq 0 ]
