@@ -69,7 +69,7 @@ jobs:
       - name: Fetch and verify the product installers
         env:
           GH_TOKEN: ${{ secrets.RELEASE_READ_TOKEN || github.token }}
-          RELEASE_VERIFY_ATTESTATION: ${{ vars.RELEASE_VERIFY_ATTESTATION || 'true' }}
+          RELEASE_VERIFY_ATTESTATION: ${{ vars.RELEASE_VERIFY_ATTESTATION || 'auto' }}
         run: scripts/fetch-releases.sh releases/products.json _site
 
       - name: Configure Pages
