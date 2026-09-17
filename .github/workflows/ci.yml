@@ -1,0 +1,29 @@
+name: CI
+
+# Pull-request checks for the receiver scripts. The deploy itself lives in
+# release.yml and runs only on main.
+on:
+  pull_request:
+  push:
+    branches: [dev]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Lint and test the release fetcher
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Shellcheck
+        run: shellcheck scripts/*.sh
+      - name: Validate the manifest
+        run: jq -e 'type == "array" and all(.[]; .product and .repo and .asset)' releases/products.json
+      - name: Test the release fetcher
+        run: scripts/test-fetch-releases.sh
