@@ -75,10 +75,16 @@ while [ $# -gt 0 ]; do
   esac
 done
 
+[ -n "$repo" ] || repo=$tag
 [ -n "$repo" ] || { echo "gh stub: no --repo given" >&2; exit 2; }
 fixtures="$GH_STUB_FIXTURES/${repo//\//__}"
 
 case "$cmd/$sub" in
+  repo/view)
+    # `--json visibility --jq .visibility`; a `public` marker file makes the
+    # repo public, otherwise it is private.
+    if [ -f "$fixtures/public" ]; then echo PUBLIC; else echo PRIVATE; fi
+    ;;
   release/list)
     cat "$fixtures/releases.json"
     ;;
@@ -163,6 +169,7 @@ test_good_product() {
   make_release "$dir/fixtures" waffuruai/ops v0.2.0 bootstrap.sh 'echo new'
   make_release_list "$dir/fixtures" waffuruai/ops v0.2.0 v0.2.0 v0.1.0
   make_manifest "$dir/products.json" ops waffuruai/ops bootstrap.sh
+  touch "$dir/fixtures/waffuruai__ops/public"
 
   if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
     pass "good product: exits zero"
@@ -260,6 +267,7 @@ test_failed_attestation() {
   make_release_list "$dir/fixtures" waffuruai/butter v3.1.0 v3.1.0
   make_manifest "$dir/products.json" butter waffuruai/butter install.sh
   touch "$dir/fixtures/waffuruai__butter/attestation-fail"
+  touch "$dir/fixtures/waffuruai__butter/public"
 
   if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
     fail "failed attestation: exits non-zero"
@@ -337,6 +345,36 @@ test_release_without_asset() {
   check "only old releases: publishes nothing for the product" test ! -e "$out/iron"
 }
 
+# (g) auto mode: a private repo is published on its checksum, since GitHub holds
+#     no attestations for it, even when an attestation check would fail
+test_private_repo_auto() {
+  local dir out log
+  dir=$(new_case private-auto)
+  out="$dir/out"
+  log="$dir/run.log"
+  make_release "$dir/fixtures" waffuruai/wrunner v1.0.0 install.sh 'echo wrunner'
+  make_release_list "$dir/fixtures" waffuruai/wrunner v1.0.0 v1.0.0
+  make_manifest "$dir/products.json" wrunner waffuruai/wrunner install.sh
+  touch "$dir/fixtures/waffuruai__wrunner/attestation-fail"
+
+  if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
+    pass "private repo, auto: exits zero"
+  else
+    fail "private repo, auto: exits zero"
+    cat "$log"
+    return
+  fi
+  check_contains "private repo, auto: says why" "$log" "is private, so GitHub holds no attestations"
+  check_contains "private repo, auto: header says skipped" "$out/wrunner/install.sh" "attestation skipped"
+
+  # Forcing verification on a private repo fails, as it should.
+  if RELEASE_VERIFY_ATTESTATION=true GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$dir/out2" >"$log" 2>&1; then
+    fail "private repo, forced: exits non-zero"
+  else
+    pass "private repo, forced: exits non-zero"
+  fi
+}
+
 main() {
   command -v jq >/dev/null 2>&1 || { echo "jq is required" >&2; exit 1; }
   [ -x "$FETCH" ] || { echo "not executable: $FETCH" >&2; exit 1; }
@@ -354,6 +392,7 @@ main() {
   test_failed_attestation
   test_no_releases
   test_release_without_asset
+  test_private_repo_auto
 
   printf '\n%s passed, %s failed\n' "$PASSED" "$FAILED"
   [ "$FAILED" -eq 0 ]

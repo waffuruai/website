@@ -26,7 +26,10 @@
 #
 # Environment:
 #   GH_TOKEN                    required; needs Contents: read on every product repo
-#   RELEASE_VERIFY_ATTESTATION  set to false to skip the attestation check only
+#   RELEASE_VERIFY_ATTESTATION  auto (default): verify build provenance for
+#                               public repos only, since GitHub stores
+#                               attestations for private repos only on a
+#                               higher plan; true: always; false: never
 #   GITHUB_STEP_SUMMARY         optional; the report is appended there when set
 
 set -euo pipefail
@@ -77,6 +80,12 @@ verify_checksum() {
     checker=(shasum -a 256 -c --status)
   fi
   (cd "$dir" && "${checker[@]}" .expected.sha256)
+}
+
+# Whether <repo> is public: attestations exist only for public repos on the
+# org's plan, so in auto mode that decides whether provenance is checked.
+repo_is_public() {
+  [ "$(gh repo view "$1" --json visibility --jq '.visibility' 2>/dev/null)" = "PUBLIC" ]
 }
 
 # Check the release asset's build-provenance attestation. --repo is stricter than
@@ -157,6 +166,13 @@ process_product() {
   local product=$1 repo=$2 asset=$3 limit=$4 out=$5 attest=$6
   local releases latest stage entries tag newest rc
 
+  if [ "$attest" = auto ]; then
+    if repo_is_public "$repo"; then attest=true; else
+      attest=false
+      warn "$product: $repo is private, so GitHub holds no attestations for it; verifying the checksum only"
+    fi
+  fi
+
   releases=$(gh release list --repo "$repo" --exclude-drafts --exclude-pre-releases \
     --limit "$limit" --json tagName,isLatest) ||
     die "$product: could not list releases of $repo"
@@ -221,7 +237,7 @@ process_product() {
 
 main() {
   [ $# -eq 2 ] || die "usage: $0 <manifest> <out-dir>"
-  local manifest=$1 out=$2 attest=true entry product repo asset limit summary
+  local manifest=$1 out=$2 attest=auto entry product repo asset limit summary
 
   command -v gh >/dev/null 2>&1 || die "gh is required"
   command -v jq >/dev/null 2>&1 || die "jq is required"
@@ -229,8 +245,11 @@ main() {
   [ -n "${GH_TOKEN:-}" ] || die "GH_TOKEN is not set"
   mkdir -p "$out"
 
-  case "${RELEASE_VERIFY_ATTESTATION:-true}" in
+  case "${RELEASE_VERIFY_ATTESTATION:-auto}" in
     false | 0 | no) attest=false ;;
+    true | 1 | yes) attest=true ;;
+    auto | "") attest=auto ;;
+    *) die "RELEASE_VERIFY_ATTESTATION must be auto, true or false" ;;
   esac
   if [ "$attest" = false ]; then
     warn "############################################################"
