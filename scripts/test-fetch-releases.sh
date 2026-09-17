@@ -88,11 +88,6 @@ case "$cmd/$sub" in
   release/list)
     cat "$fixtures/releases.json"
     ;;
-  release/view)
-    # `--json assets --jq '.assets[].name'`: one asset name per line.
-    [ -d "$fixtures/$tag" ] || { echo "gh stub: no release $tag" >&2; exit 1; }
-    ls -1 "$fixtures/$tag"
-    ;;
   release/download)
     [ -d "$fixtures/$tag" ] || { echo "gh stub: no release $tag" >&2; exit 1; }
     mkdir -p "$dir"
@@ -300,49 +295,24 @@ test_no_releases() {
   check "no releases: publishes nothing for the product" test ! -e "$out/iron"
 }
 
-# (f) a release that predates the installer has no asset: skipped, the newest
-#     release that has one is served, and a product with none is skipped whole
+# (f) a release without the asset fails the run: every release must carry it
 test_release_without_asset() {
   local dir out log
   dir=$(new_case no-asset)
   out="$dir/out"
   log="$dir/run.log"
   make_release "$dir/fixtures" waffuruai/butter v0.2.0 install.sh 'echo butter'
-  mkdir -p "$dir/fixtures/waffuruai__butter/v0.3.0" "$dir/fixtures/waffuruai__butter/v0.1.0"
-  # v0.3.0 is marked latest but carries no install.sh; v0.1.0 has none either.
-  make_release_list "$dir/fixtures" waffuruai/butter v0.3.0 v0.3.0 v0.2.0 v0.1.0
+  mkdir -p "$dir/fixtures/waffuruai__butter/v0.1.0"
+  make_release_list "$dir/fixtures" waffuruai/butter v0.2.0 v0.2.0 v0.1.0
   make_manifest "$dir/products.json" butter waffuruai/butter install.sh
 
   if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
-    pass "release without asset: exits zero"
+    fail "release without asset: exits non-zero"
   else
-    fail "release without asset: exits zero"
-    cat "$log"
-    return
+    pass "release without asset: exits non-zero"
   fi
-  check_contains "release without asset: says it skipped v0.1.0" "$log" "butter v0.1.0: waffuruai/butter published no install.sh"
-  check_contains "release without asset: serves the newest release that has one" "$log" "serving v0.2.0"
-  check "release without asset: serves v0.2.0 unversioned" grep -q "echo butter" "$out/butter/install.sh"
-  check "release without asset: pins v0.2.0" test -f "$out/butter/v0.2.0/install.sh"
-  check "release without asset: pins nothing for v0.3.0" test ! -e "$out/butter/v0.3.0"
-  check "release without asset: releases.json marks v0.2.0 latest" \
-    jq -e '.latest == "v0.2.0" and (.releases | length == 1) and .releases[0].latest' "$out/butter/releases.json"
-
-  dir=$(new_case only-old)
-  out="$dir/out"
-  log="$dir/run.log"
-  mkdir -p "$dir/fixtures/waffuruai__iron/v0.1.0"
-  make_release_list "$dir/fixtures" waffuruai/iron v0.1.0 v0.1.0
-  make_manifest "$dir/products.json" iron waffuruai/iron install.sh
-  if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
-    pass "only old releases: exits zero"
-  else
-    fail "only old releases: exits zero"
-    cat "$log"
-    return
-  fi
-  check_contains "only old releases: says the product was skipped" "$log" "no release of waffuruai/iron carries install.sh yet"
-  check "only old releases: publishes nothing for the product" test ! -e "$out/iron"
+  check_contains "release without asset: names the product and tag" "$log" "butter v0.1.0: waffuruai/butter published no asset install.sh"
+  check "release without asset: publishes nothing for the product" test ! -e "$out/butter"
 }
 
 # (g) auto mode: a private repo is published on its checksum, since GitHub holds

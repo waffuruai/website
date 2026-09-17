@@ -18,11 +18,11 @@
 # not the served file. Consumers that want to check the served file against the
 # hash should drop the header line.
 #
-# A product with no published release, or whose releases carry no <asset> yet,
-# is skipped with a notice; a release without the asset is skipped and the newest
-# release that has one is served. Any failure — download, checksum mismatch,
+# A product with no published release is skipped with a notice. Any failure —
+# a release without the asset, a download error, a checksum mismatch, an
 # attestation failure — exits non-zero so the deploy fails and the previously
-# published site stays live.
+# published site stays live. Every release on a product's main must carry its
+# installer.
 #
 # Environment:
 #   GH_TOKEN                    required; needs Contents: read on every product repo
@@ -107,30 +107,11 @@ write_with_header() {
   fi
 }
 
-# Exit status publish_release() uses for a release that carries no <asset>: a
-# release cut before the installer pipeline existed is not an error, just
-# nothing to serve.
-readonly SKIP_NO_ASSET=10
-
-# Does release <tag> of <repo> carry an asset named <asset>?
-release_has_asset() {
-  local repo=$1 tag=$2 asset=$3
-  gh release view "$tag" --repo "$repo" --json assets --jq '.assets[].name' |
-    grep -qxF -- "$asset"
-}
-
 # Download, verify and stage one release under <stage>/<tag>/.
-# Sets PUBLISHED_HASH to the verified sha256 of the release asset. Returns
-# SKIP_NO_ASSET, having written nothing, when the release has no <asset>.
+# Sets PUBLISHED_HASH to the verified sha256 of the release asset.
 publish_release() {
   local product=$1 repo=$2 asset=$3 tag=$4 stage=$5 attest=$6
   local dir hash state header
-
-  if ! release_has_asset "$repo" "$tag" "$asset"; then
-    log "notice: $product $tag: $repo published no $asset (predates the installer?) — skipping"
-    report "| \`$product\` | \`$tag\` | \`$asset\` | — | skipped, no asset |"
-    return "$SKIP_NO_ASSET"
-  fi
   dir=$(mktemp -d "$TMPROOT/download.XXXXXX")
 
   gh release download "$tag" --repo "$repo" --dir "$dir" --clobber \
@@ -164,7 +145,7 @@ publish_release() {
 # whole product into <out> at once so a failure leaves nothing half-written.
 process_product() {
   local product=$1 repo=$2 asset=$3 limit=$4 out=$5 attest=$6
-  local releases latest stage entries tag newest rc
+  local releases latest stage entries tag is_latest
 
   if [ "$attest" = auto ]; then
     if repo_is_public "$repo"; then attest=true; else
@@ -193,32 +174,16 @@ process_product() {
 
   stage=$(mktemp -d "$TMPROOT/stage.XXXXXX")
   entries='[]'
-  newest=""
   while IFS= read -r tag; do
     [ -n "$tag" ] || continue
-    rc=0
-    publish_release "$product" "$repo" "$asset" "$tag" "$stage" "$attest" || rc=$?
-    if [ "$rc" -eq "$SKIP_NO_ASSET" ]; then continue; fi
-    [ "$rc" -eq 0 ] || exit "$rc"
-    # Releases are listed newest first, so the first one published is the newest.
-    [ -n "$newest" ] || newest=$tag
+    publish_release "$product" "$repo" "$asset" "$tag" "$stage" "$attest"
+    is_latest=false
+    if [ "$tag" = "$latest" ]; then is_latest=true; fi
     entries=$(printf '%s' "$entries" | jq \
       --arg tag "$tag" --arg sha "$PUBLISHED_HASH" --arg path "/$product/$tag/$asset" \
-      '. + [{tag: $tag, latest: false, sha256: $sha, path: $path}]')
+      --argjson latest "$is_latest" \
+      '. + [{tag: $tag, latest: $latest, sha256: $sha, path: $path}]')
   done < <(printf '%s' "$releases" | jq -r '.[].tagName')
-
-  if [ -z "$newest" ]; then
-    log "notice: $product: no release of $repo carries $asset yet — skipping"
-    rm -rf "$stage"
-    return 0
-  fi
-  # Serve the release GitHub marks latest, unless it predates the installer; then
-  # the newest release that has one.
-  if ! printf '%s' "$entries" | jq -e --arg t "$latest" 'any(.tag == $t)' >/dev/null; then
-    warn "$product: latest release $latest of $repo has no $asset; serving $newest"
-    latest=$newest
-  fi
-  entries=$(printf '%s' "$entries" | jq --arg t "$latest" 'map(.latest = (.tag == $t))')
 
   # The latest release is served unversioned too — the same headered copy, beside
   # the checksum of the release asset it was made from.
