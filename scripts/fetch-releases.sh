@@ -18,13 +18,18 @@
 # not the served file. Consumers that want to check the served file against the
 # hash should drop the header line.
 #
-# A product with no published release is skipped with a notice. Any failure —
-# download, checksum mismatch, attestation failure — exits non-zero so the deploy
-# fails and the previously published site stays live.
+# A product with no published release, or whose releases carry no <asset> yet,
+# is skipped with a notice; a release without the asset is skipped and the newest
+# release that has one is served. Any failure — download, checksum mismatch,
+# attestation failure — exits non-zero so the deploy fails and the previously
+# published site stays live.
 #
 # Environment:
 #   GH_TOKEN                    required; needs Contents: read on every product repo
-#   RELEASE_VERIFY_ATTESTATION  set to false to skip the attestation check only
+#   RELEASE_VERIFY_ATTESTATION  auto (default): verify build provenance for
+#                               public repos only, since GitHub stores
+#                               attestations for private repos only on a
+#                               higher plan; true: always; false: never
 #   GITHUB_STEP_SUMMARY         optional; the report is appended there when set
 
 set -euo pipefail
@@ -77,6 +82,12 @@ verify_checksum() {
   (cd "$dir" && "${checker[@]}" .expected.sha256)
 }
 
+# Whether <repo> is public: attestations exist only for public repos on the
+# org's plan, so in auto mode that decides whether provenance is checked.
+repo_is_public() {
+  [ "$(gh repo view "$1" --json visibility --jq '.visibility' 2>/dev/null)" = "PUBLIC" ]
+}
+
 # Check the release asset's build-provenance attestation. --repo is stricter than
 # --owner: it pins the attestation to the product repo, not just the org.
 verify_attestation() {
@@ -96,11 +107,30 @@ write_with_header() {
   fi
 }
 
+# Exit status publish_release() uses for a release that carries no <asset>: a
+# release cut before the installer pipeline existed is not an error, just
+# nothing to serve.
+readonly SKIP_NO_ASSET=10
+
+# Does release <tag> of <repo> carry an asset named <asset>?
+release_has_asset() {
+  local repo=$1 tag=$2 asset=$3
+  gh release view "$tag" --repo "$repo" --json assets --jq '.assets[].name' |
+    grep -qxF -- "$asset"
+}
+
 # Download, verify and stage one release under <stage>/<tag>/.
-# Sets PUBLISHED_HASH to the verified sha256 of the release asset.
+# Sets PUBLISHED_HASH to the verified sha256 of the release asset. Returns
+# SKIP_NO_ASSET, having written nothing, when the release has no <asset>.
 publish_release() {
   local product=$1 repo=$2 asset=$3 tag=$4 stage=$5 attest=$6
   local dir hash state header
+
+  if ! release_has_asset "$repo" "$tag" "$asset"; then
+    log "notice: $product $tag: $repo published no $asset (predates the installer?) — skipping"
+    report "| \`$product\` | \`$tag\` | \`$asset\` | — | skipped, no asset |"
+    return "$SKIP_NO_ASSET"
+  fi
   dir=$(mktemp -d "$TMPROOT/download.XXXXXX")
 
   gh release download "$tag" --repo "$repo" --dir "$dir" --clobber \
@@ -134,7 +164,14 @@ publish_release() {
 # whole product into <out> at once so a failure leaves nothing half-written.
 process_product() {
   local product=$1 repo=$2 asset=$3 limit=$4 out=$5 attest=$6
-  local releases latest stage entries tag is_latest
+  local releases latest stage entries tag newest rc
+
+  if [ "$attest" = auto ]; then
+    if repo_is_public "$repo"; then attest=true; else
+      attest=false
+      warn "$product: $repo is private, so GitHub holds no attestations for it; verifying the checksum only"
+    fi
+  fi
 
   releases=$(gh release list --repo "$repo" --exclude-drafts --exclude-pre-releases \
     --limit "$limit" --json tagName,isLatest) ||
@@ -156,16 +193,32 @@ process_product() {
 
   stage=$(mktemp -d "$TMPROOT/stage.XXXXXX")
   entries='[]'
+  newest=""
   while IFS= read -r tag; do
     [ -n "$tag" ] || continue
-    publish_release "$product" "$repo" "$asset" "$tag" "$stage" "$attest"
-    is_latest=false
-    if [ "$tag" = "$latest" ]; then is_latest=true; fi
+    rc=0
+    publish_release "$product" "$repo" "$asset" "$tag" "$stage" "$attest" || rc=$?
+    if [ "$rc" -eq "$SKIP_NO_ASSET" ]; then continue; fi
+    [ "$rc" -eq 0 ] || exit "$rc"
+    # Releases are listed newest first, so the first one published is the newest.
+    [ -n "$newest" ] || newest=$tag
     entries=$(printf '%s' "$entries" | jq \
       --arg tag "$tag" --arg sha "$PUBLISHED_HASH" --arg path "/$product/$tag/$asset" \
-      --argjson latest "$is_latest" \
-      '. + [{tag: $tag, latest: $latest, sha256: $sha, path: $path}]')
+      '. + [{tag: $tag, latest: false, sha256: $sha, path: $path}]')
   done < <(printf '%s' "$releases" | jq -r '.[].tagName')
+
+  if [ -z "$newest" ]; then
+    log "notice: $product: no release of $repo carries $asset yet — skipping"
+    rm -rf "$stage"
+    return 0
+  fi
+  # Serve the release GitHub marks latest, unless it predates the installer; then
+  # the newest release that has one.
+  if ! printf '%s' "$entries" | jq -e --arg t "$latest" 'any(.tag == $t)' >/dev/null; then
+    warn "$product: latest release $latest of $repo has no $asset; serving $newest"
+    latest=$newest
+  fi
+  entries=$(printf '%s' "$entries" | jq --arg t "$latest" 'map(.latest = (.tag == $t))')
 
   # The latest release is served unversioned too — the same headered copy, beside
   # the checksum of the release asset it was made from.
@@ -184,7 +237,7 @@ process_product() {
 
 main() {
   [ $# -eq 2 ] || die "usage: $0 <manifest> <out-dir>"
-  local manifest=$1 out=$2 attest=true entry product repo asset limit summary
+  local manifest=$1 out=$2 attest=auto entry product repo asset limit summary
 
   command -v gh >/dev/null 2>&1 || die "gh is required"
   command -v jq >/dev/null 2>&1 || die "jq is required"
@@ -192,8 +245,11 @@ main() {
   [ -n "${GH_TOKEN:-}" ] || die "GH_TOKEN is not set"
   mkdir -p "$out"
 
-  case "${RELEASE_VERIFY_ATTESTATION:-true}" in
+  case "${RELEASE_VERIFY_ATTESTATION:-auto}" in
     false | 0 | no) attest=false ;;
+    true | 1 | yes) attest=true ;;
+    auto | "") attest=auto ;;
+    *) die "RELEASE_VERIFY_ATTESTATION must be auto, true or false" ;;
   esac
   if [ "$attest" = false ]; then
     warn "############################################################"
