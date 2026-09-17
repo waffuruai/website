@@ -212,9 +212,9 @@ main() {
     repo=$(printf '%s' "$entry" | jq -r '.repo')
     asset=$(printf '%s' "$entry" | jq -r '.asset')
     limit=$(printf '%s' "$entry" | jq -r --arg d "$DEFAULT_TAG_LIMIT" '.tags // $d')
-    [ -n "$product" ] && [ "$product" != null ] || die "manifest entry has no product: $entry"
-    [ -n "$repo" ] && [ "$repo" != null ] || die "$product: manifest entry has no repo"
-    [ -n "$asset" ] && [ "$asset" != null ] || die "$product: manifest entry has no asset"
+    if [ -z "$product" ] || [ "$product" = null ]; then die "manifest entry has no product: $entry"; fi
+    if [ -z "$repo" ] || [ "$repo" = null ]; then die "$product: manifest entry has no repo"; fi
+    if [ -z "$asset" ] || [ "$asset" = null ]; then die "$product: manifest entry has no asset"; fi
     process_product "$product" "$repo" "$asset" "$limit" "$out" "$attest"
   done < <(jq -c '.[]' "$manifest")
 
