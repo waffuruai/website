@@ -1,0 +1,6 @@
+[
+  { "product": "ops", "repo": "waffuruai/ops", "asset": "bootstrap.sh" },
+  { "product": "wrunner", "repo": "waffuruai/wrunner", "asset": "install.sh" },
+  { "product": "iron", "repo": "waffuruai/iron", "asset": "install.sh" },
+  { "product": "butter", "repo": "waffuruai/butter", "asset": "install.sh" }
+]

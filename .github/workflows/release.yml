@@ -1,0 +1,93 @@
+# Builds and deploys waffuru.ai, and doubles as the release receiver: each
+# product's release workflow dispatches this with `gh workflow run release.yml`.
+#
+# Nothing is committed here. Every run reassembles the site from the repo's
+# static files plus the installers fetched and verified from each product's
+# latest release, so a verification failure just fails the deploy and leaves the
+# previously published site live.
+name: Release receiver and site deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      product:
+        description: Product whose release triggered this run (informational)
+        required: false
+        type: string
+      tag:
+        description: Release tag that triggered this run (informational)
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never cancel a deploy in flight: a half-applied Pages deployment is worse than
+# a queued one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Shellcheck
+        run: shellcheck scripts/*.sh
+
+      - name: Test the release fetcher
+        run: scripts/test-fetch-releases.sh
+
+  build:
+    name: build
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Note the dispatching release
+        if: inputs.product != ''
+        run: echo "triggered by ${{ inputs.product }} ${{ inputs.tag }}"
+
+      - name: Assemble the static site
+        run: |
+          mkdir -p _site
+          cp index.html CNAME _site/
+          cp ./*.png ./*.webp _site/
+          # Pages would otherwise run Jekyll and drop dot-files and _-prefixed paths.
+          touch _site/.nojekyll
+
+      - name: Fetch and verify the product installers
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_READ_TOKEN || github.token }}
+          RELEASE_VERIFY_ATTESTATION: ${{ vars.RELEASE_VERIFY_ATTESTATION || 'true' }}
+        run: scripts/fetch-releases.sh releases/products.json _site
+
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Upload the site artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  deploy:
+    name: deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
