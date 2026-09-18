@@ -10,7 +10,7 @@ and push. `CNAME` holds the custom domain.
 
 | Feature | What you get |
 | --- | --- |
-| One-command installs | `curl -fsSL https://waffuru.ai/ops/bootstrap.sh \| bash` fetches without any GitHub auth; the script signs you in for the private clones |
+| One-command installs | `curl -fsSL https://waffuru.ai/ops/bootstrap.sh \| sh` fetches without any GitHub auth; the script signs you in for the private clones |
 | Verified provenance | Every served installer is checked against its `.sha256` and its build-provenance attestation before it is published |
 | Pinned versions | Every recent release stays reachable at `/<product>/<tag>/<asset>` |
 | Stateless deploys | Nothing is committed by a bot; `main` stays protected and a failed verification simply leaves the live site untouched |
@@ -45,7 +45,7 @@ the served copy by hand, drop that header line first — or fetch the asset from
 release and compare it to the release's own checksum.
 
 GitHub Pages serves `.sh` with its own content type and about a ten minute cache;
-`curl -fsSL … | bash` works regardless of either.
+`curl -fsSL … | sh` works regardless of either.
 
 ## How a release reaches the site
 
