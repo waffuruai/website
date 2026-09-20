@@ -21,6 +21,7 @@ and push. `CNAME` holds the custom domain.
 | --- | --- |
 | `https://waffuru.ai/ops/bootstrap.sh` | latest release of `waffuruai/ops` |
 | `https://waffuru.ai/wrunner/install.sh` | latest release of `waffuruai/wrunner` |
+| `https://waffuru.ai/wci/install.sh` | latest release of `waffuruai/wci` |
 | `https://waffuru.ai/iron/install.sh` | latest release of `waffuruai/iron` |
 | `https://waffuru.ai/butter/install.sh` | latest release of `waffuruai/butter` |
 
@@ -136,7 +137,7 @@ old site and `actions/deploy-pages` fails.
 Needed while the product repos are private. A fine-grained PAT:
 
 - Resource owner: `waffuruai`
-- Repository access: `ops`, `wrunner`, `iron`, `butter`
+- Repository access: `ops`, `wrunner`, `wci`, `iron`, `butter`
 - Permissions: **Contents: read**, **Metadata: read**
 
 Stored as an Actions secret on this repo. Without it the workflow falls back to
