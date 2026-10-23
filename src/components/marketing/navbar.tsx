@@ -327,7 +327,7 @@ function MobileNav({ nav, path }: { nav: Nav; path: string }) {
 
 /** Sticky, translucent site header with popover menus and a mobile sheet. */
 export function Navbar() {
-  const { nav, header, common } = useDictionary();
+  const { nav, common } = useDictionary();
   const { path } = splitLocale(usePathname() ?? '/');
 
   return (
@@ -341,7 +341,6 @@ export function Navbar() {
       <div className="mx-auto flex h-[72px] max-w-site items-center gap-4 px-site lg:h-[88px]">
         <LocalizedLink
           href="/"
-          aria-label={header.home}
           className="inline-flex min-h-11 shrink-0 items-center text-foreground hover:text-foreground"
         >
           <Wordmark priority />

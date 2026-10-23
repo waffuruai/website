@@ -30,7 +30,6 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
         <div className="flex flex-col gap-8">
           <LocalizedLink
             href="/"
-            aria-label={dictionary.header.home}
             className="w-fit text-foreground hover:text-foreground"
           >
             <Wordmark />
