@@ -21,9 +21,9 @@ export function Breadcrumb({
   return (
     <nav
       aria-label={label}
-      className={cn('max-w-site px-site mx-auto pt-4 md:pt-6', className)}
+      className={cn('mx-auto max-w-site px-site pt-4 md:pt-6', className)}
     >
-      <ol className="label-mono text-muted-foreground flex flex-wrap items-center gap-x-3">
+      <ol className="flex flex-wrap items-center gap-x-3 label-mono text-muted-foreground">
         {items.map((item, index) => {
           const current = index === items.length - 1;
           return (
@@ -31,14 +31,14 @@ export function Breadcrumb({
               {current ? (
                 <span
                   aria-current="page"
-                  className="text-soft inline-flex min-h-11 items-center"
+                  className="inline-flex min-h-11 items-center text-soft"
                 >
                   {item.label}
                 </span>
               ) : (
                 <LocalizedLink
                   href={item.href}
-                  className="hover:text-foreground focus-visible:outline-ring inline-flex min-h-11 min-w-11 items-center rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+                  className="inline-flex min-h-11 min-w-11 items-center rounded-sm transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                 >
                   {item.label}
                 </LocalizedLink>

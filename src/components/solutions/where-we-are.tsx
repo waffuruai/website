@@ -58,7 +58,7 @@ export function WhereWeAre({
   return (
     <section
       aria-labelledby={id}
-      className="max-w-site px-site mx-auto pt-[72px] md:pt-[120px]"
+      className="mx-auto max-w-site px-site pt-[72px] md:pt-[120px]"
     >
       <SectionOpener id={id} label={label} title={title} intro={lede} />
       <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-20">
@@ -70,11 +70,11 @@ export function WhereWeAre({
             {notes.map((note) => (
               <li
                 key={note}
-                className="text-soft flex gap-3.5 text-base leading-[1.6] text-pretty"
+                className="flex gap-3.5 text-base leading-[1.6] text-pretty text-soft"
               >
                 <span
                   aria-hidden
-                  className="bg-brand mt-[0.6em] size-1.5 shrink-0 rounded-full"
+                  className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-brand"
                 />
                 {note}
               </li>
@@ -82,7 +82,7 @@ export function WhereWeAre({
           </ul>
         </div>
         <div className="flex flex-col">
-          <MonoLabel as="p" className="text-muted-foreground pb-4">
+          <MonoLabel as="p" className="pb-4 text-muted-foreground">
             {hardware.tiersLabel}
           </MonoLabel>
           <ul>
@@ -91,15 +91,15 @@ export function WhereWeAre({
               return (
                 <li
                   key={tier.name}
-                  className="border-foreground/10 flex flex-col gap-3.5 border-t py-6 last:border-b"
+                  className="flex flex-col gap-3.5 border-t border-foreground/10 py-6 last:border-b"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-                    <span className="text-foreground text-[22px]">
+                    <span className="text-[22px] text-foreground">
                       {tier.name}
                     </span>
                     <span
                       className={cn(
-                        'label-mono inline-flex items-center gap-2.5',
+                        'inline-flex items-center gap-2.5 label-mono',
                         status.text,
                       )}
                     >
@@ -119,14 +119,14 @@ export function WhereWeAre({
                   </div>
                   <span
                     aria-hidden
-                    className="bg-foreground/12 relative block h-px overflow-hidden"
+                    className="relative block h-px overflow-hidden bg-foreground/12"
                   >
                     <span
                       className={cn('wf-pulse', status.pulse)}
                       style={{ animationDuration: status.duration }}
                     />
                   </span>
-                  <span className="text-muted-foreground text-base leading-[1.55]">
+                  <span className="text-base leading-[1.55] text-muted-foreground">
                     {tier.note}
                   </span>
                 </li>
@@ -136,7 +136,7 @@ export function WhereWeAre({
         </div>
       </div>
       <div className="mt-14 flex flex-wrap items-center gap-3">
-        <MonoLabel as="span" className="text-muted-foreground mr-2">
+        <MonoLabel as="span" className="mr-2 text-muted-foreground">
           {hardware.runsOnLabel}
         </MonoLabel>
         {hardware.runsOn.map((chip) => (
@@ -145,7 +145,7 @@ export function WhereWeAre({
             className={cn(
               'rounded-full border px-4 py-2.5 text-sm',
               chip.inProgress
-                ? 'border-foreground/30 text-soft border-dashed'
+                ? 'border-dashed border-foreground/30 text-soft'
                 : 'border-foreground/16 text-foreground',
             )}
           >

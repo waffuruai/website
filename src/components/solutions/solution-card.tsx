@@ -23,7 +23,7 @@ export function SolutionCard({
   return (
     <LocalizedLink
       href={href}
-      className="group border-foreground/10 bg-card hover:border-foreground/30 focus-visible:outline-ring relative flex h-full min-h-[280px] flex-col justify-between gap-12 overflow-hidden rounded-2xl border p-6 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 md:p-8"
+      className="group relative flex h-full min-h-[280px] flex-col justify-between gap-12 overflow-hidden rounded-2xl border border-foreground/10 bg-card p-6 transition-colors hover:border-foreground/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring md:p-8"
     >
       <TileDeco
         size={4}
@@ -37,15 +37,15 @@ export function SolutionCard({
         <h3 className="heading-section text-[clamp(36px,4vw,56px)] leading-[1]">
           <Accent text={title} />
         </h3>
-        <p className="text-soft text-base leading-[1.6] text-pretty">
+        <p className="text-base leading-[1.6] text-pretty text-soft">
           {summary}
         </p>
       </div>
-      <div className="label-mono text-muted-foreground relative flex items-center justify-between gap-4">
+      <div className="relative flex items-center justify-between gap-4 label-mono text-muted-foreground">
         <span>{products.join(' · ')}</span>
         <span
           aria-hidden
-          className="text-foreground text-base transition-transform group-hover:translate-x-1"
+          className="text-base text-foreground transition-transform group-hover:translate-x-1"
         >
           →
         </span>

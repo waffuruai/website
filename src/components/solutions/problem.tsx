@@ -20,8 +20,8 @@ export function Problem({
   body: string;
 }) {
   return (
-    <section aria-labelledby={id} className="max-w-site px-site mx-auto">
-      <div className="border-foreground/12 grid gap-10 border-t pt-[72px] md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:gap-16 md:pt-[120px]">
+    <section aria-labelledby={id} className="mx-auto max-w-site px-site">
+      <div className="grid gap-10 border-t border-foreground/12 pt-[72px] md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:gap-16 md:pt-[120px]">
         <div className="flex flex-col gap-6">
           <MonoLabel>{label}</MonoLabel>
           <h2 id={id} className="heading-section">
@@ -29,10 +29,10 @@ export function Problem({
           </h2>
         </div>
         <div className="flex flex-col gap-5 md:pt-12">
-          <p className="text-foreground text-2xl leading-[1.3] text-balance">
+          <p className="text-2xl leading-[1.3] text-balance text-foreground">
             {statement}
           </p>
-          <p className="text-muted-foreground max-w-[60ch] text-[17px] leading-[1.6] text-pretty">
+          <p className="max-w-[60ch] text-[17px] leading-[1.6] text-pretty text-muted-foreground">
             {body}
           </p>
         </div>

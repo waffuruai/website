@@ -53,9 +53,9 @@ export function SolutionsOverview({
       />
       <section
         aria-labelledby="audiences"
-        className="max-w-site px-site mx-auto"
+        className="mx-auto max-w-site px-site"
       >
-        <div className="border-foreground/12 border-t pt-[72px] md:pt-[120px]">
+        <div className="border-t border-foreground/12 pt-[72px] md:pt-[120px]">
           <SectionOpener
             id="audiences"
             label={overview.cards.label}
