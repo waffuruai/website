@@ -30,11 +30,11 @@ export function UseOneOrAll({
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
             <li key={product.slug}>
-              <article className="group border-foreground/10 bg-card hover:border-foreground/30 has-focus-visible:outline-ring relative flex h-full flex-col gap-4 rounded-2xl border p-6 transition-colors has-focus-visible:outline-2 has-focus-visible:outline-offset-4">
+              <article className="group relative flex h-full flex-col gap-4 rounded-2xl border border-foreground/10 bg-card p-6 transition-colors hover:border-foreground/30 has-focus-visible:outline-2 has-focus-visible:outline-offset-4 has-focus-visible:outline-ring">
                 <p className="label-mono text-muted-foreground">
                   {product.index} · {product.layer}
                 </p>
-                <h3 className="group-hover:text-brand-ink font-serif text-[40px] leading-none tracking-[-0.02em] transition-colors">
+                <h3 className="font-serif text-[40px] leading-none tracking-[-0.02em] transition-colors group-hover:text-brand-ink">
                   <LocalizedLink
                     href={product.path}
                     className="after:absolute after:inset-0 after:content-[''] hover:text-inherit focus-visible:outline-none"
@@ -42,21 +42,21 @@ export function UseOneOrAll({
                     {product.name}
                   </LocalizedLink>
                 </h3>
-                <p className="text-soft text-base leading-[1.55]">
+                <p className="text-base leading-[1.55] text-soft">
                   {together.alone[product.slug]}
                 </p>
               </article>
             </li>
           ))}
         </ul>
-        <div className="border-foreground/12 bg-card grid gap-6 rounded-2xl border p-6 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:items-center md:gap-14 md:p-10">
+        <div className="grid gap-6 rounded-2xl border border-foreground/12 bg-card p-6 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:items-center md:gap-14 md:p-10">
           <div className="flex flex-col gap-4">
             <MonoLabel dot>{together.allLabel}</MonoLabel>
             <p className="flex flex-wrap gap-x-3 font-serif text-[clamp(32px,4vw,52px)] leading-[1.05] tracking-[-0.01em]">
               {products.map((product, index) => (
                 <span key={product.slug} className="whitespace-nowrap">
                   {index > 0 && (
-                    <span aria-hidden className="text-brand-ink mr-3">
+                    <span aria-hidden className="mr-3 text-brand-ink">
                       +
                     </span>
                   )}
@@ -65,7 +65,7 @@ export function UseOneOrAll({
               ))}
             </p>
           </div>
-          <p className="text-soft text-lg leading-[1.55] text-pretty">
+          <p className="text-lg leading-[1.55] text-pretty text-soft">
             {together.all}
           </p>
         </div>

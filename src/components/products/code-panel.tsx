@@ -37,8 +37,8 @@ export function CodePanel({
 
   return (
     <figure className={cn('flex flex-col gap-4', className)}>
-      <div className="border-foreground/10 bg-card overflow-hidden rounded-2xl border">
-        <div className="border-foreground/10 text-muted-foreground flex justify-between gap-3 border-b px-[22px] py-4 font-mono text-xs">
+      <div className="overflow-hidden rounded-2xl border border-foreground/10 bg-card">
+        <div className="flex justify-between gap-3 border-b border-foreground/10 px-[22px] py-4 font-mono text-xs text-muted-foreground">
           <span>{filename}</span>
           <span>{label}</span>
         </div>
@@ -47,7 +47,7 @@ export function CodePanel({
           tabIndex={0}
           role="region"
           aria-label={`${filename}, ${label}`}
-          className="text-soft overflow-x-auto px-4 py-5 font-mono text-[12px] leading-[1.75] sm:px-6 sm:py-7 sm:text-[14px]"
+          className="overflow-x-auto px-4 py-5 font-mono text-[12px] leading-[1.75] text-soft sm:px-6 sm:py-7 sm:text-[14px]"
         >
           <code>
             {lines.map((line, index) => (
@@ -67,7 +67,7 @@ export function CodePanel({
         </pre>
       </div>
       {caption && (
-        <figcaption className="text-muted-foreground text-sm leading-[1.5]">
+        <figcaption className="text-sm leading-[1.5] text-muted-foreground">
           {caption}
         </figcaption>
       )}

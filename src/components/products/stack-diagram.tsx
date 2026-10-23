@@ -15,11 +15,11 @@ function Connector() {
     <>
       <span
         aria-hidden
-        className="bg-foreground/12 absolute top-1/2 -left-11 hidden h-px w-11 md:block"
+        className="absolute top-1/2 -left-11 hidden h-px w-11 bg-foreground/12 md:block"
       />
       <span
         aria-hidden
-        className="bg-brand absolute top-1/2 -left-12 hidden size-2 -translate-y-1/2 rounded-full md:block"
+        className="absolute top-1/2 -left-12 hidden size-2 -translate-y-1/2 rounded-full bg-brand md:block"
       />
     </>
   );
@@ -35,12 +35,12 @@ function Layer({
   return (
     <li className="relative">
       <Connector />
-      <article className="group border-foreground/12 bg-card hover:border-foreground/30 has-focus-visible:outline-ring relative grid gap-6 rounded-2xl border p-6 transition-colors has-focus-visible:outline-2 has-focus-visible:outline-offset-4 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-center md:gap-10 md:p-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)_240px]">
+      <article className="group relative grid gap-6 rounded-2xl border border-foreground/12 bg-card p-6 transition-colors hover:border-foreground/30 has-focus-visible:outline-2 has-focus-visible:outline-offset-4 has-focus-visible:outline-ring md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-center md:gap-10 md:p-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)_240px]">
         <div className="flex flex-col gap-3">
           <MonoLabel>
             {product.index} · {product.layer}
           </MonoLabel>
-          <h3 className="group-hover:text-brand-ink font-serif text-[clamp(56px,7vw,76px)] leading-[0.9] tracking-[-0.02em] transition-colors">
+          <h3 className="font-serif text-[clamp(56px,7vw,76px)] leading-[0.9] tracking-[-0.02em] transition-colors group-hover:text-brand-ink">
             <LocalizedLink
               href={product.path}
               className="after:absolute after:inset-0 after:content-[''] hover:text-inherit focus-visible:outline-none"
@@ -50,16 +50,16 @@ function Layer({
           </h3>
         </div>
         <div className="flex flex-col gap-3">
-          <p className="text-foreground text-2xl leading-[1.3] text-balance">
+          <p className="text-2xl leading-[1.3] text-balance text-foreground">
             {product.tagline}
           </p>
-          <p className="text-muted-foreground text-[17px] leading-[1.6] text-pretty">
+          <p className="text-[17px] leading-[1.6] text-pretty text-muted-foreground">
             {product.summary}
           </p>
         </div>
         <div className="hidden items-center gap-7 sm:flex md:hidden lg:flex lg:justify-end">
           <ProductMotif slug={product.slug} size="sm" />
-          <span className="label-mono text-muted-foreground border-foreground/16 hidden rounded-full border px-3 py-2 lg:inline-flex">
+          <span className="hidden rounded-full border border-foreground/16 px-3 py-2 label-mono text-muted-foreground lg:inline-flex">
             {privateLabel}
           </span>
         </div>
@@ -106,14 +106,14 @@ export function StackDiagram({
         </ol>
         <div className="relative mt-4">
           <Connector />
-          <div className="border-foreground/20 flex flex-col gap-6 overflow-hidden rounded-2xl border border-dashed px-6 py-6 md:px-8">
+          <div className="flex flex-col gap-6 overflow-hidden rounded-2xl border border-dashed border-foreground/20 px-6 py-6 md:px-8">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
               <MonoLabel dot>{layers.metal.label}</MonoLabel>
               <ul className="flex flex-wrap gap-2.5">
                 {layers.metal.backends.map((backend) => (
                   <li
                     key={backend}
-                    className="border-foreground/16 text-foreground rounded-full border px-4 py-2 text-sm"
+                    className="rounded-full border border-foreground/16 px-4 py-2 text-sm text-foreground"
                   >
                     {backend}
                   </li>

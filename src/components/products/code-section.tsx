@@ -19,7 +19,7 @@ export function CodeSection({
             <Accent text={copy.heading} />
           </h2>
           {copy.intro && (
-            <p className="text-muted-foreground max-w-[460px] text-base leading-[1.6]">
+            <p className="max-w-[460px] text-base leading-[1.6] text-muted-foreground">
               {copy.intro}
             </p>
           )}

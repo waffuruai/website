@@ -53,7 +53,7 @@ const zh: Dictionary = {
       },
       iron: {
         label: 'Iron',
-        description: '一次定义内核，生成四种 GPU 后端。',
+        description: '一次定义内核，生成四种后端。',
       },
       butter: {
         label: 'Butter',

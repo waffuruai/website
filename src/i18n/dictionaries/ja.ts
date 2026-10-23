@@ -53,7 +53,7 @@ const ja: Dictionary = {
       },
       iron: {
         label: 'Iron',
-        description: 'ひとつのカーネル定義から、4 つの GPU バックエンドへ。',
+        description: 'ひとつのカーネル定義から、4 つのバックエンドへ。',
       },
       butter: {
         label: 'Butter',

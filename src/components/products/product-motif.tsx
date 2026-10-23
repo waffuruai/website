@@ -100,11 +100,11 @@ function WaffleMotif({ size, className }: MotifProps) {
       {Array.from({ length: 5 }, (_, unit) => (
         <div
           key={unit}
-          className="border-foreground/12 bg-background/50 flex items-center justify-between gap-6 rounded-lg border px-4 py-3"
+          className="flex items-center justify-between gap-6 rounded-lg border border-foreground/12 bg-background/50 px-4 py-3"
         >
           <span className="flex flex-col gap-1.5">
-            <span className="bg-off block h-1.5 w-12 rounded-full" />
-            <span className="bg-off block h-1.5 w-7 rounded-full" />
+            <span className="block h-1.5 w-12 rounded-full bg-off" />
+            <span className="block h-1.5 w-7 rounded-full bg-off" />
           </span>
           <span className="grid grid-cols-6 gap-2">
             {Array.from({ length: 6 }, (_, led) => (
@@ -134,9 +134,9 @@ function SyrupMotif({ size, className }: MotifProps) {
     <div className={cn('relative h-[220px] w-[240px]', className)}>
       <div className="wf-drip" />
       {/* Notes the drop runs past, alternating sides of the line. */}
-      <span className="bg-off absolute top-[24%] left-1/2 ml-4 h-1.5 w-20 rounded-full" />
-      <span className="bg-off absolute top-[50%] right-1/2 mr-4 h-1.5 w-24 rounded-full" />
-      <span className="bg-off absolute top-[74%] left-1/2 ml-4 h-1.5 w-14 rounded-full" />
+      <span className="absolute top-[24%] left-1/2 ml-4 h-1.5 w-20 rounded-full bg-off" />
+      <span className="absolute top-[50%] right-1/2 mr-4 h-1.5 w-24 rounded-full bg-off" />
+      <span className="absolute top-[74%] left-1/2 ml-4 h-1.5 w-14 rounded-full bg-off" />
       <div className="wf-drop" />
     </div>
   );

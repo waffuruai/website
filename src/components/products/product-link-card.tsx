@@ -16,7 +16,7 @@ export function ProductLinkCard({
   learnMoreLabel: string;
 }) {
   return (
-    <article className="group border-foreground/10 bg-card hover:border-foreground/30 has-focus-visible:outline-ring relative flex h-full flex-col gap-5 rounded-2xl border p-6 transition-colors has-focus-visible:outline-2 has-focus-visible:outline-offset-4 md:p-8">
+    <article className="group relative flex h-full flex-col gap-5 rounded-2xl border border-foreground/10 bg-card p-6 transition-colors hover:border-foreground/30 has-focus-visible:outline-2 has-focus-visible:outline-offset-4 has-focus-visible:outline-ring md:p-8">
       <div className="flex items-start justify-between gap-4">
         <MonoLabel>
           {product.index} · {product.layer}
@@ -25,7 +25,7 @@ export function ProductLinkCard({
           <ProductMotif slug={product.slug} size="sm" />
         </div>
       </div>
-      <h3 className="group-hover:text-brand-ink font-serif text-[56px] leading-[0.9] tracking-[-0.02em] transition-colors">
+      <h3 className="font-serif text-[56px] leading-[0.9] tracking-[-0.02em] transition-colors group-hover:text-brand-ink">
         <LocalizedLink
           href={product.path}
           className="after:absolute after:inset-0 after:content-[''] hover:text-inherit focus-visible:outline-none"
@@ -33,15 +33,15 @@ export function ProductLinkCard({
           {product.name}
         </LocalizedLink>
       </h3>
-      <p className="text-foreground text-lg leading-[1.35] text-balance">
+      <p className="text-lg leading-[1.35] text-balance text-foreground">
         {product.tagline}
       </p>
-      <p className="text-muted-foreground text-[15px] leading-[1.6]">
+      <p className="text-[15px] leading-[1.6] text-muted-foreground">
         {product.summary}
       </p>
       <span
         aria-hidden
-        className="label-mono text-soft group-hover:text-foreground mt-auto pt-2 transition-colors"
+        className="mt-auto pt-2 label-mono text-soft transition-colors group-hover:text-foreground"
       >
         {learnMoreLabel} →
       </span>

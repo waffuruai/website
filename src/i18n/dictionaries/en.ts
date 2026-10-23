@@ -57,7 +57,7 @@ const en = {
       },
       iron: {
         label: 'Iron',
-        description: 'One kernel definition, four GPU backends.',
+        description: 'One kernel definition, four backends.',
       },
       butter: {
         label: 'Butter',

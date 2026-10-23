@@ -22,12 +22,12 @@ export function CapabilityGrid({
         {items.map((item) => (
           <li
             key={item.title}
-            className="border-foreground/10 bg-card flex flex-col gap-3 rounded-2xl border p-6 md:p-8"
+            className="flex flex-col gap-3 rounded-2xl border border-foreground/10 bg-card p-6 md:p-8"
           >
             <h3 className="font-serif text-[28px] leading-[1.05] tracking-[-0.01em]">
               {item.title}
             </h3>
-            <p className="text-muted-foreground text-[15px] leading-[1.6]">
+            <p className="text-[15px] leading-[1.6] text-muted-foreground">
               {item.body}
             </p>
           </li>

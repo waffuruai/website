@@ -53,7 +53,7 @@ const ko: Dictionary = {
       },
       iron: {
         label: 'Iron',
-        description: '하나의 커널 정의, 네 가지 GPU 백엔드.',
+        description: '하나의 커널 정의, 네 가지 백엔드.',
       },
       butter: {
         label: 'Butter',

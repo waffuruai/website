@@ -16,7 +16,7 @@ export function ProductSection({
   return (
     <section
       aria-labelledby={id}
-      className={cn('max-w-site px-site mx-auto py-16 md:py-24', className)}
+      className={cn('mx-auto max-w-site px-site py-16 md:py-24', className)}
     >
       {children}
     </section>

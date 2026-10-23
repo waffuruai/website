@@ -17,7 +17,7 @@ function Chip({
       className={cn(
         'rounded-full border px-4 py-2 text-sm',
         inProgress
-          ? 'border-foreground/30 text-soft border-dashed'
+          ? 'border-dashed border-foreground/30 text-soft'
           : 'border-foreground/16 text-foreground',
       )}
     >
@@ -37,7 +37,7 @@ function SpecDetail({
   return (
     <>
       {row.detail && (
-        <p className="text-foreground text-[17px] leading-[1.55]">
+        <p className="text-[17px] leading-[1.55] text-foreground">
           {row.detail}
         </p>
       )}
@@ -59,7 +59,7 @@ function SpecDetail({
               <span className="label-mono text-muted-foreground">
                 {group.label}
               </span>
-              <span className="text-foreground text-[15px] leading-[1.45]">
+              <span className="text-[15px] leading-[1.45] text-foreground">
                 {group.text}
                 {group.inProgress && (
                   <span className="text-soft"> · {inProgressLabel}</span>
@@ -89,11 +89,11 @@ export function SpecList({
   return (
     <ProductSection id="specs">
       <SectionHeading id="specs" title={specs.heading} intro={specs.intro} />
-      <dl className="border-foreground/12 mt-12 border-t md:mt-16">
+      <dl className="mt-12 border-t border-foreground/12 md:mt-16">
         {specs.rows.map((row) => (
           <div
             key={row.term}
-            className="border-foreground/12 grid gap-3 border-b py-6 md:grid-cols-[minmax(160px,1fr)_minmax(0,3fr)] md:gap-10 md:py-7"
+            className="grid gap-3 border-b border-foreground/12 py-6 md:grid-cols-[minmax(160px,1fr)_minmax(0,3fr)] md:gap-10 md:py-7"
           >
             <dt className="label-mono text-muted-foreground md:pt-1.5">
               {row.term}

@@ -53,7 +53,7 @@ const es: Dictionary = {
       },
       iron: {
         label: 'Iron',
-        description: 'Una definición de kernel, cuatro backends de GPU.',
+        description: 'Una definición de kernel, cuatro backends.',
       },
       butter: {
         label: 'Butter',

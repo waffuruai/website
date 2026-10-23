@@ -51,11 +51,11 @@ function Tier({
 }) {
   const level = LEVELS[tier.level];
   return (
-    <li className="border-foreground/10 flex flex-col gap-4 border-t pt-6">
+    <li className="flex flex-col gap-4 border-t border-foreground/10 pt-6">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
         <h3 className="text-[22px] leading-tight">{tier.platform}</h3>
         <span
-          className={cn('label-mono flex items-center gap-2.5', level.text)}
+          className={cn('flex items-center gap-2.5 label-mono', level.text)}
         >
           {label}
           <span aria-hidden className="flex gap-[3px]">
@@ -73,14 +73,14 @@ function Tier({
       </div>
       <span
         aria-hidden
-        className="bg-foreground/12 relative block h-px overflow-hidden"
+        className="relative block h-px overflow-hidden bg-foreground/12"
       >
         <span
           className={cn('wf-pulse', level.pulse)}
           style={{ animationDuration: level.duration }}
         />
       </span>
-      <p className="text-muted-foreground text-base leading-[1.55]">
+      <p className="text-base leading-[1.55] text-muted-foreground">
         {tier.note}
       </p>
     </li>
@@ -118,7 +118,7 @@ export function PlatformTiers({
           />
         ))}
       </ul>
-      <p className="label-mono text-muted-foreground mt-6">
+      <p className="mt-6 label-mono text-muted-foreground">
         {shared.tierLegend}
       </p>
       <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-3">
@@ -130,7 +130,7 @@ export function PlatformTiers({
               className={cn(
                 'rounded-full border px-4 py-2.5 text-sm',
                 item.inProgress
-                  ? 'border-foreground/30 text-soft border-dashed'
+                  ? 'border-dashed border-foreground/30 text-soft'
                   : 'border-foreground/16 text-foreground',
               )}
             >
