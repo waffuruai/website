@@ -131,6 +131,18 @@ const homeFr: (typeof home)['en'] = {
           logo: 'internlm',
           models: 'InternLM 2',
         },
+        {
+          lab: 'Fish Audio',
+          logo: 'fishaudio',
+          models: 'Drama-3',
+          status: 'in-progress',
+        },
+        {
+          lab: 'Recursive',
+          logo: 'recursive',
+          models: 'Flint',
+          status: 'in-progress',
+        },
       ],
     ],
   },
