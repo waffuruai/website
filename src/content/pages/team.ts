@@ -22,9 +22,9 @@ export type TeamPageContent = {
 export const teamPage: Localized<TeamPageContent> = {
   en: {
     seo: {
-      title: 'Team',
+      title: 'Meet the founders and team',
       description:
-        'Meet the founders and researchers building Waffuru: research, security, revenue and a couple of founders who have shipped before.',
+        'The people building Waffuru: research, security, revenue and a couple of founders who have shipped before.',
       keywords: ['Waffuru team', 'Waffuru founders'],
     },
     hero: {

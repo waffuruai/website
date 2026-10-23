@@ -32,7 +32,7 @@ describe('about content', () => {
     }
   });
 
-  it('keeps the product and platform names out of the invented copy', () => {
+  it('does not name internal products', () => {
     const text = JSON.stringify(content);
     for (const internal of ['Morpheus', 'wrunner', 'Juke', 'wOS']) {
       expect(text).not.toContain(internal);
