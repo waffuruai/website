@@ -1,0 +1,105 @@
+import { ArticleLayout } from '@/components/blog/article-layout';
+
+export const article = {
+  title: 'Présentation de Waffuru',
+  description:
+    'Les fondations pour faire tourner l’intelligence sur le matériel que vous possédez déjà : pourquoi, ce que contient la stack, et où nous en sommes.',
+  author: 'eric-kryski',
+  date: '2026-10-26',
+  published: true,
+  category: 'Company',
+  tags: ['company', 'launch', 'stack'],
+  keywords: [
+    'waffuru',
+    'IA locale',
+    'inférence sur appareil',
+    'kernels GPU',
+    'accès anticipé',
+  ],
+};
+
+export default (props) => (
+  <ArticleLayout article={article} slug="introducing-waffuru" {...props} />
+);
+
+Vous devriez pouvoir faire tourner de l’intelligence sur la machine que vous avez sous les yeux, et garder au même endroit ce qu’elle apprend sur vous. C’est le travail que nous nous sommes donné, et notre mission tient en une ligne : **Démocratiser l’accès à l’intelligence.**
+
+Le nom est le mot japonais pour gaufres, ワッフル (waffuru). Il fait un clin d’œil à l’amour de Tom pour les mangas, à notre goût partagé pour les gaufres dans l’équipe, et à une mission qui ne s’arrête à aucune frontière.
+
+## Pourquoi _maintenant_
+
+La demande d’intelligence est sans limite. Les ressources qui l’alimentent, non. Passer l’inférence à l’échelle demande plus que de nouveaux datacenters et plus d’énergie ; il faut tirer plus de travail utile de chaque unité de calcul et d’énergie. La prochaine génération d’infrastructure doit élargir l’accès à l’intelligence plus vite qu’elle n’augmente le coût, la demande énergétique et l’impact environnemental.
+
+Quand l’énergie est le plafond, l’efficacité est la variable sur laquelle on peut encore agir. Les tokens par watt et les dollars par charge de travail sont ce que nous pouvons maximiser. L’efficacité ne fera pas non plus baisser la demande. Chaque gain est dépensé en intelligence supplémentaire, c’est le bon vieux paradoxe de Jevons : l’appétit de calcul ne fait que croître.
+
+L’autre bout de la courbe bouge aussi. Nous pensons que d’ici environ deux ans, les modèles exécutés sur le matériel que les gens possèdent déjà seront assez bons pour un vrai travail, parce que la loi de Moore et les progrès rapides de l’IA continuent de se cumuler.
+
+Nous pensons que chacun aura un assistant personnel, ou une équipe d’assistants qui se parlent entre eux. Les gens veulent garder la main : un assistant doit donc être un prolongement de vous-même, digne de confiance, utile et accessible, jamais effrayant. Cette relation sera aussi personnelle que celle que vous avez avec votre téléphone. Elle ne doit dépendre ni de l’endroit où vous vivez, ni de ce que vous gagnez, ni des diplômes que vous détenez, et accroître le potentiel de revenus partout passe par un accès ouvert et local à l’intelligence.
+
+## Ce que nous _construisons_
+
+Quatre produits, numérotés depuis le métal. Iron compile les kernels. Butter y exécute les modèles. Waffle surveille les GPU. Syrup se souvient de ce sur quoi vous travailliez. Chacun fonctionne seul, et ensemble ils forment la fondation d’assistants personnels local-first.
+
+### Iron, les kernels
+
+[Iron](/products/iron), c’est une définition de kernel, quatre backends. Vous écrivez un kernel dans un DSL embarqué dans Rust. Il est compilé vers une IR partagée, puis vers Metal, CUDA, HIP/ROCm ou Vulkan SPIR-V, et une ABI C et Rust versionnée permet aux hôtes que vous avez déjà de l’appeler. Aujourd’hui, cela représente environ 1 139 déclarations de kernels, et notre corpus de tests HIP et Vulkan passe 4 164 cas sur 4 164, exacts au bit près. Voici la définition complète d’un kernel `exp` :
+
+```rust title="unary.rs"
+#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]
+pub fn iron_exp<T>(a: Tensor<T>, out: Tensor<T>) {
+    let idx = program_id(0);
+    store(out[idx], exp(load(a[idx])));
+}
+```
+
+Vous écrivez ça. Iron écrit le reste.
+
+### Butter, le moteur
+
+[Butter](/products/butter), c’est du serving de modèles sans Python : Swift sur Metal pour le silicium Apple, Rust pour CUDA et le reste. Il charge les modèles directement depuis Hugging Face (safetensors, MLX, JANG et GGUF) sans conversion, et fait tourner des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et mixture-of-experts, et un cache KV quantifié. `butter serve` parle l’API OpenAI, avec streaming, appel d’outils, décodage spéculatif et LoRA. Les modèles de texte, de vision, de reconnaissance vocale, de synthèse vocale et omni tournent tous. Pas de Python, pas de JIT.
+
+### Waffle, le plan de contrôle
+
+[Waffle](/products/waffle) vous montre chaque GPU et chaque moteur qui y tourne, d’une machine sous un bureau à un neocloud qui loue une flotte. Chaque hôte exécute un petit sidecar en Rust qui remonte une télémétrie signée. Il fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : aucun verrouillage.
+
+### Syrup, la mémoire
+
+[Syrup](/products/syrup), c’est ce qui permet à votre IA de se souvenir de ce sur quoi vous travailliez. Il fait de la recherche locale sur vos notes et votre code, compresse les embeddings avec TurboQuant+, cherche par mots exacts et par vecteurs, et renvoie des résultats avec citations via MCP.
+
+## Nos _valeurs_
+
+Nous avons mis nos valeurs par écrit pour que vous puissiez nous y tenir, et quelques-unes façonnent ce billet. L’honnêteté, c’est dire franchement où nous en sommes, les risques, les erreurs et nos limites : c’est pourquoi la section sur notre situation, plus bas, est précise. La méthode scientifique, c’est formuler une hypothèse, mesurer et reproduire, parce que les benchmarks priment sur les opinions. L’autonomie, c’est construire des systèmes qui rendent du temps aux gens. L’égalité des chances, c’est que l’accès à l’intelligence ne doit dépendre ni de la géographie, ni de la fortune, ni des diplômes.
+
+Deux contraintes en découlent. Ce que nous construisons doit tourner sur du matériel grand public, et vos données restent sur votre machine, sauf si vous choisissez de les partager. Nous essayons aussi de nous amuser, parce que les problèmes difficiles méritent une équipe qui aime son travail.
+
+## Qui est en _cuisine_
+
+De la recherche, de la sécurité, des ventes, et quelques fondateurs qui ont déjà livré des produits. Nous sommes cinq, et la [page de l’équipe](/about/team) en dit plus.
+
+- **Kyle Croll, directeur général (CEO).** Ancien militaire, avec une expérience du renseignement sur les menaces et de la chasse aux menaces, et un regard tourné vers la stratégie et la sécurité de l’IA.
+- **Eric Gonzalez, directeur des revenus (CRO).** A fait passer des entreprises de 50 M$ à 2 Md$ d’ARR, chez Oracle NetSuite et chez Anaconda.
+- **Eric Kryski, directeur produit (CPO).** Développeur full-stack, designer et chercheur en ML, cofondateur de Bidali et de Bullish Ventures. C’est moi.
+- **Tom Turney, directeur de la recherche.** Le chercheur en IA derrière TurboQuant+, et ancien tech lead manager chez Google.
+- **Cory Smith, directeur technique (CTO).** A mené une entreprise jusqu’à sa sortie, puis cofondé Bidali comme CTO et contribué à porter son volume de paiements en stablecoins à plusieurs millions. Il construit des produits grand public et d’entreprise depuis 2009.
+
+## Où nous _en sommes_
+
+Au début. Nos produits sont privés et à code fermé pour l’instant, et l’accès se fait sur demande. Voici le paysage matériel, sans détour :
+
+- **Silicium Apple, Metal : principal.** Chaque kernel est d’abord écrit et optimisé ici.
+- **NVIDIA, CUDA : secondaire.** En production sur RTX et DGX Spark, avec les GPU de datacenter en cours.
+- **AMD ROCm et Vulkan : fonctionnent.** Les deux fonctionnent aujourd’hui et aucun n’est encore optimisé.
+
+Concrètement, cela veut dire des MacBook et des Mac Studio, des stations RTX, des DGX Spark, du Strix Halo et des flottes de neoclouds, les GPU de datacenter pour entreprises restant à venir. Nous ne donnons pas encore de chiffres de vitesse.
+
+Si vous êtes en accès anticipé, installer Iron tient en une ligne :
+
+```sh
+curl -fsSL https://waffuru.ai/iron/install.sh | sh
+```
+
+## Restez dans la _boucle_
+
+Prenez place. La porte d’entrée, c’est de [demander un accès anticipé](https://forms.gle/SHaVSRRWmZKy8UJy7). Si vous préférez d’abord observer, abonnez-vous à la newsletter dans le pied de page, ou suivez-nous sur [X](https://x.com/waffuruai) et [LinkedIn](https://www.linkedin.com/company/waffuru/).
+
+Des questions, ou quelque chose que vous voulez construire là-dessus ? Écrivez à [hello@waffuru.ai](mailto:hello@waffuru.ai).

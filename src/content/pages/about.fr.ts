@@ -1,159 +1,166 @@
 import type { about } from './about';
 
-// TODO(i18n): translate to fr. Keep hrefs, slugs and product names.
 const aboutFr: (typeof about)['en'] = {
   seo: {
-    title: 'Our mission: democratize access to intelligence',
+    title: 'Mission : démocratiser l’accès à l’intelligence',
     description:
-      'Waffuru’s mission is to democratize access to intelligence. What we believe, what we value and why we build local-first AI infrastructure.',
+      'Waffuru veut démocratiser l’accès à l’intelligence. Nos convictions, nos valeurs et pourquoi nous construisons une infrastructure d’IA locale.',
     keywords: [
-      'Waffuru mission',
-      'democratize AI',
-      'local-first AI company',
-      'AI infrastructure startup',
+      'mission Waffuru',
+      'démocratiser l’IA',
+      'entreprise d’IA locale',
+      'startup d’infrastructure IA',
     ],
   },
   hero: {
-    label: 'About Waffuru',
-    title: 'Democratize access to *intelligence*.',
-    lede: 'Waffuru builds the stack underneath local-first AI: kernels, inference, fleet control and memory that run models fast on the hardware people already own.',
+    label: 'À propos de Waffuru',
+    title: 'Démocratiser l’accès à l’*intelligence*.',
+    lede: 'Waffuru construit la stack qui fait tourner l’IA en local : kernels, inférence, pilotage de flotte et mémoire, pour exécuter vite des modèles sur le matériel que chacun possède déjà.',
     actions: [
-      { label: 'Meet the team', href: '/about/team' },
-      { label: 'Work with us', href: '#hiring', variant: 'outline' },
+      { label: 'Rencontrer l’équipe', href: '/about/team' },
+      { label: 'Travailler avec nous', href: '#hiring', variant: 'outline' },
     ],
   },
   why: {
-    title: 'Why we *build*.',
-    intro: 'Intelligence should run where people already are.',
+    title: 'Pourquoi nous *construisons*.',
+    intro: 'L’intelligence doit tourner là où les gens se trouvent déjà.',
     paragraphs: [
-      'Models are getting good enough to run on hardware people already own.',
-      'That only matters if the stack underneath is ready for it. It has to be faster, cheaper and yours: kernels that get more from every watt, serving without Python in the way, and memory that stays on your machine. It is also the foundation for local-first personal assistants.',
-      'Access to intelligence must not depend on geography, wealth or credentials. A model that needs a datacenter, a budget or a badge is not access. One that runs on a computer you already own is.',
+      'Les modèles deviennent assez bons pour tourner sur le matériel que les gens possèdent déjà.',
+      'Encore faut-il que la stack en dessous soit prête. Elle doit être plus rapide, moins chère et à vous : des kernels qui tirent plus de chaque watt, un serving sans Python dans le chemin, et une mémoire qui reste sur votre machine. C’est aussi la fondation des assistants personnels local-first.',
+      'L’accès à l’intelligence ne doit dépendre ni de la géographie, ni de la fortune, ni des diplômes. Un modèle qui exige un datacenter, un budget ou un badge n’est pas un accès. Celui qui tourne sur un ordinateur que vous possédez déjà, si.',
     ],
-    constraintsLabel: 'Two constraints we hold ourselves to',
+    constraintsLabel: 'Deux contraintes que nous nous imposons',
     constraints: [
-      'It runs on consumer hardware.',
-      'Your data stays on your machine unless you opt in.',
+      'Cela tourne sur du matériel grand public.',
+      'Vos données restent sur votre machine, sauf si vous choisissez de les partager.',
     ],
   },
   beliefs: {
-    title: 'What we *believe*.',
-    intro: 'Seven theses that drive what we build.',
+    title: 'Nos *convictions*.',
+    intro: 'Sept thèses qui guident ce que nous construisons.',
     theses: [
       {
         statement:
-          'Demand for intelligence is limitless. The resources powering it are not.',
-        body: 'Scaling inference takes more than new datacenters and power. It takes more useful work from every unit of compute and energy, so access grows faster than cost, energy demand and environmental impact.',
-      },
-      {
-        statement: 'When power is the ceiling, efficiency is the variable.',
-        body: 'Tokens per watt and dollars per workload are what you can still maximize.',
-      },
-      {
-        statement: 'Demand for compute is insatiable.',
-        body: 'Every efficiency gain gets spent on more intelligence, the Jevons paradox at work. That is why efficiency work never finishes.',
-      },
-      {
-        statement: 'Good-enough models on commodity hardware are close.',
-        body: 'Within about two years, models running on hardware people already own will be good enough for meaningful work. Moore’s law and fast AI progress keep compounding.',
+          'La demande d’intelligence est sans limite. Les ressources qui l’alimentent, non.',
+        body: 'Passer l’inférence à l’échelle demande plus que de nouveaux datacenters et de l’énergie. Il faut tirer plus de travail utile de chaque unité de calcul et d’énergie, pour que l’accès progresse plus vite que le coût, la demande énergétique et l’impact environnemental.',
       },
       {
         statement:
-          'Everyone will have a personal assistant, or a team of them.',
-        body: 'And those assistants will talk to each other.',
+          'Quand l’énergie est le plafond, l’efficacité est la variable.',
+        body: 'Les tokens par watt et les dollars par charge de travail sont ce que vous pouvez encore maximiser.',
       },
       {
-        statement: 'People want agency.',
-        body: 'An assistant has to be a trusted extension of yourself: helpful, approachable, not scary. That relationship will be as personal as the one with your phone.',
+        statement: 'La demande de calcul est insatiable.',
+        body: 'Chaque gain d’efficacité est dépensé en intelligence supplémentaire : le paradoxe de Jevons à l’œuvre. C’est pourquoi le travail sur l’efficacité n’est jamais terminé.',
       },
       {
         statement:
-          'Access to intelligence must not depend on geography, wealth or credentials.',
-        body: 'Raising earning potential everywhere requires open, local access to intelligence.',
+          'Des modèles assez bons sur du matériel courant, c’est pour bientôt.',
+        body: 'D’ici environ deux ans, les modèles exécutés sur le matériel que les gens possèdent déjà seront assez bons pour un vrai travail. La loi de Moore et les progrès rapides de l’IA continuent de se cumuler.',
+      },
+      {
+        statement:
+          'Chacun aura un assistant personnel, voire une équipe d’assistants.',
+        body: 'Et ces assistants se parleront entre eux.',
+      },
+      {
+        statement: 'Les gens veulent garder la main.',
+        body: 'Un assistant doit être un prolongement de vous-même, digne de confiance : utile, accessible, jamais effrayant. Cette relation sera aussi personnelle que celle que vous avez avec votre téléphone.',
+      },
+      {
+        statement:
+          'L’accès à l’intelligence ne doit dépendre ni de la géographie, ni de la fortune, ni des diplômes.',
+        body: 'Accroître le potentiel de revenus partout exige un accès ouvert et local à l’intelligence.',
       },
     ],
   },
   values: {
-    title: 'What we *value*.',
-    intro: 'Fourteen values that guide how we decide.',
+    title: 'Nos *valeurs*.',
+    intro: 'Quatorze valeurs qui guident nos décisions.',
     items: [
       {
-        name: 'Freedom',
-        line: 'Enabling freedom through technology access is fundamental to what we build.',
+        name: 'Liberté',
+        line: 'Permettre la liberté par l’accès à la technologie est au cœur de ce que nous construisons.',
       },
       {
-        name: 'Autonomy',
-        line: 'We build systems that give people time back.',
+        name: 'Autonomie',
+        line: 'Nous construisons des systèmes qui rendent du temps aux gens.',
       },
       {
-        name: 'Agency',
-        line: 'If something needs doing and you are best placed, start it.',
+        name: 'Initiative',
+        line: 'Si quelque chose doit être fait et que vous êtes le mieux placé, lancez-vous.',
       },
-      { name: 'Respect', line: 'We treat people as capable peers.' },
-      { name: 'Trust', line: 'Earned slowly, lost in a moment.' },
+      { name: 'Respect', line: 'Nous traitons les gens en pairs compétents.' },
       {
-        name: 'Honesty',
-        line: 'We state status, risk, mistakes and limits directly.',
-      },
-      {
-        name: 'Integrity',
-        line: 'Keep commitments. Do not ship what you would not stand behind.',
+        name: 'Confiance',
+        line: 'Elle se gagne lentement et se perd en un instant.',
       },
       {
-        name: 'Equal opportunity',
-        line: 'Access to intelligence must not depend on geography, wealth or credentials.',
-      },
-      { name: 'Compassion', line: 'We care about people as people.' },
-      {
-        name: 'Meritocracy',
-        line: 'The best idea wins, on evidence and impact.',
+        name: 'Honnêteté',
+        line: 'Nous disons franchement où nous en sommes, les risques, les erreurs et nos limites.',
       },
       {
-        name: 'Scientific method',
-        line: 'Hypothesize, measure, reproduce. Benchmarks beat opinions.',
+        name: 'Intégrité',
+        line: 'Tenez vos engagements. Ne livrez pas ce que vous ne défendriez pas.',
       },
       {
-        name: 'Quick decisions and actions',
-        line: 'A bias to shipping, measuring and learning.',
+        name: 'Égalité des chances',
+        line: 'L’accès à l’intelligence ne doit dépendre ni de la géographie, ni de la fortune, ni des diplômes.',
       },
       {
-        name: 'Fiscal conservatism',
-        line: 'We spend time and money like they are scarce.',
+        name: 'Compassion',
+        line: 'Nous nous soucions des gens en tant que personnes.',
       },
       {
-        name: 'Having fun',
-        line: 'Hard problems deserve teams that enjoy the work.',
+        name: 'Méritocratie',
+        line: 'La meilleure idée l’emporte, sur la foi des preuves et de l’impact.',
+      },
+      {
+        name: 'Méthode scientifique',
+        line: 'Formuler une hypothèse, mesurer, reproduire. Les benchmarks priment sur les opinions.',
+      },
+      {
+        name: 'Décider et agir vite',
+        line: 'Le réflexe de livrer, de mesurer et d’apprendre.',
+      },
+      {
+        name: 'Rigueur budgétaire',
+        line: 'Nous dépensons le temps et l’argent comme des ressources rares.',
+      },
+      {
+        name: 'Prendre du plaisir',
+        line: 'Les problèmes difficiles méritent des équipes qui aiment leur travail.',
       },
     ],
   },
   teamTeaser: {
-    title: 'The people *behind* it.',
-    body: 'Research, security, revenue and a couple of founders who have shipped before.',
-    cta: 'Meet the team',
-    portraitAlt: 'Portrait of {name}',
+    title: 'Les personnes *derrière* le projet.',
+    body: 'De la recherche, de la sécurité, des ventes, et quelques fondateurs qui ont déjà livré des produits.',
+    cta: 'Rencontrer l’équipe',
+    portraitAlt: 'Portrait de {name}',
   },
   hiring: {
-    label: 'Hiring',
-    title: 'Pull up a *chair*.',
+    label: 'Recrutement',
+    title: 'Tirez une *chaise*.',
     lines: [
-      'We want people who enjoy the low-level work: GPU kernels, inference engines, Rust, Swift and Metal, and the product that sits on top of them.',
-      'We work asynchronously across time zones. We are also an agentic company, with humans and agents building together.',
-      'If that sounds like your kind of kitchen, tell us what you would like to build.',
+      'Nous cherchons des personnes qui aiment le travail bas niveau : kernels GPU, moteurs d’inférence, Rust, Swift et Metal, et le produit qui repose dessus.',
+      'Nous travaillons de façon asynchrone, sur plusieurs fuseaux horaires. Nous sommes aussi une entreprise agentique, où humains et agents construisent ensemble.',
+      'Si c’est votre genre de cuisine, dites-nous ce que vous aimeriez construire.',
     ],
-    skillsLabel: 'What we like working on',
+    skillsLabel: 'Ce sur quoi nous aimons travailler',
     skills: [
-      'Low-level GPU',
+      'GPU bas niveau',
       'Kernels',
-      'Inference',
+      'Inférence',
       'Rust',
-      'Swift and Metal',
-      'Product',
+      'Swift et Metal',
+      'Produit',
     ],
-    cta: 'Get in touch',
+    cta: 'Prendre contact',
   },
   cta: {
-    title: 'Try it *early*.',
-    body: 'Our products are private for now. Request early access, or talk to us about what you want to run on the hardware you already own.',
+    title: 'Essayez-le en *avant-première*.',
+    body: 'Nos produits sont privés pour l’instant. Demandez un accès anticipé, ou parlez-nous de ce que vous voulez faire tourner sur le matériel que vous possédez déjà.',
   },
 };
 

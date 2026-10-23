@@ -1,33 +1,35 @@
 import type { teamCopy } from './team';
 
-// TODO(i18n): translate to fr. Keep hrefs, slugs and product names.
 const teamCopyFr: (typeof teamCopy)['en'] = {
   'kyle-croll': {
-    role: 'CEO',
-    background: 'Ex-military. Threat intelligence, AI strategy and security.',
-    bio: 'Kyle is ex-military, with a background in threat intelligence and threat hunting. As CEO he sets Waffuru’s direction and brings a security lens to how AI gets built and deployed. He holds an MBA from the McCombs School of Business at UT Austin.',
+    role: 'Directeur général (CEO)',
+    background:
+      'Ancien militaire. Renseignement sur les menaces, stratégie IA et sécurité.',
+    bio: 'Kyle est un ancien militaire, spécialisé dans le renseignement sur les menaces et la chasse aux menaces (threat hunting). En tant que CEO, il fixe la direction de Waffuru et apporte un regard de sécurité sur la façon dont l’IA est conçue et déployée. Il est titulaire d’un MBA de la McCombs School of Business, à UT Austin.',
   },
   'eric-gonzalez': {
-    role: 'Chief Revenue Officer',
-    background: 'Scaled companies from $50M to $2B ARR. Ex-Oracle NetSuite.',
-    bio: 'Eric is a revenue leader who has scaled companies from $50M to $2B in ARR. He previously worked at Oracle NetSuite and at Anaconda, the company behind Conda, and he serves as a board member.',
+    role: 'Directeur des revenus (CRO)',
+    background:
+      'A fait passer des entreprises de 50 M$ à 2 Md$ d’ARR. Ancien d’Oracle NetSuite.',
+    bio: 'Eric est un dirigeant commercial qui a fait passer des entreprises de 50 M$ à 2 Md$ de revenus annuels récurrents (ARR). Il a travaillé chez Oracle NetSuite, puis chez Anaconda, l’entreprise derrière Conda, et il siège au conseil d’administration.',
   },
   'eric-kryski': {
-    role: 'Chief Product Officer',
+    role: 'Directeur produit (CPO)',
     background:
-      'Full-stack developer, designer and ML researcher. Co-founder of Bidali.',
-    bio: 'Eric is a full-stack developer, designer and ML researcher who ships product end to end. He is CEO and co-founder of Bidali and co-founder of Bullish Ventures, and he leads product at Waffuru.',
+      'Développeur full-stack, designer et chercheur en ML. Cofondateur de Bidali.',
+    bio: 'Eric est développeur full-stack, designer et chercheur en ML, et il livre des produits de bout en bout. Il est directeur général et cofondateur de Bidali, cofondateur de Bullish Ventures, et il dirige le produit chez Waffuru.',
   },
   'tom-turney': {
-    role: 'Chief of Research',
+    role: 'Directeur de la recherche',
     background:
-      'AI researcher behind TurboQuant+. Former tech lead manager at Google.',
-    bio: 'Tom is the AI researcher behind TurboQuant+, the compression work Syrup uses to shrink embeddings, and he leads research at Waffuru. Before this he was a tech lead manager at Google.',
+      'Chercheur en IA derrière TurboQuant+. Ancien tech lead manager chez Google.',
+    bio: 'Tom est le chercheur en IA derrière TurboQuant+, le travail de compression que Syrup utilise pour réduire la taille des embeddings, et il dirige la recherche chez Waffuru. Auparavant, il était tech lead manager chez Google.',
   },
   'cory-smith': {
-    role: 'Chief Technology Officer',
-    background: 'Has exited a company. Co-founder and CTO of Bidali.',
-    bio: 'Cory has exited a company and is co-founder and CTO of Bidali, which he helped grow to millions in stablecoin payments volume. He is a managing director at Bullish Ventures and has been building consumer and enterprise products since 2009.',
+    role: 'Directeur technique (CTO)',
+    background:
+      'A déjà mené une entreprise jusqu’à sa sortie. Cofondateur et CTO de Bidali.',
+    bio: 'Cory a mené une entreprise jusqu’à sa sortie (exit) et il est cofondateur et CTO de Bidali, dont il a contribué à porter le volume de paiements en stablecoins à plusieurs millions. Il est managing director chez Bullish Ventures et construit des produits grand public et d’entreprise depuis 2009.',
   },
 };
 

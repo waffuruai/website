@@ -1,65 +1,64 @@
 import type { contact } from './contact';
 
-// TODO(i18n): translate to fr. Keep hrefs, slugs and product names.
 const contactFr: (typeof contact)['en'] = {
   seo: {
     title: 'Contact',
     description:
-      'Reach Waffuru for sales, partnerships, press, support, security reports or hiring, or ask for early access.',
+      'Contactez Waffuru pour les ventes, les partenariats, la presse, le support, un signalement de sécurité ou le recrutement, ou demandez un accès anticipé.',
     keywords: [
-      'contact Waffuru',
-      'AI infrastructure sales',
-      'partnerships',
-      'Waffuru press',
-      'Waffuru early access',
+      'contacter Waffuru',
+      'vente d’infrastructure IA',
+      'partenariats',
+      'presse Waffuru',
+      'accès anticipé Waffuru',
     ],
   },
   hero: {
     label: 'Contact',
-    title: 'Tell us what you’re *building*.',
-    lede: 'Sales, partnerships, press, support, security and hiring all reach us at hello@waffuru.ai. Pick the topic that fits.',
+    title: 'Dites-nous ce que vous *construisez*.',
+    lede: 'Ventes, partenariats, presse, support, sécurité et recrutement : tout arrive à hello@waffuru.ai. Choisissez le sujet qui convient.',
   },
   callouts: {
-    title: 'Pick a *door*.',
+    title: 'Choisissez une *porte*.',
     intro:
-      'No forms to fill in. Each button opens an email with the subject already set.',
-    emailLabel: 'Email us',
+      'Aucun formulaire à remplir. Chaque bouton ouvre un e-mail dont l’objet est déjà renseigné.',
+    emailLabel: 'Nous écrire',
     items: [
       {
         subject: 'Sales',
-        title: 'Sales',
-        body: 'Running models on your own hardware, or a fleet of it? Tell us the workload and where it runs.',
+        title: 'Ventes',
+        body: 'Vous faites tourner des modèles sur votre propre matériel, ou sur toute une flotte ? Dites-nous la charge de travail et où elle tourne.',
       },
       {
         subject: 'Partnerships',
-        title: 'Partnerships',
-        body: 'Hardware makers, neoclouds and model teams: tell us what you’d like to build together.',
+        title: 'Partenariats',
+        body: 'Fabricants de matériel, neoclouds et équipes de modèles : dites-nous ce que vous aimeriez construire ensemble.',
       },
       {
         subject: 'Press',
-        title: 'Press',
-        body: 'Writing about local AI, GPU software or the people building it? We’re glad to talk.',
+        title: 'Presse',
+        body: 'Vous écrivez sur l’IA locale, les logiciels GPU ou les personnes qui les construisent ? Nous en parlerons volontiers.',
       },
       {
         subject: 'Support',
         title: 'Support',
-        body: 'Something broken or unclear? Send your hardware, what you ran and what happened.',
+        body: 'Quelque chose ne marche pas ou n’est pas clair ? Envoyez-nous votre matériel, ce que vous avez lancé et ce qui s’est passé.',
       },
       {
         subject: 'Security',
-        title: 'Security',
-        body: 'Found a vulnerability? Tell us privately and give us time to fix it before it goes public.',
+        title: 'Sécurité',
+        body: 'Vous avez trouvé une vulnérabilité ? Dites-le-nous en privé et laissez-nous le temps de la corriger avant qu’elle ne soit rendue publique.',
       },
       {
         subject: 'Hiring',
-        title: 'Hiring',
-        body: 'Want to help build the stack? Tell us what you’ve shipped and what you’d like to work on.',
+        title: 'Recrutement',
+        body: 'Envie de nous aider à construire la stack ? Dites-nous ce que vous avez livré et sur quoi vous aimeriez travailler.',
       },
     ],
   },
   earlyAccess: {
-    title: 'Want it *first*?',
-    body: 'Our products are in private early access. Tell us what you want to run, and on what hardware, and we’ll write when we have something that fits.',
+    title: 'Envie de l’avoir en *premier* ?',
+    body: 'Nos produits sont en accès anticipé privé. Dites-nous ce que vous voulez faire tourner, et sur quel matériel, et nous vous écrirons quand nous aurons quelque chose qui convient.',
   },
 };
 

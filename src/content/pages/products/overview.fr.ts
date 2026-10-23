@@ -1,63 +1,65 @@
 import type { productsOverview } from './overview';
 
-// TODO(i18n): translate to fr. Keep hrefs, slugs and product names.
 const productsOverviewFr: (typeof productsOverview)['en'] = {
   seo: {
-    title: 'The Waffuru stack: kernels, serving, control and memory',
+    title: 'Stack Waffuru : kernels, serving, contrôle, mémoire',
     description:
-      'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on. Use one, or all four.',
+      'Iron compile les kernels. Butter y exécute les modèles. Waffle surveille les GPU. Syrup se souvient de ce sur quoi vous travailliez. Utilisez-en un, ou les quatre.',
     keywords: [
-      'AI inference stack',
-      'GPU kernels to serving',
-      'local-first AI infrastructure',
+      'stack d’inférence IA',
+      'des kernels GPU au serving',
+      'infrastructure d’IA local-first',
     ],
   },
   hero: {
-    label: 'Four products',
-    title: 'The Waffuru *stack*.',
-    lede: 'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on. All four are built to run on the hardware you already own.',
+    label: 'Quatre produits',
+    title: 'La *stack* Waffuru.',
+    lede: 'Iron compile les kernels. Butter y exécute les modèles. Waffle surveille les GPU. Syrup se souvient de ce sur quoi vous travailliez. Les quatre sont conçus pour tourner sur le matériel que vous possédez déjà.',
   },
   layers: {
-    heading: 'How the four layers *fit*.',
+    heading: 'Comment les quatre couches *s’emboîtent*.',
     intro:
-      'Numbered from the metal up. Syrup sits on top, Iron sits at the metal, and each layer has its own page.',
+      'Numérotées depuis le métal. Syrup est au sommet, Iron au contact du métal, et chaque couche a sa propre page.',
     metal: {
-      label: 'The metal',
+      label: 'Le métal',
       backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
     },
-    listLabel: 'The four layers of the stack',
+    listLabel: 'Les quatre couches de la stack',
   },
   together: {
-    heading: 'Use one, or *all four*.',
+    heading: 'Utilisez-en une, ou *les quatre*.',
     intro:
-      'Start with the layer that solves today’s problem. Add the next when you need it.',
-    aloneLabel: 'On its own',
+      'Commencez par la couche qui résout le problème du jour. Ajoutez la suivante quand vous en avez besoin.',
+    aloneLabel: 'Utilisé seul',
     alone: {
-      iron: 'Write a GPU kernel once and run it on Metal, CUDA, ROCm and Vulkan.',
+      iron: 'Écrivez un kernel GPU une fois et exécutez-le sur Metal, CUDA, ROCm et Vulkan.',
       butter:
-        'Serve models behind an OpenAI-compatible API, with no Python in the way.',
+        'Servez des modèles derrière une API compatible OpenAI, sans Python dans le chemin.',
       waffle:
-        'See every GPU and every engine running on it, whichever engine that is.',
-      syrup: 'Give your AI local, cited memory of your notes and code.',
+        'Voyez chaque GPU et chaque moteur qui y tourne, quel que soit ce moteur.',
+      syrup:
+        'Donnez à votre IA une mémoire locale et citée de vos notes et de votre code.',
     },
-    allLabel: 'Together',
-    all: 'Butter runs models on the kernels Iron compiles, Waffle watches the GPUs and engines under them, and Syrup remembers what you were working on. Each layer you add builds on the ones below.',
+    allLabel: 'Ensemble',
+    all: 'Butter exécute les modèles sur les kernels qu’Iron compile, Waffle surveille les GPU et les moteurs qui tournent dessus, et Syrup se souvient de ce sur quoi vous travailliez. Chaque couche ajoutée s’appuie sur celles du dessous.',
   },
   audience: {
-    heading: 'Who it’s *for*.',
-    intro: 'Pick the page that sounds like you.',
+    heading: 'Pour *qui*.',
+    intro: 'Choisissez la page qui vous ressemble.',
     items: {
       smallBusiness:
-        'Run private AI on the Macs and workstations you already own.',
-      enterprise: 'Run inference you control, on-prem or in your own cloud.',
-      neoclouds: 'See every GPU in your fleet and every engine running on it.',
+        'Faites tourner une IA privée sur les Mac et les stations de travail que vous possédez déjà.',
+      enterprise:
+        'Faites tourner une inférence que vous maîtrisez, sur site ou dans votre propre cloud.',
+      neoclouds:
+        'Voyez chaque GPU de votre flotte et chaque moteur qui y tourne.',
       aiCompanies:
-        'Write kernels once and serve models across Metal, CUDA, ROCm and Vulkan.',
+        'Écrivez vos kernels une fois et servez vos modèles sur Metal, CUDA, ROCm et Vulkan.',
     },
   },
   cta: {
-    title: 'Start with the *layer* you need.',
-    body: 'The whole stack is in early access and closed source for now. Request access and tell us which layer you want first.',
+    title: 'Commencez par la *couche* qu’il vous faut.',
+    body: 'Toute la stack est en accès anticipé et à code fermé pour l’instant. Demandez l’accès et dites-nous quelle couche vous voulez en premier.',
   },
 };
 

@@ -1,29 +1,28 @@
 import type { teamPage } from './team';
 
-// TODO(i18n): translate to fr. Keep hrefs, slugs and product names.
 const teamPageFr: (typeof teamPage)['en'] = {
   seo: {
-    title: 'Meet the founders and team',
+    title: 'Les fondateurs et l’équipe',
     description:
-      'The people building Waffuru: research, security, revenue and a couple of founders who have shipped before.',
-    keywords: ['Waffuru team', 'Waffuru founders'],
+      'Les personnes qui construisent Waffuru : de la recherche, de la sécurité, des ventes, et quelques fondateurs qui ont déjà livré des produits.',
+    keywords: ['équipe Waffuru', 'fondateurs Waffuru'],
   },
   hero: {
-    label: 'Team',
-    title: 'Who’s in the *kitchen*.',
-    lede: 'Research, security, revenue and a couple of founders who have shipped before.',
+    label: 'Équipe',
+    title: 'Qui est en *cuisine*.',
+    lede: 'De la recherche, de la sécurité, des ventes, et quelques fondateurs qui ont déjà livré des produits.',
   },
-  portraitAlt: 'Portrait of {name}',
-  linkAria: '{name} on {network}',
+  portraitAlt: 'Portrait de {name}',
+  linkAria: '{name} sur {network}',
   linkNames: {
     linkedin: 'LinkedIn',
-    website: 'Website',
+    website: 'Site web',
     x: 'X',
     github: 'GitHub',
   },
   cta: {
-    title: 'See what we’re *cooking*.',
-    body: 'Our products are private for now. Request early access to try them, or talk to us about what you need.',
+    title: 'Voyez ce qui *mijote*.',
+    body: 'Nos produits sont privés pour l’instant. Demandez un accès anticipé pour les essayer, ou parlez-nous de vos besoins.',
   },
 };
 

@@ -1,21 +1,24 @@
 import type { productsShared } from './shared';
 
-// TODO(i18n): translate to fr. Keep hrefs, slugs and product names.
 const productsSharedFr: (typeof productsShared)['en'] = {
-  statusLabel: 'Private · early access',
-  storyProblemLabel: 'The problem',
-  storyOutcomeLabel: 'What you can do now',
-  tierLabels: { primary: 'Primary', secondary: 'Secondary', runs: 'Runs' },
-  tierLegend: 'More bars, more tuning.',
+  statusLabel: 'Privé · accès anticipé',
+  storyProblemLabel: 'Le problème',
+  storyOutcomeLabel: 'Ce que vous pouvez faire maintenant',
+  tierLabels: {
+    primary: 'Principal',
+    secondary: 'Secondaire',
+    runs: 'Fonctionne',
+  },
+  tierLegend: 'Plus de barres, plus d’optimisation.',
   runsOn: {
-    label: 'Runs on',
+    label: 'Fonctionne sur',
     items: [
       { label: 'MacBook & Mac Studio' },
-      { label: 'RTX workstations' },
+      { label: 'Stations RTX' },
       { label: 'DGX Spark' },
       { label: 'Strix Halo' },
-      { label: 'Neocloud fleets' },
-      { label: 'Enterprise datacenter GPUs', inProgress: true },
+      { label: 'Flottes de neoclouds' },
+      { label: 'GPU de datacenter pour entreprises', inProgress: true },
     ],
   },
 };

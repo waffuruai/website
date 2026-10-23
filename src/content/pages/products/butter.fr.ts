@@ -1,101 +1,100 @@
 import type { butter } from './butter';
 
-// TODO(i18n): translate to fr. Keep hrefs, slugs and product names.
 const butterFr: (typeof butter)['en'] = {
   layer: 'Serving',
-  tagline: 'Model serving without Python.',
+  tagline: 'Servir des modèles sans Python.',
   summary:
-    'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 3- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
+    'Swift sur Metal pour le silicium Apple, Rust pour CUDA et le reste. Charge des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et MoE, avec un cache KV quantifié.',
   seo: {
-    title: 'Butter: LLM inference without Python',
+    title: 'Butter : inférence LLM sans Python',
     description:
-      'Butter is an LLM inference engine: Swift on Metal for Apple silicon, Rust for CUDA and the rest. It loads Hugging Face models as they are and serves them over an OpenAI-compatible API.',
+      'Moteur d’inférence LLM : Swift sur Metal pour le silicium Apple, Rust pour CUDA et le reste. Charge les modèles Hugging Face tels quels, API compatible OpenAI.',
     keywords: [
-      'LLM inference engine',
-      'local LLM serving',
-      'Apple silicon inference',
-      'OpenAI-compatible server',
-      'quantized KV cache',
+      'moteur d’inférence LLM',
+      'serving LLM local',
+      'inférence sur silicium Apple',
+      'serveur compatible OpenAI',
+      'cache KV quantifié',
       'GGUF MLX safetensors',
     ],
   },
   hero: {
-    title: 'Model serving *without* Python.',
-    lede: 'Butter is an inference engine written in Swift on Metal for Apple silicon and Rust for CUDA and the rest. No Python, no JIT, and models load straight from Hugging Face.',
+    title: 'Servir des modèles *sans* Python.',
+    lede: 'Butter est un moteur d’inférence écrit en Swift sur Metal pour le silicium Apple et en Rust pour CUDA et le reste. Pas de Python, pas de JIT, et les modèles se chargent directement depuis Hugging Face.',
     highlights: [
       {
         value: '4',
-        label: 'checkpoint formats, loaded without conversion',
+        label: 'formats de checkpoint, chargés sans conversion',
       },
       {
-        value: '3–8 bit',
-        label: 'quantized checkpoints, with a quantized KV cache',
+        value: '2–8 bits',
+        label: 'checkpoints quantifiés, avec un cache KV quantifié',
       },
-      { value: 'No Python', label: 'and no JIT' },
+      { value: 'Sans Python', label: 'et sans JIT' },
     ],
   },
   story: {
-    heading: 'Skip the Python and the *conversion*.',
+    heading: 'Oubliez Python et la *conversion*.',
     problem:
-      'Getting a model to answer usually means a Python environment, a conversion step and a runtime that compiles as it goes. On a laptop or a single GPU box, that is a lot of machinery standing between you and a response.',
+      'Pour qu’un modèle réponde, il faut généralement un environnement Python, une étape de conversion et un runtime qui compile au fil de l’eau. Sur un portable ou une machine à un seul GPU, cela fait beaucoup de mécanique entre vous et une réponse.',
     outcome:
-      'Point Butter at a model on Hugging Face. It loads safetensors, MLX, JANG and GGUF as they are, and butter serve gives you an OpenAI-compatible server on the hardware you already own.',
+      'Pointez Butter vers un modèle sur Hugging Face. Il charge safetensors, MLX, JANG et GGUF tels quels, et butter serve vous donne un serveur compatible OpenAI sur le matériel que vous possédez déjà.',
     outcomes: [
-      'Run 3- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models on a Mac or an RTX workstation.',
-      'Point the tools you already use at an OpenAI-compatible endpoint, with streaming and tool calling.',
-      'Keep memory use down on long contexts with a quantized KV cache.',
+      'Faites tourner des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et des modèles MoE (mixture of experts) sur un Mac ou une station RTX.',
+      'Pointez les outils que vous utilisez déjà vers un endpoint compatible OpenAI, avec streaming et appel d’outils.',
+      'Gardez la mémoire sous contrôle sur les longs contextes grâce à un cache KV quantifié.',
     ],
   },
   capabilities: {
-    heading: 'What Butter *does*.',
+    heading: 'Ce que fait *Butter*.',
     intro:
-      'From loading a checkpoint to streaming tokens, with no Python in between.',
+      'Du chargement d’un checkpoint au streaming des tokens, sans Python entre les deux.',
     items: [
       {
-        title: 'Loads models as they are',
-        body: 'Pull safetensors, MLX, JANG or GGUF straight from Hugging Face. There is no conversion step.',
+        title: 'Charge les modèles tels quels',
+        body: 'Récupérez safetensors, MLX, JANG ou GGUF directement depuis Hugging Face. Aucune étape de conversion.',
       },
       {
-        title: 'Quantized, hybrid and MoE',
-        body: 'Runs 3- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models.',
+        title: 'Quantifié, hybride et MoE',
+        body: 'Fait tourner des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et des modèles MoE (mixture of experts).',
       },
       {
-        title: 'A quantized KV cache',
-        body: 'Stores the KV cache quantized, to keep memory use down as context grows.',
+        title: 'Un cache KV quantifié',
+        body: 'Stocke le cache KV en quantifié, pour contenir l’usage mémoire à mesure que le contexte s’allonge.',
       },
       {
-        title: 'OpenAI-compatible serving',
-        body: 'butter serve exposes an OpenAI-compatible API, with streaming and tool calling.',
+        title: 'Serving compatible OpenAI',
+        body: 'butter serve expose une API compatible OpenAI, avec streaming et appel d’outils.',
       },
       {
-        title: 'Speculative decoding and LoRA',
-        body: 'Speculative decoding for generation, and LoRA for the adapters you train yourself.',
+        title: 'Décodage spéculatif et LoRA',
+        body: 'Le décodage spéculatif pour la génération, et LoRA pour les adaptateurs que vous entraînez vous-même.',
       },
       {
-        title: 'More than text',
-        body: 'Text, vision, speech-to-text, text-to-speech and omni models.',
+        title: 'Plus que du texte',
+        body: 'Modèles de texte, de vision, de reconnaissance vocale, de synthèse vocale et omni.',
       },
     ],
   },
   code: {
-    heading: 'Start a server, then *ask* it.',
+    heading: 'Lancez un serveur, puis *interrogez*-le.',
     intro:
-      'Butter speaks the OpenAI API, so the clients you already use can point at it.',
+      'Butter parle l’API OpenAI : les clients que vous utilisez déjà peuvent le viser.',
     caption:
-      'Illustrative. Replace the placeholders with your model and port. Not a benchmark.',
+      'À titre d’illustration. Remplacez les valeurs entre chevrons par votre modèle et votre port. Ce n’est pas un benchmark.',
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: 'Les *détails* techniques.',
+    intro: 'Les détails, pour celles et ceux qui les liront.',
     rows: [
       {
         term: 'Runtime',
         detail:
-          'Swift on Metal for Apple silicon. Rust for CUDA and the rest. No Python, no JIT.',
+          'Swift sur Metal pour le silicium Apple. Rust pour CUDA et le reste. Pas de Python, pas de JIT.',
       },
       {
-        term: 'Model formats',
-        detail: 'Loaded straight from Hugging Face, with no conversion.',
+        term: 'Formats de modèles',
+        detail: 'Chargés directement depuis Hugging Face, sans conversion.',
         chips: [
           { label: 'safetensors' },
           { label: 'MLX' },
@@ -103,34 +102,37 @@ const butterFr: (typeof butter)['en'] = {
           { label: 'GGUF' },
         ],
       },
-      { term: 'Quantization', detail: '3- to 8-bit quantized checkpoints.' },
+      {
+        term: 'Quantification',
+        detail: 'Checkpoints quantifiés de 2 à 8 bits.',
+      },
       {
         term: 'Architectures',
-        detail: 'Hybrid and mixture-of-experts (MoE) models.',
+        detail: 'Modèles hybrides et mixture-of-experts (MoE).',
       },
-      { term: 'KV cache', detail: 'Quantized.' },
+      { term: 'Cache KV', detail: 'Quantifié.' },
       {
-        term: 'Serving API',
-        detail: 'OpenAI-compatible, started with butter serve.',
+        term: 'API de serving',
+        detail: 'Compatible OpenAI, lancée avec butter serve.',
         chips: [
           { label: 'Streaming' },
-          { label: 'Tool calling' },
-          { label: 'Speculative decoding' },
+          { label: 'Appel d’outils' },
+          { label: 'Décodage spéculatif' },
           { label: 'LoRA' },
         ],
       },
       {
-        term: 'Modalities',
+        term: 'Modalités',
         chips: [
-          { label: 'Text' },
+          { label: 'Texte' },
           { label: 'Vision' },
-          { label: 'Speech-to-text' },
-          { label: 'Text-to-speech' },
+          { label: 'Reconnaissance vocale' },
+          { label: 'Synthèse vocale' },
           { label: 'Omni' },
         ],
       },
       {
-        term: 'Model families',
+        term: 'Familles de modèles',
         groups: [
           { label: 'Meta', text: 'Llama 3, 3.1, 3.2, 3.3' },
           { label: 'Google', text: 'Gemma 2, 3, 4; PaliGemma' },
@@ -151,74 +153,74 @@ const butterFr: (typeof butter)['en'] = {
         ],
       },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: 'Disponibilité',
+        detail: 'Privé et à code fermé pendant l’accès anticipé.',
       },
     ],
   },
   platforms: {
-    heading: 'Where it *runs*.',
+    heading: 'Où ça *tourne*.',
     intro:
-      'Metal is the primary target. CUDA is secondary, and ROCm and Vulkan run but are not tuned yet.',
+      'Metal est la cible principale. CUDA est secondaire, et ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
     tiers: [
       {
         platform: 'Apple · Metal',
         level: 'primary',
-        note: 'Swift on Metal for Apple silicon: MacBook and Mac Studio.',
+        note: 'Swift sur Metal pour le silicium Apple : MacBook et Mac Studio.',
       },
       {
         platform: 'NVIDIA · CUDA',
         level: 'secondary',
-        note: 'Rust on CUDA. In production on RTX and DGX Spark; datacenter GPUs are in progress.',
+        note: 'Rust sur CUDA. En production sur RTX et DGX Spark ; GPU de datacenter en cours.',
       },
       {
         platform: 'AMD ROCm · Vulkan',
         level: 'runs',
-        note: 'Works today, not tuned yet.',
+        note: 'Fonctionne aujourd’hui, pas encore optimisé.',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: 'Compatible avec le reste de la *stack*.',
     intro:
-      'Butter runs models on the kernels Iron compiles. Waffle can watch it alongside vLLM, SGLang and llama.cpp, and Syrup gives your AI a memory of what you were working on.',
+      'Butter exécute les modèles sur les kernels qu’Iron compile. Waffle peut le surveiller aux côtés de vLLM, SGLang et llama.cpp, et Syrup donne à votre IA la mémoire de ce sur quoi vous travailliez.',
   },
   faq: [
     {
-      question: 'Is Butter open source?',
+      question: 'Butter est-il open source ?',
       answer:
-        'Not today. Butter is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        'Pas aujourd’hui. Butter est privé et à code fermé pendant l’accès anticipé. Demandez l’accès et nous vous écrirons quand il y aura plus à partager.',
     },
     {
-      question: 'What hardware does it run on?',
+      question: 'Sur quel matériel cela tourne-t-il ?',
       answer:
-        'Swift on Metal for Apple silicon is the primary target, from a MacBook to a Mac Studio. CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. ROCm and Vulkan run today but are not tuned yet.',
+        'Swift sur Metal pour le silicium Apple est la cible principale, du MacBook au Mac Studio. CUDA est secondaire, en production sur RTX et DGX Spark, avec les GPU de datacenter en cours. ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
     },
     {
-      question: 'Which models does it run?',
+      question: 'Quels modèles fait-il tourner ?',
       answer:
-        'Coverage today includes Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite and Phi, among the others listed above, in text, vision, speech and omni variants. DeepSeek V4 is in progress.',
+        'La couverture actuelle comprend Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite et Phi, entre autres listés plus haut, en variantes texte, vision, voix et omni. DeepSeek V4 est en cours.',
     },
     {
-      question: 'Do I need Python?',
+      question: 'Ai-je besoin de Python ?',
       answer:
-        'No. Butter is Swift on Metal for Apple silicon and Rust for CUDA and the rest, with no Python and no JIT.',
+        'Non. Butter, c’est du Swift sur Metal pour le silicium Apple et du Rust pour CUDA et le reste, sans Python et sans JIT.',
     },
     {
-      question: 'Will my existing tools work with it?',
+      question: 'Mes outils actuels fonctionneront-ils avec Butter ?',
       answer:
-        'Butter serves an OpenAI-compatible API with butter serve, including streaming and tool calling, so clients that speak that API can point at it.',
+        'Butter sert une API compatible OpenAI avec butter serve, y compris le streaming et l’appel d’outils : les clients qui parlent cette API peuvent le viser.',
     },
     {
-      question: 'How fast is it?',
+      question: 'À quelle vitesse tourne-t-il ?',
       answer:
-        'We haven’t published benchmark numbers, so we won’t quote one here. Speculative decoding and a quantized KV cache are built in, and we’d rather show you a measurement than make a claim.',
+        'Nous n’avons publié aucun chiffre de benchmark, donc nous n’en citerons pas ici. Le décodage spéculatif et un cache KV quantifié sont intégrés, et nous préférons vous montrer une mesure plutôt que d’avancer une affirmation.',
     },
   ],
   cta: {
-    title: 'Melt away *latency*.',
-    body: 'Butter is in early access and closed source for now. Request access, and read the docs while you wait.',
-    docsLabel: 'Read the docs',
+    title: 'Faites fondre la *latence*.',
+    body: 'Butter est en accès anticipé et à code fermé pour l’instant. Demandez l’accès, et lisez la documentation en attendant.',
+    docsLabel: 'Lire la documentation',
   },
 };
 
