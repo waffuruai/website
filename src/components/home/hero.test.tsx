@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { Hero } from '@/components/home/hero';
 import { HeroTiles } from '@/components/home/hero-tiles';
@@ -8,6 +8,11 @@ import { site } from '@/content/site';
 import { withDictionary } from '@/i18n/test-utils';
 
 const primary = { label: 'Request early access', href: site.urls.earlyAccess };
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+  vi.restoreAllMocks();
+});
 
 describe('Hero', () => {
   it('renders the one h1 with the gold accent word', () => {
@@ -44,34 +49,40 @@ describe('Hero', () => {
 });
 
 describe('HeroTiles', () => {
-  it('lays out 18 x 9 tiles, 25 of them hot, hidden from assistive tech', () => {
+  it('draws on two canvases, hidden from assistive tech', () => {
+    stubBrowserApis();
     const { container } = render(<HeroTiles />);
-    expect(container.firstElementChild?.getAttribute('aria-hidden')).toBe(
-      'true',
-    );
-    expect(container.querySelectorAll('.wf-cell')).toHaveLength(162);
-    expect(container.querySelectorAll('.wf-cell[data-hot]')).toHaveLength(25);
+    const floor = container.firstElementChild;
+    expect(floor?.getAttribute('aria-hidden')).toBe('true');
+    expect(floor?.querySelectorAll('canvas')).toHaveLength(2);
+    // No 162 animated elements any more.
+    expect(container.querySelectorAll('.wf-cell')).toHaveLength(0);
   });
 
-  it('ripples diagonally: delay is (row + column) x 0.18s', () => {
-    const { container } = render(<HeroTiles />);
-    const tiles = [...container.querySelectorAll<HTMLElement>('.wf-cell')];
-    expect(tiles[0].style.animationDelay).toBe('0s');
-    expect(tiles[1].style.animationDelay).toBe('0.18s');
-    // Row 1, column 0.
-    expect(tiles[18].style.animationDelay).toBe('0.18s');
-    // Last tile: row 8, column 17.
-    expect(tiles[161].style.animationDelay).toBe('4.5s');
-  });
-
-  it('pools gold where the design does', () => {
-    const { container } = render(<HeroTiles />);
-    const hot = [...container.querySelectorAll('.wf-cell')]
-      .map((tile, index) => (tile.hasAttribute('data-hot') ? index : -1))
-      .filter((index) => index >= 0);
-    expect(hot).toEqual([
-      0, 11, 13, 22, 23, 34, 35, 44, 46, 58, 66, 69, 75, 81, 88, 93, 97, 104,
-      116, 119, 128, 139, 141, 150, 151,
-    ]);
+  it('marks itself ready once set up, and tears down cleanly', () => {
+    const { disconnect } = stubBrowserApis();
+    const { container, unmount } = render(<HeroTiles />);
+    expect(container.firstElementChild?.hasAttribute('data-ready')).toBe(true);
+    unmount();
+    expect(disconnect).toHaveBeenCalled();
   });
 });
+
+/** jsdom lacks the observers and matchMedia the floor uses. */
+function stubBrowserApis() {
+  const disconnect = vi.fn();
+  class Observer {
+    observe() {}
+    disconnect = disconnect;
+  }
+  vi.stubGlobal('ResizeObserver', Observer);
+  vi.stubGlobal('IntersectionObserver', Observer);
+  vi.stubGlobal('matchMedia', () => ({
+    matches: false,
+    addEventListener() {},
+    removeEventListener() {},
+  }));
+  // jsdom has no canvas: getContext returns null and the floor draws nothing.
+  vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
+  return { disconnect };
+}

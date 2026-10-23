@@ -114,7 +114,7 @@ export const teamCopy: Localized<Record<string, TeamCopy>> = {
     'kyle-croll': {
       role: 'CEO',
       background: 'Ex-military. Threat intelligence, AI strategy and security.',
-      bio: 'Kyle is ex-military, with a background in threat intelligence and threat hunting. As CEO he sets Waffuru’s direction and brings a security lens to how AI gets built and deployed. He holds an MBA from the McCombs School of Business at UT Austin.',
+      bio: 'Kyle is ex-military, with a background in threat intelligence and threat hunting. As CEO he sets Waffuru’s direction and brings a security lens to how AI gets built and deployed. He studied at UT Austin’s McCombs School of Business.',
     },
     'eric-gonzalez': {
       role: 'Chief Revenue Officer',
