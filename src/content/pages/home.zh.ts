@@ -1,80 +1,79 @@
 import type { home } from './home';
 
-// TODO(i18n): translate to zh. Keep hrefs, slugs and product names.
 const homeZh: (typeof home)['en'] = {
   seo: {
     keywords: [
-      'local LLM inference',
-      'GPU kernels',
-      'inference engine',
-      'Apple silicon',
+      '本地大模型推理',
+      'GPU 内核',
+      '推理引擎',
+      'Apple 芯片',
       'Metal',
       'CUDA',
       'ROCm',
       'Vulkan',
-      'GPU fleet management',
-      'neocloud',
-      'on-device AI',
-      'private AI',
+      'GPU 集群管理',
+      '新型云服务商',
+      '端侧 AI',
+      '私有化部署 AI',
     ],
   },
 
   hero: {
-    eyebrow: 'Four products · closed source for now',
-    title: 'Raw math, *pressed* into silicon.',
-    lede: 'We write GPU kernels, an inference engine, a control plane and a retrieval layer. They run on a laptop, a home lab or a neocloud fleet.',
-    secondary: { label: 'See the stack', href: '#stack' },
+    eyebrow: '四款产品 · 暂未开源',
+    title: '把纯粹的数学，*压进*硅片。',
+    lede: '我们编写 GPU 内核、推理引擎、控制平面和检索层。它们可以运行在笔记本、家庭实验室或新型云服务商的集群上。',
+    secondary: { label: '查看技术栈', href: '#stack' },
     emits: {
-      label: 'Emits',
+      label: '生成',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
     },
   },
 
   stack: {
-    title: 'The stack.',
+    title: '技术栈。',
     intro:
-      'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on.',
+      'Iron 编译内核，Butter 在内核上运行模型，Waffle 盯着 GPU，Syrup 记得你在做什么。',
     products: [
       {
         slug: 'syrup',
         index: '04',
-        kicker: 'Memory',
+        kicker: '记忆',
         name: 'Syrup',
-        tagline: 'Your AI remembers what you were working on.',
-        body: 'Local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+        tagline: '让你的 AI 记得你在做什么。',
+        body: '对你的笔记和代码做本地检索。嵌入向量用 TurboQuant+ 压缩，搜索结合关键词与向量，结果通过 MCP 返回，并附带引用。',
       },
       {
         slug: 'waffle',
         index: '03',
-        kicker: 'Control plane',
+        kicker: '控制平面',
         name: 'Waffle',
-        tagline: 'See every GPU and every engine running on it.',
-        body: 'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+        tagline: '看清每一块 GPU 和其上运行的每个引擎。',
+        body: '面向 GPU 上大模型的控制平面，从桌下的一台机器，到出租集群的新型云服务商。每台主机运行一个小型 Rust sidecar，上报带签名的遥测数据。支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
       },
       {
         slug: 'butter',
         index: '02',
-        kicker: 'Serving',
+        kicker: '模型服务',
         name: 'Butter',
-        tagline: 'Model serving without Python.',
-        body: 'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 3- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
+        tagline: '无需 Python 的模型服务。',
+        body: 'Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。可加载 2 至 8 位量化检查点、混合模型和 MoE 模型，并支持量化 KV 缓存。',
       },
       {
         slug: 'iron',
         index: '01',
-        kicker: 'Kernels',
+        kicker: '内核',
         name: 'Iron',
-        tagline: 'One kernel definition, four backends.',
-        body: 'A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
+        tagline: '一次定义内核，生成四种后端。',
+        body: '嵌入 Rust 的 DSL。内核先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。版本化的 C 与 Rust ABI 让现有宿主可以直接调用。',
       },
     ],
   },
 
   models: {
-    title: 'Models on the menu.',
+    title: '菜单上的模型。',
     intro:
-      'Loaded straight from Hugging Face. Coverage is widest on Metal; CUDA support is added model by model.',
-    legend: { supported: 'Supported', inProgress: 'In progress' },
+      '直接从 Hugging Face 加载。Metal 上覆盖最广；CUDA 的支持逐个模型添加。',
+    legend: { supported: '已支持', inProgress: '进行中' },
     lanes: [
       [
         {
@@ -137,7 +136,7 @@ const homeZh: (typeof home)['en'] = {
   },
 
   kernel: {
-    title: 'You write this.\n*Iron writes the rest.*',
+    title: '你写这些。\n*其余交给 Iron。*',
     code: {
       file: 'unary.rs',
       label: 'iron · rust dsl',
@@ -157,51 +156,50 @@ const homeZh: (typeof home)['en'] = {
         },
       ],
     },
-    tuned: { title: 'Where it’s tuned', note: 'Pulse = relative speed' },
+    tuned: { title: '调优在哪里', note: '脉冲 = 相对速度' },
     tiers: [
       {
         name: 'Apple · Metal',
         level: 'primary',
-        label: 'Primary',
-        note: 'Every kernel is written and tuned here first. MSL → .metallib.',
+        label: '首要',
+        note: '每个内核都先在这里编写并调优。MSL → .metallib。',
       },
       {
         name: 'NVIDIA · CUDA',
         level: 'secondary',
-        label: 'Secondary',
-        note: 'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
+        label: '其次',
+        note: '已在 RTX 和 DGX Spark 上投入生产。数据中心 GPU 正在进行中。CUDA → PTX。',
       },
       {
         name: 'AMD ROCm · Vulkan',
         level: 'runs',
-        label: 'Runs',
-        note: 'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
+        label: '可运行',
+        note: '目前可以运行，尚未调优。HIP → AMDGPU，Vulkan → SPIR-V。',
       },
     ],
     runsOn: {
-      label: 'Runs on',
+      label: '运行于',
       items: [
         'MacBook & Mac Studio',
-        'RTX workstations',
+        'RTX 工作站',
         'DGX Spark',
         'Strix Halo',
-        'Neocloud fleets',
+        '新型云服务商集群',
       ],
-      pending: 'Enterprise datacenter GPUs · in progress',
+      pending: '企业级数据中心 GPU · 进行中',
     },
   },
 
   team: {
-    title: 'Who’s in the *kitchen*.',
-    intro:
-      'Research, security, revenue and a couple of founders who have shipped before.',
-    portraitAlt: 'Portrait of {name}',
-    link: { label: 'Meet the team', href: '/about/team' },
+    title: '谁在*厨房*里。',
+    intro: '研究、安全、营收，还有几位曾把产品做出来的创始人。',
+    portraitAlt: '{name} 的肖像',
+    link: { label: '认识团队', href: '/about/team' },
   },
 
   cta: {
-    title: 'Pull up a seat.',
-    body: 'Nothing’s public yet. Request early access, or leave your email below and we’ll write when something is.',
+    title: '请入座。',
+    body: '目前一切尚未公开。申请抢先体验，或者在下方留下邮箱，等有消息时我们会写信给你。',
   },
 };
 

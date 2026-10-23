@@ -1,101 +1,97 @@
 import type { butter } from './butter';
 
-// TODO(i18n): translate to zh. Keep hrefs, slugs and product names.
 const butterZh: (typeof butter)['en'] = {
-  layer: 'Serving',
-  tagline: 'Model serving without Python.',
+  layer: '模型服务',
+  tagline: '无需 Python 的模型服务。',
   summary:
-    'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 3- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
+    'Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。可加载 2 至 8 位量化检查点、混合模型和 MoE 模型，并支持量化 KV 缓存。',
   seo: {
-    title: 'Butter: LLM inference without Python',
+    title: 'Butter：无需 Python 的大模型推理引擎',
     description:
-      'Butter is an LLM inference engine: Swift on Metal for Apple silicon, Rust for CUDA and the rest. It loads Hugging Face models as they are and serves them over an OpenAI-compatible API.',
+      'Butter 是大模型推理引擎：Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。直接加载 Hugging Face 模型，并通过兼容 OpenAI 的 API 提供服务。',
     keywords: [
-      'LLM inference engine',
-      'local LLM serving',
-      'Apple silicon inference',
-      'OpenAI-compatible server',
-      'quantized KV cache',
+      '大模型推理引擎',
+      '本地大模型推理',
+      'Apple 芯片推理',
+      '兼容 OpenAI 的服务',
+      '量化 KV 缓存',
       'GGUF MLX safetensors',
     ],
   },
   hero: {
-    title: 'Model serving *without* Python.',
-    lede: 'Butter is an inference engine written in Swift on Metal for Apple silicon and Rust for CUDA and the rest. No Python, no JIT, and models load straight from Hugging Face.',
+    title: '模型服务，*无需* Python。',
+    lede: 'Butter 是一款推理引擎：Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。没有 Python，没有 JIT，模型直接从 Hugging Face 加载。',
     highlights: [
       {
         value: '4',
-        label: 'checkpoint formats, loaded without conversion',
+        label: '种检查点格式，无需转换即可加载',
       },
       {
-        value: '3–8 bit',
-        label: 'quantized checkpoints, with a quantized KV cache',
+        value: '2–8 bit',
+        label: '量化检查点，并支持量化 KV 缓存',
       },
-      { value: 'No Python', label: 'and no JIT' },
+      { value: '无 Python', label: '也无 JIT' },
     ],
   },
   story: {
-    heading: 'Skip the Python and the *conversion*.',
+    heading: '省掉 Python，也省掉*转换*。',
     problem:
-      'Getting a model to answer usually means a Python environment, a conversion step and a runtime that compiles as it goes. On a laptop or a single GPU box, that is a lot of machinery standing between you and a response.',
+      '想让一个模型开口回答，通常意味着要有 Python 环境、一道转换步骤，以及一个边运行边编译的运行时。在笔记本或单卡机器上，这是横在你和一次回复之间的一大堆东西。',
     outcome:
-      'Point Butter at a model on Hugging Face. It loads safetensors, MLX, JANG and GGUF as they are, and butter serve gives you an OpenAI-compatible server on the hardware you already own.',
+      '把 Butter 指向 Hugging Face 上的模型。它会原样加载 safetensors、MLX、JANG 和 GGUF，butter serve 则在你已有的硬件上为你起一个兼容 OpenAI 的服务器。',
     outcomes: [
-      'Run 3- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models on a Mac or an RTX workstation.',
-      'Point the tools you already use at an OpenAI-compatible endpoint, with streaming and tool calling.',
-      'Keep memory use down on long contexts with a quantized KV cache.',
+      '在 Mac 或 RTX 工作站上运行 2 至 8 位量化检查点、混合模型和混合专家（MoE）模型。',
+      '让你已在用的工具指向兼容 OpenAI 的端点，支持流式输出和工具调用。',
+      '借助量化 KV 缓存，让长上下文占用更少内存。',
     ],
   },
   capabilities: {
-    heading: 'What Butter *does*.',
-    intro:
-      'From loading a checkpoint to streaming tokens, with no Python in between.',
+    heading: 'Butter 能*做什么*。',
+    intro: '从加载检查点到流式输出 token，中间没有 Python。',
     items: [
       {
-        title: 'Loads models as they are',
-        body: 'Pull safetensors, MLX, JANG or GGUF straight from Hugging Face. There is no conversion step.',
+        title: '模型原样加载',
+        body: '直接从 Hugging Face 拉取 safetensors、MLX、JANG 或 GGUF。没有转换步骤。',
       },
       {
-        title: 'Quantized, hybrid and MoE',
-        body: 'Runs 3- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models.',
+        title: '量化、混合与 MoE',
+        body: '运行 2 至 8 位量化检查点、混合模型和混合专家（MoE）模型。',
       },
       {
-        title: 'A quantized KV cache',
-        body: 'Stores the KV cache quantized, to keep memory use down as context grows.',
+        title: '量化 KV 缓存',
+        body: '以量化形式存放 KV 缓存，上下文变长时也能压低内存占用。',
       },
       {
-        title: 'OpenAI-compatible serving',
-        body: 'butter serve exposes an OpenAI-compatible API, with streaming and tool calling.',
+        title: '兼容 OpenAI 的服务',
+        body: 'butter serve 提供兼容 OpenAI 的 API，支持流式输出和工具调用。',
       },
       {
-        title: 'Speculative decoding and LoRA',
-        body: 'Speculative decoding for generation, and LoRA for the adapters you train yourself.',
+        title: '推测解码与 LoRA',
+        body: '推测解码用于生成，LoRA 用于你自己训练的适配器。',
       },
       {
-        title: 'More than text',
-        body: 'Text, vision, speech-to-text, text-to-speech and omni models.',
+        title: '不止文本',
+        body: '文本、视觉、语音转文字、文字转语音，以及全模态（omni）模型。',
       },
     ],
   },
   code: {
-    heading: 'Start a server, then *ask* it.',
-    intro:
-      'Butter speaks the OpenAI API, so the clients you already use can point at it.',
-    caption:
-      'Illustrative. Replace the placeholders with your model and port. Not a benchmark.',
+    heading: '启动服务，然后*提问*。',
+    intro: 'Butter 使用 OpenAI API，你已在用的客户端可以直接指向它。',
+    caption: '仅为示意。请把占位符替换为你的模型和端口。并非基准测试。',
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: '技术*细节*。',
+    intro: '给会细读的人看的细节。',
     rows: [
       {
-        term: 'Runtime',
+        term: '运行时',
         detail:
-          'Swift on Metal for Apple silicon. Rust for CUDA and the rest. No Python, no JIT.',
+          'Apple 芯片上是 Swift 搭配 Metal；CUDA 及其他平台是 Rust。无 Python，无 JIT。',
       },
       {
-        term: 'Model formats',
-        detail: 'Loaded straight from Hugging Face, with no conversion.',
+        term: '模型格式',
+        detail: '直接从 Hugging Face 加载，无需转换。',
         chips: [
           { label: 'safetensors' },
           { label: 'MLX' },
@@ -103,34 +99,34 @@ const butterZh: (typeof butter)['en'] = {
           { label: 'GGUF' },
         ],
       },
-      { term: 'Quantization', detail: '3- to 8-bit quantized checkpoints.' },
+      { term: '量化', detail: '2 至 8 位量化检查点。' },
       {
-        term: 'Architectures',
-        detail: 'Hybrid and mixture-of-experts (MoE) models.',
+        term: '架构',
+        detail: '混合模型和混合专家（MoE）模型。',
       },
-      { term: 'KV cache', detail: 'Quantized.' },
+      { term: 'KV 缓存', detail: '已量化。' },
       {
-        term: 'Serving API',
-        detail: 'OpenAI-compatible, started with butter serve.',
+        term: '服务 API',
+        detail: '兼容 OpenAI，通过 butter serve 启动。',
         chips: [
-          { label: 'Streaming' },
-          { label: 'Tool calling' },
-          { label: 'Speculative decoding' },
+          { label: '流式输出' },
+          { label: '工具调用' },
+          { label: '推测解码' },
           { label: 'LoRA' },
         ],
       },
       {
-        term: 'Modalities',
+        term: '模态',
         chips: [
-          { label: 'Text' },
-          { label: 'Vision' },
-          { label: 'Speech-to-text' },
-          { label: 'Text-to-speech' },
+          { label: '文本' },
+          { label: '视觉' },
+          { label: '语音转文字' },
+          { label: '文字转语音' },
           { label: 'Omni' },
         ],
       },
       {
-        term: 'Model families',
+        term: '模型家族',
         groups: [
           { label: 'Meta', text: 'Llama 3, 3.1, 3.2, 3.3' },
           { label: 'Google', text: 'Gemma 2, 3, 4; PaliGemma' },
@@ -151,74 +147,73 @@ const butterZh: (typeof butter)['en'] = {
         ],
       },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: '可用性',
+        detail: '抢先体验期间为私有闭源。',
       },
     ],
   },
   platforms: {
-    heading: 'Where it *runs*.',
-    intro:
-      'Metal is the primary target. CUDA is secondary, and ROCm and Vulkan run but are not tuned yet.',
+    heading: '在*哪里*运行。',
+    intro: 'Metal 是首要目标。CUDA 其次，ROCm 和 Vulkan 可以运行，但尚未调优。',
     tiers: [
       {
         platform: 'Apple · Metal',
         level: 'primary',
-        note: 'Swift on Metal for Apple silicon: MacBook and Mac Studio.',
+        note: 'Apple 芯片上的 Swift 与 Metal：MacBook 和 Mac Studio。',
       },
       {
         platform: 'NVIDIA · CUDA',
         level: 'secondary',
-        note: 'Rust on CUDA. In production on RTX and DGX Spark; datacenter GPUs are in progress.',
+        note: 'CUDA 上的 Rust。已在 RTX 和 DGX Spark 上投入生产；数据中心 GPU 正在进行中。',
       },
       {
         platform: 'AMD ROCm · Vulkan',
         level: 'runs',
-        note: 'Works today, not tuned yet.',
+        note: '目前可以运行，尚未调优。',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: '与其余*技术栈*协同工作。',
     intro:
-      'Butter runs models on the kernels Iron compiles. Waffle can watch it alongside vLLM, SGLang and llama.cpp, and Syrup gives your AI a memory of what you were working on.',
+      'Butter 在 Iron 编译的内核上运行模型。Waffle 可以把它和 vLLM、SGLang、llama.cpp 放在一起监看，Syrup 则让你的 AI 记得你在做什么。',
   },
   faq: [
     {
-      question: 'Is Butter open source?',
+      question: 'Butter 开源吗？',
       answer:
-        'Not today. Butter is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        '目前不开源。抢先体验期间，Butter 为私有闭源。申请访问，有更多内容可以分享时，我们会写信给你。',
     },
     {
-      question: 'What hardware does it run on?',
+      question: '它能在什么硬件上运行？',
       answer:
-        'Swift on Metal for Apple silicon is the primary target, from a MacBook to a Mac Studio. CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. ROCm and Vulkan run today but are not tuned yet.',
+        'Apple 芯片上的 Swift 与 Metal 是首要目标，从 MacBook 到 Mac Studio。CUDA 其次，已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。ROCm 和 Vulkan 目前可以运行，但尚未调优。',
     },
     {
-      question: 'Which models does it run?',
+      question: '能运行哪些模型？',
       answer:
-        'Coverage today includes Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite and Phi, among the others listed above, in text, vision, speech and omni variants. DeepSeek V4 is in progress.',
+        '目前覆盖上面列出的 Llama、Gemma、Qwen、GPT-OSS、Mistral、Nemotron、Granite、Phi 等模型家族，包括文本、视觉、语音和全模态变体。DeepSeek V4 正在进行中。',
     },
     {
-      question: 'Do I need Python?',
+      question: '需要 Python 吗？',
       answer:
-        'No. Butter is Swift on Metal for Apple silicon and Rust for CUDA and the rest, with no Python and no JIT.',
+        '不需要。Butter 在 Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust，没有 Python，也没有 JIT。',
     },
     {
-      question: 'Will my existing tools work with it?',
+      question: '我现有的工具能用吗？',
       answer:
-        'Butter serves an OpenAI-compatible API with butter serve, including streaming and tool calling, so clients that speak that API can point at it.',
+        'Butter 通过 butter serve 提供兼容 OpenAI 的 API，包括流式输出和工具调用，所以使用该 API 的客户端都可以指向它。',
     },
     {
-      question: 'How fast is it?',
+      question: '它有多快？',
       answer:
-        'We haven’t published benchmark numbers, so we won’t quote one here. Speculative decoding and a quantized KV cache are built in, and we’d rather show you a measurement than make a claim.',
+        '我们还没有发布基准测试数据，所以这里不引用任何数字。推测解码和量化 KV 缓存已内置，我们宁愿拿出一次测量结果，也不空口下结论。',
     },
   ],
   cta: {
-    title: 'Melt away *latency*.',
-    body: 'Butter is in early access and closed source for now. Request access, and read the docs while you wait.',
-    docsLabel: 'Read the docs',
+    title: '让*延迟*融化。',
+    body: 'Butter 目前处于抢先体验阶段，暂未开源。申请访问，等待期间可以先读文档。',
+    docsLabel: '阅读文档',
   },
 };
 

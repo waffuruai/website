@@ -1,128 +1,126 @@
 import type { enterprise } from './enterprise';
 
-// TODO(i18n): translate to zh. Keep hrefs, slugs and product names.
 const enterpriseZh: (typeof enterprise)['en'] = {
   seo: {
-    title: 'On-prem LLM inference for the enterprise',
+    title: '企业私有化部署大模型推理',
     description:
-      'Run LLM inference on-prem or in your private cloud, keep sensitive data inside your boundary, and see every GPU and engine from one place. Early access.',
+      '在本地机房或私有云运行大模型推理，让敏感数据留在你的边界之内，在一处看清每一块 GPU 和每个引擎。抢先体验。',
     keywords: [
-      'on-prem LLM inference',
-      'private AI infrastructure',
-      'sovereign AI',
-      'AI data privacy',
+      '私有化部署大模型推理',
+      '私有 AI 基础设施',
+      '自主可控 AI',
+      'AI 数据隐私',
     ],
   },
-  name: 'Enterprise',
-  serviceType: 'On-premises and private-cloud LLM inference software',
+  name: '大型企业',
+  serviceType: '本地部署与私有云大模型推理软件',
   card: {
-    title: '*Enterprise*',
+    title: '*大型企业*',
     summary:
-      'On-prem or private-cloud inference for sensitive data, with one view of every GPU.',
+      '在本地或私有云中运行推理，保护敏感数据，并用一个视图看清每一块 GPU。',
   },
   hero: {
-    title: 'Private AI, on your own *terms*.',
-    lede: 'Run models on hardware you operate, on-prem or in your private cloud, so sensitive data stays where it already lives. See every GPU and every engine on it from one place.',
+    title: '私有 AI，*规则*由你定。',
+    lede: '在你自己运营的硬件上运行模型，无论是本地机房还是私有云，让敏感数据继续待在原处。在一处看清每一块 GPU 和其上的每个引擎。',
   },
   problem: {
-    title: 'Some data can’t *leave*.',
+    title: '有些数据*不能*离开。',
     statement:
-      'The workloads worth automating touch customer records, contracts, source code and regulated data, which are the ones you cannot casually send to someone else’s API.',
-    body: 'So a policy says no while teams quietly say yes, and GPUs sit scattered across clusters and clouds that nobody can see in one place. Security wants a boundary, finance wants a number for each workload, and engineering wants a model that simply serves requests.',
+      '值得自动化的工作负载，都会接触客户记录、合同、源代码和受监管数据，而这恰恰是你不能随手发给别人 API 的那一类。',
+    body: '于是制度说不行，团队却悄悄说行，而 GPU 散落在各个集群和云上，没有人能在一处看到全貌。安全部门想要一道边界，财务想要每个工作负载的一个数字，工程团队则想要一个老老实实响应请求的模型。',
   },
   useCases: {
-    title: 'Work that stays *inside*.',
-    intro:
-      'Four jobs for a platform team that answers to security, finance and engineering at once.',
+    title: '留在*内部*的工作。',
+    intro: '为同时对安全、财务和工程负责的平台团队准备的四件事。',
     items: [
       {
         tag: 'control',
-        title: 'Serve models inside your own boundary.',
-        body: 'Run Butter on servers you operate, on-prem or in a private cloud, so prompts, documents and outputs stay on infrastructure you control. Our default is that a user’s data stays on their machine unless they opt in.',
+        title: '在你自己的边界内提供模型服务。',
+        body: '在你运营的服务器上运行 Butter，无论是本地机房还是私有云，让提示词、文档和输出都留在你掌控的基础设施上。我们的默认原则是：除非用户主动选择开启，数据始终留在用户自己的机器上。',
       },
       {
         tag: 'cost',
-        title: 'See every GPU and every engine in one place.',
-        body: 'Waffle shows which GPUs are busy, which engines run on them and which sit idle, whether the engine is Butter, vLLM, SGLang or llama.cpp. That is the starting point for deciding what to consolidate, retire or buy.',
+        title: '在一处看清每一块 GPU 和每个引擎。',
+        body: 'Waffle 显示哪些 GPU 正忙，上面跑着哪些引擎，哪些在闲置，不论引擎是 Butter、vLLM、SGLang 还是 llama.cpp。这是决定合并、淘汰还是新购的起点。',
       },
       {
         tag: 'inference',
-        title: 'Get more from the GPUs you already bought.',
-        body: 'Kernels tuned per backend, quantized models and KV cache, and speculative decoding all go after more useful tokens per watt and per dollar. We would rather measure your workload than quote you a number.',
+        title: '从已经买下的 GPU 里获得更多。',
+        body: '按后端调优的内核、量化模型与 KV 缓存、推测解码，都是为了让每瓦、每一美元产出更多有用的 token。我们更愿意去测量你的工作负载，而不是报给你一个数字。',
       },
       {
         tag: 'control',
-        title: 'Point existing apps at it without a rewrite.',
-        body: 'Butter’s OpenAI-compatible API supports streaming and tool calling, so internal tools change an address, not an SDK. Nothing locks you to one engine, because Waffle works alongside vLLM, SGLang and llama.cpp.',
+        title: '无需重写，让现有应用直接指向它。',
+        body: 'Butter 兼容 OpenAI 的 API 支持流式输出和工具调用，内部工具只需换一个地址，不用换 SDK。没有什么会把你锁在某一种引擎上，因为 Waffle 与 vLLM、SGLang 和 llama.cpp 并肩工作。',
       },
     ],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
+    title: '技术栈如何*配合*。',
     intro:
-      'Butter serves, Waffle watches, Syrup retrieves, and Iron sits underneath all three.',
+      'Butter 提供服务，Waffle 盯着全局，Syrup 负责检索，Iron 垫在这三者之下。',
     items: [
       {
         product: 'butter',
-        need: 'Serve models on servers you operate.',
-        body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so there is no conversion pipeline between a new model and your servers.',
+        need: '在你运营的服务器上提供模型服务。',
+        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，所以新模型到你的服务器之间，没有转换流水线。',
       },
       {
         product: 'waffle',
-        need: 'One view of every GPU and every engine.',
-        body: 'A small Rust sidecar on each host reports signed telemetry. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so adopting it does not mean replacing what already runs.',
+        need: '一个视图，看清每一块 GPU 和每个引擎。',
+        body: '每台主机上的小型 Rust sidecar 上报带签名的遥测数据。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以采用它，并不意味着要替换已经在跑的东西。',
       },
       {
         product: 'syrup',
-        need: 'Answers from your own sources, with citations.',
-        body: 'Local retrieval over internal notes and code. Search is lexical plus vector, and results come back with citations over MCP.',
+        need: '答案来自你自己的资料，并附引用。',
+        body: '对内部笔记和代码做本地检索。搜索结合关键词与向量，结果通过 MCP 附带引用返回。',
       },
       {
         product: 'iron',
-        need: 'A hardware decision that is not a rewrite.',
-        body: 'One kernel definition lowers to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V behind a versioned C and Rust ABI. When a second vendor or a new GPU generation arrives, the kernels carry over, with tuning following backend by backend.',
+        need: '换硬件，不用重写。',
+        body: '一份内核定义，转换为 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V，对外是版本化的 C 与 Rust ABI。当第二家厂商或新一代 GPU 到来时，内核可以直接沿用，调优则逐个后端跟进。',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Enterprise datacenter GPUs are in progress, and we would rather say so up front. The products are in early access and closed source for now.',
+    title: '我们的*进度*。',
+    lede: '企业级数据中心 GPU 正在进行中，我们宁愿一开始就说清楚。产品目前处于抢先体验阶段，暂未开源。',
     notes: [
-      'Plan pilots around Apple silicon, RTX workstations and DGX Spark, where the stack runs today.',
-      'Datacenter GPUs are in progress. If they are your target, tell us which ones, because it shapes what we build first.',
-      'ROCm and Vulkan run but are not tuned yet.',
+      '围绕 Apple 芯片、RTX 工作站和 DGX Spark 规划试点，整套技术栈目前就运行在这些平台上。',
+      '数据中心 GPU 正在进行中。如果它们是你的目标，请告诉我们是哪些，因为这会影响我们先做什么。',
+      'ROCm 和 Vulkan 可以运行，但尚未调优。',
     ],
   },
   faq: [
     {
-      question: 'Can we run it on-prem or in a private cloud?',
+      question: '可以在本地机房或私有云里运行吗？',
       answer:
-        'That is how it is built. Butter serves models on hardware you operate, and a user’s data stays on their machine unless they opt in. Datacenter GPU support is in progress, so tell us what you plan to deploy on.',
+        '它本来就是这样构建的。Butter 在你运营的硬件上提供模型服务，除非用户主动选择开启，数据始终留在用户自己的机器上。数据中心 GPU 支持正在进行中，所以请告诉我们你打算部署在什么上面。',
     },
     {
-      question: 'Which GPUs does it support today?',
+      question: '目前支持哪些 GPU？',
       answer:
-        'Apple silicon through Metal is primary, and NVIDIA through CUDA is secondary and in production on RTX and DGX Spark. AMD ROCm and Vulkan run but are not tuned yet. Enterprise datacenter GPUs are in progress.',
+        '以 Metal 驱动的 Apple 芯片为首要，NVIDIA 通过 CUDA 其次，已在 RTX 和 DGX Spark 上投入生产。AMD ROCm 和 Vulkan 可以运行，但尚未调优。企业级数据中心 GPU 正在进行中。',
     },
     {
-      question: 'Do we have to replace the serving stack we already run?',
+      question: '我们必须替换现在运行的服务栈吗？',
       answer:
-        'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so you can get visibility first and decide about engines later.',
+        '不必。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以你可以先获得可见性，再决定引擎的事。',
     },
     {
-      question: 'What leaves our network?',
+      question: '哪些数据会离开我们的网络？',
       answer:
-        'Inference data does not leave by default, because a user’s data stays on their machine unless they opt in. Each Waffle host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
+        '推理数据默认不会离开，因为除非用户主动选择开启，数据始终留在用户自己的机器上。每台 Waffle 主机运行一个 sidecar，上报带签名的遥测数据，我们会针对你的环境，逐项讲清楚其中包含什么。',
     },
     {
-      question: 'How do we evaluate it?',
+      question: '我们如何评估？',
       answer:
-        'Talk to us with your hardware and your workload. We will tell you honestly whether it fits today, and early access is open by request.',
+        '带上你的硬件和工作负载来找我们聊聊。我们会坦率地告诉你，它今天是否合适；抢先体验按申请开放。',
     },
   ],
   cta: {
-    title: 'Bring us your *workload*.',
-    body: 'Early access, closed source for now. Tell us what has to stay in-house and which hardware you run, and we will tell you honestly what fits today.',
+    title: '把你的*工作负载*带来。',
+    body: '抢先体验，暂未开源。告诉我们什么必须留在内部，以及你运行的是什么硬件，我们会坦率地告诉你今天哪些合适。',
   },
 };
 

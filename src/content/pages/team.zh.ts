@@ -1,29 +1,28 @@
 import type { teamPage } from './team';
 
-// TODO(i18n): translate to zh. Keep hrefs, slugs and product names.
 const teamPageZh: (typeof teamPage)['en'] = {
   seo: {
-    title: 'Meet the founders and team',
+    title: '创始人与团队',
     description:
-      'The people building Waffuru: research, security, revenue and a couple of founders who have shipped before.',
-    keywords: ['Waffuru team', 'Waffuru founders'],
+      '认识打造 Waffuru 的人：研究、安全、营收，以及几位做过产品的创始人。',
+    keywords: ['Waffuru 团队', 'Waffuru 创始人'],
   },
   hero: {
-    label: 'Team',
-    title: 'Who’s in the *kitchen*.',
-    lede: 'Research, security, revenue and a couple of founders who have shipped before.',
+    label: '团队',
+    title: '谁在*厨房*里。',
+    lede: '研究、安全、营收，还有几位曾把产品做出来的创始人。',
   },
-  portraitAlt: 'Portrait of {name}',
-  linkAria: '{name} on {network}',
+  portraitAlt: '{name} 的肖像',
+  linkAria: '{name} 的 {network} 主页',
   linkNames: {
     linkedin: 'LinkedIn',
-    website: 'Website',
+    website: '个人网站',
     x: 'X',
     github: 'GitHub',
   },
   cta: {
-    title: 'See what we’re *cooking*.',
-    body: 'Our products are private for now. Request early access to try them, or talk to us about what you need.',
+    title: '看看我们在*烹制*什么。',
+    body: '我们的产品暂未公开。申请抢先体验，亲自试用，或者告诉我们你需要什么。',
   },
 };
 

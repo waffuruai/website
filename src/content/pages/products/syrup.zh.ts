@@ -1,123 +1,116 @@
 import type { syrup } from './syrup';
 
-// TODO(i18n): translate to zh. Keep hrefs, slugs and product names.
 const syrupZh: (typeof syrup)['en'] = {
-  layer: 'Memory',
-  tagline: 'Your AI remembers what you were working on.',
+  layer: '记忆',
+  tagline: '让你的 AI 记得你在做什么。',
   summary:
-    'Local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+    '对你的笔记和代码做本地检索。嵌入向量用 TurboQuant+ 压缩，搜索结合关键词与向量，结果通过 MCP 返回，并附带引用。',
   seo: {
-    title: 'Syrup: local memory and retrieval for your AI',
+    title: 'Syrup：为你的 AI 提供本地记忆与检索',
     description:
-      'Syrup is local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
-    keywords: [
-      'local RAG',
-      'AI memory',
-      'MCP retrieval',
-      'private semantic search',
-    ],
+      'Syrup 对你的笔记和代码做本地检索。嵌入向量由 TurboQuant+ 压缩，关键词加向量搜索，结果通过 MCP 附带引用返回。',
+    keywords: ['本地 RAG', 'AI 记忆', 'MCP 检索', '私有语义搜索'],
   },
   hero: {
-    title: 'Your AI *remembers* what you were working on.',
-    lede: 'Syrup is local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+    title: '你的 AI *记得*你在做什么。',
+    lede: 'Syrup 对你的笔记和代码做本地检索。嵌入向量用 TurboQuant+ 压缩，搜索结合关键词与向量，结果通过 MCP 返回，并附带引用。',
     highlights: [
-      { value: 'Local', label: 'retrieval over your notes and code' },
+      { value: '本地', label: '对你的笔记和代码做检索' },
       {
-        value: 'Lexical + vector',
-        label: 'search, over embeddings compressed with TurboQuant+',
+        value: '关键词 + 向量',
+        label: '搜索，基于用 TurboQuant+ 压缩的嵌入向量',
       },
-      { value: 'Cited', label: 'results, delivered over MCP' },
+      { value: '附引用', label: '的结果，通过 MCP 交付' },
     ],
   },
   story: {
-    heading: 'Stop re-explaining *yourself*.',
+    heading: '不用再一遍遍*解释自己*。',
     problem:
-      'Every new chat starts from nothing. You paste in the same notes and files again, and when an answer comes back you can’t tell which of them it came from.',
+      '每次新开一个对话，都是从零开始。你把同样的笔记和文件再贴一遍，答案回来了，你却分不清它出自哪一份。',
     outcome:
-      'Syrup indexes your notes and code on your own machine. Your AI asks it over MCP and gets back the passages that matter, each with a citation you can check.',
+      'Syrup 在你自己的机器上为笔记和代码建立索引。你的 AI 通过 MCP 向它提问，拿回要紧的段落，每一段都附带可核对的引用。',
     outcomes: [
-      'Keep your notes and code on your own machine. Retrieval is local.',
-      'Find things by the exact words you used or by what they mean: search is lexical plus vector.',
-      'Check any answer against its source, because results come back with citations.',
+      '笔记和代码留在你自己的机器上。检索在本地完成。',
+      '既能按你用过的原词查找，也能按意思查找：搜索结合关键词与向量。',
+      '任何答案都能对照来源核实，因为结果附带引用。',
     ],
   },
   capabilities: {
-    heading: 'What Syrup *does*.',
-    intro: 'A memory layer you run yourself, for the work you already have.',
+    heading: 'Syrup 能*做什么*。',
+    intro: '一个由你自己运行的记忆层，服务于你已有的工作。',
     items: [
       {
-        title: 'Local retrieval',
-        body: 'Syrup searches your notes and code on your own machine, and your data stays there unless you opt in.',
+        title: '本地检索',
+        body: 'Syrup 在你自己的机器上搜索笔记和代码，除非你主动选择开启，否则数据始终留在那里。',
       },
       {
-        title: 'Compressed embeddings',
-        body: 'Embeddings are compressed with TurboQuant+, so the index takes up less room.',
+        title: '压缩的嵌入向量',
+        body: '嵌入向量用 TurboQuant+ 压缩，索引占用的空间更小。',
       },
       {
-        title: 'Lexical plus vector search',
-        body: 'Exact-word matching and meaning-based search work together.',
+        title: '关键词加向量搜索',
+        body: '精确词匹配与按语义搜索协同工作。',
       },
       {
-        title: 'Citations over MCP',
-        body: 'Results come back with citations over MCP, so any MCP client can use them and show where each one came from.',
+        title: '通过 MCP 返回引用',
+        body: '结果通过 MCP 附带引用返回，因此任何 MCP 客户端都能使用，并展示每条结果的出处。',
       },
     ],
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: '技术*细节*。',
+    intro: '给会细读的人看的细节。',
     rows: [
-      { term: 'Indexes', detail: 'Your notes and code.' },
-      { term: 'Where it runs', detail: 'Locally, on your machine.' },
-      { term: 'Embeddings', detail: 'Compressed with TurboQuant+.' },
-      { term: 'Search', detail: 'Lexical plus vector.' },
-      { term: 'Results', detail: 'Returned with citations.' },
-      { term: 'Interface', detail: 'MCP.' },
+      { term: '索引对象', detail: '你的笔记和代码。' },
+      { term: '运行位置', detail: '本地，在你的机器上。' },
+      { term: '嵌入向量', detail: '用 TurboQuant+ 压缩。' },
+      { term: '搜索', detail: '关键词加向量。' },
+      { term: '结果', detail: '附带引用返回。' },
+      { term: '接口', detail: 'MCP。' },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: '可用性',
+        detail: '抢先体验期间为私有闭源。',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: '与其余*技术栈*协同工作。',
     intro:
-      'Syrup works on its own, with any MCP client. Underneath it, Butter runs models, Waffle watches the GPUs and Iron compiles the kernels.',
+      'Syrup 可以单独使用，配合任何 MCP 客户端。在它之下，Butter 运行模型，Waffle 盯着 GPU，Iron 编译内核。',
   },
   faq: [
     {
-      question: 'Is Syrup open source?',
+      question: 'Syrup 开源吗？',
       answer:
-        'Not today. Syrup is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        '目前不开源。抢先体验期间，Syrup 为私有闭源。申请访问，有更多内容可以分享时，我们会写信给你。',
     },
     {
-      question: 'Does my data leave my machine?',
+      question: '我的数据会离开我的机器吗？',
       answer:
-        'Retrieval is local: Syrup indexes and searches on your machine. We hold ourselves to a simple rule, which is that your data stays on your machine unless you opt in.',
+        '检索在本地完成：Syrup 在你的机器上建立索引并搜索。我们给自己定了一条简单的规矩：除非你主动选择开启，否则数据始终留在你的机器上。',
     },
     {
-      question: 'What does it index?',
-      answer: 'Your notes and your code.',
+      question: '它会索引什么？',
+      answer: '你的笔记和代码。',
     },
     {
-      question: 'What is TurboQuant+?',
+      question: 'TurboQuant+ 是什么？',
       answer:
-        'The method Syrup uses to compress embeddings. It comes from our Chief of Research, Tom Turney.',
+        'Syrup 用来压缩嵌入向量的方法。它来自我们的首席研究官 Tom Turney。',
     },
     {
-      question: 'What can use Syrup?',
+      question: '什么可以使用 Syrup？',
       answer:
-        'Anything that speaks MCP can ask Syrup for results, and each result comes back with a citation.',
+        '任何支持 MCP 的工具都可以向 Syrup 请求结果，每条结果都附带引用。',
     },
     {
-      question: 'Do I need the rest of the stack?',
-      answer:
-        'No. Each Waffuru product works on its own, and Syrup is no exception.',
+      question: '我需要整套技术栈吗？',
+      answer: '不需要。Waffuru 的每款产品都可以单独使用，Syrup 也不例外。',
     },
   ],
   cta: {
-    title: 'Give your AI a *memory*.',
-    body: 'Syrup is in early access and closed source for now. Request access, or tell us what you’d like it to remember.',
+    title: '给你的 AI 一份*记忆*。',
+    body: 'Syrup 目前处于抢先体验阶段，暂未开源。申请访问，或者告诉我们你希望它记住什么。',
   },
 };
 

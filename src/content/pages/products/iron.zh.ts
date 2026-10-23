@@ -1,101 +1,98 @@
 import type { iron } from './iron';
 
-// TODO(i18n): translate to zh. Keep hrefs, slugs and product names.
 const ironZh: (typeof iron)['en'] = {
-  layer: 'Kernels',
-  tagline: 'One kernel definition, four backends.',
+  layer: '内核',
+  tagline: '一次定义内核，生成四种后端。',
   summary:
-    'A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
+    '嵌入 Rust 的 DSL。内核先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。版本化的 C 与 Rust ABI 让现有宿主可以直接调用。',
   seo: {
-    title: 'Iron: one GPU kernel definition, four backends',
+    title: 'Iron：一次定义 GPU 内核，生成四种后端',
     description:
-      'Write a GPU kernel once in Rust and lower it to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V through a shared IR. Iron has a versioned C and Rust ABI and is in early access.',
+      '用 Rust 一次编写 GPU 内核，经共享 IR 生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。提供版本化的 C 与 Rust ABI，目前处于抢先体验。',
     keywords: [
-      'Rust GPU kernel DSL',
-      'Metal kernels',
-      'CUDA kernels',
+      'Rust GPU 内核 DSL',
+      'Metal 内核',
+      'CUDA 内核',
       'ROCm HIP',
       'Vulkan SPIR-V',
-      'cross-platform GPU kernels',
+      '跨平台 GPU 内核',
     ],
   },
   hero: {
-    title: 'One kernel definition, *four* backends.',
-    lede: 'Press raw math directly into high-performance silicon. Iron is a Rust-embedded DSL: you write the kernel once, it lowers to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V.',
+    title: '一次定义内核，生成*四种*后端。',
+    lede: '把纯粹的数学直接压进高性能硅片。Iron 是嵌入 Rust 的 DSL：内核只写一次，先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。',
     highlights: [
-      { value: '4', label: 'GPU backends from one kernel definition' },
-      { value: '~1,139', label: 'kernel declarations' },
+      { value: '4', label: '一份内核定义对应的 GPU 后端数' },
+      { value: '~1,139', label: '内核声明' },
       {
         value: '4,164 / 4,164',
-        label: 'HIP and Vulkan test corpus, bit-accurate',
+        label: 'HIP 与 Vulkan 测试集，逐位精确',
       },
     ],
   },
   story: {
-    heading: 'Stop writing the same kernel *four* times.',
+    heading: '别再把同一个内核写*四*遍。',
     problem:
-      'Every GPU vendor has its own kernel language. Shipping on Apple, NVIDIA and AMD hardware means writing, tuning and testing the same math again for each one, then keeping every copy in step as the math changes.',
+      '每家 GPU 厂商都有自己的内核语言。要在 Apple、NVIDIA 和 AMD 硬件上交付，就得为每一家把同一套数学重写、调优、测试一遍，数学一变，还得让每份副本同步更新。',
     outcome:
-      'You write the kernel once, in Rust. Iron lowers it to a shared IR and then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, so a single definition covers every backend you target.',
+      '你只用 Rust 写一次内核。Iron 先把它转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V，一份定义覆盖你要面向的每一种后端。',
     outcomes: [
-      'Write and tune on the Mac on your desk first. Metal is the primary target, and the same definition carries to the other backends.',
-      'Call your kernels from the code you already have, through a versioned C and Rust ABI.',
-      'Check the backends against a bit-accurate test corpus instead of hoping two of them agree.',
+      '先在桌上的 Mac 上编写和调优。Metal 是首要目标，同一份定义可以带到其他后端。',
+      '通过版本化的 C 与 Rust ABI，从你已有的代码里调用内核。',
+      '用逐位精确的测试集检验各个后端，而不是指望两个后端碰巧一致。',
     ],
   },
   capabilities: {
-    heading: 'What Iron *does*.',
-    intro: 'Built from the metal up, for people who write kernels.',
+    heading: 'Iron 能*做什么*。',
+    intro: '从底层硬件一路搭起，为写内核的人而做。',
     items: [
       {
-        title: 'One definition, four backends',
-        body: 'Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. You maintain one source.',
+        title: '一份定义，四种后端',
+        body: '内核先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。你只需维护一份源码。',
       },
       {
-        title: 'Written in Rust',
-        body: 'A Rust-embedded DSL. Kernels are Rust functions marked #[kernel], built from primitives like program_id, load and store.',
+        title: '用 Rust 编写',
+        body: '嵌入 Rust 的 DSL。内核是标注了 #[kernel] 的 Rust 函数，由 program_id、load、store 等基本操作构成。',
       },
       {
-        title: 'Callable from your host',
-        body: 'A versioned C and Rust ABI lets existing hosts call Iron kernels without being rewritten around them.',
+        title: '可从你的宿主代码调用',
+        body: '版本化的 C 与 Rust ABI 让现有宿主无需围绕 Iron 重写，就能调用 Iron 内核。',
       },
       {
-        title: 'Bit-accurate by test',
-        body: 'The HIP and Vulkan test corpus holds 4,164 cases, and all 4,164 are bit-accurate.',
+        title: '测试保证逐位精确',
+        body: 'HIP 与 Vulkan 测试集共有 4,164 个用例，全部 4,164 个逐位精确。',
       },
       {
-        title: 'Over a thousand kernels',
-        body: 'About 1,139 kernel declarations today. Each is one definition that every backend shares.',
+        title: '上千个内核',
+        body: '目前约有 1,139 个内核声明。每一个都是所有后端共用的一份定义。',
       },
       {
-        title: 'Tuned where it counts',
-        body: 'Every kernel is written and tuned on Metal first. CUDA is secondary, and ROCm and Vulkan run today but are not tuned yet.',
+        title: '调优用在刀刃上',
+        body: '每个内核都先在 Metal 上编写并调优。CUDA 其次，ROCm 和 Vulkan 目前可以运行，但尚未调优。',
       },
     ],
   },
   code: {
-    heading: 'A whole kernel, *start to finish*.',
+    heading: '一个完整的内核，*从头到尾*。',
     intro:
-      'This is exp over a tensor. Each instance loads one element, applies exp and stores the result. The #[kernel] attribute tags the op and its tolerance.',
+      '这是对张量逐元素求 exp。每个实例加载一个元素，应用 exp，再存回结果。#[kernel] 属性标注了运算类型及其容差。',
     caption:
-      'Iron DSL source. Iron lowers it to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V.',
+      'Iron DSL 源码。Iron 会把它转换为 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。',
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: '技术*细节*。',
+    intro: '给会细读的人看的细节。',
     rows: [
       {
-        term: 'Language',
-        detail:
-          'A Rust-embedded DSL. Kernels are Rust functions marked #[kernel].',
+        term: '语言',
+        detail: '嵌入 Rust 的 DSL。内核是标注了 #[kernel] 的 Rust 函数。',
       },
       {
-        term: 'Pipeline',
-        detail:
-          'One kernel definition lowers to a shared IR, then to each backend.',
+        term: '流程',
+        detail: '一份内核定义先转换为共享 IR，再生成各个后端。',
       },
       {
-        term: 'Backends',
+        term: '后端',
         chips: [
           { label: 'Metal: MSL → .metallib' },
           { label: 'CUDA → PTX' },
@@ -104,79 +101,76 @@ const ironZh: (typeof iron)['en'] = {
         ],
       },
       {
-        term: 'Host ABI',
-        detail:
-          'A versioned C and Rust ABI, so existing hosts can call Iron kernels.',
+        term: '宿主 ABI',
+        detail: '版本化的 C 与 Rust ABI，现有宿主可以直接调用 Iron 内核。',
       },
-      { term: 'Kernel count', detail: 'About 1,139 kernel declarations.' },
+      { term: '内核数量', detail: '约 1,139 个内核声明。' },
       {
-        term: 'Test corpus',
-        detail: 'HIP and Vulkan: 4,164 of 4,164 cases bit-accurate.',
+        term: '测试集',
+        detail: 'HIP 与 Vulkan：4,164 个用例中 4,164 个逐位精确。',
       },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: '可用性',
+        detail: '抢先体验期间为私有闭源。',
       },
     ],
   },
   platforms: {
-    heading: 'Where it’s *tuned*.',
-    intro:
-      'Metal comes first, because that is where every kernel is written and tuned.',
+    heading: '调优在*哪里*。',
+    intro: 'Metal 排在第一位，因为每个内核都在这里编写和调优。',
     tiers: [
       {
         platform: 'Apple · Metal',
         level: 'primary',
-        note: 'Every kernel is written and tuned here first. MSL → .metallib.',
+        note: '每个内核都先在这里编写并调优。MSL → .metallib。',
       },
       {
         platform: 'NVIDIA · CUDA',
         level: 'secondary',
-        note: 'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
+        note: '已在 RTX 和 DGX Spark 上投入生产。数据中心 GPU 正在进行中。CUDA → PTX。',
       },
       {
         platform: 'AMD ROCm · Vulkan',
         level: 'runs',
-        note: 'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
+        note: '目前可以运行，尚未调优。HIP → AMDGPU，Vulkan → SPIR-V。',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: '与其余*技术栈*协同工作。',
     intro:
-      'Iron stands on its own. Add Butter to run models on the kernels, Waffle to watch the GPUs they run on, or Syrup to give your AI a memory of what you were working on.',
+      'Iron 可以独立使用。加上 Butter，在这些内核上运行模型；加上 Waffle，盯着它们所跑的 GPU；加上 Syrup，让你的 AI 记得你在做什么。',
   },
   faq: [
     {
-      question: 'Is Iron open source?',
+      question: 'Iron 开源吗？',
       answer:
-        'Not today. Iron is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        '目前不开源。抢先体验期间，Iron 为私有闭源。申请访问，有更多内容可以分享时，我们会写信给你。',
     },
     {
-      question: 'Which hardware does it run on?',
+      question: '它能在哪些硬件上运行？',
       answer:
-        'Metal on Apple silicon is the primary target: every kernel is written and tuned there first. CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. ROCm and Vulkan run today but are not tuned yet.',
+        'Apple 芯片上的 Metal 是首要目标：每个内核都先在那里编写并调优。CUDA 其次，已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。ROCm 和 Vulkan 目前可以运行，但尚未调优。',
     },
     {
-      question: 'Do I have to rewrite my host code?',
+      question: '我需要重写宿主代码吗？',
       answer:
-        'Not to call Iron kernels. A versioned C and Rust ABI lets existing hosts call them.',
+        '调用 Iron 内核不需要。版本化的 C 与 Rust ABI 让现有宿主可以直接调用它们。',
     },
     {
-      question: 'Is it faster than hand-written CUDA or Metal?',
+      question: '它比手写的 CUDA 或 Metal 更快吗？',
       answer:
-        'We haven’t published benchmark numbers, so we won’t claim one. What we can say today is that one definition lowers to four backends, and the HIP and Vulkan test corpus is bit-accurate.',
+        '我们还没有发布基准测试数据，所以不会声称更快。目前能说的是：一份定义可以生成四种后端，并且 HIP 与 Vulkan 测试集逐位精确。',
     },
     {
-      question: 'How do I try it?',
-      answer:
-        'Request early access with the form on this page. The docs are at docs.waffuru.ai.',
+      question: '怎么试用？',
+      answer: '通过本页的表单申请抢先体验。文档在 docs.waffuru.ai。',
     },
   ],
   cta: {
-    title: 'Press your first *kernel*.',
-    body: 'Iron is in early access and closed source for now. Request access, and read the docs while you wait.',
-    docsLabel: 'Read the docs',
+    title: '压出你的第一个*内核*。',
+    body: 'Iron 目前处于抢先体验阶段，暂未开源。申请访问，等待期间可以先读文档。',
+    docsLabel: '阅读文档',
   },
 };
 

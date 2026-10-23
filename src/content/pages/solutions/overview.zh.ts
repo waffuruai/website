@@ -1,64 +1,63 @@
 import type { solutionsOverview } from './overview';
 
-// TODO(i18n): translate to zh. Keep hrefs, slugs and product names.
 const solutionsOverviewZh: (typeof solutionsOverview)['en'] = {
   seo: {
-    title: 'AI inference solutions',
+    title: 'AI 推理解决方案',
     description:
-      'Waffuru’s local-first AI stack for small businesses, enterprises, neoclouds and AI companies: a lower cost per workload, better inference and more control.',
-    keywords: ['AI inference solutions', 'local-first AI'],
+      'Waffuru 面向小型企业、大型企业、新型云服务商和 AI 公司的本地优先 AI 技术栈：更低的单位工作负载成本、更好的推理，以及更多掌控。',
+    keywords: ['AI 推理解决方案', '本地优先 AI'],
   },
   hero: {
-    label: 'Solutions',
-    title: 'Local-first AI, fitted to your *job*.',
-    lede: 'Waffuru is one stack, from kernels to memory, that runs models fast on hardware you already own. Pick the page closest to what you are trying to get done.',
+    label: '解决方案',
+    title: '本地优先的 AI，贴合你的*工作*。',
+    lede: 'Waffuru 是从内核到记忆的一整套技术栈，让模型在你已有的硬件上快速运行。选一个最接近你想完成之事的页面。',
   },
   cards: {
-    label: 'Who it’s for',
-    title: 'Find your *seat*.',
+    label: '适合谁',
+    title: '找到你的*座位*。',
     intro:
-      'Four audiences, one stack. Each page covers the problem, the jobs and what works today.',
+      '四类对象，一套技术栈。每个页面都会讲清问题、任务，以及目前能做到什么。',
   },
   values: {
-    label: 'What stays the same',
-    title: 'Three reasons for *everyone*.',
-    intro: 'Each audience has its own job. These three hold for all of them.',
+    label: '不变的部分',
+    title: '三个理由，*人人*适用。',
+    intro: '每类对象有各自的任务，而这三点对所有人都成立。',
     items: [
       {
         tag: 'cost',
-        title: 'Dollars per *workload*.',
-        body: 'When power is the ceiling, tokens per watt and dollars per workload are what you can still maximize. Waffuru is built around both.',
+        title: '每个工作负载的*成本*。',
+        body: '当电力成为天花板，每瓦 token 数和每个工作负载的成本，就是你仍能继续优化的指标。Waffuru 围绕这两者而建。',
         points: [
-          'Run on hardware you already own instead of renting',
-          'Quantized models fit more in the memory you have',
-          'Waffle shows where capacity sits idle',
+          '在你已有的硬件上运行，而不是租用',
+          '量化模型让现有内存装下更多',
+          'Waffle 显示哪里的算力在闲置',
         ],
       },
       {
         tag: 'inference',
-        title: 'Better *inference*.',
-        body: 'Kernels tuned for each backend, quantized models and KV cache, and speculative decoding, in an engine with no Python on the hot path.',
+        title: '更好的*推理*。',
+        body: '为每种后端调优的内核，量化模型与 KV 缓存，以及推测解码，运行在热路径上没有 Python 的引擎里。',
         points: [
-          'Metal first, CUDA next, ROCm and Vulkan running',
-          'Loads Hugging Face models with no conversion',
-          'Text, vision, speech and omni models',
+          'Metal 优先，其次 CUDA，ROCm 和 Vulkan 可运行',
+          '无需转换，直接加载 Hugging Face 模型',
+          '文本、视觉、语音和全模态模型',
         ],
       },
       {
         tag: 'control',
-        title: 'More *control*.',
-        body: 'Local-first: your data stays where it is unless you opt in, on a laptop, on-prem or in your own cloud.',
+        title: '更多*掌控*。',
+        body: '本地优先：除非你主动选择开启，数据始终留在原处，无论是在笔记本、本地机房还是你自己的云上。',
         points: [
-          'OpenAI-compatible serving, so apps keep working',
-          'Waffle works with vLLM, SGLang and llama.cpp',
-          'No lock-in to one engine or one vendor',
+          '兼容 OpenAI 的服务，应用照常工作',
+          'Waffle 支持 vLLM、SGLang 和 llama.cpp',
+          '不被锁定在某一种引擎或某一家厂商',
         ],
       },
     ],
   },
   cta: {
-    title: 'Pull up a *seat*.',
-    body: 'Early access, closed source for now. Tell us what you want to run and we will write back.',
+    title: '请*入座*。',
+    body: '抢先体验，暂未开源。告诉我们你想运行什么，我们会回信。',
   },
 };
 

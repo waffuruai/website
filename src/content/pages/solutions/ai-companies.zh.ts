@@ -1,65 +1,62 @@
 import type { aiCompanies } from './ai-companies';
 
-// TODO(i18n): translate to zh. Keep hrefs, slugs and product names.
 const aiCompaniesZh: (typeof aiCompanies)['en'] = {
   seo: {
-    title: 'GPU kernels and LLM serving for AI companies',
+    title: 'AI 公司的 GPU 内核与大模型服务',
     description:
-      'Write a kernel once and ship it to Metal, CUDA, ROCm and Vulkan. Serve models without Python, with a quantized KV cache and speculative decoding. Early access.',
+      '一次编写内核，发布到 Metal、CUDA、ROCm 和 Vulkan。无需 Python 即可提供模型服务，支持量化 KV 缓存和推测解码。抢先体验。',
     keywords: [
-      'inference optimization',
-      'GPU kernel portability',
-      'LLM serving engine',
-      'reduce inference cost',
+      '推理加速',
+      'GPU 内核可移植性',
+      '大模型推理引擎',
+      '降低推理成本',
     ],
   },
-  name: 'AI model and inference companies',
-  serviceType: 'GPU kernel compiler and LLM serving engine',
+  name: 'AI 模型与推理公司',
+  serviceType: 'GPU 内核编译器与大模型服务引擎',
   card: {
-    title: 'AI model and inference *companies*',
-    summary:
-      'One kernel definition for every GPU backend, and serving that needs no Python.',
+    title: 'AI 模型与推理*公司*',
+    summary: '为每种 GPU 后端提供一份内核定义，以及无需 Python 的模型服务。',
   },
   hero: {
-    title: 'Write the kernel once. Ship it to four *backends*.',
-    lede: 'Iron compiles one kernel definition to Metal, CUDA, ROCm and Vulkan. Butter serves models on top without Python, and Syrup gives your agents a memory.',
+    title: '内核只写一次，交付*四种*后端。',
+    lede: 'Iron 把一份内核定义编译到 Metal、CUDA、ROCm 和 Vulkan。Butter 在其上提供无需 Python 的模型服务，Syrup 则给你的智能体一份记忆。',
   },
   problem: {
-    title: 'Every backend is a *rewrite*.',
+    title: '每多一个后端，就是一次*重写*。',
     statement:
-      'Your model is only as portable as your kernels, and kernels are usually written once per vendor.',
-    body: 'Supporting Apple silicon, NVIDIA, AMD and Vulkan tends to mean separate codebases and separate bugs, with Python on the hot path of the serving stack. Inference cost lands straight on your margin, and agents lose their context the moment a session ends.',
+      '你的模型能移植到什么程度，取决于你的内核，而内核通常是每家厂商各写一份。',
+    body: '要同时支持 Apple 芯片、NVIDIA、AMD 和 Vulkan，往往意味着多套代码库、多套 bug，而且服务栈的热路径上还有 Python。推理成本直接落在你的毛利上，智能体在会话结束的那一刻就丢掉了上下文。',
   },
   useCases: {
-    title: 'What you can *ship*.',
-    intro: 'Four jobs for the team that builds models, kernels or serving.',
+    title: '你能*交付*什么。',
+    intro: '为构建模型、内核或模型服务的团队准备的四件事。',
     items: [
       {
         tag: 'inference',
-        title: 'Write a kernel once and run it on four backends.',
-        body: 'Iron is a Rust-embedded DSL. Kernels lower to a shared IR and then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, behind a versioned C and Rust ABI that existing hosts can call.',
+        title: '内核只写一次，在四种后端上运行。',
+        body: 'Iron 是嵌入 Rust 的 DSL。内核先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V，对外是现有宿主可以调用的版本化 C 与 Rust ABI。',
       },
       {
         tag: 'inference',
-        title: 'Serve without Python or a JIT.',
-        body: 'Butter is Swift on Metal for Apple silicon and Rust for CUDA and the rest, with an OpenAI-compatible API, streaming and tool calling. Hybrid and MoE models, speculative decoding and LoRA are in the box.',
+        title: '不用 Python，也不用 JIT 提供服务。',
+        body: 'Butter 在 Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust，提供兼容 OpenAI 的 API、流式输出和工具调用。混合模型和 MoE 模型、推测解码和 LoRA 一应俱全。',
       },
       {
         tag: 'cost',
-        title: 'Spend fewer watts per token.',
-        body: '3- to 8-bit quantized checkpoints, a quantized KV cache, speculative decoding and per-backend kernels all go after tokens per watt and dollars per workload. We measure, and we will not quote a number we cannot reproduce.',
+        title: '每个 token 少耗几瓦。',
+        body: '2 至 8 位量化检查点、量化 KV 缓存、推测解码和按后端调优的内核，都是冲着每瓦 token 数和每个工作负载的成本去的。我们去测量，也不会报一个无法复现的数字。',
       },
       {
         tag: 'control',
-        title: 'Give your agents a memory that stays local.',
-        body: 'Syrup compresses embeddings with TurboQuant+ and runs lexical plus vector search on the machine. Results come back with citations over MCP, so agents can pick up where they left off.',
+        title: '给智能体一份留在本地的记忆。',
+        body: 'Syrup 用 TurboQuant+ 压缩嵌入向量，在本机运行关键词加向量搜索。结果通过 MCP 附带引用返回，智能体可以接着上次停下的地方继续。',
       },
     ],
   },
   sample: {
-    title: 'A kernel looks like *this*.',
-    intro:
-      'A Rust function with a few attributes. Iron lowers it to every backend.',
+    title: '内核长*这样*。',
+    intro: '一个带几个属性的 Rust 函数。Iron 会把它转换到每一种后端。',
     filename: 'unary.rs',
     language: 'iron · rust dsl',
     code: [
@@ -69,74 +66,74 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
       '    store(out[idx], exp(load(a[idx])));',
       '}',
     ].join('\n'),
-    emitsLabel: 'Emits',
+    emitsLabel: '生成',
     emits: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
-    intro: 'Iron and Butter are the core. Syrup and Waffle round it out.',
+    title: '技术栈如何*配合*。',
+    intro: 'Iron 和 Butter 是核心。Syrup 和 Waffle 补全其余。',
     items: [
       {
         product: 'iron',
-        need: 'One kernel definition, four backends.',
-        body: 'Press the math once. Iron lowers it through a shared IR to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, and a versioned C and Rust ABI lets the engines you already have call the result.',
+        need: '一份内核定义，四种后端。',
+        body: '数学只需压一次。Iron 经由共享 IR 把它转换为 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V，版本化的 C 与 Rust ABI 让你已有的引擎可以直接调用结果。',
       },
       {
         product: 'butter',
-        need: 'Model serving without Python.',
-        body: 'Loads safetensors, MLX, JANG and GGUF with no conversion, plus 3- to 8-bit quantized checkpoints, hybrid and MoE models, a quantized KV cache, speculative decoding and LoRA. Text, vision, speech-to-text, text-to-speech and omni models sit behind an OpenAI-compatible API.',
+        need: '无需 Python 的模型服务。',
+        body: '无需转换即可加载 safetensors、MLX、JANG 和 GGUF，并支持 2 至 8 位量化检查点、混合模型和 MoE 模型、量化 KV 缓存、推测解码和 LoRA。文本、视觉、语音转文字、文字转语音和全模态模型，都在兼容 OpenAI 的 API 背后。',
       },
       {
         product: 'syrup',
-        need: 'Memory for agents.',
-        body: 'Local retrieval over notes and code: embeddings compressed with TurboQuant+, lexical plus vector search, and cited results over MCP.',
+        need: '给智能体的记忆。',
+        body: '对笔记和代码做本地检索：用 TurboQuant+ 压缩的嵌入向量，关键词加向量搜索，以及通过 MCP 返回的带引用结果。',
       },
       {
         product: 'waffle',
-        need: 'Every engine on every GPU, in one view.',
-        body: 'Run Butter next to vLLM, SGLang or llama.cpp and see them side by side. A small Rust sidecar on each host reports signed telemetry.',
+        need: '一个视图，看清每块 GPU 上的每个引擎。',
+        body: '让 Butter 与 vLLM、SGLang 或 llama.cpp 并排运行，并排对照。每台主机上的小型 Rust sidecar 上报带签名的遥测数据。',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Metal is where every kernel is written and tuned first. The products are in early access and closed source for now.',
+    title: '我们的*进度*。',
+    lede: 'Metal 是每个内核最先编写和调优的地方。产品目前处于抢先体验阶段，暂未开源。',
     notes: [
-      'Roughly 1,139 kernel declarations are in Iron today.',
-      'HIP and Vulkan pass a test corpus of 4,164 of 4,164 cases bit-accurately, but they are not tuned yet.',
-      'CUDA is in production on RTX and DGX Spark, with datacenter GPUs in progress.',
+      'Iron 目前有大约 1,139 个内核声明。',
+      'HIP 和 Vulkan 在 4,164 个测试用例中全部逐位精确通过（4,164/4,164），但尚未调优。',
+      'CUDA 已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。',
     ],
   },
   faq: [
     {
-      question: 'How is Iron different from writing Metal and CUDA by hand?',
+      question: 'Iron 和手写 Metal、CUDA 有什么不同？',
       answer:
-        'You write one kernel definition in a Rust-embedded DSL, and it lowers through a shared IR to Metal, CUDA (PTX), HIP/ROCm or Vulkan SPIR-V. Tuning is still per backend, and today Metal gets it first.',
+        '你用嵌入 Rust 的 DSL 写一份内核定义，它经共享 IR 转换为 Metal、CUDA（PTX）、HIP/ROCm 或 Vulkan SPIR-V。调优仍然按后端进行，目前 Metal 最先得到调优。',
     },
     {
-      question: 'Can our existing stack call Iron kernels?',
+      question: '我们现有的技术栈能调用 Iron 内核吗？',
       answer:
-        'Yes. A versioned C and Rust ABI lets existing hosts call them, so you do not need to adopt Butter to use Iron.',
+        '可以。版本化的 C 与 Rust ABI 让现有宿主可以直接调用，所以使用 Iron 不必采用 Butter。',
     },
     {
-      question: 'Is Butter faster than vLLM or llama.cpp?',
+      question: 'Butter 比 vLLM 或 llama.cpp 更快吗？',
       answer:
-        'We do not publish comparisons we cannot reproduce, and we make no claim that Butter beats other engines on CUDA or ROCm. Benchmarks beat opinions, so when numbers go public they will come with the method.',
+        '我们不发布无法复现的对比，也不声称 Butter 在 CUDA 或 ROCm 上胜过其他引擎。基准测试胜过观点，所以当数字公开时，会连同方法一起给出。',
     },
     {
-      question: 'Which models does Butter run?',
+      question: 'Butter 能运行哪些模型？',
       answer:
-        'Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite, Phi, LFM, OLMo, SmolLM, Falcon H1, Jamba and InternLM, plus vision, speech and omni variants. DeepSeek V4 is in progress. Models load straight from Hugging Face with no conversion.',
+        'Llama、Gemma、Qwen、GPT-OSS、Mistral、Nemotron、Granite、Phi、LFM、OLMo、SmolLM、Falcon H1、Jamba 和 InternLM，以及视觉、语音和全模态变体。DeepSeek V4 正在进行中。模型直接从 Hugging Face 加载，无需转换。',
     },
     {
-      question: 'Can we get access?',
+      question: '我们能获得访问权限吗？',
       answer:
-        'Early access is open by request, and the products are closed source for now. Tell us which backends and models matter to you and we will write back.',
+        '抢先体验按申请开放，产品暂未开源。告诉我们你关心哪些后端和模型，我们会回信。',
     },
   ],
   cta: {
-    title: 'Press your math into *silicon*.',
-    body: 'Early access, closed source for now. Tell us what you build, which backends matter and where Python is in your way, and we will write back.',
+    title: '把你的数学压进*硅片*。',
+    body: '抢先体验，暂未开源。告诉我们你在构建什么、哪些后端重要、Python 在哪里挡了你的路，我们会回信。',
   },
 };
 

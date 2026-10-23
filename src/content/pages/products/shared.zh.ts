@@ -1,21 +1,20 @@
 import type { productsShared } from './shared';
 
-// TODO(i18n): translate to zh. Keep hrefs, slugs and product names.
 const productsSharedZh: (typeof productsShared)['en'] = {
-  statusLabel: 'Private · early access',
-  storyProblemLabel: 'The problem',
-  storyOutcomeLabel: 'What you can do now',
-  tierLabels: { primary: 'Primary', secondary: 'Secondary', runs: 'Runs' },
-  tierLegend: 'More bars, more tuning.',
+  statusLabel: '未公开 · 抢先体验',
+  storyProblemLabel: '问题所在',
+  storyOutcomeLabel: '现在你能做到',
+  tierLabels: { primary: '首要', secondary: '其次', runs: '可运行' },
+  tierLegend: '色条越多，调优越充分。',
   runsOn: {
-    label: 'Runs on',
+    label: '运行于',
     items: [
       { label: 'MacBook & Mac Studio' },
-      { label: 'RTX workstations' },
+      { label: 'RTX 工作站' },
       { label: 'DGX Spark' },
       { label: 'Strix Halo' },
-      { label: 'Neocloud fleets' },
-      { label: 'Enterprise datacenter GPUs', inProgress: true },
+      { label: '新型云服务商集群' },
+      { label: '企业级数据中心 GPU', inProgress: true },
     ],
   },
 };
