@@ -13,5 +13,5 @@
     "skipLibCheck": true
   },
   "include": ["./**/*.ts", "../src/i18n/config.ts"],
-  "exclude": ["./**/*.test.ts"]
+  "exclude": ["./**/*.test.ts", "../.claude"]
 }

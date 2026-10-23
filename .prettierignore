@@ -6,3 +6,4 @@ out/
 _site/
 src/generated/
 releases/
+.claude/

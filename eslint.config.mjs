@@ -24,6 +24,7 @@ export default defineConfig([
     },
   },
   globalIgnores([
+    '.claude/**',
     '.next/**',
     'out/**',
     '_site/**',

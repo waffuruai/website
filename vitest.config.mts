@@ -20,7 +20,7 @@ export default defineConfig({
       'worker/**/*.test.ts',
       'scripts/**/*.test.mjs',
     ],
-    exclude: ['node_modules/**', '.next/**', 'out/**', '_site/**'],
+    exclude: ['node_modules/**', '.next/**', 'out/**', '_site/**', '.claude/**'],
     css: false,
     passWithNoTests: false,
   },
