@@ -259,9 +259,11 @@
   }
 }
 
+/* Starts at 0.01, not 0: Chrome never counts an element first painted fully
+   transparent as the Largest Contentful Paint, and the hero H1 is the LCP. */
 @keyframes wfa-rise {
   from {
-    opacity: 0;
+    opacity: 0.01;
     transform: translateY(24px);
   }
   to {
