@@ -113,7 +113,7 @@ const en = {
       },
       support: {
         label: 'Support',
-        description: 'Answers, docs and how to reach us.',
+        description: 'Answers and how to reach us.',
       },
       contact: {
         label: 'Contact',

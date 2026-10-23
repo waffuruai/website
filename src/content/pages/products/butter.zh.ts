@@ -212,7 +212,7 @@ const butterZh: (typeof butter)['en'] = {
   ],
   cta: {
     title: '让*延迟*融化。',
-    body: 'Butter 目前处于抢先体验阶段，暂未开源。申请访问，等待期间可以先读文档。',
+    body: 'Butter 目前处于抢先体验阶段，暂未开源。申请访问。',
     docsLabel: '阅读文档',
   },
 };

@@ -219,7 +219,7 @@ const butterFr: (typeof butter)['en'] = {
   ],
   cta: {
     title: 'Faites fondre la *latence*.',
-    body: 'Butter est en accès anticipé et à code fermé pour l’instant. Demandez l’accès, et lisez la documentation en attendant.',
+    body: 'Butter est en accès anticipé et à code fermé pour l’instant. Demandez l’accès.',
     docsLabel: 'Lire la documentation',
   },
 };

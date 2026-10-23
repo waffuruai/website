@@ -1,14 +1,13 @@
-import { mailto, site } from '@/content/site';
+import { mailto } from '@/content/site';
 import type { support } from './support';
 
 const supportEs: (typeof support)['en'] = {
   seo: {
     title: 'Soporte',
     description:
-      'Qué hay disponible hoy, cómo funciona el acceso anticipado, hardware compatible, dónde está la documentación y cómo reportar un error o un fallo de seguridad.',
+      'Qué hay disponible hoy, cómo funciona el acceso anticipado, hardware compatible, y cómo reportar un error o un fallo de seguridad.',
     keywords: [
       'soporte de Waffuru',
-      'documentación de Waffuru',
       'acceso anticipado a Waffuru',
       'reportar un problema de seguridad',
       'hardware compatible con IA local',
@@ -22,11 +21,6 @@ const supportEs: (typeof support)['en'] = {
   links: {
     title: 'Por dónde *empezar*',
     items: [
-      {
-        title: 'Lee la documentación',
-        body: 'Las guías y referencias están en docs.waffuru.ai.',
-        href: site.urls.docs,
-      },
       {
         title: 'Escribe a soporte',
         body: 'Errores, dudas, problemas de instalación. Cuéntanos qué ejecutaste y en qué hardware.',
@@ -49,7 +43,7 @@ const supportEs: (typeof support)['en'] = {
     {
       question: '¿Qué puedo usar hoy?',
       answer:
-        'Nuestros productos (Iron, Butter, Waffle y Syrup) son privados y de código cerrado por ahora, y todavía no hay nada disponible para el público general. El acceso anticipado es la forma de entrar primero. Las guías y referencias están en docs.waffuru.ai.',
+        'Nuestros productos (Iron, Butter, Waffle y Syrup) son privados y de código cerrado por ahora, y todavía no hay nada disponible para el público general. El acceso anticipado es la forma de entrar primero.',
     },
     {
       question: '¿Cómo funciona el acceso anticipado?',
@@ -60,11 +54,6 @@ const supportEs: (typeof support)['en'] = {
       question: '¿En qué hardware funciona?',
       answer:
         'Apple silicon es el objetivo principal: cada kernel se escribe y se afina primero para Metal. NVIDIA CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. AMD ROCm y Vulkan funcionan hoy, pero aún sin afinar. Piensa en MacBook y Mac Studio, estaciones de trabajo RTX, DGX Spark, Strix Halo y flotas de neoclouds.',
-    },
-    {
-      question: '¿Dónde está la documentación?',
-      answer:
-        'En docs.waffuru.ai. Si algo está mal o falta, avísanos con el enlace de soporte de esta página.',
     },
     {
       question: '¿Cómo reporto un error?',

@@ -113,7 +113,7 @@ const fr: Dictionary = {
       },
       support: {
         label: 'Support',
-        description: 'Réponses, documentation et comment nous joindre.',
+        description: 'Réponses et comment nous joindre.',
       },
       contact: {
         label: 'Contact',

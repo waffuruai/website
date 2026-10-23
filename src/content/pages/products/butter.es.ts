@@ -219,7 +219,7 @@ const butterEs: (typeof butter)['en'] = {
   ],
   cta: {
     title: 'Derrite la *latencia*.',
-    body: 'Butter está en acceso anticipado y con código cerrado por ahora. Solicita acceso y lee la documentación mientras esperas.',
+    body: 'Butter está en acceso anticipado y con código cerrado por ahora. Solicita acceso.',
     docsLabel: 'Lee la documentación',
   },
 };

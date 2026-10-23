@@ -295,7 +295,7 @@ function healthySite() {
       ),
       headers: {
         'x-robots-tag': 'noindex, nofollow',
-        link: '</.well-known/api-catalog>; rel="api-catalog", <https://docs.waffuru.ai>; rel="service-doc", </index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"',
+        link: '</.well-known/api-catalog>; rel="api-catalog", </index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"',
       },
     },
     '/es': route(

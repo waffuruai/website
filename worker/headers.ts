@@ -83,7 +83,6 @@ export function discoveryLinks(markdownPath: string): string {
     `<${markdownPath}>; rel="alternate"; type="text/markdown"`,
     '</llms.txt>; rel="describedby"; type="text/plain"',
     '</.well-known/api-catalog>; rel="api-catalog"',
-    '<https://docs.waffuru.ai>; rel="service-doc"',
     '</sitemap.xml>; rel="sitemap"; type="application/xml"',
   ].join(', ');
 }

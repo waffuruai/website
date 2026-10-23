@@ -109,7 +109,7 @@ const es: Dictionary = {
       },
       support: {
         label: 'Soporte',
-        description: 'Respuestas, documentación y cómo contactarnos.',
+        description: 'Respuestas y cómo contactarnos.',
       },
       contact: {
         label: 'Contacto',

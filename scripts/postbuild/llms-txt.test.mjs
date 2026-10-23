@@ -78,7 +78,6 @@ describe('buildLlmsTxt', () => {
       'Help',
       'Legal',
       'Other',
-      'Docs',
       'Installers',
     ]);
     for (const line of text.split('\n').filter((l) => l.startsWith('- '))) {
@@ -127,8 +126,8 @@ describe('buildLlmsTxt', () => {
     expect(installerLines(PRODUCTS)).toHaveLength(6);
   });
 
-  it('points docs and early access at their real homes', () => {
-    expect(text).toContain('[Documentation](https://docs.waffuru.ai)');
+  it('points early access at its real home', () => {
+    expect(text).not.toContain('docs.waffuru.ai');
     expect(text).toContain('[Request early access](https://forms.gle/');
   });
 
@@ -136,7 +135,6 @@ describe('buildLlmsTxt', () => {
     const minimal = buildLlmsTxt({ pages: [], products: [] });
     expect([...minimal.matchAll(/^## (.+)$/gm)].map((m) => m[1])).toEqual([
       'Help',
-      'Docs',
     ]);
   });
 });

@@ -28,7 +28,6 @@ describe('site facts', () => {
       name: site.name,
       mission: site.mission,
       description: site.description,
-      docsUrl: site.urls.docs,
       earlyAccessUrl: site.urls.earlyAccess,
       email: site.emails.hello,
     });

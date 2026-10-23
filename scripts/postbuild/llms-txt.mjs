@@ -21,7 +21,6 @@ const SECTIONS = [
   'Help',
   'Legal',
   'Other',
-  'Docs',
   'Installers',
 ];
 
@@ -166,9 +165,6 @@ export function buildLlmsTxt({ pages, products, feed = false }) {
         'Join the early-access list',
       ),
     );
-  bySection
-    .get('Docs')
-    .push(entry('Documentation', SITE.docsUrl, 'Product documentation'));
   bySection.set('Installers', installerLines(products));
 
   const sections = [...bySection]

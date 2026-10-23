@@ -109,7 +109,7 @@ const zh: Dictionary = {
       },
       support: {
         label: '支持',
-        description: '解答、文档以及联系方式。',
+        description: '解答以及联系方式。',
       },
       contact: {
         label: '联系',

@@ -77,7 +77,6 @@ describe('/support', () => {
       'Metal',
       'CUDA',
       'ROCm',
-      'docs.waffuru.ai',
       'bug',
       'security',
       'stays on your machine',

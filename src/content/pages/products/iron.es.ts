@@ -175,13 +175,12 @@ const ironEs: (typeof iron)['en'] = {
     },
     {
       question: '¿Cómo lo pruebo?',
-      answer:
-        'Solicita acceso anticipado con el formulario de esta página. La documentación está en docs.waffuru.ai.',
+      answer: 'Solicita acceso anticipado con el formulario de esta página.',
     },
   ],
   cta: {
     title: 'Prensa tu primer *kernel*.',
-    body: 'Iron está en acceso anticipado y con código cerrado por ahora. Solicita acceso y lee la documentación mientras esperas.',
+    body: 'Iron está en acceso anticipado y con código cerrado por ahora. Solicita acceso.',
     docsLabel: 'Lee la documentación',
   },
 };

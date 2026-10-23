@@ -216,7 +216,7 @@ const butterKo: (typeof butter)['en'] = {
   ],
   cta: {
     title: '*지연 시간*을 녹여 없애세요.',
-    body: 'Butter는 얼리 액세스 중이며 당분간 비공개 소스입니다. 접근을 신청하시고, 기다리는 동안 문서를 읽어 보세요.',
+    body: 'Butter는 얼리 액세스 중이며 당분간 비공개 소스입니다. 접근을 신청해 주세요.',
     docsLabel: '문서 읽기',
   },
 };

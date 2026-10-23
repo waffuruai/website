@@ -164,12 +164,12 @@ const ironZh: (typeof iron)['en'] = {
     },
     {
       question: '怎么试用？',
-      answer: '通过本页的表单申请抢先体验。文档在 docs.waffuru.ai。',
+      answer: '通过本页的表单申请抢先体验。',
     },
   ],
   cta: {
     title: '压出你的第一个*内核*。',
-    body: 'Iron 目前处于抢先体验阶段，暂未开源。申请访问，等待期间可以先读文档。',
+    body: 'Iron 目前处于抢先体验阶段，暂未开源。申请访问。',
     docsLabel: '阅读文档',
   },
 };
