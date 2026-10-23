@@ -38,6 +38,27 @@ function expectJsonHeaders(response: Response) {
 }
 
 describe('handleSubscribe', () => {
+  it('refuses posts from other sites but accepts our own and none', async () => {
+    const fetchMock = vi.fn(async () => new Response('ok', { status: 200 }));
+    vi.stubGlobal('fetch', fetchMock);
+    const from = (origin?: string) =>
+      handleSubscribe(
+        new Request('https://waffuru.ai/api/subscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            ...(origin ? { Origin: origin } : {}),
+          },
+          body: 'email=a%40example.com',
+        }),
+      );
+    const foreign = await from('https://evil.example');
+    expect(foreign.status).toBe(403);
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect((await from('https://waffuru.ai')).status).toBe(200);
+    expect((await from()).status).toBe(200);
+  });
+
   it('answers anything but POST with 405 and Allow: POST', async () => {
     for (const method of ['GET', 'PUT', 'DELETE']) {
       const response = await handleSubscribe(

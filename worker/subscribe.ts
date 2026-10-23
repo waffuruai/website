@@ -96,6 +96,13 @@ export async function handleSubscribe(request: Request): Promise<Response> {
     return reply(405, { error: 'method_not_allowed' }, { Allow: 'POST' });
   }
 
+  // Only our own pages may post here. Browsers send Origin on cross-site
+  // form posts (which skip CORS), so another site can't sign people up.
+  const origin = request.headers.get('origin');
+  if (origin && origin !== new URL(request.url).origin) {
+    return reply(403, { error: 'forbidden_origin' });
+  }
+
   const type = mediaType(request);
   if (
     type !== 'application/json' &&
