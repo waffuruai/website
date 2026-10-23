@@ -1,0 +1,48 @@
+import type { Localized, Seo } from '@/content/types';
+import type { TeamMember } from '@/content/team';
+
+/*
+ * Team page copy. Names, roles, bios and links live in `src/content/team.ts`;
+ * this file holds the page's own words. The hiring callout reads
+ * `about.hiring`, so there is one source for it.
+ */
+
+export type TeamPageContent = {
+  seo: Seo;
+  hero: { label: string; title: string; lede: string };
+  /** `{name}` is replaced with the person's name. */
+  portraitAlt: string;
+  /** `{name}` and `{network}`: the accessible name of a profile link. */
+  linkAria: string;
+  /** Visible labels for the profile links. Network names stay as they are. */
+  linkNames: Record<keyof TeamMember['links'], string>;
+  cta: { title: string; body: string };
+};
+
+export const teamPage: Localized<TeamPageContent> = {
+  en: {
+    seo: {
+      title: 'Team',
+      description:
+        'Meet the founders and researchers building Waffuru: research, security, revenue and a couple of founders who have shipped before.',
+      keywords: ['Waffuru team', 'Waffuru founders'],
+    },
+    hero: {
+      label: 'Team',
+      title: 'Who’s in the *kitchen*.',
+      lede: 'Research, security, revenue and a couple of founders who have shipped before.',
+    },
+    portraitAlt: 'Portrait of {name}',
+    linkAria: '{name} on {network}',
+    linkNames: {
+      linkedin: 'LinkedIn',
+      website: 'Website',
+      x: 'X',
+      github: 'GitHub',
+    },
+    cta: {
+      title: 'See what we’re *cooking*.',
+      body: 'Our products are private for now. Request early access to try them, or talk to us about what you need.',
+    },
+  },
+};
