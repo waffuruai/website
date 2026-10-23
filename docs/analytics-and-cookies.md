@@ -65,7 +65,7 @@ How waffuru.ai decides what to load, and where each piece lives. There is one op
 | `connect-src` | `https://*.google-analytics.com`, `https://*.analytics.google.com`, `https://*.googletagmanager.com` | `/g/collect` hits, including regional endpoints         |
 | `img-src`     | `https://*.google-analytics.com`, `https://*.googletagmanager.com`                                   | Image-beacon fallback                                   |
 
-There is no inline script anywhere in this flow: `gtag`, `dataLayer` and the consent defaults come from bundled code, and gtag.js is an external script. Do not add `<Script>` with children or `dangerouslySetInnerHTML`; the CSP only allows inline scripts hashed from Next's own output.
+There is no inline script anywhere in this flow: `gtag`, `dataLayer` and the consent defaults come from bundled code, and gtag.js is an external script. Do not add `<Script>` with children or `dangerouslySetInnerHTML`; the CSP only lets scripts run that carry the per-request nonce the Worker stamps on the built HTML (and what those load, via `'strict-dynamic'`).
 
 ## Verify locally
 

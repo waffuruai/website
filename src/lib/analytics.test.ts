@@ -235,7 +235,7 @@ describe('loadGtag', () => {
       `https://www.googletagmanager.com/gtag/js?id=${ID}`,
     );
     expect(script.async).toBe(true);
-    // Nothing inline: the CSP only allows hashed inline scripts.
+    // Nothing inline: the CSP only runs scripts carrying the Worker's nonce.
     expect(script.textContent).toBe('');
   });
 

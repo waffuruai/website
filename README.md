@@ -16,7 +16,7 @@ look: dark roast, Instrument Serif with a gold italic accent, CSS-only motifs.
 | Markdown blog        | MDX posts with build-time code highlighting, table of contents, RSS and per-locale translations                                                                                        |
 | Readable by agents   | `llms.txt`, a markdown twin of every page (`.md` or `Accept: text/markdown`), discovery `Link` headers, API catalog, content signals                                                   |
 | Search-ready         | Canonicals, `hreflang`, JSON-LD, sitemap, a share card per page                                                                                                                        |
-| Locked down          | No server, a per-page hash-based CSP, HSTS, `frame-ancestors 'none'`; analytics only with consent                                                                                      |
+| Locked down          | No server, a per-request nonce CSP, HSTS, `frame-ancestors 'none'`; analytics only with consent                                                                                        |
 | One-command installs | `curl -fsSL https://waffuru.ai/ops/bootstrap.sh \| sh` fetches without any GitHub auth; the script signs you in for the private clones                                                 |
 | Verified provenance  | Every served installer is checked against its `.sha256` and its build-provenance attestation before it is published                                                                    |
 | Pinned versions      | Every recent release stays reachable at `/<product>/<tag>/<asset>`                                                                                                                     |
