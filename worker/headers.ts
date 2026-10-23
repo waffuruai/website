@@ -45,7 +45,6 @@ export function contentSecurityPolicy(nonce: string): string {
     "frame-ancestors 'none'",
     "base-uri 'none'",
     "object-src 'none'",
-    'upgrade-insecure-requests',
   ].join('; ');
 }
 
@@ -55,13 +54,20 @@ export function createNonce(): string {
   return btoa(String.fromCharCode(...bytes));
 }
 
+/** Script preloads: under `'strict-dynamic'` they need the nonce too. */
+const SCRIPT_PRELOAD =
+  /<link\b(?=[^>]*\b(?:as=["']?script\b|rel=["']?modulepreload\b))/gi;
+
 /**
- * Adds `nonce` to every `<script` tag in built HTML. Safe as a plain text
- * pass: the build escapes `<` inside inline JSON and RSC payloads (`\u003c`)
- * and page text renders it as `&lt;`, so `<script` only ever starts a tag.
+ * Adds `nonce` to every `<script` tag (and script preload) in built HTML.
+ * Safe as a plain text pass: the build escapes `<` inside inline JSON and RSC
+ * payloads (`\u003c`) and page text renders it as `&lt;`, so `<script` only
+ * ever starts a tag.
  */
 export function addNonce(html: string, nonce: string): string {
-  return html.replace(/<script\b/gi, `<script nonce="${nonce}"`);
+  return html
+    .replace(/<script\b/gi, `<script nonce="${nonce}"`)
+    .replace(SCRIPT_PRELOAD, `<link nonce="${nonce}"`);
 }
 
 /** Headers every response from the Worker carries, documents or not. */

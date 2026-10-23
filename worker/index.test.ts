@@ -19,7 +19,7 @@ function assets(files: Record<string, { body: string; type?: string }>) {
 const FILES = {
   '/en': { body: '<h1>home</h1>' },
   '/en/about': {
-    body: '<h1>about</h1><script src="/_next/a.js"></script><script>self.__next_f.push([1])</script>',
+    body: '<link rel="preload" as="script" href="/_next/a.js"/><link rel="stylesheet" href="/a.css"/><h1>about</h1><script src="/_next/a.js"></script><script>self.__next_f.push([1])</script>',
   },
   '/en/about.md': { body: '# About', type: 'text/markdown' },
   '/ja/about': { body: '<h1>について</h1>' },
@@ -53,6 +53,8 @@ describe('worker', () => {
     const html = await response.text();
     expect(html.match(/<script nonce="([^"]+)"/g)).toHaveLength(2);
     expect(html).not.toMatch(/<script(?! nonce)/);
+    expect(html).toContain(`<link nonce="${nonce}" rel="preload" as="script"`);
+    expect(html).toContain('<link rel="stylesheet"');
     expect(html).toContain(`nonce="${nonce}"`);
     expect(response.headers.get('etag')).toBeNull();
     expect(response.headers.get('strict-transport-security')).toContain(
