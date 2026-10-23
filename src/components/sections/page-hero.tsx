@@ -29,7 +29,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        'max-w-site px-site mx-auto flex flex-col gap-8 pt-16 pb-20 md:pt-28 md:pb-28',
+        'mx-auto flex max-w-site flex-col gap-8 px-site pt-16 pb-20 md:pt-28 md:pb-28',
         className,
       )}
     >
@@ -38,11 +38,11 @@ export function PageHero({
           {label}
         </MonoLabel>
       )}
-      <h1 className="heading-page wf-rise max-w-[1100px]">
+      <h1 className="wf-rise max-w-[1100px] heading-page">
         <Accent text={title} />
       </h1>
       {lede && (
-        <p className="wf-rise text-soft max-w-[640px] text-[19px] leading-[1.55] text-pretty">
+        <p className="wf-rise max-w-[640px] text-[19px] leading-[1.55] text-pretty text-soft">
           {lede}
         </p>
       )}

@@ -11,7 +11,7 @@ export function NewsletterSignup({ className }: { className?: string }) {
   return (
     <div className={className}>
       <p className="font-serif text-3xl">{newsletter.heading}</p>
-      <p className="text-muted-foreground mt-2 max-w-md text-[15px] leading-relaxed">
+      <p className="mt-2 max-w-md text-[15px] leading-relaxed text-muted-foreground">
         {newsletter.description}
       </p>
     </div>

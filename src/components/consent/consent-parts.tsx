@@ -24,7 +24,7 @@ export function ConsentButton({
     <button
       type="button"
       className={cn(
-        'focus-visible:ring-ring/50 inline-flex min-h-11 items-center justify-center rounded-full px-6 text-[15px] font-medium whitespace-nowrap transition-colors outline-none focus-visible:ring-3',
+        'inline-flex min-h-11 items-center justify-center rounded-full px-6 text-[15px] font-medium whitespace-nowrap transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50',
         VARIANTS[variant],
         className,
       )}
@@ -39,7 +39,7 @@ export function PolicyLink() {
   return (
     <LocalizedLink
       href="/legal/cookies"
-      className="text-foreground decoration-foreground/40 hover:decoration-foreground underline"
+      className="text-foreground underline decoration-foreground/40 hover:decoration-foreground"
     >
       {t.policyLink}
     </LocalizedLink>

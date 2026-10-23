@@ -42,11 +42,11 @@ function Tier({ tier }: { tier: HomeContent['kernel']['tiers'][number] }) {
   const level = LEVELS[tier.level];
 
   return (
-    <li className="border-foreground/10 flex flex-col gap-3.5 border-t py-6 last:border-b">
+    <li className="flex flex-col gap-3.5 border-t border-foreground/10 py-6 last:border-b">
       <div className="flex flex-wrap items-baseline justify-between gap-3">
-        <h4 className="text-foreground text-[22px]">{tier.name}</h4>
+        <h4 className="text-[22px] text-foreground">{tier.name}</h4>
         <span
-          className={cn('label-mono flex items-center gap-2.5', level.label)}
+          className={cn('flex items-center gap-2.5 label-mono', level.label)}
         >
           {tier.label}
           <span aria-hidden className="flex gap-[3px]">
@@ -64,11 +64,11 @@ function Tier({ tier }: { tier: HomeContent['kernel']['tiers'][number] }) {
       </div>
       <span
         aria-hidden
-        className="bg-foreground/12 relative block h-px overflow-hidden"
+        className="relative block h-px overflow-hidden bg-foreground/12"
       >
         <span className={cn('wf-pulse', level.pulse)} />
       </span>
-      <p className="text-muted-foreground text-base leading-[1.55]">
+      <p className="text-base leading-[1.55] text-muted-foreground">
         {tier.note}
       </p>
     </li>
@@ -84,20 +84,20 @@ export function KernelCode({ content }: { content: HomeContent['kernel'] }) {
   const { title, code, tuned, tiers, runsOn } = content;
 
   return (
-    <section className="max-w-site px-site relative z-[6] mx-auto py-30 max-[720px]:pt-18 max-[720px]:pb-10">
-      <h2 className="heading-section mb-14">
+    <section className="relative z-[6] mx-auto max-w-site px-site py-30 max-[720px]:pt-18 max-[720px]:pb-10">
+      <h2 className="mb-14 heading-section">
         <Accent text={title} />
       </h2>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(520px,100%),1fr))] items-stretch gap-8">
-        <figure className="bg-card border-foreground/10 overflow-hidden rounded-lg border">
-          <figcaption className="border-foreground/8 text-muted-foreground flex justify-between gap-3 border-b px-[22px] py-4 font-mono text-xs">
+        <figure className="overflow-hidden rounded-lg border border-foreground/10 bg-card">
+          <figcaption className="flex justify-between gap-3 border-b border-foreground/8 px-[22px] py-4 font-mono text-xs text-muted-foreground">
             <span>{code.file}</span>
             <span>{code.label}</span>
           </figcaption>
           <pre
             tabIndex={0}
-            className="text-soft focus-visible:outline-ring overflow-x-auto px-6 py-7 font-mono text-sm leading-[1.75] focus-visible:outline-2 focus-visible:-outline-offset-2 max-[720px]:px-4 max-[720px]:py-5 max-[720px]:text-xs"
+            className="overflow-x-auto px-6 py-7 font-mono text-sm leading-[1.75] text-soft focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring max-[720px]:px-4 max-[720px]:py-5 max-[720px]:text-xs"
           >
             <code>
               {code.tokens.map((token, index) =>
@@ -114,7 +114,7 @@ export function KernelCode({ content }: { content: HomeContent['kernel'] }) {
         </figure>
 
         <div className="flex flex-col">
-          <div className="text-muted-foreground flex justify-between gap-4 pb-4">
+          <div className="flex justify-between gap-4 pb-4 text-muted-foreground">
             <h3 className="label-mono">{tuned.title}</h3>
             <span className="label-mono max-[720px]:hidden">{tuned.note}</span>
           </div>
@@ -131,18 +131,18 @@ export function KernelCode({ content }: { content: HomeContent['kernel'] }) {
         aria-labelledby="runs-on"
         className="mt-14 flex flex-wrap items-center gap-3"
       >
-        <span id="runs-on" className="label-mono text-muted-foreground mr-2">
+        <span id="runs-on" className="mr-2 label-mono text-muted-foreground">
           {runsOn.label}
         </span>
         {runsOn.items.map((item) => (
           <span
             key={item}
-            className="border-foreground/16 text-foreground rounded-full border px-4 py-2.5 text-sm"
+            className="rounded-full border border-foreground/16 px-4 py-2.5 text-sm text-foreground"
           >
             {item}
           </span>
         ))}
-        <span className="border-foreground/30 text-soft rounded-full border border-dashed px-4 py-2.5 text-sm">
+        <span className="rounded-full border border-dashed border-foreground/30 px-4 py-2.5 text-sm text-soft">
           {runsOn.pending}
         </span>
       </div>

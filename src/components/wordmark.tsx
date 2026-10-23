@@ -31,7 +31,7 @@ export function Wordmark({
       </span>
       <span
         lang="ja"
-        className="text-muted-foreground hidden text-[13px] tracking-[0.04em] min-[390px]:inline sm:tracking-[0.1em]"
+        className="hidden text-[13px] tracking-[0.04em] text-muted-foreground min-[390px]:inline sm:tracking-[0.1em]"
       >
         {site.kana}
       </span>

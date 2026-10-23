@@ -79,31 +79,31 @@ function MenuLink({
         <LocalizedLink
           href={link.href}
           aria-current={active ? 'page' : undefined}
-          className="group/item hover:bg-accent focus-visible:bg-accent flex items-start gap-4 rounded-xl p-3"
+          className="group/item flex items-start gap-4 rounded-xl p-3 hover:bg-accent focus-visible:bg-accent"
         >
           {link.index && (
-            <span className="text-muted-foreground mt-1.5 font-mono text-[11px] tracking-[0.08em]">
+            <span className="mt-1.5 font-mono text-[11px] tracking-[0.08em] text-muted-foreground">
               {link.index}
             </span>
           )}
           <span className="flex flex-col gap-1">
             <span
               className={cn(
-                'text-foreground inline-flex items-center gap-1.5',
+                'inline-flex items-center gap-1.5 text-foreground',
                 link.index
-                  ? 'group-hover/item:text-brand-ink font-serif text-[26px] leading-none transition-colors'
+                  ? 'font-serif text-[26px] leading-none transition-colors group-hover/item:text-brand-ink'
                   : 'text-[15px] font-medium',
               )}
             >
               {item.label}
               {external && (
                 <ArrowUpRightIcon
-                  className="text-muted-foreground size-3.5"
+                  className="size-3.5 text-muted-foreground"
                   aria-hidden
                 />
               )}
             </span>
-            <span className="text-muted-foreground text-sm leading-snug">
+            <span className="text-sm leading-snug text-muted-foreground">
               {item.description}
             </span>
           </span>
@@ -125,7 +125,7 @@ function Column({
   return (
     <div className="flex flex-col">
       {column.heading && (
-        <p className="label-mono text-muted-foreground px-3 pt-2 pb-1 text-[11px]">
+        <p className="px-3 pt-2 pb-1 label-mono text-[11px] text-muted-foreground">
           {nav[column.heading]}
         </p>
       )}
@@ -138,7 +138,7 @@ function Column({
         <NavigationMenuLink asChild>
           <LocalizedLink
             href={column.footer.href}
-            className="text-brand-ink hover:bg-accent mt-1 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium"
+            className="mt-1 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-brand-ink hover:bg-accent"
           >
             {nav[column.footer.labelKey]}
             <ArrowRightIcon className="size-4" aria-hidden />
@@ -236,7 +236,7 @@ function MobileNav({ nav, path }: { nav: Nav; path: string }) {
           href={href}
           aria-current={isActive(href, path) ? 'page' : undefined}
           className={cn(
-            'hover:bg-accent flex min-h-11 items-center rounded-lg px-3 py-2',
+            'flex min-h-11 items-center rounded-lg px-3 py-2 hover:bg-accent',
             isActive(href, path) && 'bg-accent text-brand-ink',
           )}
         >
@@ -280,7 +280,7 @@ function MobileNav({ nav, path }: { nav: Nav; path: string }) {
                     {menu.columns.map((column, index) => (
                       <div key={index} className="mb-2">
                         {column.heading && (
-                          <p className="label-mono text-muted-foreground px-3 pt-2 text-[11px]">
+                          <p className="px-3 pt-2 label-mono text-[11px] text-muted-foreground">
                             {nav[column.heading]}
                           </p>
                         )}
@@ -329,18 +329,18 @@ export function Navbar() {
   const { path } = splitLocale(usePathname() ?? '/');
 
   return (
-    <header className="bg-background/80 supports-[backdrop-filter]:bg-background/65 sticky top-0 z-50 border-b border-transparent backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-transparent bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/65">
       <a
         href="#main"
-        className="bg-primary text-primary-foreground sr-only z-50 rounded-full px-4 py-2 focus:not-sr-only focus:absolute focus:top-3 focus:left-3"
+        className="sr-only z-50 rounded-full bg-primary px-4 py-2 text-primary-foreground focus:not-sr-only focus:absolute focus:top-3 focus:left-3"
       >
         {common.skipToContent}
       </a>
-      <div className="max-w-site px-site mx-auto flex h-[72px] items-center gap-4 lg:h-[88px]">
+      <div className="mx-auto flex h-[72px] max-w-site items-center gap-4 px-site lg:h-[88px]">
         <LocalizedLink
           href="/"
           aria-label={header.home}
-          className="text-foreground hover:text-foreground inline-flex min-h-11 shrink-0 items-center"
+          className="inline-flex min-h-11 shrink-0 items-center text-foreground hover:text-foreground"
         >
           <Wordmark priority />
         </LocalizedLink>
@@ -350,7 +350,7 @@ export function Navbar() {
           <ThemeToggle className="hidden sm:inline-flex" />
           <LocalizedLink
             href={navigation.utility.cta.href}
-            className="label-mono border-foreground/28 text-foreground hover:border-foreground/60 ml-2 hidden min-h-11 items-center rounded-full border px-[18px] whitespace-nowrap transition-colors sm:inline-flex"
+            className="ml-2 hidden min-h-11 items-center rounded-full border border-foreground/28 px-[18px] label-mono whitespace-nowrap text-foreground transition-colors hover:border-foreground/60 sm:inline-flex"
           >
             {common[navigation.utility.cta.labelKey]}
           </LocalizedLink>

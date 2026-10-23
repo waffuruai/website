@@ -17,7 +17,7 @@ export function TeamTeaser({
   copy: Record<string, TeamCopy>;
 }) {
   return (
-    <section className="max-w-site px-site relative z-[6] mx-auto pt-30 pb-10 max-[720px]:pt-18">
+    <section className="relative z-[6] mx-auto max-w-site px-site pt-30 pb-10 max-[720px]:pt-18">
       <SectionHeading
         title={content.title}
         intro={content.intro}
@@ -30,7 +30,7 @@ export function TeamTeaser({
             key={member.slug}
             className="wf-portrait flex basis-full gap-4 min-[721px]:basis-[calc((100%-40px)/3)] min-[721px]:flex-col min-[721px]:gap-[18px] min-[1025px]:basis-[calc((100%-80px)/5)]"
           >
-            <div className="bg-card w-24 shrink-0 overflow-hidden rounded-[14px] min-[721px]:w-full">
+            <div className="w-24 shrink-0 overflow-hidden rounded-[14px] bg-card min-[721px]:w-full">
               <Picture
                 name={member.photo}
                 alt={content.portraitAlt.replace('{name}', member.name)}
@@ -40,10 +40,10 @@ export function TeamTeaser({
               />
             </div>
             <div className="flex flex-col gap-2">
-              <h3 className="text-foreground font-serif text-2xl leading-[1.05] min-[721px]:text-[30px]">
+              <h3 className="font-serif text-2xl leading-[1.05] text-foreground min-[721px]:text-[30px]">
                 {member.name}
               </h3>
-              <p className="text-muted-foreground text-[15px] leading-[1.55]">
+              <p className="text-[15px] leading-[1.55] text-muted-foreground">
                 {copy[member.slug]?.role}
               </p>
             </div>

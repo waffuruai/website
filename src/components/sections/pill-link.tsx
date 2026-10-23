@@ -33,7 +33,7 @@ export function PillLink({
     <LocalizedLink
       href={href}
       className={cn(
-        'inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-full px-7 text-[15px] font-medium transition-colors',
+        'inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-full px-7 text-center text-[15px] font-medium text-balance transition-colors',
         VARIANTS[variant],
         className,
       )}

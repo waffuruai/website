@@ -34,8 +34,8 @@ export function ThemeToggle({ className }: { className?: string }) {
           aria-label={t.label}
           title={t.label}
         >
-          <MoonIcon className="light:hidden size-[18px]" aria-hidden />
-          <SunIcon className="light:block hidden size-[18px]" aria-hidden />
+          <MoonIcon className="size-[18px] light:hidden" aria-hidden />
+          <SunIcon className="hidden size-[18px] light:block" aria-hidden />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

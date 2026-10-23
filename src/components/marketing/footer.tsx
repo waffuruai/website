@@ -24,14 +24,14 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
   const { footer, nav, common } = dictionary;
 
   return (
-    <footer className="border-foreground/10 mt-24 border-t">
+    <footer className="mt-24 border-t border-foreground/10">
       <h2 className="sr-only">{footer.heading}</h2>
-      <div className="max-w-site px-site mx-auto grid gap-14 pt-16 pb-12 lg:grid-cols-[1.1fr_2fr]">
+      <div className="mx-auto grid max-w-site gap-14 px-site pt-16 pb-12 lg:grid-cols-[1.1fr_2fr]">
         <div className="flex flex-col gap-8">
           <LocalizedLink
             href="/"
             aria-label={dictionary.header.home}
-            className="text-foreground hover:text-foreground w-fit"
+            className="w-fit text-foreground hover:text-foreground"
           >
             <Wordmark />
           </LocalizedLink>
@@ -43,7 +43,7 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
         >
           {navigation.footer.columns.map((column) => (
             <div key={column.headingKey}>
-              <p className="label-mono text-muted-foreground text-[11px]">
+              <p className="label-mono text-[11px] text-muted-foreground">
                 {footer[column.headingKey]}
               </p>
               <ul className="mt-4 flex flex-col gap-1">
@@ -51,7 +51,7 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
                   <li key={link.href}>
                     <LocalizedLink
                       href={link.href}
-                      className="text-soft hover:text-foreground inline-flex min-h-9 items-center text-[15px] transition-colors"
+                      className="inline-flex min-h-9 items-center text-[15px] text-soft transition-colors hover:text-foreground"
                     >
                       {nav.items[link.key].label}
                     </LocalizedLink>
@@ -63,7 +63,7 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
         </nav>
       </div>
 
-      <div className="max-w-site border-foreground/10 px-site text-muted-foreground mx-auto flex flex-col gap-4 border-t pt-6 pb-12 font-mono text-xs tracking-[0.06em] md:flex-row md:flex-wrap md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-site flex-col gap-4 border-t border-foreground/10 px-site pt-6 pb-12 font-mono text-xs tracking-[0.06em] text-muted-foreground md:flex-row md:flex-wrap md:items-center md:justify-between">
         <p>
           {interpolate(footer.rights, { year: YEAR })} · {footer.madeIn}{' '}
           <span role="img" aria-label={footer.flagsLabel}>
@@ -74,7 +74,7 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
           <li>
             <a
               href={`mailto:${site.emails.hello}`}
-              className="hover:text-foreground inline-flex min-h-11 items-center"
+              className="inline-flex min-h-11 items-center hover:text-foreground"
             >
               {site.emails.hello}
             </a>
@@ -86,7 +86,7 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={interpolate(footer.social, { network })}
-                className="hover:text-foreground inline-flex min-h-11 items-center"
+                className="inline-flex min-h-11 items-center hover:text-foreground"
               >
                 {network}
               </a>
@@ -96,19 +96,19 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
             <li key={link.href}>
               <LocalizedLink
                 href={link.href}
-                className="hover:text-foreground inline-flex min-h-11 items-center"
+                className="inline-flex min-h-11 items-center hover:text-foreground"
               >
                 {footer[link.labelKey]}
               </LocalizedLink>
             </li>
           ))}
           <li>
-            <CookieSettingsButton className="hover:text-foreground inline-flex min-h-11 items-center tracking-[0.06em]" />
+            <CookieSettingsButton className="inline-flex min-h-11 items-center tracking-[0.06em] hover:text-foreground" />
           </li>
           <li>
             <a
               href="#main"
-              className="hover:text-foreground inline-flex min-h-11 items-center"
+              className="inline-flex min-h-11 items-center hover:text-foreground"
             >
               {common.backToTop} ↑
             </a>

@@ -25,31 +25,31 @@ export function Hero({
     <section className="relative flex min-h-[900px] flex-col justify-end max-[720px]:min-h-0 max-[720px]:pt-28">
       <HeroTiles />
 
-      <div className="max-w-site px-site relative z-[6] mx-auto flex w-full flex-col gap-9 pb-18 max-[720px]:gap-7 max-[720px]:pb-12">
+      <div className="relative z-[6] mx-auto flex w-full max-w-site flex-col gap-9 px-site pb-18 max-[720px]:gap-7 max-[720px]:pb-12">
         <MonoLabel dot className="wf-rise gap-3">
           {eyebrow}
         </MonoLabel>
 
-        <h1 className="heading-hero wf-rise max-w-[1200px]">
+        <h1 className="wf-rise max-w-[1200px] heading-hero">
           <Accent text={title} />
         </h1>
 
         <div className="flex flex-wrap items-end justify-between gap-8">
-          <p className="wf-rise text-soft max-w-[520px] text-[19px] leading-[1.55] text-pretty">
+          <p className="wf-rise max-w-[520px] text-[19px] leading-[1.55] text-pretty text-soft">
             {lede}
           </p>
           <div className="flex flex-wrap items-center gap-6 max-[720px]:w-full max-[720px]:flex-col max-[720px]:items-stretch max-[720px]:gap-[18px]">
             <PillLink href={primary.href}>{primary.label}</PillLink>
             <a
               href={secondary.href}
-              className="label-mono text-soft hover:text-foreground inline-flex min-h-11 items-center gap-2 transition-colors max-[720px]:justify-center"
+              className="inline-flex min-h-11 items-center gap-2 label-mono text-soft transition-colors hover:text-foreground max-[720px]:justify-center"
             >
               {secondary.label} <span aria-hidden>↓</span>
             </a>
           </div>
         </div>
 
-        <p className="label-mono text-muted-foreground border-foreground/12 flex flex-wrap gap-7 border-t pt-7">
+        <p className="flex flex-wrap gap-7 border-t border-foreground/12 pt-7 label-mono text-muted-foreground">
           <span>
             {emits.label} <span aria-hidden>→</span>
           </span>

@@ -40,7 +40,7 @@ function SettingsBody() {
         <DialogTitle className="font-serif text-[28px] leading-tight font-normal tracking-tight">
           {t.settings}
         </DialogTitle>
-        <DialogDescription className="text-soft text-sm/6">
+        <DialogDescription className="text-sm/6 text-soft">
           {gpc ? t.gpcNotice : t.settingsDescription} <PolicyLink />
         </DialogDescription>
       </DialogHeader>
@@ -49,7 +49,7 @@ function SettingsBody() {
         <button
           type="button"
           aria-label={t.dismiss}
-          className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 absolute top-3 right-3 inline-flex size-11 items-center justify-center rounded-full transition-colors outline-none focus-visible:ring-3"
+          className="absolute top-3 right-3 inline-flex size-11 items-center justify-center rounded-full text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           <XIcon className="size-4" aria-hidden />
         </button>
@@ -63,17 +63,17 @@ function SettingsBody() {
         </DialogClose>
       ) : (
         <>
-          <div className="border-foreground/12 flex items-start gap-4 rounded-xl border p-4">
+          <div className="flex items-start gap-4 rounded-xl border border-foreground/12 p-4">
             <div className="flex min-w-0 flex-1 flex-col gap-1.5">
               <Label
                 htmlFor={id}
-                className="text-foreground text-[15px] leading-snug"
+                className="text-[15px] leading-snug text-foreground"
               >
                 {t.analyticsLabel}
               </Label>
               <p
                 id={`${id}-description`}
-                className="text-muted-foreground text-sm/6"
+                className="text-sm/6 text-muted-foreground"
               >
                 {t.analyticsDescription}
               </p>
@@ -83,7 +83,7 @@ function SettingsBody() {
               checked={analytics}
               onCheckedChange={setAnalytics}
               aria-describedby={`${id}-description`}
-              className="data-unchecked:border-foreground/35 mt-0.5 after:-inset-y-[13px]"
+              className="mt-0.5 after:-inset-y-[13px] data-unchecked:border-foreground/35"
             />
           </div>
           <ConsentButton
@@ -116,7 +116,7 @@ export function CookieSettingsDialog() {
     >
       <DialogContent
         showCloseButton={false}
-        className="ring-foreground/12 gap-5 rounded-2xl p-6 sm:max-w-md"
+        className="gap-5 rounded-2xl p-6 ring-foreground/12 sm:max-w-md"
         // The opener is not a <DialogTrigger> (it lives in the footer), so
         // Radix has nothing to refocus: hand focus back ourselves.
         onCloseAutoFocus={(event) => {

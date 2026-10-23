@@ -13,7 +13,7 @@ function StatusDot({ inProgress }: { inProgress: boolean }) {
     <span
       aria-hidden
       className={cn(
-        'border-brand-ink size-2 shrink-0 rounded-full border',
+        'size-2 shrink-0 rounded-full border border-brand-ink',
         !inProgress && 'bg-brand-ink',
       )}
     />
@@ -41,7 +41,7 @@ function ModelCard({
     <li
       aria-hidden={clone || undefined}
       className={cn(
-        'bg-card border-foreground/10 flex w-[280px] shrink-0 flex-col gap-5 rounded-lg border p-6',
+        'flex w-[280px] shrink-0 flex-col gap-5 rounded-lg border border-foreground/10 bg-card p-6',
         // Without motion there is no loop, so the copy is just a duplicate.
         clone && 'motion-reduce:hidden',
       )}
@@ -49,7 +49,7 @@ function ModelCard({
       <div className="flex items-center justify-between gap-3">
         <span
           aria-hidden
-          className="wf-logo text-foreground size-9"
+          className="wf-logo size-9 text-foreground"
           style={
             { '--logo': `url(/logos/${model.logo}.svg)` } as React.CSSProperties
           }
@@ -62,10 +62,10 @@ function ModelCard({
         </span>
       </div>
       <div className="flex flex-col gap-1.5">
-        <span className="text-foreground font-serif text-[32px] leading-none">
+        <span className="font-serif text-[32px] leading-none text-foreground">
           {model.lab}
         </span>
-        <span className="text-muted-foreground font-mono text-[13px] leading-normal">
+        <span className="font-mono text-[13px] leading-normal text-muted-foreground">
           {model.models}
         </span>
       </div>
@@ -87,17 +87,17 @@ export function Models({ content }: { content: HomeContent['models'] }) {
       id="models"
       className="relative z-[6] pt-30 pb-10 max-[720px]:pt-18 max-[720px]:pb-4"
     >
-      <div className="max-w-site px-site mx-auto mb-14 flex flex-wrap items-end justify-between gap-x-12 gap-y-6">
-        <h2 className="heading-section max-w-[900px]">
+      <div className="mx-auto mb-14 flex max-w-site flex-wrap items-end justify-between gap-x-12 gap-y-6 px-site">
+        <h2 className="max-w-[900px] heading-section">
           <Accent text={title} />
         </h2>
         <div className="flex max-w-[400px] flex-col gap-3.5">
-          <p className="text-muted-foreground text-base leading-[1.6]">
+          <p className="text-base leading-[1.6] text-muted-foreground">
             {intro}
           </p>
           <ul
             aria-hidden
-            className="text-soft flex gap-5 font-mono text-[11px] tracking-[0.08em] uppercase"
+            className="flex gap-5 font-mono text-[11px] tracking-[0.08em] text-soft uppercase"
           >
             <li className="flex items-center gap-2">
               <StatusDot inProgress={false} />

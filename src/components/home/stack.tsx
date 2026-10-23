@@ -21,7 +21,7 @@ function StackRow({
   const Motif = MOTIFS[product.slug];
 
   return (
-    <li className="group border-foreground/12 relative grid grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] items-center gap-10 border-t py-12 last:border-b max-[720px]:gap-4 max-[720px]:py-9">
+    <li className="group relative grid grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] items-center gap-10 border-t border-foreground/12 py-12 last:border-b max-[720px]:gap-4 max-[720px]:py-9">
       <div className="flex flex-col gap-3.5">
         <span className="label-mono text-muted-foreground">
           {product.index} · {product.kicker}
@@ -30,10 +30,10 @@ function StackRow({
          * The name is the row's one link; its ::after stretches over the whole
          * row so the row is clickable and screen readers hear a single link.
          */}
-        <h3 className="group-hover:text-brand-ink group-focus-within:text-brand-ink font-serif text-[76px] leading-[0.9] tracking-[-0.02em] transition-colors duration-[400ms] max-[720px]:text-[56px]">
+        <h3 className="font-serif text-[76px] leading-[0.9] tracking-[-0.02em] transition-colors duration-[400ms] group-focus-within:text-brand-ink group-hover:text-brand-ink max-[720px]:text-[56px]">
           <LocalizedLink
             href={`/products/${product.slug}`}
-            className="focus-visible:after:outline-ring after:absolute after:inset-0 focus-visible:outline-hidden focus-visible:after:outline-2 focus-visible:after:outline-offset-4"
+            className="after:absolute after:inset-0 focus-visible:outline-hidden focus-visible:after:outline-2 focus-visible:after:outline-offset-4 focus-visible:after:outline-ring"
           >
             {product.name}
           </LocalizedLink>
@@ -41,17 +41,17 @@ function StackRow({
       </div>
 
       <div className="flex flex-col gap-3.5">
-        <p className="text-foreground text-2xl leading-[1.3] text-balance">
+        <p className="text-2xl leading-[1.3] text-balance text-foreground">
           {product.tagline}
         </p>
-        <p className="text-muted-foreground text-[17px] leading-[1.6] text-pretty">
+        <p className="text-[17px] leading-[1.6] text-pretty text-muted-foreground">
           {product.body}
         </p>
       </div>
 
       <div className="pointer-events-none flex items-center justify-end gap-7 max-[720px]:absolute max-[720px]:top-10 max-[720px]:right-0 max-[720px]:origin-top-right max-[720px]:scale-70">
         <Motif />
-        <span className="label-mono text-muted-foreground border-foreground/16 rounded-full border px-3 py-2 max-[720px]:hidden">
+        <span className="rounded-full border border-foreground/16 px-3 py-2 label-mono text-muted-foreground max-[720px]:hidden">
           {privateLabel}
         </span>
       </div>
@@ -74,7 +74,7 @@ export function Stack({
   return (
     <section
       id="stack"
-      className="max-w-site px-site relative z-[6] mx-auto pt-40 pb-20 max-[720px]:pt-22 max-[720px]:pb-8"
+      className="relative z-[6] mx-auto max-w-site px-site pt-40 pb-20 max-[720px]:pt-22 max-[720px]:pb-8"
     >
       <SectionHeading
         title={content.title}

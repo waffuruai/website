@@ -5,13 +5,13 @@ import type { Dictionary } from '@/i18n/dictionaries/en';
 export function NotFoundContent({ dictionary }: { dictionary: Dictionary }) {
   const { notFound } = dictionary;
   return (
-    <section className="max-w-site px-site mx-auto flex flex-col items-start gap-8 py-32">
+    <section className="mx-auto flex max-w-site flex-col items-start gap-8 px-site py-32">
       <p className="label-mono text-muted-foreground">404</p>
-      <h1 className="heading-page max-w-4xl">{notFound.title}</h1>
-      <p className="text-soft max-w-lg text-lg">{notFound.description}</p>
+      <h1 className="max-w-4xl heading-page">{notFound.title}</h1>
+      <p className="max-w-lg text-lg text-soft">{notFound.description}</p>
       <LocalizedLink
         href="/"
-        className="bg-primary text-primary-foreground hover:text-primary-foreground inline-flex min-h-[52px] items-center gap-2.5 rounded-full px-7 text-[15px] font-medium"
+        className="inline-flex min-h-[52px] items-center gap-2.5 rounded-full bg-primary px-7 text-[15px] font-medium text-primary-foreground hover:text-primary-foreground"
       >
         {notFound.home} →
       </LocalizedLink>

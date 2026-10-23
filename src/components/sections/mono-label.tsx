@@ -18,12 +18,15 @@ export function MonoLabel({
   return (
     <Tag
       className={cn(
-        'label-mono text-soft inline-flex items-center gap-2.5',
+        'inline-flex items-start gap-2.5 label-mono text-soft',
         className,
       )}
     >
       {dot && (
-        <span aria-hidden className="bg-brand size-2 shrink-0 rounded-full" />
+        <span
+          aria-hidden
+          className="mt-[0.3em] size-2 shrink-0 rounded-full bg-brand"
+        />
       )}
       {children}
     </Tag>

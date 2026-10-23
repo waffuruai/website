@@ -11,11 +11,14 @@ export function SectionHeading({
   intro,
   id,
   className,
+  children,
 }: {
   title: string;
   intro?: string;
   id?: string;
   className?: string;
+  /** Extra content under the intro (a legend, a link). */
+  children?: React.ReactNode;
 }) {
   return (
     <div
@@ -24,13 +27,18 @@ export function SectionHeading({
         className,
       )}
     >
-      <h2 id={id} className="heading-section max-w-[900px]">
+      <h2 id={id} className="max-w-[900px] heading-section">
         <Accent text={title} />
       </h2>
-      {intro && (
-        <p className="text-muted-foreground max-w-[400px] text-base leading-[1.6]">
-          {intro}
-        </p>
+      {(intro || children) && (
+        <div className="flex max-w-[400px] flex-col gap-4">
+          {intro && (
+            <p className="text-base leading-[1.6] text-muted-foreground">
+              {intro}
+            </p>
+          )}
+          {children}
+        </div>
       )}
     </div>
   );

@@ -50,14 +50,14 @@ function Banner() {
     <div
       role="region"
       aria-label={t.label}
-      className="animate-in fade-in-0 slide-in-from-bottom-3 fixed inset-x-0 bottom-0 z-40 duration-300 sm:inset-x-auto sm:bottom-5 sm:left-5 sm:w-[26rem] sm:max-w-[calc(100vw-2.5rem)]"
+      className="fixed inset-x-0 bottom-0 z-40 animate-in duration-300 fade-in-0 slide-in-from-bottom-3 sm:inset-x-auto sm:bottom-5 sm:left-5 sm:w-[26rem] sm:max-w-[calc(100vw-2.5rem)]"
     >
-      <div className="bg-card text-card-foreground border-foreground/12 light:shadow-black/10 flex flex-col gap-3 rounded-t-3xl border-t p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-2xl shadow-black/30 sm:gap-4 sm:rounded-2xl sm:border sm:pb-5">
+      <div className="flex flex-col gap-3 rounded-t-3xl border-t border-foreground/12 bg-card p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] text-card-foreground shadow-2xl shadow-black/30 sm:gap-4 sm:rounded-2xl sm:border sm:pb-5 light:shadow-black/10">
         <div className="flex items-start justify-between gap-4">
-          <p className="label-mono text-soft inline-flex items-center gap-2.5">
+          <p className="inline-flex items-center gap-2.5 label-mono text-soft">
             <span
               aria-hidden
-              className="bg-brand size-2 shrink-0 rounded-full"
+              className="size-2 shrink-0 rounded-full bg-brand"
             />
             {t.label}
           </p>
@@ -65,12 +65,12 @@ function Banner() {
             type="button"
             aria-label={t.dismiss}
             onClick={dismissConsentBanner}
-            className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 -my-3 -mr-3 inline-flex size-11 shrink-0 items-center justify-center rounded-full transition-colors outline-none focus-visible:ring-3"
+            className="-my-3 -mr-3 inline-flex size-11 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <XIcon className="size-4" aria-hidden />
           </button>
         </div>
-        <p className="text-soft text-sm/6">
+        <p className="text-sm/6 text-soft">
           {notice ? t.noticeMessage : t.message} <PolicyLink />
         </p>
         <div className="flex gap-2">
