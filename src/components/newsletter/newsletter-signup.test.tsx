@@ -56,8 +56,9 @@ describe('NewsletterSignup', () => {
     expect(input.required).toBe(true);
     expect(input.autocomplete).toBe('email');
     expect(input.placeholder).toBe(newsletter.placeholder);
-    // The form is named by its heading and the status region is live.
-    expect(screen.getByRole('form', { name: newsletter.heading })).toBe(form);
+    // The field is labelled and the status region is live. The form is not
+    // a named landmark: the footer renders a second one on the same page.
+    expect(form.getAttribute('aria-labelledby')).toBeNull();
     const status = screen.getByRole('status');
     expect(status.getAttribute('aria-live')).toBe('polite');
     expect(status.textContent).toBe('');

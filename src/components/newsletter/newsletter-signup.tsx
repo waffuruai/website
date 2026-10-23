@@ -34,7 +34,6 @@ export function NewsletterSignup({ className }: { className?: string }) {
   const [status, setStatus] = useState<Status>('idle');
   const input = useRef<HTMLInputElement>(null);
   const id = useId();
-  const headingId = `${id}-heading`;
   const emailId = `${id}-email`;
   const honeypotId = `${id}-website`;
   const statusId = `${id}-status`;
@@ -85,9 +84,7 @@ export function NewsletterSignup({ className }: { className?: string }) {
 
   return (
     <div className={cn('flex flex-col gap-4', className)}>
-      <p id={headingId} className="font-serif text-3xl leading-[1.05]">
-        {newsletter.heading}
-      </p>
+      <p className="font-serif text-3xl leading-[1.05]">{newsletter.heading}</p>
       <p className="text-soft max-w-md text-[15px] leading-relaxed">
         {newsletter.description}
       </p>
@@ -96,7 +93,6 @@ export function NewsletterSignup({ className }: { className?: string }) {
         method="post"
         action={formResponseUrl()}
         onSubmit={onSubmit}
-        aria-labelledby={headingId}
         aria-busy={sending}
         className="flex max-w-md flex-col gap-3 sm:flex-row"
       >

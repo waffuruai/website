@@ -78,9 +78,8 @@ describe('/contact', () => {
     const { container } = await renderPage();
     const early = screen.getByRole('link', { name: /Request early access/ });
     expect(early.getAttribute('href')).toBe(site.urls.earlyAccess);
-    expect(
-      screen.getByRole('form', { name: en.newsletter.heading }),
-    ).toBeTruthy();
+    expect(screen.getByLabelText(en.newsletter.email)).toBeTruthy();
+    expect(screen.getByText(en.newsletter.heading)).toBeTruthy();
     // Formless on purpose: the only form is the mailing list.
     expect(container.querySelectorAll('form')).toHaveLength(1);
     expect(container.querySelector('textarea')).toBeNull();
