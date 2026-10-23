@@ -2,6 +2,8 @@ import nextMDX from '@next/mdx';
 import type { NextConfig } from 'next';
 import { PHASE_PRODUCTION_BUILD } from 'next/constants';
 
+import { mdxOptions } from './src/mdx/options.mjs';
+
 /**
  * Static export for production builds: every page is prerendered HTML and the
  * Cloudflare Worker (worker/index.ts) maps unprefixed English URLs onto the
@@ -43,12 +45,11 @@ const config = (phase: string): NextConfig => {
   };
 };
 
-// Turbopack serialises loader options, so plugins are referenced by module name.
+// Turbopack serialises loader options, so plugins are referenced by module name
+// or absolute path (see src/mdx/options.mjs).
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [['remark-gfm']],
-  },
+  options: mdxOptions,
 });
 
 const nextConfig = (phase: string) => withMDX(config(phase));

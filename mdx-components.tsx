@@ -1,45 +1,43 @@
 import type { MDXComponents } from 'mdx/types';
 import Image, { type ImageProps } from 'next/image';
-import Link from 'next/link';
 
-import { slugify } from '@/lib/headings';
+import { MdxFigure, Pre } from '@/components/blog/code-block';
+import { LocalizedLink } from '@/components/localized-link';
+import { slugify, textOf } from '@/lib/headings';
 import { cn } from '@/lib/utils';
 
-const isInternal = (href: string) =>
-  href.startsWith('/') && !href.startsWith('//');
-
-/** Internal links use client-side navigation; web links open in a new tab. */
+/**
+ * Internal links keep the visitor's language and navigate client-side; web
+ * links open in a new tab (see `LocalizedLink`).
+ */
 function MdxLink({ href = '', ...props }: React.ComponentPropsWithoutRef<'a'>) {
-  if (isInternal(href)) return <Link href={href} {...props} />;
-  if (href.startsWith('#') || /^(mailto|tel):/i.test(href)) {
-    return <a href={href} {...props} />;
-  }
-  return <a href={href} target="_blank" rel="noopener noreferrer" {...props} />;
+  return <LocalizedLink href={href} {...props} />;
 }
 
-/** Plain text of React children (for heading ids). */
-function textOf(node: React.ReactNode): string {
-  if (typeof node === 'string' || typeof node === 'number') return String(node);
-  if (Array.isArray(node)) return node.map(textOf).join('');
-  if (node && typeof node === 'object' && 'props' in node) {
-    return textOf(
-      (node as React.ReactElement<{ children?: React.ReactNode }>).props
-        .children,
-    );
-  }
-  return '';
-}
-
-/** `##` headings get ids so the table of contents can link to them. */
+/**
+ * `##` and `###` headings are links to themselves (the ids come from
+ * `rehype-slug`; the slug fallback covers pages compiled without it). The
+ * anchor opts out of the prose link style and shows a `#` on hover or focus.
+ */
 function heading(Tag: 'h2' | 'h3') {
   return function MdxHeading({
     id,
     children,
     ...props
   }: React.ComponentPropsWithoutRef<'h2'>) {
+    const anchor = id ?? (slugify(textOf(children)) || undefined);
     return (
-      <Tag id={id ?? (slugify(textOf(children)) || undefined)} {...props}>
-        {children}
+      <Tag id={anchor} {...props}>
+        {anchor ? (
+          <a
+            href={`#${anchor}`}
+            className="not-prose after:text-faint text-inherit no-underline after:ml-2 after:text-[0.6em] after:opacity-0 after:transition-opacity after:content-['#'] hover:after:opacity-100 focus-visible:after:opacity-100"
+          >
+            {children}
+          </a>
+        ) : (
+          children
+        )}
       </Tag>
     );
   };
@@ -145,6 +143,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     a: MdxLink,
     h2: heading('h2'),
     h3: heading('h3'),
+    pre: Pre,
+    figure: MdxFigure,
     img: MdxImg,
     p: MdxParagraph,
     table: MdxTable,
