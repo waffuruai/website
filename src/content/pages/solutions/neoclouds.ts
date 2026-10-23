@@ -21,7 +21,7 @@ export const neoclouds: Localized<SolutionPage> = {
     seo: {
       title: 'Inference platform for GPU clouds',
       description:
-        'Fleet visibility across tenants and engines, more useful tokens per GPU, and signed telemetry from every host. Waffle works with vLLM, SGLang and llama.cpp. Early access.',
+        'Fleet visibility across tenants and engines, more useful tokens per GPU, and signed telemetry. Waffle works with vLLM, SGLang and llama.cpp. Early access.',
       keywords: [
         'GPU cloud software',
         'GPU utilization',

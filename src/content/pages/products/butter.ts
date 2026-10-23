@@ -20,7 +20,7 @@ export const butter: Localized<ProductCopy> = {
     seo: {
       title: 'Butter: LLM inference without Python',
       description:
-        'Butter is an LLM inference engine: Swift on Metal for Apple silicon, Rust for CUDA and the rest. It loads Hugging Face models as they are and serves them over an OpenAI-compatible API.',
+        'Butter is an LLM inference engine in Swift on Metal and Rust for CUDA and the rest. It serves Hugging Face models over an OpenAI-compatible API.',
       keywords: [
         'LLM inference engine',
         'local LLM serving',

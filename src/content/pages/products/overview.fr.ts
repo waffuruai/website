@@ -4,7 +4,7 @@ const productsOverviewFr: (typeof productsOverview)['en'] = {
   seo: {
     title: 'Stack Waffuru : kernels, serving, contrôle, mémoire',
     description:
-      'Iron compile les kernels. Butter y exécute les modèles. Waffle surveille les GPU. Syrup se souvient de ce sur quoi vous travailliez. Utilisez-en un, ou les quatre.',
+      'Iron compile les kernels. Butter exécute les modèles. Waffle surveille les GPU. Syrup se souvient de votre travail. Utilisez-en un, ou les quatre.',
     keywords: [
       'stack d’inférence IA',
       'des kernels GPU au serving',

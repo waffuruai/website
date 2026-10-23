@@ -26,7 +26,7 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
       {
         tag: 'cost',
         title: '워크로드당 *비용*.',
-        body: '전력이 한계라면 와트당 토큰 수와 워크로드당 비용은 여전히 극대화할 수 있는 지표입니다. Waffuru는 이 둘을 중심으로 만들어졌습니다.',
+        body: '전력이 한계라면 와트당 토큰 수와 워크로드당 비용은 여전히 개선할 수 있는 지표입니다. Waffuru는 이 둘을 중심으로 만들어졌습니다.',
         points: [
           '빌리는 대신 이미 가진 하드웨어에서 실행',
           '양자화된 모델로 가진 메모리에 더 많이 적재',

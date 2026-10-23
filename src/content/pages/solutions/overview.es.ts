@@ -26,7 +26,7 @@ const solutionsOverviewEs: (typeof solutionsOverview)['en'] = {
       {
         tag: 'cost',
         title: 'Dólares por *carga de trabajo*.',
-        body: 'Cuando el límite es la energía, los tokens por vatio y los dólares por carga de trabajo son lo que todavía se puede maximizar. Waffuru está construido en torno a ambos.',
+        body: 'Cuando el límite es la energía, los tokens por vatio y los dólares por carga de trabajo son las cifras que todavía se pueden mejorar. Waffuru está construido en torno a ambos.',
         points: [
           'Ejecuta en el hardware que ya tienes en lugar de alquilar',
           'Los modelos cuantizados hacen caber más en la memoria disponible',

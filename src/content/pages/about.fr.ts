@@ -47,7 +47,7 @@ const aboutFr: (typeof about)['en'] = {
       {
         statement:
           'Quand l’énergie est le plafond, l’efficacité est la variable.',
-        body: 'Les tokens par watt et les dollars par charge de travail sont ce que vous pouvez encore maximiser.',
+        body: 'Les tokens par watt et les dollars par charge de travail sont les chiffres que vous pouvez encore améliorer.',
       },
       {
         statement: 'La demande de calcul est insatiable.',

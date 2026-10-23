@@ -20,7 +20,7 @@ export const iron: Localized<ProductCopy> = {
     seo: {
       title: 'Iron: one GPU kernel definition, four backends',
       description:
-        'Write a GPU kernel once in Rust and lower it to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V through a shared IR. Iron has a versioned C and Rust ABI and is in early access.',
+        'Write a GPU kernel once in Rust and lower it to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. Iron has a versioned C and Rust ABI. Early access.',
       keywords: [
         'Rust GPU kernel DSL',
         'Metal kernels',

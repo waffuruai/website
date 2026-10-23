@@ -20,7 +20,7 @@ export const waffle: Localized<ProductCopy> = {
     seo: {
       title: 'Waffle: a control plane for LLMs on GPUs',
       description:
-        'See every GPU and every inference engine running on it, from one box under a desk to a neocloud fleet. A small Rust sidecar on each host reports signed telemetry. Works with Butter, vLLM, SGLang and llama.cpp.',
+        'See every GPU and inference engine, from one box to a neocloud. A Rust sidecar reports signed telemetry. Works with Butter, vLLM, SGLang and llama.cpp.',
       keywords: [
         'GPU fleet management',
         'LLM control plane',

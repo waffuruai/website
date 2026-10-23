@@ -47,7 +47,7 @@ const aboutEs: (typeof about)['en'] = {
       {
         statement:
           'Cuando el límite es la energía, la eficiencia es la variable.',
-        body: 'Los tokens por vatio y los dólares por carga de trabajo son lo que todavía se puede maximizar.',
+        body: 'Los tokens por vatio y los dólares por carga de trabajo son las cifras que todavía se pueden mejorar.',
       },
       {
         statement: 'La demanda de cómputo es insaciable.',

@@ -19,7 +19,7 @@ export const syrup: Localized<ProductCopy> = {
     seo: {
       title: 'Syrup: local memory and retrieval for your AI',
       description:
-        'Syrup is local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+        'Syrup is local retrieval over your notes and code. Lexical plus vector search over TurboQuant+ compressed embeddings, with citations returned over MCP.',
       keywords: [
         'local RAG',
         'AI memory',

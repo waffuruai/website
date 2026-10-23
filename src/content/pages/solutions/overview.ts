@@ -39,7 +39,7 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
         {
           tag: 'cost',
           title: 'Dollars per *workload*.',
-          body: 'When power is the ceiling, tokens per watt and dollars per workload are what you can still maximize. Waffuru is built around both.',
+          body: 'When power is the ceiling, tokens per watt and dollars per workload are the numbers you can still improve. Waffuru is built around both.',
           points: [
             'Run on hardware you already own instead of renting',
             'Quantized models fit more in the memory you have',

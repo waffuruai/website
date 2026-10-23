@@ -120,7 +120,7 @@ export const about: Localized<AboutContent> = {
         },
         {
           statement: 'When power is the ceiling, efficiency is the variable.',
-          body: 'Tokens per watt and dollars per workload are what you can still maximize.',
+          body: 'Tokens per watt and dollars per workload are the numbers you can still improve.',
         },
         {
           statement: 'Demand for compute is insatiable.',

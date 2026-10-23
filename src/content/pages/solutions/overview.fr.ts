@@ -27,7 +27,7 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
       {
         tag: 'cost',
         title: 'Des dollars par *charge de travail*.',
-        body: 'Quand l’énergie est le plafond, les tokens par watt et les dollars par charge de travail sont ce que vous pouvez encore maximiser. Waffuru est construit autour des deux.',
+        body: 'Quand l’énergie est le plafond, les tokens par watt et les dollars par charge de travail sont les chiffres que vous pouvez encore améliorer. Waffuru est construit autour des deux.',
         points: [
           'Tournez sur du matériel que vous possédez déjà plutôt que de louer',
           'Les modèles quantifiés tiennent davantage dans la mémoire dont vous disposez',
