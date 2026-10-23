@@ -16,7 +16,7 @@ export const butter: Localized<ProductCopy> = {
     layer: 'Serving',
     tagline: 'Model serving without Python.',
     summary:
-      'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 3- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
+      'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 2- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
     seo: {
       title: 'Butter: LLM inference without Python',
       description:
@@ -39,7 +39,7 @@ export const butter: Localized<ProductCopy> = {
           label: 'checkpoint formats, loaded without conversion',
         },
         {
-          value: '3–8 bit',
+          value: '2–8 bit',
           label: 'quantized checkpoints, with a quantized KV cache',
         },
         { value: 'No Python', label: 'and no JIT' },
@@ -52,7 +52,7 @@ export const butter: Localized<ProductCopy> = {
       outcome:
         'Point Butter at a model on Hugging Face. It loads safetensors, MLX, JANG and GGUF as they are, and butter serve gives you an OpenAI-compatible server on the hardware you already own.',
       outcomes: [
-        'Run 3- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models on a Mac or an RTX workstation.',
+        'Run 2- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models on a Mac or an RTX workstation.',
         'Point the tools you already use at an OpenAI-compatible endpoint, with streaming and tool calling.',
         'Keep memory use down on long contexts with a quantized KV cache.',
       ],
@@ -68,7 +68,7 @@ export const butter: Localized<ProductCopy> = {
         },
         {
           title: 'Quantized, hybrid and MoE',
-          body: 'Runs 3- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models.',
+          body: 'Runs 2- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models.',
         },
         {
           title: 'A quantized KV cache',
@@ -114,7 +114,7 @@ export const butter: Localized<ProductCopy> = {
             { label: 'GGUF' },
           ],
         },
-        { term: 'Quantization', detail: '3- to 8-bit quantized checkpoints.' },
+        { term: 'Quantization', detail: '2- to 8-bit quantized checkpoints.' },
         {
           term: 'Architectures',
           detail: 'Hybrid and mixture-of-experts (MoE) models.',

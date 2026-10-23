@@ -171,6 +171,12 @@ const fr: Dictionary = {
     dismiss: 'Fermer',
   },
   blog: {
+    categories: {
+      Company: 'Entreprise',
+      Product: 'Produit',
+      Engineering: 'Ingénierie',
+      Research: 'Recherche',
+    },
     heading: 'Blog',
     description:
       'Actualités, notes de recherche et versions de l’équipe Waffuru.',

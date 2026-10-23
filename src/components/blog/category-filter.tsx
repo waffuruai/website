@@ -11,9 +11,12 @@ export function CategoryFilter({
   active,
   allLabel,
   label,
+  names,
 }: {
   categories: readonly BlogCategory[];
   active?: BlogCategory;
+  /** Translated category names (the filter key stays English). */
+  names: Record<BlogCategory, string>;
   /** The translated "All". */
   allLabel: string;
   /** Accessible name of the nav (the blog heading). */
@@ -22,7 +25,7 @@ export function CategoryFilter({
   const items = [
     { name: allLabel, href: '/blog', current: !active },
     ...categories.map((category) => ({
-      name: category,
+      name: names[category],
       href: categoryPath(category),
       current: category === active,
     })),

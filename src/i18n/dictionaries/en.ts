@@ -171,6 +171,12 @@ const en = {
     dismiss: 'Close',
   },
   blog: {
+    categories: {
+      Company: 'Company',
+      Product: 'Product',
+      Engineering: 'Engineering',
+      Research: 'Research',
+    },
     heading: 'Blog',
     description: 'News, research notes and releases from the Waffuru team.',
     all: 'All',

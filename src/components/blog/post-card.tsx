@@ -54,7 +54,7 @@ export function PostCard({
         />
       )}
       <div className="flex flex-wrap items-center gap-x-5 gap-y-1 label-mono text-soft">
-        <span className="text-brand-ink">{post.category}</span>
+        <span className="text-brand-ink">{blog.categories[post.category]}</span>
         <time dateTime={post.date}>{formatPostDate(post.date, locale)}</time>
         <span>
           {interpolate(blog.readingTime, { minutes: post.readingTime.minutes })}

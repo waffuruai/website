@@ -58,7 +58,7 @@ export const smallBusiness: Localized<SolutionPage> = {
         {
           tag: 'inference',
           title: 'Fit a bigger model on the machine you have.',
-          body: '3- to 8-bit quantized checkpoints and a quantized KV cache let larger models and longer conversations fit in the memory you already own. Butter loads them straight from Hugging Face, with no conversion step.',
+          body: '2- to 8-bit quantized checkpoints and a quantized KV cache let larger models and longer conversations fit in the memory you already own. Butter loads them straight from Hugging Face, with no conversion step.',
         },
         {
           tag: 'control',

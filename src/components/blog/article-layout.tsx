@@ -74,7 +74,7 @@ export async function ArticleLayout({
               href={categoryPath(article.category)}
               className="text-brand-ink underline-offset-4 hover:underline"
             >
-              {article.category}
+              {blog.categories[article.category]}
             </LocalizedLink>
             {!article.published && (
               <span className="rounded-full border border-brand-ink/50 px-2 py-0.5 text-brand-ink">

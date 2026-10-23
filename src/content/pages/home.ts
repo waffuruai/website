@@ -141,7 +141,7 @@ export const home: Localized<HomeContent> = {
           kicker: 'Serving',
           name: 'Butter',
           tagline: 'Model serving without Python.',
-          body: 'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 3- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
+          body: 'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 2- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
         },
         {
           slug: 'iron',

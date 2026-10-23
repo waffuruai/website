@@ -166,6 +166,12 @@ const zh: Dictionary = {
     dismiss: '关闭',
   },
   blog: {
+    categories: {
+      Company: '公司',
+      Product: '产品',
+      Engineering: '工程',
+      Research: '研究',
+    },
     heading: '博客',
     description: '来自 Waffuru 团队的新闻、研究笔记与版本发布。',
     all: '全部',

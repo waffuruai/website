@@ -168,6 +168,12 @@ const ko: Dictionary = {
     dismiss: '닫기',
   },
   blog: {
+    categories: {
+      Company: '회사',
+      Product: '제품',
+      Engineering: '엔지니어링',
+      Research: '연구',
+    },
     heading: '블로그',
     description: 'Waffuru 팀의 소식, 연구 노트, 릴리스.',
     all: '전체',

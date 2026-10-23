@@ -61,7 +61,7 @@ export const aiCompanies: Localized<SolutionPage> = {
         {
           tag: 'cost',
           title: 'Spend fewer watts per token.',
-          body: '3- to 8-bit quantized checkpoints, a quantized KV cache, speculative decoding and per-backend kernels all go after tokens per watt and dollars per workload. We measure, and we will not quote a number we cannot reproduce.',
+          body: '2- to 8-bit quantized checkpoints, a quantized KV cache, speculative decoding and per-backend kernels all go after tokens per watt and dollars per workload. We measure, and we will not quote a number we cannot reproduce.',
         },
         {
           tag: 'control',
@@ -98,7 +98,7 @@ export const aiCompanies: Localized<SolutionPage> = {
         {
           product: 'butter',
           need: 'Model serving without Python.',
-          body: 'Loads safetensors, MLX, JANG and GGUF with no conversion, plus 3- to 8-bit quantized checkpoints, hybrid and MoE models, a quantized KV cache, speculative decoding and LoRA. Text, vision, speech-to-text, text-to-speech and omni models sit behind an OpenAI-compatible API.',
+          body: 'Loads safetensors, MLX, JANG and GGUF with no conversion, plus 2- to 8-bit quantized checkpoints, hybrid and MoE models, a quantized KV cache, speculative decoding and LoRA. Text, vision, speech-to-text, text-to-speech and omni models sit behind an OpenAI-compatible API.',
         },
         {
           product: 'syrup',

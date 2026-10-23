@@ -168,6 +168,12 @@ const ja: Dictionary = {
     dismiss: '閉じる',
   },
   blog: {
+    categories: {
+      Company: '会社',
+      Product: '製品',
+      Engineering: 'エンジニアリング',
+      Research: '研究',
+    },
     heading: 'ブログ',
     description: 'Waffuru チームのニュース、研究ノート、リリース情報。',
     all: 'すべて',

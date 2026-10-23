@@ -168,6 +168,12 @@ const es: Dictionary = {
     dismiss: 'Cerrar',
   },
   blog: {
+    categories: {
+      Company: 'Empresa',
+      Product: 'Producto',
+      Engineering: 'Ingeniería',
+      Research: 'Investigación',
+    },
     heading: 'Blog',
     description:
       'Noticias, notas de investigación y lanzamientos del equipo de Waffuru.',

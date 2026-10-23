@@ -31,7 +31,7 @@ export function BlogListing({
     <>
       <PageHero
         label={category ? blog.heading : undefined}
-        title={category ?? blog.heading}
+        title={category ? blog.categories[category] : blog.heading}
         lede={blog.description}
       />
       <section className="mx-auto max-w-site px-site pb-20 md:pb-28">
@@ -40,6 +40,7 @@ export function BlogListing({
             categories={categoriesOf(posts)}
             active={category}
             allLabel={blog.all}
+            names={blog.categories}
             label={blog.heading}
           />
           {/* The feed is English-only at one URL, so a plain link, not localized. */}

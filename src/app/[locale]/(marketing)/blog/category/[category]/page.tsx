@@ -51,7 +51,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { category, locale, blog } = await load(params);
   return createMetadata({
-    title: `${category} · ${blog.heading}`,
+    title: `${blog.categories[category]} · ${blog.heading}`,
     description: blog.description,
     path: categoryPath(category),
     locale,
@@ -73,7 +73,7 @@ export default async function BlogCategoryPage({ params }: { params: Params }) {
       <JsonLd
         data={[
           webPage({
-            name: `${category} · ${blog.heading}`,
+            name: `${blog.categories[category]} · ${blog.heading}`,
             description: blog.description,
             path,
             locale,
@@ -81,7 +81,7 @@ export default async function BlogCategoryPage({ params }: { params: Params }) {
           breadcrumbs([
             { name: site.name, path: localizePath('/', locale) },
             { name: blog.heading, path: localizePath('/blog', locale) },
-            { name: category, path },
+            { name: blog.categories[category], path },
           ]),
         ]}
       />
