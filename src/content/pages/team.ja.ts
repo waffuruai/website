@@ -1,29 +1,28 @@
 import type { teamPage } from './team';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const teamPageJa: (typeof teamPage)['en'] = {
   seo: {
-    title: 'Meet the founders and team',
+    title: '創業者とチームの紹介',
     description:
-      'The people building Waffuru: research, security, revenue and a couple of founders who have shipped before.',
-    keywords: ['Waffuru team', 'Waffuru founders'],
+      'Waffuru をつくる人たち。リサーチ、セキュリティ、収益、そして製品を世に送り出した経験のある創業者が数人。',
+    keywords: ['Waffuru チーム', 'Waffuru 創業者'],
   },
   hero: {
-    label: 'Team',
-    title: 'Who’s in the *kitchen*.',
-    lede: 'Research, security, revenue and a couple of founders who have shipped before.',
+    label: 'チーム',
+    title: '*キッチン*に立つ人たち',
+    lede: 'リサーチ、セキュリティ、収益、そして製品を世に送り出した経験のある創業者が数人。',
   },
-  portraitAlt: 'Portrait of {name}',
-  linkAria: '{name} on {network}',
+  portraitAlt: '{name} のポートレート',
+  linkAria: '{network} の {name}',
   linkNames: {
     linkedin: 'LinkedIn',
-    website: 'Website',
+    website: 'ウェブサイト',
     x: 'X',
     github: 'GitHub',
   },
   cta: {
-    title: 'See what we’re *cooking*.',
-    body: 'Our products are private for now. Request early access to try them, or talk to us about what you need.',
+    title: 'いま*焼いている*ものを、のぞいてみる。',
+    body: '現時点では、製品は非公開です。早期アクセスをお申し込みいただくか、必要なことについてご相談ください。',
   },
 };
 

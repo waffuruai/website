@@ -1,80 +1,79 @@
 import type { home } from './home';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const homeJa: (typeof home)['en'] = {
   seo: {
     keywords: [
-      'local LLM inference',
-      'GPU kernels',
-      'inference engine',
-      'Apple silicon',
+      'ローカル LLM 推論',
+      'GPU カーネル',
+      '推論エンジン',
+      'Apple シリコン',
       'Metal',
       'CUDA',
       'ROCm',
       'Vulkan',
-      'GPU fleet management',
-      'neocloud',
-      'on-device AI',
-      'private AI',
+      'GPU フリート管理',
+      'ネオクラウド',
+      'オンデバイス AI',
+      'プライベート AI',
     ],
   },
 
   hero: {
-    eyebrow: 'Four products · closed source for now',
-    title: 'Raw math, *pressed* into silicon.',
-    lede: 'We write GPU kernels, an inference engine, a control plane and a retrieval layer. They run on a laptop, a home lab or a neocloud fleet.',
-    secondary: { label: 'See the stack', href: '#stack' },
+    eyebrow: '4 つの製品 · 現時点ではクローズドソース',
+    title: '純粋な数学を、シリコンに*焼き込む*。',
+    lede: 'GPU カーネル、推論エンジン、コントロールプレーン、検索レイヤーをつくっています。ノート PC でも、ホームラボでも、ネオクラウドのフリートでも動きます。',
+    secondary: { label: 'スタックを見る', href: '#stack' },
     emits: {
-      label: 'Emits',
+      label: '出力先',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
     },
   },
 
   stack: {
-    title: 'The stack.',
+    title: 'スタック',
     intro:
-      'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on.',
+      'Iron がカーネルをコンパイルし、Butter がその上でモデルを動かします。Waffle が GPU を見守り、Syrup が取り組んでいたことを覚えています。',
     products: [
       {
         slug: 'syrup',
         index: '04',
-        kicker: 'Memory',
+        kicker: '記憶',
         name: 'Syrup',
-        tagline: 'Your AI remembers what you were working on.',
-        body: 'Local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+        tagline: 'あなたの AI が、取り組んでいたことを覚えています。',
+        body: 'ノートとコードをローカルで検索します。埋め込みは TurboQuant+ で圧縮し、検索はキーワード検索とベクトル検索の併用。結果は出典付きで、MCP 経由で返ります。',
       },
       {
         slug: 'waffle',
         index: '03',
-        kicker: 'Control plane',
+        kicker: 'コントロールプレーン',
         name: 'Waffle',
-        tagline: 'See every GPU and every engine running on it.',
-        body: 'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+        tagline: 'すべての GPU と、その上で動くすべてのエンジンを可視化。',
+        body: 'GPU 上の LLM のためのコントロールプレーン。デスクの下の 1 台から、フリートを貸し出すネオクラウドまで対応します。各ホストでは小さな Rust 製サイドカーが動き、署名付きテレメトリを報告します。Butter、vLLM、SGLang、llama.cpp など、OpenAI 互換のサーバーと連携できます。',
       },
       {
         slug: 'butter',
         index: '02',
-        kicker: 'Serving',
+        kicker: 'サービング',
         name: 'Butter',
-        tagline: 'Model serving without Python.',
-        body: 'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 3- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
+        tagline: 'Python 不要のモデルサービング。',
+        body: 'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。2〜8 ビットの量子化チェックポイント、ハイブリッドモデルや MoE モデルを読み込み、KV キャッシュの量子化にも対応します。',
       },
       {
         slug: 'iron',
         index: '01',
-        kicker: 'Kernels',
+        kicker: 'カーネル',
         name: 'Iron',
-        tagline: 'One kernel definition, four backends.',
-        body: 'A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
+        tagline: 'ひとつのカーネル定義から、4 つのバックエンドへ。',
+        body: 'Rust に埋め込む DSL。カーネルは共通の IR に落とされ、そこから Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ。バージョン管理された C と Rust の ABI で、既存のホストから呼び出せます。',
       },
     ],
   },
 
   models: {
-    title: 'Models on the menu.',
+    title: 'メニューに並ぶモデル',
     intro:
-      'Loaded straight from Hugging Face. Coverage is widest on Metal; CUDA support is added model by model.',
-    legend: { supported: 'Supported', inProgress: 'In progress' },
+      'Hugging Face からそのまま読み込めます。対応がもっとも広いのは Metal で、CUDA はモデルごとに順次広げています。',
+    legend: { supported: '対応済み', inProgress: '対応中' },
     lanes: [
       [
         {
@@ -137,7 +136,7 @@ const homeJa: (typeof home)['en'] = {
   },
 
   kernel: {
-    title: 'You write this.\n*Iron writes the rest.*',
+    title: 'あなたが書くのは、ここまで。\n*残りは Iron が書く。*',
     code: {
       file: 'unary.rs',
       label: 'iron · rust dsl',
@@ -157,51 +156,51 @@ const homeJa: (typeof home)['en'] = {
         },
       ],
     },
-    tuned: { title: 'Where it’s tuned', note: 'Pulse = relative speed' },
+    tuned: { title: 'チューニングの状況', note: 'パルスの速さ = 相対速度' },
     tiers: [
       {
         name: 'Apple · Metal',
         level: 'primary',
-        label: 'Primary',
-        note: 'Every kernel is written and tuned here first. MSL → .metallib.',
+        label: 'プライマリ',
+        note: 'すべてのカーネルを、まずここで書き、チューニングします。MSL → .metallib。',
       },
       {
         name: 'NVIDIA · CUDA',
         level: 'secondary',
-        label: 'Secondary',
-        note: 'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
+        label: 'セカンダリ',
+        note: 'RTX と DGX Spark では本番稼働中。データセンター GPU は対応中です。CUDA → PTX。',
       },
       {
         name: 'AMD ROCm · Vulkan',
         level: 'runs',
-        label: 'Runs',
-        note: 'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
+        label: '動作',
+        note: '現時点で動作しますが、チューニングはこれからです。HIP → AMDGPU、Vulkan → SPIR-V。',
       },
     ],
     runsOn: {
-      label: 'Runs on',
+      label: '動作環境',
       items: [
         'MacBook & Mac Studio',
-        'RTX workstations',
+        'RTX ワークステーション',
         'DGX Spark',
         'Strix Halo',
-        'Neocloud fleets',
+        'ネオクラウドのフリート',
       ],
-      pending: 'Enterprise datacenter GPUs · in progress',
+      pending: 'エンタープライズ向けデータセンター GPU · 対応中',
     },
   },
 
   team: {
-    title: 'Who’s in the *kitchen*.',
+    title: '*キッチン*に立つ人たち',
     intro:
-      'Research, security, revenue and a couple of founders who have shipped before.',
-    portraitAlt: 'Portrait of {name}',
-    link: { label: 'Meet the team', href: '/about/team' },
+      'リサーチ、セキュリティ、収益、そして製品を世に送り出した経験のある創業者が数人。',
+    portraitAlt: '{name} のポートレート',
+    link: { label: 'チームを見る', href: '/about/team' },
   },
 
   cta: {
-    title: 'Pull up a seat.',
-    body: 'Nothing’s public yet. Request early access, or leave your email below and we’ll write when something is.',
+    title: 'どうぞ、お席へ。',
+    body: 'まだ公開しているものはありません。早期アクセスをお申し込みいただくか、下にメールアドレスを残してください。公開できるものができ次第、お知らせします。',
   },
 };
 

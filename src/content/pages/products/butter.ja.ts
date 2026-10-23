@@ -1,101 +1,100 @@
 import type { butter } from './butter';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const butterJa: (typeof butter)['en'] = {
-  layer: 'Serving',
-  tagline: 'Model serving without Python.',
+  layer: 'サービング',
+  tagline: 'Python 不要のモデルサービング。',
   summary:
-    'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 3- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
+    'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。2〜8 ビットの量子化チェックポイント、ハイブリッドモデルや MoE モデルを読み込み、KV キャッシュの量子化にも対応します。',
   seo: {
-    title: 'Butter: LLM inference without Python',
+    title: 'Butter：Python 不要の LLM 推論エンジン',
     description:
-      'Butter is an LLM inference engine: Swift on Metal for Apple silicon, Rust for CUDA and the rest. It loads Hugging Face models as they are and serves them over an OpenAI-compatible API.',
+      'Hugging Face のモデルをそのまま読み込み、OpenAI 互換 API で提供する LLM 推論エンジン。Swift と Rust で書かれ、Python は不要。',
     keywords: [
-      'LLM inference engine',
-      'local LLM serving',
-      'Apple silicon inference',
-      'OpenAI-compatible server',
-      'quantized KV cache',
+      'LLM 推論エンジン',
+      'ローカル LLM サービング',
+      'Apple シリコン 推論',
+      'OpenAI 互換サーバー',
+      '量子化 KV キャッシュ',
       'GGUF MLX safetensors',
     ],
   },
   hero: {
-    title: 'Model serving *without* Python.',
-    lede: 'Butter is an inference engine written in Swift on Metal for Apple silicon and Rust for CUDA and the rest. No Python, no JIT, and models load straight from Hugging Face.',
+    title: 'モデルサービングを、Python *なし*で。',
+    lede: 'Butter は、Apple シリコンでは Metal 上の Swift、CUDA などでは Rust で書かれた推論エンジンです。Python も JIT も使わず、モデルは Hugging Face から直接読み込みます。',
     highlights: [
       {
         value: '4',
-        label: 'checkpoint formats, loaded without conversion',
+        label: '変換なしで読み込めるチェックポイント形式',
       },
       {
-        value: '3–8 bit',
-        label: 'quantized checkpoints, with a quantized KV cache',
+        value: '2–8 bit',
+        label: '量子化チェックポイント。KV キャッシュも量子化',
       },
-      { value: 'No Python', label: 'and no JIT' },
+      { value: 'Python 不要', label: 'JIT もなし' },
     ],
   },
   story: {
-    heading: 'Skip the Python and the *conversion*.',
+    heading: 'Python も*変換*も、省く。',
     problem:
-      'Getting a model to answer usually means a Python environment, a conversion step and a runtime that compiles as it goes. On a laptop or a single GPU box, that is a lot of machinery standing between you and a response.',
+      'モデルに答えさせるには、たいてい Python 環境、変換の手順、そして実行しながらコンパイルするランタイムが必要です。ノート PC や GPU 1 台のマシンでは、あなたと応答のあいだに、ずいぶん多くの仕掛けが挟まることになります。',
     outcome:
-      'Point Butter at a model on Hugging Face. It loads safetensors, MLX, JANG and GGUF as they are, and butter serve gives you an OpenAI-compatible server on the hardware you already own.',
+      'Butter に Hugging Face 上のモデルを指定するだけ。safetensors、MLX、JANG、GGUF をそのまま読み込み、butter serve で、お手元のハードウェア上に OpenAI 互換のサーバーが立ち上がります。',
     outcomes: [
-      'Run 3- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models on a Mac or an RTX workstation.',
-      'Point the tools you already use at an OpenAI-compatible endpoint, with streaming and tool calling.',
-      'Keep memory use down on long contexts with a quantized KV cache.',
+      'Mac や RTX ワークステーションで、2〜8 ビットの量子化チェックポイント、ハイブリッドモデル、Mixture of Experts（MoE）モデルを動かせます。',
+      'いま使っているツールを、ストリーミングとツール呼び出しに対応した OpenAI 互換のエンドポイントに向けられます。',
+      '量子化した KV キャッシュで、長いコンテキストでもメモリ使用量を抑えられます。',
     ],
   },
   capabilities: {
-    heading: 'What Butter *does*.',
+    heading: 'Butter が*できる*こと',
     intro:
-      'From loading a checkpoint to streaming tokens, with no Python in between.',
+      'チェックポイントの読み込みから、トークンのストリーミングまで。間に Python は入りません。',
     items: [
       {
-        title: 'Loads models as they are',
-        body: 'Pull safetensors, MLX, JANG or GGUF straight from Hugging Face. There is no conversion step.',
+        title: 'モデルをそのまま読み込む',
+        body: 'safetensors、MLX、JANG、GGUF を Hugging Face から直接取得できます。変換の手順はありません。',
       },
       {
-        title: 'Quantized, hybrid and MoE',
-        body: 'Runs 3- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models.',
+        title: '量子化、ハイブリッド、MoE',
+        body: '2〜8 ビットの量子化チェックポイント、ハイブリッドモデル、Mixture of Experts モデルを動かせます。',
       },
       {
-        title: 'A quantized KV cache',
-        body: 'Stores the KV cache quantized, to keep memory use down as context grows.',
+        title: '量子化された KV キャッシュ',
+        body: 'KV キャッシュを量子化して保持し、コンテキストが伸びてもメモリ使用量を抑えます。',
       },
       {
-        title: 'OpenAI-compatible serving',
-        body: 'butter serve exposes an OpenAI-compatible API, with streaming and tool calling.',
+        title: 'OpenAI 互換のサービング',
+        body: 'butter serve が、ストリーミングとツール呼び出しに対応した OpenAI 互換 API を公開します。',
       },
       {
-        title: 'Speculative decoding and LoRA',
-        body: 'Speculative decoding for generation, and LoRA for the adapters you train yourself.',
+        title: '投機的デコーディングと LoRA',
+        body: '生成には投機的デコーディングを、自分で学習させたアダプターには LoRA を使えます。',
       },
       {
-        title: 'More than text',
-        body: 'Text, vision, speech-to-text, text-to-speech and omni models.',
+        title: 'テキストだけではない',
+        body: 'テキスト、ビジョン、音声認識、音声合成、オムニモデルに対応します。',
       },
     ],
   },
   code: {
-    heading: 'Start a server, then *ask* it.',
+    heading: 'サーバーを起動して、*問いかける*。',
     intro:
-      'Butter speaks the OpenAI API, so the clients you already use can point at it.',
+      'Butter は OpenAI API で話すので、いま使っているクライアントをそのまま向けられます。',
     caption:
-      'Illustrative. Replace the placeholders with your model and port. Not a benchmark.',
+      'あくまで例です。プレースホルダーは、お使いのモデルとポートに置き換えてください。ベンチマークではありません。',
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: '技術的な*詳細*',
+    intro: '細部まで読みたい人のための、詳細です。',
     rows: [
       {
-        term: 'Runtime',
+        term: 'ランタイム',
         detail:
-          'Swift on Metal for Apple silicon. Rust for CUDA and the rest. No Python, no JIT.',
+          'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。Python も JIT も不要。',
       },
       {
-        term: 'Model formats',
-        detail: 'Loaded straight from Hugging Face, with no conversion.',
+        term: 'モデル形式',
+        detail: 'Hugging Face から直接読み込み。変換は不要。',
         chips: [
           { label: 'safetensors' },
           { label: 'MLX' },
@@ -103,34 +102,34 @@ const butterJa: (typeof butter)['en'] = {
           { label: 'GGUF' },
         ],
       },
-      { term: 'Quantization', detail: '3- to 8-bit quantized checkpoints.' },
+      { term: '量子化', detail: '2〜8 ビットの量子化チェックポイント。' },
       {
-        term: 'Architectures',
-        detail: 'Hybrid and mixture-of-experts (MoE) models.',
+        term: 'アーキテクチャ',
+        detail: 'ハイブリッドモデルと Mixture of Experts（MoE）モデル。',
       },
-      { term: 'KV cache', detail: 'Quantized.' },
+      { term: 'KV キャッシュ', detail: '量子化。' },
       {
-        term: 'Serving API',
-        detail: 'OpenAI-compatible, started with butter serve.',
+        term: 'サービング API',
+        detail: 'OpenAI 互換。butter serve で起動。',
         chips: [
-          { label: 'Streaming' },
-          { label: 'Tool calling' },
-          { label: 'Speculative decoding' },
+          { label: 'ストリーミング' },
+          { label: 'ツール呼び出し' },
+          { label: '投機的デコーディング' },
           { label: 'LoRA' },
         ],
       },
       {
-        term: 'Modalities',
+        term: 'モダリティ',
         chips: [
-          { label: 'Text' },
-          { label: 'Vision' },
-          { label: 'Speech-to-text' },
-          { label: 'Text-to-speech' },
-          { label: 'Omni' },
+          { label: 'テキスト' },
+          { label: 'ビジョン' },
+          { label: '音声認識' },
+          { label: '音声合成' },
+          { label: 'オムニ' },
         ],
       },
       {
-        term: 'Model families',
+        term: 'モデルファミリー',
         groups: [
           { label: 'Meta', text: 'Llama 3, 3.1, 3.2, 3.3' },
           { label: 'Google', text: 'Gemma 2, 3, 4; PaliGemma' },
@@ -151,74 +150,74 @@ const butterJa: (typeof butter)['en'] = {
         ],
       },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: '提供状況',
+        detail: '早期アクセス期間中は非公開で、クローズドソース。',
       },
     ],
   },
   platforms: {
-    heading: 'Where it *runs*.',
+    heading: '*動作*する環境',
     intro:
-      'Metal is the primary target. CUDA is secondary, and ROCm and Vulkan run but are not tuned yet.',
+      'Metal が第一の対象です。CUDA は第二で、ROCm と Vulkan は動作しますが、チューニングはこれからです。',
     tiers: [
       {
         platform: 'Apple · Metal',
         level: 'primary',
-        note: 'Swift on Metal for Apple silicon: MacBook and Mac Studio.',
+        note: 'Apple シリコン向けの Metal 上の Swift。MacBook と Mac Studio。',
       },
       {
         platform: 'NVIDIA · CUDA',
         level: 'secondary',
-        note: 'Rust on CUDA. In production on RTX and DGX Spark; datacenter GPUs are in progress.',
+        note: 'CUDA 上の Rust。RTX と DGX Spark では本番稼働中で、データセンター GPU は対応中です。',
       },
       {
         platform: 'AMD ROCm · Vulkan',
         level: 'runs',
-        note: 'Works today, not tuned yet.',
+        note: '現時点で動作しますが、チューニングはこれからです。',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: '*スタック*のほかの部分とも連携する。',
     intro:
-      'Butter runs models on the kernels Iron compiles. Waffle can watch it alongside vLLM, SGLang and llama.cpp, and Syrup gives your AI a memory of what you were working on.',
+      'Butter は、Iron がコンパイルしたカーネルの上でモデルを動かします。Waffle は vLLM、SGLang、llama.cpp と並べて Butter を見守ることができ、Syrup は、取り組んでいたことを AI に覚えさせます。',
   },
   faq: [
     {
-      question: 'Is Butter open source?',
+      question: 'Butter はオープンソースですか？',
       answer:
-        'Not today. Butter is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        '現時点ではオープンソースではありません。Butter は早期アクセス期間中、非公開でクローズドソースです。アクセスをお申し込みいただければ、お伝えできることが増えた時点でご連絡します。',
     },
     {
-      question: 'What hardware does it run on?',
+      question: 'どのハードウェアで動きますか？',
       answer:
-        'Swift on Metal for Apple silicon is the primary target, from a MacBook to a Mac Studio. CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. ROCm and Vulkan run today but are not tuned yet.',
+        'Apple シリコン向けの Metal 上の Swift が第一の対象で、MacBook から Mac Studio まで対応します。CUDA は第二の対象で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
     },
     {
-      question: 'Which models does it run?',
+      question: 'どのモデルが動きますか？',
       answer:
-        'Coverage today includes Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite and Phi, among the others listed above, in text, vision, speech and omni variants. DeepSeek V4 is in progress.',
+        '現時点では、Llama、Gemma、Qwen、GPT-OSS、Mistral、Nemotron、Granite、Phi のほか、上に挙げたモデルに対応しています。テキスト、ビジョン、音声、オムニの各バリエーションがあります。DeepSeek V4 は対応中です。',
     },
     {
-      question: 'Do I need Python?',
+      question: 'Python は必要ですか？',
       answer:
-        'No. Butter is Swift on Metal for Apple silicon and Rust for CUDA and the rest, with no Python and no JIT.',
+        '必要ありません。Butter は、Apple シリコンでは Metal 上の Swift、CUDA などでは Rust で書かれており、Python も JIT も使いません。',
     },
     {
-      question: 'Will my existing tools work with it?',
+      question: 'いま使っているツールは使えますか？',
       answer:
-        'Butter serves an OpenAI-compatible API with butter serve, including streaming and tool calling, so clients that speak that API can point at it.',
+        'butter serve で、ストリーミングとツール呼び出しを含む OpenAI 互換 API を提供するので、その API に対応したクライアントを向けられます。',
     },
     {
-      question: 'How fast is it?',
+      question: 'どのくらい速いですか？',
       answer:
-        'We haven’t published benchmark numbers, so we won’t quote one here. Speculative decoding and a quantized KV cache are built in, and we’d rather show you a measurement than make a claim.',
+        'ベンチマークの数値はまだ公開していないため、ここでは挙げません。投機的デコーディングと量子化された KV キャッシュを組み込んでいますが、主張よりも、計測結果をお見せしたいと考えています。',
     },
   ],
   cta: {
-    title: 'Melt away *latency*.',
-    body: 'Butter is in early access and closed source for now. Request access, and read the docs while you wait.',
-    docsLabel: 'Read the docs',
+    title: '*レイテンシ*を、溶かして消す。',
+    body: 'Butter は現時点で早期アクセスで、クローズドソースです。アクセスをお申し込みのうえ、お待ちの間にドキュメントをお読みください。',
+    docsLabel: 'ドキュメントを読む',
   },
 };
 

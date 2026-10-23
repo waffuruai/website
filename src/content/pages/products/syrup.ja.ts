@@ -1,123 +1,122 @@
 import type { syrup } from './syrup';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const syrupJa: (typeof syrup)['en'] = {
-  layer: 'Memory',
-  tagline: 'Your AI remembers what you were working on.',
+  layer: '記憶',
+  tagline: 'あなたの AI が、取り組んでいたことを覚えています。',
   summary:
-    'Local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+    'ノートとコードをローカルで検索します。埋め込みは TurboQuant+ で圧縮し、検索はキーワード検索とベクトル検索の併用。結果は出典付きで、MCP 経由で返ります。',
   seo: {
-    title: 'Syrup: local memory and retrieval for your AI',
+    title: 'Syrup：AI のためのローカル記憶と検索',
     description:
-      'Syrup is local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+      'ノートとコードをローカルで検索。埋め込みは TurboQuant+ で圧縮し、キーワードとベクトルの併用検索。結果は出典付きで MCP 経由。',
     keywords: [
-      'local RAG',
-      'AI memory',
-      'MCP retrieval',
-      'private semantic search',
+      'ローカル RAG',
+      'AI メモリ',
+      'MCP 検索',
+      'プライベート セマンティック検索',
     ],
   },
   hero: {
-    title: 'Your AI *remembers* what you were working on.',
-    lede: 'Syrup is local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+    title: 'あなたの AI は、取り組んでいたことを*覚えている*。',
+    lede: 'Syrup は、ノートとコードに対するローカル検索です。埋め込みは TurboQuant+ で圧縮し、検索はキーワード検索とベクトル検索の併用。結果は出典付きで、MCP 経由で返ります。',
     highlights: [
-      { value: 'Local', label: 'retrieval over your notes and code' },
+      { value: 'ローカル', label: 'ノートとコードに対する検索' },
       {
-        value: 'Lexical + vector',
-        label: 'search, over embeddings compressed with TurboQuant+',
+        value: 'キーワード + ベクトル',
+        label: 'TurboQuant+ で圧縮した埋め込みに対する検索',
       },
-      { value: 'Cited', label: 'results, delivered over MCP' },
+      { value: '出典付き', label: '結果を MCP 経由で返す' },
     ],
   },
   story: {
-    heading: 'Stop re-explaining *yourself*.',
+    heading: '*自分のこと*を、何度も説明しない。',
     problem:
-      'Every new chat starts from nothing. You paste in the same notes and files again, and when an answer comes back you can’t tell which of them it came from.',
+      '新しいチャットは、いつもゼロから始まります。同じノートやファイルをまた貼り付けても、返ってきた答えが、そのどれに基づくのかはわかりません。',
     outcome:
-      'Syrup indexes your notes and code on your own machine. Your AI asks it over MCP and gets back the passages that matter, each with a citation you can check.',
+      'Syrup は、ノートとコードをあなた自身のマシン上でインデックス化します。あなたの AI が MCP 経由で問い合わせると、重要な箇所が、確認できる出典付きで返ってきます。',
     outcomes: [
-      'Keep your notes and code on your own machine. Retrieval is local.',
-      'Find things by the exact words you used or by what they mean: search is lexical plus vector.',
-      'Check any answer against its source, because results come back with citations.',
+      'ノートとコードは、あなたのマシンの中に置いたままにできます。検索はローカルで行われます。',
+      '使った言葉そのままでも、意味からでも見つけられます。検索はキーワード検索とベクトル検索の併用です。',
+      '結果は出典付きで返るので、どの答えも元の情報と照らして確かめられます。',
     ],
   },
   capabilities: {
-    heading: 'What Syrup *does*.',
-    intro: 'A memory layer you run yourself, for the work you already have.',
+    heading: 'Syrup が*できる*こと',
+    intro: '自分で動かす記憶のレイヤー。いま手元にある仕事のために。',
     items: [
       {
-        title: 'Local retrieval',
-        body: 'Syrup searches your notes and code on your own machine, and your data stays there unless you opt in.',
+        title: 'ローカル検索',
+        body: 'Syrup はノートとコードを、あなた自身のマシン上で検索します。データは、あなたがオプトインしない限りそこにとどまります。',
       },
       {
-        title: 'Compressed embeddings',
-        body: 'Embeddings are compressed with TurboQuant+, so the index takes up less room.',
+        title: '圧縮された埋め込み',
+        body: '埋め込みは TurboQuant+ で圧縮されるので、インデックスが占める容量は小さくなります。',
       },
       {
-        title: 'Lexical plus vector search',
-        body: 'Exact-word matching and meaning-based search work together.',
+        title: 'キーワード検索とベクトル検索の併用',
+        body: '言葉の一致による検索と、意味にもとづく検索が連携して働きます。',
       },
       {
-        title: 'Citations over MCP',
-        body: 'Results come back with citations over MCP, so any MCP client can use them and show where each one came from.',
+        title: 'MCP 経由の出典',
+        body: '結果は MCP 経由で出典付きで返るので、どの MCP クライアントでも利用でき、それぞれの出どころを示せます。',
       },
     ],
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: '技術的な*詳細*',
+    intro: '細部まで読みたい人のための、詳細です。',
     rows: [
-      { term: 'Indexes', detail: 'Your notes and code.' },
-      { term: 'Where it runs', detail: 'Locally, on your machine.' },
-      { term: 'Embeddings', detail: 'Compressed with TurboQuant+.' },
-      { term: 'Search', detail: 'Lexical plus vector.' },
-      { term: 'Results', detail: 'Returned with citations.' },
-      { term: 'Interface', detail: 'MCP.' },
+      { term: 'インデックス対象', detail: 'ノートとコード。' },
+      { term: '動作場所', detail: 'ローカル、あなたのマシン上。' },
+      { term: '埋め込み', detail: 'TurboQuant+ で圧縮。' },
+      { term: '検索', detail: 'キーワード検索とベクトル検索の併用。' },
+      { term: '結果', detail: '出典付きで返却。' },
+      { term: 'インターフェース', detail: 'MCP。' },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: '提供状況',
+        detail: '早期アクセス期間中は非公開で、クローズドソース。',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: '*スタック*のほかの部分とも連携する。',
     intro:
-      'Syrup works on its own, with any MCP client. Underneath it, Butter runs models, Waffle watches the GPUs and Iron compiles the kernels.',
+      'Syrup は単体でも、任意の MCP クライアントと組み合わせて使えます。その下では、Butter がモデルを動かし、Waffle が GPU を見守り、Iron がカーネルをコンパイルしています。',
   },
   faq: [
     {
-      question: 'Is Syrup open source?',
+      question: 'Syrup はオープンソースですか？',
       answer:
-        'Not today. Syrup is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        '現時点ではオープンソースではありません。Syrup は早期アクセス期間中、非公開でクローズドソースです。アクセスをお申し込みいただければ、お伝えできることが増えた時点でご連絡します。',
     },
     {
-      question: 'Does my data leave my machine?',
+      question: 'データはマシンの外に出ますか？',
       answer:
-        'Retrieval is local: Syrup indexes and searches on your machine. We hold ourselves to a simple rule, which is that your data stays on your machine unless you opt in.',
+        '検索はローカルで行われます。Syrup は、あなたのマシン上でインデックス化と検索を行います。私たちが自分に課しているのは単純なルールで、データは、あなたがオプトインしない限りマシンの外に出ません。',
     },
     {
-      question: 'What does it index?',
-      answer: 'Your notes and your code.',
+      question: '何をインデックス化しますか？',
+      answer: 'ノートとコードです。',
     },
     {
-      question: 'What is TurboQuant+?',
+      question: 'TurboQuant+ とは何ですか？',
       answer:
-        'The method Syrup uses to compress embeddings. It comes from our Chief of Research, Tom Turney.',
+        'Syrup が埋め込みの圧縮に使っている手法です。研究責任者（Chief of Research）の Tom Turney によるものです。',
     },
     {
-      question: 'What can use Syrup?',
+      question: '何から Syrup を使えますか？',
       answer:
-        'Anything that speaks MCP can ask Syrup for results, and each result comes back with a citation.',
+        'MCP に対応していれば、どんなものでも Syrup に結果を問い合わせられます。結果にはそれぞれ出典が付いて返ります。',
     },
     {
-      question: 'Do I need the rest of the stack?',
+      question: 'スタックのほかの製品も必要ですか？',
       answer:
-        'No. Each Waffuru product works on its own, and Syrup is no exception.',
+        '必要ありません。Waffuru の製品はどれも単体で動作し、Syrup も例外ではありません。',
     },
   ],
   cta: {
-    title: 'Give your AI a *memory*.',
-    body: 'Syrup is in early access and closed source for now. Request access, or tell us what you’d like it to remember.',
+    title: 'AI に*記憶*を。',
+    body: 'Syrup は現時点で早期アクセスで、クローズドソースです。アクセスをお申し込みいただくか、覚えさせたいことを教えてください。',
   },
 };
 

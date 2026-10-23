@@ -1,65 +1,64 @@
 import type { aiCompanies } from './ai-companies';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const aiCompaniesJa: (typeof aiCompanies)['en'] = {
   seo: {
-    title: 'GPU kernels and LLM serving for AI companies',
+    title: 'AI 企業向け GPU カーネルと LLM サービング',
     description:
-      'Write a kernel once and ship it to Metal, CUDA, ROCm and Vulkan. Serve models without Python, with a quantized KV cache and speculative decoding. Early access.',
+      'カーネルを一度書いて、Metal、CUDA、ROCm、Vulkan へ。Python なしのサービング、量子化 KV キャッシュ、投機的デコーディング。早期アクセス中。',
     keywords: [
-      'inference optimization',
-      'GPU kernel portability',
-      'LLM serving engine',
-      'reduce inference cost',
+      '推論の高速化',
+      'GPU カーネルの移植性',
+      'LLM サービングエンジン',
+      '推論コスト削減',
     ],
   },
-  name: 'AI model and inference companies',
-  serviceType: 'GPU kernel compiler and LLM serving engine',
+  name: 'AI モデル・推論企業',
+  serviceType: 'GPU カーネルコンパイラと LLM サービングエンジン',
   card: {
-    title: 'AI model and inference *companies*',
+    title: 'AI モデル・推論*企業*',
     summary:
-      'One kernel definition for every GPU backend, and serving that needs no Python.',
+      'すべての GPU バックエンドに向けたひとつのカーネル定義と、Python 不要のサービング。',
   },
   hero: {
-    title: 'Write the kernel once. Ship it to four *backends*.',
-    lede: 'Iron compiles one kernel definition to Metal, CUDA, ROCm and Vulkan. Butter serves models on top without Python, and Syrup gives your agents a memory.',
+    title: 'カーネルは一度書くだけ。4 つの*バックエンド*へ届ける。',
+    lede: 'Iron は、ひとつのカーネル定義を Metal、CUDA、ROCm、Vulkan にコンパイルします。その上で Butter が Python なしでモデルを提供し、Syrup がエージェントに記憶を与えます。',
   },
   problem: {
-    title: 'Every backend is a *rewrite*.',
+    title: 'バックエンドが増えるたび、*書き直し*。',
     statement:
-      'Your model is only as portable as your kernels, and kernels are usually written once per vendor.',
-    body: 'Supporting Apple silicon, NVIDIA, AMD and Vulkan tends to mean separate codebases and separate bugs, with Python on the hot path of the serving stack. Inference cost lands straight on your margin, and agents lose their context the moment a session ends.',
+      'モデルの移植性は、カーネルの移植性で決まります。そしてカーネルは、たいていベンダーごとに書かれています。',
+    body: 'Apple シリコン、NVIDIA、AMD、Vulkan に対応しようとすれば、コードベースもバグも別々になりがちで、サービングスタックのホットパスには Python が居座ります。推論コストは利益率に直撃し、エージェントはセッションが終わった瞬間に文脈を失います。',
   },
   useCases: {
-    title: 'What you can *ship*.',
-    intro: 'Four jobs for the team that builds models, kernels or serving.',
+    title: 'リリースできる*もの*',
+    intro: 'モデル、カーネル、サービングをつくるチームのための、4 つの仕事。',
     items: [
       {
         tag: 'inference',
-        title: 'Write a kernel once and run it on four backends.',
-        body: 'Iron is a Rust-embedded DSL. Kernels lower to a shared IR and then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, behind a versioned C and Rust ABI that existing hosts can call.',
+        title: 'カーネルを一度書いて、4 つのバックエンドで動かす。',
+        body: 'Iron は Rust に埋め込む DSL です。カーネルは共通の IR に落とされ、さらに Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ変換され、既存のホストから呼び出せる、バージョン管理された C と Rust の ABI の背後にあります。',
       },
       {
         tag: 'inference',
-        title: 'Serve without Python or a JIT.',
-        body: 'Butter is Swift on Metal for Apple silicon and Rust for CUDA and the rest, with an OpenAI-compatible API, streaming and tool calling. Hybrid and MoE models, speculative decoding and LoRA are in the box.',
+        title: 'Python も JIT もなしで、提供する。',
+        body: 'Butter は、Apple シリコンでは Metal 上の Swift、CUDA などでは Rust で書かれ、OpenAI 互換 API、ストリーミング、ツール呼び出しに対応しています。ハイブリッドモデル、MoE モデル、投機的デコーディング、LoRA も最初から備えています。',
       },
       {
         tag: 'cost',
-        title: 'Spend fewer watts per token.',
-        body: '3- to 8-bit quantized checkpoints, a quantized KV cache, speculative decoding and per-backend kernels all go after tokens per watt and dollars per workload. We measure, and we will not quote a number we cannot reproduce.',
+        title: 'トークンあたりのワット数を、減らす。',
+        body: '2〜8 ビットの量子化チェックポイント、量子化された KV キャッシュ、投機的デコーディング、バックエンドごとのカーネルは、いずれも 1 ワットあたりのトークン数と、ワークロードあたりのコストを狙っています。私たちは計測し、再現できない数字は示しません。',
       },
       {
         tag: 'control',
-        title: 'Give your agents a memory that stays local.',
-        body: 'Syrup compresses embeddings with TurboQuant+ and runs lexical plus vector search on the machine. Results come back with citations over MCP, so agents can pick up where they left off.',
+        title: 'エージェントに、ローカルにとどまる記憶を与える。',
+        body: 'Syrup は TurboQuant+ で埋め込みを圧縮し、マシン上でキーワード検索とベクトル検索を併用します。結果は MCP 経由で出典付きで返るので、エージェントは前回の続きから再開できます。',
       },
     ],
   },
   sample: {
-    title: 'A kernel looks like *this*.',
+    title: 'カーネルは、*こんな*ふうに書く。',
     intro:
-      'A Rust function with a few attributes. Iron lowers it to every backend.',
+      'いくつかの属性を付けた Rust の関数。Iron がそれを、すべてのバックエンドに変換します。',
     filename: 'unary.rs',
     language: 'iron · rust dsl',
     code: [
@@ -69,74 +68,74 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
       '    store(out[idx], exp(load(a[idx])));',
       '}',
     ].join('\n'),
-    emitsLabel: 'Emits',
+    emitsLabel: '出力先',
     emits: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
-    intro: 'Iron and Butter are the core. Syrup and Waffle round it out.',
+    title: 'スタックの*かみ合わせ方*',
+    intro: '中核は Iron と Butter。Syrup と Waffle が、それを補います。',
     items: [
       {
         product: 'iron',
-        need: 'One kernel definition, four backends.',
-        body: 'Press the math once. Iron lowers it through a shared IR to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, and a versioned C and Rust ABI lets the engines you already have call the result.',
+        need: 'ひとつのカーネル定義から、4 つのバックエンドへ。',
+        body: '計算を一度だけ焼き込めば、Iron が共通の IR を経由して Metal、CUDA、HIP/ROCm、Vulkan SPIR-V に変換し、バージョン管理された C と Rust の ABI で、すでにお持ちのエンジンから結果を呼び出せます。',
       },
       {
         product: 'butter',
-        need: 'Model serving without Python.',
-        body: 'Loads safetensors, MLX, JANG and GGUF with no conversion, plus 3- to 8-bit quantized checkpoints, hybrid and MoE models, a quantized KV cache, speculative decoding and LoRA. Text, vision, speech-to-text, text-to-speech and omni models sit behind an OpenAI-compatible API.',
+        need: 'Python 不要のモデルサービング。',
+        body: 'safetensors、MLX、JANG、GGUF を変換なしで読み込み、さらに 2〜8 ビットの量子化チェックポイント、ハイブリッドモデルと MoE モデル、量子化された KV キャッシュ、投機的デコーディング、LoRA に対応します。テキスト、ビジョン、音声認識、音声合成、オムニの各モデルが、OpenAI 互換 API の背後にあります。',
       },
       {
         product: 'syrup',
-        need: 'Memory for agents.',
-        body: 'Local retrieval over notes and code: embeddings compressed with TurboQuant+, lexical plus vector search, and cited results over MCP.',
+        need: 'エージェントのための記憶。',
+        body: 'ノートとコードに対するローカル検索。TurboQuant+ で圧縮した埋め込み、キーワード検索とベクトル検索の併用、MCP 経由の出典付きの結果。',
       },
       {
         product: 'waffle',
-        need: 'Every engine on every GPU, in one view.',
-        body: 'Run Butter next to vLLM, SGLang or llama.cpp and see them side by side. A small Rust sidecar on each host reports signed telemetry.',
+        need: 'すべての GPU のすべてのエンジンを、ひとつの画面で。',
+        body: 'Butter を vLLM、SGLang、llama.cpp と並べて動かし、横並びで確認できます。各ホストの小さな Rust 製サイドカーが署名付きテレメトリを報告します。',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Metal is where every kernel is written and tuned first. The products are in early access and closed source for now.',
+    title: '私たちの*現在地*',
+    lede: 'すべてのカーネルを、まず Metal で書き、チューニングします。製品は、現時点で早期アクセスで、クローズドソースです。',
     notes: [
-      'Roughly 1,139 kernel declarations are in Iron today.',
-      'HIP and Vulkan pass a test corpus of 4,164 of 4,164 cases bit-accurately, but they are not tuned yet.',
-      'CUDA is in production on RTX and DGX Spark, with datacenter GPUs in progress.',
+      '現在、Iron には約 1,139 個のカーネル宣言があります。',
+      'HIP と Vulkan は、テストコーパス 4,164 件のうち 4,164 件でビット単位の一致を確認していますが、チューニングはこれからです。',
+      'CUDA は RTX と DGX Spark で本番稼働中で、データセンター GPU は対応中です。',
     ],
   },
   faq: [
     {
-      question: 'How is Iron different from writing Metal and CUDA by hand?',
+      question: 'Iron は、Metal や CUDA を手で書くのと何が違いますか？',
       answer:
-        'You write one kernel definition in a Rust-embedded DSL, and it lowers through a shared IR to Metal, CUDA (PTX), HIP/ROCm or Vulkan SPIR-V. Tuning is still per backend, and today Metal gets it first.',
+        'Rust に埋め込む DSL でカーネル定義をひとつ書けば、共通の IR を経由して Metal、CUDA（PTX）、HIP/ROCm、Vulkan SPIR-V に変換されます。チューニングは引き続きバックエンドごとで、現時点では Metal が最初です。',
     },
     {
-      question: 'Can our existing stack call Iron kernels?',
+      question: '既存のスタックから Iron のカーネルを呼び出せますか？',
       answer:
-        'Yes. A versioned C and Rust ABI lets existing hosts call them, so you do not need to adopt Butter to use Iron.',
+        'はい。バージョン管理された C と Rust の ABI で既存のホストから呼び出せるので、Iron を使うために Butter を導入する必要はありません。',
     },
     {
-      question: 'Is Butter faster than vLLM or llama.cpp?',
+      question: 'Butter は vLLM や llama.cpp より速いですか？',
       answer:
-        'We do not publish comparisons we cannot reproduce, and we make no claim that Butter beats other engines on CUDA or ROCm. Benchmarks beat opinions, so when numbers go public they will come with the method.',
+        '再現できない比較は公開しませんし、CUDA や ROCm で Butter が他のエンジンを上回るとも主張しません。意見よりベンチマークです。数字を公開するときは、方法も併せて示します。',
     },
     {
-      question: 'Which models does Butter run?',
+      question: 'Butter はどのモデルを動かせますか？',
       answer:
-        'Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite, Phi, LFM, OLMo, SmolLM, Falcon H1, Jamba and InternLM, plus vision, speech and omni variants. DeepSeek V4 is in progress. Models load straight from Hugging Face with no conversion.',
+        'Llama、Gemma、Qwen、GPT-OSS、Mistral、Nemotron、Granite、Phi、LFM、OLMo、SmolLM、Falcon H1、Jamba、InternLM、そしてビジョン、音声、オムニのバリエーションです。DeepSeek V4 は対応中です。モデルは Hugging Face から変換なしで直接読み込めます。',
     },
     {
-      question: 'Can we get access?',
+      question: 'アクセスは可能ですか？',
       answer:
-        'Early access is open by request, and the products are closed source for now. Tell us which backends and models matter to you and we will write back.',
+        '早期アクセスは申し込み制で、製品は現時点でクローズドソースです。重要なバックエンドとモデルを教えていただければ、返信します。',
     },
   ],
   cta: {
-    title: 'Press your math into *silicon*.',
-    body: 'Early access, closed source for now. Tell us what you build, which backends matter and where Python is in your way, and we will write back.',
+    title: '計算を、*シリコン*に焼き込む。',
+    body: '現時点では早期アクセスで、クローズドソースです。何をつくっているか、どのバックエンドが重要か、どこで Python が邪魔になっているかを教えていただければ、返信します。',
   },
 };
 

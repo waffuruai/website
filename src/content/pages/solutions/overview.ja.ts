@@ -1,64 +1,64 @@
 import type { solutionsOverview } from './overview';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const solutionsOverviewJa: (typeof solutionsOverview)['en'] = {
   seo: {
-    title: 'AI inference solutions',
+    title: 'AI 推論ソリューション',
     description:
-      'Waffuru’s local-first AI stack for small businesses, enterprises, neoclouds and AI companies: a lower cost per workload, better inference and more control.',
-    keywords: ['AI inference solutions', 'local-first AI'],
+      '中小企業からエンタープライズ、ネオクラウド、AI 企業まで。ワークロードあたりのコストを下げ、推論を改善し、より主導権を持てるローカルファースト AI スタック。',
+    keywords: ['AI 推論ソリューション', 'ローカルファースト AI'],
   },
   hero: {
-    label: 'Solutions',
-    title: 'Local-first AI, fitted to your *job*.',
-    lede: 'Waffuru is one stack, from kernels to memory, that runs models fast on hardware you already own. Pick the page closest to what you are trying to get done.',
+    label: 'ソリューション',
+    title: 'ローカルファースト AI を、あなたの*仕事*に合わせて。',
+    lede: 'Waffuru は、カーネルから記憶までをひとつにしたスタックで、すでにお持ちのハードウェアでモデルを速く動かします。やりたいことにいちばん近いページを選んでください。',
   },
   cards: {
-    label: 'Who it’s for',
-    title: 'Find your *seat*.',
+    label: '対象',
+    title: 'あなたの*席*を見つける。',
     intro:
-      'Four audiences, one stack. Each page covers the problem, the jobs and what works today.',
+      '4 つの対象、ひとつのスタック。各ページで、課題、やりたいこと、そして今日動くものを説明します。',
   },
   values: {
-    label: 'What stays the same',
-    title: 'Three reasons for *everyone*.',
-    intro: 'Each audience has its own job. These three hold for all of them.',
+    label: '変わらないこと',
+    title: '*誰にとっても*共通の、3 つの理由。',
+    intro:
+      '対象ごとに、やりたいことは違います。この 3 つは、どの対象にも共通です。',
     items: [
       {
         tag: 'cost',
-        title: 'Dollars per *workload*.',
-        body: 'When power is the ceiling, tokens per watt and dollars per workload are what you can still maximize. Waffuru is built around both.',
+        title: '*ワークロード*あたりのコスト',
+        body: '電力が上限のとき、まだ磨ける余地があるのは、1 ワットあたりのトークン数と、ワークロードあたりのコストです。Waffuru は、その両方を軸につくられています。',
         points: [
-          'Run on hardware you already own instead of renting',
-          'Quantized models fit more in the memory you have',
-          'Waffle shows where capacity sits idle',
+          '借りる代わりに、すでに持っているハードウェアで動かす',
+          '量子化モデルなら、手持ちのメモリにより多く収まる',
+          '遊んでいる容量を Waffle が示す',
         ],
       },
       {
         tag: 'inference',
-        title: 'Better *inference*.',
-        body: 'Kernels tuned for each backend, quantized models and KV cache, and speculative decoding, in an engine with no Python on the hot path.',
+        title: 'より良い*推論*',
+        body: 'バックエンドごとにチューニングしたカーネル、量子化されたモデルと KV キャッシュ、投機的デコーディング。それを、ホットパスに Python のないエンジンで。',
         points: [
-          'Metal first, CUDA next, ROCm and Vulkan running',
-          'Loads Hugging Face models with no conversion',
-          'Text, vision, speech and omni models',
+          'まず Metal、次に CUDA、ROCm と Vulkan は動作',
+          '変換なしで Hugging Face のモデルを読み込み',
+          'テキスト、ビジョン、音声、オムニの各モデル',
         ],
       },
       {
         tag: 'control',
-        title: 'More *control*.',
-        body: 'Local-first: your data stays where it is unless you opt in, on a laptop, on-prem or in your own cloud.',
+        title: 'より多くの*コントロール*を。',
+        body: 'ローカルファースト。ノート PC でも、オンプレミスでも、自社クラウドでも、データは、オプトインしない限りその場所にとどまります。',
         points: [
-          'OpenAI-compatible serving, so apps keep working',
-          'Waffle works with vLLM, SGLang and llama.cpp',
-          'No lock-in to one engine or one vendor',
+          'OpenAI 互換のサービング。アプリはそのまま動く',
+          'Waffle は vLLM、SGLang、llama.cpp と連携',
+          '特定のエンジンやベンダーへのロックインなし',
         ],
       },
     ],
   },
   cta: {
-    title: 'Pull up a *seat*.',
-    body: 'Early access, closed source for now. Tell us what you want to run and we will write back.',
+    title: 'どうぞ、*お席*へ。',
+    body: '現時点では早期アクセスで、クローズドソースです。動かしたいものを教えていただければ、返信します。',
   },
 };
 

@@ -1,159 +1,159 @@
 import type { about } from './about';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const aboutJa: (typeof about)['en'] = {
   seo: {
-    title: 'Our mission: democratize access to intelligence',
+    title: 'ミッション：インテリジェンスへのアクセスを民主化',
     description:
-      'Waffuru’s mission is to democratize access to intelligence. What we believe, what we value and why we build local-first AI infrastructure.',
+      'Waffuru のミッションは、インテリジェンスへのアクセスを民主化すること。信じていること、大切にする価値観、ローカルファースト AI 基盤をつくる理由。',
     keywords: [
-      'Waffuru mission',
-      'democratize AI',
-      'local-first AI company',
-      'AI infrastructure startup',
+      'Waffuru ミッション',
+      'AI の民主化',
+      'ローカルファースト AI 企業',
+      'AI インフラ スタートアップ',
     ],
   },
   hero: {
-    label: 'About Waffuru',
-    title: 'Democratize access to *intelligence*.',
-    lede: 'Waffuru builds the stack underneath local-first AI: kernels, inference, fleet control and memory that run models fast on the hardware people already own.',
+    label: 'Waffuru について',
+    title: '*インテリジェンス*へのアクセスを民主化する。',
+    lede: 'Waffuru は、ローカルファースト AI の土台となるスタックをつくっています。お手元のハードウェアでモデルを速く動かすための、カーネル、推論、フリート管理、記憶です。',
     actions: [
-      { label: 'Meet the team', href: '/about/team' },
-      { label: 'Work with us', href: '#hiring', variant: 'outline' },
+      { label: 'チームを見る', href: '/about/team' },
+      { label: '一緒に働く', href: '#hiring', variant: 'outline' },
     ],
   },
   why: {
-    title: 'Why we *build*.',
-    intro: 'Intelligence should run where people already are.',
+    title: 'なぜ*つくる*のか',
+    intro: 'インテリジェンスは、人がいる場所で動くべきです。',
     paragraphs: [
-      'Models are getting good enough to run on hardware people already own.',
-      'That only matters if the stack underneath is ready for it. It has to be faster, cheaper and yours: kernels that get more from every watt, serving without Python in the way, and memory that stays on your machine. It is also the foundation for local-first personal assistants.',
-      'Access to intelligence must not depend on geography, wealth or credentials. A model that needs a datacenter, a budget or a badge is not access. One that runs on a computer you already own is.',
+      'モデルは、すでに手元にあるハードウェアで動かせるくらい、十分に良くなってきています。',
+      'ただし、それが意味を持つのは、土台のスタックが準備できているときだけです。より速く、より安く、そして自分のものであること。1 ワットからより多くを引き出すカーネル、Python に邪魔されないサービング、あなたのマシンの中にとどまる記憶。それはローカルファーストのパーソナルアシスタントの土台でもあります。',
+      'インテリジェンスへのアクセスは、住む場所、財力、資格や肩書きに左右されてはなりません。データセンターや予算、入館証が必要なモデルは、アクセスとは言えません。すでに持っているコンピューターで動くモデルこそが、アクセスです。',
     ],
-    constraintsLabel: 'Two constraints we hold ourselves to',
+    constraintsLabel: '私たちが自分に課している 2 つの制約',
     constraints: [
-      'It runs on consumer hardware.',
-      'Your data stays on your machine unless you opt in.',
+      'コンシューマー向けのハードウェアで動くこと。',
+      'データは、あなたがオプトインしない限り、あなたのマシンにとどまること。',
     ],
   },
   beliefs: {
-    title: 'What we *believe*.',
-    intro: 'Seven theses that drive what we build.',
+    title: '私たちが*信じる*こと',
+    intro: 'つくるものを動かしている、7 つの前提。',
     theses: [
       {
         statement:
-          'Demand for intelligence is limitless. The resources powering it are not.',
-        body: 'Scaling inference takes more than new datacenters and power. It takes more useful work from every unit of compute and energy, so access grows faster than cost, energy demand and environmental impact.',
+          'インテリジェンスへの需要に限りはない。それを支える資源には限りがある。',
+        body: '推論を拡大するには、新しいデータセンターと電力だけでは足りません。計算とエネルギーの 1 単位ごとから、より多くの有用な仕事を引き出す必要があります。そうしてはじめて、アクセスはコストやエネルギー需要、環境負荷よりも速く広がります。',
       },
       {
-        statement: 'When power is the ceiling, efficiency is the variable.',
-        body: 'Tokens per watt and dollars per workload are what you can still maximize.',
+        statement: '電力が上限なら、変えられるのは効率だ。',
+        body: '1 ワットあたりのトークン数と、ワークロードあたりのコスト。この 2 つは、まだ磨ける余地があります。',
       },
       {
-        statement: 'Demand for compute is insatiable.',
-        body: 'Every efficiency gain gets spent on more intelligence, the Jevons paradox at work. That is why efficiency work never finishes.',
-      },
-      {
-        statement: 'Good-enough models on commodity hardware are close.',
-        body: 'Within about two years, models running on hardware people already own will be good enough for meaningful work. Moore’s law and fast AI progress keep compounding.',
+        statement: '計算需要は、満たされることがない。',
+        body: '効率が上がるたびに、その分はさらなるインテリジェンスに使われます。ジェボンズのパラドックスです。だから、効率化の仕事に終わりはありません。',
       },
       {
         statement:
-          'Everyone will have a personal assistant, or a team of them.',
-        body: 'And those assistants will talk to each other.',
-      },
-      {
-        statement: 'People want agency.',
-        body: 'An assistant has to be a trusted extension of yourself: helpful, approachable, not scary. That relationship will be as personal as the one with your phone.',
+          '「十分に良い」モデルが、コモディティハードウェアで動く日は近い。',
+        body: '2 年ほどのうちに、すでに持っているハードウェアで動くモデルが、意味のある仕事をこなせるほど十分に良くなるでしょう。ムーアの法則と AI の急速な進歩が、積み重なり続けています。',
       },
       {
         statement:
-          'Access to intelligence must not depend on geography, wealth or credentials.',
-        body: 'Raising earning potential everywhere requires open, local access to intelligence.',
+          '誰もが、パーソナルアシスタントを、あるいはそのチームを持つ。',
+        body: 'そして、そのアシスタント同士も会話するようになります。',
+      },
+      {
+        statement: '人は、主体性を求める。',
+        body: 'アシスタントは、信頼できる自分自身の延長でなければなりません。役に立ち、親しみやすく、怖くない存在であること。その関係は、スマートフォンとの関係と同じくらい個人的なものになります。',
+      },
+      {
+        statement:
+          'インテリジェンスへのアクセスは、住む場所、財力、資格や肩書きに左右されてはならない。',
+        body: 'どこにいても稼ぐ力を高めるには、インテリジェンスへの開かれた、ローカルなアクセスが必要です。',
       },
     ],
   },
   values: {
-    title: 'What we *value*.',
-    intro: 'Fourteen values that guide how we decide.',
+    title: '私たちが*大切にする*こと',
+    intro: '判断のしかたを導く、14 の価値観。',
     items: [
       {
-        name: 'Freedom',
-        line: 'Enabling freedom through technology access is fundamental to what we build.',
+        name: '自由',
+        line: 'テクノロジーへのアクセスを通じて自由を広げることは、私たちのものづくりの根幹です。',
       },
       {
-        name: 'Autonomy',
-        line: 'We build systems that give people time back.',
+        name: '自律',
+        line: '人々に時間を取り戻すシステムをつくります。',
       },
       {
-        name: 'Agency',
-        line: 'If something needs doing and you are best placed, start it.',
+        name: '主体性',
+        line: 'やるべきことがあり、自分が最適な立場にいるなら、自分から始めます。',
       },
-      { name: 'Respect', line: 'We treat people as capable peers.' },
-      { name: 'Trust', line: 'Earned slowly, lost in a moment.' },
+      { name: '敬意', line: '相手を、対等で有能な仲間として扱います。' },
+      { name: '信頼', line: '築くには時間がかかり、失うのは一瞬です。' },
       {
-        name: 'Honesty',
-        line: 'We state status, risk, mistakes and limits directly.',
-      },
-      {
-        name: 'Integrity',
-        line: 'Keep commitments. Do not ship what you would not stand behind.',
+        name: '正直さ',
+        line: '状況、リスク、ミス、限界を、率直に伝えます。',
       },
       {
-        name: 'Equal opportunity',
-        line: 'Access to intelligence must not depend on geography, wealth or credentials.',
-      },
-      { name: 'Compassion', line: 'We care about people as people.' },
-      {
-        name: 'Meritocracy',
-        line: 'The best idea wins, on evidence and impact.',
+        name: '誠実さ',
+        line: '約束を守ります。責任を持てないものは、リリースしません。',
       },
       {
-        name: 'Scientific method',
-        line: 'Hypothesize, measure, reproduce. Benchmarks beat opinions.',
+        name: '機会の平等',
+        line: 'インテリジェンスへのアクセスは、住む場所、財力、資格や肩書きに左右されてはなりません。',
+      },
+      { name: '思いやり', line: '人を、ひとりの人として大切にします。' },
+      {
+        name: '実力主義',
+        line: '最良のアイデアが、根拠と成果によって選ばれます。',
       },
       {
-        name: 'Quick decisions and actions',
-        line: 'A bias to shipping, measuring and learning.',
+        name: '科学的手法',
+        line: '仮説を立て、測定し、再現する。意見よりベンチマークです。',
       },
       {
-        name: 'Fiscal conservatism',
-        line: 'We spend time and money like they are scarce.',
+        name: '素早い判断と行動',
+        line: 'リリースし、測定し、学ぶことを優先します。',
       },
       {
-        name: 'Having fun',
-        line: 'Hard problems deserve teams that enjoy the work.',
+        name: '堅実な支出',
+        line: '時間もお金も、限りあるものとして使います。',
+      },
+      {
+        name: '楽しむこと',
+        line: '難しい問題にふさわしいのは、仕事を楽しめるチームです。',
       },
     ],
   },
   teamTeaser: {
-    title: 'The people *behind* it.',
-    body: 'Research, security, revenue and a couple of founders who have shipped before.',
-    cta: 'Meet the team',
-    portraitAlt: 'Portrait of {name}',
+    title: 'これを*支える*人たち',
+    body: 'リサーチ、セキュリティ、収益、そして製品を世に送り出した経験のある創業者が数人。',
+    cta: 'チームを見る',
+    portraitAlt: '{name} のポートレート',
   },
   hiring: {
-    label: 'Hiring',
-    title: 'Pull up a *chair*.',
+    label: '採用',
+    title: 'どうぞ、*椅子*を引いて。',
     lines: [
-      'We want people who enjoy the low-level work: GPU kernels, inference engines, Rust, Swift and Metal, and the product that sits on top of them.',
-      'We work asynchronously across time zones. We are also an agentic company, with humans and agents building together.',
-      'If that sounds like your kind of kitchen, tell us what you would like to build.',
+      'GPU カーネル、推論エンジン、Rust、Swift と Metal、そしてその上に載るプロダクト。そんな低レイヤーの仕事を楽しめる人に来てほしいと考えています。',
+      'タイムゾーンをまたいで、非同期で働いています。また、人とエージェントがともにつくる、エージェンティックな会社でもあります。',
+      'あなたに合うキッチンだと感じたら、つくってみたいものを聞かせてください。',
     ],
-    skillsLabel: 'What we like working on',
+    skillsLabel: '好んで取り組んでいる分野',
     skills: [
-      'Low-level GPU',
-      'Kernels',
-      'Inference',
+      '低レイヤー GPU',
+      'カーネル',
+      '推論',
       'Rust',
-      'Swift and Metal',
-      'Product',
+      'Swift と Metal',
+      'プロダクト',
     ],
-    cta: 'Get in touch',
+    cta: 'ご連絡ください',
   },
   cta: {
-    title: 'Try it *early*.',
-    body: 'Our products are private for now. Request early access, or talk to us about what you want to run on the hardware you already own.',
+    title: '*いち早く*試す。',
+    body: '現時点では、製品は非公開です。早期アクセスをお申し込みいただくか、お手元のハードウェアで動かしたいものについてご相談ください。',
   },
 };
 

@@ -1,122 +1,124 @@
 import type { neoclouds } from './neoclouds';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
+// TODO(founder): confirm what Waffle can break down per tenant, and how the
+// telemetry signature is verified, before this page says more than "signed
+// telemetry" and "across tenants and engines".
 const neocloudsJa: (typeof neoclouds)['en'] = {
   seo: {
-    title: 'Inference platform for GPU clouds',
+    title: 'GPU クラウド向け推論プラットフォーム',
     description:
-      'Fleet visibility across tenants and engines, more useful tokens per GPU, and signed telemetry from every host. Waffle works with vLLM, SGLang and llama.cpp. Early access.',
+      'テナントとエンジンをまたぐフリートの可視化、GPU あたりのトークン増、全ホストの署名付きテレメトリ。vLLM、SGLang、llama.cpp 対応。早期アクセス中。',
     keywords: [
-      'GPU cloud software',
-      'GPU utilization',
-      'inference platform for GPU clouds',
-      'multi-tenant GPU monitoring',
+      'GPU クラウド ソフトウェア',
+      'GPU 稼働率',
+      'GPU クラウド向け推論プラットフォーム',
+      'マルチテナント GPU 監視',
     ],
   },
-  name: 'Neoclouds',
-  serviceType: 'GPU fleet visibility and inference software',
+  name: 'ネオクラウド',
+  serviceType: 'GPU フリート可視化・推論ソフトウェア',
   card: {
-    title: '*Neoclouds*',
+    title: '*ネオクラウド*',
     summary:
-      'Fleet visibility across tenants and engines, and more useful tokens per GPU.',
+      'テナントとエンジンをまたぐフリートの可視化。GPU あたりの有用なトークンを増やします。',
   },
   hero: {
-    title: 'Get more from every *GPU* you rent out.',
-    lede: 'See the whole fleet across tenants and engines, and put kernels tuned per backend under the work your customers run. Nothing locks you to one engine.',
+    title: '貸し出すすべての *GPU* から、より多くを引き出す。',
+    lede: 'テナントとエンジンをまたいでフリート全体を見渡し、お客様が動かす仕事の下に、バックエンドごとにチューニングしたカーネルを敷く。特定のエンジンに縛られることはありません。',
   },
   problem: {
-    title: 'A fleet you can’t *see*.',
+    title: '*見えない*フリート',
     statement:
-      'Customers bring their own engines, versions and settings, and the GPU underneath is the part you answer for.',
-    body: 'A dashboard can say a card is busy without saying what is running on it, for whom or how well. Every engine reports in its own way, every tenant brings a different mix, and capacity that sits idle or poorly matched is revenue you cannot point to.',
+      'お客様は、それぞれのエンジン、バージョン、設定を持ち込み、その下にある GPU が、あなたの責任範囲になります。',
+    body: 'ダッシュボードは、カードが稼働中だとは言えても、そこで何が、誰のために、どれだけうまく動いているかは教えてくれません。エンジンごとに報告の仕方が違い、テナントごとに構成も違い、遊んでいる容量やうまく噛み合っていない容量は、どこにあるのかも示せない売上です。',
   },
   useCases: {
-    title: 'A tighter *fleet*.',
-    intro: 'Four jobs for the team that keeps a GPU cloud running.',
+    title: '引き締まった*フリート*',
+    intro: 'GPU クラウドを動かし続けるチームのための、4 つの仕事。',
     items: [
       {
         tag: 'cost',
-        title: 'Know what is running on every GPU.',
-        body: 'Waffle gives one view across hosts, GPUs, engines and tenants, whether the engine is vLLM, SGLang, llama.cpp or Butter. Idle and mismatched capacity shows up on your screen first.',
+        title: 'すべての GPU で何が動いているかを、把握する。',
+        body: 'vLLM でも、SGLang でも、llama.cpp でも、Butter でも、Waffle はホスト、GPU、エンジン、テナントをまたいで、ひとつの画面を提供します。遊んでいる容量や、噛み合っていない容量は、まずあなたの画面に現れます。',
       },
       {
         tag: 'control',
-        title: 'Trust the readings on your dashboard.',
-        body: 'Each host runs a small Rust sidecar that reports signed telemetry, so readings can be verified as coming from the host that sent them. Fleet-wide numbers stop being taken on faith.',
+        title: 'ダッシュボードの数値を、信頼できる。',
+        body: '各ホストでは小さな Rust 製サイドカーが動き、署名付きテレメトリを報告します。そのため、数値が送信元のホストのものだと検証できます。フリート全体の数字を、信じるしかない状態から抜け出せます。',
       },
       {
         tag: 'inference',
-        title: 'Serve more useful tokens per GPU.',
-        body: 'Butter pairs kernels tuned per backend with quantized models and KV cache and speculative decoding, all aimed at tokens per watt. It runs alongside the engines your tenants already choose, so you can compare on your own fleet.',
+        title: 'GPU あたりの有用なトークンを、増やす。',
+        body: 'Butter は、バックエンドごとにチューニングしたカーネルに、量子化モデルと KV キャッシュ、投機的デコーディングを組み合わせ、すべて 1 ワットあたりのトークン数を狙っています。テナントがすでに選んでいるエンジンと並べて動かせるので、自分のフリートで比較できます。',
       },
       {
         tag: 'control',
-        title: 'Offer options without betting on one engine.',
-        body: 'Butter serves an OpenAI-compatible API, and Waffle works with vLLM, SGLang and llama.cpp. You can give customers more choice without rebuilding around any single engine.',
+        title: '特定のエンジンに賭けずに、選択肢を提供する。',
+        body: 'Butter は OpenAI 互換 API を提供し、Waffle は vLLM、SGLang、llama.cpp と連携します。特定のエンジンを軸に組み直すことなく、お客様により多くの選択肢を提供できます。',
       },
     ],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
+    title: 'スタックの*かみ合わせ方*',
     intro:
-      'Waffle is the part built for you. Butter and Iron work on the efficiency underneath.',
+      'あなたのためにあるのは Waffle です。Butter と Iron は、その下で効率を高めます。',
     items: [
       {
         product: 'waffle',
-        need: 'See the whole fleet.',
-        body: 'From one box under a desk to a neocloud renting out a fleet. A small Rust sidecar on each host reports signed telemetry, and Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+        need: 'フリート全体を見渡す。',
+        body: 'デスクの下の 1 台から、フリートを貸し出すネオクラウドまで。各ホストの小さな Rust 製サイドカーが署名付きテレメトリを報告し、Waffle は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携します。',
       },
       {
         product: 'butter',
-        need: 'An engine you control, with no Python.',
-        body: 'Swift on Metal, Rust for CUDA and the rest. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API, with no Python and no JIT.',
+        need: '自分で制御できる、Python なしのエンジン。',
+        body: 'Metal 上の Swift、CUDA などでは Rust。量子化されたチェックポイントと KV キャッシュ、投機的デコーディング、LoRA が OpenAI 互換 API の背後にあり、Python も JIT もありません。',
       },
       {
         product: 'iron',
-        need: 'Kernels for the hardware you buy next.',
-        body: 'One kernel definition, four backends: Metal, CUDA, HIP/ROCm and Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
+        need: '次に買うハードウェアのための、カーネル。',
+        body: 'ひとつのカーネル定義から、4 つのバックエンドへ。Metal、CUDA、HIP/ROCm、Vulkan SPIR-V。バージョン管理された C と Rust の ABI で、既存のホストから呼び出せます。',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Waffle and Butter are in early access and closed source for now. CUDA is in production on RTX and DGX Spark, and datacenter GPUs are in progress.',
+    title: '私たちの*現在地*',
+    lede: 'Waffle と Butter は、現時点で早期アクセスで、クローズドソースです。CUDA は RTX と DGX Spark で本番稼働中で、データセンター GPU は対応中です。',
     notes: [
-      'Tell us your GPU generations. Datacenter CUDA is in progress, so the fleets we hear about shape what we do first.',
-      'ROCm and Vulkan run today but are not tuned yet.',
-      'We make no claim that Butter beats other engines on CUDA or ROCm. When we publish measurements, they will come with the method.',
+      'お使いの GPU の世代を教えてください。データセンター向けの CUDA は対応中なので、お聞きするフリートの状況が、何から先に取り組むかを左右します。',
+      'ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
+      'CUDA や ROCm で Butter が他のエンジンを上回るとは主張しません。計測結果を公開するときは、方法も併せて示します。',
     ],
   },
   faq: [
     {
-      question: 'Does Waffle replace our current engines?',
+      question: 'Waffle は、いま使っているエンジンを置き換えますか？',
       answer:
-        'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers. Get visibility first, and change engines only if and when you want to.',
+        '置き換えません。Waffle は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携します。まず可視化を手に入れ、エンジンを変えるのは、変えたいと思ったときだけで構いません。',
     },
     {
-      question: 'What GPUs does it run on?',
+      question: 'どの GPU で動きますか？',
       answer:
-        'Apple silicon through Metal is primary. NVIDIA through CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run but are not tuned yet.',
+        'Metal 経由の Apple シリコンが第一です。CUDA 経由の NVIDIA は第二で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。AMD ROCm と Vulkan は動作しますが、チューニングはこれからです。',
     },
     {
-      question: 'Why should we trust the telemetry?',
+      question: 'テレメトリを信頼できる理由は何ですか？',
       answer:
-        'Each host runs a small Rust sidecar that reports signed telemetry, so readings can be verified as coming from the host that sent them. Ask us how signing works in your environment.',
+        '各ホストでは小さな Rust 製サイドカーが動き、署名付きテレメトリを報告します。そのため、数値が送信元のホストのものだと検証できます。お客様の環境で署名がどう機能するかは、お問い合わせください。',
     },
     {
-      question: 'How much utilization will it recover?',
+      question: '稼働率はどのくらい回復しますか？',
       answer:
-        'We will not promise a percentage. Seeing the fleet is the first step, and tokens per watt and dollars per workload are the numbers we try to move. We would rather measure them on your fleet than quote you one.',
+        'パーセンテージはお約束しません。フリートを見渡すことが最初の一歩で、私たちが動かそうとしている数字は、1 ワットあたりのトークン数と、ワークロードあたりのコストです。数字を示すより、お客様のフリートで計測したいと考えています。',
     },
     {
-      question: 'Can we try it?',
+      question: '試すことはできますか？',
       answer:
-        'Early access is open by request, and the products are closed source for now. Tell us about your fleet and we will write back.',
+        '早期アクセスは申し込み制で、製品は現時点でクローズドソースです。フリートについて教えていただければ、返信します。',
     },
   ],
   cta: {
-    title: 'Show us the *fleet*.',
-    body: 'Early access, closed source for now. Tell us your GPUs, your engines and how tenants share them, and we will write back about what fits.',
+    title: 'あなたの*フリート*を、見せてほしい。',
+    body: '現時点では早期アクセスで、クローズドソースです。お使いの GPU、エンジン、そしてテナントがそれらをどう共有しているかを教えていただければ、合うものについて返信します。',
   },
 };
 

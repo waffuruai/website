@@ -1,65 +1,64 @@
 import type { contact } from './contact';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const contactJa: (typeof contact)['en'] = {
   seo: {
-    title: 'Contact',
+    title: 'お問い合わせ',
     description:
-      'Reach Waffuru for sales, partnerships, press, support, security reports or hiring, or ask for early access.',
+      '営業、提携、報道、サポート、セキュリティ報告、採用のご連絡や、早期アクセスのお申し込みはこちら。',
     keywords: [
-      'contact Waffuru',
-      'AI infrastructure sales',
-      'partnerships',
-      'Waffuru press',
-      'Waffuru early access',
+      'Waffuru お問い合わせ',
+      'AI インフラ 導入相談',
+      '提携',
+      'Waffuru 広報',
+      'Waffuru 早期アクセス',
     ],
   },
   hero: {
-    label: 'Contact',
-    title: 'Tell us what you’re *building*.',
-    lede: 'Sales, partnerships, press, support, security and hiring all reach us at hello@waffuru.ai. Pick the topic that fits.',
+    label: 'お問い合わせ',
+    title: '何を*つくって*いるか、聞かせてください。',
+    lede: '営業、提携、報道、サポート、セキュリティ、採用。どのご連絡も hello@waffuru.ai に届きます。内容に合うものをお選びください。',
   },
   callouts: {
-    title: 'Pick a *door*.',
+    title: 'ご用件の*入口*を選ぶ',
     intro:
-      'No forms to fill in. Each button opens an email with the subject already set.',
-    emailLabel: 'Email us',
+      'フォームの入力は不要です。各ボタンで、件名が入力済みのメールが開きます。',
+    emailLabel: 'メールを送る',
     items: [
       {
         subject: 'Sales',
-        title: 'Sales',
-        body: 'Running models on your own hardware, or a fleet of it? Tell us the workload and where it runs.',
+        title: '営業',
+        body: 'お手元のハードウェアやそのフリートでモデルを動かすなら、ワークロードと動かす場所を教えてください。',
       },
       {
         subject: 'Partnerships',
-        title: 'Partnerships',
-        body: 'Hardware makers, neoclouds and model teams: tell us what you’d like to build together.',
+        title: '提携',
+        body: 'ハードウェアメーカー、ネオクラウド、モデル開発チームの皆さん。一緒につくりたいものを聞かせてください。',
       },
       {
         subject: 'Press',
-        title: 'Press',
-        body: 'Writing about local AI, GPU software or the people building it? We’re glad to talk.',
+        title: '報道・取材',
+        body: 'ローカル AI や GPU ソフトウェア、あるいはそれをつくる人たちについて書かれるなら、喜んでお話しします。',
       },
       {
         subject: 'Support',
-        title: 'Support',
-        body: 'Something broken or unclear? Send your hardware, what you ran and what happened.',
+        title: 'サポート',
+        body: 'うまく動かない、あるいは不明な点があるときは、お使いのハードウェア、実行した内容、起きたことを送ってください。',
       },
       {
         subject: 'Security',
-        title: 'Security',
-        body: 'Found a vulnerability? Tell us privately and give us time to fix it before it goes public.',
+        title: 'セキュリティ',
+        body: '脆弱性を見つけたら、まずは非公開でお知らせください。公開の前に、修正のための時間をいただけると助かります。',
       },
       {
         subject: 'Hiring',
-        title: 'Hiring',
-        body: 'Want to help build the stack? Tell us what you’ve shipped and what you’d like to work on.',
+        title: '採用',
+        body: 'スタックづくりに加わりたい方は、これまでにリリースしたものと、取り組みたいことを教えてください。',
       },
     ],
   },
   earlyAccess: {
-    title: 'Want it *first*?',
-    body: 'Our products are in private early access. Tell us what you want to run, and on what hardware, and we’ll write when we have something that fits.',
+    title: '*いち早く*使いたい方へ',
+    body: '製品は、非公開の早期アクセス段階にあります。動かしたいものと、そのハードウェアを教えてください。合うものができ次第、ご連絡します。',
   },
 };
 

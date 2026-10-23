@@ -1,46 +1,47 @@
 import { mailto, site } from '@/content/site';
 import type { support } from './support';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
+// TODO(founder): add response expectations, a disclosure policy (safe harbour,
+// timelines) and a PGP key to the security answer below and to security.txt.
 const supportJa: (typeof support)['en'] = {
   seo: {
-    title: 'Support',
+    title: 'サポート',
     description:
-      'What is available today, how early access works, supported hardware, where the docs are, and how to report a bug or a security issue.',
+      '現在利用できるもの、早期アクセスの流れ、対応ハードウェア、ドキュメントの場所、不具合・セキュリティ問題の報告方法。',
     keywords: [
-      'Waffuru support',
-      'Waffuru docs',
-      'Waffuru early access',
-      'report a security issue',
-      'local AI hardware support',
+      'Waffuru サポート',
+      'Waffuru ドキュメント',
+      'Waffuru 早期アクセス',
+      'セキュリティ問題の報告',
+      'ローカル AI 対応ハードウェア',
     ],
   },
   hero: {
-    label: 'Support',
-    title: 'Answers, and a *person* when you need one.',
-    lede: 'What’s available today, how early access works, and where to go when something breaks.',
+    label: 'サポート',
+    title: '答えと、必要なときは*人*が。',
+    lede: '今日使えるもの、早期アクセスの流れ、そして何かうまくいかないときの連絡先。',
   },
   links: {
-    title: 'Where to *start*',
+    title: 'まずは、*ここから*',
     items: [
       {
-        title: 'Read the docs',
-        body: 'Guides and references live at docs.waffuru.ai.',
+        title: 'ドキュメントを読む',
+        body: 'ガイドとリファレンスは docs.waffuru.ai にあります。',
         href: site.urls.docs,
       },
       {
-        title: 'Email support',
-        body: 'Bugs, questions, install trouble. Say what you ran and on which hardware.',
+        title: 'サポートにメールする',
+        body: '不具合、質問、インストールのトラブル。何を実行したか、どのハードウェアかを添えてください。',
         href: mailto('Support'),
       },
       {
-        title: 'Report a security issue',
-        body: 'Privately, by email to hello@waffuru.ai with the subject Security.',
+        title: 'セキュリティ問題を報告する',
+        body: '非公開で、件名を Security にして hello@waffuru.ai へメールしてください。',
         href: mailto('Security'),
       },
       {
         title: 'security.txt',
-        body: 'Our security contact in machine-readable form.',
+        body: 'セキュリティ連絡先を、機械で読める形式で公開しています。',
         href: '/.well-known/security.txt',
         file: true,
       },
@@ -48,46 +49,46 @@ const supportJa: (typeof support)['en'] = {
   },
   faq: [
     {
-      question: 'What can I use today?',
+      question: '今日使えるものは何ですか？',
       answer:
-        'Our products (Iron, Butter, Waffle and Syrup) are private and closed source for now, and nothing is generally available yet. Early access is how people get in first. Guides and references live at docs.waffuru.ai.',
+        '製品（Iron、Butter、Waffle、Syrup）は現時点では非公開でクローズドソースであり、一般提供されているものはまだありません。まず利用できるのは、早期アクセスの方々です。ガイドとリファレンスは docs.waffuru.ai にあります。',
     },
     {
-      question: 'How does early access work?',
+      question: '早期アクセスはどのような仕組みですか？',
       answer:
-        'Fill in the early-access form and tell us what you’re building and what you want to run it on. We write to you when we have something that fits. Early access is pre-release software: it can change or break, and your feedback is how it improves.',
+        '早期アクセスのフォームに、何をつくっているか、何の上で動かしたいかを書いて送ってください。合うものができ次第、ご連絡します。早期アクセスはリリース前のソフトウェアです。変更や不具合が起きることがあり、いただくフィードバックが改善の力になります。',
     },
     {
-      question: 'Which hardware does it run on?',
+      question: 'どのハードウェアで動きますか？',
       answer:
-        'Apple silicon is the primary target: every kernel is written and tuned for Metal first. NVIDIA CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run today but are not tuned yet. Think MacBook and Mac Studio, RTX workstations, DGX Spark, Strix Halo and neocloud fleets.',
+        'Apple シリコンが第一の対象で、すべてのカーネルをまず Metal 向けに書き、チューニングしています。NVIDIA CUDA は第二の対象で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。AMD ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。想定しているのは、MacBook と Mac Studio、RTX ワークステーション、DGX Spark、Strix Halo、そしてネオクラウドのフリートです。',
     },
     {
-      question: 'Where are the docs?',
+      question: 'ドキュメントはどこにありますか？',
       answer:
-        'At docs.waffuru.ai. If something there is wrong or missing, tell us through the support link on this page.',
+        'docs.waffuru.ai にあります。誤りや不足を見つけたら、このページのサポートへのリンクからお知らせください。',
     },
     {
-      question: 'How do I report a bug?',
+      question: '不具合はどう報告すればよいですか？',
       answer:
-        'Email hello@waffuru.ai with the subject Support; the Email support link above does that for you. Include your hardware and OS, what you ran, what you expected and what happened, and trim anything private from logs first.',
+        '件名を Support にして hello@waffuru.ai へメールしてください。上の「サポートにメールする」リンクから開けば、件名が自動で入ります。お使いのハードウェアと OS、実行した内容、期待していた結果、実際に起きたことを書き、ログに含まれる個人的な情報は先に取り除いてください。',
     },
     {
-      question: 'How do I report a security issue?',
+      question: 'セキュリティ上の問題はどう報告すればよいですか？',
       answer:
-        'Email hello@waffuru.ai with the subject Security and enough detail to reproduce it. Please keep it private until we have had a reasonable chance to fix it. Our security.txt lists the same contact in machine-readable form.',
+        '件名を Security にして、再現に十分な詳細とともに hello@waffuru.ai へメールしてください。修正のための妥当な時間をいただくまでは、非公開にしてください。同じ連絡先は、機械で読める形式で security.txt にも載せています。',
     },
     {
-      question: 'What happens to my data?',
+      question: 'データはどうなりますか？',
       answer:
-        'Our software runs locally, and your data stays on your machine unless you opt in to something that sends it elsewhere. On this website we collect only what the privacy policy lists, and Google Analytics stays off unless you accept it.',
+        'ソフトウェアはローカルで動き、データは、外部に送る機能をあなたがオプトインしない限り、あなたのマシンにとどまります。このウェブサイトで収集するのはプライバシーポリシーに記載したものだけで、Google Analytics は同意しない限りオフのままです。',
     },
   ],
   cta: {
-    title: 'Not in here? *Ask* us.',
-    body: 'Send your hardware, your OS, what you ran and what happened. The more detail, the easier it is to help.',
-    docs: 'Read the docs',
-    email: 'Email support',
+    title: 'ここになければ、*聞いて*ください。',
+    body: 'ハードウェア、OS、実行した内容、起きたことを送ってください。詳しいほど、お手伝いしやすくなります。',
+    docs: 'ドキュメントを読む',
+    email: 'サポートにメールする',
   },
 };
 

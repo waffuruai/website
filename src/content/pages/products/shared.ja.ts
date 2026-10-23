@@ -1,21 +1,20 @@
 import type { productsShared } from './shared';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const productsSharedJa: (typeof productsShared)['en'] = {
-  statusLabel: 'Private · early access',
-  storyProblemLabel: 'The problem',
-  storyOutcomeLabel: 'What you can do now',
-  tierLabels: { primary: 'Primary', secondary: 'Secondary', runs: 'Runs' },
-  tierLegend: 'More bars, more tuning.',
+  statusLabel: '非公開 · 早期アクセス',
+  storyProblemLabel: '課題',
+  storyOutcomeLabel: 'できるようになること',
+  tierLabels: { primary: 'プライマリ', secondary: 'セカンダリ', runs: '動作' },
+  tierLegend: 'バーが多いほど、チューニングが進んでいます。',
   runsOn: {
-    label: 'Runs on',
+    label: '動作環境',
     items: [
       { label: 'MacBook & Mac Studio' },
-      { label: 'RTX workstations' },
+      { label: 'RTX ワークステーション' },
       { label: 'DGX Spark' },
       { label: 'Strix Halo' },
-      { label: 'Neocloud fleets' },
-      { label: 'Enterprise datacenter GPUs', inProgress: true },
+      { label: 'ネオクラウドのフリート' },
+      { label: 'エンタープライズ向けデータセンター GPU', inProgress: true },
     ],
   },
 };

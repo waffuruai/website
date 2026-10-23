@@ -1,63 +1,65 @@
 import type { productsOverview } from './overview';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const productsOverviewJa: (typeof productsOverview)['en'] = {
   seo: {
-    title: 'The Waffuru stack: kernels, serving, control and memory',
+    title: 'Waffuru スタック：カーネルから記憶まで',
     description:
-      'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on. Use one, or all four.',
+      'Iron がカーネルをコンパイル、Butter がモデルを実行、Waffle が GPU を見守り、Syrup が記憶。1 つだけでも、4 つ全部でも使えます。',
     keywords: [
-      'AI inference stack',
-      'GPU kernels to serving',
-      'local-first AI infrastructure',
+      'AI 推論スタック',
+      'GPU カーネルからサービングまで',
+      'ローカルファースト AI インフラ',
     ],
   },
   hero: {
-    label: 'Four products',
-    title: 'The Waffuru *stack*.',
-    lede: 'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on. All four are built to run on the hardware you already own.',
+    label: '4 つの製品',
+    title: 'Waffuru *スタック*',
+    lede: 'Iron がカーネルをコンパイルし、Butter がその上でモデルを動かします。Waffle が GPU を見守り、Syrup が取り組んでいたことを覚えています。4 つとも、お手元のハードウェアで動くようにつくっています。',
   },
   layers: {
-    heading: 'How the four layers *fit*.',
+    heading: '4 つのレイヤーの*かみ合い方*',
     intro:
-      'Numbered from the metal up. Syrup sits on top, Iron sits at the metal, and each layer has its own page.',
+      'ハードウェアに近いほうから順に、番号を振っています。いちばん上が Syrup、ハードウェアに接するのが Iron で、各レイヤーに専用のページがあります。',
     metal: {
-      label: 'The metal',
+      label: 'ハードウェア層',
       backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
     },
-    listLabel: 'The four layers of the stack',
+    listLabel: 'スタックの 4 つのレイヤー',
   },
   together: {
-    heading: 'Use one, or *all four*.',
+    heading: '1 つでも、*4 つすべて*でも。',
     intro:
-      'Start with the layer that solves today’s problem. Add the next when you need it.',
-    aloneLabel: 'On its own',
+      '今日の課題を解くレイヤーから始めて、必要になったら次を足してください。',
+    aloneLabel: '単体で',
     alone: {
-      iron: 'Write a GPU kernel once and run it on Metal, CUDA, ROCm and Vulkan.',
+      iron: 'GPU カーネルを一度書けば、Metal、CUDA、ROCm、Vulkan で動かせます。',
       butter:
-        'Serve models behind an OpenAI-compatible API, with no Python in the way.',
+        'OpenAI 互換 API でモデルを提供できます。間に Python は入りません。',
       waffle:
-        'See every GPU and every engine running on it, whichever engine that is.',
-      syrup: 'Give your AI local, cited memory of your notes and code.',
+        'どのエンジンであっても、すべての GPU と、その上で動くすべてのエンジンを見渡せます。',
+      syrup:
+        'ノートとコードについての、ローカルで出典付きの記憶を、あなたの AI に持たせられます。',
     },
-    allLabel: 'Together',
-    all: 'Butter runs models on the kernels Iron compiles, Waffle watches the GPUs and engines under them, and Syrup remembers what you were working on. Each layer you add builds on the ones below.',
+    allLabel: '組み合わせて',
+    all: 'Butter は Iron がコンパイルしたカーネルの上でモデルを動かし、Waffle はその下で動く GPU とエンジンを見守り、Syrup は取り組んでいたことを覚えています。足したレイヤーは、その下のレイヤーの上に積み重なります。',
   },
   audience: {
-    heading: 'Who it’s *for*.',
-    intro: 'Pick the page that sounds like you.',
+    heading: '*誰*のためのものか',
+    intro: '自分に当てはまるページを選んでください。',
     items: {
       smallBusiness:
-        'Run private AI on the Macs and workstations you already own.',
-      enterprise: 'Run inference you control, on-prem or in your own cloud.',
-      neoclouds: 'See every GPU in your fleet and every engine running on it.',
+        'すでにお持ちの Mac やワークステーションで、プライベート AI を動かします。',
+      enterprise:
+        'オンプレミスでも自社クラウドでも、自ら管理できる推論を動かします。',
+      neoclouds:
+        'フリート内のすべての GPU と、その上で動くすべてのエンジンを見渡せます。',
       aiCompanies:
-        'Write kernels once and serve models across Metal, CUDA, ROCm and Vulkan.',
+        'カーネルを一度書けば、Metal、CUDA、ROCm、Vulkan にまたがってモデルを提供できます。',
     },
   },
   cta: {
-    title: 'Start with the *layer* you need.',
-    body: 'The whole stack is in early access and closed source for now. Request access and tell us which layer you want first.',
+    title: '必要な*レイヤー*から始める。',
+    body: 'スタック全体が、現時点では早期アクセスでクローズドソースです。お申し込みの際に、最初に使いたいレイヤーを教えてください。',
   },
 };
 

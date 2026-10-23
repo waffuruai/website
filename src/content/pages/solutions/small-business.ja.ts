@@ -1,121 +1,122 @@
 import type { smallBusiness } from './small-business';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
 const smallBusinessJa: (typeof smallBusiness)['en'] = {
   seo: {
-    title: 'Private AI for small business',
+    title: '中小企業のためのプライベート AI',
     description:
-      'Run private AI on a Mac Studio or an RTX workstation you already own. Your data stays on your machine and there is no per-token cloud bill. Early access.',
+      'お持ちの Mac Studio や RTX ワークステーションでプライベート AI を。データは手元に残り、トークン課金のクラウド料金もなし。早期アクセス中。',
     keywords: [
-      'private AI for small business',
-      'local AI',
-      'on-device LLM',
-      'AI without cloud costs',
+      '中小企業 プライベート AI',
+      'ローカル AI',
+      'オンデバイス LLM',
+      'クラウドコストのかからない AI',
     ],
   },
-  name: 'Small business',
-  serviceType: 'Private, local AI inference software',
+  name: '中小企業',
+  serviceType: 'プライベートなローカル AI 推論ソフトウェア',
   card: {
-    title: 'Small *business*',
-    summary: 'Private AI on a Mac Studio or an RTX box, with no cloud bill.',
+    title: '*中小企業*',
+    summary:
+      'Mac Studio や RTX マシンで動くプライベート AI。クラウド料金はかかりません。',
   },
   hero: {
-    title: 'Private AI, without the *cloud* bill.',
-    lede: 'Run open models on a Mac Studio or an RTX workstation you already own. Your files stay on your machine, and nothing is metered per question.',
+    title: 'プライベート AI。*クラウド*の請求書はなし。',
+    lede: 'すでにお持ちの Mac Studio や RTX ワークステーションで、オープンモデルを動かします。ファイルはマシンの中に残り、質問ごとの従量課金はありません。',
   },
   problem: {
-    title: 'Every prompt has a *price*.',
+    title: 'プロンプトのたびに、*値段*がつく。',
     statement:
-      'AI is most useful on your own files, and that is exactly where the bills and the privacy questions start.',
-    body: 'Per-token pricing makes every experiment feel expensive, and sending client documents, invoices or source code to someone else’s servers is a decision you would rather not make for every prompt. Meanwhile the machine on your desk is already able to run open models like Llama, Gemma, Qwen and GPT-OSS.',
+      'AI がいちばん役に立つのは自分のファイルを扱うときで、請求とプライバシーの問題が始まるのも、まさにそこです。',
+    body: 'トークン単位の課金では、試すたびにお金がかかる気がしますし、顧客の書類や請求書、ソースコードを他人のサーバーに送るかどうかを、プロンプトのたびに決めたくはないはずです。一方、デスクの上のマシンは、Llama、Gemma、Qwen、GPT-OSS といったオープンモデルをすでに動かせます。',
   },
   useCases: {
-    title: 'Put the box to *work*.',
-    intro: 'Four jobs a small team can hand to a machine it already owns.',
+    title: 'そのマシンを、*働かせる*。',
+    intro: '少人数のチームが、すでに持っているマシンに任せられる 4 つの仕事。',
     items: [
       {
         tag: 'cost',
-        title: 'Stop paying per question.',
-        body: 'Run models on a Mac Studio or an RTX workstation you already own, so spend stops scaling with every prompt, document and teammate. Heavy use becomes a power bill, not a surprise invoice.',
+        title: '質問ごとの支払いを、やめる。',
+        body: 'すでにお持ちの Mac Studio や RTX ワークステーションでモデルを動かせば、プロンプトや書類、チームの人数が増えても、費用は比例して増えません。たくさん使っても、予想外の請求書ではなく、電気代で済みます。',
       },
       {
         tag: 'control',
-        title: 'Work on client files without sending them anywhere.',
-        body: 'Models, prompts and documents stay on your machine unless you opt in. Summarize contracts, draft replies and check invoices without a third party in the loop.',
+        title: '顧客のファイルを、どこにも送らずに扱う。',
+        body: 'モデルも、プロンプトも、書類も、オプトインしない限りマシンの中にとどまります。契約書の要約、返信の下書き、請求書の確認を、第三者を挟まずに行えます。',
       },
       {
         tag: 'inference',
-        title: 'Fit a bigger model on the machine you have.',
-        body: '3- to 8-bit quantized checkpoints and a quantized KV cache let larger models and longer conversations fit in the memory you already own. Butter loads them straight from Hugging Face, with no conversion step.',
+        title: '手持ちのマシンに、より大きなモデルを収める。',
+        body: '2〜8 ビットの量子化チェックポイントと量子化された KV キャッシュで、より大きなモデルと、より長い会話が、すでにあるメモリに収まります。Butter は Hugging Face から直接読み込むので、変換の手順はありません。',
       },
       {
         tag: 'control',
-        title: 'Ask questions of your own notes and code.',
-        body: 'Syrup runs retrieval locally over your notes and code, so an answer comes back with a citation to where it came from. Search is lexical plus vector, so exact names and fuzzy questions both land.',
+        title: '自分のノートやコードに、質問する。',
+        body: 'Syrup はノートとコードに対する検索をローカルで行うので、答えは出どころの出典付きで返ってきます。検索はキーワード検索とベクトル検索の併用なので、正確な名前でも、あいまいな質問でも見つかります。',
       },
     ],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
+    title: 'スタックの*かみ合わせ方*',
     intro:
-      'Butter does the heavy lifting. Syrup and Waffle are there when you want them.',
+      '重い仕事は Butter が担います。Syrup と Waffle は、必要なときにそばにあります。',
     items: [
       {
         product: 'butter',
-        need: 'Run models on the machine you own.',
-        body: 'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Llama, Gemma, Qwen, GPT-OSS and more run alongside speech-to-text, text-to-speech and vision models, and butter serve gives your apps an OpenAI-compatible endpoint.',
+        need: '自分のマシンで、モデルを動かす。',
+        body: 'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。Llama、Gemma、Qwen、GPT-OSS などに加え、音声認識、音声合成、ビジョンのモデルも動かせます。butter serve で、アプリに OpenAI 互換のエンドポイントを提供します。',
       },
       {
         product: 'syrup',
-        need: 'Ask your own files, and get sources.',
-        body: 'Local retrieval over your notes and code. Results come back with citations over MCP, so assistants can show their work.',
+        need: '自分のファイルに質問して、出典も得る。',
+        body: 'ノートとコードに対するローカル検索。結果は MCP 経由で出典付きで返るので、アシスタントは根拠を示せます。',
       },
       {
         product: 'waffle',
-        need: 'Keep an eye on the box under your desk.',
-        body: 'From one machine to a small rack, see every GPU and every engine running on it, whether that is Butter, llama.cpp, vLLM or SGLang.',
+        need: 'デスクの下のマシンに、目を配る。',
+        body: '1 台から小さなラックまで、すべての GPU と、その上で動くすべてのエンジンを見渡せます。Butter でも、llama.cpp でも、vLLM でも、SGLang でも。',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Waffuru is in early access, and the products are closed source for now. Here is what that means for a small team.',
+    title: '私たちの*現在地*',
+    lede: 'Waffuru は早期アクセス段階にあり、製品は現時点でクローズドソースです。小さなチームにとって、それが何を意味するかをお伝えします。',
     notes: [
-      'Apple silicon is where every kernel is tuned first, so a Mac Studio is the smoothest place to start.',
-      'NVIDIA RTX workstations run on CUDA, which is in production. AMD and Vulkan run but are not tuned yet.',
-      'Model coverage is wide and growing, and DeepSeek V4 is in progress.',
+      'すべてのカーネルをまず Apple シリコンでチューニングするので、Mac Studio がいちばんスムーズな出発点です。',
+      'NVIDIA RTX ワークステーションは CUDA で動作し、本番稼働中です。AMD と Vulkan は動作しますが、チューニングはこれからです。',
+      '対応モデルは幅広く、さらに増えています。DeepSeek V4 は対応中です。',
     ],
   },
   faq: [
     {
-      question: 'What hardware do I need?',
+      question: 'どんなハードウェアが必要ですか？',
       answer:
-        'A Mac with Apple silicon is the best-supported place to start, because Metal is where every kernel is tuned first. RTX workstations run on CUDA, and DGX Spark and Strix Halo are on the list too. How large a model you can run depends on how much memory you have.',
+        'まずは Apple シリコンの Mac が、もっとも手厚く対応しています。すべてのカーネルを最初にチューニングするのが Metal だからです。RTX ワークステーションは CUDA で動作し、DGX Spark と Strix Halo も対象に入っています。動かせるモデルの大きさは、メモリの量によって決まります。',
     },
     {
-      question: 'Will local models be as good as the biggest hosted ones?',
+      question:
+        'ローカルのモデルは、最大級のホスト型モデルと同じくらい優秀ですか？',
       answer:
-        'Not for every task, and we will not pretend otherwise. Open models cover a lot of everyday work, and for the hardest jobs a hosted model may still be the better tool. Running locally means you choose per task instead of defaulting to the cloud.',
+        'すべてのタスクで同じとは言えません。そうでないふりもしません。オープンモデルは日常の多くの仕事をカバーしますが、もっとも難しい仕事では、ホスト型モデルのほうが適している場合もあります。ローカルで動かせるということは、なんとなくクラウドを選ぶのではなく、タスクごとに選べるということです。',
     },
     {
-      question: 'Does my data leave my machine?',
+      question: 'データはマシンの外に出ますか？',
       answer:
-        'Not unless you opt in. Models run locally, and your prompts, files and notes stay on your machine by default.',
+        'オプトインしない限り、出ません。モデルはローカルで動き、プロンプト、ファイル、ノートは、デフォルトであなたのマシンにとどまります。',
     },
     {
-      question: 'Can I keep using the apps I already have?',
+      question: 'いま使っているアプリは、そのまま使えますか？',
       answer:
-        'If they speak the OpenAI API, usually yes. Butter serves an OpenAI-compatible endpoint with streaming and tool calling, so many tools only need a new address.',
+        'OpenAI API に対応していれば、たいていは使えます。Butter はストリーミングとツール呼び出しに対応した OpenAI 互換のエンドポイントを提供するので、多くのツールは接続先を変えるだけで済みます。',
     },
     {
-      question: 'Can I try it today?',
+      question: '今日から試せますか？',
       answer:
-        'Early access is open by request, and the products are closed source for now. Tell us what you want to run and on what hardware, and we will write back.',
+        '早期アクセスは申し込み制で、製品は現時点でクローズドソースです。動かしたいものと、そのハードウェアを教えていただければ、返信します。',
     },
   ],
   cta: {
-    title: 'Run it on your *own* machine.',
-    body: 'Early access, closed source for now. Tell us what you want to run and on what hardware, and we will write back.',
+    title: '*自分*のマシンで動かす。',
+    body: '現時点では早期アクセスで、クローズドソースです。動かしたいものと、そのハードウェアを教えていただければ、返信します。',
   },
 };
 

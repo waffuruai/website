@@ -1,153 +1,153 @@
 import type { waffle } from './waffle';
 
-// TODO(i18n): translate to ja. Keep hrefs, slugs and product names.
+// TODO(founder): publish a hardware and engine support matrix for Waffle and
+// link it from the FAQ; until then the page says plainly that there isn't one.
 const waffleJa: (typeof waffle)['en'] = {
-  layer: 'Control plane',
-  tagline: 'See every GPU and every engine running on it.',
+  layer: 'コントロールプレーン',
+  tagline: 'すべての GPU と、その上で動くすべてのエンジンを可視化。',
   summary:
-    'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+    'GPU 上の LLM のためのコントロールプレーン。デスクの下の 1 台から、フリートを貸し出すネオクラウドまで対応します。各ホストでは小さな Rust 製サイドカーが動き、署名付きテレメトリを報告します。Butter、vLLM、SGLang、llama.cpp など、OpenAI 互換のサーバーと連携できます。',
   seo: {
-    title: 'Waffle: a control plane for LLMs on GPUs',
+    title: 'Waffle：GPU 上の LLM のコントロールプレーン',
     description:
-      'See every GPU and every inference engine running on it, from one box under a desk to a neocloud fleet. A small Rust sidecar on each host reports signed telemetry. Works with Butter, vLLM, SGLang and llama.cpp.',
+      'すべての GPU とその上のエンジンを可視化。デスク下の 1 台からネオクラウドのフリートまで。署名付きテレメトリ。vLLM や llama.cpp にも対応。',
     keywords: [
-      'GPU fleet management',
-      'LLM control plane',
-      'GPU observability',
-      'vLLM SGLang llama.cpp monitoring',
+      'GPU フリート管理',
+      'LLM コントロールプレーン',
+      'GPU オブザーバビリティ',
+      'vLLM SGLang llama.cpp 監視',
     ],
   },
   hero: {
-    title: 'See every GPU and every *engine* running on it.',
-    lede: 'Waffle is a control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry.',
+    title: 'すべての GPU と、その上で動く*エンジン*のすべてを見渡す。',
+    lede: 'Waffle は、GPU 上の LLM のためのコントロールプレーン。デスクの下の 1 台から、フリートを貸し出すネオクラウドまで対応します。各ホストでは小さな Rust 製サイドカーが動き、署名付きテレメトリを報告します。',
     highlights: [
-      { value: 'One box', label: 'under a desk, up to a neocloud fleet' },
+      { value: '1 台', label: 'デスクの下から、ネオクラウドのフリートまで' },
       {
-        value: 'Signed',
-        label: 'telemetry from a small Rust sidecar on each host',
+        value: '署名付き',
+        label: '各ホストの小さな Rust 製サイドカーが報告するテレメトリ',
       },
       {
-        value: 'No lock-in',
-        label:
-          'Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers',
+        value: 'ロックインなし',
+        label: 'Butter、vLLM、SGLang、llama.cpp などの OpenAI 互換サーバー',
       },
     ],
   },
   story: {
-    heading: 'Know what’s running on every *GPU*.',
+    heading: 'どの *GPU* で何が動いているかを、把握する。',
     problem:
-      'A GPU box runs whatever engine somebody started on it: llama.cpp on one machine, vLLM on the next, SGLang on the new one. Finding out what is running, and where, means logging in to each host.',
+      'GPU マシンでは、誰かが起動したエンジンがそのまま動いています。ある機械では llama.cpp、隣では vLLM、新しい機械では SGLang。何がどこで動いているのかを知るには、ホストごとにログインするしかありません。',
     outcome:
-      'Put a small Rust sidecar on each host. It reports signed telemetry, and Waffle shows you every GPU and every engine on it, whether you run one machine or a whole fleet.',
+      '各ホストに、小さな Rust 製サイドカーを置きます。サイドカーが署名付きテレメトリを報告し、Waffle が、すべての GPU とその上のすべてのエンジンを見せてくれます。マシン 1 台でも、フリート全体でも同じです。',
     outcomes: [
-      'Watch one box under your desk, or a fleet you rent out, with the same tool.',
-      'Keep the engines you already run. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
-      'Rely on what you see: every host reports signed telemetry.',
+      'デスクの下の 1 台も、貸し出しているフリートも、同じツールで見守れます。',
+      'いま使っているエンジンはそのままで。Waffle は Butter、vLLM、SGLang、llama.cpp など、OpenAI 互換のサーバーと連携できます。',
+      '目にするものを信頼できます。すべてのホストが、署名付きテレメトリを報告します。',
     ],
   },
   capabilities: {
-    heading: 'What Waffle *does*.',
+    heading: 'Waffle が*できる*こと',
     intro:
-      'A control plane that sits beside your engines instead of replacing them.',
+      'エンジンを置き換えるのではなく、その隣に置くコントロールプレーンです。',
     items: [
       {
-        title: 'Every GPU',
-        body: 'See each GPU on each host in one place.',
+        title: 'すべての GPU',
+        body: '各ホストの GPU を、ひとつの画面で確認できます。',
       },
       {
-        title: 'Every engine',
-        body: 'See which engine is running on it: Butter, vLLM, SGLang, llama.cpp or another OpenAI-compatible server.',
+        title: 'すべてのエンジン',
+        body: 'その上でどのエンジンが動いているかを確認できます。Butter、vLLM、SGLang、llama.cpp、あるいは他の OpenAI 互換サーバーです。',
       },
       {
-        title: 'A small Rust sidecar',
-        body: 'Each host runs a small sidecar written in Rust, so adding a machine means adding the sidecar.',
+        title: '小さな Rust 製サイドカー',
+        body: '各ホストでは Rust で書かれた小さなサイドカーが動きます。マシンを増やすことは、サイドカーを増やすことです。',
       },
       {
-        title: 'Signed telemetry',
-        body: 'Each sidecar signs the telemetry it reports.',
+        title: '署名付きテレメトリ',
+        body: '各サイドカーは、報告するテレメトリに署名します。',
       },
       {
-        title: 'One box to a fleet',
-        body: 'Start with a single machine under a desk. The same setup reaches a neocloud renting out a fleet.',
+        title: '1 台からフリートまで',
+        body: 'まずはデスクの下の 1 台から。同じ構成のまま、フリートを貸し出すネオクラウドまで広げられます。',
       },
       {
-        title: 'No lock-in',
-        body: 'Waffle doesn’t need Butter. It works with vLLM, SGLang, llama.cpp and other OpenAI-compatible servers too.',
+        title: 'ロックインなし',
+        body: 'Waffle に Butter は必須ではありません。vLLM、SGLang、llama.cpp など、OpenAI 互換のサーバーでも動作します。',
       },
     ],
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: '技術的な*詳細*',
+    intro: '細部まで読みたい人のための、詳細です。',
     rows: [
-      { term: 'Role', detail: 'A control plane for LLMs on GPUs.' },
+      { term: '役割', detail: 'GPU 上の LLM のためのコントロールプレーン。' },
       {
-        term: 'On each host',
-        detail: 'A small sidecar written in Rust.',
+        term: '各ホストで',
+        detail: 'Rust で書かれた小さなサイドカー。',
       },
       {
-        term: 'Telemetry',
-        detail: 'Signed by the sidecar that reports it.',
+        term: 'テレメトリ',
+        detail: '報告するサイドカーが署名。',
       },
       {
-        term: 'Engines',
+        term: 'エンジン',
         chips: [
           { label: 'Butter' },
           { label: 'vLLM' },
           { label: 'SGLang' },
           { label: 'llama.cpp' },
-          { label: 'Other OpenAI-compatible servers' },
+          { label: 'その他の OpenAI 互換サーバー' },
         ],
       },
       {
-        term: 'Scale',
-        detail: 'One box under a desk to a neocloud fleet.',
+        term: '規模',
+        detail: 'デスクの下の 1 台から、ネオクラウドのフリートまで。',
       },
       {
-        term: 'Lock-in',
-        detail: 'None. Waffle works with engines other than Butter.',
+        term: 'ロックイン',
+        detail: 'なし。Waffle は Butter 以外のエンジンとも動作します。',
       },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: '提供状況',
+        detail: '早期アクセス期間中は非公開で、クローズドソース。',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: '*スタック*のほかの部分とも連携する。',
     intro:
-      'Waffle watches the GPUs, with Butter or without it. Butter runs models on the kernels Iron compiles, and Syrup remembers what you were working on.',
+      'Waffle は、Butter があってもなくても GPU を見守ります。Butter は Iron がコンパイルしたカーネルの上でモデルを動かし、Syrup は取り組んでいたことを覚えています。',
   },
   faq: [
     {
-      question: 'Is Waffle open source?',
+      question: 'Waffle はオープンソースですか？',
       answer:
-        'Not today. Waffle is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        '現時点ではオープンソースではありません。Waffle は早期アクセス期間中、非公開でクローズドソースです。アクセスをお申し込みいただければ、お伝えできることが増えた時点でご連絡します。',
     },
     {
-      question: 'Do I have to use Butter?',
+      question: 'Butter を使う必要はありますか？',
       answer:
-        'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so you keep the engines you already run.',
+        'ありません。Waffle は Butter、vLLM、SGLang、llama.cpp など、OpenAI 互換のサーバーと連携するので、いま使っているエンジンをそのまま使えます。',
     },
     {
-      question: 'Who is it for?',
+      question: '誰のためのものですか？',
       answer:
-        'Anyone who runs LLMs on GPUs and wants to see them, from a single box under a desk to a neocloud renting out a fleet.',
+        'GPU 上で LLM を動かし、その様子を見たいすべての人のためのものです。デスクの下の 1 台から、フリートを貸し出すネオクラウドまで。',
     },
     {
-      question: 'What does the sidecar do?',
+      question: 'サイドカーは何をするのですか？',
       answer:
-        'Each host runs a small sidecar written in Rust. It reports signed telemetry about the host’s GPUs and the engines running on them.',
+        '各ホストでは、Rust で書かれた小さなサイドカーが動きます。ホストの GPU と、その上で動くエンジンについて、署名付きテレメトリを報告します。',
     },
     {
-      question: 'Which GPUs does it support?',
+      question: 'どの GPU に対応していますか？',
       answer:
-        'We haven’t published a hardware matrix for Waffle yet. Tell us what you run and we’ll say plainly whether it fits.',
+        'Waffle のハードウェア対応表は、まだ公開していません。お使いの環境を教えてください。合うかどうかを率直にお答えします。',
     },
   ],
   cta: {
-    title: 'See your *fleet*.',
-    body: 'Waffle is in early access and closed source for now. Request access, or tell us what you run.',
+    title: 'あなたの*フリート*を見渡す。',
+    body: 'Waffle は現時点で早期アクセスで、クローズドソースです。アクセスをお申し込みいただくか、お使いの環境を教えてください。',
   },
 };
 
