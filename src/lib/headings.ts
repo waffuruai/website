@@ -11,6 +11,16 @@ export function slugify(text: string) {
     .replace(/^-+|-+$/g, '');
 }
 
+/** Plain text of rendered React children (heading ids, code to copy). */
+export function textOf(node: unknown): string {
+  if (typeof node === 'string' || typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(textOf).join('');
+  if (node && typeof node === 'object' && 'props' in node) {
+    return textOf((node as { props?: { children?: unknown } }).props?.children);
+  }
+  return '';
+}
+
 /** Strips inline markdown (links, emphasis, code) from a heading line. */
 function plainText(markdown: string) {
   return markdown
