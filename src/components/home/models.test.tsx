@@ -43,8 +43,8 @@ describe('Models', () => {
   it('exposes each lab once to screen readers, with its status', () => {
     renderModels();
     const visible = screen.getAllByRole('listitem');
-    // 16 real cards + the legend is aria-hidden, so it is not listed.
-    expect(visible).toHaveLength(16);
+    // 18 real cards + the legend is aria-hidden, so it is not listed.
+    expect(visible).toHaveLength(18);
     const deepseek = visible.find((item) =>
       within(item).queryByText('DeepSeek'),
     );
@@ -62,11 +62,13 @@ describe('Models', () => {
     expect(logo?.getAttribute('aria-hidden')).toBe('true');
   });
 
-  it('covers DeepSeek V4 as in progress, the rest as supported', () => {
+  it('covers DeepSeek V4, Drama-3 and Flint as in progress, the rest as supported', () => {
     const labs = home.en.models.lanes.flat();
     expect(labs.filter((lab) => lab.status === 'in-progress')).toEqual([
       expect.objectContaining({ lab: 'DeepSeek', models: 'DeepSeek V4' }),
+      expect.objectContaining({ lab: 'Fish Audio', models: 'Drama-3' }),
+      expect.objectContaining({ lab: 'Recursive', models: 'Flint' }),
     ]);
-    expect(labs).toHaveLength(16);
+    expect(labs).toHaveLength(18);
   });
 });
