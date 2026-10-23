@@ -7,6 +7,7 @@ import {
   localizePath,
   type Locale,
 } from '@/i18n/config';
+import { postModules } from '@/generated/blog-posts';
 import { slugify, type Heading } from '@/lib/headings';
 
 /**
@@ -74,13 +75,15 @@ export type Post = Article & {
 };
 
 /**
- * Imports a post's MDX module (content component and exports). One pattern
- * (any `.mdx` directly inside a post folder) that always matches the English
- * files, so the bundler can resolve it before any translation exists.
+ * Imports a post's MDX module (content component and exports) through the
+ * generated registry of literal imports (`scripts/build-blog-index.mjs`).
  */
 export function importPostModule(slug: string, locale: Locale = defaultLocale) {
-  const file = locale === defaultLocale ? 'page' : `page.${locale}`;
-  return import(`@/content/blog/${slug}/${file}.mdx`) as Promise<PostModule>;
+  const load = postModules[slug]?.[locale];
+  if (!load) {
+    return Promise.reject(new Error(`No ${locale} post at ${slug}`));
+  }
+  return load() as Promise<PostModule>;
 }
 
 /** Drafts are visible (and routable) outside production builds only. */

@@ -110,19 +110,13 @@ describe('/contact', () => {
 
   it('sets canonical, hreflang and keywords', async () => {
     const metadata = await generateMetadata({ params: params('es') });
-    expect(metadata.title).toBe('Contact');
+    expect(metadata.title).toBe(contact.es?.seo.title);
     expect(metadata.alternates?.canonical).toBe('/es/contact');
     expect(metadata.alternates?.languages).toMatchObject({
       en: '/contact',
       ja: '/ja/contact',
       'x-default': '/contact',
     });
-    expect(metadata.keywords).toEqual(
-      expect.arrayContaining([
-        'contact Waffuru',
-        'AI infrastructure sales',
-        'partnerships',
-      ]),
-    );
+    expect(metadata.keywords).toEqual(contact.es?.seo.keywords);
   });
 });

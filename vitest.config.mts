@@ -28,6 +28,10 @@ export default defineConfig({
       '.claude/**',
     ],
     css: false,
+    // The on-disk transform cache keys on a file's own content, so a module
+    // whose dynamic import globs over other files (blog posts) keeps a stale
+    // file list when posts are added. The suite is fast enough without it.
+    fsModuleCache: false,
     passWithNoTests: false,
   },
 });
