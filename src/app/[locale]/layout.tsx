@@ -6,6 +6,9 @@ import {
   instrumentSerif,
   instrumentSerifItalic,
 } from '@/app/fonts';
+import { CookieBanner } from '@/components/consent/cookie-banner';
+import { CookieSettingsDialog } from '@/components/consent/cookie-settings-dialog';
+import { Analytics } from '@/components/providers/analytics';
 import { Providers } from '@/components/providers/providers';
 import { JsonLd } from '@/components/seo/json-ld';
 import { site } from '@/content/site';
@@ -79,6 +82,9 @@ export default async function LocaleLayout({
         <Providers>
           <DictionaryProvider locale={locale} dictionary={dictionary}>
             {children}
+            <Analytics />
+            <CookieBanner />
+            <CookieSettingsDialog />
           </DictionaryProvider>
         </Providers>
         <JsonLd data={[organization(), website(localeInfo[locale].lang)]} />
