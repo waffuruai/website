@@ -1,16 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it, vi } from 'vitest';
 
-vi.mock('./generated/csp.json', () => ({
-  default: {
-    '/en': ["'sha256-home'"],
-    '/en/about': ["'sha256-about'"],
-    '/en/404': ["'sha256-404'"],
-    '/ja/about': ["'sha256-ja'"],
-  },
-}));
-
-const { default: worker } = await import('./index');
+import worker from './index';
 
 /** A fake ASSETS binding over an in-memory file table. */
 function assets(files: Record<string, { body: string; type?: string }>) {
@@ -27,7 +18,9 @@ function assets(files: Record<string, { body: string; type?: string }>) {
 
 const FILES = {
   '/en': { body: '<h1>home</h1>' },
-  '/en/about': { body: '<h1>about</h1>' },
+  '/en/about': {
+    body: '<h1>about</h1><script src="/_next/a.js"></script><script>self.__next_f.push([1])</script>',
+  },
   '/en/about.md': { body: '# About', type: 'text/markdown' },
   '/ja/about': { body: '<h1>について</h1>' },
   '/en/about.txt': { body: 'rsc', type: 'text/plain' },
@@ -49,16 +42,19 @@ const call = (
 };
 
 describe('worker', () => {
-  it('serves English pages unprefixed with a per-page CSP', async () => {
+  it('serves English pages unprefixed with a nonce CSP on every script', async () => {
     const response = await call('/about').response;
     expect(response.status).toBe(200);
-    expect(await response.text()).toBe('<h1>about</h1>');
     const csp = response.headers.get('content-security-policy') ?? '';
-    expect(csp).toContain("script-src 'self' 'sha256-about'");
+    const nonce = csp.match(/'nonce-([^']+)'/)?.[1];
+    expect(nonce).toMatch(/^[A-Za-z0-9+/]{22}==$/);
+    expect(csp).toContain("'strict-dynamic'");
     expect(csp).toContain("frame-ancestors 'none'");
-    expect(csp).not.toContain(
-      "'unsafe-inline' https://www.googletagmanager.com",
-    );
+    const html = await response.text();
+    expect(html.match(/<script nonce="([^"]+)"/g)).toHaveLength(2);
+    expect(html).not.toMatch(/<script(?! nonce)/);
+    expect(html).toContain(`nonce="${nonce}"`);
+    expect(response.headers.get('etag')).toBeNull();
     expect(response.headers.get('strict-transport-security')).toContain(
       'max-age=',
     );
@@ -68,6 +64,14 @@ describe('worker', () => {
     );
     expect(response.headers.get('vary')).toBe('Accept');
     expect(response.headers.get('x-robots-tag')).toBeNull();
+  });
+
+  it('uses a different nonce on every request', async () => {
+    const nonceOf = async () =>
+      (await call('/about').response).headers
+        .get('content-security-policy')
+        ?.match(/'nonce-([^']+)'/)?.[1];
+    expect(await nonceOf()).not.toBe(await nonceOf());
   });
 
   it('answers Accept: text/markdown with the markdown twin', async () => {
@@ -84,11 +88,11 @@ describe('worker', () => {
     expect(await response.text()).toBe('# About');
   });
 
-  it('uses the locale 404 page hashes for missing pages', async () => {
+  it('answers missing pages with a 404 that still carries the CSP', async () => {
     const response = await call('/nope').response;
     expect(response.status).toBe(404);
     expect(response.headers.get('content-security-policy')).toContain(
-      "'sha256-404'",
+      "'nonce-",
     );
   });
 

@@ -13,5 +13,4 @@ next-env.d.ts
 public/img
 public/og
 src/generated
-worker/generated
 .claude

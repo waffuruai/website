@@ -3,7 +3,7 @@
  * Runs after `next build` has written the static export to `out/`. Each step
  * is its own module under `scripts/postbuild/` (with a colocated test) and
  * reads or writes `out/`. Order matters: later steps may read what earlier
- * ones wrote (the CSP manifest hashes the final HTML, so it runs last).
+ * ones wrote.
  *
  *   node scripts/postbuild.mjs
  */
@@ -11,7 +11,6 @@ import { fileURLToPath } from 'node:url';
 
 import { copyNotFound } from './postbuild/not-found.mjs';
 import { guardReservedPaths } from './postbuild/guard.mjs';
-import { writeCspManifest } from './postbuild/csp.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 
@@ -19,7 +18,6 @@ const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const STEPS = [
   ['404 page', copyNotFound],
   ['reserved installer paths', guardReservedPaths],
-  ['CSP manifest', writeCspManifest],
 ];
 
 for (const [name, step] of STEPS) {

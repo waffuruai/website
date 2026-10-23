@@ -8,11 +8,16 @@
  * - unprefixed English URLs served from `out/en/…`, `/en/…` 308'd away;
  * - a one-time redirect to the visitor's language on first navigation;
  * - `Accept: text/markdown` answered with each page's markdown twin;
- * - per-page hash-based CSP and security headers on every document;
+ * - a per-request nonce CSP and security headers on every document;
  * - `noindex` everywhere except the production host.
  */
-import cspManifest from './generated/csp.json';
-import { BASE_HEADERS, documentHeaders, PRODUCTION_HOST } from './headers';
+import {
+  addNonce,
+  BASE_HEADERS,
+  createNonce,
+  documentHeaders,
+  PRODUCTION_HOST,
+} from './headers';
 import { handleGeo } from './geo';
 import { handleSubscribe } from './subscribe';
 import {
@@ -26,8 +31,6 @@ import { LOCALE_COOKIE } from '../src/i18n/config';
 export interface Env {
   ASSETS: Fetcher;
 }
-
-const manifest = cspManifest as Record<string, string[]>;
 
 const ONE_YEAR = 60 * 60 * 24 * 365;
 
@@ -111,17 +114,26 @@ async function serveAsset(
     return withHeaders(response, { ...BASE_HEADERS, ...robotsHeader });
   }
 
-  // A missing page is answered with its locale's 404.html; hash that page.
-  const key =
-    response.status === 404 ? `/${decision.locale}/404` : decision.assetPath;
-  return withHeaders(response, {
+  // Pages (and the locale 404 pages) get a fresh nonce on every script.
+  const nonce = createNonce();
+  const headers = {
     ...documentHeaders({
-      scriptHashes: manifest[key] ?? [],
+      nonce,
       markdownPath: markdownPathFor(url.pathname),
       locale: decision.locale,
     }),
     ...robotsHeader,
-  });
+  };
+  const isHtml = response.headers.get('Content-Type')?.includes('text/html');
+  if (!isHtml || request.method === 'HEAD' || !response.body) {
+    return withHeaders(response, headers);
+  }
+  const html = addNonce(await response.text(), nonce);
+  const stamped = new Response(html, response);
+  // The body changed, so any length or validator from the asset is stale.
+  stamped.headers.delete('Content-Length');
+  stamped.headers.delete('ETag');
+  return withHeaders(stamped, headers);
 }
 
 export default {

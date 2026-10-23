@@ -19,7 +19,7 @@ The design is Tom's "After Hours" page (`design/after-hours.html` is the referen
 
 - **Static export only.** No `headers()`, `cookies()`, `searchParams`, server actions, middleware/proxy, or non-static route handlers (`export const dynamic = 'force-static'`). Every dynamic segment needs `generateStaticParams` and `dynamicParams = false`. Request-time behaviour belongs in `worker/`.
 - **Never claim a reserved path.** Top-level `/ops`, `/wrunner`, `/wci`, `/iron`, `/butter` (any product in `releases/products.json`) belong to installers. Product pages live under `/products/<name>`. The postbuild guard fails the build otherwise.
-- **No inline scripts you write yourself** (`<script>{…}</script>`, `<Script>` with children, `dangerouslySetInnerHTML` JS). The CSP allows only inline scripts hashed at build time from Next's own output. JSON-LD via `<JsonLd>` is fine (data, not code).
+- **No inline scripts you write yourself** (`<script>{…}</script>`, `<Script>` with children, `dangerouslySetInnerHTML` JS). The Worker stamps a per-request nonce on the scripts in the built HTML (`'strict-dynamic'` CSP); behaviour belongs in bundled client components. JSON-LD via `<JsonLd>` is fine (data, not code).
 - **No fabricated proof.** No invented metrics, benchmarks, testimonials, customer logos or case-study counts. Only facts in `src/content` or provided by a human. Mark anything unverified `TODO(founder)` and keep it out of rendered copy.
 - **Never commit secrets** or `.env*.local`. `.env.example` lists every `process.env.*` the code reads.
 

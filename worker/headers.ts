@@ -1,13 +1,12 @@
 /**
- * Response headers for HTML documents: a per-page Content Security Policy
- * built from the build's inline-script hashes, transport and isolation
- * headers, and discovery `Link`s for agents.
+ * Response headers for HTML documents: a per-request nonce-based Content
+ * Security Policy, transport and isolation headers, and discovery `Link`s for
+ * agents.
  */
 import type { Locale } from '../src/i18n/config';
 import { localeInfo } from '../src/i18n/config';
 
-/** Hosts GA4 loads from and reports to (gtag.js, collect, regional). */
-const GA_SCRIPT = 'https://www.googletagmanager.com';
+/** Hosts GA4 reports to (collect endpoints, regional variants). */
 const GA_CONNECT = [
   'https://*.google-analytics.com',
   'https://*.analytics.google.com',
@@ -24,15 +23,19 @@ export const PRODUCTION_HOST = 'waffuru.ai';
 const HSTS = 'max-age=63072000; includeSubDomains';
 
 /**
- * The Content Security Policy for one page. `scriptHashes` are the page's
- * inline scripts (`'sha256-…'`); nothing else inline may run. Styles allow
- * inline because React writes style attributes and next-themes injects a
- * transition-blocking `<style>` when the theme changes.
+ * The Content Security Policy for one document. A strict, nonce-based
+ * `script-src`: the Worker stamps a fresh nonce on every `<script>` the build
+ * produced, and `'strict-dynamic'` lets those scripts load what they need
+ * (Next's chunks, gtag.js after consent). Cloudflare reads the nonce from this
+ * header and adds it to scripts it injects (bot detection). `'self' https:
+ * 'unsafe-inline'` only apply to browsers too old for nonces; modern ones
+ * ignore them when a nonce is present. Styles allow inline because React
+ * writes style attributes and next-themes injects a `<style>` on theme change.
  */
-export function contentSecurityPolicy(scriptHashes: readonly string[]): string {
+export function contentSecurityPolicy(nonce: string): string {
   return [
     "default-src 'none'",
-    `script-src 'self' ${[...scriptHashes, GA_SCRIPT].join(' ')}`,
+    `script-src 'nonce-${nonce}' 'strict-dynamic' 'self' https: 'unsafe-inline'`,
     "style-src 'self' 'unsafe-inline'",
     `img-src 'self' data: ${GA_IMG.join(' ')}`,
     "font-src 'self'",
@@ -44,6 +47,21 @@ export function contentSecurityPolicy(scriptHashes: readonly string[]): string {
     "object-src 'none'",
     'upgrade-insecure-requests',
   ].join('; ');
+}
+
+/** A fresh, unguessable nonce (128 bits, base64). */
+export function createNonce(): string {
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  return btoa(String.fromCharCode(...bytes));
+}
+
+/**
+ * Adds `nonce` to every `<script` tag in built HTML. Safe as a plain text
+ * pass: the build escapes `<` inside inline JSON and RSC payloads (`\u003c`)
+ * and page text renders it as `&lt;`, so `<script` only ever starts a tag.
+ */
+export function addNonce(html: string, nonce: string): string {
+  return html.replace(/<script\b/gi, `<script nonce="${nonce}"`);
 }
 
 /** Headers every response from the Worker carries, documents or not. */
@@ -66,17 +84,17 @@ export function discoveryLinks(markdownPath: string): string {
 
 /** Everything an HTML document response gets. */
 export function documentHeaders({
-  scriptHashes,
+  nonce,
   markdownPath,
   locale,
 }: {
-  scriptHashes: readonly string[];
+  nonce: string;
   markdownPath: string;
   locale: Locale;
 }): Record<string, string> {
   return {
     ...BASE_HEADERS,
-    'Content-Security-Policy': contentSecurityPolicy(scriptHashes),
+    'Content-Security-Policy': contentSecurityPolicy(nonce),
     'Permissions-Policy':
       'camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()',
     'Cross-Origin-Opener-Policy': 'same-origin',
