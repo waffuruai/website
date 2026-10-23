@@ -52,22 +52,6 @@ export function project(box: Box, x: number, y: number): Point {
   };
 }
 
-/** The inverse of `project`: the flat-grid point under a screen point. */
-export function unproject(box: Box, screen: Point): Point | null {
-  const cx = box.width / 2;
-  const cy = box.height / 2;
-  const denominator =
-    PERSPECTIVE * Math.cos(TILT) + (screen.y - cy) * Math.sin(TILT);
-  // Above the horizon the ray never meets the floor.
-  if (denominator <= 0) return null;
-  const lifted = (PERSPECTIVE * screen.y) / denominator;
-  const k = PERSPECTIVE / (PERSPECTIVE - lifted * Math.sin(TILT));
-  return {
-    x: (screen.x - cx) / (k * SCALE) + cx,
-    y: (lifted - LIFT) / SCALE,
-  };
-}
-
 /** The four projected corners of every tile, row by row. */
 export function tileQuads(box: Box): Point[][] {
   const { w, h } = cellSize(box);
@@ -85,20 +69,6 @@ export function tileQuads(box: Box): Point[][] {
     }
   }
   return quads;
-}
-
-/** The tile under a screen point, or null off the floor. Gaps snap to a tile. */
-export function tileAt(
-  box: Box,
-  screen: Point,
-): { row: number; column: number } | null {
-  const flat = unproject(box, screen);
-  if (!flat) return null;
-  const { w, h } = cellSize(box);
-  const column = Math.floor((flat.x + GAP / 2) / (w + GAP));
-  const row = Math.floor((flat.y + GAP / 2) / (h + GAP));
-  if (column < 0 || column >= COLUMNS || row < 0 || row >= ROWS) return null;
-  return { row, column };
 }
 
 /* Light ------------------------------------------------------------------ */
@@ -144,38 +114,3 @@ export function ambientGlow(row: number, column: number, time: number) {
 /** The settled look for reduced motion: hot tiles lit, the rest dark. */
 export const stillGlow = (row: number, column: number) =>
   isHot(row, column) ? 0.35 : 0;
-
-export type Ripple = {
-  row: number;
-  column: number;
-  /** Seconds, on the same clock as `ambientGlow`. */
-  start: number;
-  /** Peak brightness, 0–1. */
-  strength: number;
-};
-
-/** How fast a ripple's ring spreads, in tiles per second. */
-const RIPPLE_SPEED = 11;
-/** How long a ripple lasts, in seconds. */
-export const RIPPLE_LIFE = 1.6;
-/** Half-width of the ring, in tiles. */
-const RIPPLE_WIDTH = 0.85;
-
-/**
- * Light a ripple adds to a tile: a ring expanding from the ripple's tile,
- * fading as it travels.
- */
-export function rippleGlow(
-  ripple: Ripple,
-  row: number,
-  column: number,
-  time: number,
-) {
-  const age = time - ripple.start;
-  if (age < 0 || age > RIPPLE_LIFE) return 0;
-  const distance = Math.hypot(row - ripple.row, column - ripple.column);
-  const offset = distance - age * RIPPLE_SPEED;
-  const ring = Math.exp(-(offset * offset) / (2 * RIPPLE_WIDTH * RIPPLE_WIDTH));
-  const fade = 1 - age / RIPPLE_LIFE;
-  return ripple.strength * ring * fade * fade;
-}
