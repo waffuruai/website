@@ -20,6 +20,7 @@ export function Wordmark({
       <Image
         src="/img/brand/waffle-80.png"
         alt=""
+        aria-hidden
         width={40}
         height={40}
         priority={priority}
