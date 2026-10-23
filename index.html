@@ -34,15 +34,6 @@ a{color:#EDE8DF;text-decoration:none}a:hover{color:#FFFFFF}
 .wf .cell::after{content:"";position:absolute;inset:0;background:var(--accent);opacity:0;animation:wfa-wave 7s ease-in-out infinite;animation-delay:inherit}
 .wf .cell.hot::after{animation-name:wfa-pool}
 /* Responsive: phones <=700px, tablets 701-1024px. Inline styles win by default, hence !important. */
-@media (max-width:700px){
-.wf>header,.wf>section,.wf>footer{padding-left:24px!important;padding-right:24px!important}
-.wf>section#models{padding-left:0!important;padding-right:0!important}
-.wf>section#models>div:first-child{padding-left:24px!important;padding-right:24px!important}
-.wf>section:not(#top):not(#models){padding-top:72px!important}
-.wf>section#access{padding-bottom:72px!important}
-.wf #team article{flex:1 1 100%!important;min-width:0!important}
-.wf>header nav{gap:0 20px!important}
-}
 @media (min-width:701px) and (max-width:1024px){
 .wf>header,.wf>section,.wf>footer{padding-left:32px!important;padding-right:32px!important}
 .wf>section#models{padding-left:0!important;padding-right:0!important}
@@ -79,6 +70,40 @@ a{color:#EDE8DF;text-decoration:none}a:hover{color:#FFFFFF}
 .wf.still *, .wf.still *::after{animation:none !important}
 @media (prefers-reduced-motion: reduce){.wf *, .wf *::after{animation:none !important}}
 input::placeholder{color:#8A847A}
+@media (max-width: 720px){
+.wf .px{padding-left:20px!important;padding-right:20px!important}
+.wf header.px{padding-top:16px!important;padding-bottom:16px!important}
+.wf .nav-link{display:none!important}
+.wf header.px{flex-wrap:nowrap!important}
+.wf header.px nav{gap:12px!important;flex-wrap:nowrap!important}
+.wf header.px nav a{padding:10px 14px!important;white-space:nowrap}
+.wf .code{font-size:11px!important}
+.wf .jp{display:none!important}
+.wf .hero{min-height:0!important;padding-top:112px}
+.wf .hero-grid{width:900px!important;margin-left:-450px!important;height:520px!important}
+.wf .hero-inner{padding-bottom:48px!important;gap:28px!important}
+.wf .hero-cta{width:100%;flex-direction:column;align-items:stretch!important;gap:18px!important}
+.wf .hero-cta a{justify-content:center;text-align:center}
+.wf #stack{padding-top:88px!important;padding-bottom:32px!important}
+.wf .row{position:relative;padding:36px 0!important;gap:16px!important}
+.wf .rowname{font-size:56px!important}
+.wf .row-aside{position:absolute;top:40px;right:0;transform:scale(.7);transform-origin:top right}
+.wf .chip-private{display:none!important}
+.wf #models{padding-top:72px!important;padding-bottom:16px!important}
+.wf .sec-code{padding-top:72px!important;padding-bottom:40px!important}
+.wf .code{font-size:12px!important;padding:20px 16px!important}
+.wf .hide-m{display:none!important}
+.wf #team{padding-top:72px!important}
+.wf .person{flex:1 1 100%!important;flex-direction:row!important;align-items:flex-start;gap:16px!important}
+.wf .person img,.wf .person .ph{width:96px!important;flex:0 0 96px}
+.wf .person h3{font-size:24px!important}
+.wf #access{padding-top:48px!important;padding-bottom:72px!important}
+.wf .cta-card{padding:40px 24px!important;gap:28px!important}
+.wf .cta-deco{width:220px!important;height:220px!important;right:-70px!important;top:-70px!important;opacity:.22!important}
+.wf .cta-form{max-width:none!important;width:100%;justify-content:center}
+.wf .cta-form input,.wf .cta-form button{flex:1 1 100%!important}
+.wf .foot{flex-direction:column;gap:16px!important;padding-top:24px!important}
+}
 </style>
 </head>
 <body>
@@ -89,24 +114,24 @@ input::placeholder{color:#8A847A}
 <rect width="100%" height="100%" filter="url(#grain)"></rect>
 </svg>
 
-<header style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 28px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<header class="px" style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 28px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
 <a href="#top" style="display: flex; align-items: center; gap: 12px">
 <img width="40" height="40" fetchpriority="high" src="waffle.png" alt="" style="width: 40px; height: 40px; object-fit: contain; display: block">
 <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; letter-spacing: -0.01em">waffuru</span>
-<span style="font-size: 13px; color: #ABA599; letter-spacing: 0.1em">ワッフル</span>
+<span class="jp" style="font-size: 13px; color: #ABA599; letter-spacing: 0.1em; white-space: nowrap">ワッフル</span>
 </a>
 <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">
-<a href="#stack" style="color: #D2CCC1">Stack</a>
-<a href="#iron" style="color: #D2CCC1">Kernels</a>
-<a href="#models" style="color: #D2CCC1">Models</a>
-<a href="#team" style="color: #D2CCC1">Team</a>
-<a href="https://github.com/waffuruai" rel="noopener noreferrer" style="color: #D2CCC1">GitHub</a>
+<a class="nav-link" href="#stack" style="color: #D2CCC1">Stack</a>
+<a class="nav-link" href="#iron" style="color: #D2CCC1">Kernels</a>
+<a class="nav-link" href="#models" style="color: #D2CCC1">Models</a>
+<a class="nav-link" href="#team" style="color: #D2CCC1">Team</a>
+<a class="nav-link" href="https://github.com/waffuruai" rel="noopener noreferrer" style="color: #D2CCC1">GitHub</a>
 <a href="#access" style="padding: 12px 18px; border: 1px solid rgba(237,232,223,.28); border-radius: 999px; color: #EDE8DF">Request access</a>
 </nav>
 </header>
 
-<section id="top" style="position: relative; min-height: 900px; display: flex; flex-direction: column; justify-content: flex-end">
-<div aria-hidden="true" style="position: absolute; left: 50%; top: -40px; width: 1700px; margin-left: -850px; height: 900px; perspective: 1100px; mask-image: radial-gradient(ellipse 60% 70% at 50% 45%, #000 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 45%, #000 30%, transparent 75%)">
+<section id="top" class="hero" style="position: relative; min-height: 900px; display: flex; flex-direction: column; justify-content: flex-end">
+<div class="hero-grid" aria-hidden="true" style="position: absolute; left: 50%; top: -40px; width: 1700px; margin-left: -850px; height: 900px; perspective: 1100px; mask-image: radial-gradient(ellipse 60% 70% at 50% 45%, #000 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 45%, #000 30%, transparent 75%)">
 <div style="display: grid; grid-template-columns: repeat(18, minmax(0, 1fr)); gap: 10px; width: 100%; height: 100%; transform: rotateX(52deg) translateY(-60px) scale(1.1); transform-origin: 50% 0%">
 
 <div class="cell hot" style="animation-delay: 0.00s"></div>
@@ -436,7 +461,7 @@ input::placeholder{color:#8A847A}
 </div>
 </div>
 
-<div style="position: relative; z-index: 6; max-width: 1360px; width: 100%; margin: 0 auto; padding: 0 40px 72px; display: flex; flex-direction: column; gap: 36px">
+<div class="hero-inner px" style="position: relative; z-index: 6; max-width: 1360px; width: 100%; margin: 0 auto; padding: 0 40px 72px; display: flex; flex-direction: column; gap: 36px">
 <div class="rise" style="display: flex; align-items: center; gap: 12px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #D2CCC1">
 <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent)"></span>
 <span>Four projects · closed source for now</span>
@@ -444,7 +469,7 @@ input::placeholder{color:#8A847A}
 <h1 class="rise" style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(64px, 11vw, 168px); line-height: 0.92; letter-spacing: -0.02em; text-wrap: balance; max-width: 1200px">Raw math, <em style="color: var(--accent)">pressed</em> into silicon.</h1>
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px">
 <p class="rise" style="margin: 0; max-width: 520px; font-size: 19px; line-height: 1.55; color: #D2CCC1; text-wrap: pretty">We write GPU kernels, an inference engine, a control plane and a retrieval layer. They run on a laptop, a home lab or a neocloud fleet.</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<div class="hero-cta" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
 <a href="#access" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 28px; min-height: 52px; background: #EDE8DF; color: #0A0908; border-radius: 999px; font-size: 15px; font-weight: 500">Request early access <span aria-hidden="true">→</span></a>
 <a href="#stack" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #D2CCC1">See the stack ↓</a>
 </div>
@@ -455,7 +480,7 @@ input::placeholder{color:#8A847A}
 </div>
 </section>
 
-<section id="stack" style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 160px 40px 80px">
+<section id="stack" class="px" style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 160px 40px 80px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 64px">
 <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.02em">The stack.</h2>
 <p style="margin: 0; max-width: 360px; font-size: 16px; line-height: 1.6; color: #ABA599">Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on.</p>
@@ -470,9 +495,9 @@ input::placeholder{color:#8A847A}
 <p style="margin: 0; font-size: 24px; line-height: 1.3; color: #EDE8DF; text-wrap: balance">Your AI remembers what you were working on.</p>
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #ABA599; text-wrap: pretty">Local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.</p>
 </div>
-<div style="display: flex; justify-content: flex-end; align-items: center; gap: 28px">
+<div class="row-aside" style="display: flex; justify-content: flex-end; align-items: center; gap: 28px">
 <div aria-hidden="true" style="position: relative; width: 24px; height: 120px"><div class="drip"></div><div class="drop"></div></div>
-<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599; border: 1px solid rgba(237,232,223,.16); border-radius: 999px; padding: 8px 12px">Private</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599; border: 1px solid rgba(237,232,223,.16); border-radius: 999px; padding: 8px 12px" class="chip-private">Private</span>
 </div>
 </div>
 
@@ -485,7 +510,7 @@ input::placeholder{color:#8A847A}
 <p style="margin: 0; font-size: 24px; line-height: 1.3; color: #EDE8DF; text-wrap: balance">See every GPU and every engine running on it.</p>
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #ABA599; text-wrap: pretty">A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.</p>
 </div>
-<div style="display: flex; justify-content: flex-end; align-items: center; gap: 28px">
+<div class="row-aside" style="display: flex; justify-content: flex-end; align-items: center; gap: 28px">
 <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px">
 
 <div class="led" style="animation-delay: 0.00s"></div>
@@ -553,7 +578,7 @@ input::placeholder{color:#8A847A}
 <div class="led" style="animation-delay: 3.40s"></div>
 
 </div>
-<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599; border: 1px solid rgba(237,232,223,.16); border-radius: 999px; padding: 8px 12px">Private</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599; border: 1px solid rgba(237,232,223,.16); border-radius: 999px; padding: 8px 12px" class="chip-private">Private</span>
 </div>
 </div>
 
@@ -566,9 +591,9 @@ input::placeholder{color:#8A847A}
 <p style="margin: 0; font-size: 24px; line-height: 1.3; color: #EDE8DF; text-wrap: balance">Model serving without Python.</p>
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #ABA599; text-wrap: pretty">Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 3- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.</p>
 </div>
-<div style="display: flex; justify-content: flex-end; align-items: center; gap: 28px">
+<div class="row-aside" style="display: flex; justify-content: flex-end; align-items: center; gap: 28px">
 <div aria-hidden="true" style="width: 120px; height: 72px; display: flex; align-items: flex-end; justify-content: center"><div class="pat"></div></div>
-<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599; border: 1px solid rgba(237,232,223,.16); border-radius: 999px; padding: 8px 12px">Private</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599; border: 1px solid rgba(237,232,223,.16); border-radius: 999px; padding: 8px 12px" class="chip-private">Private</span>
 </div>
 </div>
 
@@ -581,7 +606,7 @@ input::placeholder{color:#8A847A}
 <p style="margin: 0; font-size: 24px; line-height: 1.3; color: #EDE8DF; text-wrap: balance">One kernel definition, four backends.</p>
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #ABA599; text-wrap: pretty">A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.</p>
 </div>
-<div style="display: flex; justify-content: flex-end; align-items: center; gap: 28px">
+<div class="row-aside" style="display: flex; justify-content: flex-end; align-items: center; gap: 28px">
 <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; width: 96px">
 
 <div class="stamp" style="aspect-ratio: 1; animation-delay: 0.00s"></div>
@@ -617,13 +642,13 @@ input::placeholder{color:#8A847A}
 <div class="stamp" style="aspect-ratio: 1; animation-delay: 0.72s"></div>
 
 </div>
-<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599; border: 1px solid rgba(237,232,223,.16); border-radius: 999px; padding: 8px 12px">Private</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599; border: 1px solid rgba(237,232,223,.16); border-radius: 999px; padding: 8px 12px" class="chip-private">Private</span>
 </div>
 </div>
 </section>
 
 <section id="models" style="position: relative; z-index: 6; padding: 120px 0 40px">
-<div style="max-width: 1360px; margin: 0 auto 56px; padding: 0 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div class="px" style="max-width: 1360px; margin: 0 auto 56px; padding: 0 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
 <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.02em">Models on the menu.</h2>
 <div style="display: flex; flex-direction: column; gap: 14px; max-width: 400px">
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #ABA599">Loaded straight from Hugging Face. Coverage is widest on Metal; CUDA support is added model by model.</p>
@@ -1001,19 +1026,19 @@ input::placeholder{color:#8A847A}
 </div>
 </section>
 
-<section style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 120px 40px">
+<section class="sec-code px" style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 120px 40px">
 <h2 style="margin: 0 0 56px; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.02em">You write this.<br><em style="color: var(--accent)">Iron writes the rest.</em></h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr)); gap: 32px; align-items: stretch">
 <div style="background: #12100E; border: 1px solid rgba(237,232,223,.1); border-radius: 16px; overflow: hidden">
 <div style="display: flex; justify-content: space-between; gap: 12px; padding: 16px 22px; border-bottom: 1px solid rgba(237,232,223,.08); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #ABA599"><span>unary.rs</span><span>iron · rust dsl</span></div>
-<pre style="margin: 0; padding: 28px 24px; overflow-x: auto; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.75; color: #D2CCC1"><span style="color: #ABA599">#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]</span>
+<pre class="code" style="margin: 0; padding: 28px 24px; overflow-x: auto; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.75; color: #D2CCC1"><span style="color: #ABA599">#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]</span>
 <span style="color: #EDE8DF">pub fn</span> <span style="color: var(--accent)">iron_exp</span>&lt;T&gt;(a: Tensor&lt;T&gt;, out: Tensor&lt;T&gt;) {
     <span style="color: #EDE8DF">let</span> idx = program_id(0);
     store(out[idx], exp(load(a[idx])));
 }</pre>
 </div>
 <div style="display: flex; flex-direction: column; gap: 0">
-<div style="display: flex; justify-content: space-between; gap: 16px; padding-bottom: 16px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599"><span>Where it’s tuned</span><span>Pulse = relative speed</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding-bottom: 16px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ABA599"><span>Where it’s tuned</span><span class="hide-m">Pulse = relative speed</span></div>
 
 <div style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0; border-top: 1px solid rgba(237,232,223,.1)">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px">
@@ -1055,7 +1080,7 @@ input::placeholder{color:#8A847A}
 </div>
 </section>
 
-<section id="team" style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 120px 40px 40px">
+<section id="team" class="px" style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 120px 40px 40px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 56px">
 <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.015em">Who’s in the kitchen.</h2>
 <p style="margin: 0; max-width: 360px; font-size: 17px; line-height: 1.6; color: #ABA599">Research, security, revenue and a couple of founders who have shipped before.</p>
@@ -1135,9 +1160,9 @@ input::placeholder{color:#8A847A}
 </div>
 </section>
 
-<section id="access" style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 80px 40px 140px">
-<div style="position: relative; overflow: hidden; border: 1px solid rgba(237,232,223,.12); border-radius: 24px; padding: 80px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 48px; background: #12100E">
-<div aria-hidden="true" style="position: absolute; right: -80px; top: -80px; width: 420px; height: 420px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; opacity: .5; transform: rotate(12deg)">
+<section id="access" class="px" style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 80px 40px 140px">
+<div class="cta-card" style="position: relative; overflow: hidden; border: 1px solid rgba(237,232,223,.12); border-radius: 24px; padding: 80px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 48px; background: #12100E">
+<div class="cta-deco" aria-hidden="true" style="position: absolute; right: -80px; top: -80px; width: 420px; height: 420px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; opacity: .5; transform: rotate(12deg)">
 
 <div class="cell" style="animation-delay: 0.00s"></div>
 
@@ -1217,11 +1242,11 @@ input::placeholder{color:#8A847A}
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D2CCC1">Nothing’s public yet. Send us a note and we’ll write when something is.</p>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #D2CCC1">Or write to us at <a href="mailto:hello@waffuru.ai" style="color: #EDE8DF; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(237,232,223,.35)">hello@waffuru.ai</a>, and follow along on <a href="https://x.com/waffuruai" rel="noopener noreferrer" style="color: #EDE8DF; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(237,232,223,.35)">X</a> and <a href="https://www.linkedin.com/company/waffuru/" rel="noopener noreferrer" style="color: #EDE8DF; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(237,232,223,.35)">LinkedIn</a>.</p>
 </div>
-<a href="https://forms.gle/SHaVSRRWmZKy8UJy7" target="_blank" rel="noopener noreferrer" style="position: relative; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #EDE8DF; color: #0A0908; border-radius: 999px; font-size: 15px; font-weight: 500">Request early access <span aria-hidden="true">→</span></a>
+<a class="cta-form" href="https://forms.gle/SHaVSRRWmZKy8UJy7" target="_blank" rel="noopener noreferrer" style="position: relative; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #EDE8DF; color: #0A0908; border-radius: 999px; font-size: 15px; font-weight: 500">Request early access <span aria-hidden="true">→</span></a>
 </div>
 </section>
 
-<footer style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 32px 40px 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(237,232,223,.1); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #ABA599">
+<footer class="foot px" style="position: relative; z-index: 6; max-width: 1360px; margin: 0 auto; padding: 32px 40px 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(237,232,223,.1); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #ABA599">
 <span>© 2026 Waffuru · Made with 🤖 in North America <span role="img" aria-label="United States and Canada">🇺🇸 🤝 🇨🇦</span></span>
 <div style="display: flex; flex-wrap: wrap; gap: 28px">
 <a href="mailto:hello@waffuru.ai" style="color: #ABA599">hello@waffuru.ai</a>
