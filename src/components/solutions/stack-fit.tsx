@@ -41,7 +41,7 @@ export function StackFit({
           return (
             <li
               key={item.product}
-              className="group border-foreground/12 grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-6 gap-y-8 border-b py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_auto] lg:items-center lg:gap-x-12 lg:py-12"
+              className="group border-foreground/12 grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-6 gap-y-8 border-b py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_120px] lg:items-center lg:gap-x-12 lg:py-12"
             >
               <div className="flex flex-col gap-3.5 lg:col-start-1 lg:row-start-1">
                 <MonoLabel as="span" className="text-muted-foreground">

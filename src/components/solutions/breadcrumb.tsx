@@ -38,7 +38,7 @@ export function Breadcrumb({
               ) : (
                 <LocalizedLink
                   href={item.href}
-                  className="hover:text-foreground focus-visible:outline-ring inline-flex min-h-11 items-center rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+                  className="hover:text-foreground focus-visible:outline-ring inline-flex min-h-11 min-w-11 items-center rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
                 >
                   {item.label}
                 </LocalizedLink>
