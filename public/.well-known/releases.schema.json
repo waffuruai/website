@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://waffuru.ai/.well-known/releases.schema.json",
+  "title": "Waffuru installer releases",
+  "description": "What https://waffuru.ai/<product>/releases.json returns: a product's installer, its latest published release and the pinned copies of recent releases.",
+  "type": "object",
+  "required": ["product", "repo", "asset", "latest", "path", "releases"],
+  "properties": {
+    "product": {
+      "type": "string",
+      "description": "The URL segment the installer is served under, for example iron."
+    },
+    "repo": {
+      "type": "string",
+      "description": "The GitHub repository the releases come from, as owner/name."
+    },
+    "asset": {
+      "type": "string",
+      "description": "The installer's file name, for example install.sh."
+    },
+    "latest": {
+      "type": "string",
+      "description": "The tag of the latest release."
+    },
+    "path": {
+      "type": "string",
+      "description": "The path of the latest installer, /<product>/<asset>."
+    },
+    "releases": {
+      "type": "array",
+      "description": "Recent releases, each with a pinned copy of the installer.",
+      "items": {
+        "type": "object",
+        "required": ["tag", "latest", "sha256", "path"],
+        "properties": {
+          "tag": { "type": "string" },
+          "latest": {
+            "type": "boolean",
+            "description": "True for the release the unversioned installer comes from."
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "description": "SHA-256 of the release asset (the served script adds one header line; drop it before checking)."
+          },
+          "path": {
+            "type": "string",
+            "description": "The path of this release's pinned installer, /<product>/<tag>/<asset>."
+          }
+        }
+      }
+    }
+  }
+}

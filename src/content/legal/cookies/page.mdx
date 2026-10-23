@@ -1,0 +1,68 @@
+import { PolicyLayout } from '@/components/legal/policy-layout';
+
+export const policy = {
+  title: 'Cookie policy',
+  description:
+    'The cookies and browser storage waffuru.ai uses, which are optional, and how to change your choice.',
+  date: '2026-10-26',
+  published: true,
+  keywords: [
+    'Waffuru cookie policy',
+    'cookies',
+    'Global Privacy Control',
+    'Google Analytics',
+  ],
+};
+
+export default (props) => <PolicyLayout policy={policy} {...props} />;
+
+This policy explains the cookies and similar browser storage that waffuru.ai (the **Site**) uses. It goes with our [Privacy policy](/legal/privacy), which explains what we do with personal information more broadly.
+
+## What cookies and browser storage are
+
+Cookies are small text files a website saves in your browser. Browsers also offer local storage, which works in a similar way. Both let a site remember something between pages and visits. We call them all "cookies" below unless the difference matters.
+
+## What we use
+
+| Name                 | Kind                                          | What it does                                                                                           | How long                        | Needs consent?                                    |
+| -------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------- | ------------------------------------------------- |
+| `waffuru-theme`      | Local storage, ours                           | Remembers whether you chose the light, dark or system theme                                            | Until you clear it              | No, it is necessary for the setting you asked for |
+| `waffuru-locale`     | Cookie, ours                                  | Remembers the language you chose, or the one we chose for you on your first visit, so pages open in it | One year                        | No, it is necessary for the setting you asked for |
+| Cookie choice        | Browser storage, ours                         | Remembers whether you accepted or declined analytics, so we do not ask again                           | Until you change it or clear it | No, it is necessary to respect your choice        |
+| `_ga`                | Cookie, set by Google Analytics on our domain | Tells visitors apart so we can count them                                                              | Up to two years                 | Yes, in the places listed below                   |
+| `_ga_<container-id>` | Cookie, set by Google Analytics on our domain | Keeps session state for Google Analytics 4                                                             | Up to two years                 | Yes, in the places listed below                   |
+
+{/* TODO(founder): confirm the consent record's storage name and lifetime against src/components/consent once it has merged, and add it to this table. */}
+
+## Necessary storage
+
+The first three rows are always on. They keep the Site working the way you set it up, and they do not track you or go to anyone else. You can delete them in your browser settings, and the Site will then forget your theme, language and cookie choice.
+
+## Analytics cookies
+
+The `_ga` cookies belong to Google Analytics 4, which we use to see which pages are useful and to improve the Site. They carry a random identifier, not your name or email address. Google Analytics truncates IP addresses and does not store the full address. We do not use this data for advertising, and we do not share it with anyone but Google, our analytics processor.
+
+Whether they are on depends on where you are:
+
+- **EU, EEA, United Kingdom, Switzerland and Quebec.** Analytics cookies stay off until you accept them.
+- **Elsewhere.** We show a notice, analytics can run, and you can opt out at any time.
+
+Analytics runs under Google Consent Mode v2: the choice you make is passed to Google, and with analytics declined Google Analytics does not set its cookies.
+
+{/* TODO(founder): confirm whether Consent Mode runs in basic mode (no Google tags load until consent) or advanced mode (cookieless pings while declined) and describe it exactly. Also confirm Google Signals and ads personalization are off. */}
+
+## Global Privacy Control
+
+If your browser sends a [Global Privacy Control](https://globalprivacycontrol.org) signal, we treat it as an opt-out: analytics stays off wherever you are, and we tell you so in the cookie notice.
+
+## Change your choice
+
+Choose **Cookie settings** in the footer of any page at any time to accept or decline analytics. Declining stops analytics from then on. To remove cookies that are already set, delete them in your browser settings. Most browsers also let you block cookies altogether, though some parts of the Site may then not remember your settings.
+
+## Changes
+
+We may update this policy, for example if we add a new cookie. The "Last updated" date at the top shows when. If analytics or any non-essential cookie changes in a way that needs your consent, we will ask again.
+
+## Contact
+
+Questions about cookies: [hello@waffuru.ai](mailto:hello@waffuru.ai?subject=Privacy).

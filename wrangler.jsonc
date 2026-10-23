@@ -1,0 +1,42 @@
+{
+  // waffuru.ai: the static export (out/) plus installers, assembled into
+  // _site/ by scripts/assemble-site.mjs, behind worker/index.ts.
+  // The custom domain is attached in the Cloudflare dashboard, not here.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "waffuru-site",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": true,
+  "observability": { "enabled": true },
+  "assets": {
+    "directory": "./_site",
+    "binding": "ASSETS",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page",
+    // The Worker runs for pages, RSC payloads and /api; everything below is
+    // served straight from the assets (free, and never counted as a request).
+    // The installer prefixes must match releases/products.json (tested).
+    "run_worker_first": [
+      "/*",
+      "!/_next/*",
+      "!/img/*",
+      "!/og/*",
+      "!/logos/*",
+      "!/brand/*",
+      "!/favicon-32.png",
+      "!/icon-192.png",
+      "!/apple-touch-icon.png",
+      "!/manifest.webmanifest",
+      "!/sitemap.xml",
+      "!/llms.txt",
+      "!/llms-full.txt",
+      "!/.well-known/*",
+      "!/ops/*",
+      "!/wrunner/*",
+      "!/wci/*",
+      "!/iron/*",
+      "!/butter/*",
+    ],
+  },
+}

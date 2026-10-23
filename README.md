@@ -1,29 +1,76 @@
 # waffuru.ai
 
-Placeholder site for [Waffuru](https://waffuru.ai) — Iron and Butter — and the
-release receiver that publishes every product's install script.
+The marketing site for [Waffuru](https://waffuru.ai), and the release receiver
+that publishes every product's install script.
 
-Static, no build step of its own. `index.html` is the whole marketing site; edit
-and push. `CNAME` holds the custom domain.
+Next.js 16 (static export) + React 19 + Tailwind 4 + shadcn/ui, in six
+languages, served from Cloudflare Workers. The design is the "After Hours"
+look: dark roast, Instrument Serif with a gold italic accent, CSS-only motifs.
 
 ## Core features
 
-| Feature | What you get |
-| --- | --- |
-| One-command installs | `curl -fsSL https://waffuru.ai/ops/bootstrap.sh \| sh` fetches without any GitHub auth; the script signs you in for the private clones |
-| Verified provenance | Every served installer is checked against its `.sha256` and its build-provenance attestation before it is published |
-| Pinned versions | Every recent release stays reachable at `/<product>/<tag>/<asset>` |
-| Stateless deploys | Nothing is committed by a bot; `main` stays protected and a failed verification simply leaves the live site untouched |
+| Feature              | What you get                                                                                                                                                                           |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Six languages        | English at `/`, Spanish, French, Chinese, Japanese and Korean under `/es`, `/fr`, `/zh`, `/ja`, `/ko`; a first visit goes to the browser's language once, an explicit pick always wins |
+| Light and dark       | Dark roast by default, light and system on the toggle, no flash on load                                                                                                                |
+| Markdown blog        | MDX posts with build-time code highlighting, table of contents, RSS and per-locale translations                                                                                        |
+| Readable by agents   | `llms.txt`, a markdown twin of every page (`.md` or `Accept: text/markdown`), discovery `Link` headers, API catalog, content signals                                                   |
+| Search-ready         | Canonicals, `hreflang`, JSON-LD, sitemap, a share card per page                                                                                                                        |
+| Locked down          | No server, a per-request nonce CSP, HSTS, `frame-ancestors 'none'`; analytics only with consent                                                                                        |
+| One-command installs | `curl -fsSL https://waffuru.ai/ops/bootstrap.sh \| sh` fetches without any GitHub auth; the script signs you in for the private clones                                                 |
+| Verified provenance  | Every served installer is checked against its `.sha256` and its build-provenance attestation before it is published                                                                    |
+| Pinned versions      | Every recent release stays reachable at `/<product>/<tag>/<asset>`                                                                                                                     |
+| Stateless deploys    | Nothing is committed by a bot; a failed verification leaves the live site untouched                                                                                                    |
+
+## Development
+
+Node 24 and pnpm (see `.nvmrc` and `packageManager`).
+
+```bash
+pnpm install
+pnpm dev          # http://localhost:3000, dev rewrites stand in for the Worker
+pnpm check        # typecheck (site + worker), lint, tests, format
+pnpm build        # images → static export (out/) → postbuild (404, markdown, llms.txt, OG cards, CSP hashes)
+pnpm preview      # build, assemble _site/, run the real Worker with wrangler at http://127.0.0.1:8787
+```
+
+Agent and contributor conventions (tokens, content model, i18n, hard rules)
+are in [CLAUDE.md](CLAUDE.md).
+
+| Path                      | What lives there                                                                                |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| `src/app/[locale]/`       | Routes, one root layout per locale                                                              |
+| `src/content/`            | Page copy as typed data (`Localized<T>`), navigation, team, site facts, blog and legal MDX      |
+| `src/i18n/`               | Locale registry and UI dictionaries                                                             |
+| `src/components/`         | Sections, chrome and page components; `ui/` is shadcn                                           |
+| `src/styles/`             | Design tokens (`tailwind.css`) and the CSS motifs                                               |
+| `worker/`                 | The Cloudflare Worker: locale routing, markdown negotiation, CSP and security headers, `/api/*` |
+| `scripts/`                | Image build, postbuild steps, site assembly, the release fetcher                                |
+| `design/after-hours.html` | Tom's original single-file design, the visual reference                                         |
+
+## Hosting
+
+`wrangler.jsonc` deploys `_site/` (the static export plus the installers) as
+Workers static assets behind `worker/index.ts`. Build assets, images and
+installers bypass the Worker; pages, RSC payloads and `/api/*` run through it.
+
+- **Production**: every push to `main` and every release dispatch runs
+  [`release.yml`](.github/workflows/release.yml): test, build with the GA ID,
+  fetch and verify installers, `wrangler deploy`.
+- **Previews**: each same-repo pull request deploys its own Worker,
+  `waffuru-pr-<number>` on workers.dev, and comments the URL. Previews are
+  `noindex` and never load analytics. The Worker is deleted when the pull
+  request closes.
 
 ## Installer URLs
 
-| URL | Source |
-| --- | --- |
-| `https://waffuru.ai/ops/bootstrap.sh` | latest release of `waffuruai/ops` |
+| URL                                     | Source                                |
+| --------------------------------------- | ------------------------------------- |
+| `https://waffuru.ai/ops/bootstrap.sh`   | latest release of `waffuruai/ops`     |
 | `https://waffuru.ai/wrunner/install.sh` | latest release of `waffuruai/wrunner` |
-| `https://waffuru.ai/wci/install.sh` | latest release of `waffuruai/wci` |
-| `https://waffuru.ai/iron/install.sh` | latest release of `waffuruai/iron` |
-| `https://waffuru.ai/butter/install.sh` | latest release of `waffuruai/butter` |
+| `https://waffuru.ai/wci/install.sh`     | latest release of `waffuruai/wci`     |
+| `https://waffuru.ai/iron/install.sh`    | latest release of `waffuruai/iron`    |
+| `https://waffuru.ai/butter/install.sh`  | latest release of `waffuruai/butter`  |
 
 Alongside each one:
 
@@ -45,8 +92,8 @@ So `<asset>.sha256` describes the **release asset**, not the served file. To che
 the served copy by hand, drop that header line first — or fetch the asset from the
 release and compare it to the release's own checksum.
 
-GitHub Pages serves `.sh` with its own content type and about a ten minute cache;
-`curl -fsSL … | sh` works regardless of either.
+Installers are served as `text/plain` with a five-minute cache (`public/_headers`),
+so a new release is live within minutes; `curl -fsSL … | sh` works regardless.
 
 ## How a release reaches the site
 
@@ -61,17 +108,18 @@ GitHub Pages serves `.sh` with its own content type and about a ten minute cache
 
    The `product` and `tag` inputs are informational — every run republishes every
    product's current latest release, so a dispatch never has to be re-run in order.
+
 3. [`.github/workflows/release.yml`](.github/workflows/release.yml) — the receiver
-   *and* the site deploy, one workflow — assembles `_site/` from the static files
-   in this repo, runs [`scripts/fetch-releases.sh`](scripts/fetch-releases.sh) to
-   fetch and verify the installers into it, and deploys with
-   `actions/upload-pages-artifact` + `actions/deploy-pages`.
+   _and_ the site deploy, one workflow — builds the site into `_site/`, runs
+   [`scripts/fetch-releases.sh`](scripts/fetch-releases.sh) to fetch and verify
+   the installers into it, and deploys both with `wrangler deploy`.
 4. Nothing is committed. A verification failure for any product fails the deploy
    and the previously published site stays live. A product with no release yet is
    skipped with a notice.
 
-The same workflow runs on every push to `main`, so an edit to `index.html` deploys
-the current installers too.
+The same workflow runs on every push to `main`, so a site change deploys the
+current installers too. Site pages can never take an installer path: the
+postbuild guard fails the build if one would.
 
 ## The manifest
 
@@ -81,12 +129,12 @@ the current installers too.
 [{ "product": "ops", "repo": "waffuruai/ops", "asset": "bootstrap.sh" }]
 ```
 
-| Key | Meaning |
-| --- | --- |
-| `product` | URL segment: the installer is served at `/<product>/<asset>` |
-| `repo` | `owner/name` the release is read from |
-| `asset` | release asset name; `<asset>.sha256` must be attached too |
-| `tags` | optional, how many recent releases get a pinned copy (default 10) |
+| Key       | Meaning                                                           |
+| --------- | ----------------------------------------------------------------- |
+| `product` | URL segment: the installer is served at `/<product>/<asset>`      |
+| `repo`    | `owner/name` the release is read from                             |
+| `asset`   | release asset name; `<asset>.sha256` must be attached too         |
+| `tags`    | optional, how many recent releases get a pinned copy (default 10) |
 
 Adding a product is one entry here plus a dispatch from its release workflow.
 
@@ -120,17 +168,23 @@ with no release. The workflow runs it in a `test` job before the build.
 
 ## Repository settings the owner must create
 
-### Pages source
+### Cloudflare
 
-This repo must serve Pages from the workflow, not from a branch. Either:
+- Organization secret `CLOUDFLARE_API_TOKEN` (an account-owned token with the
+  "Edit Cloudflare Workers" policy, scoped to the Waffuru account) and
+  organization variable `CLOUDFLARE_ACCOUNT_ID`, both shared with this repo.
+- The `waffuru.ai` custom domain is attached to the `waffuru-site` Worker in
+  the Cloudflare dashboard (Workers → waffuru-site → Domains), not in
+  `wrangler.jsonc`.
+- Zone settings that inject scripts break the CSP and must stay off: Rocket
+  Loader, Email Address Obfuscation, automatic Web Analytics. Bot Fight Mode
+  must stay off too: it challenges `curl` installer fetches and AI agents.
 
-- **Settings → Pages → Build and deployment → Source → GitHub Actions**, or
-- ```bash
-  gh api -X PUT repos/waffuruai/website/pages -f build_type=workflow
-  ```
+### Variable: `NEXT_PUBLIC_GA_ID`
 
-Until that is switched, the legacy "deploy from branch" build keeps serving the
-old site and `actions/deploy-pages` fails.
+Repository variable with the GA4 measurement ID. Only the production build
+reads it; the deploy fails if it is missing. Locally, put it in `.env.local`
+and run `pnpm preview` to see analytics after accepting cookies.
 
 ### Secret: `RELEASE_READ_TOKEN`
 

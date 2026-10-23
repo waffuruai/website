@@ -1,0 +1,282 @@
+/*
+ * The After Hours motifs: tile grid, stamps, melting butter, LEDs, syrup drip,
+ * pulses, cursor and the hero rise. Pure CSS, so they cost no JavaScript.
+ * Every animation stops under prefers-reduced-motion (see tailwind.css).
+ * Colours come from tokens so the motifs follow light and dark.
+ */
+
+@layer components {
+  /* A waffle tile. Its glow lives on ::after, which inherits the tile's
+     inline animation-delay so a whole grid can ripple diagonally. */
+  .wf-cell {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid color-mix(in oklab, var(--foreground) 7%, transparent);
+    border-radius: 3px;
+  }
+  .wf-cell::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--brand);
+    opacity: 0;
+    animation: wfa-wave 7s ease-in-out infinite;
+    animation-delay: inherit;
+  }
+  .wf-cell[data-hot]::after {
+    animation-name: wfa-pool;
+  }
+
+  /* Iron: a 4x4 grid of tiles being pressed. */
+  .wf-stamp {
+    aspect-ratio: 1;
+    background: var(--off);
+    border-radius: 2px;
+    animation: wfa-stamp 3.2s cubic-bezier(0.7, 0, 0.2, 1) infinite;
+  }
+
+  /* Butter: a pat that melts and resets. */
+  .wf-pat {
+    width: 64px;
+    height: 64px;
+    background: var(--brand);
+    border-radius: 10px;
+    transform-origin: 50% 100%;
+    animation: wfa-melt 6s ease-in-out infinite alternate;
+  }
+
+  /* Waffle: a rack of status LEDs. */
+  .wf-led {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--off);
+    animation: wfa-led 4s steps(1) infinite;
+  }
+
+  /* Syrup: a drop running down a line. */
+  .wf-drip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    background: var(--off);
+  }
+  .wf-drop {
+    position: absolute;
+    left: 50%;
+    width: 10px;
+    height: 14px;
+    margin-left: -5px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: var(--brand);
+    animation: wfa-drop 3.6s cubic-bezier(0.55, 0, 0.8, 0.4) infinite;
+  }
+
+  /* Relative-speed pulse along a 1px track. */
+  .wf-pulse {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 56px;
+    height: 1px;
+    margin-top: -0.5px;
+    background: var(--brand);
+    opacity: 0.9;
+    animation: wfa-run 2.8s linear infinite;
+  }
+
+  .wf-blink {
+    animation: wfa-blink 1.1s steps(1) infinite;
+  }
+
+  .wf-rise {
+    animation: wfa-rise 1.4s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+  }
+
+  /* Two copies of the content scroll by half their width for a seamless loop. */
+  .wf-marquee {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    padding-block: 8px;
+    will-change: transform;
+    animation: wfa-marquee var(--marquee-duration, 70s) linear infinite;
+  }
+  .wf-marquee[data-reverse] {
+    animation-direction: reverse;
+  }
+  .wf-lane {
+    position: relative;
+    overflow: hidden;
+  }
+  .wf-lane::before,
+  .wf-lane::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 10%;
+    pointer-events: none;
+  }
+  .wf-lane::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--background), transparent);
+  }
+  .wf-lane::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--background), transparent);
+  }
+
+  /* Monochrome lab logos: the SVG is a mask, so the mark takes currentColor
+     and works in both themes without inlining every SVG twice. */
+  .wf-logo {
+    display: inline-block;
+    background-color: currentColor;
+    mask: var(--logo) center / contain no-repeat;
+  }
+
+  /* Film grain over the top of the page. */
+  .wf-grain {
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+  }
+
+  /* Portraits: muted until hovered or focused. */
+  .wf-portrait img {
+    filter: grayscale(1) contrast(1.05) brightness(0.88);
+    transition: filter 0.6s ease;
+  }
+  .wf-portrait:hover img,
+  .wf-portrait:focus-within img {
+    filter: none;
+  }
+}
+
+@keyframes wfa-wave {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.22;
+  }
+  30% {
+    opacity: 0;
+  }
+}
+
+@keyframes wfa-pool {
+  0%,
+  100% {
+    opacity: 0.05;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  55% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes wfa-stamp {
+  0%,
+  70%,
+  100% {
+    background: var(--off);
+    transform: scale(1);
+  }
+  78% {
+    background: var(--foreground);
+    transform: scale(0.82);
+  }
+  86% {
+    background: var(--faint);
+    transform: scale(1);
+  }
+}
+
+@keyframes wfa-melt {
+  0% {
+    border-radius: 10px;
+    transform: scale(1, 1);
+  }
+  60% {
+    border-radius: 40% 40% 12px 12px;
+    transform: scale(1.25, 0.7);
+  }
+  100% {
+    border-radius: 50% 50% 8px 8px / 70% 70% 8px 8px;
+    transform: scale(1.6, 0.32);
+  }
+}
+
+@keyframes wfa-led {
+  0% {
+    background: var(--off);
+  }
+  40% {
+    background: var(--brand);
+  }
+  48% {
+    background: var(--off);
+  }
+}
+
+@keyframes wfa-drop {
+  0% {
+    top: -14px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    top: calc(100% - 14px);
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% - 14px);
+    opacity: 0;
+  }
+}
+
+@keyframes wfa-run {
+  0% {
+    left: -56px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes wfa-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Starts at 0.01, not 0: Chrome never counts an element first painted fully
+   transparent as the Largest Contentful Paint, and the hero H1 is the LCP. */
+@keyframes wfa-rise {
+  from {
+    opacity: 0.01;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes wfa-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,12 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
+minimumReleaseAgeExclude:
+  - '@cloudflare/workers-types@5.20261023.1'
+  - miniflare@5.20261019.2-beta
+  - wrangler@4.152.0
+overrides:
+  # GHSA-rj75-hqrm-r3gf (build-time only, via @tailwindcss/typography).
+  postcss-selector-parser: '>=7.1.6'
