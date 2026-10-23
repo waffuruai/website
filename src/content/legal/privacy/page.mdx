@@ -1,0 +1,157 @@
+import { PolicyLayout } from '@/components/legal/policy-layout';
+
+export const policy = {
+  title: 'Privacy policy',
+  description:
+    'What Waffuru collects when you use waffuru.ai, join the mailing list or request early access, why, who processes it, and the rights you have.',
+  date: '2026-10-26',
+  published: true,
+  keywords: [
+    'Waffuru privacy policy',
+    'Waffuru data',
+    'GDPR',
+    'CCPA',
+    'PIPEDA',
+  ],
+};
+
+export default (props) => <PolicyLayout policy={policy} {...props} />;
+
+This policy explains what personal information Waffuru ("we", "us") collects through waffuru.ai (the **Site**), our mailing list, our early-access form and our email, what we do with it, and what choices you have. It does not cover the software we build: that is designed to run on your own machine, and it is described under [Our software and your data](#our-software-and-your-data).
+
+{/* TODO(founder): legal entity name and registered address of the data controller. Waffuru is not incorporated yet, so this policy says "Waffuru" until it is. Replace it here and in the terms of use. */}
+
+## The short version
+
+- We collect little: the email address you give us for the mailing list, what you tell us in the early-access form, the emails you send us, and standard server logs.
+- Google Analytics runs only according to your cookie choice, and never against a Global Privacy Control signal.
+- We do not sell your personal information, and we do not share it for advertising.
+- Our software runs on your machine. Your data stays there unless you opt in to something that sends it elsewhere.
+- You can ask us to see, correct, export or delete what we hold at [hello@waffuru.ai](mailto:hello@waffuru.ai?subject=Privacy).
+
+## Who is responsible
+
+Waffuru decides why and how the personal information described here is used, which makes us the controller (GDPR and UK GDPR) or the business (California law). Contact us at [hello@waffuru.ai](mailto:hello@waffuru.ai?subject=Privacy).
+
+## What we collect
+
+| What                                                                                                                                     | When                                                      | Where it goes                                                        | Why                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------- |
+| Email address                                                                                                                            | You join the mailing list                                 | A Google Form and its response sheet, run by Google as our processor | To send you updates about Waffuru                        |
+| Early-access form answers, for example your name or alias, your email address, what you want to run Waffuru on and what you are building | You submit the early-access form                          | A Google Form and its response sheet, run by Google as our processor | To assess requests, choose who to invite and contact you |
+| Emails you send us: your address, the message and any attachments                                                                        | You write to us                                           | Our email system                                                     | To reply and to keep a record of the conversation        |
+| Analytics data: pages viewed, approximate location (country or region), device, browser and referrer, tied to a random identifier        | You visit the Site, subject to your cookie choice         | Google Analytics 4, with Google as our processor                     | To see which pages are useful and to improve the Site    |
+| Server and security logs: IP address, requested page, user agent, country and time                                                       | You visit the Site                                        | Cloudflare, which hosts and protects the Site, as our processor      | To deliver the Site, keep it secure and stop abuse       |
+| Your preferences: theme, language and cookie choice                                                                                      | You pick a theme or language, or answer the cookie notice | Your own browser                                                     | To remember your settings between visits                 |
+
+We do not ask for more than we need. We do not collect sensitive categories of personal information through the Site.
+
+{/* TODO(founder): name the email provider that receives hello@waffuru.ai and add it to the processors list below. */}
+
+## Analytics and Global Privacy Control
+
+We use Google Analytics 4 to count visits and see which pages help people. Google Analytics truncates IP addresses and does not store the full address.
+
+- Where the law requires your consent, which includes the EU and EEA, the United Kingdom, Switzerland and Quebec, analytics cookies stay off until you accept them.
+- Elsewhere we show a notice, and you can opt out at any time.
+- Analytics runs under Google Consent Mode v2, so the choice you make is passed to Google.
+- If your browser sends a Global Privacy Control signal, we treat it as an opt-out and analytics stays off, wherever you are.
+
+You can change your choice at any time with **Cookie settings** in the footer. The [Cookie policy](/legal/cookies) lists every cookie. We do not use analytics data for advertising.
+
+{/* TODO(founder): confirm Google Signals and ads personalization are off in the Google Analytics property, and state the data-retention period configured for it. */}
+
+## Our software and your data
+
+Our products are local-first. Data that our software processes on your machine, such as your prompts, notes, files and model output, stays on that machine unless you choose to turn on a feature that sends it elsewhere. We will tell you plainly when a feature does that, and what it sends. This policy covers the Site and our communications. If a product starts to send data off your device, it will come with its own notice.
+
+## How we use information
+
+We use personal information to:
+
+- send mailing-list updates to people who asked for them;
+- review early-access requests, choose who to invite and stay in touch with participants;
+- answer your emails;
+- run, secure and improve the Site;
+- meet legal obligations and protect our rights.
+
+We do not use it for automated decisions that have legal or similarly significant effects on you.
+
+## Legal bases
+
+If you are in the EU, EEA or United Kingdom, we rely on these bases:
+
+- **Consent** for the mailing list and for analytics cookies. You can withdraw it at any time, which does not affect what we did before.
+- **Steps at your request before a contract**, and our **legitimate interest** in running the early-access program, for early-access requests.
+- **Legitimate interests** in running and securing the Site, understanding how it is used where consent is not required, and answering the people who write to us. We weigh these against your rights and stop if yours prevail.
+- **Legal obligation** where we have to keep or disclose information by law.
+
+## Who we share it with
+
+We share personal information only with:
+
+- **Google**, for Google Forms and its response sheets, and for Google Analytics if you have allowed it;
+- **Cloudflare**, for hosting, delivery and security;
+- professional advisers, such as lawyers and accountants, under confidentiality;
+- authorities, when the law requires it;
+- a successor, if Waffuru is merged with or sold to another company, with notice to you.
+
+These providers process information on our behalf and under their own data-processing terms. **We do not sell personal information, and we do not share it for cross-context behavioural advertising.**
+
+## International transfers
+
+We are based in North America, and our providers run services around the world. Your information can be processed in the United States, Canada and other countries where they operate. When we transfer information from the EEA or the United Kingdom, we rely on safeguards such as adequacy decisions, the EU–US Data Privacy Framework for providers that are certified, and standard contractual clauses.
+
+## How long we keep it
+
+We keep personal information only as long as we need it for the purpose it was collected for.
+
+- Mailing-list addresses: until you unsubscribe or ask us to delete them.
+- Early-access answers: while we run the program and stay in touch with you, then we delete or anonymize them. You can ask us to delete them sooner.
+- Emails: as long as needed to deal with your request and to keep reasonable records.
+- Analytics: for the period set in our Google Analytics account, then Google deletes it.
+- Server logs: for the short period Cloudflare keeps them.
+
+{/* TODO(founder): replace these with the actual periods once decided (early-access answers, emails, GA4 retention). */}
+
+## Your rights
+
+You can ask us at any time, at [hello@waffuru.ai](mailto:hello@waffuru.ai?subject=Privacy), to:
+
+- tell you what we hold about you, and give you a copy;
+- correct it;
+- delete it;
+- stop or limit how we use it;
+- move it to another service;
+- stop sending you mailing-list email. Every update will say how, and you can always write to us. To unsubscribe now, ask us and we remove you.
+
+Which rights apply depends on where you live.
+
+- **EU, EEA and United Kingdom (GDPR, UK GDPR).** Access, rectification, erasure, restriction, portability, objection to processing based on legitimate interests, and withdrawal of consent. You can complain to your data-protection authority, such as the Information Commissioner's Office in the UK.
+- **California (CCPA and CPRA).** Know and access what we collect, delete it, correct it, opt out of sale or sharing of personal information, and not be discriminated against for using these rights. We do not sell or share personal information, so there is nothing to opt out of, and we honour Global Privacy Control signals for analytics. An authorized agent can make a request for you.
+- **Canada (PIPEDA and provincial laws).** Access your information, challenge its accuracy, withdraw consent, and complain to the Office of the Privacy Commissioner of Canada or your provincial regulator.
+- **Elsewhere.** We will honour similar rights as far as your local law requires.
+
+We may need to verify who you are before acting. We reply within the time the law sets, which is usually one month (GDPR) or 45 days (California).
+
+{/* TODO(founder): add a one-click unsubscribe link and a postal address to mailing-list emails before the first send (CAN-SPAM, CASL, GDPR). The Site's form promises that people can unsubscribe at any time. */}
+
+## Cookies and similar technologies
+
+We keep your theme and language, and your cookie choice, in your browser. We set Google Analytics cookies only as described above. The [Cookie policy](/legal/cookies) has the full list and how to change your choices.
+
+## Children
+
+The Site is not directed to children under 16, and we do not knowingly collect their personal information. If you think a child has given us some, email us and we will delete it.
+
+## Security
+
+We use HTTPS across the Site and keep submissions in access-controlled Google accounts. No system is perfectly secure, so we cannot guarantee absolute security. If you find a vulnerability, please tell us at [hello@waffuru.ai](mailto:hello@waffuru.ai?subject=Security).
+
+## Changes
+
+We may update this policy. The "Last updated" date at the top shows when. If a change is material, we will say so on the Site or by email to people on our lists.
+
+## Contact
+
+Questions, requests or complaints: [hello@waffuru.ai](mailto:hello@waffuru.ai?subject=Privacy). Our [Terms of use](/legal/terms) and [Cookie policy](/legal/cookies) go with this policy.

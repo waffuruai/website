@@ -115,7 +115,7 @@ export function NewsletterSignup({ className }: { className?: string }) {
           placeholder={newsletter.placeholder}
           aria-invalid={status === 'invalid' || undefined}
           aria-describedby={message ? statusId : undefined}
-          className="border-foreground/28 h-[52px] flex-1 rounded-full px-5 text-[15px] md:text-[15px] dark:bg-transparent"
+          className="border-foreground/28 h-[52px] rounded-full px-5 text-[15px] sm:flex-1 md:text-[15px] dark:bg-transparent"
         />
         <div aria-hidden="true" className="sr-only">
           <label htmlFor={honeypotId}>{newsletter.honeypot}</label>
