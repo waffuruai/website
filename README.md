@@ -170,9 +170,9 @@ with no release. The workflow runs it in a `test` job before the build.
 
 ### Cloudflare
 
-- Organization secrets `CLOUDFLARE_API_TOKEN` (an account-owned token with the
+- Organization secret `CLOUDFLARE_API_TOKEN` (an account-owned token with the
   "Edit Cloudflare Workers" policy, scoped to the Waffuru account) and
-  `CLOUDFLARE_ACCOUNT_ID`, shared with this repo.
+  organization variable `CLOUDFLARE_ACCOUNT_ID`, both shared with this repo.
 - The `waffuru.ai` custom domain is attached to the `waffuru-site` Worker in
   the Cloudflare dashboard (Workers → waffuru-site → Domains), not in
   `wrangler.jsonc`.

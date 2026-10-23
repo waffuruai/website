@@ -97,7 +97,7 @@ jobs:
         id: deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
           WORKER: waffuru-pr-${{ github.event.pull_request.number }}
         run: |
           pnpm exec wrangler deploy --name "$WORKER" | tee deploy.log
@@ -141,5 +141,5 @@ jobs:
       - name: Delete the preview Worker
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
         run: pnpm exec wrangler delete --name "waffuru-pr-${{ github.event.pull_request.number }}" --force || true
