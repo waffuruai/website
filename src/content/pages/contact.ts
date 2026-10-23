@@ -1,5 +1,10 @@
 import type { MailSubject } from '@/content/site';
 import type { Localized, Seo } from '@/content/types';
+import contactEs from './contact.es';
+import contactFr from './contact.fr';
+import contactZh from './contact.zh';
+import contactJa from './contact.ja';
+import contactKo from './contact.ko';
 
 /** One way to reach us: a short line and an email with the subject set. */
 export type Callout = {
@@ -88,4 +93,9 @@ export const contact: Localized<ContactContent> = {
       body: 'Our products are in private early access. Tell us what you want to run, and on what hardware, and we’ll write when we have something that fits.',
     },
   },
+  es: contactEs,
+  fr: contactFr,
+  zh: contactZh,
+  ja: contactJa,
+  ko: contactKo,
 };

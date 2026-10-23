@@ -1,5 +1,10 @@
 import { mailto } from '@/content/site';
 import type { Cta, Localized, Seo } from '@/content/types';
+import brandEs from './brand.es';
+import brandFr from './brand.fr';
+import brandZh from './brand.zh';
+import brandJa from './brand.ja';
+import brandKo from './brand.ko';
 
 /*
  * Brand and press kit copy. English is the source of truth. Hex values are
@@ -385,4 +390,9 @@ export const brand: Localized<BrandContent> = {
       cta: 'Contact press',
     },
   },
+  es: brandEs,
+  fr: brandFr,
+  zh: brandZh,
+  ja: brandJa,
+  ko: brandKo,
 };

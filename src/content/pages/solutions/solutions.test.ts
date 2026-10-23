@@ -40,8 +40,8 @@ describe('solutions registry', () => {
     expect(getSolution('startups', 'en')).toBeUndefined();
   });
 
-  it('falls back to English for locales without a translation', () => {
-    expect(getSolution('enterprise', 'ja')).toBe(solutions.enterprise.en);
+  it('returns the requested locale’s copy', () => {
+    expect(getSolution('enterprise', 'ja')).toBe(solutions.enterprise.ja);
   });
 });
 

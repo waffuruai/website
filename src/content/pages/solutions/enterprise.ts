@@ -1,6 +1,11 @@
 import type { Localized } from '@/content/types';
 
 import type { SolutionPage } from './types';
+import enterpriseEs from './enterprise.es';
+import enterpriseFr from './enterprise.fr';
+import enterpriseZh from './enterprise.zh';
+import enterpriseJa from './enterprise.ja';
+import enterpriseKo from './enterprise.ko';
 
 /*
  * Enterprise: on-prem or private-cloud inference for sensitive data, with
@@ -138,4 +143,9 @@ export const enterprise: Localized<SolutionPage> = {
       body: 'Early access, closed source for now. Tell us what has to stay in-house and which hardware you run, and we will tell you honestly what fits today.',
     },
   },
+  es: enterpriseEs,
+  fr: enterpriseFr,
+  zh: enterpriseZh,
+  ja: enterpriseJa,
+  ko: enterpriseKo,
 };

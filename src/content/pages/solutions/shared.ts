@@ -1,6 +1,11 @@
 import type { Localized } from '@/content/types';
 
 import type { SolutionsShared } from './types';
+import solutionsSharedEs from './shared.es';
+import solutionsSharedFr from './shared.fr';
+import solutionsSharedZh from './shared.zh';
+import solutionsSharedJa from './shared.ja';
+import solutionsSharedKo from './shared.ko';
 
 /**
  * Strings every audience page shares: section labels, the four products as
@@ -90,4 +95,9 @@ export const solutionsShared: Localized<SolutionsShared> = {
       ],
     },
   },
+  es: solutionsSharedEs,
+  fr: solutionsSharedFr,
+  zh: solutionsSharedZh,
+  ja: solutionsSharedJa,
+  ko: solutionsSharedKo,
 };

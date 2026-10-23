@@ -1,5 +1,10 @@
 import type { ProductCopy } from '@/content/pages/products/types';
 import type { Localized } from '@/content/types';
+import waffleEs from './waffle.es';
+import waffleFr from './waffle.fr';
+import waffleZh from './waffle.zh';
+import waffleJa from './waffle.ja';
+import waffleKo from './waffle.ko';
 
 /*
  * Waffle, 03 · Control plane. Facts come from the content brief only.
@@ -156,4 +161,9 @@ export const waffle: Localized<ProductCopy> = {
       body: 'Waffle is in early access and closed source for now. Request access, or tell us what you run.',
     },
   },
+  es: waffleEs,
+  fr: waffleFr,
+  zh: waffleZh,
+  ja: waffleJa,
+  ko: waffleKo,
 };

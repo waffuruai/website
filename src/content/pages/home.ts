@@ -1,4 +1,9 @@
 import type { Localized } from '@/content/types';
+import homeEs from './home.es';
+import homeFr from './home.fr';
+import homeZh from './home.zh';
+import homeJa from './home.ja';
+import homeKo from './home.ko';
 
 /*
  * Home page copy. English is the source of truth; translators add `home.es.ts`
@@ -283,4 +288,9 @@ export const home: Localized<HomeContent> = {
       body: 'Nothing’s public yet. Request early access, or leave your email below and we’ll write when something is.',
     },
   },
+  es: homeEs,
+  fr: homeFr,
+  zh: homeZh,
+  ja: homeJa,
+  ko: homeKo,
 };

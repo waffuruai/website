@@ -1,5 +1,10 @@
 import type { ProductsOverviewCopy } from '@/content/pages/products/types';
 import type { Localized } from '@/content/types';
+import productsOverviewEs from './overview.es';
+import productsOverviewFr from './overview.fr';
+import productsOverviewZh from './overview.zh';
+import productsOverviewJa from './overview.ja';
+import productsOverviewKo from './overview.ko';
 
 /*
  * /products: the stack, from Syrup (04) at the top down to Iron (01) at the
@@ -66,4 +71,9 @@ export const productsOverview: Localized<ProductsOverviewCopy> = {
       body: 'The whole stack is in early access and closed source for now. Request access and tell us which layer you want first.',
     },
   },
+  es: productsOverviewEs,
+  fr: productsOverviewFr,
+  zh: productsOverviewZh,
+  ja: productsOverviewJa,
+  ko: productsOverviewKo,
 };

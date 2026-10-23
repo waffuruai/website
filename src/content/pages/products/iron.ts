@@ -1,5 +1,10 @@
 import type { ProductCopy } from '@/content/pages/products/types';
 import type { Localized } from '@/content/types';
+import ironEs from './iron.es';
+import ironFr from './iron.fr';
+import ironZh from './iron.zh';
+import ironJa from './iron.ja';
+import ironKo from './iron.ko';
 
 /*
  * Iron, 01 · Kernels. Facts come from the content brief only: no benchmark
@@ -185,4 +190,9 @@ export const iron: Localized<ProductCopy> = {
       docsLabel: 'Read the docs',
     },
   },
+  es: ironEs,
+  fr: ironFr,
+  zh: ironZh,
+  ja: ironJa,
+  ko: ironKo,
 };

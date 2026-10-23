@@ -1,4 +1,9 @@
 import type { Cta, Localized, Seo } from '@/content/types';
+import aboutEs from './about.es';
+import aboutFr from './about.fr';
+import aboutZh from './about.zh';
+import aboutJa from './about.ja';
+import aboutKo from './about.ko';
 
 /*
  * About page copy. English is the source of truth; locale siblings
@@ -224,4 +229,9 @@ export const about: Localized<AboutContent> = {
       body: 'Our products are private for now. Request early access, or talk to us about what you want to run on the hardware you already own.',
     },
   },
+  es: aboutEs,
+  fr: aboutFr,
+  zh: aboutZh,
+  ja: aboutJa,
+  ko: aboutKo,
 };

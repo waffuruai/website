@@ -1,4 +1,9 @@
 import type { Localized } from '@/content/types';
+import teamCopyEs from './team.es';
+import teamCopyFr from './team.fr';
+import teamCopyZh from './team.zh';
+import teamCopyJa from './team.ja';
+import teamCopyKo from './team.ko';
 
 /**
  * The team: facts (photo, links) here, words (role, background, bio) in
@@ -134,6 +139,11 @@ export const teamCopy: Localized<Record<string, TeamCopy>> = {
       bio: 'Cory has exited a company and is co-founder and CTO of Bidali, which he helped grow to millions in stablecoin payments volume. He is a managing director at Bullish Ventures and has been building consumer and enterprise products since 2009.',
     },
   },
+  es: teamCopyEs,
+  fr: teamCopyFr,
+  zh: teamCopyZh,
+  ja: teamCopyJa,
+  ko: teamCopyKo,
 };
 
 /** Every placeholder link, as `slug.network` (for the test and the founder). */

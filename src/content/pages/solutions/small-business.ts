@@ -1,6 +1,11 @@
 import type { Localized } from '@/content/types';
 
 import type { SolutionPage } from './types';
+import smallBusinessEs from './small-business.es';
+import smallBusinessFr from './small-business.fr';
+import smallBusinessZh from './small-business.zh';
+import smallBusinessJa from './small-business.ja';
+import smallBusinessKo from './small-business.ko';
 
 /*
  * Small business: private AI on a Mac Studio or an RTX box, no cloud bill.
@@ -125,4 +130,9 @@ export const smallBusiness: Localized<SolutionPage> = {
       body: 'Early access, closed source for now. Tell us what you want to run and on what hardware, and we will write back.',
     },
   },
+  es: smallBusinessEs,
+  fr: smallBusinessFr,
+  zh: smallBusinessZh,
+  ja: smallBusinessJa,
+  ko: smallBusinessKo,
 };

@@ -1,5 +1,10 @@
 import type { Localized, Seo } from '@/content/types';
 import type { TeamMember } from '@/content/team';
+import teamPageEs from './team.es';
+import teamPageFr from './team.fr';
+import teamPageZh from './team.zh';
+import teamPageJa from './team.ja';
+import teamPageKo from './team.ko';
 
 /*
  * Team page copy. Names, roles, bios and links live in `src/content/team.ts`;
@@ -45,4 +50,9 @@ export const teamPage: Localized<TeamPageContent> = {
       body: 'Our products are private for now. Request early access to try them, or talk to us about what you need.',
     },
   },
+  es: teamPageEs,
+  fr: teamPageFr,
+  zh: teamPageZh,
+  ja: teamPageJa,
+  ko: teamPageKo,
 };

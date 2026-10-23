@@ -1,5 +1,10 @@
 import type { ProductCopy } from '@/content/pages/products/types';
 import type { Localized } from '@/content/types';
+import butterEs from './butter.es';
+import butterFr from './butter.fr';
+import butterZh from './butter.zh';
+import butterJa from './butter.ja';
+import butterKo from './butter.ko';
 
 /*
  * Butter, 02 · Serving. Facts come from the content brief only. Nothing here
@@ -227,4 +232,9 @@ export const butter: Localized<ProductCopy> = {
       docsLabel: 'Read the docs',
     },
   },
+  es: butterEs,
+  fr: butterFr,
+  zh: butterZh,
+  ja: butterJa,
+  ko: butterKo,
 };

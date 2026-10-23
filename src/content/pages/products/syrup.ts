@@ -1,5 +1,10 @@
 import type { ProductCopy } from '@/content/pages/products/types';
 import type { Localized } from '@/content/types';
+import syrupEs from './syrup.es';
+import syrupFr from './syrup.fr';
+import syrupZh from './syrup.zh';
+import syrupJa from './syrup.ja';
+import syrupKo from './syrup.ko';
 
 /*
  * Syrup, 04 · Memory. Facts come from the content brief only.
@@ -125,4 +130,9 @@ export const syrup: Localized<ProductCopy> = {
       body: 'Syrup is in early access and closed source for now. Request access, or tell us what you’d like it to remember.',
     },
   },
+  es: syrupEs,
+  fr: syrupFr,
+  zh: syrupZh,
+  ja: syrupJa,
+  ko: syrupKo,
 };

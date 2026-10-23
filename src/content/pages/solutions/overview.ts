@@ -1,6 +1,11 @@
 import type { Localized } from '@/content/types';
 
 import type { SolutionsOverview } from './types';
+import solutionsOverviewEs from './overview.es';
+import solutionsOverviewFr from './overview.fr';
+import solutionsOverviewZh from './overview.zh';
+import solutionsOverviewJa from './overview.ja';
+import solutionsOverviewKo from './overview.ko';
 
 /*
  * /solutions: hero, one card per audience (the cards' words live on each
@@ -68,4 +73,9 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
       body: 'Early access, closed source for now. Tell us what you want to run and we will write back.',
     },
   },
+  es: solutionsOverviewEs,
+  fr: solutionsOverviewFr,
+  zh: solutionsOverviewZh,
+  ja: solutionsOverviewJa,
+  ko: solutionsOverviewKo,
 };

@@ -1,5 +1,10 @@
 import type { ProductsShared } from '@/content/pages/products/types';
 import type { Localized } from '@/content/types';
+import productsSharedEs from './shared.es';
+import productsSharedFr from './shared.fr';
+import productsSharedZh from './shared.zh';
+import productsSharedJa from './shared.ja';
+import productsSharedKo from './shared.ko';
 
 /**
  * Words the four product pages share: section labels, the hardware tier
@@ -24,4 +29,9 @@ export const productsShared: Localized<ProductsShared> = {
       ],
     },
   },
+  es: productsSharedEs,
+  fr: productsSharedFr,
+  zh: productsSharedZh,
+  ja: productsSharedJa,
+  ko: productsSharedKo,
 };

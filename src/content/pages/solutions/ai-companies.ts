@@ -1,6 +1,11 @@
 import type { Localized } from '@/content/types';
 
 import type { SolutionPage } from './types';
+import aiCompaniesEs from './ai-companies.es';
+import aiCompaniesFr from './ai-companies.fr';
+import aiCompaniesZh from './ai-companies.zh';
+import aiCompaniesJa from './ai-companies.ja';
+import aiCompaniesKo from './ai-companies.ko';
 
 /*
  * AI model and inference companies: one kernel definition shipped to
@@ -148,4 +153,9 @@ export const aiCompanies: Localized<SolutionPage> = {
       body: 'Early access, closed source for now. Tell us what you build, which backends matter and where Python is in your way, and we will write back.',
     },
   },
+  es: aiCompaniesEs,
+  fr: aiCompaniesFr,
+  zh: aiCompaniesZh,
+  ja: aiCompaniesJa,
+  ko: aiCompaniesKo,
 };

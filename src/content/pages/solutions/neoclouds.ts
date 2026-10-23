@@ -1,6 +1,11 @@
 import type { Localized } from '@/content/types';
 
 import type { SolutionPage } from './types';
+import neocloudsEs from './neoclouds.es';
+import neocloudsFr from './neoclouds.fr';
+import neocloudsZh from './neoclouds.zh';
+import neocloudsJa from './neoclouds.ja';
+import neocloudsKo from './neoclouds.ko';
 
 /*
  * Neoclouds: fleet visibility across tenants and engines, more useful
@@ -130,4 +135,9 @@ export const neoclouds: Localized<SolutionPage> = {
       body: 'Early access, closed source for now. Tell us your GPUs, your engines and how tenants share them, and we will write back about what fits.',
     },
   },
+  es: neocloudsEs,
+  fr: neocloudsFr,
+  zh: neocloudsZh,
+  ja: neocloudsJa,
+  ko: neocloudsKo,
 };

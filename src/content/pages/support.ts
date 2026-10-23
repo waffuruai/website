@@ -1,5 +1,10 @@
 import { mailto, site } from '@/content/site';
 import type { FaqItem, Localized, Seo } from '@/content/types';
+import supportEs from './support.es';
+import supportFr from './support.fr';
+import supportZh from './support.zh';
+import supportJa from './support.ja';
+import supportKo from './support.ko';
 
 export type SupportLink = {
   title: string;
@@ -108,4 +113,9 @@ export const support: Localized<SupportContent> = {
       email: 'Email support',
     },
   },
+  es: supportEs,
+  fr: supportFr,
+  zh: supportZh,
+  ja: supportJa,
+  ko: supportKo,
 };
