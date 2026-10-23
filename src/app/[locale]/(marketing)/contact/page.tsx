@@ -43,8 +43,8 @@ export default async function ContactPage({
     <>
       <PageHero label={hero.label} title={hero.title} lede={hero.lede} />
       <Callouts {...callouts} />
-      <section className="max-w-site px-site mx-auto pb-16 md:pb-24">
-        <div className="border-foreground/12 border-t pt-12 md:pt-16">
+      <section className="mx-auto max-w-site px-site pb-16 md:pb-24">
+        <div className="border-t border-foreground/12 pt-12 md:pt-16">
           <NewsletterSignup className="max-w-xl" />
         </div>
       </section>

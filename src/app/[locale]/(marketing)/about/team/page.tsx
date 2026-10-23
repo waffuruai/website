@@ -62,7 +62,7 @@ export default async function TeamPage({ params }: { params: LocaleParams }) {
         lede={content.hero.lede}
         className="pb-12 md:pb-16"
       />
-      <div className="max-w-site px-site mx-auto pb-12 md:pb-20">
+      <div className="mx-auto max-w-site px-site pb-12 md:pb-20">
         <TeamGrid
           locale={locale}
           labels={{

@@ -29,7 +29,7 @@ export function TypeSection({ content }: { content: BrandContent['type'] }) {
         {content.faces.map((face) => (
           <li
             key={face.key}
-            className="border-foreground/12 bg-card flex flex-col gap-8 rounded-3xl border p-6 md:p-10"
+            className="flex flex-col gap-8 rounded-3xl border border-foreground/12 bg-card p-6 md:p-10"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
               <h3 className={cn(FACE_STYLES[face.key].name)}>{face.name}</h3>
@@ -38,11 +38,11 @@ export function TypeSection({ content }: { content: BrandContent['type'] }) {
             <p className={FACE_STYLES[face.key].sample}>
               <Accent text={face.sample} />
             </p>
-            <div className="border-foreground/12 flex flex-col gap-4 border-t pt-6">
+            <div className="flex flex-col gap-4 border-t border-foreground/12 pt-6">
               <p
                 aria-hidden
                 className={cn(
-                  'text-muted-foreground text-[15px] leading-[1.6] break-words',
+                  'text-[15px] leading-[1.6] break-words text-muted-foreground',
                   face.key === 'serif' && 'font-serif text-[22px]',
                   face.key === 'sans' && 'font-sans',
                   face.key === 'mono' && 'font-mono text-[13px]',
@@ -51,14 +51,14 @@ export function TypeSection({ content }: { content: BrandContent['type'] }) {
                 {face.glyphs}
               </p>
               <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-1">
-                <p className="text-soft text-[15px] leading-[1.55]">
+                <p className="text-[15px] leading-[1.55] text-soft">
                   {face.use}
                 </p>
                 <a
                   href={face.source.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label-mono text-soft hover:text-foreground focus-visible:outline-ring inline-flex min-h-11 items-center rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+                  className="inline-flex min-h-11 items-center rounded-sm label-mono text-soft transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                 >
                   {face.source.label}
                   <span aria-hidden className="ml-1.5">
@@ -70,13 +70,13 @@ export function TypeSection({ content }: { content: BrandContent['type'] }) {
           </li>
         ))}
       </ul>
-      <p className="text-soft mt-8 max-w-[640px] text-base leading-[1.6]">
+      <p className="mt-8 max-w-[640px] text-base leading-[1.6] text-soft">
         {content.licence}{' '}
         <a
           href={content.licenceLink.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground hover:text-brand-ink focus-visible:outline-ring inline-flex min-h-11 items-center rounded-sm underline transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+          className="inline-flex min-h-11 items-center rounded-sm text-foreground underline transition-colors hover:text-brand-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
         >
           {content.licenceLink.label}
           <span aria-hidden className="ml-1">

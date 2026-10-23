@@ -47,8 +47,8 @@ export function WordmarkSection({
         </ThemePanel>
       </div>
 
-      <h3 className="label-mono text-soft mt-12">{content.namingLabel}</h3>
-      <dl className="border-foreground/12 divide-foreground/12 mt-4 divide-y border-y">
+      <h3 className="mt-12 label-mono text-soft">{content.namingLabel}</h3>
+      <dl className="mt-4 divide-y divide-foreground/12 border-y border-foreground/12">
         {content.rules.map((rule) => (
           <div
             key={rule.term}
@@ -57,13 +57,13 @@ export function WordmarkSection({
             <dt className="font-serif text-[clamp(26px,2.6vw,34px)] leading-[1.1]">
               {rule.term}
             </dt>
-            <dd className="text-muted-foreground text-base leading-[1.6] text-pretty">
+            <dd className="text-base leading-[1.6] text-pretty text-muted-foreground">
               {rule.body}
             </dd>
           </div>
         ))}
       </dl>
-      <p className="text-soft mt-8 max-w-[640px] text-lg leading-[1.6] text-pretty">
+      <p className="mt-8 max-w-[640px] text-lg leading-[1.6] text-pretty text-soft">
         {content.origin}
       </p>
     </BrandSection>

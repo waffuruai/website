@@ -29,10 +29,10 @@ export function MarkSection({ content }: { content: BrandContent['mark'] }) {
         ))}
       </div>
 
-      <h3 className="label-mono text-soft mt-12">{content.downloadsLabel}</h3>
+      <h3 className="mt-12 label-mono text-soft">{content.downloadsLabel}</h3>
       <ul
         role="list"
-        className="border-foreground/12 divide-foreground/12 mt-4 divide-y border-y"
+        className="mt-4 divide-y divide-foreground/12 border-y border-foreground/12"
       >
         {content.downloads.map((file) => (
           <li
@@ -41,7 +41,7 @@ export function MarkSection({ content }: { content: BrandContent['mark'] }) {
           >
             <div className="flex flex-col gap-0.5">
               <span className="text-[17px] font-medium">{file.label}</span>
-              <span className="text-muted-foreground font-mono text-[13px]">
+              <span className="font-mono text-[13px] text-muted-foreground">
                 {file.detail}
               </span>
             </div>
@@ -49,7 +49,7 @@ export function MarkSection({ content }: { content: BrandContent['mark'] }) {
               href={file.href}
               download={file.filename}
               aria-label={`${content.downloadAction} ${file.label}`}
-              className="label-mono text-foreground hover:text-brand-ink focus-visible:outline-ring inline-flex min-h-11 items-center rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+              className="inline-flex min-h-11 items-center rounded-sm label-mono text-foreground transition-colors hover:text-brand-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {content.downloadAction}
               <span aria-hidden className="ml-1.5">

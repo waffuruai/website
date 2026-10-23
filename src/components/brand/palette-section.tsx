@@ -22,15 +22,15 @@ function SwatchGroup({
                 brand.test.ts), so the chip shows the value, not today's theme. */}
             <div
               aria-hidden
-              className="border-foreground/15 h-24 rounded-xl border"
+              className="h-24 rounded-xl border border-foreground/15"
               style={{ backgroundColor: swatch.hex }}
             />
             <div className="flex flex-col gap-1">
               <span className="text-[17px] font-medium">{swatch.name}</span>
-              <span className="text-muted-foreground text-[14px] leading-[1.45] text-pretty">
+              <span className="text-[14px] leading-[1.45] text-pretty text-muted-foreground">
                 {swatch.role}
               </span>
-              <code className="text-muted-foreground font-mono text-[12px]">
+              <code className="font-mono text-[12px] text-muted-foreground">
                 {swatch.token}
               </code>
             </div>

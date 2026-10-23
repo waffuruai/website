@@ -48,6 +48,7 @@ export function organization(): JsonLdObject {
           'French',
           'Chinese',
           'Japanese',
+          'Korean',
         ],
       },
     ],

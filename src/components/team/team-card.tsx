@@ -41,7 +41,7 @@ export function TeamCard({
 
   return (
     <article className={cn('group/card flex flex-col gap-[18px]', className)}>
-      <div className="wf-portrait bg-card relative overflow-hidden rounded-[14px]">
+      <div className="wf-portrait relative overflow-hidden rounded-[14px] bg-card">
         <Picture
           name={member.photo}
           sizes={sizes}
@@ -50,9 +50,9 @@ export function TeamCard({
           className="block"
           imgClassName="block aspect-square w-full object-cover object-[50%_20%] group-hover/card:filter-none group-focus-within/card:filter-none pointer-coarse:filter-none!"
         />
-        <div className="border-foreground/15 bg-background/80 absolute inset-x-0 bottom-0 flex flex-col gap-1 border-t px-4 py-3 backdrop-blur-md">
+        <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 border-t border-foreground/15 bg-background/80 px-4 py-3 backdrop-blur-md">
           <p className="label-mono text-foreground">{copy.role}</p>
-          <p className="text-soft text-[13px] leading-[1.4] text-pretty">
+          <p className="text-[13px] leading-[1.4] text-pretty text-soft">
             {copy.background}
           </p>
         </div>
@@ -61,7 +61,7 @@ export function TeamCard({
         <Heading className="font-serif text-[30px] leading-[1.05] font-normal">
           {member.name}
         </Heading>
-        <p className="text-muted-foreground text-[15px] leading-[1.55] text-pretty">
+        <p className="text-[15px] leading-[1.55] text-pretty text-muted-foreground">
           {copy.bio}
         </p>
         {links.length > 0 && (
@@ -76,7 +76,7 @@ export function TeamCard({
                     name: member.name,
                     network: labels.linkNames[network],
                   })}
-                  className="label-mono text-soft hover:text-foreground focus-visible:outline-ring inline-flex min-h-11 items-center rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+                  className="inline-flex min-h-11 items-center rounded-sm label-mono text-soft transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                 >
                   {labels.linkNames[network]}
                   <span aria-hidden className="ml-1.5">

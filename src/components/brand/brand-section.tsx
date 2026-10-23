@@ -20,7 +20,7 @@ export function BrandSection({
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      className="max-w-site px-site mx-auto py-[72px] md:py-[120px]"
+      className="mx-auto max-w-site px-site py-[72px] md:py-[120px]"
     >
       <SectionHeading id={`${id}-title`} title={title} intro={intro} />
       <div className="mt-12 md:mt-16">{children}</div>

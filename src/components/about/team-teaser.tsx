@@ -18,14 +18,14 @@ export function TeamTeaser({
     <section
       id="team"
       aria-labelledby="team-title"
-      className="max-w-site px-site mx-auto py-[72px] md:py-[120px]"
+      className="mx-auto max-w-site px-site py-[72px] md:py-[120px]"
     >
       <div className="flex flex-col gap-12 md:flex-row md:items-center md:justify-between md:gap-16">
         <div className="flex max-w-[560px] flex-col gap-6">
           <h2 id="team-title" className="heading-section">
             <Accent text={content.title} />
           </h2>
-          <p className="text-soft text-[19px] leading-[1.55] text-pretty">
+          <p className="text-[19px] leading-[1.55] text-pretty text-soft">
             {content.body}
           </p>
           <PillLink href="/about/team" variant="outline" className="self-start">

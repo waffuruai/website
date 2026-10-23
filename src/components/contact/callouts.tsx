@@ -17,19 +17,19 @@ export function Callouts({
   return (
     <section
       aria-labelledby="callouts-heading"
-      className="max-w-site px-site mx-auto pb-16 md:pb-24"
+      className="mx-auto max-w-site px-site pb-16 md:pb-24"
     >
       <SectionHeading id="callouts-heading" title={title} intro={intro} />
       <ul className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-14 lg:grid-cols-3">
         {items.map((item) => (
           <li
             key={item.subject}
-            className="border-foreground/12 bg-card flex flex-col gap-4 rounded-3xl border p-6 md:p-8"
+            className="flex flex-col gap-4 rounded-3xl border border-foreground/12 bg-card p-6 md:p-8"
           >
             <h3 className="font-serif text-4xl leading-none tracking-[-0.01em]">
               {item.title}
             </h3>
-            <p className="text-soft mb-4 text-base leading-[1.6]">
+            <p className="mb-4 text-base leading-[1.6] text-soft">
               {item.body}
             </p>
             <PillLink

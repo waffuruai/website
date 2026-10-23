@@ -13,7 +13,7 @@ export function WhyWeBuild({ content }: { content: AboutContent['why'] }) {
     <section
       id="why"
       aria-labelledby="why-title"
-      className="max-w-site px-site mx-auto py-[72px] md:py-[120px]"
+      className="mx-auto max-w-site px-site py-[72px] md:py-[120px]"
     >
       <SectionHeading
         id="why-title"
@@ -29,31 +29,31 @@ export function WhyWeBuild({ content }: { content: AboutContent['why'] }) {
                 'text-pretty',
                 index === 0
                   ? 'font-serif text-[clamp(30px,3.6vw,52px)] leading-[1.08] tracking-[-0.01em]'
-                  : 'text-soft max-w-[620px] text-lg leading-[1.6]',
+                  : 'max-w-[620px] text-lg leading-[1.6] text-soft',
               )}
             >
               {paragraph}
             </p>
           ))}
         </div>
-        <div className="border-foreground/12 bg-card relative flex flex-col gap-6 self-start overflow-hidden rounded-3xl border p-8 md:p-10">
+        <div className="relative flex flex-col gap-6 self-start overflow-hidden rounded-3xl border border-foreground/12 bg-card p-8 md:p-10">
           <TileDeco
             size={4}
             hot={[[1, 2]]}
             className="pointer-events-none absolute -top-10 -right-10 w-[160px] rotate-12 opacity-30"
           />
-          <h3 className="label-mono text-soft relative">
+          <h3 className="relative label-mono text-soft">
             {content.constraintsLabel}
           </h3>
           <ol role="list" className="relative flex flex-col">
             {content.constraints.map((constraint, index) => (
               <li
                 key={constraint}
-                className="border-foreground/12 flex gap-5 border-t py-6 first:border-t-0 first:pt-0 last:pb-0"
+                className="flex gap-5 border-t border-foreground/12 py-6 first:border-t-0 first:pt-0 last:pb-0"
               >
                 <span
                   aria-hidden
-                  className="label-mono text-brand-ink pt-2 whitespace-nowrap"
+                  className="pt-2 label-mono whitespace-nowrap text-brand-ink"
                 >
                   {String(index + 1).padStart(2, '0')}
                 </span>

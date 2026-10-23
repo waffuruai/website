@@ -229,6 +229,14 @@
     text-underline-offset: 4px;
   }
 
+  /*
+   * One mailing-list signup per page: the footer's copy steps aside when the
+   * page shows its own (home, contact). No JavaScript involved.
+   */
+  body:has(main [data-newsletter]) footer [data-newsletter] {
+    display: none;
+  }
+
   ::placeholder {
     color: var(--faint);
   }

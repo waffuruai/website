@@ -41,21 +41,21 @@ export default async function LegalIndexPage() {
       />
       <section
         aria-label={legalCopy.label}
-        className="max-w-site px-site mx-auto pb-16 md:pb-24"
+        className="mx-auto max-w-site px-site pb-16 md:pb-24"
       >
-        <ul className="border-foreground/12 border-t">
+        <ul className="border-t border-foreground/12">
           {policies.map((policy) => (
-            <li key={policy.slug} className="border-foreground/12 border-b">
+            <li key={policy.slug} className="border-b border-foreground/12">
               <LocalizedLink
                 href={`/legal/${policy.slug}`}
-                className="group text-foreground hover:text-foreground grid gap-x-12 gap-y-3 py-8 md:grid-cols-[1fr_1.4fr_auto] md:items-baseline md:py-10"
+                className="group grid gap-x-12 gap-y-3 py-8 text-foreground hover:text-foreground md:grid-cols-[1fr_1.4fr_auto] md:items-baseline md:py-10"
               >
                 <span className="font-serif text-4xl leading-none tracking-[-0.01em] md:text-5xl">
                   {policy.title}
                 </span>
-                <span className="text-soft max-w-[560px] text-base leading-[1.6]">
+                <span className="max-w-[560px] text-base leading-[1.6] text-soft">
                   {policy.description}
-                  <span className="label-mono text-muted-foreground mt-3 block">
+                  <span className="mt-3 block label-mono text-muted-foreground">
                     {legalCopy.lastUpdated}{' '}
                     <time dateTime={policy.date}>
                       {formatPolicyDate(policy.date)}
@@ -64,7 +64,7 @@ export default async function LegalIndexPage() {
                 </span>
                 <span
                   aria-hidden="true"
-                  className="text-muted-foreground group-hover:text-foreground hidden transition-transform group-hover:translate-x-1 md:block"
+                  className="hidden text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-foreground md:block"
                 >
                   →
                 </span>

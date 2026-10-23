@@ -17,7 +17,7 @@ export function HelpLinks({
   return (
     <section
       aria-labelledby="help-links-heading"
-      className="max-w-site px-site mx-auto pb-16 md:pb-24"
+      className="mx-auto max-w-site px-site pb-16 md:pb-24"
     >
       <SectionHeading id="help-links-heading" title={title} />
       <ul className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-14 lg:grid-cols-4">
@@ -31,12 +31,12 @@ export function HelpLinks({
                 </span>
                 <span
                   aria-hidden="true"
-                  className="text-muted-foreground group-hover:text-foreground transition-colors"
+                  className="text-muted-foreground transition-colors group-hover:text-foreground"
                 >
                   {newTab ? '↗' : '→'}
                 </span>
               </span>
-              <span className="text-soft text-[15px] leading-relaxed">
+              <span className="text-[15px] leading-relaxed text-soft">
                 {item.body}
               </span>
               {newTab && <span className="sr-only">{newTabLabel}</span>}

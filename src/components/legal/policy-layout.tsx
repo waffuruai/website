@@ -43,7 +43,7 @@ function TableOfContents({
           <li key={heading.id}>
             <a
               href={`#${heading.id}`}
-              className="text-soft hover:text-foreground inline-flex min-h-11 items-center text-[15px] leading-snug transition-colors lg:min-h-9 lg:py-1"
+              className="inline-flex min-h-11 items-center text-[15px] leading-snug text-soft transition-colors hover:text-foreground lg:min-h-9 lg:py-1"
             >
               {heading.text}
             </a>
@@ -84,15 +84,15 @@ export function PolicyLayout({
       data-section="policy"
       className={
         showToc
-          ? 'max-w-site px-site mx-auto pt-16 pb-12 md:pt-24 lg:grid lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16'
-          : 'max-w-site px-site mx-auto pt-16 pb-12 md:pt-24'
+          ? 'mx-auto max-w-site px-site pt-16 pb-12 md:pt-24 lg:grid lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-16'
+          : 'mx-auto max-w-site px-site pt-16 pb-12 md:pt-24'
       }
     >
       <article lang="en" className="max-w-[760px] min-w-0">
         <header className="flex flex-col gap-6">
           <LocalizedLink
             href="/legal"
-            className="label-mono text-soft hover:text-foreground inline-flex min-h-11 w-fit items-center gap-2"
+            className="inline-flex min-h-11 w-fit items-center gap-2 label-mono text-soft hover:text-foreground"
           >
             <span aria-hidden="true">←</span>
             {legalCopy.allLegal}
@@ -106,8 +106,8 @@ export function PolicyLayout({
           </p>
         </header>
         {showToc && (
-          <details className="border-foreground/12 bg-card mt-10 rounded-2xl border px-5 py-1 lg:hidden">
-            <summary className="label-mono text-soft flex min-h-11 cursor-pointer items-center">
+          <details className="mt-10 rounded-2xl border border-foreground/12 bg-card px-5 py-1 lg:hidden">
+            <summary className="flex min-h-11 cursor-pointer items-center label-mono text-soft">
               {legalCopy.onThisPage}
             </summary>
             <TableOfContents headings={headings} className="pb-3" />
@@ -120,12 +120,12 @@ export function PolicyLayout({
       {showToc && (
         <aside lang="en" className="hidden lg:block">
           <div className="sticky top-28">
-            <p className="label-mono text-muted-foreground mb-3">
+            <p className="mb-3 label-mono text-muted-foreground">
               {legalCopy.onThisPage}
             </p>
             <TableOfContents
               headings={headings}
-              className="border-foreground/12 max-h-[calc(100dvh-10rem)] overflow-y-auto border-l pl-5"
+              className="max-h-[calc(100dvh-10rem)] overflow-y-auto border-l border-foreground/12 pl-5"
             />
           </div>
         </aside>

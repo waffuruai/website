@@ -15,9 +15,9 @@ export function HiringCallout({ content }: { content: HiringContent }) {
     <section
       id="hiring"
       aria-labelledby="hiring-title"
-      className="max-w-site px-site mx-auto py-12 md:py-20"
+      className="mx-auto max-w-site px-site py-12 md:py-20"
     >
-      <div className="border-foreground/12 grid gap-10 border-t pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-16 md:pt-16">
+      <div className="grid gap-10 border-t border-foreground/12 pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-16 md:pt-16">
         <div className="flex flex-col gap-6">
           <MonoLabel dot>{content.label}</MonoLabel>
           <h2 id="hiring-title" className="heading-section">
@@ -29,7 +29,7 @@ export function HiringCallout({ content }: { content: HiringContent }) {
             {content.lines.map((line) => (
               <p
                 key={line}
-                className="text-soft text-[19px] leading-[1.55] text-pretty"
+                className="text-[19px] leading-[1.55] text-pretty text-soft"
               >
                 {line}
               </p>
@@ -43,7 +43,7 @@ export function HiringCallout({ content }: { content: HiringContent }) {
               {content.skills.map((skill) => (
                 <li
                   key={skill}
-                  className="border-foreground/16 text-foreground rounded-full border px-4 py-2.5 text-[14px]"
+                  className="rounded-full border border-foreground/16 px-4 py-2.5 text-[14px] text-foreground"
                 >
                   {skill}
                 </li>

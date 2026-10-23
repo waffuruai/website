@@ -23,7 +23,7 @@ export function ThemePanel({
       className={cn(
         'flex min-h-[280px] flex-col justify-between gap-8 rounded-2xl border p-5 md:p-6',
         theme === 'light'
-          ? 'light bg-background text-foreground border-foreground/12'
+          ? 'light border-foreground/12 bg-background text-foreground'
           : 'border-foreground/12 bg-(--roast) text-(--cream)',
         className,
       )}

@@ -77,11 +77,11 @@ export function MotifsSection({
         {content.items.map((item) => (
           <li
             key={item.key}
-            className="border-foreground/12 bg-card flex flex-col gap-5 rounded-2xl border p-5"
+            className="flex flex-col gap-5 rounded-2xl border border-foreground/12 bg-card p-5"
           >
             <div
               aria-hidden
-              className="border-foreground/10 bg-background flex h-44 items-center justify-center overflow-hidden rounded-xl border"
+              className="flex h-44 items-center justify-center overflow-hidden rounded-xl border border-foreground/10 bg-background"
             >
               <Motif kind={item.key} />
             </div>
@@ -89,7 +89,7 @@ export function MotifsSection({
               <h3 className="font-serif text-[28px] leading-[1.05]">
                 {item.name}
               </h3>
-              <p className="text-muted-foreground text-[15px] leading-[1.55] text-pretty">
+              <p className="text-[15px] leading-[1.55] text-pretty text-muted-foreground">
                 {item.description}
               </p>
             </div>

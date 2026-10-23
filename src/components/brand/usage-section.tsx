@@ -14,7 +14,7 @@ function RuleList({
 }) {
   const Icon = tone === 'do' ? Check : X;
   return (
-    <div className="border-foreground/12 bg-card flex flex-col gap-6 rounded-3xl border p-6 md:p-10">
+    <div className="flex flex-col gap-6 rounded-3xl border border-foreground/12 bg-card p-6 md:p-10">
       <h3 className="font-serif text-[clamp(34px,3.4vw,44px)] leading-none">
         {label}
       </h3>
@@ -26,11 +26,11 @@ function RuleList({
               strokeWidth={2.25}
               className={
                 tone === 'do'
-                  ? 'text-success mt-1 size-5 shrink-0'
-                  : 'text-destructive mt-1 size-5 shrink-0'
+                  ? 'mt-1 size-5 shrink-0 text-success'
+                  : 'mt-1 size-5 shrink-0 text-destructive'
               }
             />
-            <span className="text-soft text-base leading-[1.6] text-pretty">
+            <span className="text-base leading-[1.6] text-pretty text-soft">
               {item}
             </span>
           </li>

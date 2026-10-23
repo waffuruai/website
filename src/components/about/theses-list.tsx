@@ -11,7 +11,7 @@ export function ThesesList({ content }: { content: AboutContent['beliefs'] }) {
     <section
       id="beliefs"
       aria-labelledby="beliefs-title"
-      className="max-w-site px-site mx-auto py-[72px] md:py-[120px]"
+      className="mx-auto max-w-site px-site py-[72px] md:py-[120px]"
     >
       <SectionHeading
         id="beliefs-title"
@@ -20,7 +20,7 @@ export function ThesesList({ content }: { content: AboutContent['beliefs'] }) {
       />
       <ol
         role="list"
-        className="border-foreground/12 divide-foreground/12 mt-12 divide-y border-y md:mt-16"
+        className="mt-12 divide-y divide-foreground/12 border-y border-foreground/12 md:mt-16"
       >
         {content.theses.map((thesis, index) => (
           <li
@@ -33,7 +33,7 @@ export function ThesesList({ content }: { content: AboutContent['beliefs'] }) {
             <p className="font-serif text-[clamp(28px,3vw,42px)] leading-[1.08] tracking-[-0.01em] text-balance">
               {thesis.statement}
             </p>
-            <p className="text-muted-foreground text-base leading-[1.6] text-pretty md:pt-2">
+            <p className="text-base leading-[1.6] text-pretty text-muted-foreground md:pt-2">
               {thesis.body}
             </p>
           </li>

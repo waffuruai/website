@@ -83,9 +83,9 @@ export function NewsletterSignup({ className }: { className?: string }) {
   }
 
   return (
-    <div className={cn('flex flex-col gap-4', className)}>
+    <div data-newsletter className={cn('flex flex-col gap-4', className)}>
       <p className="font-serif text-3xl leading-[1.05]">{newsletter.heading}</p>
-      <p className="text-soft max-w-md text-[15px] leading-relaxed">
+      <p className="max-w-md text-[15px] leading-relaxed text-soft">
         {newsletter.description}
       </p>
       <form
@@ -111,7 +111,7 @@ export function NewsletterSignup({ className }: { className?: string }) {
           placeholder={newsletter.placeholder}
           aria-invalid={status === 'invalid' || undefined}
           aria-describedby={message ? statusId : undefined}
-          className="border-foreground/28 h-[52px] rounded-full px-5 text-[15px] sm:flex-1 md:text-[15px] dark:bg-transparent"
+          className="h-[52px] rounded-full border-foreground/28 px-5 text-[15px] sm:flex-1 md:text-[15px] dark:bg-transparent"
         />
         <div aria-hidden="true" className="sr-only">
           <label htmlFor={honeypotId}>{newsletter.honeypot}</label>
@@ -127,7 +127,7 @@ export function NewsletterSignup({ className }: { className?: string }) {
         <Button
           type="submit"
           disabled={sending}
-          className="bg-primary text-primary-foreground hover:bg-primary/90 h-auto min-h-[52px] gap-2.5 rounded-full px-7 text-[15px] font-medium"
+          className="h-auto min-h-[52px] gap-2.5 rounded-full bg-primary px-7 text-[15px] font-medium text-primary-foreground hover:bg-primary/90"
         >
           {sending ? newsletter.submitting : newsletter.submit}
           {!sending && <span aria-hidden="true">→</span>}
