@@ -109,7 +109,7 @@ const ja: Dictionary = {
       },
       support: {
         label: 'サポート',
-        description: 'よくある回答、ドキュメント、連絡方法。',
+        description: 'よくある回答と連絡方法。',
       },
       contact: {
         label: 'お問い合わせ',

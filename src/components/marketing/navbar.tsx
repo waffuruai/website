@@ -205,22 +205,24 @@ function DesktopNav({ nav, path }: { nav: Nav; path: string }) {
             </NavigationMenuItem>
           );
         })}
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <a
-              href={site.urls.docs}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                navText,
-                'inline-flex h-10 items-center gap-1 rounded-full px-3',
-              )}
-            >
-              {nav.items.docs.label}
-              <ArrowUpRightIcon className="size-3.5" aria-hidden />
-            </a>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+        {site.docsPublished && (
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <a
+                href={site.urls.docs}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  navText,
+                  'inline-flex h-10 items-center gap-1 rounded-full px-3',
+                )}
+              >
+                {nav.items.docs.label}
+                <ArrowUpRightIcon className="size-3.5" aria-hidden />
+              </a>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        )}
       </NavigationMenuList>
     </NavigationMenu>
   );

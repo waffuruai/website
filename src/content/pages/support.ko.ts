@@ -1,14 +1,13 @@
-import { mailto, site } from '@/content/site';
+import { mailto } from '@/content/site';
 import type { support } from './support';
 
 const supportKo: (typeof support)['en'] = {
   seo: {
     title: '지원',
     description:
-      '지금 이용할 수 있는 것, 얼리 액세스 방식, 지원 하드웨어, 문서 위치, 버그와 보안 이슈를 신고하는 방법.',
+      '지금 이용할 수 있는 것, 얼리 액세스 방식, 지원 하드웨어, 버그와 보안 이슈를 신고하는 방법.',
     keywords: [
       'Waffuru 지원',
-      'Waffuru 문서',
       'Waffuru 얼리 액세스',
       '보안 이슈 신고',
       '로컬 AI 하드웨어 지원',
@@ -22,11 +21,6 @@ const supportKo: (typeof support)['en'] = {
   links: {
     title: '어디서 *시작*할까',
     items: [
-      {
-        title: '문서 읽기',
-        body: '가이드와 레퍼런스는 docs.waffuru.ai에 있습니다.',
-        href: site.urls.docs,
-      },
       {
         title: '이메일 지원',
         body: '버그, 질문, 설치 문제. 어떤 하드웨어에서 무엇을 실행했는지 함께 알려 주세요.',
@@ -49,7 +43,7 @@ const supportKo: (typeof support)['en'] = {
     {
       question: '지금 무엇을 쓸 수 있나요?',
       answer:
-        '우리 제품(Iron, Butter, Waffle, Syrup)은 당분간 비공개 소스이며 아직 일반에 공개되지 않았습니다. 얼리 액세스가 가장 먼저 써 볼 수 있는 방법입니다. 가이드와 레퍼런스는 docs.waffuru.ai에 있습니다.',
+        '우리 제품(Iron, Butter, Waffle, Syrup)은 당분간 비공개 소스이며 아직 일반에 공개되지 않았습니다. 얼리 액세스가 가장 먼저 써 볼 수 있는 방법입니다.',
     },
     {
       question: '얼리 액세스는 어떻게 진행되나요?',
@@ -60,11 +54,6 @@ const supportKo: (typeof support)['en'] = {
       question: '어떤 하드웨어에서 돌아가나요?',
       answer:
         'Apple 실리콘이 주력 대상으로, 모든 커널을 Metal용으로 가장 먼저 작성하고 튜닝합니다. NVIDIA CUDA는 그다음으로 RTX와 DGX Spark에서 프로덕션으로 운영 중이며, 데이터센터 GPU는 진행 중입니다. AMD ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다. MacBook과 Mac Studio, RTX 워크스테이션, DGX Spark, Strix Halo, 네오클라우드 플릿을 떠올리시면 됩니다.',
-    },
-    {
-      question: '문서는 어디에 있나요?',
-      answer:
-        'docs.waffuru.ai에 있습니다. 잘못되었거나 빠진 내용이 있다면 이 페이지의 지원 링크로 알려 주세요.',
     },
     {
       question: '버그는 어떻게 신고하나요?',

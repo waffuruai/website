@@ -756,7 +756,6 @@ export async function run(argv = process.argv.slice(2)) {
   const link = home.headers.link ?? '';
   for (const [rel, why] of [
     ['api-catalog', 'API catalog'],
-    ['service-doc', 'documentation'],
     ['text/markdown', 'markdown twin'],
     ['describedby', 'llms.txt'],
   ]) {

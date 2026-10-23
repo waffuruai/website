@@ -46,16 +46,11 @@ describe('buildApiCatalog', () => {
     ]);
   });
 
-  it('gives each API its docs and schema', () => {
+  it('gives each API its schema and no docs link', () => {
     const iron = catalog.linkset.find(
       (entry) => entry.anchor === 'https://waffuru.ai/iron/releases.json',
     );
-    expect(iron['service-doc']).toEqual([
-      expect.objectContaining({
-        href: 'https://docs.waffuru.ai',
-        type: 'text/html',
-      }),
-    ]);
+    expect(iron['service-doc']).toBeUndefined();
     expect(iron['service-desc']).toEqual([
       {
         href: 'https://waffuru.ai/.well-known/releases.schema.json',

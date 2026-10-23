@@ -180,13 +180,12 @@ export const iron: Localized<ProductCopy> = {
       },
       {
         question: 'How do I try it?',
-        answer:
-          'Request early access with the form on this page. The docs are at docs.waffuru.ai.',
+        answer: 'Request early access with the form on this page.',
       },
     ],
     cta: {
       title: 'Press your first *kernel*.',
-      body: 'Iron is in early access and closed source for now. Request access, and read the docs while you wait.',
+      body: 'Iron is in early access and closed source for now. Request access.',
       docsLabel: 'Read the docs',
     },
   },

@@ -228,7 +228,7 @@ export const butter: Localized<ProductCopy> = {
     ],
     cta: {
       title: 'Melt away *latency*.',
-      body: 'Butter is in early access and closed source for now. Request access, and read the docs while you wait.',
+      body: 'Butter is in early access and closed source for now. Request access.',
       docsLabel: 'Read the docs',
     },
   },

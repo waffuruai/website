@@ -42,14 +42,28 @@ export default async function SupportPage({
   return (
     <>
       <PageHero label={hero.label} title={hero.title} lede={hero.lede} />
-      <HelpLinks {...links} newTabLabel={common.opensInNewTab} />
+      <HelpLinks
+        {...links}
+        items={links.items.filter(
+          (item) => site.docsPublished || item.href !== site.urls.docs,
+        )}
+        newTabLabel={common.opensInNewTab}
+      />
       <Faq heading={common.faqHeading} items={faq} />
       <CtaCard
         title={cta.title}
         body={cta.body}
         actions={[
           { label: cta.email, href: mailto('Support') },
-          { label: cta.docs, href: site.urls.docs, variant: 'outline' },
+          ...(site.docsPublished
+            ? [
+                {
+                  label: cta.docs,
+                  href: site.urls.docs,
+                  variant: 'outline' as const,
+                },
+              ]
+            : []),
         ]}
       />
       <JsonLd

@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import { SITE, SITE_URL } from './site.mjs';
+import { SITE_URL } from './site.mjs';
 
 /**
  * Discovery files that are generated, not hand-written, because they must
@@ -48,7 +48,7 @@ export function buildApiCatalog(products, { schemaUrl } = {}) {
           title: `${product} installer releases`,
         })),
       },
-      ...feeds.map(({ product, url }) => ({
+      ...feeds.map(({ url }) => ({
         anchor: url,
         ...(schemaUrl
           ? {
@@ -57,13 +57,6 @@ export function buildApiCatalog(products, { schemaUrl } = {}) {
               ],
             }
           : {}),
-        'service-doc': [
-          {
-            href: SITE.docsUrl,
-            type: 'text/html',
-            title: `${SITE.name} documentation (${product})`,
-          },
-        ],
       })),
     ],
   };

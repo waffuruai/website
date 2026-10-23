@@ -1,4 +1,4 @@
-import { mailto, site } from '@/content/site';
+import { mailto } from '@/content/site';
 import type { FaqItem, Localized, Seo } from '@/content/types';
 import supportEs from './support.es';
 import supportFr from './support.fr';
@@ -29,10 +29,9 @@ export const support: Localized<SupportContent> = {
     seo: {
       title: 'Support',
       description:
-        'What is available today, how early access works, supported hardware, where the docs are, and how to report a bug or a security issue.',
+        'What is available today, how early access works, supported hardware, and how to report a bug or a security issue.',
       keywords: [
         'Waffuru support',
-        'Waffuru docs',
         'Waffuru early access',
         'report a security issue',
         'local AI hardware support',
@@ -46,11 +45,6 @@ export const support: Localized<SupportContent> = {
     links: {
       title: 'Where to *start*',
       items: [
-        {
-          title: 'Read the docs',
-          body: 'Guides and references live at docs.waffuru.ai.',
-          href: site.urls.docs,
-        },
         {
           title: 'Email support',
           body: 'Bugs, questions, install trouble. Say what you ran and on which hardware.',
@@ -73,7 +67,7 @@ export const support: Localized<SupportContent> = {
       {
         question: 'What can I use today?',
         answer:
-          'Our products (Iron, Butter, Waffle and Syrup) are private and closed source for now, and nothing is generally available yet. Early access is how people get in first. Guides and references live at docs.waffuru.ai.',
+          'Our products (Iron, Butter, Waffle and Syrup) are private and closed source for now, and nothing is generally available yet. Early access is how people get in first.',
       },
       {
         question: 'How does early access work?',
@@ -84,11 +78,6 @@ export const support: Localized<SupportContent> = {
         question: 'Which hardware does it run on?',
         answer:
           'Apple silicon is the primary target: every kernel is written and tuned for Metal first. NVIDIA CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run today but are not tuned yet. Think MacBook and Mac Studio, RTX workstations, DGX Spark, Strix Halo and neocloud fleets.',
-      },
-      {
-        question: 'Where are the docs?',
-        answer:
-          'At docs.waffuru.ai. If something there is wrong or missing, tell us through the support link on this page.',
       },
       {
         question: 'How do I report a bug?',

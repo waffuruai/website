@@ -82,24 +82,25 @@ describe.each(productSlugs)('ProductPage: %s', (slug) => {
     expect(container.querySelectorAll('section').length).toBeGreaterThan(5);
   });
 
+  // The docs are only offered once they are published.
+  const showDocs = site.docsPublished && facts.secondaryCta === 'docs';
+
   it(
-    facts.secondaryCta === 'docs'
+    showDocs
       ? 'offers the docs as the second action'
       : 'offers “Talk to us” as the second action',
     () => {
       renderPage(slug);
-      const expected =
-        facts.secondaryCta === 'docs'
-          ? { name: copy.cta.docsLabel!, href: site.urls.docs }
-          : { name: en.common.talkToUs, href: mailto('Sales') };
+      const expected = showDocs
+        ? { name: copy.cta.docsLabel!, href: site.urls.docs }
+        : { name: en.common.talkToUs, href: mailto('Sales') };
       const links = screen.getAllByRole('link', { name: expected.name });
       expect(links).toHaveLength(2);
       for (const link of links) {
         expect(link.getAttribute('href')).toBe(expected.href);
       }
       // The other secondary action must not appear.
-      const other =
-        facts.secondaryCta === 'docs' ? en.common.talkToUs : /read the docs/i;
+      const other = showDocs ? en.common.talkToUs : /read the docs/i;
       expect(screen.queryAllByRole('link', { name: other })).toHaveLength(0);
     },
   );

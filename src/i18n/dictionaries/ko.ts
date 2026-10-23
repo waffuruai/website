@@ -109,7 +109,7 @@ const ko: Dictionary = {
       },
       support: {
         label: '지원',
-        description: '답변, 문서, 연락 방법.',
+        description: '답변, 연락 방법.',
       },
       contact: {
         label: '연락처',

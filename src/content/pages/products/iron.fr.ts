@@ -175,13 +175,12 @@ const ironFr: (typeof iron)['en'] = {
     },
     {
       question: 'Comment l’essayer ?',
-      answer:
-        'Demandez un accès anticipé avec le formulaire de cette page. La documentation est sur docs.waffuru.ai.',
+      answer: 'Demandez un accès anticipé avec le formulaire de cette page.',
     },
   ],
   cta: {
     title: 'Pressez votre premier *kernel*.',
-    body: 'Iron est en accès anticipé et à code fermé pour l’instant. Demandez l’accès, et lisez la documentation en attendant.',
+    body: 'Iron est en accès anticipé et à code fermé pour l’instant. Demandez l’accès.',
     docsLabel: 'Lire la documentation',
   },
 };

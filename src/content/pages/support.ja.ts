@@ -1,4 +1,4 @@
-import { mailto, site } from '@/content/site';
+import { mailto } from '@/content/site';
 import type { support } from './support';
 
 // TODO(founder): add response expectations, a disclosure policy (safe harbour,
@@ -7,10 +7,9 @@ const supportJa: (typeof support)['en'] = {
   seo: {
     title: 'サポート',
     description:
-      '現在利用できるもの、早期アクセスの流れ、対応ハードウェア、ドキュメントの場所、不具合・セキュリティ問題の報告方法。',
+      '現在利用できるもの、早期アクセスの流れ、対応ハードウェア、不具合・セキュリティ問題の報告方法。',
     keywords: [
       'Waffuru サポート',
-      'Waffuru ドキュメント',
       'Waffuru 早期アクセス',
       'セキュリティ問題の報告',
       'ローカル AI 対応ハードウェア',
@@ -24,11 +23,6 @@ const supportJa: (typeof support)['en'] = {
   links: {
     title: 'まずは、*ここから*',
     items: [
-      {
-        title: 'ドキュメントを読む',
-        body: 'ガイドとリファレンスは docs.waffuru.ai にあります。',
-        href: site.urls.docs,
-      },
       {
         title: 'サポートにメールする',
         body: '不具合、質問、インストールのトラブル。何を実行したか、どのハードウェアかを添えてください。',
@@ -51,7 +45,7 @@ const supportJa: (typeof support)['en'] = {
     {
       question: '今日使えるものは何ですか？',
       answer:
-        '製品（Iron、Butter、Waffle、Syrup）は現時点では非公開でクローズドソースであり、一般提供されているものはまだありません。まず利用できるのは、早期アクセスの方々です。ガイドとリファレンスは docs.waffuru.ai にあります。',
+        '製品（Iron、Butter、Waffle、Syrup）は現時点では非公開でクローズドソースであり、一般提供されているものはまだありません。まず利用できるのは、早期アクセスの方々です。',
     },
     {
       question: '早期アクセスはどのような仕組みですか？',
@@ -62,11 +56,6 @@ const supportJa: (typeof support)['en'] = {
       question: 'どのハードウェアで動きますか？',
       answer:
         'Apple シリコンが第一の対象で、すべてのカーネルをまず Metal 向けに書き、チューニングしています。NVIDIA CUDA は第二の対象で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。AMD ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。想定しているのは、MacBook と Mac Studio、RTX ワークステーション、DGX Spark、Strix Halo、そしてネオクラウドのフリートです。',
-    },
-    {
-      question: 'ドキュメントはどこにありますか？',
-      answer:
-        'docs.waffuru.ai にあります。誤りや不足を見つけたら、このページのサポートへのリンクからお知らせください。',
     },
     {
       question: '不具合はどう報告すればよいですか？',

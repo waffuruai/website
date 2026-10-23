@@ -12,7 +12,6 @@ export const SITE = {
   mission: 'Democratize access to intelligence.',
   description:
     'Waffuru builds GPU kernels (Iron), an inference engine (Butter), a GPU control plane (Waffle) and a memory layer (Syrup) that run models fast on the hardware you already own.',
-  docsUrl: 'https://docs.waffuru.ai',
   earlyAccessUrl: 'https://forms.gle/SHaVSRRWmZKy8UJy7',
   email: 'hello@waffuru.ai',
 };

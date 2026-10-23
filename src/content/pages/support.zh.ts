@@ -1,14 +1,13 @@
-import { mailto, site } from '@/content/site';
+import { mailto } from '@/content/site';
 import type { support } from './support';
 
 const supportZh: (typeof support)['en'] = {
   seo: {
     title: '支持',
     description:
-      '目前可用的内容、抢先体验如何运作、支持的硬件、文档位置，以及如何报告 bug 或安全问题。',
+      '目前可用的内容、抢先体验如何运作、支持的硬件，以及如何报告 bug 或安全问题。',
     keywords: [
       'Waffuru 支持',
-      'Waffuru 文档',
       'Waffuru 抢先体验',
       '报告安全漏洞',
       '本地 AI 硬件支持',
@@ -22,11 +21,6 @@ const supportZh: (typeof support)['en'] = {
   links: {
     title: '从这里*开始*',
     items: [
-      {
-        title: '阅读文档',
-        body: '指南和参考资料都在 docs.waffuru.ai。',
-        href: site.urls.docs,
-      },
       {
         title: '发邮件寻求支持',
         body: 'Bug、疑问、安装问题。请说明你运行了什么，以及用的是什么硬件。',
@@ -49,7 +43,7 @@ const supportZh: (typeof support)['en'] = {
     {
       question: '目前能用什么？',
       answer:
-        '我们的产品（Iron、Butter、Waffle 和 Syrup）暂时是私有的闭源软件，尚未全面开放。抢先体验是最早用上的途径。指南和参考资料都在 docs.waffuru.ai。',
+        '我们的产品（Iron、Butter、Waffle 和 Syrup）暂时是私有的闭源软件，尚未全面开放。抢先体验是最早用上的途径。',
     },
     {
       question: '抢先体验如何运作？',
@@ -60,11 +54,6 @@ const supportZh: (typeof support)['en'] = {
       question: '支持哪些硬件？',
       answer:
         'Apple 芯片是首要目标：每个内核都先为 Metal 编写并调优。NVIDIA CUDA 其次，已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。AMD ROCm 和 Vulkan 目前可以运行，但尚未调优。典型环境包括 MacBook 和 Mac Studio、RTX 工作站、DGX Spark、Strix Halo，以及新型云服务商的集群。',
-    },
-    {
-      question: '文档在哪里？',
-      answer:
-        '在 docs.waffuru.ai。如果那里有错误或缺漏，请通过本页的支持链接告诉我们。',
     },
     {
       question: '如何报告 bug？',
