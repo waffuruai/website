@@ -11,14 +11,26 @@ import { fileURLToPath } from 'node:url';
 
 import { copyNotFound } from './postbuild/not-found.mjs';
 import { guardReservedPaths } from './postbuild/guard.mjs';
+import { writeMarkdownMirrors } from './postbuild/markdown-mirrors.mjs';
+import { writeLlmsTxt } from './postbuild/llms-txt.mjs';
+import { writeOgImages } from './postbuild/og-images.mjs';
+import { writeWellKnown } from './postbuild/well-known.mjs';
 import { writeCspManifest } from './postbuild/csp.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 
-/** Each step receives `{ root, out }` and may be async. */
+/**
+ * Each step receives `{ root, out }` and may be async. The markdown mirrors
+ * come before llms.txt (llms-full.txt concatenates them), and the CSP
+ * manifest stays last: it hashes the final HTML.
+ */
 const STEPS = [
   ['404 page', copyNotFound],
   ['reserved installer paths', guardReservedPaths],
+  ['markdown mirrors', writeMarkdownMirrors],
+  ['llms.txt', writeLlmsTxt],
+  ['share images', writeOgImages],
+  ['well-known files', writeWellKnown],
   ['CSP manifest', writeCspManifest],
 ];
 
