@@ -1,159 +1,151 @@
 import type { about } from './about';
 
-// TODO(i18n): translate to ko. Keep hrefs, slugs and product names.
 const aboutKo: (typeof about)['en'] = {
   seo: {
-    title: 'Our mission: democratize access to intelligence',
+    title: '우리의 미션: 지능에 대한 접근의 민주화',
     description:
-      'Waffuru’s mission is to democratize access to intelligence. What we believe, what we value and why we build local-first AI infrastructure.',
+      'Waffuru의 미션은 지능에 대한 접근을 민주화하는 것입니다. 우리가 믿는 것, 중요하게 여기는 가치, 로컬 우선 AI 인프라를 만드는 이유.',
     keywords: [
-      'Waffuru mission',
-      'democratize AI',
-      'local-first AI company',
-      'AI infrastructure startup',
+      'Waffuru 미션',
+      'AI 민주화',
+      '로컬 우선 AI 기업',
+      'AI 인프라 스타트업',
     ],
   },
   hero: {
-    label: 'About Waffuru',
-    title: 'Democratize access to *intelligence*.',
-    lede: 'Waffuru builds the stack underneath local-first AI: kernels, inference, fleet control and memory that run models fast on the hardware people already own.',
+    label: 'Waffuru 소개',
+    title: '*지능*에 대한 접근을 민주화합니다.',
+    lede: 'Waffuru는 로컬 우선 AI의 밑바탕이 되는 스택을 만듭니다. 이미 가진 하드웨어에서 모델을 빠르게 돌리는 커널, 추론, 플릿 제어, 메모리입니다.',
     actions: [
-      { label: 'Meet the team', href: '/about/team' },
-      { label: 'Work with us', href: '#hiring', variant: 'outline' },
+      { label: '팀 소개', href: '/about/team' },
+      { label: '함께 일하기', href: '#hiring', variant: 'outline' },
     ],
   },
   why: {
-    title: 'Why we *build*.',
-    intro: 'Intelligence should run where people already are.',
+    title: '우리가 *만드는* 이유.',
+    intro: '지능은 사람들이 이미 있는 곳에서 돌아가야 합니다.',
     paragraphs: [
-      'Models are getting good enough to run on hardware people already own.',
-      'That only matters if the stack underneath is ready for it. It has to be faster, cheaper and yours: kernels that get more from every watt, serving without Python in the way, and memory that stays on your machine. It is also the foundation for local-first personal assistants.',
-      'Access to intelligence must not depend on geography, wealth or credentials. A model that needs a datacenter, a budget or a badge is not access. One that runs on a computer you already own is.',
+      '모델은 이제 사람들이 이미 가진 하드웨어에서 돌릴 수 있을 만큼 좋아지고 있습니다.',
+      '그 밑의 스택이 준비되어 있어야 의미가 있습니다. 더 빠르고, 더 저렴하고, 온전히 내 것이어야 합니다. 와트마다 더 많은 일을 해내는 커널, Python이 끼어들지 않는 서빙, 내 컴퓨터를 떠나지 않는 메모리가 그 조건입니다. 로컬 우선 개인 어시스턴트의 토대이기도 합니다.',
+      '지능에 대한 접근이 지역, 재산, 자격에 좌우되어서는 안 됩니다. 데이터센터나 예산, 신분증이 있어야 쓸 수 있는 모델은 접근이 아닙니다. 이미 가진 컴퓨터에서 돌아가는 모델이 접근입니다.',
     ],
-    constraintsLabel: 'Two constraints we hold ourselves to',
+    constraintsLabel: '스스로에게 거는 두 가지 제약',
     constraints: [
-      'It runs on consumer hardware.',
-      'Your data stays on your machine unless you opt in.',
+      '일반 소비자용 하드웨어에서 돌아갑니다.',
+      '직접 동의하지 않는 한 데이터는 내 컴퓨터를 떠나지 않습니다.',
     ],
   },
   beliefs: {
-    title: 'What we *believe*.',
-    intro: 'Seven theses that drive what we build.',
+    title: '우리가 *믿는* 것.',
+    intro: '우리가 무엇을 만들지 결정하는 일곱 가지 명제.',
     theses: [
       {
         statement:
-          'Demand for intelligence is limitless. The resources powering it are not.',
-        body: 'Scaling inference takes more than new datacenters and power. It takes more useful work from every unit of compute and energy, so access grows faster than cost, energy demand and environmental impact.',
+          '지능에 대한 수요는 끝이 없습니다. 그것을 돌리는 자원은 그렇지 않습니다.',
+        body: '추론을 확장하려면 새 데이터센터와 전력만으로는 부족합니다. 컴퓨트와 에너지 한 단위에서 더 쓸모 있는 일을 뽑아내야 접근성이 비용, 에너지 수요, 환경 영향보다 빠르게 커집니다.',
       },
       {
-        statement: 'When power is the ceiling, efficiency is the variable.',
-        body: 'Tokens per watt and dollars per workload are what you can still maximize.',
+        statement: '전력이 한계라면, 바꿀 수 있는 변수는 효율입니다.',
+        body: '와트당 토큰 수와 워크로드당 비용은 여전히 극대화할 수 있는 지표입니다.',
       },
       {
-        statement: 'Demand for compute is insatiable.',
-        body: 'Every efficiency gain gets spent on more intelligence, the Jevons paradox at work. That is why efficiency work never finishes.',
-      },
-      {
-        statement: 'Good-enough models on commodity hardware are close.',
-        body: 'Within about two years, models running on hardware people already own will be good enough for meaningful work. Moore’s law and fast AI progress keep compounding.',
+        statement: '컴퓨트에 대한 수요는 채워지지 않습니다.',
+        body: '효율이 좋아지면 그만큼 더 많은 지능에 쓰입니다. 제번스의 역설이 그대로 작동합니다. 효율 개선이 끝나지 않는 이유입니다.',
       },
       {
         statement:
-          'Everyone will have a personal assistant, or a team of them.',
-        body: 'And those assistants will talk to each other.',
+          '범용 하드웨어에서 돌아가는 충분히 좋은 모델이 가까이 왔습니다.',
+        body: '약 2년 안에, 사람들이 이미 가진 하드웨어에서 돌아가는 모델로도 의미 있는 일을 할 수 있게 될 것입니다. 무어의 법칙과 빠른 AI 발전이 계속 복리로 쌓이고 있습니다.',
       },
       {
-        statement: 'People want agency.',
-        body: 'An assistant has to be a trusted extension of yourself: helpful, approachable, not scary. That relationship will be as personal as the one with your phone.',
+        statement: '누구나 개인 어시스턴트, 혹은 어시스턴트 팀을 갖게 됩니다.',
+        body: '그리고 그 어시스턴트들은 서로 대화하게 됩니다.',
+      },
+      {
+        statement: '사람들은 주도권을 원합니다.',
+        body: '어시스턴트는 믿을 수 있는 나의 연장선이어야 합니다. 도움이 되고, 다가가기 쉽고, 무섭지 않아야 합니다. 그 관계는 스마트폰과의 관계만큼 개인적인 것이 될 것입니다.',
       },
       {
         statement:
-          'Access to intelligence must not depend on geography, wealth or credentials.',
-        body: 'Raising earning potential everywhere requires open, local access to intelligence.',
+          '지능에 대한 접근이 지역, 재산, 자격에 좌우되어서는 안 됩니다.',
+        body: '어디서나 소득 잠재력을 끌어올리려면 열려 있고 로컬에서 쓸 수 있는 지능이 필요합니다.',
       },
     ],
   },
   values: {
-    title: 'What we *value*.',
-    intro: 'Fourteen values that guide how we decide.',
+    title: '우리가 *중시하는* 가치.',
+    intro: '우리의 의사결정을 이끄는 열네 가지 가치.',
     items: [
       {
-        name: 'Freedom',
-        line: 'Enabling freedom through technology access is fundamental to what we build.',
+        name: '자유',
+        line: '기술 접근을 통해 자유를 가능하게 하는 것이 우리가 만드는 모든 것의 근본입니다.',
       },
       {
-        name: 'Autonomy',
-        line: 'We build systems that give people time back.',
+        name: '자율',
+        line: '사람들에게 시간을 돌려주는 시스템을 만듭니다.',
       },
       {
-        name: 'Agency',
-        line: 'If something needs doing and you are best placed, start it.',
+        name: '주도성',
+        line: '해야 할 일이 있고 내가 가장 적임자라면, 먼저 시작합니다.',
       },
-      { name: 'Respect', line: 'We treat people as capable peers.' },
-      { name: 'Trust', line: 'Earned slowly, lost in a moment.' },
+      { name: '존중', line: '사람을 유능한 동료로 대합니다.' },
+      { name: '신뢰', line: '천천히 쌓이고, 한순간에 무너집니다.' },
       {
-        name: 'Honesty',
-        line: 'We state status, risk, mistakes and limits directly.',
-      },
-      {
-        name: 'Integrity',
-        line: 'Keep commitments. Do not ship what you would not stand behind.',
+        name: '정직',
+        line: '상태, 위험, 실수, 한계를 있는 그대로 말합니다.',
       },
       {
-        name: 'Equal opportunity',
-        line: 'Access to intelligence must not depend on geography, wealth or credentials.',
-      },
-      { name: 'Compassion', line: 'We care about people as people.' },
-      {
-        name: 'Meritocracy',
-        line: 'The best idea wins, on evidence and impact.',
+        name: '진실성',
+        line: '약속을 지킵니다. 책임질 수 없는 것은 내놓지 않습니다.',
       },
       {
-        name: 'Scientific method',
-        line: 'Hypothesize, measure, reproduce. Benchmarks beat opinions.',
+        name: '기회의 평등',
+        line: '지능에 대한 접근이 지역, 재산, 자격에 좌우되어서는 안 됩니다.',
+      },
+      { name: '연민', line: '사람을 사람으로서 아낍니다.' },
+      {
+        name: '능력주의',
+        line: '가장 좋은 아이디어가 증거와 영향력으로 이깁니다.',
       },
       {
-        name: 'Quick decisions and actions',
-        line: 'A bias to shipping, measuring and learning.',
+        name: '과학적 방법',
+        line: '가설을 세우고, 측정하고, 재현합니다. 벤치마크는 의견을 이깁니다.',
       },
       {
-        name: 'Fiscal conservatism',
-        line: 'We spend time and money like they are scarce.',
+        name: '빠른 결정과 실행',
+        line: '출시하고, 측정하고, 배우는 쪽으로 기웁니다.',
       },
       {
-        name: 'Having fun',
-        line: 'Hard problems deserve teams that enjoy the work.',
+        name: '재정적 보수주의',
+        line: '시간과 돈을 귀한 자원처럼 씁니다.',
+      },
+      {
+        name: '즐거움',
+        line: '어려운 문제일수록 일을 즐기는 팀이 풀어야 합니다.',
       },
     ],
   },
   teamTeaser: {
-    title: 'The people *behind* it.',
-    body: 'Research, security, revenue and a couple of founders who have shipped before.',
-    cta: 'Meet the team',
-    portraitAlt: 'Portrait of {name}',
+    title: '그 *뒤*에 있는 사람들.',
+    body: '연구, 보안, 매출, 그리고 이미 제품을 출시해 본 창업자들.',
+    cta: '팀 소개',
+    portraitAlt: '{name}의 사진',
   },
   hiring: {
-    label: 'Hiring',
-    title: 'Pull up a *chair*.',
+    label: '채용',
+    title: '*의자*를 당겨 앉으세요.',
     lines: [
-      'We want people who enjoy the low-level work: GPU kernels, inference engines, Rust, Swift and Metal, and the product that sits on top of them.',
-      'We work asynchronously across time zones. We are also an agentic company, with humans and agents building together.',
-      'If that sounds like your kind of kitchen, tell us what you would like to build.',
+      '저수준 작업을 즐기는 분을 찾습니다. GPU 커널, 추론 엔진, Rust, Swift와 Metal, 그리고 그 위에 올라가는 제품까지.',
+      '우리는 시간대를 넘나들며 비동기로 일합니다. 사람과 에이전트가 함께 만드는 에이전틱 컴퍼니이기도 합니다.',
+      '우리 주방이 마음에 드신다면, 무엇을 만들고 싶은지 들려주세요.',
     ],
-    skillsLabel: 'What we like working on',
-    skills: [
-      'Low-level GPU',
-      'Kernels',
-      'Inference',
-      'Rust',
-      'Swift and Metal',
-      'Product',
-    ],
-    cta: 'Get in touch',
+    skillsLabel: '우리가 좋아하는 작업',
+    skills: ['저수준 GPU', '커널', '추론', 'Rust', 'Swift와 Metal', '제품'],
+    cta: '문의하기',
   },
   cta: {
-    title: 'Try it *early*.',
-    body: 'Our products are private for now. Request early access, or talk to us about what you want to run on the hardware you already own.',
+    title: '*먼저* 써 보세요.',
+    body: '제품은 당분간 비공개입니다. 얼리 액세스를 신청하시거나, 이미 가진 하드웨어에서 무엇을 돌리고 싶은지 들려주세요.',
   },
 };
 

@@ -1,33 +1,30 @@
 import type { teamCopy } from './team';
 
-// TODO(i18n): translate to ko. Keep hrefs, slugs and product names.
 const teamCopyKo: (typeof teamCopy)['en'] = {
   'kyle-croll': {
-    role: 'CEO',
-    background: 'Ex-military. Threat intelligence, AI strategy and security.',
-    bio: 'Kyle is ex-military, with a background in threat intelligence and threat hunting. As CEO he sets Waffuru’s direction and brings a security lens to how AI gets built and deployed. He holds an MBA from the McCombs School of Business at UT Austin.',
+    role: '최고경영자(CEO)',
+    background: '군 출신. 위협 인텔리전스, AI 전략, 보안.',
+    bio: 'Kyle은 군 출신으로 위협 인텔리전스와 위협 헌팅 분야에서 일했습니다. CEO로서 Waffuru의 방향을 정하고, AI를 만들고 배포하는 방식에 보안의 관점을 더합니다. UT 오스틴 맥콤스 경영대학원(McCombs School of Business)에서 MBA를 받았습니다.',
   },
   'eric-gonzalez': {
-    role: 'Chief Revenue Officer',
-    background: 'Scaled companies from $50M to $2B ARR. Ex-Oracle NetSuite.',
-    bio: 'Eric is a revenue leader who has scaled companies from $50M to $2B in ARR. He previously worked at Oracle NetSuite and at Anaconda, the company behind Conda, and he serves as a board member.',
+    role: '최고매출책임자(CRO)',
+    background: '기업을 ARR $50M에서 $2B까지 성장시킴. 전 Oracle NetSuite.',
+    bio: 'Eric은 기업을 ARR $50M에서 $2B까지 키워 낸 매출 리더입니다. 이전에는 Oracle NetSuite와 Conda를 만든 Anaconda에서 일했으며, 이사회 구성원으로도 활동하고 있습니다.',
   },
   'eric-kryski': {
-    role: 'Chief Product Officer',
-    background:
-      'Full-stack developer, designer and ML researcher. Co-founder of Bidali.',
-    bio: 'Eric is a full-stack developer, designer and ML researcher who ships product end to end. He is CEO and co-founder of Bidali and co-founder of Bullish Ventures, and he leads product at Waffuru.',
+    role: '최고제품책임자(CPO)',
+    background: '풀스택 개발자, 디자이너, ML 연구자. Bidali 공동창업자.',
+    bio: 'Eric은 제품을 처음부터 끝까지 만들어 내는 풀스택 개발자이자 디자이너, ML 연구자입니다. Bidali의 CEO 겸 공동창업자이자 Bullish Ventures의 공동창업자이며, Waffuru에서 제품을 이끌고 있습니다.',
   },
   'tom-turney': {
-    role: 'Chief of Research',
-    background:
-      'AI researcher behind TurboQuant+. Former tech lead manager at Google.',
-    bio: 'Tom is the AI researcher behind TurboQuant+, the compression work Syrup uses to shrink embeddings, and he leads research at Waffuru. Before this he was a tech lead manager at Google.',
+    role: '최고연구책임자(Chief of Research)',
+    background: 'TurboQuant+를 만든 AI 연구자. 전 Google 테크 리드 매니저.',
+    bio: 'Tom은 TurboQuant+를 만든 AI 연구자입니다. Syrup이 임베딩을 줄이는 데 쓰는 압축 기술이 바로 TurboQuant+이며, Waffuru에서 연구를 이끌고 있습니다. 이전에는 Google에서 테크 리드 매니저로 일했습니다.',
   },
   'cory-smith': {
-    role: 'Chief Technology Officer',
-    background: 'Has exited a company. Co-founder and CTO of Bidali.',
-    bio: 'Cory has exited a company and is co-founder and CTO of Bidali, which he helped grow to millions in stablecoin payments volume. He is a managing director at Bullish Ventures and has been building consumer and enterprise products since 2009.',
+    role: '최고기술책임자(CTO)',
+    background: '회사를 엑시트한 경험. Bidali 공동창업자 겸 CTO.',
+    bio: 'Cory는 회사를 엑시트한 경험이 있으며, Bidali의 공동창업자 겸 CTO로서 스테이블코인 결제액이 수백만 달러 규모로 커지는 데 힘을 보탰습니다. Bullish Ventures의 매니징 디렉터이고, 2009년부터 소비자용·기업용 제품을 만들어 왔습니다.',
   },
 };
 

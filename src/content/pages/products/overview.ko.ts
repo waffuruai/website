@@ -1,63 +1,58 @@
 import type { productsOverview } from './overview';
 
-// TODO(i18n): translate to ko. Keep hrefs, slugs and product names.
 const productsOverviewKo: (typeof productsOverview)['en'] = {
   seo: {
-    title: 'The Waffuru stack: kernels, serving, control and memory',
+    title: 'Waffuru 스택: 커널, 서빙, 제어, 메모리',
     description:
-      'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on. Use one, or all four.',
-    keywords: [
-      'AI inference stack',
-      'GPU kernels to serving',
-      'local-first AI infrastructure',
-    ],
+      'Iron은 커널을 컴파일하고 Butter는 모델을 실행합니다. Waffle은 GPU를 지켜보고 Syrup은 기억합니다. 하나만 써도, 넷을 함께 써도 됩니다.',
+    keywords: ['AI 추론 스택', 'GPU 커널부터 서빙까지', '로컬 우선 AI 인프라'],
   },
   hero: {
-    label: 'Four products',
-    title: 'The Waffuru *stack*.',
-    lede: 'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on. All four are built to run on the hardware you already own.',
+    label: '제품 4종',
+    title: 'Waffuru *스택*.',
+    lede: 'Iron이 커널을 컴파일하고, Butter가 그 위에서 모델을 실행합니다. Waffle은 GPU를 지켜보고, Syrup은 하던 일을 기억합니다. 넷 모두 이미 가진 하드웨어에서 돌아가도록 만들었습니다.',
   },
   layers: {
-    heading: 'How the four layers *fit*.',
+    heading: '네 계층이 *맞물리는* 방식.',
     intro:
-      'Numbered from the metal up. Syrup sits on top, Iron sits at the metal, and each layer has its own page.',
+      '하드웨어에서부터 위로 번호를 붙였습니다. 맨 위가 Syrup, 하드웨어에 닿는 맨 아래가 Iron이며, 계층마다 전용 페이지가 있습니다.',
     metal: {
-      label: 'The metal',
+      label: '하드웨어',
       backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
     },
-    listLabel: 'The four layers of the stack',
+    listLabel: '스택의 네 계층',
   },
   together: {
-    heading: 'Use one, or *all four*.',
+    heading: '하나만 써도, *넷을 모두* 써도.',
     intro:
-      'Start with the layer that solves today’s problem. Add the next when you need it.',
-    aloneLabel: 'On its own',
+      '오늘의 문제를 푸는 계층부터 시작하세요. 필요해지면 다음 계층을 더하면 됩니다.',
+    aloneLabel: '단독으로 쓸 때',
     alone: {
-      iron: 'Write a GPU kernel once and run it on Metal, CUDA, ROCm and Vulkan.',
-      butter:
-        'Serve models behind an OpenAI-compatible API, with no Python in the way.',
+      iron: 'GPU 커널을 한 번만 작성해 Metal, CUDA, ROCm, Vulkan에서 실행합니다.',
+      butter: 'Python 없이 OpenAI 호환 API 뒤에서 모델을 서빙합니다.',
       waffle:
-        'See every GPU and every engine running on it, whichever engine that is.',
-      syrup: 'Give your AI local, cited memory of your notes and code.',
+        '어떤 엔진이든, 모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에 봅니다.',
+      syrup: 'AI에 노트와 코드에 대한 로컬 메모리를 출처와 함께 제공합니다.',
     },
-    allLabel: 'Together',
-    all: 'Butter runs models on the kernels Iron compiles, Waffle watches the GPUs and engines under them, and Syrup remembers what you were working on. Each layer you add builds on the ones below.',
+    allLabel: '함께 쓸 때',
+    all: 'Butter는 Iron이 컴파일한 커널 위에서 모델을 실행하고, Waffle은 그 아래의 GPU와 엔진을 지켜보며, Syrup은 하던 일을 기억합니다. 계층을 더할수록 아래 계층 위에 차곡차곡 쌓입니다.',
   },
   audience: {
-    heading: 'Who it’s *for*.',
-    intro: 'Pick the page that sounds like you.',
+    heading: '누구를 *위한* 것인가.',
+    intro: '나에게 맞는 페이지를 골라 보세요.',
     items: {
-      smallBusiness:
-        'Run private AI on the Macs and workstations you already own.',
-      enterprise: 'Run inference you control, on-prem or in your own cloud.',
-      neoclouds: 'See every GPU in your fleet and every engine running on it.',
+      smallBusiness: '이미 가진 Mac과 워크스테이션에서 프라이빗 AI를 돌립니다.',
+      enterprise:
+        '온프레미스든 자체 클라우드든, 직접 통제하는 추론을 돌립니다.',
+      neoclouds:
+        '플릿의 모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에 봅니다.',
       aiCompanies:
-        'Write kernels once and serve models across Metal, CUDA, ROCm and Vulkan.',
+        '커널을 한 번만 쓰고 Metal, CUDA, ROCm, Vulkan 전반에서 모델을 서빙합니다.',
     },
   },
   cta: {
-    title: 'Start with the *layer* you need.',
-    body: 'The whole stack is in early access and closed source for now. Request access and tell us which layer you want first.',
+    title: '필요한 *계층*부터 시작하세요.',
+    body: '스택 전체가 얼리 액세스 중이며 당분간 비공개 소스입니다. 접근을 신청하시고, 어느 계층이 먼저 필요한지 알려 주세요.',
   },
 };
 

@@ -1,29 +1,28 @@
 import type { teamPage } from './team';
 
-// TODO(i18n): translate to ko. Keep hrefs, slugs and product names.
 const teamPageKo: (typeof teamPage)['en'] = {
   seo: {
-    title: 'Meet the founders and team',
+    title: '창업자와 팀 소개',
     description:
-      'The people building Waffuru: research, security, revenue and a couple of founders who have shipped before.',
-    keywords: ['Waffuru team', 'Waffuru founders'],
+      'Waffuru를 만드는 사람들: 연구, 보안, 매출, 그리고 이미 제품을 출시해 본 창업자들.',
+    keywords: ['Waffuru 팀', 'Waffuru 창업자'],
   },
   hero: {
-    label: 'Team',
-    title: 'Who’s in the *kitchen*.',
-    lede: 'Research, security, revenue and a couple of founders who have shipped before.',
+    label: '팀',
+    title: '*주방*에 있는 사람들.',
+    lede: '연구, 보안, 매출, 그리고 이미 제품을 출시해 본 창업자들.',
   },
-  portraitAlt: 'Portrait of {name}',
-  linkAria: '{name} on {network}',
+  portraitAlt: '{name}의 사진',
+  linkAria: '{network}의 {name}',
   linkNames: {
     linkedin: 'LinkedIn',
-    website: 'Website',
+    website: '웹사이트',
     x: 'X',
     github: 'GitHub',
   },
   cta: {
-    title: 'See what we’re *cooking*.',
-    body: 'Our products are private for now. Request early access to try them, or talk to us about what you need.',
+    title: '무엇을 *요리*하고 있는지 보세요.',
+    body: '제품은 당분간 비공개입니다. 얼리 액세스를 신청해 써 보시거나, 필요한 것을 알려 주세요.',
   },
 };
 

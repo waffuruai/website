@@ -1,128 +1,127 @@
 import type { enterprise } from './enterprise';
 
-// TODO(i18n): translate to ko. Keep hrefs, slugs and product names.
 const enterpriseKo: (typeof enterprise)['en'] = {
   seo: {
-    title: 'On-prem LLM inference for the enterprise',
+    title: '엔터프라이즈 온프레미스 LLM 추론',
     description:
-      'Run LLM inference on-prem or in your private cloud, keep sensitive data inside your boundary, and see every GPU and engine from one place. Early access.',
+      '온프레미스나 프라이빗 클라우드에서 LLM 추론을 돌리고, 민감한 데이터는 경계 안에 두며, 모든 GPU와 엔진을 한곳에서 확인하세요. 얼리 액세스.',
     keywords: [
-      'on-prem LLM inference',
-      'private AI infrastructure',
-      'sovereign AI',
-      'AI data privacy',
+      '온프레미스 LLM 추론',
+      '프라이빗 AI 인프라',
+      '소버린 AI',
+      'AI 데이터 프라이버시',
     ],
   },
-  name: 'Enterprise',
-  serviceType: 'On-premises and private-cloud LLM inference software',
+  name: '엔터프라이즈',
+  serviceType: '온프레미스·프라이빗 클라우드 LLM 추론 소프트웨어',
   card: {
-    title: '*Enterprise*',
+    title: '*엔터프라이즈*',
     summary:
-      'On-prem or private-cloud inference for sensitive data, with one view of every GPU.',
+      '민감한 데이터를 위한 온프레미스·프라이빗 클라우드 추론, 그리고 모든 GPU를 한눈에.',
   },
   hero: {
-    title: 'Private AI, on your own *terms*.',
-    lede: 'Run models on hardware you operate, on-prem or in your private cloud, so sensitive data stays where it already lives. See every GPU and every engine on it from one place.',
+    title: '내 *방식*대로 쓰는 프라이빗 AI.',
+    lede: '직접 운영하는 하드웨어에서 온프레미스나 프라이빗 클라우드로 모델을 돌리면, 민감한 데이터가 원래 있던 곳에 머뭅니다. 모든 GPU와 그 위의 모든 엔진을 한곳에서 확인하세요.',
   },
   problem: {
-    title: 'Some data can’t *leave*.',
+    title: '어떤 데이터는 *나갈* 수 없습니다.',
     statement:
-      'The workloads worth automating touch customer records, contracts, source code and regulated data, which are the ones you cannot casually send to someone else’s API.',
-    body: 'So a policy says no while teams quietly say yes, and GPUs sit scattered across clusters and clouds that nobody can see in one place. Security wants a boundary, finance wants a number for each workload, and engineering wants a model that simply serves requests.',
+      '자동화할 가치가 있는 워크로드는 고객 기록, 계약서, 소스 코드, 규제 대상 데이터를 다루는데, 이런 데이터는 남의 API로 가볍게 보낼 수 없습니다.',
+    body: '그래서 정책은 안 된다고 하는데 팀들은 조용히 쓰고 있고, GPU는 아무도 한눈에 볼 수 없는 클러스터와 클라우드에 흩어져 있습니다. 보안팀은 경계를, 재무팀은 워크로드별 숫자를, 엔지니어링팀은 요청을 그저 처리해 주는 모델을 원합니다.',
   },
   useCases: {
-    title: 'Work that stays *inside*.',
+    title: '*안*에서 끝나는 업무.',
     intro:
-      'Four jobs for a platform team that answers to security, finance and engineering at once.',
+      '보안, 재무, 엔지니어링에 동시에 답해야 하는 플랫폼 팀을 위한 네 가지 일.',
     items: [
       {
         tag: 'control',
-        title: 'Serve models inside your own boundary.',
-        body: 'Run Butter on servers you operate, on-prem or in a private cloud, so prompts, documents and outputs stay on infrastructure you control. Our default is that a user’s data stays on their machine unless they opt in.',
+        title: '자체 경계 안에서 모델을 서빙하세요.',
+        body: '직접 운영하는 서버에서 온프레미스나 프라이빗 클라우드로 Butter를 돌리면, 프롬프트와 문서, 출력이 통제하는 인프라에 머뭅니다. 우리의 기본 원칙은 사용자가 동의하지 않는 한 데이터가 그의 컴퓨터를 떠나지 않는 것입니다.',
       },
       {
         tag: 'cost',
-        title: 'See every GPU and every engine in one place.',
-        body: 'Waffle shows which GPUs are busy, which engines run on them and which sit idle, whether the engine is Butter, vLLM, SGLang or llama.cpp. That is the starting point for deciding what to consolidate, retire or buy.',
+        title: '모든 GPU와 모든 엔진을 한곳에서 확인하세요.',
+        body: 'Waffle은 어느 GPU가 바쁘고, 그 위에서 어떤 엔진이 돌며, 어느 것이 놀고 있는지 보여 줍니다. 엔진이 Butter든 vLLM, SGLang, llama.cpp든 마찬가지입니다. 무엇을 통합하고, 폐기하고, 구매할지 정하는 출발점입니다.',
       },
       {
         tag: 'inference',
-        title: 'Get more from the GPUs you already bought.',
-        body: 'Kernels tuned per backend, quantized models and KV cache, and speculative decoding all go after more useful tokens per watt and per dollar. We would rather measure your workload than quote you a number.',
+        title: '이미 구매한 GPU에서 더 많은 성과를 끌어내세요.',
+        body: '백엔드별로 튜닝한 커널, 양자화된 모델과 KV 캐시, 추측 디코딩은 모두 와트당, 비용당 더 쓸모 있는 토큰을 목표로 합니다. 숫자를 내세우기보다 고객의 워크로드를 직접 측정하겠습니다.',
       },
       {
         tag: 'control',
-        title: 'Point existing apps at it without a rewrite.',
-        body: 'Butter’s OpenAI-compatible API supports streaming and tool calling, so internal tools change an address, not an SDK. Nothing locks you to one engine, because Waffle works alongside vLLM, SGLang and llama.cpp.',
+        title: '재작성 없이 기존 앱을 연결하세요.',
+        body: 'Butter의 OpenAI 호환 API는 스트리밍과 도구 호출을 지원하므로, 사내 도구는 SDK가 아니라 주소만 바꾸면 됩니다. Waffle이 vLLM, SGLang, llama.cpp와 함께 동작하므로 특정 엔진에 묶이지 않습니다.',
       },
     ],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
+    title: '스택이 *맞물리는* 방식.',
     intro:
-      'Butter serves, Waffle watches, Syrup retrieves, and Iron sits underneath all three.',
+      'Butter가 서빙하고, Waffle이 지켜보고, Syrup이 검색하며, Iron이 이 셋의 밑을 받칩니다.',
     items: [
       {
         product: 'butter',
-        need: 'Serve models on servers you operate.',
-        body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so there is no conversion pipeline between a new model and your servers.',
+        need: '직접 운영하는 서버에서 모델을 서빙하세요.',
+        body: 'Apple 실리콘의 Metal 위 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 직접 불러오므로 새 모델과 서버 사이에 변환 파이프라인이 필요 없습니다.',
       },
       {
         product: 'waffle',
-        need: 'One view of every GPU and every engine.',
-        body: 'A small Rust sidecar on each host reports signed telemetry. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so adopting it does not mean replacing what already runs.',
+        need: '모든 GPU와 모든 엔진을 하나의 화면으로.',
+        body: '호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다. Waffle은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 도입한다고 해서 지금 돌아가는 것을 교체할 필요는 없습니다.',
       },
       {
         product: 'syrup',
-        need: 'Answers from your own sources, with citations.',
-        body: 'Local retrieval over internal notes and code. Search is lexical plus vector, and results come back with citations over MCP.',
+        need: '내 자료에서 나온 답을 출처와 함께.',
+        body: '사내 노트와 코드에 대한 로컬 검색. 검색은 어휘 검색과 벡터 검색을 함께 쓰고, 결과는 MCP를 통해 출처 인용과 함께 돌아옵니다.',
       },
       {
         product: 'iron',
-        need: 'A hardware decision that is not a rewrite.',
-        body: 'One kernel definition lowers to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V behind a versioned C and Rust ABI. When a second vendor or a new GPU generation arrives, the kernels carry over, with tuning following backend by backend.',
+        need: '재작성이 아닌 하드웨어 결정.',
+        body: '하나의 커널 정의가 버전이 관리되는 C·Rust ABI 뒤에서 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다. 두 번째 벤더나 새로운 GPU 세대가 오더라도 커널은 그대로 이어지고, 튜닝은 백엔드별로 뒤따릅니다.',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Enterprise datacenter GPUs are in progress, and we would rather say so up front. The products are in early access and closed source for now.',
+    title: '우리는 지금 *어디쯤*인가.',
+    lede: '엔터프라이즈 데이터센터 GPU는 진행 중이며, 미리 말씀드리는 편이 낫다고 생각합니다. 제품은 얼리 액세스 중이며 당분간 비공개 소스입니다.',
     notes: [
-      'Plan pilots around Apple silicon, RTX workstations and DGX Spark, where the stack runs today.',
-      'Datacenter GPUs are in progress. If they are your target, tell us which ones, because it shapes what we build first.',
-      'ROCm and Vulkan run but are not tuned yet.',
+      '파일럿은 스택이 지금 돌아가는 Apple 실리콘, RTX 워크스테이션, DGX Spark를 중심으로 계획하세요.',
+      '데이터센터 GPU는 진행 중입니다. 목표 환경이라면 어떤 GPU인지 알려 주세요. 무엇을 먼저 만들지에 영향을 줍니다.',
+      'ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
     ],
   },
   faq: [
     {
-      question: 'Can we run it on-prem or in a private cloud?',
+      question: '온프레미스나 프라이빗 클라우드에서 돌릴 수 있나요?',
       answer:
-        'That is how it is built. Butter serves models on hardware you operate, and a user’s data stays on their machine unless they opt in. Datacenter GPU support is in progress, so tell us what you plan to deploy on.',
+        '그렇게 설계되었습니다. Butter는 직접 운영하는 하드웨어에서 모델을 서빙하며, 사용자가 동의하지 않는 한 데이터는 사용자의 컴퓨터를 떠나지 않습니다. 데이터센터 GPU 지원은 진행 중이므로, 배포할 계획인 환경을 알려 주세요.',
     },
     {
-      question: 'Which GPUs does it support today?',
+      question: '지금은 어떤 GPU를 지원하나요?',
       answer:
-        'Apple silicon through Metal is primary, and NVIDIA through CUDA is secondary and in production on RTX and DGX Spark. AMD ROCm and Vulkan run but are not tuned yet. Enterprise datacenter GPUs are in progress.',
+        'Apple 실리콘은 Metal을 통해 주력으로 지원하고, NVIDIA는 CUDA를 통해 보조로 지원하며 RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. AMD ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다. 엔터프라이즈 데이터센터 GPU는 진행 중입니다.',
     },
     {
-      question: 'Do we have to replace the serving stack we already run?',
+      question: '지금 쓰는 서빙 스택을 교체해야 하나요?',
       answer:
-        'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so you can get visibility first and decide about engines later.',
+        '아니요. Waffle은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 먼저 가시성을 확보하고 엔진은 나중에 결정하면 됩니다.',
     },
     {
-      question: 'What leaves our network?',
+      question: '우리 네트워크 밖으로 나가는 것은 무엇인가요?',
       answer:
-        'Inference data does not leave by default, because a user’s data stays on their machine unless they opt in. Each Waffle host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
+        '추론 데이터는 기본적으로 나가지 않습니다. 사용자가 동의하지 않는 한 데이터는 사용자의 컴퓨터에 남기 때문입니다. Waffle 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 고객 환경에서 정확히 무엇인지 함께 짚어 드리겠습니다.',
     },
     {
-      question: 'How do we evaluate it?',
+      question: '어떻게 평가할 수 있나요?',
       answer:
-        'Talk to us with your hardware and your workload. We will tell you honestly whether it fits today, and early access is open by request.',
+        '하드웨어와 워크로드를 가지고 문의해 주세요. 지금 맞는지 솔직하게 말씀드리겠습니다. 얼리 액세스는 신청을 받아 열어 드리고 있습니다.',
     },
   ],
   cta: {
-    title: 'Bring us your *workload*.',
-    body: 'Early access, closed source for now. Tell us what has to stay in-house and which hardware you run, and we will tell you honestly what fits today.',
+    title: '워크로드를 *가져오세요*.',
+    body: '얼리 액세스, 당분간 비공개 소스. 어떤 데이터가 사내에 머물러야 하고 어떤 하드웨어를 쓰시는지 알려 주시면, 지금 무엇이 맞는지 솔직하게 말씀드리겠습니다.',
   },
 };
 

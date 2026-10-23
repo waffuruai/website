@@ -1,101 +1,98 @@
 import type { iron } from './iron';
 
-// TODO(i18n): translate to ko. Keep hrefs, slugs and product names.
 const ironKo: (typeof iron)['en'] = {
-  layer: 'Kernels',
-  tagline: 'One kernel definition, four backends.',
+  layer: '커널',
+  tagline: '하나의 커널 정의, 네 가지 백엔드.',
   summary:
-    'A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
+    'Rust에 내장된 DSL입니다. 커널은 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다. 버전이 관리되는 C·Rust ABI로 기존 호스트에서도 호출할 수 있습니다.',
   seo: {
-    title: 'Iron: one GPU kernel definition, four backends',
+    title: 'Iron: GPU 커널 하나로 네 가지 백엔드',
     description:
-      'Write a GPU kernel once in Rust and lower it to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V through a shared IR. Iron has a versioned C and Rust ABI and is in early access.',
+      'GPU 커널을 Rust로 한 번 쓰면 Metal, CUDA, HIP/ROCm, Vulkan SPIR-V로 변환됩니다. C·Rust ABI 제공, 얼리 액세스 중.',
     keywords: [
-      'Rust GPU kernel DSL',
-      'Metal kernels',
-      'CUDA kernels',
+      'Rust GPU 커널 DSL',
+      'Metal 커널',
+      'CUDA 커널',
       'ROCm HIP',
       'Vulkan SPIR-V',
-      'cross-platform GPU kernels',
+      '크로스 플랫폼 GPU 커널',
     ],
   },
   hero: {
-    title: 'One kernel definition, *four* backends.',
-    lede: 'Press raw math directly into high-performance silicon. Iron is a Rust-embedded DSL: you write the kernel once, it lowers to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V.',
+    title: '하나의 커널 정의, *네 가지* 백엔드.',
+    lede: '순수한 수학을 고성능 실리콘에 곧바로 새깁니다. Iron은 Rust에 내장된 DSL입니다. 커널을 한 번 작성하면 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다.',
     highlights: [
-      { value: '4', label: 'GPU backends from one kernel definition' },
-      { value: '~1,139', label: 'kernel declarations' },
+      { value: '4', label: '하나의 커널 정의에서 나오는 GPU 백엔드' },
+      { value: '~1,139', label: '커널 선언' },
       {
         value: '4,164 / 4,164',
-        label: 'HIP and Vulkan test corpus, bit-accurate',
+        label: 'HIP·Vulkan 테스트 코퍼스, 비트 단위로 정확',
       },
     ],
   },
   story: {
-    heading: 'Stop writing the same kernel *four* times.',
+    heading: '같은 커널을 *네 번* 쓰는 일은 그만.',
     problem:
-      'Every GPU vendor has its own kernel language. Shipping on Apple, NVIDIA and AMD hardware means writing, tuning and testing the same math again for each one, then keeping every copy in step as the math changes.',
+      'GPU 벤더마다 고유한 커널 언어가 있습니다. Apple, NVIDIA, AMD 하드웨어에 모두 내놓으려면 같은 수학을 벤더마다 다시 작성하고, 튜닝하고, 테스트해야 하며, 수식이 바뀔 때마다 모든 사본을 맞춰야 합니다.',
     outcome:
-      'You write the kernel once, in Rust. Iron lowers it to a shared IR and then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, so a single definition covers every backend you target.',
+      '커널은 Rust로 한 번만 씁니다. Iron이 이를 공통 IR로, 다시 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환하므로 하나의 정의가 대상으로 삼는 모든 백엔드를 포괄합니다.',
     outcomes: [
-      'Write and tune on the Mac on your desk first. Metal is the primary target, and the same definition carries to the other backends.',
-      'Call your kernels from the code you already have, through a versioned C and Rust ABI.',
-      'Check the backends against a bit-accurate test corpus instead of hoping two of them agree.',
+      '책상 위의 Mac에서 먼저 작성하고 튜닝하세요. Metal이 주력 대상이며, 같은 정의가 다른 백엔드로 이어집니다.',
+      '버전이 관리되는 C·Rust ABI로 이미 가진 코드에서 커널을 호출하세요.',
+      '두 백엔드가 일치하기를 바라는 대신, 비트 단위로 정확한 테스트 코퍼스로 백엔드를 검증하세요.',
     ],
   },
   capabilities: {
-    heading: 'What Iron *does*.',
-    intro: 'Built from the metal up, for people who write kernels.',
+    heading: 'Iron이 *하는* 일.',
+    intro: '하드웨어에서부터 쌓아 올렸습니다. 커널을 쓰는 사람들을 위해.',
     items: [
       {
-        title: 'One definition, four backends',
-        body: 'Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. You maintain one source.',
+        title: '하나의 정의, 네 가지 백엔드',
+        body: '커널은 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다. 관리할 소스는 하나입니다.',
       },
       {
-        title: 'Written in Rust',
-        body: 'A Rust-embedded DSL. Kernels are Rust functions marked #[kernel], built from primitives like program_id, load and store.',
+        title: 'Rust로 작성',
+        body: 'Rust에 내장된 DSL입니다. 커널은 #[kernel]이 붙은 Rust 함수이며, program_id, load, store 같은 기본 연산으로 구성됩니다.',
       },
       {
-        title: 'Callable from your host',
-        body: 'A versioned C and Rust ABI lets existing hosts call Iron kernels without being rewritten around them.',
+        title: '호스트에서 바로 호출',
+        body: '버전이 관리되는 C·Rust ABI 덕분에, 기존 호스트를 Iron에 맞춰 다시 쓰지 않고도 Iron 커널을 호출할 수 있습니다.',
       },
       {
-        title: 'Bit-accurate by test',
-        body: 'The HIP and Vulkan test corpus holds 4,164 cases, and all 4,164 are bit-accurate.',
+        title: '테스트로 보증하는 비트 정확도',
+        body: 'HIP·Vulkan 테스트 코퍼스는 4,164개 케이스로 이루어져 있으며, 4,164개 모두 비트 단위로 정확합니다.',
       },
       {
-        title: 'Over a thousand kernels',
-        body: 'About 1,139 kernel declarations today. Each is one definition that every backend shares.',
+        title: '천 개가 넘는 커널',
+        body: '현재 약 1,139개의 커널 선언이 있습니다. 각각은 모든 백엔드가 공유하는 하나의 정의입니다.',
       },
       {
-        title: 'Tuned where it counts',
-        body: 'Every kernel is written and tuned on Metal first. CUDA is secondary, and ROCm and Vulkan run today but are not tuned yet.',
+        title: '중요한 곳을 먼저 튜닝',
+        body: '모든 커널은 Metal에서 가장 먼저 작성하고 튜닝합니다. CUDA는 그다음이며, ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
       },
     ],
   },
   code: {
-    heading: 'A whole kernel, *start to finish*.',
+    heading: '커널 하나를 *처음부터 끝까지*.',
     intro:
-      'This is exp over a tensor. Each instance loads one element, applies exp and stores the result. The #[kernel] attribute tags the op and its tolerance.',
+      '텐서에 exp를 적용하는 커널입니다. 각 인스턴스가 원소 하나를 읽어 exp를 적용하고 결과를 저장합니다. #[kernel] 속성에는 연산과 허용 오차가 표시됩니다.',
     caption:
-      'Iron DSL source. Iron lowers it to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V.',
+      'Iron DSL 소스입니다. Iron이 이를 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환합니다.',
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: '기술 *세부 사항*.',
+    intro: '꼼꼼히 읽어 보실 분들을 위한 상세 정보.',
     rows: [
       {
-        term: 'Language',
-        detail:
-          'A Rust-embedded DSL. Kernels are Rust functions marked #[kernel].',
+        term: '언어',
+        detail: 'Rust에 내장된 DSL. 커널은 #[kernel]이 붙은 Rust 함수입니다.',
       },
       {
-        term: 'Pipeline',
-        detail:
-          'One kernel definition lowers to a shared IR, then to each backend.',
+        term: '파이프라인',
+        detail: '하나의 커널 정의가 공통 IR로, 다시 각 백엔드로 변환됩니다.',
       },
       {
-        term: 'Backends',
+        term: '백엔드',
         chips: [
           { label: 'Metal: MSL → .metallib' },
           { label: 'CUDA → PTX' },
@@ -104,79 +101,79 @@ const ironKo: (typeof iron)['en'] = {
         ],
       },
       {
-        term: 'Host ABI',
+        term: '호스트 ABI',
         detail:
-          'A versioned C and Rust ABI, so existing hosts can call Iron kernels.',
+          '버전이 관리되는 C·Rust ABI로 기존 호스트에서 Iron 커널을 호출할 수 있습니다.',
       },
-      { term: 'Kernel count', detail: 'About 1,139 kernel declarations.' },
+      { term: '커널 수', detail: '약 1,139개의 커널 선언.' },
       {
-        term: 'Test corpus',
-        detail: 'HIP and Vulkan: 4,164 of 4,164 cases bit-accurate.',
+        term: '테스트 코퍼스',
+        detail: 'HIP·Vulkan: 4,164개 중 4,164개 케이스가 비트 단위로 정확.',
       },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: '제공 현황',
+        detail: '얼리 액세스 기간 동안 비공개 소스.',
       },
     ],
   },
   platforms: {
-    heading: 'Where it’s *tuned*.',
+    heading: '*튜닝*된 곳.',
     intro:
-      'Metal comes first, because that is where every kernel is written and tuned.',
+      'Metal이 먼저입니다. 모든 커널을 그곳에서 작성하고 튜닝하기 때문입니다.',
     tiers: [
       {
         platform: 'Apple · Metal',
         level: 'primary',
-        note: 'Every kernel is written and tuned here first. MSL → .metallib.',
+        note: '모든 커널을 이곳에서 가장 먼저 작성하고 튜닝합니다. MSL → .metallib.',
       },
       {
         platform: 'NVIDIA · CUDA',
         level: 'secondary',
-        note: 'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
+        note: 'RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. 데이터센터 GPU는 진행 중입니다. CUDA → PTX.',
       },
       {
         platform: 'AMD ROCm · Vulkan',
         level: 'runs',
-        note: 'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
+        note: '지금도 동작하지만 아직 튜닝하지 않았습니다. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: '나머지 *스택*과 함께 쓰기.',
     intro:
-      'Iron stands on its own. Add Butter to run models on the kernels, Waffle to watch the GPUs they run on, or Syrup to give your AI a memory of what you were working on.',
+      'Iron은 단독으로도 쓸 수 있습니다. 커널 위에서 모델을 돌리려면 Butter를, 그 GPU를 지켜보려면 Waffle을, AI가 하던 일을 기억하게 하려면 Syrup을 더하세요.',
   },
   faq: [
     {
-      question: 'Is Iron open source?',
+      question: 'Iron은 오픈 소스인가요?',
       answer:
-        'Not today. Iron is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        '아직은 아닙니다. Iron은 얼리 액세스 기간 동안 비공개 소스입니다. 얼리 액세스를 신청해 주시면 공유할 소식이 생길 때 연락드리겠습니다.',
     },
     {
-      question: 'Which hardware does it run on?',
+      question: '어떤 하드웨어에서 돌아가나요?',
       answer:
-        'Metal on Apple silicon is the primary target: every kernel is written and tuned there first. CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. ROCm and Vulkan run today but are not tuned yet.',
+        'Apple 실리콘의 Metal이 주력 대상이며, 모든 커널을 그곳에서 가장 먼저 작성하고 튜닝합니다. CUDA는 그다음으로, RTX와 DGX Spark에서 프로덕션으로 운영 중이며 데이터센터 GPU는 진행 중입니다. ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
     },
     {
-      question: 'Do I have to rewrite my host code?',
+      question: '호스트 코드를 다시 작성해야 하나요?',
       answer:
-        'Not to call Iron kernels. A versioned C and Rust ABI lets existing hosts call them.',
+        'Iron 커널을 호출하는 데는 필요 없습니다. 버전이 관리되는 C·Rust ABI로 기존 호스트에서 호출할 수 있습니다.',
     },
     {
-      question: 'Is it faster than hand-written CUDA or Metal?',
+      question: '직접 작성한 CUDA나 Metal보다 빠른가요?',
       answer:
-        'We haven’t published benchmark numbers, so we won’t claim one. What we can say today is that one definition lowers to four backends, and the HIP and Vulkan test corpus is bit-accurate.',
+        '벤치마크 수치를 공개하지 않았으므로 더 빠르다고 주장하지 않겠습니다. 지금 말씀드릴 수 있는 것은 하나의 정의가 네 가지 백엔드로 변환된다는 점, 그리고 HIP·Vulkan 테스트 코퍼스가 비트 단위로 정확하다는 점입니다.',
     },
     {
-      question: 'How do I try it?',
+      question: '어떻게 써 볼 수 있나요?',
       answer:
-        'Request early access with the form on this page. The docs are at docs.waffuru.ai.',
+        '이 페이지에서 얼리 액세스를 신청하세요. 문서는 docs.waffuru.ai에 있습니다.',
     },
   ],
   cta: {
-    title: 'Press your first *kernel*.',
-    body: 'Iron is in early access and closed source for now. Request access, and read the docs while you wait.',
-    docsLabel: 'Read the docs',
+    title: '첫 번째 *커널*을 새겨 보세요.',
+    body: 'Iron은 얼리 액세스 중이며 당분간 비공개 소스입니다. 접근을 신청하시고, 기다리는 동안 문서를 읽어 보세요.',
+    docsLabel: '문서 읽기',
   },
 };
 

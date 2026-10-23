@@ -1,46 +1,45 @@
 import { mailto, site } from '@/content/site';
 import type { support } from './support';
 
-// TODO(i18n): translate to ko. Keep hrefs, slugs and product names.
 const supportKo: (typeof support)['en'] = {
   seo: {
-    title: 'Support',
+    title: '지원',
     description:
-      'What is available today, how early access works, supported hardware, where the docs are, and how to report a bug or a security issue.',
+      '지금 이용할 수 있는 것, 얼리 액세스 방식, 지원 하드웨어, 문서 위치, 버그와 보안 이슈를 신고하는 방법.',
     keywords: [
-      'Waffuru support',
-      'Waffuru docs',
-      'Waffuru early access',
-      'report a security issue',
-      'local AI hardware support',
+      'Waffuru 지원',
+      'Waffuru 문서',
+      'Waffuru 얼리 액세스',
+      '보안 이슈 신고',
+      '로컬 AI 하드웨어 지원',
     ],
   },
   hero: {
-    label: 'Support',
-    title: 'Answers, and a *person* when you need one.',
-    lede: 'What’s available today, how early access works, and where to go when something breaks.',
+    label: '지원',
+    title: '답변, 그리고 필요할 땐 *사람*.',
+    lede: '지금 이용할 수 있는 것, 얼리 액세스 방식, 문제가 생겼을 때 찾아갈 곳.',
   },
   links: {
-    title: 'Where to *start*',
+    title: '어디서 *시작*할까',
     items: [
       {
-        title: 'Read the docs',
-        body: 'Guides and references live at docs.waffuru.ai.',
+        title: '문서 읽기',
+        body: '가이드와 레퍼런스는 docs.waffuru.ai에 있습니다.',
         href: site.urls.docs,
       },
       {
-        title: 'Email support',
-        body: 'Bugs, questions, install trouble. Say what you ran and on which hardware.',
+        title: '이메일 지원',
+        body: '버그, 질문, 설치 문제. 어떤 하드웨어에서 무엇을 실행했는지 함께 알려 주세요.',
         href: mailto('Support'),
       },
       {
-        title: 'Report a security issue',
-        body: 'Privately, by email to hello@waffuru.ai with the subject Security.',
+        title: '보안 이슈 신고',
+        body: 'hello@waffuru.ai로 제목을 Security로 해서 비공개로 보내 주세요.',
         href: mailto('Security'),
       },
       {
         title: 'security.txt',
-        body: 'Our security contact in machine-readable form.',
+        body: '기계가 읽을 수 있는 형식의 보안 연락처입니다.',
         href: '/.well-known/security.txt',
         file: true,
       },
@@ -48,46 +47,46 @@ const supportKo: (typeof support)['en'] = {
   },
   faq: [
     {
-      question: 'What can I use today?',
+      question: '지금 무엇을 쓸 수 있나요?',
       answer:
-        'Our products (Iron, Butter, Waffle and Syrup) are private and closed source for now, and nothing is generally available yet. Early access is how people get in first. Guides and references live at docs.waffuru.ai.',
+        '우리 제품(Iron, Butter, Waffle, Syrup)은 당분간 비공개 소스이며 아직 일반에 공개되지 않았습니다. 얼리 액세스가 가장 먼저 써 볼 수 있는 방법입니다. 가이드와 레퍼런스는 docs.waffuru.ai에 있습니다.',
     },
     {
-      question: 'How does early access work?',
+      question: '얼리 액세스는 어떻게 진행되나요?',
       answer:
-        'Fill in the early-access form and tell us what you’re building and what you want to run it on. We write to you when we have something that fits. Early access is pre-release software: it can change or break, and your feedback is how it improves.',
+        '얼리 액세스 신청서를 작성하고, 무엇을 만들고 있으며 어떤 환경에서 돌리고 싶은지 알려 주세요. 맞는 것이 준비되면 연락드립니다. 얼리 액세스는 정식 출시 전 소프트웨어이므로 바뀌거나 문제가 생길 수 있으며, 여러분의 피드백으로 나아집니다.',
     },
     {
-      question: 'Which hardware does it run on?',
+      question: '어떤 하드웨어에서 돌아가나요?',
       answer:
-        'Apple silicon is the primary target: every kernel is written and tuned for Metal first. NVIDIA CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run today but are not tuned yet. Think MacBook and Mac Studio, RTX workstations, DGX Spark, Strix Halo and neocloud fleets.',
+        'Apple 실리콘이 주력 대상으로, 모든 커널을 Metal용으로 가장 먼저 작성하고 튜닝합니다. NVIDIA CUDA는 그다음으로 RTX와 DGX Spark에서 프로덕션으로 운영 중이며, 데이터센터 GPU는 진행 중입니다. AMD ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다. MacBook과 Mac Studio, RTX 워크스테이션, DGX Spark, Strix Halo, 네오클라우드 플릿을 떠올리시면 됩니다.',
     },
     {
-      question: 'Where are the docs?',
+      question: '문서는 어디에 있나요?',
       answer:
-        'At docs.waffuru.ai. If something there is wrong or missing, tell us through the support link on this page.',
+        'docs.waffuru.ai에 있습니다. 잘못되었거나 빠진 내용이 있다면 이 페이지의 지원 링크로 알려 주세요.',
     },
     {
-      question: 'How do I report a bug?',
+      question: '버그는 어떻게 신고하나요?',
       answer:
-        'Email hello@waffuru.ai with the subject Support; the Email support link above does that for you. Include your hardware and OS, what you ran, what you expected and what happened, and trim anything private from logs first.',
+        '제목을 Support로 해서 hello@waffuru.ai로 이메일을 보내 주세요. 위의 이메일 지원 링크를 누르면 자동으로 채워집니다. 하드웨어와 OS, 실행한 내용, 기대한 결과와 실제 결과를 적어 주시고, 로그에 비공개 정보가 있다면 먼저 지워 주세요.',
     },
     {
-      question: 'How do I report a security issue?',
+      question: '보안 이슈는 어떻게 신고하나요?',
       answer:
-        'Email hello@waffuru.ai with the subject Security and enough detail to reproduce it. Please keep it private until we have had a reasonable chance to fix it. Our security.txt lists the same contact in machine-readable form.',
+        '제목을 Security로 해서 hello@waffuru.ai로 재현할 수 있을 만큼 자세히 적어 이메일을 보내 주세요. 수정할 합리적인 시간을 가질 때까지는 비공개로 유지해 주시기 바랍니다. security.txt에도 같은 연락처가 기계가 읽을 수 있는 형식으로 적혀 있습니다.',
     },
     {
-      question: 'What happens to my data?',
+      question: '내 데이터는 어떻게 되나요?',
       answer:
-        'Our software runs locally, and your data stays on your machine unless you opt in to something that sends it elsewhere. On this website we collect only what the privacy policy lists, and Google Analytics stays off unless you accept it.',
+        '우리 소프트웨어는 로컬에서 실행되며, 데이터를 다른 곳으로 보내는 기능에 직접 동의하지 않는 한 데이터는 내 컴퓨터에 남습니다. 이 웹사이트에서는 개인정보 처리방침에 나열된 정보만 수집하며, Google Analytics는 동의하기 전까지 꺼져 있습니다.',
     },
   ],
   cta: {
-    title: 'Not in here? *Ask* us.',
-    body: 'Send your hardware, your OS, what you ran and what happened. The more detail, the easier it is to help.',
-    docs: 'Read the docs',
-    email: 'Email support',
+    title: '여기에 없나요? *물어보세요*.',
+    body: '하드웨어, OS, 실행한 내용, 일어난 일을 보내 주세요. 자세할수록 도와드리기 쉽습니다.',
+    docs: '문서 읽기',
+    email: '이메일 지원',
   },
 };
 
