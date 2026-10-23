@@ -5,6 +5,7 @@ import { contact } from '@/content/pages/contact';
 import { mailto, site, type MailSubject } from '@/content/site';
 import en from '@/i18n/dictionaries/en';
 import { withDictionary } from '@/i18n/test-utils';
+import { localize } from '@/lib/content';
 
 import ContactPage, { generateMetadata } from './page';
 
@@ -63,12 +64,12 @@ describe('/contact', () => {
 
   it('keeps mailto links unprefixed in every locale', async () => {
     await renderPage('ja');
+    const ja = localize(contact, 'ja').callouts;
     for (const subject of SUBJECTS) {
+      const title = ja.items.find((item) => item.subject === subject)?.title;
       expect(
         screen
-          .getByRole('link', {
-            name: `${contact.en.callouts.emailLabel}: ${subject}`,
-          })
+          .getByRole('link', { name: `${ja.emailLabel}: ${title}` })
           .getAttribute('href'),
       ).toBe(mailto(subject));
     }

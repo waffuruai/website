@@ -109,10 +109,14 @@ describe('the launch post', () => {
     });
   });
 
-  it('is English only (translators add siblings later)', () => {
-    expect(
-      Object.keys(posts).filter((f) => f.includes('introducing-waffuru')),
-    ).toEqual(['./introducing-waffuru/page.mdx']);
+  it('has an English page, with any translations beside it', () => {
+    const files = Object.keys(posts).filter((f) =>
+      f.includes('introducing-waffuru'),
+    );
+    expect(files).toContain('./introducing-waffuru/page.mdx');
+    for (const file of files) {
+      expect(file).toMatch(/\/page(\.[a-z]{2})?\.mdx$/);
+    }
   });
 
   it('opens with the mission, verbatim', async () => {

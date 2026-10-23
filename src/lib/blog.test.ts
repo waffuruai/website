@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -23,6 +24,7 @@ import {
   visiblePosts,
   type Post,
 } from '@/lib/blog';
+import { defaultLocale, locales, type Locale } from '@/i18n/config';
 
 // Posts import the layout; the listing tests only need their exports.
 vi.mock('@/components/blog/article-layout', () => ({
@@ -234,7 +236,16 @@ describe('listPostFiles', () => {
 });
 
 describe('posts on disk', () => {
-  it('has the launch post, published, and no translations yet', async () => {
+  // The launch post is translated one `page.<locale>.mdx` at a time.
+  const LAUNCH_DIRECTORY = 'src/content/blog/introducing-waffuru';
+  const translated = locales.filter(
+    (locale) =>
+      locale !== defaultLocale &&
+      existsSync(`${LAUNCH_DIRECTORY}/page.${locale}.mdx`),
+  );
+  const sorted = (list: readonly Locale[]) => [...list].sort();
+
+  it('has the launch post, published, in English and every translation on disk', async () => {
     const launch = await getPost('introducing-waffuru');
     expect(launch).toMatchObject({
       slug: 'introducing-waffuru',
@@ -243,16 +254,23 @@ describe('posts on disk', () => {
       category: 'Company',
       published: true,
       locale: 'en',
-      locales: ['en'],
     });
+    expect(launch?.locales[0]).toBe('en');
+    expect(sorted(launch?.locales ?? [])).toEqual(
+      sorted(['en', ...translated]),
+    );
   });
 
-  it('serves every locale the English post when it has no translation', async () => {
-    for (const locale of ['es', 'fr', 'zh', 'ja', 'ko'] as const) {
+  it('serves each locale its translation, or the English post when it has none', async () => {
+    for (const locale of locales) {
       const posts = await getPosts(locale);
       const launch = posts.find((p) => p.slug === 'introducing-waffuru');
-      expect(launch?.locale, locale).toBe('en');
-      expect(launch?.locales, locale).toEqual(['en']);
+      expect(launch?.locale, locale).toBe(
+        translated.includes(locale) ? locale : 'en',
+      );
+      expect(sorted(launch?.locales ?? []), locale).toEqual(
+        sorted(['en', ...translated]),
+      );
     }
   });
 
@@ -267,7 +285,12 @@ describe('posts on disk', () => {
       locale: 'en',
       slug: 'introducing-waffuru',
     });
-    expect(params.filter((p) => p.locale !== 'en')).toEqual([]);
+    expect(
+      params
+        .filter((p) => p.locale !== 'en')
+        .map((p) => p.locale)
+        .sort(),
+    ).toEqual(sorted(translated));
   });
 
   it('has no related posts for a lone post', async () => {
