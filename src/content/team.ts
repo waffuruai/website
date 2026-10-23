@@ -7,7 +7,9 @@ import type { Localized } from '@/content/types';
  *
  * Links: a URL, `null` when the person has no such profile, or PLACEHOLDER
  * when we have not found it yet (hidden on the site; `team.test.ts` lists
- * every placeholder so they get filled in).
+ * every placeholder so they get filled in). A link is only set when it is
+ * confirmed to be the same person: it is linked from their own site or
+ * profile, or two profiles link to each other.
  */
 export const PLACEHOLDER = 'PLACEHOLDER';
 
@@ -44,7 +46,9 @@ export const team: TeamMember[] = [
       linkedin: 'https://www.linkedin.com/in/kylecroll/',
       website: PLACEHOLDER,
       x: PLACEHOLDER,
-      github: 'https://github.com/KyleCroll',
+      // The github.com/KyleCroll account has no repos, bio or links, so it
+      // cannot be tied to him. Fill in when he confirms a handle.
+      github: PLACEHOLDER,
     },
   },
   {
@@ -54,8 +58,11 @@ export const team: TeamMember[] = [
     links: {
       linkedin: 'https://www.linkedin.com/in/ericgonzalez/',
       website: PLACEHOLDER,
+      // TODO(founder): about.me/ericgonzalez links an X account
+      // (@ericgonzalez), but that page is stale and cannot be verified.
       x: PLACEHOLDER,
-      github: PLACEHOLDER,
+      // His LinkedIn lists this GitHub profile and the profile links back.
+      github: 'https://github.com/ericgonzalez',
     },
   },
   {
@@ -65,7 +72,8 @@ export const team: TeamMember[] = [
     links: {
       linkedin: 'https://www.linkedin.com/in/ekryski/',
       website: 'https://erickryski.com',
-      x: PLACEHOLDER,
+      // Linked from erickryski.com and from his GitHub profile.
+      x: 'https://x.com/ekryski',
       github: 'https://github.com/ekryski',
     },
   },
@@ -75,8 +83,11 @@ export const team: TeamMember[] = [
     photo: 'team/tom-turney',
     links: {
       linkedin: 'https://www.linkedin.com/in/tturney/',
+      // TODO(founder): his GitHub profile lists psyguard.ai as a website,
+      // but it was unreachable and may be a project rather than a personal site.
       website: PLACEHOLDER,
-      x: PLACEHOLDER,
+      // Linked from his GitHub profile, which also links the LinkedIn above.
+      x: 'https://x.com/no_stp_on_snek',
       github: 'https://github.com/TheTom',
     },
   },
@@ -98,31 +109,29 @@ export const teamCopy: Localized<Record<string, TeamCopy>> = {
     'kyle-croll': {
       role: 'CEO',
       background: 'Ex-military. Threat intelligence, AI strategy and security.',
-      bio: 'Kyle came up through the military and threat intelligence, hunting adversaries before they could act. He now leads Waffuru’s strategy, with a security lens on how AI gets built and deployed. McCombs MBA.',
+      bio: 'Kyle is ex-military, with a background in threat intelligence and threat hunting. As CEO he sets Waffuru’s direction and brings a security lens to how AI gets built and deployed. He holds an MBA from the McCombs School of Business at UT Austin.',
     },
     'eric-gonzalez': {
       role: 'Chief Revenue Officer',
-      background:
-        'Scaled revenue from $50M to $2B ARR. Ex-Oracle NetSuite, ex-Anaconda.',
-      bio: 'Eric has taken companies from $50M to $2B in annual recurring revenue, at Oracle NetSuite and at Anaconda, the company behind the Python data science stack. He serves on boards and turns developer tools into businesses.',
+      background: 'Scaled companies from $50M to $2B ARR. Ex-Oracle NetSuite.',
+      bio: 'Eric is a revenue leader who has scaled companies from $50M to $2B in ARR. He previously worked at Oracle NetSuite and at Anaconda, the company behind Conda, and he serves as a board member.',
     },
     'eric-kryski': {
       role: 'Chief Product Officer',
       background:
         'Full-stack developer, designer and ML researcher. Co-founder of Bidali.',
-      bio: 'Eric is a full-stack developer, designer and ML researcher who ships product end to end. He is CEO and co-founder of Bidali and co-founder of Bullish Ventures, and leads product at Waffuru.',
+      bio: 'Eric is a full-stack developer, designer and ML researcher who ships product end to end. He is CEO and co-founder of Bidali and co-founder of Bullish Ventures, and he leads product at Waffuru.',
     },
     'tom-turney': {
       role: 'Chief of Research',
       background:
         'AI researcher behind TurboQuant+. Former tech lead manager at Google.',
-      bio: 'Tom is the AI researcher behind TurboQuant+, the compression work that lets bigger models and longer contexts fit on hardware people already own. Before Waffuru he was a tech lead manager at Google.',
+      bio: 'Tom is the AI researcher behind TurboQuant+, the compression work Syrup uses to shrink embeddings, and he leads research at Waffuru. Before this he was a tech lead manager at Google.',
     },
     'cory-smith': {
       role: 'Chief Technology Officer',
-      background:
-        'Exited founder. Grew Bidali to millions in stablecoin payments.',
-      bio: 'Cory has founded and exited a company, then co-founded Bidali as CTO and helped grow it to millions in stablecoin payments volume. A managing director at Bullish Ventures, he has been shipping consumer and enterprise products since 2009.',
+      background: 'Has exited a company. Co-founder and CTO of Bidali.',
+      bio: 'Cory has exited a company and is co-founder and CTO of Bidali, which he helped grow to millions in stablecoin payments volume. He is a managing director at Bullish Ventures and has been building consumer and enterprise products since 2009.',
     },
   },
 };
