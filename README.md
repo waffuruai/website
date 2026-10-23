@@ -8,22 +8,22 @@ and push. `CNAME` holds the custom domain.
 
 ## Core features
 
-| Feature | What you get |
-| --- | --- |
+| Feature              | What you get                                                                                                                           |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | One-command installs | `curl -fsSL https://waffuru.ai/ops/bootstrap.sh \| sh` fetches without any GitHub auth; the script signs you in for the private clones |
-| Verified provenance | Every served installer is checked against its `.sha256` and its build-provenance attestation before it is published |
-| Pinned versions | Every recent release stays reachable at `/<product>/<tag>/<asset>` |
-| Stateless deploys | Nothing is committed by a bot; `main` stays protected and a failed verification simply leaves the live site untouched |
+| Verified provenance  | Every served installer is checked against its `.sha256` and its build-provenance attestation before it is published                    |
+| Pinned versions      | Every recent release stays reachable at `/<product>/<tag>/<asset>`                                                                     |
+| Stateless deploys    | Nothing is committed by a bot; `main` stays protected and a failed verification simply leaves the live site untouched                  |
 
 ## Installer URLs
 
-| URL | Source |
-| --- | --- |
-| `https://waffuru.ai/ops/bootstrap.sh` | latest release of `waffuruai/ops` |
+| URL                                     | Source                                |
+| --------------------------------------- | ------------------------------------- |
+| `https://waffuru.ai/ops/bootstrap.sh`   | latest release of `waffuruai/ops`     |
 | `https://waffuru.ai/wrunner/install.sh` | latest release of `waffuruai/wrunner` |
-| `https://waffuru.ai/wci/install.sh` | latest release of `waffuruai/wci` |
-| `https://waffuru.ai/iron/install.sh` | latest release of `waffuruai/iron` |
-| `https://waffuru.ai/butter/install.sh` | latest release of `waffuruai/butter` |
+| `https://waffuru.ai/wci/install.sh`     | latest release of `waffuruai/wci`     |
+| `https://waffuru.ai/iron/install.sh`    | latest release of `waffuruai/iron`    |
+| `https://waffuru.ai/butter/install.sh`  | latest release of `waffuruai/butter`  |
 
 Alongside each one:
 
@@ -61,8 +61,9 @@ GitHub Pages serves `.sh` with its own content type and about a ten minute cache
 
    The `product` and `tag` inputs are informational — every run republishes every
    product's current latest release, so a dispatch never has to be re-run in order.
+
 3. [`.github/workflows/release.yml`](.github/workflows/release.yml) — the receiver
-   *and* the site deploy, one workflow — assembles `_site/` from the static files
+   _and_ the site deploy, one workflow — assembles `_site/` from the static files
    in this repo, runs [`scripts/fetch-releases.sh`](scripts/fetch-releases.sh) to
    fetch and verify the installers into it, and deploys with
    `actions/upload-pages-artifact` + `actions/deploy-pages`.
@@ -81,12 +82,12 @@ the current installers too.
 [{ "product": "ops", "repo": "waffuruai/ops", "asset": "bootstrap.sh" }]
 ```
 
-| Key | Meaning |
-| --- | --- |
-| `product` | URL segment: the installer is served at `/<product>/<asset>` |
-| `repo` | `owner/name` the release is read from |
-| `asset` | release asset name; `<asset>.sha256` must be attached too |
-| `tags` | optional, how many recent releases get a pinned copy (default 10) |
+| Key       | Meaning                                                           |
+| --------- | ----------------------------------------------------------------- |
+| `product` | URL segment: the installer is served at `/<product>/<asset>`      |
+| `repo`    | `owner/name` the release is read from                             |
+| `asset`   | release asset name; `<asset>.sha256` must be attached too         |
+| `tags`    | optional, how many recent releases get a pinned copy (default 10) |
 
 Adding a product is one entry here plus a dispatch from its release workflow.
 

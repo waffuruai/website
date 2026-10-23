@@ -1,0 +1,8 @@
+pnpm-lock.yaml
+design/
+public/
+.next/
+out/
+_site/
+src/generated/
+releases/

@@ -1,0 +1,306 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import './motifs.css';
+@plugin '@tailwindcss/typography';
+
+/*
+ * Dark roast is the default: it applies with no class at all, so the page is
+ * dark before (and without) JavaScript. next-themes adds `.light` when the
+ * visitor picks light or their system asks for it.
+ */
+@custom-variant dark (&:not(:where(.light, .light *)));
+@custom-variant light (&:where(.light, .light *));
+
+:root {
+  color-scheme: dark;
+
+  /* Brand primitives, from the After Hours design (see /brand). */
+  --roast: #0a0908;
+  --roast-raised: #12100e;
+  --cream: #ede8df;
+  --gold: #e8a33d;
+
+  /* Semantic tokens: dark (default). */
+  --radius: 1rem;
+  --background: var(--roast);
+  --foreground: var(--cream);
+  /* Secondary copy: nav links, ledes, captions. */
+  --soft: #d2ccc1;
+  --muted-foreground: #aba599;
+  /* Placeholders and decorative marks only; never body text. */
+  --faint: #8a847a;
+  /* Inactive states: unlit LEDs, bars, stamps. */
+  --off: #2a2622;
+  --card: var(--roast-raised);
+  --card-foreground: var(--cream);
+  --popover: var(--roast-raised);
+  --popover-foreground: var(--cream);
+  --primary: var(--cream);
+  --primary-foreground: var(--roast);
+  --secondary: var(--roast-raised);
+  --secondary-foreground: var(--cream);
+  --muted: var(--roast-raised);
+  /* shadcn "accent" is the hover wash on menu items, not the brand gold. */
+  --accent: rgb(237 232 223 / 0.06);
+  --accent-foreground: var(--cream);
+  --brand: var(--gold);
+  /* Gold used as text. Same as the fill on dark; darker on light for AA. */
+  --brand-ink: var(--gold);
+  --destructive: #ff6b5b;
+  --destructive-foreground: var(--roast);
+  --success: #7fc77a;
+  --border: rgb(237 232 223 / 0.1);
+  --input: rgb(237 232 223 / 0.16);
+  --ring: var(--gold);
+  --grain-opacity: 0.07;
+}
+
+.light {
+  color-scheme: light;
+
+  --background: #f4efe6;
+  --foreground: #0a0908;
+  --soft: #3b362f;
+  --muted-foreground: #5c554b;
+  --faint: #8a847a;
+  --off: #ddd5c8;
+  --card: #fbf8f2;
+  --card-foreground: #0a0908;
+  --popover: #fbf8f2;
+  --popover-foreground: #0a0908;
+  --primary: #0a0908;
+  --primary-foreground: #f4efe6;
+  --secondary: #fbf8f2;
+  --secondary-foreground: #0a0908;
+  --muted: #ebe5da;
+  --accent: rgb(10 9 8 / 0.05);
+  --accent-foreground: #0a0908;
+  --brand: var(--gold);
+  --brand-ink: #8a5514;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+  --success: #2f7d32;
+  --border: rgb(10 9 8 / 0.12);
+  --input: rgb(10 9 8 / 0.2);
+  --ring: #8a5514;
+  --grain-opacity: 0.05;
+}
+
+/*
+ * Not `inline`: utilities reference var(--font-*) so the :lang(zh|ja) rules
+ * below can swap in CJK fallbacks per document language.
+ */
+@theme {
+  --font-serif:
+    var(--font-instrument-serif), 'Instrument Serif', Georgia, serif;
+  --font-sans: var(--font-geist), Geist, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-soft: var(--soft);
+  --color-faint: var(--faint);
+  --color-off: var(--off);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  /* Layout: Tom's 1360px container with 40px gutters (32 tablet, 20 phone). */
+  --container-site: 1360px;
+}
+
+/* Serif display type. Sizes are fluid, lifted from the After Hours page. */
+@utility heading-hero {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(64px, 11vw, 168px);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+@utility heading-section {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(44px, 6vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+@utility heading-page {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(52px, 8vw, 120px);
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Mono caps used for labels, indices and nav. */
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@utility px-site {
+  padding-inline: 20px;
+  @media (width >= 720px) {
+    padding-inline: 32px;
+  }
+  @media (width >= 1025px) {
+    padding-inline: 40px;
+  }
+}
+
+/* Cross-document view transitions: a quiet cross-fade between pages. */
+@view-transition {
+  navigation: auto;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/60;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+
+  :where(main [id]) {
+    scroll-margin-top: 6rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: clip;
+    font-kerning: normal;
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  p {
+    letter-spacing: 0.01em;
+  }
+
+  /*
+   * The After Hours accent: an italic word in a serif heading, set in the
+   * Instrument Serif italic face (its own next/font family) and gold.
+   */
+  :where(.font-serif, .heading-hero, .heading-section, .heading-page)
+    :where(em, i) {
+    font-family: var(--font-instrument-serif-italic), var(--font-serif);
+    font-style: italic;
+    color: var(--brand-ink);
+  }
+
+  a {
+    text-underline-offset: 4px;
+  }
+
+  ::placeholder {
+    color: var(--faint);
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--brand) 40%, transparent);
+  }
+
+  /*
+   * Chinese and Japanese: no webfont ships for them (megabytes), so they use
+   * the platform's CJK faces. Serif display tracking and leading are relaxed
+   * because Han and kana glyphs need more room than Latin.
+   */
+  :lang(zh) {
+    --font-sans:
+      var(--font-geist), 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+      'Noto Sans CJK SC', 'Noto Sans SC', sans-serif;
+    --font-serif:
+      var(--font-instrument-serif), 'Songti SC', 'Noto Serif CJK SC',
+      'Noto Serif SC', 'SimSun', serif;
+  }
+  :lang(ja) {
+    --font-sans:
+      var(--font-geist), 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+      'Yu Gothic', 'Noto Sans CJK JP', 'Noto Sans JP', Meiryo, sans-serif;
+    --font-serif:
+      var(--font-instrument-serif), 'Hiragino Mincho ProN', 'Yu Mincho',
+      'Noto Serif CJK JP', 'Noto Serif JP', serif;
+  }
+  :where(:lang(zh), :lang(ja))
+    :where(.heading-hero, .heading-section, .heading-page) {
+    line-height: 1.12;
+    letter-spacing: 0;
+  }
+  :where(:lang(zh), :lang(ja)) :where(.label-mono) {
+    letter-spacing: 0.04em;
+  }
+
+  a[href],
+  button,
+  summary,
+  select,
+  label[for],
+  [role='button'],
+  [role='tab'],
+  [role='menuitem'],
+  [role='option'],
+  input[type='checkbox'],
+  input[type='radio'],
+  input[type='submit'] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition-duration: 0s !important;
+    }
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+  }
+}
