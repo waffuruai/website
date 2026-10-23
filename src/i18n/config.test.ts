@@ -56,7 +56,8 @@ describe('negotiateLocale', () => {
   });
 
   it('returns null when nothing matches', () => {
-    expect(negotiateLocale('de-DE,ko;q=0.5')).toBeNull();
+    expect(negotiateLocale('de-DE,it;q=0.5')).toBeNull();
+    expect(negotiateLocale('ko-KR,ko;q=0.9')).toBe('ko');
     expect(negotiateLocale('')).toBeNull();
     expect(negotiateLocale(null)).toBeNull();
   });

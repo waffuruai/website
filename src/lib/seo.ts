@@ -16,8 +16,9 @@ export const OG_IMAGE_SIZE = { width: 1200, height: 630 } as const;
 export const absoluteUrl = (path: string) => new URL(path, site.url).href;
 
 /**
- * Locales whose share cards render their own text. Chinese and Japanese
- * pages reuse the English card: the card renderer ships Latin fonts only.
+ * Locales whose share cards render their own text. Chinese, Japanese and
+ * Korean pages reuse the English card: the card renderer ships Latin fonts
+ * only.
  */
 const OG_TEXT_LOCALES: readonly Locale[] = ['en', 'es', 'fr'];
 

@@ -4,9 +4,10 @@ import en from '@/i18n/dictionaries/en';
 import es from '@/i18n/dictionaries/es';
 import fr from '@/i18n/dictionaries/fr';
 import ja from '@/i18n/dictionaries/ja';
+import ko from '@/i18n/dictionaries/ko';
 import zh from '@/i18n/dictionaries/zh';
 
-const translations = { es, fr, zh, ja };
+const translations = { es, fr, zh, ja, ko };
 
 /** Every leaf key path, e.g. `nav.items.iron.label`. */
 function keyPaths(value: unknown, prefix = ''): string[] {

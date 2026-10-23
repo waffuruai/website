@@ -238,9 +238,9 @@
   }
 
   /*
-   * Chinese and Japanese: no webfont ships for them (megabytes), so they use
-   * the platform's CJK faces. Serif display tracking and leading are relaxed
-   * because Han and kana glyphs need more room than Latin.
+   * Chinese, Japanese and Korean: no webfont ships for them (megabytes), so
+   * they use the platform's CJK faces. Serif display tracking and leading are
+   * relaxed because Han, kana and Hangul glyphs need more room than Latin.
    */
   :lang(zh) {
     --font-sans:
@@ -258,12 +258,20 @@
       var(--font-instrument-serif), 'Hiragino Mincho ProN', 'Yu Mincho',
       'Noto Serif CJK JP', 'Noto Serif JP', serif;
   }
-  :where(:lang(zh), :lang(ja))
+  :lang(ko) {
+    --font-sans:
+      var(--font-geist), 'Apple SD Gothic Neo', 'Malgun Gothic',
+      'Noto Sans CJK KR', 'Noto Sans KR', sans-serif;
+    --font-serif:
+      var(--font-instrument-serif), 'AppleMyungjo', 'Nanum Myeongjo',
+      'Noto Serif CJK KR', 'Noto Serif KR', serif;
+  }
+  :where(:lang(zh), :lang(ja), :lang(ko))
     :where(.heading-hero, .heading-section, .heading-page) {
     line-height: 1.12;
     letter-spacing: 0;
   }
-  :where(:lang(zh), :lang(ja)) :where(.label-mono) {
+  :where(:lang(zh), :lang(ja), :lang(ko)) :where(.label-mono) {
     letter-spacing: 0.04em;
   }
 

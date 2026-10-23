@@ -25,7 +25,7 @@ const config = (phase: string): NextConfig => {
       ? {}
       : {
           async rewrites() {
-            const prefixed = '(en|es|fr|zh|ja)';
+            const prefixed = '(en|es|fr|zh|ja|ko)';
             return {
               beforeFiles: [
                 { source: '/', destination: '/en' },

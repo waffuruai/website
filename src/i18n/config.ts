@@ -6,7 +6,7 @@
  * locales live under `/<code>` (`/ja/about`). The build still emits English
  * under `out/en/…`; the Worker maps unprefixed URLs onto those files.
  */
-export const locales = ['en', 'es', 'fr', 'zh', 'ja'] as const;
+export const locales = ['en', 'es', 'fr', 'zh', 'ja', 'ko'] as const;
 
 export type Locale = (typeof locales)[number];
 
@@ -34,6 +34,7 @@ export const localeInfo: Record<Locale, LocaleInfo> = {
   fr: { lang: 'fr', og: 'fr_FR', label: 'Français' },
   zh: { lang: 'zh-CN', og: 'zh_CN', label: '简体中文' },
   ja: { lang: 'ja', og: 'ja_JP', label: '日本語' },
+  ko: { lang: 'ko', og: 'ko_KR', label: '한국어' },
 };
 
 export const isLocale = (value: unknown): value is Locale =>

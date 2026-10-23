@@ -10,6 +10,7 @@ const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   fr: () => import('@/i18n/dictionaries/fr').then((m) => m.default),
   zh: () => import('@/i18n/dictionaries/zh').then((m) => m.default),
   ja: () => import('@/i18n/dictionaries/ja').then((m) => m.default),
+  ko: () => import('@/i18n/dictionaries/ko').then((m) => m.default),
 };
 
 /** Loads the UI dictionary for a locale (server components only). */

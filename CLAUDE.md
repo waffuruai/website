@@ -4,7 +4,7 @@ Guide for agents working in this repo. Human-facing setup is in [README.md](READ
 
 ## What this is
 
-waffuru.ai: Next.js 16 (App Router, **static export**), React 19, Tailwind 4, shadcn/ui, five locales (en, es, fr, zh, ja), served by a Cloudflare Worker (`worker/`) in front of Workers static assets. The same deploy publishes product installers (`/ops/bootstrap.sh`, `/<product>/install.sh`) via the release receiver (`scripts/fetch-releases.sh`, `.github/workflows/release.yml`).
+waffuru.ai: Next.js 16 (App Router, **static export**), React 19, Tailwind 4, shadcn/ui, six locales (en, es, fr, zh, ja, ko), served by a Cloudflare Worker (`worker/`) in front of Workers static assets. The same deploy publishes product installers (`/ops/bootstrap.sh`, `/<product>/install.sh`) via the release receiver (`scripts/fetch-releases.sh`, `.github/workflows/release.yml`).
 
 The design is Tom's "After Hours" page (`design/after-hours.html` is the reference): dark roast, Instrument Serif display type with a gold italic accent word, Geist body, Geist Mono caps labels, CSS-only motifs (waffle tiles, stamps, melting butter, LEDs, syrup drip).
 

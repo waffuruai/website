@@ -1,7 +1,8 @@
 import { readFile, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
-const LOCALES = ['en', 'es', 'fr', 'zh', 'ja'];
+// Mirrors `locales` in src/i18n/config.ts (guard.test.mjs checks they match).
+const LOCALES = ['en', 'es', 'fr', 'zh', 'ja', 'ko'];
 
 const exists = (path) =>
   stat(path).then(
