@@ -30,7 +30,9 @@ export const aboutLinks: NavLink[] = [
 ];
 
 export const helpLinks: NavLink[] = [
-  { key: 'docs', href: site.urls.docs },
+  ...(site.docsPublished
+    ? [{ key: 'docs', href: site.urls.docs } as const]
+    : []),
   { key: 'support', href: '/support' },
   { key: 'contact', href: '/contact' },
 ];

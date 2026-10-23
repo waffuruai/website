@@ -19,6 +19,11 @@ export const site = {
     linkedin: 'https://www.linkedin.com/company/waffuru/',
     github: 'https://github.com/waffuruai',
   },
+  /**
+   * Whether docs.waffuru.ai is ready to be linked from the site. While false
+   * the nav, product pages and support page leave the docs out.
+   */
+  docsPublished: false,
   urls: {
     docs: 'https://docs.waffuru.ai',
     /** Early-access sign-up (Google Form), the primary call to action. */

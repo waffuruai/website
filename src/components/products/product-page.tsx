@@ -51,7 +51,7 @@ export function ProductPage({
 
   const actions: Cta[] = [
     { label: common.requestAccess, href: site.urls.earlyAccess },
-    facts.secondaryCta === 'docs'
+    site.docsPublished && facts.secondaryCta === 'docs'
       ? {
           label: copy.cta.docsLabel ?? nav.items.docs.label,
           href: site.urls.docs,

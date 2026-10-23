@@ -26,21 +26,29 @@ const hrefOf = (name: RegExp) =>
   screen.getAllByRole('link', { name })[0].getAttribute('href');
 
 describe('/support', () => {
-  it('links the docs, both mailboxes and security.txt', async () => {
+  it('links both mailboxes and security.txt', async () => {
     await renderPage();
-    expect(hrefOf(/Read the docs/)).toBe(site.urls.docs);
     expect(hrefOf(/Email support/)).toBe(mailto('Support'));
     expect(hrefOf(/Report a security issue/)).toBe(mailto('Security'));
     expect(hrefOf(/security\.txt/)).toBe('/.well-known/security.txt');
   });
 
-  it('announces that the docs open in a new tab', async () => {
+  it('leaves the docs out until they are published', async () => {
     await renderPage();
-    const docs = screen.getAllByRole('link', { name: /Read the docs/ })[0];
-    expect(docs.getAttribute('target')).toBe('_blank');
-    expect(docs.getAttribute('rel')).toContain('noopener');
-    expect(docs.textContent).toContain('(opens in a new tab)');
+    const docs = screen.queryAllByRole('link', { name: /Read the docs/ });
+    expect(docs.length > 0).toBe(site.docsPublished);
   });
+
+  it.skipIf(!site.docsPublished)(
+    'announces that the docs open in a new tab',
+    async () => {
+      await renderPage();
+      const docs = screen.getAllByRole('link', { name: /Read the docs/ })[0];
+      expect(docs.getAttribute('target')).toBe('_blank');
+      expect(docs.getAttribute('rel')).toContain('noopener');
+      expect(docs.textContent).toContain('(opens in a new tab)');
+    },
+  );
 
   it('does not prefix the security.txt file with a locale', async () => {
     await renderPage('ja');

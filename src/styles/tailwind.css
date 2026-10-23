@@ -200,6 +200,16 @@
     scroll-margin-top: 6rem;
   }
 
+  /*
+   * Radix dialogs (the mobile menu) lock scroll with `overflow: hidden` on
+   * the body, which makes the body a scroll container and sends the sticky
+   * header off with the page. `clip` keeps the header stuck, and the lock's
+   * own wheel and touch handling still stops the page scrolling.
+   */
+  html body[data-scroll-locked] {
+    overflow: clip !important;
+  }
+
   body {
     @apply bg-background font-sans text-foreground;
     overflow-x: clip;
