@@ -33,6 +33,26 @@ a{color:#EDE8DF;text-decoration:none}a:hover{color:#FFFFFF}
 .wf .cell{border:1px solid rgba(237,232,223,.07);border-radius:3px;position:relative;overflow:hidden}
 .wf .cell::after{content:"";position:absolute;inset:0;background:var(--accent);opacity:0;animation:wfa-wave 7s ease-in-out infinite;animation-delay:inherit}
 .wf .cell.hot::after{animation-name:wfa-pool}
+/* Responsive: phones <=700px, tablets 701-1024px. Inline styles win by default, hence !important. */
+@media (max-width:700px){
+.wf>header,.wf>section,.wf>footer{padding-left:24px!important;padding-right:24px!important}
+.wf>section#models{padding-left:0!important;padding-right:0!important}
+.wf>section#models>div:first-child{padding-left:24px!important;padding-right:24px!important}
+.wf>section:not(#top):not(#models){padding-top:72px!important}
+.wf>section#access{padding-bottom:72px!important}
+.wf #team article{flex:1 1 100%!important;min-width:0!important}
+.wf>header nav{gap:0 20px!important}
+}
+@media (min-width:701px) and (max-width:1024px){
+.wf>header,.wf>section,.wf>footer{padding-left:32px!important;padding-right:32px!important}
+.wf>section#models{padding-left:0!important;padding-right:0!important}
+.wf>section#models>div:first-child{padding-left:32px!important;padding-right:32px!important}
+.wf #team article{flex:0 1 calc((100% - 20px) / 2)!important;min-width:0!important}
+}
+@media (max-width:1024px){
+.wf>header nav a,.wf>footer a,.wf #team article a,.wf #top a{display:inline-flex;align-items:center;min-height:44px}
+.wf>header>a:first-child,.wf #top a{min-height:44px}
+}
 @keyframes wfa-wave{0%,100%{opacity:0}12%{opacity:.22}30%{opacity:0}}
 @keyframes wfa-pool{0%,100%{opacity:.05}15%{opacity:.75}55%{opacity:.35}}
 .wf .stamp{background:#2A2622;border-radius:2px;animation:wfa-stamp 3.2s cubic-bezier(.7,0,.2,1) infinite}
