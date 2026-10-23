@@ -26,7 +26,7 @@ export function Pre({
     <pre
       tabIndex={0}
       className={cn(
-        'text-soft focus-visible:ring-ring m-0 overflow-x-auto bg-transparent py-5 font-mono text-[12px] leading-[1.75] outline-none focus-visible:ring-2 focus-visible:ring-inset sm:py-7 sm:text-[14px]',
+        'm-0 overflow-x-auto bg-transparent py-5 font-mono text-[12px] leading-[1.75] text-soft outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset sm:py-7 sm:text-[14px]',
         className,
       )}
       {...props}
@@ -71,9 +71,9 @@ export function CodeFrame({
     <figure
       data-code-block=""
       aria-label={title}
-      className="not-prose bg-card text-card-foreground border-foreground/10 my-8 overflow-hidden rounded-2xl border"
+      className="not-prose my-8 overflow-hidden rounded-2xl border border-foreground/10 bg-card text-card-foreground"
     >
-      <div className="border-foreground/8 text-muted-foreground flex items-center justify-between gap-4 border-b px-4 py-3.5 font-mono text-xs sm:px-[22px]">
+      <div className="flex items-center justify-between gap-4 border-b border-foreground/8 px-4 py-3.5 font-mono text-xs text-muted-foreground sm:px-[22px]">
         <span className="min-w-0 truncate" data-code-title="">
           {name}
         </span>
@@ -88,7 +88,7 @@ export function CodeFrame({
       </div>
       {children}
       {caption && (
-        <figcaption className="border-foreground/8 text-muted-foreground border-t px-4 py-3 text-sm sm:px-[22px]">
+        <figcaption className="border-t border-foreground/8 px-4 py-3 text-sm text-muted-foreground sm:px-[22px]">
           {caption}
         </figcaption>
       )}

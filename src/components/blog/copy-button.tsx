@@ -52,7 +52,7 @@ export function CopyButton({
         onClick={copy}
         aria-label={label ? `${state} ${label}` : undefined}
         className={cn(
-          'label-mono text-muted-foreground hover:text-foreground focus-visible:ring-ring -my-1 -mr-2 inline-flex h-8 items-center gap-1.5 rounded-md px-2 transition-colors outline-none focus-visible:ring-2',
+          '-my-1 -mr-2 inline-flex h-8 items-center gap-1.5 rounded-md px-2 label-mono text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring',
           copied && 'text-brand-ink hover:text-brand-ink',
           className,
         )}

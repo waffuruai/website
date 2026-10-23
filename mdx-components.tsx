@@ -31,7 +31,7 @@ function heading(Tag: 'h2' | 'h3') {
         {anchor ? (
           <a
             href={`#${anchor}`}
-            className="not-prose after:text-faint text-inherit no-underline after:ml-2 after:text-[0.6em] after:opacity-0 after:transition-opacity after:content-['#'] hover:after:opacity-100 focus-visible:after:opacity-100"
+            className="not-prose text-inherit no-underline after:ml-2 after:text-[0.6em] after:text-faint after:opacity-0 after:transition-opacity after:content-['#'] hover:after:opacity-100 focus-visible:after:opacity-100"
           >
             {children}
           </a>

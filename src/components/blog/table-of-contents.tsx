@@ -9,12 +9,12 @@ export const hasToc = (headings: readonly Heading[]) =>
 
 function Links({ headings }: { headings: readonly Heading[] }) {
   return (
-    <ol className="text-muted-foreground border-foreground/10 flex flex-col gap-2.5 border-l text-sm leading-snug">
+    <ol className="flex flex-col gap-2.5 border-l border-foreground/10 text-sm leading-snug text-muted-foreground">
       {headings.map((heading) => (
         <li key={heading.id}>
           <a
             href={`#${heading.id}`}
-            className="hover:text-foreground focus-visible:text-foreground focus-visible:ring-ring -ml-px block border-l border-transparent py-0.5 pl-4 transition-colors hover:border-current focus-visible:ring-2 focus-visible:outline-none"
+            className="-ml-px block border-l border-transparent py-0.5 pl-4 transition-colors hover:border-current hover:text-foreground focus-visible:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
             {heading.text}
           </a>
@@ -48,11 +48,11 @@ export function TableOfContents({
     return (
       <details
         className={cn(
-          'border-foreground/10 bg-card group rounded-2xl border px-5 py-4 lg:hidden',
+          'group rounded-2xl border border-foreground/10 bg-card px-5 py-4 lg:hidden',
           className,
         )}
       >
-        <summary className="label-mono text-soft focus-visible:ring-ring flex list-none items-center justify-between gap-4 rounded-md outline-none focus-visible:ring-2 [&::-webkit-details-marker]:hidden">
+        <summary className="flex list-none items-center justify-between gap-4 rounded-md label-mono text-soft outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
           {title}
           <span
             aria-hidden
@@ -73,7 +73,7 @@ export function TableOfContents({
       aria-label={title}
       className={cn('hidden lg:sticky lg:top-28 lg:block', className)}
     >
-      <p className="label-mono text-soft mb-4">{title}</p>
+      <p className="mb-4 label-mono text-soft">{title}</p>
       <Links headings={headings} />
     </nav>
   );

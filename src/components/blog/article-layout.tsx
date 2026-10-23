@@ -55,21 +55,21 @@ export async function ArticleLayout({
   const path = localizePath(postPath(slug), locale);
 
   return (
-    <div className="max-w-site px-site mx-auto pt-10 pb-20 md:pt-16 md:pb-28">
+    <div className="mx-auto max-w-site px-site pt-10 pb-20 md:pt-16 md:pb-28">
       <article
         data-section="article"
         className={cn('mx-auto', toc ? 'max-w-[1040px]' : 'max-w-[720px]')}
       >
         <LocalizedLink
           href="/blog"
-          className="label-mono text-soft hover:text-foreground focus-visible:ring-ring inline-flex items-center gap-2 rounded-sm outline-none focus-visible:ring-2"
+          className="inline-flex items-center gap-2 rounded-sm label-mono text-soft outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
         >
           <ArrowLeft aria-hidden className="size-4" />
           {blog.backToBlog}
         </LocalizedLink>
 
         <header className="mt-10 flex max-w-[720px] flex-col gap-6">
-          <div className="label-mono flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3 label-mono">
             <LocalizedLink
               href={categoryPath(article.category)}
               className="text-brand-ink underline-offset-4 hover:underline"
@@ -77,7 +77,7 @@ export async function ArticleLayout({
               {article.category}
             </LocalizedLink>
             {!article.published && (
-              <span className="border-brand-ink/50 text-brand-ink rounded-full border px-2 py-0.5">
+              <span className="rounded-full border border-brand-ink/50 px-2 py-0.5 text-brand-ink">
                 Draft
               </span>
             )}
@@ -85,7 +85,7 @@ export async function ArticleLayout({
           <h1 className="font-serif text-[clamp(40px,5.4vw,68px)] leading-[0.98] tracking-[-0.02em] text-balance">
             {article.title}
           </h1>
-          <p className="text-soft text-xl leading-[1.5] text-pretty">
+          <p className="text-xl leading-[1.5] text-pretty text-soft">
             {article.description}
           </p>
           <AuthorByline
@@ -123,7 +123,7 @@ export async function ArticleLayout({
               className="mb-10"
             />
             <Prose data-mdx-content="">{children}</Prose>
-            <footer className="border-foreground/10 mt-14 flex flex-wrap items-center justify-between gap-6 border-t pt-8">
+            <footer className="mt-14 flex flex-wrap items-center justify-between gap-6 border-t border-foreground/10 pt-8">
               <ShareLinks
                 title={article.title}
                 url={absoluteUrl(path)}
@@ -131,7 +131,7 @@ export async function ArticleLayout({
               />
               <LocalizedLink
                 href="/blog"
-                className="label-mono text-soft hover:text-foreground inline-flex items-center gap-2"
+                className="inline-flex items-center gap-2 label-mono text-soft hover:text-foreground"
               >
                 <ArrowLeft aria-hidden className="size-4" />
                 {blog.backToBlog}

@@ -34,7 +34,7 @@ export function BlogListing({
         title={category ?? blog.heading}
         lede={blog.description}
       />
-      <section className="max-w-site px-site mx-auto pb-20 md:pb-28">
+      <section className="mx-auto max-w-site px-site pb-20 md:pb-28">
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
           <CategoryFilter
             categories={categoriesOf(posts)}
@@ -47,7 +47,7 @@ export function BlogListing({
             href="/blog/feed.xml"
             type="application/rss+xml"
             hrefLang="en"
-            className="label-mono text-soft hover:text-foreground inline-flex items-center gap-2"
+            className="inline-flex items-center gap-2 label-mono text-soft hover:text-foreground"
           >
             <Rss aria-hidden className="size-4" />
             {blog.rss}

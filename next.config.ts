@@ -32,6 +32,7 @@ const config = (phase: string): NextConfig => {
             return {
               beforeFiles: [
                 { source: '/', destination: '/en' },
+                { source: '/blog/feed.xml', destination: '/en/blog/feed.xml' },
                 {
                   source: `/:path((?!${prefixed}(?:/|$)|_next/|api/|.*\\..*).*)`,
                   destination: '/en/:path',

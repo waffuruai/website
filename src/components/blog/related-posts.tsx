@@ -19,7 +19,7 @@ export function RelatedPosts({
     <section
       aria-labelledby="related-posts"
       data-section="related-posts"
-      className="border-foreground/10 mt-20 border-t pt-14"
+      className="mt-20 border-t border-foreground/10 pt-14"
     >
       <h2
         id="related-posts"

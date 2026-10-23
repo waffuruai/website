@@ -62,16 +62,16 @@ export function AuthorByline({
         alt=""
         sizes={small ? '28px' : '48px'}
         className={cn(
-          'border-foreground/10 shrink-0 overflow-hidden rounded-full border',
+          'shrink-0 overflow-hidden rounded-full border border-foreground/10',
           small ? 'size-7' : 'size-12',
         )}
         imgClassName="size-full object-cover"
       />
       <div className="flex min-w-0 flex-col text-sm">
-        <span className="text-foreground font-medium">
+        <span className="font-medium text-foreground">
           <LocalizedLink
             href="/about/team"
-            className="hover:text-brand-ink underline-offset-4 hover:underline"
+            className="underline-offset-4 hover:text-brand-ink hover:underline"
           >
             {interpolate(blog.by, { author: member.name })}
           </LocalizedLink>

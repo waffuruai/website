@@ -40,7 +40,7 @@ export function PostCover({
       sizes={sizes}
       priority={priority}
       className={cn(
-        'border-foreground/10 bg-card block overflow-hidden rounded-2xl border',
+        'block overflow-hidden rounded-2xl border border-foreground/10 bg-card',
         className,
       )}
       imgClassName="w-full"

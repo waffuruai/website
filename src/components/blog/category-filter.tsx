@@ -37,9 +37,9 @@ export function CategoryFilter({
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
               className={cn(
-                'label-mono focus-visible:ring-ring inline-flex h-10 items-center rounded-full border px-4 transition-colors outline-none focus-visible:ring-2',
+                'inline-flex h-10 items-center rounded-full border px-4 label-mono transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring',
                 item.current
-                  ? 'bg-primary text-primary-foreground border-transparent'
+                  ? 'border-transparent bg-primary text-primary-foreground'
                   : 'border-foreground/20 text-soft hover:border-foreground/50 hover:text-foreground',
               )}
             >

@@ -38,7 +38,7 @@ export function PostCard({
     <article
       data-post={post.slug}
       className={cn(
-        'group border-foreground/10 bg-card hover:border-foreground/30 relative flex flex-col gap-6 rounded-3xl border p-6 transition-colors md:p-8',
+        'group relative flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-card p-6 transition-colors hover:border-foreground/30 md:p-8',
         featured && 'lg:col-span-3 lg:p-12',
       )}
     >
@@ -53,14 +53,14 @@ export function PostCard({
           priority={priority}
         />
       )}
-      <div className="label-mono text-soft flex flex-wrap items-center gap-x-5 gap-y-1">
+      <div className="flex flex-wrap items-center gap-x-5 gap-y-1 label-mono text-soft">
         <span className="text-brand-ink">{post.category}</span>
         <time dateTime={post.date}>{formatPostDate(post.date, locale)}</time>
         <span>
           {interpolate(blog.readingTime, { minutes: post.readingTime.minutes })}
         </span>
         {!post.published && showDrafts() && (
-          <span className="border-brand-ink/50 text-brand-ink rounded-full border px-2 py-0.5">
+          <span className="rounded-full border border-brand-ink/50 px-2 py-0.5 text-brand-ink">
             Draft
           </span>
         )}
@@ -77,14 +77,14 @@ export function PostCard({
           <Link
             href={href}
             hrefLang={post.locale}
-            className="focus-visible:ring-ring rounded-sm outline-none after:absolute after:inset-0 after:rounded-3xl focus-visible:ring-2"
+            className="rounded-sm outline-none after:absolute after:inset-0 after:rounded-3xl focus-visible:ring-2 focus-visible:ring-ring"
           >
             {post.title}
           </Link>
         </Heading>
         <p
           className={cn(
-            'text-soft leading-[1.6] text-pretty',
+            'leading-[1.6] text-pretty text-soft',
             featured ? 'max-w-[720px] text-lg' : 'line-clamp-4 text-base',
           )}
         >
