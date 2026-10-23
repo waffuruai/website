@@ -1,122 +1,122 @@
 import type { neoclouds } from './neoclouds';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const neocloudsEs: (typeof neoclouds)['en'] = {
   seo: {
-    title: 'Inference platform for GPU clouds',
+    title: 'Plataforma de inferencia para nubes de GPU',
     description:
-      'Fleet visibility across tenants and engines, more useful tokens per GPU, and signed telemetry from every host. Waffle works with vLLM, SGLang and llama.cpp. Early access.',
+      'Visibilidad de flota entre inquilinos y motores, más tokens útiles por GPU y telemetría firmada de cada host. Con vLLM, SGLang y llama.cpp. Acceso anticipado.',
     keywords: [
-      'GPU cloud software',
-      'GPU utilization',
-      'inference platform for GPU clouds',
-      'multi-tenant GPU monitoring',
+      'software para nubes de GPU',
+      'utilización de GPU',
+      'plataforma de inferencia para nubes de GPU',
+      'monitoreo de GPU multiinquilino',
     ],
   },
   name: 'Neoclouds',
-  serviceType: 'GPU fleet visibility and inference software',
+  serviceType: 'Software de visibilidad de flotas de GPU e inferencia',
   card: {
     title: '*Neoclouds*',
     summary:
-      'Fleet visibility across tenants and engines, and more useful tokens per GPU.',
+      'Visibilidad de la flota entre inquilinos y motores, y más tokens útiles por GPU.',
   },
   hero: {
-    title: 'Get more from every *GPU* you rent out.',
-    lede: 'See the whole fleet across tenants and engines, and put kernels tuned per backend under the work your customers run. Nothing locks you to one engine.',
+    title: 'Saca más de cada *GPU* que alquilas.',
+    lede: 'Ve toda la flota entre inquilinos y motores, y pon kernels afinados por backend bajo el trabajo que ejecutan tus clientes. Nada te ata a un solo motor.',
   },
   problem: {
-    title: 'A fleet you can’t *see*.',
+    title: 'Una flota que no puedes *ver*.',
     statement:
-      'Customers bring their own engines, versions and settings, and the GPU underneath is the part you answer for.',
-    body: 'A dashboard can say a card is busy without saying what is running on it, for whom or how well. Every engine reports in its own way, every tenant brings a different mix, and capacity that sits idle or poorly matched is revenue you cannot point to.',
+      'Los clientes traen sus propios motores, versiones y configuraciones, y la GPU de abajo es la parte de la que respondes tú.',
+    body: 'Un panel puede decir que una tarjeta está ocupada sin decir qué corre en ella, para quién ni con qué calidad. Cada motor reporta a su manera, cada inquilino trae una mezcla distinta, y la capacidad ociosa o mal ajustada son ingresos que no puedes señalar.',
   },
   useCases: {
-    title: 'A tighter *fleet*.',
-    intro: 'Four jobs for the team that keeps a GPU cloud running.',
+    title: 'Una *flota* más ajustada.',
+    intro:
+      'Cuatro tareas para el equipo que mantiene en marcha una nube de GPU.',
     items: [
       {
         tag: 'cost',
-        title: 'Know what is running on every GPU.',
-        body: 'Waffle gives one view across hosts, GPUs, engines and tenants, whether the engine is vLLM, SGLang, llama.cpp or Butter. Idle and mismatched capacity shows up on your screen first.',
+        title: 'Sabe qué corre en cada GPU.',
+        body: 'Waffle ofrece una sola vista de hosts, GPU, motores e inquilinos, ya sea vLLM, SGLang, llama.cpp o Butter. La capacidad ociosa o desajustada aparece primero en tu pantalla.',
       },
       {
         tag: 'control',
-        title: 'Trust the readings on your dashboard.',
-        body: 'Each host runs a small Rust sidecar that reports signed telemetry, so readings can be verified as coming from the host that sent them. Fleet-wide numbers stop being taken on faith.',
+        title: 'Confía en las lecturas de tu panel.',
+        body: 'Cada host ejecuta un pequeño sidecar en Rust que reporta telemetría firmada, así que las lecturas se pueden verificar como provenientes del host que las envió. Las cifras de toda la flota dejan de aceptarse a ciegas.',
       },
       {
         tag: 'inference',
-        title: 'Serve more useful tokens per GPU.',
-        body: 'Butter pairs kernels tuned per backend with quantized models and KV cache and speculative decoding, all aimed at tokens per watt. It runs alongside the engines your tenants already choose, so you can compare on your own fleet.',
+        title: 'Sirve más tokens útiles por GPU.',
+        body: 'Butter combina kernels afinados por backend con modelos y caché KV cuantizados y decodificación especulativa, todo orientado a tokens por vatio. Corre junto a los motores que tus inquilinos ya eligen, así que puedes comparar en tu propia flota.',
       },
       {
         tag: 'control',
-        title: 'Offer options without betting on one engine.',
-        body: 'Butter serves an OpenAI-compatible API, and Waffle works with vLLM, SGLang and llama.cpp. You can give customers more choice without rebuilding around any single engine.',
+        title: 'Ofrece opciones sin apostar por un solo motor.',
+        body: 'Butter sirve una API compatible con OpenAI, y Waffle funciona con vLLM, SGLang y llama.cpp. Puedes dar más opciones a tus clientes sin reconstruir todo en torno a un único motor.',
       },
     ],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
+    title: 'Cómo *encaja* el stack.',
     intro:
-      'Waffle is the part built for you. Butter and Iron work on the efficiency underneath.',
+      'Waffle es la parte pensada para ti. Butter e Iron trabajan en la eficiencia que hay debajo.',
     items: [
       {
         product: 'waffle',
-        need: 'See the whole fleet.',
-        body: 'From one box under a desk to a neocloud renting out a fleet. A small Rust sidecar on each host reports signed telemetry, and Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+        need: 'Ve toda la flota.',
+        body: 'De un equipo bajo el escritorio a un neocloud que alquila una flota. Un pequeño sidecar en Rust en cada host reporta telemetría firmada, y Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
       },
       {
         product: 'butter',
-        need: 'An engine you control, with no Python.',
-        body: 'Swift on Metal, Rust for CUDA and the rest. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API, with no Python and no JIT.',
+        need: 'Un motor que controlas, sin Python.',
+        body: 'Swift sobre Metal, Rust para CUDA y el resto. Checkpoints y caché KV cuantizados, decodificación especulativa y LoRA tras una API compatible con OpenAI, sin Python y sin JIT.',
       },
       {
         product: 'iron',
-        need: 'Kernels for the hardware you buy next.',
-        body: 'One kernel definition, four backends: Metal, CUDA, HIP/ROCm and Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
+        need: 'Kernels para el hardware que compres después.',
+        body: 'Una definición de kernel, cuatro backends: Metal, CUDA, HIP/ROCm y Vulkan SPIR-V. Una ABI versionada de C y Rust permite que los hosts existentes los llamen.',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Waffle and Butter are in early access and closed source for now. CUDA is in production on RTX and DGX Spark, and datacenter GPUs are in progress.',
+    title: 'Dónde *estamos*.',
+    lede: 'Waffle y Butter están en acceso anticipado y son de código cerrado por ahora. CUDA está en producción en RTX y DGX Spark, y las GPU de centros de datos están en desarrollo.',
     notes: [
-      'Tell us your GPU generations. Datacenter CUDA is in progress, so the fleets we hear about shape what we do first.',
-      'ROCm and Vulkan run today but are not tuned yet.',
-      'We make no claim that Butter beats other engines on CUDA or ROCm. When we publish measurements, they will come with the method.',
+      'Cuéntanos tus generaciones de GPU. CUDA para centros de datos está en desarrollo, así que las flotas que conocemos marcan qué hacemos primero.',
+      'ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
+      'No afirmamos que Butter supere a otros motores en CUDA o ROCm. Cuando publiquemos mediciones, irán acompañadas del método.',
     ],
   },
   faq: [
     {
-      question: 'Does Waffle replace our current engines?',
+      question: '¿Waffle reemplaza a nuestros motores actuales?',
       answer:
-        'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers. Get visibility first, and change engines only if and when you want to.',
+        'No. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI. Gana visibilidad primero y cambia de motor solo si y cuando quieras.',
     },
     {
-      question: 'What GPUs does it run on?',
+      question: '¿En qué GPU funciona?',
       answer:
-        'Apple silicon through Metal is primary. NVIDIA through CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run but are not tuned yet.',
+        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. AMD ROCm y Vulkan funcionan, pero aún sin afinar.',
     },
     {
-      question: 'Why should we trust the telemetry?',
+      question: '¿Por qué deberíamos confiar en la telemetría?',
       answer:
-        'Each host runs a small Rust sidecar that reports signed telemetry, so readings can be verified as coming from the host that sent them. Ask us how signing works in your environment.',
+        'Cada host ejecuta un pequeño sidecar en Rust que reporta telemetría firmada, así que las lecturas se pueden verificar como provenientes del host que las envió. Pregúntanos cómo funciona la firma en tu entorno.',
     },
     {
-      question: 'How much utilization will it recover?',
+      question: '¿Cuánta utilización recuperará?',
       answer:
-        'We will not promise a percentage. Seeing the fleet is the first step, and tokens per watt and dollars per workload are the numbers we try to move. We would rather measure them on your fleet than quote you one.',
+        'No prometeremos un porcentaje. Ver la flota es el primer paso, y los tokens por vatio y los dólares por carga de trabajo son las cifras que intentamos mover. Preferimos medirlas en tu flota antes que darte una.',
     },
     {
-      question: 'Can we try it?',
+      question: '¿Podemos probarlo?',
       answer:
-        'Early access is open by request, and the products are closed source for now. Tell us about your fleet and we will write back.',
+        'El acceso anticipado está abierto bajo solicitud, y los productos son de código cerrado por ahora. Cuéntanos sobre tu flota y te responderemos.',
     },
   ],
   cta: {
-    title: 'Show us the *fleet*.',
-    body: 'Early access, closed source for now. Tell us your GPUs, your engines and how tenants share them, and we will write back about what fits.',
+    title: 'Enséñanos la *flota*.',
+    body: 'Acceso anticipado, código cerrado por ahora. Cuéntanos tus GPU, tus motores y cómo las comparten los inquilinos, y te responderemos sobre lo que encaja.',
   },
 };
 

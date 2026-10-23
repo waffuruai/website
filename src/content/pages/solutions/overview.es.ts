@@ -1,64 +1,63 @@
 import type { solutionsOverview } from './overview';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const solutionsOverviewEs: (typeof solutionsOverview)['en'] = {
   seo: {
-    title: 'AI inference solutions',
+    title: 'Soluciones de inferencia de IA',
     description:
-      'Waffuru’s local-first AI stack for small businesses, enterprises, neoclouds and AI companies: a lower cost per workload, better inference and more control.',
-    keywords: ['AI inference solutions', 'local-first AI'],
+      'El stack de IA local de Waffuru para pequeñas empresas, empresas, neoclouds y compañías de IA: menor costo por carga de trabajo, mejor inferencia y más control.',
+    keywords: ['soluciones de inferencia de IA', 'IA local'],
   },
   hero: {
-    label: 'Solutions',
-    title: 'Local-first AI, fitted to your *job*.',
-    lede: 'Waffuru is one stack, from kernels to memory, that runs models fast on hardware you already own. Pick the page closest to what you are trying to get done.',
+    label: 'Soluciones',
+    title: 'IA local-first, a la medida de tu *trabajo*.',
+    lede: 'Waffuru es un solo stack, de los kernels a la memoria, que ejecuta modelos con rapidez en el hardware que ya tienes. Elige la página más cercana a lo que quieres lograr.',
   },
   cards: {
-    label: 'Who it’s for',
-    title: 'Find your *seat*.',
+    label: 'Para quién es',
+    title: 'Encuentra tu *lugar*.',
     intro:
-      'Four audiences, one stack. Each page covers the problem, the jobs and what works today.',
+      'Cuatro perfiles, un solo stack. Cada página cubre el problema, las tareas y lo que funciona hoy.',
   },
   values: {
-    label: 'What stays the same',
-    title: 'Three reasons for *everyone*.',
-    intro: 'Each audience has its own job. These three hold for all of them.',
+    label: 'Lo que no cambia',
+    title: 'Tres razones para *todos*.',
+    intro: 'Cada perfil tiene su propio trabajo. Estas tres valen para todos.',
     items: [
       {
         tag: 'cost',
-        title: 'Dollars per *workload*.',
-        body: 'When power is the ceiling, tokens per watt and dollars per workload are what you can still maximize. Waffuru is built around both.',
+        title: 'Dólares por *carga de trabajo*.',
+        body: 'Cuando el límite es la energía, los tokens por vatio y los dólares por carga de trabajo son lo que todavía se puede maximizar. Waffuru está construido en torno a ambos.',
         points: [
-          'Run on hardware you already own instead of renting',
-          'Quantized models fit more in the memory you have',
-          'Waffle shows where capacity sits idle',
+          'Ejecuta en el hardware que ya tienes en lugar de alquilar',
+          'Los modelos cuantizados hacen caber más en la memoria disponible',
+          'Waffle muestra dónde hay capacidad ociosa',
         ],
       },
       {
         tag: 'inference',
-        title: 'Better *inference*.',
-        body: 'Kernels tuned for each backend, quantized models and KV cache, and speculative decoding, in an engine with no Python on the hot path.',
+        title: 'Mejor *inferencia*.',
+        body: 'Kernels afinados para cada backend, modelos y caché KV cuantizados, y decodificación especulativa, en un motor sin Python en la ruta crítica.',
         points: [
-          'Metal first, CUDA next, ROCm and Vulkan running',
-          'Loads Hugging Face models with no conversion',
-          'Text, vision, speech and omni models',
+          'Metal primero, CUDA después, ROCm y Vulkan funcionando',
+          'Carga modelos de Hugging Face sin conversión',
+          'Modelos de texto, visión, voz y omni',
         ],
       },
       {
         tag: 'control',
-        title: 'More *control*.',
-        body: 'Local-first: your data stays where it is unless you opt in, on a laptop, on-prem or in your own cloud.',
+        title: 'Más *control*.',
+        body: 'Local-first: tus datos se quedan donde están a menos que tú lo autorices, ya sea en una laptop, en tus instalaciones o en tu propia nube.',
         points: [
-          'OpenAI-compatible serving, so apps keep working',
-          'Waffle works with vLLM, SGLang and llama.cpp',
-          'No lock-in to one engine or one vendor',
+          'Serving compatible con OpenAI, para que tus apps sigan funcionando',
+          'Waffle funciona con vLLM, SGLang y llama.cpp',
+          'Sin dependencia de un solo motor ni de un solo proveedor',
         ],
       },
     ],
   },
   cta: {
-    title: 'Pull up a *seat*.',
-    body: 'Early access, closed source for now. Tell us what you want to run and we will write back.',
+    title: 'Siéntate a la *mesa*.',
+    body: 'Acceso anticipado, código cerrado por ahora. Cuéntanos qué quieres ejecutar y te responderemos.',
   },
 };
 

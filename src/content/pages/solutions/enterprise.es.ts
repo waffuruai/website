@@ -1,128 +1,129 @@
 import type { enterprise } from './enterprise';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const enterpriseEs: (typeof enterprise)['en'] = {
   seo: {
-    title: 'On-prem LLM inference for the enterprise',
+    title: 'Inferencia de LLM on-prem para empresas',
     description:
-      'Run LLM inference on-prem or in your private cloud, keep sensitive data inside your boundary, and see every GPU and engine from one place. Early access.',
+      'Inferencia de LLM en tus instalaciones o nube privada: datos sensibles dentro de tu perímetro y cada GPU y cada motor en un solo lugar. Acceso anticipado.',
     keywords: [
-      'on-prem LLM inference',
-      'private AI infrastructure',
-      'sovereign AI',
-      'AI data privacy',
+      'inferencia de LLM on-premise',
+      'infraestructura de IA privada',
+      'IA soberana',
+      'privacidad de datos en IA',
     ],
   },
-  name: 'Enterprise',
-  serviceType: 'On-premises and private-cloud LLM inference software',
+  name: 'Empresas',
+  serviceType:
+    'Software de inferencia de LLM en instalaciones propias y nube privada',
   card: {
-    title: '*Enterprise*',
+    title: '*Empresas*',
     summary:
-      'On-prem or private-cloud inference for sensitive data, with one view of every GPU.',
+      'Inferencia en tus instalaciones o en nube privada para datos sensibles, con una sola vista de cada GPU.',
   },
   hero: {
-    title: 'Private AI, on your own *terms*.',
-    lede: 'Run models on hardware you operate, on-prem or in your private cloud, so sensitive data stays where it already lives. See every GPU and every engine on it from one place.',
+    title: 'IA privada, en tus propios *términos*.',
+    lede: 'Ejecuta modelos en hardware que tú operas, en tus instalaciones o en tu nube privada, para que los datos sensibles se queden donde ya viven. Ve cada GPU y cada motor desde un solo lugar.',
   },
   problem: {
-    title: 'Some data can’t *leave*.',
+    title: 'Algunos datos no pueden *salir*.',
     statement:
-      'The workloads worth automating touch customer records, contracts, source code and regulated data, which are the ones you cannot casually send to someone else’s API.',
-    body: 'So a policy says no while teams quietly say yes, and GPUs sit scattered across clusters and clouds that nobody can see in one place. Security wants a boundary, finance wants a number for each workload, and engineering wants a model that simply serves requests.',
+      'Las cargas de trabajo que vale la pena automatizar tocan registros de clientes, contratos, código fuente y datos regulados, justo los que no puedes enviar sin más a la API de otro.',
+    body: 'Así que una política dice que no mientras los equipos dicen que sí a escondidas, y las GPU quedan repartidas entre clústeres y nubes que nadie ve en un solo lugar. Seguridad quiere un perímetro, finanzas quiere una cifra por cada carga de trabajo, e ingeniería quiere un modelo que simplemente atienda solicitudes.',
   },
   useCases: {
-    title: 'Work that stays *inside*.',
+    title: 'Trabajo que se queda *dentro*.',
     intro:
-      'Four jobs for a platform team that answers to security, finance and engineering at once.',
+      'Cuatro tareas para un equipo de plataforma que responde a seguridad, finanzas e ingeniería a la vez.',
     items: [
       {
         tag: 'control',
-        title: 'Serve models inside your own boundary.',
-        body: 'Run Butter on servers you operate, on-prem or in a private cloud, so prompts, documents and outputs stay on infrastructure you control. Our default is that a user’s data stays on their machine unless they opt in.',
+        title: 'Sirve modelos dentro de tu propio perímetro.',
+        body: 'Ejecuta Butter en servidores que tú operas, en tus instalaciones o en una nube privada, para que los prompts, los documentos y los resultados se queden en la infraestructura que controlas. Nuestra norma por defecto es que los datos de un usuario se quedan en su equipo a menos que lo autorice.',
       },
       {
         tag: 'cost',
-        title: 'See every GPU and every engine in one place.',
-        body: 'Waffle shows which GPUs are busy, which engines run on them and which sit idle, whether the engine is Butter, vLLM, SGLang or llama.cpp. That is the starting point for deciding what to consolidate, retire or buy.',
+        title: 'Ve cada GPU y cada motor en un solo lugar.',
+        body: 'Waffle muestra qué GPU están ocupadas, qué motores corren en ellas y cuáles están ociosas, sea el motor Butter, vLLM, SGLang o llama.cpp. Es el punto de partida para decidir qué consolidar, retirar o comprar.',
       },
       {
         tag: 'inference',
-        title: 'Get more from the GPUs you already bought.',
-        body: 'Kernels tuned per backend, quantized models and KV cache, and speculative decoding all go after more useful tokens per watt and per dollar. We would rather measure your workload than quote you a number.',
+        title: 'Saca más partido a las GPU que ya compraste.',
+        body: 'Kernels afinados por backend, modelos y caché KV cuantizados, y decodificación especulativa apuntan a más tokens útiles por vatio y por dólar. Preferimos medir tu carga de trabajo antes que darte una cifra.',
       },
       {
         tag: 'control',
-        title: 'Point existing apps at it without a rewrite.',
-        body: 'Butter’s OpenAI-compatible API supports streaming and tool calling, so internal tools change an address, not an SDK. Nothing locks you to one engine, because Waffle works alongside vLLM, SGLang and llama.cpp.',
+        title: 'Apunta tus apps actuales a él sin reescribir nada.',
+        body: 'La API de Butter compatible con OpenAI admite streaming y llamada a herramientas, así que las herramientas internas cambian una dirección, no un SDK. Nada te ata a un motor, porque Waffle funciona junto a vLLM, SGLang y llama.cpp.',
       },
     ],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
+    title: 'Cómo *encaja* el stack.',
     intro:
-      'Butter serves, Waffle watches, Syrup retrieves, and Iron sits underneath all three.',
+      'Butter sirve, Waffle vigila, Syrup recupera e Iron está debajo de los tres.',
     items: [
       {
         product: 'butter',
-        need: 'Serve models on servers you operate.',
-        body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so there is no conversion pipeline between a new model and your servers.',
+        need: 'Sirve modelos en servidores que tú operas.',
+        body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que no hay un pipeline de conversión entre un modelo nuevo y tus servidores.',
       },
       {
         product: 'waffle',
-        need: 'One view of every GPU and every engine.',
-        body: 'A small Rust sidecar on each host reports signed telemetry. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so adopting it does not mean replacing what already runs.',
+        need: 'Una sola vista de cada GPU y cada motor.',
+        body: 'Un pequeño sidecar en Rust en cada host reporta telemetría firmada. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI, así que adoptarlo no implica reemplazar lo que ya corre.',
       },
       {
         product: 'syrup',
-        need: 'Answers from your own sources, with citations.',
-        body: 'Local retrieval over internal notes and code. Search is lexical plus vector, and results come back with citations over MCP.',
+        need: 'Respuestas de tus propias fuentes, con citas.',
+        body: 'Recuperación local sobre notas y código internos. La búsqueda es léxica más vectorial, y los resultados llegan con citas a través de MCP.',
       },
       {
         product: 'iron',
-        need: 'A hardware decision that is not a rewrite.',
-        body: 'One kernel definition lowers to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V behind a versioned C and Rust ABI. When a second vendor or a new GPU generation arrives, the kernels carry over, with tuning following backend by backend.',
+        need: 'Una decisión de hardware que no sea una reescritura.',
+        body: 'Una definición de kernel se traduce a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V tras una ABI versionada de C y Rust. Cuando llegue un segundo proveedor o una nueva generación de GPU, los kernels se trasladan, y la afinación va siguiendo backend por backend.',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Enterprise datacenter GPUs are in progress, and we would rather say so up front. The products are in early access and closed source for now.',
+    title: 'Dónde *estamos*.',
+    lede: 'Las GPU de centros de datos empresariales están en desarrollo, y preferimos decirlo desde el principio. Los productos están en acceso anticipado y son de código cerrado por ahora.',
     notes: [
-      'Plan pilots around Apple silicon, RTX workstations and DGX Spark, where the stack runs today.',
-      'Datacenter GPUs are in progress. If they are your target, tell us which ones, because it shapes what we build first.',
-      'ROCm and Vulkan run but are not tuned yet.',
+      'Planifica los pilotos en torno a Apple silicon, estaciones de trabajo RTX y DGX Spark, donde el stack funciona hoy.',
+      'Las GPU de centros de datos están en desarrollo. Si son tu objetivo, dinos cuáles, porque eso define qué construimos primero.',
+      'ROCm y Vulkan funcionan, pero aún sin afinar.',
     ],
   },
   faq: [
     {
-      question: 'Can we run it on-prem or in a private cloud?',
+      question:
+        '¿Podemos ejecutarlo en nuestras instalaciones o en una nube privada?',
       answer:
-        'That is how it is built. Butter serves models on hardware you operate, and a user’s data stays on their machine unless they opt in. Datacenter GPU support is in progress, so tell us what you plan to deploy on.',
+        'Así está construido. Butter sirve modelos en hardware que tú operas, y los datos de un usuario se quedan en su equipo a menos que lo autorice. El soporte para GPU de centros de datos está en desarrollo, así que cuéntanos en qué planeas desplegarlo.',
     },
     {
-      question: 'Which GPUs does it support today?',
+      question: '¿Qué GPU admite hoy?',
       answer:
-        'Apple silicon through Metal is primary, and NVIDIA through CUDA is secondary and in production on RTX and DGX Spark. AMD ROCm and Vulkan run but are not tuned yet. Enterprise datacenter GPUs are in progress.',
+        'Apple silicon mediante Metal es el principal, y NVIDIA mediante CUDA es secundario y está en producción en RTX y DGX Spark. AMD ROCm y Vulkan funcionan, pero aún sin afinar. Las GPU de centros de datos empresariales están en desarrollo.',
     },
     {
-      question: 'Do we have to replace the serving stack we already run?',
+      question: '¿Tenemos que reemplazar el stack de serving que ya usamos?',
       answer:
-        'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so you can get visibility first and decide about engines later.',
+        'No. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI, así que puedes ganar visibilidad primero y decidir sobre los motores después.',
     },
     {
-      question: 'What leaves our network?',
+      question: '¿Qué sale de nuestra red?',
       answer:
-        'Inference data does not leave by default, because a user’s data stays on their machine unless they opt in. Each Waffle host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
+        'Los datos de inferencia no salen por defecto, porque los datos de un usuario se quedan en su equipo a menos que lo autorice. Cada host de Waffle ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
     },
     {
-      question: 'How do we evaluate it?',
+      question: '¿Cómo lo evaluamos?',
       answer:
-        'Talk to us with your hardware and your workload. We will tell you honestly whether it fits today, and early access is open by request.',
+        'Habla con nosotros con tu hardware y tu carga de trabajo. Te diremos con honestidad si encaja hoy, y el acceso anticipado está abierto bajo solicitud.',
     },
   ],
   cta: {
-    title: 'Bring us your *workload*.',
-    body: 'Early access, closed source for now. Tell us what has to stay in-house and which hardware you run, and we will tell you honestly what fits today.',
+    title: 'Tráenos tu *carga de trabajo*.',
+    body: 'Acceso anticipado, código cerrado por ahora. Cuéntanos qué debe quedarse en casa y qué hardware usas, y te diremos con honestidad qué encaja hoy.',
   },
 };
 

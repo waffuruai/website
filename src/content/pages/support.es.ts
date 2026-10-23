@@ -1,46 +1,45 @@
 import { mailto, site } from '@/content/site';
 import type { support } from './support';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const supportEs: (typeof support)['en'] = {
   seo: {
-    title: 'Support',
+    title: 'Soporte',
     description:
-      'What is available today, how early access works, supported hardware, where the docs are, and how to report a bug or a security issue.',
+      'Qué hay disponible hoy, cómo funciona el acceso anticipado, hardware compatible, dónde está la documentación y cómo reportar un error o un fallo de seguridad.',
     keywords: [
-      'Waffuru support',
-      'Waffuru docs',
-      'Waffuru early access',
-      'report a security issue',
-      'local AI hardware support',
+      'soporte de Waffuru',
+      'documentación de Waffuru',
+      'acceso anticipado a Waffuru',
+      'reportar un problema de seguridad',
+      'hardware compatible con IA local',
     ],
   },
   hero: {
-    label: 'Support',
-    title: 'Answers, and a *person* when you need one.',
-    lede: 'What’s available today, how early access works, and where to go when something breaks.',
+    label: 'Soporte',
+    title: 'Respuestas, y una *persona* cuando la necesites.',
+    lede: 'Qué hay disponible hoy, cómo funciona el acceso anticipado y a dónde acudir cuando algo falla.',
   },
   links: {
-    title: 'Where to *start*',
+    title: 'Por dónde *empezar*',
     items: [
       {
-        title: 'Read the docs',
-        body: 'Guides and references live at docs.waffuru.ai.',
+        title: 'Lee la documentación',
+        body: 'Las guías y referencias están en docs.waffuru.ai.',
         href: site.urls.docs,
       },
       {
-        title: 'Email support',
-        body: 'Bugs, questions, install trouble. Say what you ran and on which hardware.',
+        title: 'Escribe a soporte',
+        body: 'Errores, dudas, problemas de instalación. Cuéntanos qué ejecutaste y en qué hardware.',
         href: mailto('Support'),
       },
       {
-        title: 'Report a security issue',
-        body: 'Privately, by email to hello@waffuru.ai with the subject Security.',
+        title: 'Reporta un problema de seguridad',
+        body: 'En privado, por correo a hello@waffuru.ai con el asunto Security.',
         href: mailto('Security'),
       },
       {
         title: 'security.txt',
-        body: 'Our security contact in machine-readable form.',
+        body: 'Nuestro contacto de seguridad en un formato legible por máquinas.',
         href: '/.well-known/security.txt',
         file: true,
       },
@@ -48,46 +47,46 @@ const supportEs: (typeof support)['en'] = {
   },
   faq: [
     {
-      question: 'What can I use today?',
+      question: '¿Qué puedo usar hoy?',
       answer:
-        'Our products (Iron, Butter, Waffle and Syrup) are private and closed source for now, and nothing is generally available yet. Early access is how people get in first. Guides and references live at docs.waffuru.ai.',
+        'Nuestros productos (Iron, Butter, Waffle y Syrup) son privados y de código cerrado por ahora, y todavía no hay nada disponible para el público general. El acceso anticipado es la forma de entrar primero. Las guías y referencias están en docs.waffuru.ai.',
     },
     {
-      question: 'How does early access work?',
+      question: '¿Cómo funciona el acceso anticipado?',
       answer:
-        'Fill in the early-access form and tell us what you’re building and what you want to run it on. We write to you when we have something that fits. Early access is pre-release software: it can change or break, and your feedback is how it improves.',
+        'Rellena el formulario de acceso anticipado y cuéntanos qué estás construyendo y en qué hardware quieres ejecutarlo. Te escribiremos cuando tengamos algo que encaje. El acceso anticipado es software previo al lanzamiento: puede cambiar o fallar, y tus comentarios son lo que lo hace mejorar.',
     },
     {
-      question: 'Which hardware does it run on?',
+      question: '¿En qué hardware funciona?',
       answer:
-        'Apple silicon is the primary target: every kernel is written and tuned for Metal first. NVIDIA CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run today but are not tuned yet. Think MacBook and Mac Studio, RTX workstations, DGX Spark, Strix Halo and neocloud fleets.',
+        'Apple silicon es el objetivo principal: cada kernel se escribe y se afina primero para Metal. NVIDIA CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. AMD ROCm y Vulkan funcionan hoy, pero aún sin afinar. Piensa en MacBook y Mac Studio, estaciones de trabajo RTX, DGX Spark, Strix Halo y flotas de neoclouds.',
     },
     {
-      question: 'Where are the docs?',
+      question: '¿Dónde está la documentación?',
       answer:
-        'At docs.waffuru.ai. If something there is wrong or missing, tell us through the support link on this page.',
+        'En docs.waffuru.ai. Si algo está mal o falta, avísanos con el enlace de soporte de esta página.',
     },
     {
-      question: 'How do I report a bug?',
+      question: '¿Cómo reporto un error?',
       answer:
-        'Email hello@waffuru.ai with the subject Support; the Email support link above does that for you. Include your hardware and OS, what you ran, what you expected and what happened, and trim anything private from logs first.',
+        'Escribe a hello@waffuru.ai con el asunto Support; el enlace “Escribe a soporte” de arriba lo hace por ti. Incluye tu hardware y tu sistema operativo, qué ejecutaste, qué esperabas y qué pasó, y quita antes de los registros cualquier dato privado.',
     },
     {
-      question: 'How do I report a security issue?',
+      question: '¿Cómo reporto un problema de seguridad?',
       answer:
-        'Email hello@waffuru.ai with the subject Security and enough detail to reproduce it. Please keep it private until we have had a reasonable chance to fix it. Our security.txt lists the same contact in machine-readable form.',
+        'Escribe a hello@waffuru.ai con el asunto Security y el detalle suficiente para reproducirlo. Por favor, mantenlo en privado hasta que hayamos tenido una oportunidad razonable de corregirlo. Nuestro security.txt recoge el mismo contacto en un formato legible por máquinas.',
     },
     {
-      question: 'What happens to my data?',
+      question: '¿Qué pasa con mis datos?',
       answer:
-        'Our software runs locally, and your data stays on your machine unless you opt in to something that sends it elsewhere. On this website we collect only what the privacy policy lists, and Google Analytics stays off unless you accept it.',
+        'Nuestro software se ejecuta en local y tus datos se quedan en tu equipo, a menos que tú autorices algo que los envíe a otro lugar. En este sitio web solo recopilamos lo que indica la política de privacidad, y Google Analytics permanece desactivado salvo que lo aceptes.',
     },
   ],
   cta: {
-    title: 'Not in here? *Ask* us.',
-    body: 'Send your hardware, your OS, what you ran and what happened. The more detail, the easier it is to help.',
-    docs: 'Read the docs',
-    email: 'Email support',
+    title: '¿No está aquí? *Pregúntanos*.',
+    body: 'Envíanos tu hardware, tu sistema operativo, qué ejecutaste y qué pasó. Cuanto más detalle, más fácil será ayudarte.',
+    docs: 'Lee la documentación',
+    email: 'Escribe a soporte',
   },
 };
 

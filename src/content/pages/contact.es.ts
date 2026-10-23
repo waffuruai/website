@@ -1,65 +1,64 @@
 import type { contact } from './contact';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const contactEs: (typeof contact)['en'] = {
   seo: {
-    title: 'Contact',
+    title: 'Contacto',
     description:
-      'Reach Waffuru for sales, partnerships, press, support, security reports or hiring, or ask for early access.',
+      'Contacta con Waffuru para ventas, alianzas, prensa, soporte, reportes de seguridad o empleo, o solicita acceso anticipado.',
     keywords: [
-      'contact Waffuru',
-      'AI infrastructure sales',
-      'partnerships',
-      'Waffuru press',
-      'Waffuru early access',
+      'contactar con Waffuru',
+      'ventas de infraestructura de IA',
+      'alianzas',
+      'prensa de Waffuru',
+      'acceso anticipado a Waffuru',
     ],
   },
   hero: {
-    label: 'Contact',
-    title: 'Tell us what you’re *building*.',
-    lede: 'Sales, partnerships, press, support, security and hiring all reach us at hello@waffuru.ai. Pick the topic that fits.',
+    label: 'Contacto',
+    title: 'Cuéntanos qué estás *construyendo*.',
+    lede: 'Ventas, alianzas, prensa, soporte, seguridad y empleo llegan a hello@waffuru.ai. Elige el tema que mejor encaje.',
   },
   callouts: {
-    title: 'Pick a *door*.',
+    title: 'Elige una *puerta*.',
     intro:
-      'No forms to fill in. Each button opens an email with the subject already set.',
-    emailLabel: 'Email us',
+      'Sin formularios. Cada botón abre un correo con el asunto ya escrito.',
+    emailLabel: 'Escríbenos',
     items: [
       {
         subject: 'Sales',
-        title: 'Sales',
-        body: 'Running models on your own hardware, or a fleet of it? Tell us the workload and where it runs.',
+        title: 'Ventas',
+        body: '¿Corres modelos en tu propio hardware, o en toda una flota? Cuéntanos la carga de trabajo y dónde se ejecuta.',
       },
       {
         subject: 'Partnerships',
-        title: 'Partnerships',
-        body: 'Hardware makers, neoclouds and model teams: tell us what you’d like to build together.',
+        title: 'Alianzas',
+        body: 'Fabricantes de hardware, neoclouds y equipos de modelos: cuéntanos qué podríamos construir juntos.',
       },
       {
         subject: 'Press',
-        title: 'Press',
-        body: 'Writing about local AI, GPU software or the people building it? We’re glad to talk.',
+        title: 'Prensa',
+        body: '¿Escribes sobre IA local, software para GPU o las personas que lo construyen? Con gusto hablamos.',
       },
       {
         subject: 'Support',
-        title: 'Support',
-        body: 'Something broken or unclear? Send your hardware, what you ran and what happened.',
+        title: 'Soporte',
+        body: '¿Algo no funciona o no queda claro? Envíanos tu hardware, lo que ejecutaste y lo que pasó.',
       },
       {
         subject: 'Security',
-        title: 'Security',
-        body: 'Found a vulnerability? Tell us privately and give us time to fix it before it goes public.',
+        title: 'Seguridad',
+        body: '¿Encontraste una vulnerabilidad? Cuéntanosla en privado y danos tiempo para corregirla antes de que se haga pública.',
       },
       {
         subject: 'Hiring',
-        title: 'Hiring',
-        body: 'Want to help build the stack? Tell us what you’ve shipped and what you’d like to work on.',
+        title: 'Empleo',
+        body: '¿Quieres ayudar a construir el stack? Cuéntanos qué has lanzado y en qué te gustaría trabajar.',
       },
     ],
   },
   earlyAccess: {
-    title: 'Want it *first*?',
-    body: 'Our products are in private early access. Tell us what you want to run, and on what hardware, and we’ll write when we have something that fits.',
+    title: '¿Lo quieres *primero*?',
+    body: 'Nuestros productos están en acceso anticipado privado. Cuéntanos qué quieres ejecutar y en qué hardware, y te escribiremos cuando tengamos algo que encaje.',
   },
 };
 

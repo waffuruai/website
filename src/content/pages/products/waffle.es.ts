@@ -1,153 +1,155 @@
 import type { waffle } from './waffle';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const waffleEs: (typeof waffle)['en'] = {
-  layer: 'Control plane',
-  tagline: 'See every GPU and every engine running on it.',
+  layer: 'Plano de control',
+  tagline: 'Ve cada GPU y cada motor que corre en ella.',
   summary:
-    'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+    'Un plano de control para LLM en GPU, desde un equipo bajo el escritorio hasta un neocloud que alquila una flota. Cada host ejecuta un pequeño sidecar en Rust que reporta telemetría firmada. Funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
   seo: {
-    title: 'Waffle: a control plane for LLMs on GPUs',
+    title: 'Waffle: un plano de control para LLM en GPU',
     description:
-      'See every GPU and every inference engine running on it, from one box under a desk to a neocloud fleet. A small Rust sidecar on each host reports signed telemetry. Works with Butter, vLLM, SGLang and llama.cpp.',
+      'Ve cada GPU y cada motor de inferencia, desde un equipo bajo el escritorio hasta un neocloud. Telemetría firmada. Funciona con Butter, vLLM, SGLang y llama.cpp.',
     keywords: [
-      'GPU fleet management',
-      'LLM control plane',
-      'GPU observability',
-      'vLLM SGLang llama.cpp monitoring',
+      'gestión de flotas de GPU',
+      'plano de control para LLM',
+      'observabilidad de GPU',
+      'monitoreo de vLLM SGLang llama.cpp',
     ],
   },
   hero: {
-    title: 'See every GPU and every *engine* running on it.',
-    lede: 'Waffle is a control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry.',
+    title: 'Ve cada GPU y cada *motor* que corre en ella.',
+    lede: 'Waffle es un plano de control para LLM en GPU, desde un equipo bajo el escritorio hasta un neocloud que alquila una flota. Cada host ejecuta un pequeño sidecar en Rust que reporta telemetría firmada.',
     highlights: [
-      { value: 'One box', label: 'under a desk, up to a neocloud fleet' },
       {
-        value: 'Signed',
-        label: 'telemetry from a small Rust sidecar on each host',
+        value: 'Un equipo',
+        label: 'bajo el escritorio, hasta la flota de un neocloud',
       },
       {
-        value: 'No lock-in',
+        value: 'Firmada',
+        label: 'telemetría de un pequeño sidecar en Rust en cada host',
+      },
+      {
+        value: 'Sin ataduras',
         label:
-          'Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers',
+          'Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI',
       },
     ],
   },
   story: {
-    heading: 'Know what’s running on every *GPU*.',
+    heading: 'Sabe qué corre en cada *GPU*.',
     problem:
-      'A GPU box runs whatever engine somebody started on it: llama.cpp on one machine, vLLM on the next, SGLang on the new one. Finding out what is running, and where, means logging in to each host.',
+      'Un equipo con GPU corre el motor que alguien haya arrancado en él: llama.cpp en una máquina, vLLM en la siguiente, SGLang en la nueva. Averiguar qué se está ejecutando, y dónde, significa entrar en cada host.',
     outcome:
-      'Put a small Rust sidecar on each host. It reports signed telemetry, and Waffle shows you every GPU and every engine on it, whether you run one machine or a whole fleet.',
+      'Pon un pequeño sidecar en Rust en cada host. Reporta telemetría firmada, y Waffle te muestra cada GPU y cada motor que corre en ella, ya tengas una sola máquina o toda una flota.',
     outcomes: [
-      'Watch one box under your desk, or a fleet you rent out, with the same tool.',
-      'Keep the engines you already run. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
-      'Rely on what you see: every host reports signed telemetry.',
+      'Vigila un equipo bajo tu escritorio, o una flota que alquilas, con la misma herramienta.',
+      'Conserva los motores que ya usas. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
+      'Confía en lo que ves: cada host reporta telemetría firmada.',
     ],
   },
   capabilities: {
-    heading: 'What Waffle *does*.',
+    heading: 'Lo que *hace* Waffle.',
     intro:
-      'A control plane that sits beside your engines instead of replacing them.',
+      'Un plano de control que se sienta junto a tus motores en lugar de reemplazarlos.',
     items: [
       {
-        title: 'Every GPU',
-        body: 'See each GPU on each host in one place.',
+        title: 'Cada GPU',
+        body: 'Ve cada GPU de cada host en un solo lugar.',
       },
       {
-        title: 'Every engine',
-        body: 'See which engine is running on it: Butter, vLLM, SGLang, llama.cpp or another OpenAI-compatible server.',
+        title: 'Cada motor',
+        body: 'Ve qué motor corre en ella: Butter, vLLM, SGLang, llama.cpp u otro servidor compatible con OpenAI.',
       },
       {
-        title: 'A small Rust sidecar',
-        body: 'Each host runs a small sidecar written in Rust, so adding a machine means adding the sidecar.',
+        title: 'Un pequeño sidecar en Rust',
+        body: 'Cada host ejecuta un pequeño sidecar escrito en Rust, así que añadir una máquina es añadir el sidecar.',
       },
       {
-        title: 'Signed telemetry',
-        body: 'Each sidecar signs the telemetry it reports.',
+        title: 'Telemetría firmada',
+        body: 'Cada sidecar firma la telemetría que reporta.',
       },
       {
-        title: 'One box to a fleet',
-        body: 'Start with a single machine under a desk. The same setup reaches a neocloud renting out a fleet.',
+        title: 'De un equipo a una flota',
+        body: 'Empieza con una sola máquina bajo el escritorio. La misma configuración llega hasta un neocloud que alquila una flota.',
       },
       {
-        title: 'No lock-in',
-        body: 'Waffle doesn’t need Butter. It works with vLLM, SGLang, llama.cpp and other OpenAI-compatible servers too.',
+        title: 'Sin ataduras',
+        body: 'Waffle no necesita Butter. También funciona con vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
       },
     ],
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: 'Detalles *técnicos*.',
+    intro: 'Los detalles, para quienes los van a leer.',
     rows: [
-      { term: 'Role', detail: 'A control plane for LLMs on GPUs.' },
+      { term: 'Función', detail: 'Un plano de control para LLM en GPU.' },
       {
-        term: 'On each host',
-        detail: 'A small sidecar written in Rust.',
+        term: 'En cada host',
+        detail: 'Un pequeño sidecar escrito en Rust.',
       },
       {
-        term: 'Telemetry',
-        detail: 'Signed by the sidecar that reports it.',
+        term: 'Telemetría',
+        detail: 'Firmada por el sidecar que la reporta.',
       },
       {
-        term: 'Engines',
+        term: 'Motores',
         chips: [
           { label: 'Butter' },
           { label: 'vLLM' },
           { label: 'SGLang' },
           { label: 'llama.cpp' },
-          { label: 'Other OpenAI-compatible servers' },
+          { label: 'Otros servidores compatibles con OpenAI' },
         ],
       },
       {
-        term: 'Scale',
-        detail: 'One box under a desk to a neocloud fleet.',
+        term: 'Escala',
+        detail: 'De un equipo bajo el escritorio a la flota de un neocloud.',
       },
       {
         term: 'Lock-in',
-        detail: 'None. Waffle works with engines other than Butter.',
+        detail: 'Ninguno. Waffle funciona con motores distintos de Butter.',
       },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: 'Disponibilidad',
+        detail: 'Privado y de código cerrado durante el acceso anticipado.',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: 'Funciona con el resto del *stack*.',
     intro:
-      'Waffle watches the GPUs, with Butter or without it. Butter runs models on the kernels Iron compiles, and Syrup remembers what you were working on.',
+      'Waffle vigila las GPU, con Butter o sin él. Butter ejecuta modelos sobre los kernels que compila Iron, y Syrup recuerda en qué estabas trabajando.',
   },
   faq: [
     {
-      question: 'Is Waffle open source?',
+      question: '¿Waffle es de código abierto?',
       answer:
-        'Not today. Waffle is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        'Hoy no. Waffle es privado y de código cerrado durante el acceso anticipado. Solicita acceso y te escribiremos cuando haya más que contar.',
     },
     {
-      question: 'Do I have to use Butter?',
+      question: '¿Tengo que usar Butter?',
       answer:
-        'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so you keep the engines you already run.',
+        'No. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI, así que conservas los motores que ya usas.',
     },
     {
-      question: 'Who is it for?',
+      question: '¿Para quién es?',
       answer:
-        'Anyone who runs LLMs on GPUs and wants to see them, from a single box under a desk to a neocloud renting out a fleet.',
+        'Para cualquiera que ejecute LLM en GPU y quiera verlos, desde un solo equipo bajo el escritorio hasta un neocloud que alquila una flota.',
     },
     {
-      question: 'What does the sidecar do?',
+      question: '¿Qué hace el sidecar?',
       answer:
-        'Each host runs a small sidecar written in Rust. It reports signed telemetry about the host’s GPUs and the engines running on them.',
+        'Cada host ejecuta un pequeño sidecar escrito en Rust. Reporta telemetría firmada sobre las GPU del host y los motores que corren en ellas.',
     },
     {
-      question: 'Which GPUs does it support?',
+      question: '¿Qué GPU admite?',
       answer:
-        'We haven’t published a hardware matrix for Waffle yet. Tell us what you run and we’ll say plainly whether it fits.',
+        'Todavía no hemos publicado una matriz de hardware para Waffle. Cuéntanos qué usas y te diremos con franqueza si encaja.',
     },
   ],
   cta: {
-    title: 'See your *fleet*.',
-    body: 'Waffle is in early access and closed source for now. Request access, or tell us what you run.',
+    title: 'Mira tu *flota*.',
+    body: 'Waffle está en acceso anticipado y con código cerrado por ahora. Solicita acceso o cuéntanos qué ejecutas.',
   },
 };
 

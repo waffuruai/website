@@ -1,98 +1,101 @@
 import type { iron } from './iron';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const ironEs: (typeof iron)['en'] = {
   layer: 'Kernels',
-  tagline: 'One kernel definition, four backends.',
+  tagline: 'Una definición de kernel, cuatro backends.',
   summary:
-    'A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
+    'Un DSL embebido en Rust. Los kernels se traducen a una representación intermedia (IR) compartida y de ahí a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V. Una ABI versionada de C y Rust permite que los hosts existentes los invoquen.',
   seo: {
-    title: 'Iron: one GPU kernel definition, four backends',
+    title: 'Iron: un kernel de GPU, cuatro backends',
     description:
-      'Write a GPU kernel once in Rust and lower it to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V through a shared IR. Iron has a versioned C and Rust ABI and is in early access.',
+      'Escribe un kernel de GPU una vez en Rust y llévalo a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V con una IR compartida. ABI de C y Rust. En acceso anticipado.',
     keywords: [
-      'Rust GPU kernel DSL',
-      'Metal kernels',
-      'CUDA kernels',
+      'DSL de kernels de GPU en Rust',
+      'kernels de Metal',
+      'kernels de CUDA',
       'ROCm HIP',
       'Vulkan SPIR-V',
-      'cross-platform GPU kernels',
+      'kernels de GPU multiplataforma',
     ],
   },
   hero: {
-    title: 'One kernel definition, *four* backends.',
-    lede: 'Press raw math directly into high-performance silicon. Iron is a Rust-embedded DSL: you write the kernel once, it lowers to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V.',
+    title: 'Una definición de kernel, *cuatro* backends.',
+    lede: 'Prensa la matemática pura directamente en silicio de alto rendimiento. Iron es un DSL embebido en Rust: escribes el kernel una vez, se traduce a una IR compartida y de ahí a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V.',
     highlights: [
-      { value: '4', label: 'GPU backends from one kernel definition' },
-      { value: '~1,139', label: 'kernel declarations' },
       {
-        value: '4,164 / 4,164',
-        label: 'HIP and Vulkan test corpus, bit-accurate',
+        value: '4',
+        label: 'backends de GPU desde una sola definición de kernel',
+      },
+      { value: '~1.139', label: 'declaraciones de kernel' },
+      {
+        value: '4.164 / 4.164',
+        label: 'corpus de pruebas de HIP y Vulkan, exacto bit a bit',
       },
     ],
   },
   story: {
-    heading: 'Stop writing the same kernel *four* times.',
+    heading: 'Deja de escribir el mismo kernel *cuatro* veces.',
     problem:
-      'Every GPU vendor has its own kernel language. Shipping on Apple, NVIDIA and AMD hardware means writing, tuning and testing the same math again for each one, then keeping every copy in step as the math changes.',
+      'Cada fabricante de GPU tiene su propio lenguaje de kernels. Lanzar en hardware de Apple, NVIDIA y AMD significa escribir, afinar y probar la misma matemática otra vez para cada uno, y luego mantener cada copia al día cuando la matemática cambia.',
     outcome:
-      'You write the kernel once, in Rust. Iron lowers it to a shared IR and then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, so a single definition covers every backend you target.',
+      'Escribes el kernel una vez, en Rust. Iron lo traduce a una IR compartida y luego a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V, así que una sola definición cubre todos los backends a los que apuntas.',
     outcomes: [
-      'Write and tune on the Mac on your desk first. Metal is the primary target, and the same definition carries to the other backends.',
-      'Call your kernels from the code you already have, through a versioned C and Rust ABI.',
-      'Check the backends against a bit-accurate test corpus instead of hoping two of them agree.',
+      'Escribe y afina primero en el Mac de tu escritorio. Metal es el objetivo principal, y la misma definición se lleva a los demás backends.',
+      'Llama a tus kernels desde el código que ya tienes, a través de una ABI versionada de C y Rust.',
+      'Comprueba los backends contra un corpus de pruebas exacto bit a bit, en lugar de esperar que dos de ellos coincidan.',
     ],
   },
   capabilities: {
-    heading: 'What Iron *does*.',
-    intro: 'Built from the metal up, for people who write kernels.',
+    heading: 'Lo que *hace* Iron.',
+    intro:
+      'Construido desde el metal hacia arriba, para quienes escriben kernels.',
     items: [
       {
-        title: 'One definition, four backends',
-        body: 'Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. You maintain one source.',
+        title: 'Una definición, cuatro backends',
+        body: 'Los kernels se traducen a una IR compartida y de ahí a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V. Mantienes un único código fuente.',
       },
       {
-        title: 'Written in Rust',
-        body: 'A Rust-embedded DSL. Kernels are Rust functions marked #[kernel], built from primitives like program_id, load and store.',
+        title: 'Escrito en Rust',
+        body: 'Un DSL embebido en Rust. Los kernels son funciones de Rust marcadas con #[kernel], construidas con primitivas como program_id, load y store.',
       },
       {
-        title: 'Callable from your host',
-        body: 'A versioned C and Rust ABI lets existing hosts call Iron kernels without being rewritten around them.',
+        title: 'Invocable desde tu host',
+        body: 'Una ABI versionada de C y Rust permite que los hosts existentes llamen a los kernels de Iron sin reescribirse a su alrededor.',
       },
       {
-        title: 'Bit-accurate by test',
-        body: 'The HIP and Vulkan test corpus holds 4,164 cases, and all 4,164 are bit-accurate.',
+        title: 'Exacto bit a bit, con pruebas',
+        body: 'El corpus de pruebas de HIP y Vulkan reúne 4.164 casos, y los 4.164 son exactos bit a bit.',
       },
       {
-        title: 'Over a thousand kernels',
-        body: 'About 1,139 kernel declarations today. Each is one definition that every backend shares.',
+        title: 'Más de mil kernels',
+        body: 'Unas 1.139 declaraciones de kernel hoy. Cada una es una definición que comparten todos los backends.',
       },
       {
-        title: 'Tuned where it counts',
-        body: 'Every kernel is written and tuned on Metal first. CUDA is secondary, and ROCm and Vulkan run today but are not tuned yet.',
+        title: 'Afinado donde importa',
+        body: 'Cada kernel se escribe y se afina primero en Metal. CUDA es secundario, y ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
       },
     ],
   },
   code: {
-    heading: 'A whole kernel, *start to finish*.',
+    heading: 'Un kernel completo, *de principio a fin*.',
     intro:
-      'This is exp over a tensor. Each instance loads one element, applies exp and stores the result. The #[kernel] attribute tags the op and its tolerance.',
+      'Esto es exp sobre un tensor. Cada instancia carga un elemento, aplica exp y guarda el resultado. El atributo #[kernel] etiqueta la operación y su tolerancia.',
     caption:
-      'Iron DSL source. Iron lowers it to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V.',
+      'Código fuente del DSL de Iron. Iron lo traduce a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V.',
   },
   specs: {
-    heading: 'Technical *specifics*.',
-    intro: 'The details, for the people who will read them.',
+    heading: 'Detalles *técnicos*.',
+    intro: 'Los detalles, para quienes los van a leer.',
     rows: [
       {
-        term: 'Language',
+        term: 'Lenguaje',
         detail:
-          'A Rust-embedded DSL. Kernels are Rust functions marked #[kernel].',
+          'Un DSL embebido en Rust. Los kernels son funciones de Rust marcadas con #[kernel].',
       },
       {
         term: 'Pipeline',
         detail:
-          'One kernel definition lowers to a shared IR, then to each backend.',
+          'Una definición de kernel se traduce a una IR compartida y de ahí a cada backend.',
       },
       {
         term: 'Backends',
@@ -104,79 +107,82 @@ const ironEs: (typeof iron)['en'] = {
         ],
       },
       {
-        term: 'Host ABI',
+        term: 'ABI del host',
         detail:
-          'A versioned C and Rust ABI, so existing hosts can call Iron kernels.',
-      },
-      { term: 'Kernel count', detail: 'About 1,139 kernel declarations.' },
-      {
-        term: 'Test corpus',
-        detail: 'HIP and Vulkan: 4,164 of 4,164 cases bit-accurate.',
+          'Una ABI versionada de C y Rust, para que los hosts existentes puedan llamar a los kernels de Iron.',
       },
       {
-        term: 'Availability',
-        detail: 'Private and closed source during early access.',
+        term: 'Cantidad de kernels',
+        detail: 'Unas 1.139 declaraciones de kernel.',
+      },
+      {
+        term: 'Corpus de pruebas',
+        detail: 'HIP y Vulkan: 4.164 de 4.164 casos exactos bit a bit.',
+      },
+      {
+        term: 'Disponibilidad',
+        detail: 'Privado y de código cerrado durante el acceso anticipado.',
       },
     ],
   },
   platforms: {
-    heading: 'Where it’s *tuned*.',
+    heading: 'Dónde está *afinado*.',
     intro:
-      'Metal comes first, because that is where every kernel is written and tuned.',
+      'Metal va primero, porque es donde se escribe y se afina cada kernel.',
     tiers: [
       {
         platform: 'Apple · Metal',
         level: 'primary',
-        note: 'Every kernel is written and tuned here first. MSL → .metallib.',
+        note: 'Cada kernel se escribe y se afina aquí primero. MSL → .metallib.',
       },
       {
         platform: 'NVIDIA · CUDA',
         level: 'secondary',
-        note: 'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
+        note: 'En producción en RTX y DGX Spark. Las GPU de centros de datos están en desarrollo. CUDA → PTX.',
       },
       {
         platform: 'AMD ROCm · Vulkan',
         level: 'runs',
-        note: 'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
+        note: 'Funciona hoy, aún sin afinar. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
   },
   stack: {
-    heading: 'Works with the rest of the *stack*.',
+    heading: 'Funciona con el resto del *stack*.',
     intro:
-      'Iron stands on its own. Add Butter to run models on the kernels, Waffle to watch the GPUs they run on, or Syrup to give your AI a memory of what you were working on.',
+      'Iron funciona por sí solo. Añade Butter para ejecutar modelos sobre los kernels, Waffle para vigilar las GPU en las que corren, o Syrup para que tu IA recuerde en qué estabas trabajando.',
   },
   faq: [
     {
-      question: 'Is Iron open source?',
+      question: '¿Iron es de código abierto?',
       answer:
-        'Not today. Iron is private and closed source during early access. Request access and we’ll write when there is more to share.',
+        'Hoy no. Iron es privado y de código cerrado durante el acceso anticipado. Solicita acceso y te escribiremos cuando haya más que contar.',
     },
     {
-      question: 'Which hardware does it run on?',
+      question: '¿En qué hardware funciona?',
       answer:
-        'Metal on Apple silicon is the primary target: every kernel is written and tuned there first. CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. ROCm and Vulkan run today but are not tuned yet.',
+        'Metal en Apple silicon es el objetivo principal: cada kernel se escribe y se afina allí primero. CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
     },
     {
-      question: 'Do I have to rewrite my host code?',
+      question: '¿Tengo que reescribir el código de mi host?',
       answer:
-        'Not to call Iron kernels. A versioned C and Rust ABI lets existing hosts call them.',
+        'No para llamar a los kernels de Iron. Una ABI versionada de C y Rust permite que los hosts existentes los llamen.',
     },
     {
-      question: 'Is it faster than hand-written CUDA or Metal?',
+      question: '¿Es más rápido que CUDA o Metal escritos a mano?',
       answer:
-        'We haven’t published benchmark numbers, so we won’t claim one. What we can say today is that one definition lowers to four backends, and the HIP and Vulkan test corpus is bit-accurate.',
+        'No hemos publicado cifras de benchmarks, así que no vamos a afirmarlo. Lo que sí podemos decir hoy es que una definición se traduce a cuatro backends y que el corpus de pruebas de HIP y Vulkan es exacto bit a bit.',
     },
     {
-      question: 'How do I try it?',
+      question: '¿Cómo lo pruebo?',
       answer:
-        'Request early access with the form on this page. The docs are at docs.waffuru.ai.',
+        'Solicita acceso anticipado con el formulario de esta página. La documentación está en docs.waffuru.ai.',
     },
   ],
   cta: {
-    title: 'Press your first *kernel*.',
-    body: 'Iron is in early access and closed source for now. Request access, and read the docs while you wait.',
-    docsLabel: 'Read the docs',
+    title: 'Prensa tu primer *kernel*.',
+    body: 'Iron está en acceso anticipado y con código cerrado por ahora. Solicita acceso y lee la documentación mientras esperas.',
+    docsLabel: 'Lee la documentación',
   },
 };
 

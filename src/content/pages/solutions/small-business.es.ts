@@ -1,121 +1,123 @@
 import type { smallBusiness } from './small-business';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const smallBusinessEs: (typeof smallBusiness)['en'] = {
   seo: {
-    title: 'Private AI for small business',
+    title: 'IA privada para pequeñas empresas',
     description:
-      'Run private AI on a Mac Studio or an RTX workstation you already own. Your data stays on your machine and there is no per-token cloud bill. Early access.',
+      'Ejecuta IA privada en un Mac Studio o una estación RTX que ya tienes. Tus datos se quedan en tu equipo y sin factura de nube por token. Acceso anticipado.',
     keywords: [
-      'private AI for small business',
-      'local AI',
-      'on-device LLM',
-      'AI without cloud costs',
+      'IA privada para pequeñas empresas',
+      'IA local',
+      'LLM en el dispositivo',
+      'IA sin costos de nube',
     ],
   },
-  name: 'Small business',
-  serviceType: 'Private, local AI inference software',
+  name: 'Pequeñas empresas',
+  serviceType: 'Software de inferencia de IA local y privada',
   card: {
-    title: 'Small *business*',
-    summary: 'Private AI on a Mac Studio or an RTX box, with no cloud bill.',
+    title: 'Pequeñas *empresas*',
+    summary:
+      'IA privada en un Mac Studio o en un equipo con RTX, sin factura de la nube.',
   },
   hero: {
-    title: 'Private AI, without the *cloud* bill.',
-    lede: 'Run open models on a Mac Studio or an RTX workstation you already own. Your files stay on your machine, and nothing is metered per question.',
+    title: 'IA privada, sin la factura de la *nube*.',
+    lede: 'Ejecuta modelos abiertos en un Mac Studio o en una estación de trabajo RTX que ya tienes. Tus archivos se quedan en tu equipo y nada se cobra por pregunta.',
   },
   problem: {
-    title: 'Every prompt has a *price*.',
+    title: 'Cada prompt tiene un *precio*.',
     statement:
-      'AI is most useful on your own files, and that is exactly where the bills and the privacy questions start.',
-    body: 'Per-token pricing makes every experiment feel expensive, and sending client documents, invoices or source code to someone else’s servers is a decision you would rather not make for every prompt. Meanwhile the machine on your desk is already able to run open models like Llama, Gemma, Qwen and GPT-OSS.',
+      'La IA es más útil con tus propios archivos, y justo ahí empiezan las facturas y las dudas de privacidad.',
+    body: 'El precio por token hace que cada experimento parezca caro, y enviar documentos de clientes, facturas o código fuente a los servidores de otra persona es una decisión que preferirías no tomar con cada prompt. Mientras tanto, el equipo que tienes en tu escritorio ya puede ejecutar modelos abiertos como Llama, Gemma, Qwen y GPT-OSS.',
   },
   useCases: {
-    title: 'Put the box to *work*.',
-    intro: 'Four jobs a small team can hand to a machine it already owns.',
+    title: 'Pon la máquina a *trabajar*.',
+    intro:
+      'Cuatro tareas que un equipo pequeño puede confiar a una máquina que ya tiene.',
     items: [
       {
         tag: 'cost',
-        title: 'Stop paying per question.',
-        body: 'Run models on a Mac Studio or an RTX workstation you already own, so spend stops scaling with every prompt, document and teammate. Heavy use becomes a power bill, not a surprise invoice.',
+        title: 'Deja de pagar por pregunta.',
+        body: 'Ejecuta modelos en un Mac Studio o en una estación de trabajo RTX que ya tienes, para que el gasto deje de crecer con cada prompt, documento y compañero. El uso intensivo pasa a ser una factura de electricidad, no una factura sorpresa.',
       },
       {
         tag: 'control',
-        title: 'Work on client files without sending them anywhere.',
-        body: 'Models, prompts and documents stay on your machine unless you opt in. Summarize contracts, draft replies and check invoices without a third party in the loop.',
+        title: 'Trabaja con archivos de clientes sin enviarlos a ningún lado.',
+        body: 'Los modelos, los prompts y los documentos se quedan en tu equipo a menos que tú lo autorices. Resume contratos, redacta respuestas y revisa facturas sin un tercero de por medio.',
       },
       {
         tag: 'inference',
-        title: 'Fit a bigger model on the machine you have.',
-        body: '3- to 8-bit quantized checkpoints and a quantized KV cache let larger models and longer conversations fit in the memory you already own. Butter loads them straight from Hugging Face, with no conversion step.',
+        title: 'Haz caber un modelo más grande en la máquina que tienes.',
+        body: 'Los checkpoints cuantizados de 2 a 8 bits y una caché KV cuantizada permiten que modelos más grandes y conversaciones más largas quepan en la memoria que ya tienes. Butter los carga directo desde Hugging Face, sin paso de conversión.',
       },
       {
         tag: 'control',
-        title: 'Ask questions of your own notes and code.',
-        body: 'Syrup runs retrieval locally over your notes and code, so an answer comes back with a citation to where it came from. Search is lexical plus vector, so exact names and fuzzy questions both land.',
+        title: 'Hazle preguntas a tus propias notas y a tu código.',
+        body: 'Syrup ejecuta la recuperación en local sobre tus notas y tu código, así que cada respuesta llega con una cita de dónde salió. La búsqueda es léxica más vectorial, de modo que tanto los nombres exactos como las preguntas difusas dan en el blanco.',
       },
     ],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
+    title: 'Cómo *encaja* el stack.',
     intro:
-      'Butter does the heavy lifting. Syrup and Waffle are there when you want them.',
+      'Butter hace el trabajo pesado. Syrup y Waffle están ahí cuando los quieras.',
     items: [
       {
         product: 'butter',
-        need: 'Run models on the machine you own.',
-        body: 'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Llama, Gemma, Qwen, GPT-OSS and more run alongside speech-to-text, text-to-speech and vision models, and butter serve gives your apps an OpenAI-compatible endpoint.',
+        need: 'Ejecuta modelos en la máquina que ya tienes.',
+        body: 'Swift sobre Metal para Apple silicon, Rust para CUDA y el resto. Llama, Gemma, Qwen, GPT-OSS y más corren junto a modelos de voz a texto, texto a voz y visión, y butter serve da a tus apps un endpoint compatible con OpenAI.',
       },
       {
         product: 'syrup',
-        need: 'Ask your own files, and get sources.',
-        body: 'Local retrieval over your notes and code. Results come back with citations over MCP, so assistants can show their work.',
+        need: 'Pregunta a tus propios archivos y obtén fuentes.',
+        body: 'Recuperación local sobre tus notas y tu código. Los resultados llegan con citas a través de MCP, para que los asistentes puedan mostrar de dónde sacan lo que dicen.',
       },
       {
         product: 'waffle',
-        need: 'Keep an eye on the box under your desk.',
-        body: 'From one machine to a small rack, see every GPU and every engine running on it, whether that is Butter, llama.cpp, vLLM or SGLang.',
+        need: 'Mantén un ojo en el equipo bajo tu escritorio.',
+        body: 'De una máquina a un rack pequeño, ve cada GPU y cada motor que corre en ella, sea Butter, llama.cpp, vLLM o SGLang.',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Waffuru is in early access, and the products are closed source for now. Here is what that means for a small team.',
+    title: 'Dónde *estamos*.',
+    lede: 'Waffuru está en acceso anticipado y los productos son de código cerrado por ahora. Esto es lo que significa para un equipo pequeño.',
     notes: [
-      'Apple silicon is where every kernel is tuned first, so a Mac Studio is the smoothest place to start.',
-      'NVIDIA RTX workstations run on CUDA, which is in production. AMD and Vulkan run but are not tuned yet.',
-      'Model coverage is wide and growing, and DeepSeek V4 is in progress.',
+      'Apple silicon es donde se afina primero cada kernel, así que un Mac Studio es el lugar más fluido para empezar.',
+      'Las estaciones de trabajo NVIDIA RTX corren sobre CUDA, que está en producción. AMD y Vulkan funcionan, pero aún sin afinar.',
+      'La cobertura de modelos es amplia y sigue creciendo, y DeepSeek V4 está en desarrollo.',
     ],
   },
   faq: [
     {
-      question: 'What hardware do I need?',
+      question: '¿Qué hardware necesito?',
       answer:
-        'A Mac with Apple silicon is the best-supported place to start, because Metal is where every kernel is tuned first. RTX workstations run on CUDA, and DGX Spark and Strix Halo are on the list too. How large a model you can run depends on how much memory you have.',
+        'Un Mac con Apple silicon es el punto de partida con mejor soporte, porque Metal es donde se afina primero cada kernel. Las estaciones de trabajo RTX corren sobre CUDA, y DGX Spark y Strix Halo también están en la lista. El tamaño del modelo que puedes ejecutar depende de cuánta memoria tengas.',
     },
     {
-      question: 'Will local models be as good as the biggest hosted ones?',
+      question:
+        '¿Serán los modelos locales tan buenos como los alojados más grandes?',
       answer:
-        'Not for every task, and we will not pretend otherwise. Open models cover a lot of everyday work, and for the hardest jobs a hosted model may still be the better tool. Running locally means you choose per task instead of defaulting to the cloud.',
+        'No para todas las tareas, y no vamos a fingir lo contrario. Los modelos abiertos cubren buena parte del trabajo diario y, para las tareas más difíciles, un modelo alojado puede seguir siendo la mejor herramienta. Ejecutar en local significa que eliges según la tarea, en lugar de usar la nube por defecto.',
     },
     {
-      question: 'Does my data leave my machine?',
+      question: '¿Mis datos salen de mi equipo?',
       answer:
-        'Not unless you opt in. Models run locally, and your prompts, files and notes stay on your machine by default.',
+        'No, salvo que tú lo autorices. Los modelos se ejecutan en local, y tus prompts, archivos y notas se quedan en tu equipo por defecto.',
     },
     {
-      question: 'Can I keep using the apps I already have?',
+      question: '¿Puedo seguir usando las apps que ya tengo?',
       answer:
-        'If they speak the OpenAI API, usually yes. Butter serves an OpenAI-compatible endpoint with streaming and tool calling, so many tools only need a new address.',
+        'Si hablan la API de OpenAI, normalmente sí. Butter sirve un endpoint compatible con OpenAI con streaming y llamada a herramientas, así que a muchas herramientas solo les hace falta una dirección nueva.',
     },
     {
-      question: 'Can I try it today?',
+      question: '¿Puedo probarlo hoy?',
       answer:
-        'Early access is open by request, and the products are closed source for now. Tell us what you want to run and on what hardware, and we will write back.',
+        'El acceso anticipado está abierto bajo solicitud, y los productos son de código cerrado por ahora. Cuéntanos qué quieres ejecutar y en qué hardware, y te responderemos.',
     },
   ],
   cta: {
-    title: 'Run it on your *own* machine.',
-    body: 'Early access, closed source for now. Tell us what you want to run and on what hardware, and we will write back.',
+    title: 'Ejecútalo en tu *propia* máquina.',
+    body: 'Acceso anticipado, código cerrado por ahora. Cuéntanos qué quieres ejecutar y en qué hardware, y te responderemos.',
   },
 };
 

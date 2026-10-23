@@ -1,80 +1,79 @@
 import type { home } from './home';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const homeEs: (typeof home)['en'] = {
   seo: {
     keywords: [
-      'local LLM inference',
-      'GPU kernels',
-      'inference engine',
+      'inferencia de LLM local',
+      'kernels de GPU',
+      'motor de inferencia',
       'Apple silicon',
       'Metal',
       'CUDA',
       'ROCm',
       'Vulkan',
-      'GPU fleet management',
+      'gestión de flotas de GPU',
       'neocloud',
-      'on-device AI',
-      'private AI',
+      'IA en el dispositivo',
+      'IA privada',
     ],
   },
 
   hero: {
-    eyebrow: 'Four products · closed source for now',
-    title: 'Raw math, *pressed* into silicon.',
-    lede: 'We write GPU kernels, an inference engine, a control plane and a retrieval layer. They run on a laptop, a home lab or a neocloud fleet.',
-    secondary: { label: 'See the stack', href: '#stack' },
+    eyebrow: 'Cuatro productos · código cerrado por ahora',
+    title: 'Matemática pura, *prensada* en silicio.',
+    lede: 'Escribimos kernels de GPU, un motor de inferencia, un plano de control y una capa de recuperación. Funcionan en una laptop, en un laboratorio casero o en la flota de un neocloud.',
+    secondary: { label: 'Ver el stack', href: '#stack' },
     emits: {
-      label: 'Emits',
+      label: 'Emite',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
     },
   },
 
   stack: {
-    title: 'The stack.',
+    title: 'El stack.',
     intro:
-      'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on.',
+      'Iron compila los kernels. Butter ejecuta modelos sobre ellos. Waffle vigila las GPU. Syrup recuerda en qué estabas trabajando.',
     products: [
       {
         slug: 'syrup',
         index: '04',
-        kicker: 'Memory',
+        kicker: 'Memoria',
         name: 'Syrup',
-        tagline: 'Your AI remembers what you were working on.',
-        body: 'Local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+        tagline: 'Tu IA recuerda en qué estabas trabajando.',
+        body: 'Recuperación local sobre tus notas y tu código. Los embeddings se comprimen con TurboQuant+, la búsqueda combina léxico y vectores, y los resultados llegan con citas a través de MCP.',
       },
       {
         slug: 'waffle',
         index: '03',
-        kicker: 'Control plane',
+        kicker: 'Plano de control',
         name: 'Waffle',
-        tagline: 'See every GPU and every engine running on it.',
-        body: 'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+        tagline: 'Ve cada GPU y cada motor que corre en ella.',
+        body: 'Un plano de control para LLM en GPU, desde un equipo bajo el escritorio hasta un neocloud que alquila una flota. Cada host ejecuta un pequeño sidecar en Rust que reporta telemetría firmada. Funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
       },
       {
         slug: 'butter',
         index: '02',
         kicker: 'Serving',
         name: 'Butter',
-        tagline: 'Model serving without Python.',
-        body: 'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 3- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
+        tagline: 'Servir modelos sin Python.',
+        body: 'Swift sobre Metal para Apple silicon, Rust para CUDA y el resto. Carga checkpoints cuantizados de 2 a 8 bits, modelos híbridos y MoE, con una caché KV cuantizada.',
       },
       {
         slug: 'iron',
         index: '01',
         kicker: 'Kernels',
         name: 'Iron',
-        tagline: 'One kernel definition, four backends.',
-        body: 'A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
+        tagline: 'Una definición de kernel, cuatro backends.',
+        body: 'Un DSL embebido en Rust. Los kernels se traducen a una representación intermedia (IR) compartida y de ahí a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V. Una ABI versionada de C y Rust permite que los hosts existentes los invoquen.',
       },
     ],
   },
 
   models: {
-    title: 'Models on the menu.',
+    title: 'Modelos a la carta.',
     intro:
-      'Loaded straight from Hugging Face. Coverage is widest on Metal; CUDA support is added model by model.',
-    legend: { supported: 'Supported', inProgress: 'In progress' },
+      'Se cargan directo desde Hugging Face. La cobertura es más amplia en Metal; el soporte de CUDA se añade modelo por modelo.',
+    legend: { supported: 'Compatible', inProgress: 'En desarrollo' },
     lanes: [
       [
         {
@@ -137,7 +136,7 @@ const homeEs: (typeof home)['en'] = {
   },
 
   kernel: {
-    title: 'You write this.\n*Iron writes the rest.*',
+    title: 'Tú escribes esto.\n*Iron escribe el resto.*',
     code: {
       file: 'unary.rs',
       label: 'iron · rust dsl',
@@ -157,51 +156,51 @@ const homeEs: (typeof home)['en'] = {
         },
       ],
     },
-    tuned: { title: 'Where it’s tuned', note: 'Pulse = relative speed' },
+    tuned: { title: 'Dónde está afinado', note: 'Pulso = velocidad relativa' },
     tiers: [
       {
         name: 'Apple · Metal',
         level: 'primary',
-        label: 'Primary',
-        note: 'Every kernel is written and tuned here first. MSL → .metallib.',
+        label: 'Principal',
+        note: 'Cada kernel se escribe y se afina aquí primero. MSL → .metallib.',
       },
       {
         name: 'NVIDIA · CUDA',
         level: 'secondary',
-        label: 'Secondary',
-        note: 'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
+        label: 'Secundario',
+        note: 'En producción en RTX y DGX Spark. Las GPU de centros de datos están en desarrollo. CUDA → PTX.',
       },
       {
         name: 'AMD ROCm · Vulkan',
         level: 'runs',
-        label: 'Runs',
-        note: 'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
+        label: 'Funciona',
+        note: 'Funciona hoy, aún sin afinar. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
     runsOn: {
-      label: 'Runs on',
+      label: 'Funciona en',
       items: [
-        'MacBook & Mac Studio',
-        'RTX workstations',
+        'MacBook y Mac Studio',
+        'Estaciones de trabajo RTX',
         'DGX Spark',
         'Strix Halo',
-        'Neocloud fleets',
+        'Flotas de neoclouds',
       ],
-      pending: 'Enterprise datacenter GPUs · in progress',
+      pending: 'GPU de centros de datos empresariales · en desarrollo',
     },
   },
 
   team: {
-    title: 'Who’s in the *kitchen*.',
+    title: 'Quién está en la *cocina*.',
     intro:
-      'Research, security, revenue and a couple of founders who have shipped before.',
-    portraitAlt: 'Portrait of {name}',
-    link: { label: 'Meet the team', href: '/about/team' },
+      'Investigación, seguridad, ingresos y un par de fundadores que ya han llevado productos al mercado.',
+    portraitAlt: 'Retrato de {name}',
+    link: { label: 'Conoce al equipo', href: '/about/team' },
   },
 
   cta: {
-    title: 'Pull up a seat.',
-    body: 'Nothing’s public yet. Request early access, or leave your email below and we’ll write when something is.',
+    title: 'Siéntate a la mesa.',
+    body: 'Todavía no hay nada público. Solicita acceso anticipado o deja tu correo abajo y te escribiremos cuando lo haya.',
   },
 };
 

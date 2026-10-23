@@ -1,65 +1,65 @@
 import type { aiCompanies } from './ai-companies';
 
-// TODO(i18n): translate to es. Keep hrefs, slugs and product names.
 const aiCompaniesEs: (typeof aiCompanies)['en'] = {
   seo: {
-    title: 'GPU kernels and LLM serving for AI companies',
+    title: 'Kernels de GPU y serving de LLM para empresas de IA',
     description:
-      'Write a kernel once and ship it to Metal, CUDA, ROCm and Vulkan. Serve models without Python, with a quantized KV cache and speculative decoding. Early access.',
+      'Escribe un kernel una vez y llévalo a Metal, CUDA, ROCm y Vulkan. Sirve modelos sin Python, con caché KV cuantizada y decodificación especulativa.',
     keywords: [
-      'inference optimization',
-      'GPU kernel portability',
-      'LLM serving engine',
-      'reduce inference cost',
+      'optimización de inferencia',
+      'portabilidad de kernels de GPU',
+      'motor de serving de LLM',
+      'reducir el costo de inferencia',
     ],
   },
-  name: 'AI model and inference companies',
-  serviceType: 'GPU kernel compiler and LLM serving engine',
+  name: 'Empresas de modelos e inferencia de IA',
+  serviceType: 'Compilador de kernels de GPU y motor de serving de LLM',
   card: {
-    title: 'AI model and inference *companies*',
+    title: 'Empresas de modelos e inferencia de *IA*',
     summary:
-      'One kernel definition for every GPU backend, and serving that needs no Python.',
+      'Una definición de kernel para cada backend de GPU, y serving que no necesita Python.',
   },
   hero: {
-    title: 'Write the kernel once. Ship it to four *backends*.',
-    lede: 'Iron compiles one kernel definition to Metal, CUDA, ROCm and Vulkan. Butter serves models on top without Python, and Syrup gives your agents a memory.',
+    title: 'Escribe el kernel una vez. Llévalo a cuatro *backends*.',
+    lede: 'Iron compila una definición de kernel a Metal, CUDA, ROCm y Vulkan. Butter sirve modelos encima sin Python, y Syrup da memoria a tus agentes.',
   },
   problem: {
-    title: 'Every backend is a *rewrite*.',
+    title: 'Cada backend es una *reescritura*.',
     statement:
-      'Your model is only as portable as your kernels, and kernels are usually written once per vendor.',
-    body: 'Supporting Apple silicon, NVIDIA, AMD and Vulkan tends to mean separate codebases and separate bugs, with Python on the hot path of the serving stack. Inference cost lands straight on your margin, and agents lose their context the moment a session ends.',
+      'Tu modelo es tan portable como tus kernels, y los kernels suelen escribirse una vez por fabricante.',
+    body: 'Dar soporte a Apple silicon, NVIDIA, AMD y Vulkan suele significar bases de código separadas y errores separados, con Python en la ruta crítica del stack de serving. El costo de inferencia cae directo sobre tu margen, y los agentes pierden su contexto en cuanto termina una sesión.',
   },
   useCases: {
-    title: 'What you can *ship*.',
-    intro: 'Four jobs for the team that builds models, kernels or serving.',
+    title: 'Lo que puedes *lanzar*.',
+    intro:
+      'Cuatro tareas para el equipo que construye modelos, kernels o serving.',
     items: [
       {
         tag: 'inference',
-        title: 'Write a kernel once and run it on four backends.',
-        body: 'Iron is a Rust-embedded DSL. Kernels lower to a shared IR and then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, behind a versioned C and Rust ABI that existing hosts can call.',
+        title: 'Escribe un kernel una vez y ejecútalo en cuatro backends.',
+        body: 'Iron es un DSL embebido en Rust. Los kernels se traducen a una IR compartida y luego a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V, tras una ABI versionada de C y Rust que los hosts existentes pueden llamar.',
       },
       {
         tag: 'inference',
-        title: 'Serve without Python or a JIT.',
-        body: 'Butter is Swift on Metal for Apple silicon and Rust for CUDA and the rest, with an OpenAI-compatible API, streaming and tool calling. Hybrid and MoE models, speculative decoding and LoRA are in the box.',
+        title: 'Sirve sin Python ni JIT.',
+        body: 'Butter es Swift sobre Metal para Apple silicon y Rust para CUDA y el resto, con una API compatible con OpenAI, streaming y llamada a herramientas. Los modelos híbridos y MoE, la decodificación especulativa y LoRA vienen incluidos.',
       },
       {
         tag: 'cost',
-        title: 'Spend fewer watts per token.',
-        body: '3- to 8-bit quantized checkpoints, a quantized KV cache, speculative decoding and per-backend kernels all go after tokens per watt and dollars per workload. We measure, and we will not quote a number we cannot reproduce.',
+        title: 'Gasta menos vatios por token.',
+        body: 'Los checkpoints cuantizados de 2 a 8 bits, una caché KV cuantizada, la decodificación especulativa y los kernels por backend apuntan a tokens por vatio y dólares por carga de trabajo. Medimos, y no daremos una cifra que no podamos reproducir.',
       },
       {
         tag: 'control',
-        title: 'Give your agents a memory that stays local.',
-        body: 'Syrup compresses embeddings with TurboQuant+ and runs lexical plus vector search on the machine. Results come back with citations over MCP, so agents can pick up where they left off.',
+        title: 'Dale a tus agentes una memoria que se queda en local.',
+        body: 'Syrup comprime los embeddings con TurboQuant+ y ejecuta la búsqueda léxica más vectorial en la propia máquina. Los resultados llegan con citas a través de MCP, para que los agentes retomen donde lo dejaron.',
       },
     ],
   },
   sample: {
-    title: 'A kernel looks like *this*.',
+    title: 'Así se ve un *kernel*.',
     intro:
-      'A Rust function with a few attributes. Iron lowers it to every backend.',
+      'Una función de Rust con unos pocos atributos. Iron la traduce a cada backend.',
     filename: 'unary.rs',
     language: 'iron · rust dsl',
     code: [
@@ -69,74 +69,74 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
       '    store(out[idx], exp(load(a[idx])));',
       '}',
     ].join('\n'),
-    emitsLabel: 'Emits',
+    emitsLabel: 'Emite',
     emits: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
   },
   stackFit: {
-    title: 'How the stack *fits*.',
-    intro: 'Iron and Butter are the core. Syrup and Waffle round it out.',
+    title: 'Cómo *encaja* el stack.',
+    intro: 'Iron y Butter son el núcleo. Syrup y Waffle lo completan.',
     items: [
       {
         product: 'iron',
-        need: 'One kernel definition, four backends.',
-        body: 'Press the math once. Iron lowers it through a shared IR to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, and a versioned C and Rust ABI lets the engines you already have call the result.',
+        need: 'Una definición de kernel, cuatro backends.',
+        body: 'Prensa la matemática una sola vez. Iron la traduce mediante una IR compartida a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V, y una ABI versionada de C y Rust permite que los motores que ya tienes llamen al resultado.',
       },
       {
         product: 'butter',
-        need: 'Model serving without Python.',
-        body: 'Loads safetensors, MLX, JANG and GGUF with no conversion, plus 3- to 8-bit quantized checkpoints, hybrid and MoE models, a quantized KV cache, speculative decoding and LoRA. Text, vision, speech-to-text, text-to-speech and omni models sit behind an OpenAI-compatible API.',
+        need: 'Servir modelos sin Python.',
+        body: 'Carga safetensors, MLX, JANG y GGUF sin conversión, además de checkpoints cuantizados de 2 a 8 bits, modelos híbridos y MoE, una caché KV cuantizada, decodificación especulativa y LoRA. Los modelos de texto, visión, voz a texto, texto a voz y omni quedan tras una API compatible con OpenAI.',
       },
       {
         product: 'syrup',
-        need: 'Memory for agents.',
-        body: 'Local retrieval over notes and code: embeddings compressed with TurboQuant+, lexical plus vector search, and cited results over MCP.',
+        need: 'Memoria para agentes.',
+        body: 'Recuperación local sobre notas y código: embeddings comprimidos con TurboQuant+, búsqueda léxica más vectorial y resultados con citas a través de MCP.',
       },
       {
         product: 'waffle',
-        need: 'Every engine on every GPU, in one view.',
-        body: 'Run Butter next to vLLM, SGLang or llama.cpp and see them side by side. A small Rust sidecar on each host reports signed telemetry.',
+        need: 'Cada motor en cada GPU, en una sola vista.',
+        body: 'Ejecuta Butter junto a vLLM, SGLang o llama.cpp y míralos lado a lado. Un pequeño sidecar en Rust en cada host reporta telemetría firmada.',
       },
     ],
   },
   whereWeAre: {
-    title: 'Where we *are*.',
-    lede: 'Metal is where every kernel is written and tuned first. The products are in early access and closed source for now.',
+    title: 'Dónde *estamos*.',
+    lede: 'Metal es donde se escribe y se afina primero cada kernel. Los productos están en acceso anticipado y son de código cerrado por ahora.',
     notes: [
-      'Roughly 1,139 kernel declarations are in Iron today.',
-      'HIP and Vulkan pass a test corpus of 4,164 of 4,164 cases bit-accurately, but they are not tuned yet.',
-      'CUDA is in production on RTX and DGX Spark, with datacenter GPUs in progress.',
+      'Hoy hay aproximadamente 1.139 declaraciones de kernel en Iron.',
+      'HIP y Vulkan pasan un corpus de pruebas de 4.164 de 4.164 casos con exactitud bit a bit, pero aún no están afinados.',
+      'CUDA está en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo.',
     ],
   },
   faq: [
     {
-      question: 'How is Iron different from writing Metal and CUDA by hand?',
+      question: '¿En qué se diferencia Iron de escribir Metal y CUDA a mano?',
       answer:
-        'You write one kernel definition in a Rust-embedded DSL, and it lowers through a shared IR to Metal, CUDA (PTX), HIP/ROCm or Vulkan SPIR-V. Tuning is still per backend, and today Metal gets it first.',
+        'Escribes una definición de kernel en un DSL embebido en Rust, y se traduce mediante una IR compartida a Metal, CUDA (PTX), HIP/ROCm o Vulkan SPIR-V. La afinación sigue siendo por backend, y hoy Metal la recibe primero.',
     },
     {
-      question: 'Can our existing stack call Iron kernels?',
+      question: '¿Puede nuestro stack actual llamar a los kernels de Iron?',
       answer:
-        'Yes. A versioned C and Rust ABI lets existing hosts call them, so you do not need to adopt Butter to use Iron.',
+        'Sí. Una ABI versionada de C y Rust permite que los hosts existentes los llamen, así que no necesitas adoptar Butter para usar Iron.',
     },
     {
-      question: 'Is Butter faster than vLLM or llama.cpp?',
+      question: '¿Butter es más rápido que vLLM o llama.cpp?',
       answer:
-        'We do not publish comparisons we cannot reproduce, and we make no claim that Butter beats other engines on CUDA or ROCm. Benchmarks beat opinions, so when numbers go public they will come with the method.',
+        'No publicamos comparaciones que no podamos reproducir, ni afirmamos que Butter supere a otros motores en CUDA o ROCm. Los benchmarks valen más que las opiniones, así que cuando haya cifras públicas vendrán con su método.',
     },
     {
-      question: 'Which models does Butter run?',
+      question: '¿Qué modelos ejecuta Butter?',
       answer:
-        'Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite, Phi, LFM, OLMo, SmolLM, Falcon H1, Jamba and InternLM, plus vision, speech and omni variants. DeepSeek V4 is in progress. Models load straight from Hugging Face with no conversion.',
+        'Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite, Phi, LFM, OLMo, SmolLM, Falcon H1, Jamba e InternLM, además de variantes de visión, voz y omni. DeepSeek V4 está en desarrollo. Los modelos se cargan directo desde Hugging Face, sin conversión.',
     },
     {
-      question: 'Can we get access?',
+      question: '¿Podemos conseguir acceso?',
       answer:
-        'Early access is open by request, and the products are closed source for now. Tell us which backends and models matter to you and we will write back.',
+        'El acceso anticipado está abierto bajo solicitud, y los productos son de código cerrado por ahora. Cuéntanos qué backends y modelos te importan y te responderemos.',
     },
   ],
   cta: {
-    title: 'Press your math into *silicon*.',
-    body: 'Early access, closed source for now. Tell us what you build, which backends matter and where Python is in your way, and we will write back.',
+    title: 'Prensa tu matemática en *silicio*.',
+    body: 'Acceso anticipado, código cerrado por ahora. Cuéntanos qué construyes, qué backends te importan y dónde te estorba Python, y te responderemos.',
   },
 };
 
