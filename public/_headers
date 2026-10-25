@@ -1,0 +1,144 @@
+# Cloudflare static-asset header rules (limits: 100 rules, 2,000 characters
+# per line). They apply only to paths the Worker bypasses, which is the
+# negated list under run_worker_first in wrangler.jsonc: build assets, images,
+# discovery files and the installers. Pages and /api/* go through
+# worker/index.ts, which sets their headers (CSP, HSTS, Link, Vary) itself.
+#
+# Rules are merged, so no two rules that can match one path set the same
+# header. The installer rules per product must match releases/products.json
+# (scripts/postbuild/static-files.test.mjs checks it).
+
+# Build output: fingerprinted by Next, so safe to cache for a year.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# Images and logos keep their names between builds: a month, then revalidate.
+/img/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  X-Content-Type-Options: nosniff
+
+/logos/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  X-Content-Type-Options: nosniff
+
+# Share cards are regenerated whenever a title or description changes.
+/og/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+  X-Content-Type-Options: nosniff
+
+# Agent discovery files.
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+/.well-known/*
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+
+/.well-known/security.txt
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/releases.schema.json
+  Content-Type: application/schema+json
+
+/.well-known/agent-skills/index.json
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/agent-skills/:skill/SKILL.md
+  Content-Type: text/markdown; charset=utf-8
+
+# Installers (the release receiver adds them under /<product>/): never cache
+# for long, so a new release is live within minutes; serve scripts and
+# checksums as plain text, and the pinned copies at /<product>/<tag>/<asset>.
+/ops/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+
+/ops/bootstrap.sh
+  Content-Type: text/plain; charset=utf-8
+
+/ops/bootstrap.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/ops/:tag/bootstrap.sh
+  Content-Type: text/plain; charset=utf-8
+
+/ops/:tag/bootstrap.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/wrunner/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+
+/wrunner/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/wrunner/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/wrunner/:tag/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/wrunner/:tag/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/wci/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+
+/wci/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/wci/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/wci/:tag/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/wci/:tag/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/iron/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+
+/iron/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/iron/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/iron/:tag/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/iron/:tag/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/butter/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+
+/butter/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/butter/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/butter/:tag/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/butter/:tag/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8

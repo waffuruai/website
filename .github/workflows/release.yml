@@ -1,10 +1,11 @@
-# Builds and deploys waffuru.ai, and doubles as the release receiver: each
-# product's release workflow dispatches this with `gh workflow run release.yml`.
+# Builds and deploys waffuru.ai to Cloudflare, and doubles as the release
+# receiver: each product's release workflow dispatches this with
+# `gh workflow run release.yml`.
 #
-# Nothing is committed here. Every run reassembles the site from the repo's
-# static files plus the installers fetched and verified from each product's
-# latest release, so a verification failure just fails the deploy and leaves the
-# previously published site live.
+# Nothing is committed here. Every run rebuilds the site (Next.js static
+# export) and adds the installers fetched and verified from each product's
+# latest release, then deploys both with the Worker in one atomic version. A
+# verification failure fails the deploy and leaves the live version untouched.
 name: Release receiver and site deploy
 
 on:
@@ -23,19 +24,17 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
-# Never cancel a deploy in flight: a half-applied Pages deployment is worse than
-# a queued one.
+# Never cancel a deploy in flight; queue the next one behind it.
 concurrency:
-  group: pages
+  group: deploy
   cancel-in-progress: false
 
 jobs:
   test:
     name: test
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -46,25 +45,66 @@ jobs:
       - name: Test the release fetcher
         run: scripts/test-fetch-releases.sh
 
-  build:
-    name: build
+      - name: Set up pnpm
+        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck, lint, test, format
+        run: pnpm check
+
+  deploy:
+    name: deploy
     needs: test
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: production
+      url: https://waffuru.ai
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Note the dispatching release
         if: inputs.product != ''
-        run: echo "triggered by ${{ inputs.product }} ${{ inputs.tag }}"
+        env:
+          PRODUCT: ${{ inputs.product }}
+          TAG: ${{ inputs.tag }}
+        run: echo "triggered by $PRODUCT $TAG"
 
-      - name: Assemble the static site
+      - name: Set up pnpm
+        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      # Production is the only build that carries the GA ID; previews and
+      # local builds never load analytics.
+      - name: Build the site
+        env:
+          NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
         run: |
-          mkdir -p _site
-          cp index.html CNAME _site/
-          cp ./*.png ./*.webp _site/
-          # Pages would otherwise run Jekyll and drop dot-files and _-prefixed paths.
-          touch _site/.nojekyll
+          if [ -z "$NEXT_PUBLIC_GA_ID" ]; then
+            echo "::error::Repository variable NEXT_PUBLIC_GA_ID is not set"
+            exit 1
+          fi
+          pnpm build
+
+      - name: Assemble the site
+        run: node scripts/assemble-site.mjs
 
       - name: Fetch and verify the product installers
         env:
@@ -72,22 +112,8 @@ jobs:
           RELEASE_VERIFY_ATTESTATION: ${{ vars.RELEASE_VERIFY_ATTESTATION || 'auto' }}
         run: scripts/fetch-releases.sh releases/products.json _site
 
-      - name: Configure Pages
-        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-
-      - name: Upload the site artifact
-        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
-        with:
-          path: _site
-
-  deploy:
-    name: deploy
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+      - name: Deploy to Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: pnpm exec wrangler deploy

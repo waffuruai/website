@@ -1,0 +1,55 @@
+/*
+ * Syntax colours for code blocks. rehype-pretty-code highlights at build time
+ * and tags every token with both themes' colours as custom properties
+ * (`--shiki-dark`, `--shiki-light`); these rules pick one. Dark is the default
+ * (no class), `.light` on <html> switches, so there is no highlighter JS and
+ * no flash. Tokens without a variable (plain text) inherit the block colour.
+ */
+pre[data-theme] span {
+  color: var(--shiki-dark);
+}
+
+.light pre[data-theme] span {
+  color: var(--shiki-light);
+}
+
+/* One line per grid row; the grid is as wide as the longest line so line
+   backgrounds reach the end of a scrolled block. */
+pre[data-theme] > code {
+  width: max-content;
+  min-width: 100%;
+}
+
+pre[data-theme] [data-line] {
+  padding-inline: 16px;
+}
+
+@media (width >= 720px) {
+  pre[data-theme] [data-line] {
+    padding-inline: 24px;
+  }
+}
+
+/* Authoring features: ```rust {2,4-5} highlights lines, showLineNumbers adds a gutter. */
+pre[data-theme] [data-highlighted-line] {
+  background: color-mix(in oklab, var(--foreground) 7%, transparent);
+}
+
+pre[data-theme] [data-highlighted-chars] {
+  border-radius: 3px;
+  background: color-mix(in oklab, var(--foreground) 12%, transparent);
+}
+
+pre[data-theme] > code[data-line-numbers] {
+  counter-reset: line;
+}
+
+pre[data-theme] > code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  min-width: 2ch;
+  margin-right: 1.5rem;
+  text-align: right;
+  color: var(--muted-foreground);
+}
