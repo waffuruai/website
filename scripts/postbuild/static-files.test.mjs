@@ -131,8 +131,10 @@ describe('public/_headers', async () => {
     for (const segment of installerLike) expect(names).toContain(segment);
   });
 
-  it('does not publish the ops bootstrap, which stays behind waffuruai/ops access', () => {
-    expect(products.map((entry) => entry.product)).not.toContain('ops');
+  it('does not publish the internal-only installers (ops, wci)', () => {
+    const names = products.map((entry) => entry.product);
+    expect(names).not.toContain('ops');
+    expect(names).not.toContain('wci');
   });
 
   it('matches the bypass list in wrangler.jsonc', async () => {

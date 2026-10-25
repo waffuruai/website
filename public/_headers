@@ -79,22 +79,6 @@
 /wrunner/:tag/install.sh.sha256
   Content-Type: text/plain; charset=utf-8
 
-/wci/*
-  Cache-Control: public, max-age=300
-  X-Content-Type-Options: nosniff
-
-/wci/install.sh
-  Content-Type: text/plain; charset=utf-8
-
-/wci/install.sh.sha256
-  Content-Type: text/plain; charset=utf-8
-
-/wci/:tag/install.sh
-  Content-Type: text/plain; charset=utf-8
-
-/wci/:tag/install.sh.sha256
-  Content-Type: text/plain; charset=utf-8
-
 /iron/*
   Cache-Control: public, max-age=300
   X-Content-Type-Options: nosniff
