@@ -4,7 +4,7 @@ Guide for agents working in this repo. Human-facing setup is in [README.md](READ
 
 ## What this is
 
-waffuru.ai: Next.js 16 (App Router, **static export**), React 19, Tailwind 4, shadcn/ui, six locales (en, es, fr, zh, ja, ko), served by a Cloudflare Worker (`worker/`) in front of Workers static assets. The same deploy publishes product installers (`/ops/bootstrap.sh`, `/<product>/install.sh`) via the release receiver (`scripts/fetch-releases.sh`, `.github/workflows/release.yml`).
+waffuru.ai: Next.js 16 (App Router, **static export**), React 19, Tailwind 4, shadcn/ui, six locales (en, es, fr, zh, ja, ko), served by a Cloudflare Worker (`worker/`) in front of Workers static assets. The same deploy publishes product installers (`/<product>/install.sh`) via the release receiver (`scripts/fetch-releases.sh`, `.github/workflows/release.yml`).
 
 The design is Tom's "After Hours" page (`design/after-hours.html` is the reference): dark roast, Instrument Serif display type with a gold italic accent word, Geist body, Geist Mono caps labels, CSS-only motifs (waffle tiles, stamps, melting butter, LEDs, syrup drip).
 
@@ -18,7 +18,7 @@ The design is Tom's "After Hours" page (`design/after-hours.html` is the referen
 ## Hard rules
 
 - **Static export only.** No `headers()`, `cookies()`, `searchParams`, server actions, middleware/proxy, or non-static route handlers (`export const dynamic = 'force-static'`). Every dynamic segment needs `generateStaticParams` and `dynamicParams = false`. Request-time behaviour belongs in `worker/`.
-- **Never claim a reserved path.** Top-level `/ops`, `/wrunner`, `/wci`, `/iron`, `/butter` (any product in `releases/products.json`) belong to installers. Product pages live under `/products/<name>`. The postbuild guard fails the build otherwise.
+- **Never claim a reserved path.** Top-level `/wrunner`, `/iron`, `/butter` (any product in `releases/products.json`) belong to installers. Product pages live under `/products/<name>`. The postbuild guard fails the build otherwise.
 - **No inline scripts you write yourself** (`<script>{…}</script>`, `<Script>` with children, `dangerouslySetInnerHTML` JS). The Worker stamps a per-request nonce on the scripts in the built HTML (`'strict-dynamic'` CSP); behaviour belongs in bundled client components. JSON-LD via `<JsonLd>` is fine (data, not code).
 - **No fabricated proof.** No invented metrics, benchmarks, testimonials, customer logos or case-study counts. Only facts in `src/content` or provided by a human. Mark anything unverified `TODO(founder)` and keep it out of rendered copy.
 - **Never commit secrets** or `.env*.local`. `.env.example` lists every `process.env.*` the code reads.

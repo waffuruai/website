@@ -160,11 +160,11 @@ test_good_product() {
   dir=$(new_case good)
   out="$dir/out"
   log="$dir/run.log"
-  make_release "$dir/fixtures" waffuruai/ops v0.1.0 bootstrap.sh 'echo old'
-  make_release "$dir/fixtures" waffuruai/ops v0.2.0 bootstrap.sh 'echo new'
-  make_release_list "$dir/fixtures" waffuruai/ops v0.2.0 v0.2.0 v0.1.0
-  make_manifest "$dir/products.json" ops waffuruai/ops bootstrap.sh
-  touch "$dir/fixtures/waffuruai__ops/public"
+  make_release "$dir/fixtures" waffuruai/widget v0.1.0 setup.sh 'echo old'
+  make_release "$dir/fixtures" waffuruai/widget v0.2.0 setup.sh 'echo new'
+  make_release_list "$dir/fixtures" waffuruai/widget v0.2.0 v0.2.0 v0.1.0
+  make_manifest "$dir/products.json" widget waffuruai/widget setup.sh
+  touch "$dir/fixtures/waffuruai__widget/public"
 
   if GH_STUB_FIXTURES="$dir/fixtures" "$FETCH" "$dir/products.json" "$out" >"$log" 2>&1; then
     pass "good product: exits zero"
@@ -174,36 +174,36 @@ test_good_product() {
     return
   fi
 
-  check "good product: serves the latest installer" test -f "$out/ops/bootstrap.sh"
-  check "good product: serves the latest checksum" test -f "$out/ops/bootstrap.sh.sha256"
-  check "good product: pins v0.2.0" test -f "$out/ops/v0.2.0/bootstrap.sh"
-  check "good product: pins v0.1.0" test -f "$out/ops/v0.1.0/bootstrap.sh"
-  check "good product: pins the v0.1.0 checksum" test -f "$out/ops/v0.1.0/bootstrap.sh.sha256"
+  check "good product: serves the latest installer" test -f "$out/widget/setup.sh"
+  check "good product: serves the latest checksum" test -f "$out/widget/setup.sh.sha256"
+  check "good product: pins v0.2.0" test -f "$out/widget/v0.2.0/setup.sh"
+  check "good product: pins v0.1.0" test -f "$out/widget/v0.1.0/setup.sh"
+  check "good product: pins the v0.1.0 checksum" test -f "$out/widget/v0.1.0/setup.sh.sha256"
 
   check "good product: keeps the shebang first" \
-    test "$(head -n 1 "$out/ops/bootstrap.sh")" = '#!/usr/bin/env bash'
+    test "$(head -n 1 "$out/widget/setup.sh")" = '#!/usr/bin/env bash'
   check_contains "good product: header names repo, tag and verified attestation" \
-    "$out/ops/bootstrap.sh" \
-    "# waffuru release: waffuruai/ops v0.2.0 — verified sha256 "
+    "$out/widget/setup.sh" \
+    "# waffuru release: waffuruai/widget v0.2.0 — verified sha256 "
   check_contains "good product: header records the attestation state" \
-    "$out/ops/bootstrap.sh" "attestation verified, published by waffuruai/website"
+    "$out/widget/setup.sh" "attestation verified, published by waffuruai/website"
   check "good product: header is a single line" \
-    test "$(grep -c '^# waffuru release:' "$out/ops/bootstrap.sh")" = 1
+    test "$(grep -c '^# waffuru release:' "$out/widget/setup.sh")" = 1
   check_contains "good product: pinned copy names its own tag" \
-    "$out/ops/v0.1.0/bootstrap.sh" "waffuruai/ops v0.1.0"
+    "$out/widget/v0.1.0/setup.sh" "waffuruai/widget v0.1.0"
   check_contains "good product: latest copy carries the latest body" \
-    "$out/ops/bootstrap.sh" "echo new"
+    "$out/widget/setup.sh" "echo new"
 
   check "good product: latest checksum is the published one, unmodified" \
-    cmp -s "$dir/fixtures/waffuruai__ops/v0.2.0/bootstrap.sh.sha256" "$out/ops/bootstrap.sh.sha256"
+    cmp -s "$dir/fixtures/waffuruai__widget/v0.2.0/setup.sh.sha256" "$out/widget/setup.sh.sha256"
 
   check "good product: releases.json marks the latest tag" \
-    test "$(jq -r '.latest' "$out/ops/releases.json")" = v0.2.0
+    test "$(jq -r '.latest' "$out/widget/releases.json")" = v0.2.0
   check "good product: releases.json lists both tags" \
-    test "$(jq -r '.releases | length' "$out/ops/releases.json")" = 2
+    test "$(jq -r '.releases | length' "$out/widget/releases.json")" = 2
   check "good product: releases.json records the release asset hash" \
-    test "$(jq -r '.releases[] | select(.tag == "v0.2.0") | .sha256' "$out/ops/releases.json")" \
-    = "$(sha256_of "$dir/fixtures/waffuruai__ops/v0.2.0/bootstrap.sh")"
+    test "$(jq -r '.releases[] | select(.tag == "v0.2.0") | .sha256' "$out/widget/releases.json")" \
+    = "$(sha256_of "$dir/fixtures/waffuruai__widget/v0.2.0/setup.sh")"
 }
 
 # (e) RELEASE_VERIFY_ATTESTATION=false skips only the attestation, loudly

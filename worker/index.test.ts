@@ -25,7 +25,7 @@ const FILES = {
   '/ja/about': { body: '<h1>について</h1>' },
   '/en/about.txt': { body: 'rsc', type: 'text/plain' },
   '/en/legal/terms': { body: '<h1>terms</h1>' },
-  '/ops/bootstrap.sh': { body: '#!/bin/sh', type: 'text/x-sh' },
+  '/iron/install.sh': { body: '#!/bin/sh', type: 'text/x-sh' },
   '/robots.txt': { body: 'User-agent: *\nAllow: /', type: 'text/plain' },
 };
 
@@ -99,14 +99,14 @@ describe('worker', () => {
   });
 
   it('passes installers through without touching them', async () => {
-    const { env, response } = call('/ops/bootstrap.sh');
+    const { env, response } = call('/iron/install.sh');
     const res = await response;
     expect(await res.text()).toBe('#!/bin/sh');
     expect(
       new URL(
         (env.ASSETS.fetch as ReturnType<typeof vi.fn>).mock.calls[0][0].url,
       ).pathname,
-    ).toBe('/ops/bootstrap.sh');
+    ).toBe('/iron/install.sh');
   });
 
   it('redirects a first visit to an existing translation, once', async () => {
