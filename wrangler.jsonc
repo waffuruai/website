@@ -32,7 +32,6 @@
       "!/llms.txt",
       "!/llms-full.txt",
       "!/.well-known/*",
-      "!/ops/*",
       "!/wrunner/*",
       "!/wci/*",
       "!/iron/*",

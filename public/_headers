@@ -63,22 +63,6 @@
 # Installers (the release receiver adds them under /<product>/): never cache
 # for long, so a new release is live within minutes; serve scripts and
 # checksums as plain text, and the pinned copies at /<product>/<tag>/<asset>.
-/ops/*
-  Cache-Control: public, max-age=300
-  X-Content-Type-Options: nosniff
-
-/ops/bootstrap.sh
-  Content-Type: text/plain; charset=utf-8
-
-/ops/bootstrap.sh.sha256
-  Content-Type: text/plain; charset=utf-8
-
-/ops/:tag/bootstrap.sh
-  Content-Type: text/plain; charset=utf-8
-
-/ops/:tag/bootstrap.sh.sha256
-  Content-Type: text/plain; charset=utf-8
-
 /wrunner/*
   Cache-Control: public, max-age=300
   X-Content-Type-Options: nosniff

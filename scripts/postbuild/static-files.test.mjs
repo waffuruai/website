@@ -131,6 +131,10 @@ describe('public/_headers', async () => {
     for (const segment of installerLike) expect(names).toContain(segment);
   });
 
+  it('does not publish the ops bootstrap, which stays behind waffuruai/ops access', () => {
+    expect(products.map((entry) => entry.product)).not.toContain('ops');
+  });
+
   it('matches the bypass list in wrangler.jsonc', async () => {
     const wrangler = await read('wrangler.jsonc');
     for (const rule of rules) {

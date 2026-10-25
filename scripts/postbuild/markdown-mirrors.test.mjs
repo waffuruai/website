@@ -21,7 +21,7 @@ const POST = `export const article = {
 Hello.
 
 \`\`\`sh
-curl -fsSL https://waffuru.ai/ops/bootstrap.sh | sh
+curl -fsSL https://waffuru.ai/iron/install.sh | sh
 \`\`\`
 `;
 

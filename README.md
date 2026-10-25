@@ -17,7 +17,7 @@ look: dark roast, Instrument Serif with a gold italic accent, CSS-only motifs.
 | Readable by agents   | `llms.txt`, a markdown twin of every page (`.md` or `Accept: text/markdown`), discovery `Link` headers, API catalog, content signals                                                   |
 | Search-ready         | Canonicals, `hreflang`, JSON-LD, sitemap, a share card per page                                                                                                                        |
 | Locked down          | No server, a per-request nonce CSP, HSTS, `frame-ancestors 'none'`; analytics only with consent                                                                                        |
-| One-command installs | `curl -fsSL https://waffuru.ai/ops/bootstrap.sh \| sh` fetches without any GitHub auth; the script signs you in for the private clones                                                 |
+| One-command installs | `curl -fsSL https://waffuru.ai/<product>/install.sh \| sh` fetches without any GitHub auth                                                                                             |
 | Verified provenance  | Every served installer is checked against its `.sha256` and its build-provenance attestation before it is published                                                                    |
 | Pinned versions      | Every recent release stays reachable at `/<product>/<tag>/<asset>`                                                                                                                     |
 | Stateless deploys    | Nothing is committed by a bot; a failed verification leaves the live site untouched                                                                                                    |
@@ -66,7 +66,6 @@ installers bypass the Worker; pages, RSC payloads and `/api/*` run through it.
 
 | URL                                     | Source                                |
 | --------------------------------------- | ------------------------------------- |
-| `https://waffuru.ai/ops/bootstrap.sh`   | latest release of `waffuruai/ops`     |
 | `https://waffuru.ai/wrunner/install.sh` | latest release of `waffuruai/wrunner` |
 | `https://waffuru.ai/wci/install.sh`     | latest release of `waffuruai/wci`     |
 | `https://waffuru.ai/iron/install.sh`    | latest release of `waffuruai/iron`    |
@@ -85,7 +84,7 @@ header inserted after the shebang:
 
 ```bash
 #!/usr/bin/env bash
-# waffuru release: waffuruai/ops v0.2.0 — verified sha256 <hash>, attestation verified, published by waffuruai/website
+# waffuru release: waffuruai/iron v0.2.0 — verified sha256 <hash>, attestation verified, published by waffuruai/website
 ```
 
 So `<asset>.sha256` describes the **release asset**, not the served file. To check
@@ -126,7 +125,7 @@ postbuild guard fails the build if one would.
 [`releases/products.json`](releases/products.json) is the list of products:
 
 ```json
-[{ "product": "ops", "repo": "waffuruai/ops", "asset": "bootstrap.sh" }]
+[{ "product": "iron", "repo": "waffuruai/iron", "asset": "install.sh" }]
 ```
 
 | Key       | Meaning                                                           |
@@ -191,7 +190,7 @@ and run `pnpm preview` to see analytics after accepting cookies.
 Needed while the product repos are private. A fine-grained PAT:
 
 - Resource owner: `waffuruai`
-- Repository access: `ops`, `wrunner`, `wci`, `iron`, `butter`
+- Repository access: `wrunner`, `wci`, `iron`, `butter`
 - Permissions: **Contents: read**, **Metadata: read**
 
 Stored as an Actions secret on this repo. Without it the workflow falls back to
