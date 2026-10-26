@@ -49,6 +49,10 @@ export const auraEvidence = {
   links: {
     research: [
       {
+        label: 'TurboQuant paper',
+        href: 'https://arxiv.org/abs/2504.19874',
+      },
+      {
         label: 'TurboQuant+',
         href: 'https://github.com/TheTom/turboquant_plus',
       },
@@ -118,7 +122,7 @@ export const aura: Localized<AuraCopy> = {
         {
           kicker: '01 · Open research',
           title: 'TurboQuant+',
-          body: 'Our implementation of the TurboQuant paper (Google Research, ICLR 2026) with follow-on findings: value compression is nearly free, quality loss comes from keys, and the first and last layers need protecting. Shipped in our llama.cpp fork, llama-cpp-turboquant.',
+          body: 'The leading open-source implementation of the TurboQuant paper (Google Research, ICLR 2026) with follow-on findings: value compression is nearly free, quality loss comes from keys, and the first and last layers need protecting. Shipped in our llama.cpp fork, llama-cpp-turboquant.',
         },
         {
           kicker: '02 · Adopted upstream',

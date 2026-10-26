@@ -11,7 +11,7 @@ const copy: AuraCopy = {
       {
         kicker: '01 · Recherche ouverte',
         title: 'TurboQuant+',
-        body: 'Notre implémentation de l’article TurboQuant (Google Research, ICLR 2026) avec des résultats complémentaires : compresser les valeurs ne coûte presque rien, la perte de qualité vient des clés, et la première et la dernière couche doivent être protégées. Livrée dans notre fork de llama.cpp, llama-cpp-turboquant.',
+        body: 'La principale implémentation open source de l’article TurboQuant (Google Research, ICLR 2026) avec des résultats complémentaires : compresser les valeurs ne coûte presque rien, la perte de qualité vient des clés, et la première et la dernière couche doivent être protégées. Livrée dans notre fork de llama.cpp, llama-cpp-turboquant.',
       },
       {
         kicker: '02 · Adoptée en amont',

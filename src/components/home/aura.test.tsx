@@ -8,6 +8,7 @@ import { withDictionary } from '@/i18n/test-utils';
 
 /** The only places the section may link to: public repos and merged PRs. */
 const PUBLIC_LINKS = [
+  'https://arxiv.org/abs/2504.19874',
   'https://github.com/TheTom/turboquant_plus',
   'https://github.com/TheTom/llama-cpp-turboquant',
   'https://github.com/vllm-project/vllm/pull/38479',

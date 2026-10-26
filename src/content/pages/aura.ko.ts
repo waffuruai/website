@@ -11,7 +11,7 @@ const copy: AuraCopy = {
       {
         kicker: '01 · 공개 연구',
         title: 'TurboQuant+',
-        body: 'TurboQuant 논문(Google Research, ICLR 2026)의 우리 구현과 후속 발견입니다. value 압축은 거의 공짜이고, 품질 손실은 key에서 오며, 첫 층과 마지막 층은 보호가 필요합니다. 우리의 llama.cpp 포크 llama-cpp-turboquant로 공개했습니다.',
+        body: 'TurboQuant 논문(Google Research, ICLR 2026)의 대표적인 오픈소스 구현과 후속 발견입니다. value 압축은 거의 공짜이고, 품질 손실은 key에서 오며, 첫 층과 마지막 층은 보호가 필요합니다. 우리의 llama.cpp 포크 llama-cpp-turboquant로 공개했습니다.',
       },
       {
         kicker: '02 · 업스트림 채택',
