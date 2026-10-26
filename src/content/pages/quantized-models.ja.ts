@@ -2,7 +2,7 @@ import type { QuantizedModelsCopy } from './quantized-models';
 
 const copy: QuantizedModelsCopy = {
   eyebrow: '量子化モデル · 近日公開',
-  title: 'より小さなモデルを、丁寧に*量子化*。',
+  title: 'モデルを、*丁寧に*量子化。',
   intro:
     'Butter が提供するモデルの量子化版を、公開している TurboQuant+ の重み研究と同じ手法で準備しています。ファイルはより小さく、品質はそのまま、より多くのモデルを同時に動かす余裕が生まれます。',
   method: {

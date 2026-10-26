@@ -118,7 +118,7 @@ export type QuantizedModelsCopy = {
 export const quantizedModels: Localized<QuantizedModelsCopy> = {
   en: {
     eyebrow: 'Quantized models · coming soon',
-    title: 'Smaller models, *quantized* with care.',
+    title: 'Models, quantized *with care*.',
     intro:
       'We are preparing quantized builds of the models Butter serves, made with the same method as our open TurboQuant+ weight research. Smaller files, quality that holds, and the headroom to run more of them at once.',
     method: {

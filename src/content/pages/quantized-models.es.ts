@@ -2,7 +2,7 @@ import type { QuantizedModelsCopy } from './quantized-models';
 
 const copy: QuantizedModelsCopy = {
   eyebrow: 'Modelos cuantizados · próximamente',
-  title: 'Modelos más pequeños, *cuantizados* con cuidado.',
+  title: 'Modelos, cuantizados *con cuidado*.',
   intro:
     'Estamos preparando versiones cuantizadas de los modelos que sirve Butter, hechas con el mismo método que nuestra investigación abierta TurboQuant+ sobre pesos. Archivos más pequeños, calidad que se mantiene y margen para ejecutar más modelos a la vez.',
   method: {

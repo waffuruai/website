@@ -33,7 +33,7 @@ describe('HomePage', () => {
       'The stack.',
       '27B.16 requests. One Mac.',
       'More context per gigabyte.',
-      'Smaller models, quantized with care.',
+      'Models, quantized with care.',
       'Fewer wrong arguments.Cheaper correct ones.',
       'Models on the menu.',
       'You write this.Iron writes the rest.',
