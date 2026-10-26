@@ -116,7 +116,7 @@ const butterFr: (typeof butter)['en'] = {
           body: 'Le budget de contexte est indiqué sur /v1/models. Passé le plafond, le cache évince les tokens les plus anciens avec un avertissement plutôt que de casser la boucle.',
         },
       ],
-      note: 'Éprouvé de bout en bout avec Oh My Pi via Chat Completions et avec un client de type Claude Code via Messages, sur Qwen 3.6, Qwen 3.8 et Flint.',
+      note: 'Testé et pris en charge avec Oh My Pi via Chat Completions et avec les clients de type Claude Code via Messages, sur Qwen 3.6, Qwen 3.8 et Flint.',
     },
     {
       id: 'quirks',
@@ -195,6 +195,11 @@ const butterFr: (typeof butter)['en'] = {
           { label: 'Décodage spéculatif' },
           { label: 'LoRA' },
         ],
+      },
+      {
+        term: 'Harnais d’agents',
+        detail:
+          'Testés et pris en charge : Oh My Pi via Chat Completions, et les clients de type Claude Code via Messages.',
       },
       {
         term: 'Modalités',

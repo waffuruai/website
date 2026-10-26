@@ -206,7 +206,7 @@ describe('product specifics from the brief', () => {
     }
     const agents = extras.find((section) => section.id === 'agents');
     const quirks = extras.find((section) => section.id === 'quirks');
-    expect(agents?.note).toMatch(/Exercised end to end/);
+    expect(agents?.note).toMatch(/Tested and supported with Oh My Pi/);
     expect(agents?.note).not.toMatch(/Not there yet/);
     expect(strings(agents).join(' ')).toMatch(/Messages/);
     expect(strings(quirks).join(' ')).toMatch(/Nanbeige/);

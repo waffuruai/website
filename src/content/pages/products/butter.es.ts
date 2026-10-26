@@ -117,7 +117,7 @@ const butterEs: (typeof butter)['en'] = {
           body: 'El presupuesto de contexto se informa en /v1/models. Pasado el límite, la caché desaloja los tokens más antiguos con un aviso en lugar de romper el bucle.',
         },
       ],
-      note: 'Probado de extremo a extremo con Oh My Pi sobre Chat Completions y con un cliente tipo Claude Code sobre Messages, en Qwen 3.6, Qwen 3.8 y Flint.',
+      note: 'Probado y soportado con Oh My Pi sobre Chat Completions y con clientes tipo Claude Code sobre Messages, en Qwen 3.6, Qwen 3.8 y Flint.',
     },
     {
       id: 'quirks',
@@ -196,6 +196,11 @@ const butterEs: (typeof butter)['en'] = {
           { label: 'Decodificación especulativa' },
           { label: 'LoRA' },
         ],
+      },
+      {
+        term: 'Harnesses de agentes',
+        detail:
+          'Probados y soportados: Oh My Pi sobre Chat Completions y clientes tipo Claude Code sobre Messages.',
       },
       {
         term: 'Modalidades',

@@ -134,7 +134,7 @@ export const butter: Localized<ProductCopy> = {
             body: 'The context budget is reported on /v1/models. Past the ceiling, the cache evicts the oldest tokens with a warning rather than failing the loop.',
           },
         ],
-        note: 'Exercised end to end with Oh My Pi over Chat Completions and with a Claude Code-style client over Messages, on Qwen 3.6, Qwen 3.8 and Flint.',
+        note: 'Tested and supported with Oh My Pi over Chat Completions and with Claude Code-style clients over Messages, on Qwen 3.6, Qwen 3.8 and Flint.',
       },
       {
         id: 'quirks',
@@ -212,6 +212,11 @@ export const butter: Localized<ProductCopy> = {
             { label: 'Speculative decoding' },
             { label: 'LoRA' },
           ],
+        },
+        {
+          term: 'Agent harnesses',
+          detail:
+            'Tested and supported: Oh My Pi over Chat Completions, and Claude Code-style clients over Messages.',
         },
         {
           term: 'Modalities',

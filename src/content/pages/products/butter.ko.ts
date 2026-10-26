@@ -116,7 +116,7 @@ const butterKo: (typeof butter)['en'] = {
           body: '컨텍스트 예산은 /v1/models에서 알려 줍니다. 한도를 넘으면 캐시는 루프를 실패시키는 대신 경고와 함께 가장 오래된 토큰을 밀어냅니다.',
         },
       ],
-      note: 'Oh My Pi(Chat Completions)와 Claude Code 방식 클라이언트(Messages)로 Qwen 3.6, Qwen 3.8, Flint에서 끝까지 검증했습니다.',
+      note: 'Oh My Pi(Chat Completions)와 Claude Code 방식 클라이언트(Messages)를 테스트했고 지원합니다. Qwen 3.6, Qwen 3.8, Flint에서 확인했습니다.',
     },
     {
       id: 'quirks',
@@ -194,6 +194,11 @@ const butterKo: (typeof butter)['en'] = {
           { label: '추측 디코딩' },
           { label: 'LoRA' },
         ],
+      },
+      {
+        term: '에이전트 하네스',
+        detail:
+          '테스트 및 지원: Chat Completions를 쓰는 Oh My Pi, Messages를 쓰는 Claude Code 방식 클라이언트.',
       },
       {
         term: '모달리티',

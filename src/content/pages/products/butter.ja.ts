@@ -116,7 +116,7 @@ const butterJa: (typeof butter)['en'] = {
           body: 'コンテキストの予算は /v1/models で報告されます。上限を超えると、キャッシュはループを失敗させるのではなく、警告を出して最も古いトークンを追い出します。',
         },
       ],
-      note: 'Oh My Pi（Chat Completions 経由）と Claude Code 形式のクライアント（Messages 経由）で、Qwen 3.6、Qwen 3.8、Flint を使ってエンドツーエンドで確認済みです。',
+      note: 'Oh My Pi（Chat Completions 経由）と Claude Code 形式のクライアント（Messages 経由）をテスト済みでサポートしています。Qwen 3.6、Qwen 3.8、Flint で確認済みです。',
     },
     {
       id: 'quirks',
@@ -194,6 +194,11 @@ const butterJa: (typeof butter)['en'] = {
           { label: '投機的デコーディング' },
           { label: 'LoRA' },
         ],
+      },
+      {
+        term: 'エージェントハーネス',
+        detail:
+          'テスト済み・サポート対象: Chat Completions 経由の Oh My Pi、Messages 経由の Claude Code 形式のクライアント。',
       },
       {
         term: 'モダリティ',

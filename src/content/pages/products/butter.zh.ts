@@ -112,7 +112,7 @@ const butterZh: (typeof butter)['en'] = {
           body: '上下文预算会在 /v1/models 中报告。超过上限后，缓存会带着警告淘汰最旧的 token，而不是让循环失败。',
         },
       ],
-      note: '已通过 Oh My Pi（Chat Completions）和 Claude Code 风格客户端（Messages）在 Qwen 3.6、Qwen 3.8 和 Flint 上做过端到端验证。',
+      note: '已测试并支持 Oh My Pi（Chat Completions）和 Claude Code 风格客户端（Messages），覆盖 Qwen 3.6、Qwen 3.8 和 Flint。',
     },
     {
       id: 'quirks',
@@ -190,6 +190,11 @@ const butterZh: (typeof butter)['en'] = {
           { label: '推测解码' },
           { label: 'LoRA' },
         ],
+      },
+      {
+        term: '智能体框架',
+        detail:
+          '已测试并支持：通过 Chat Completions 的 Oh My Pi，以及通过 Messages 的 Claude Code 风格客户端。',
       },
       {
         term: '模态',
