@@ -10,11 +10,11 @@ const copy: ToolResearchCopy = {
     assumption:
       'Hypothèse illustrative : chaque tour de réparation évité économise 1,000 tokens sur ce lot de 144 requêtes. Ces économies ne sont pas mesurées.',
     repairs: 'Tours de réparation évités',
-    estimate: 'Tokens du flux modélisé',
+    estimate: 'Budget net de tokens · illustratif',
     difference: 'Écart de tokens avec la référence',
     replay: 'Rejouer l’animation',
     boundary:
-      'La précision reste celle du résultat mesuré. Le curseur modifie uniquement le scénario de coût ; il ne prédit ni tâches terminées ni appels évités.',
+      'Ce budget soustrait les économies de réparation supposées ; ce n’est pas un total de tokens mesuré. La précision reste mesurée. Il ne prédit ni réparations évitées ni tâches terminées.',
   },
   eyebrow: 'Juke → Butter · recherche mesurée',
   title: 'De meilleurs appels d’outils.\n*Mesurés dans Butter.*',

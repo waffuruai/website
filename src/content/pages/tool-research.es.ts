@@ -10,11 +10,11 @@ const copy: ToolResearchCopy = {
     assumption:
       'Supuesto ilustrativo: cada turno de reparación evitado ahorra 1,000 tokens en este lote de 144 solicitudes. Este ahorro no se ha medido.',
     repairs: 'Turnos de reparación evitados',
-    estimate: 'Tokens modelados del flujo',
+    estimate: 'Presupuesto neto de tokens · ilustrativo',
     difference: 'Diferencia de tokens frente al inicio',
     replay: 'Repetir animación',
     boundary:
-      'La precisión mantiene el resultado medido. El control solo cambia el escenario de coste; no predice tareas completadas ni llamadas evitadas.',
+      'Este presupuesto resta un ahorro supuesto en reparaciones; no es un total medido de tokens. La precisión sigue siendo la medida. No predice reparaciones evitadas ni tareas completadas.',
   },
   eyebrow: 'Juke → Butter · investigación medida',
   title: 'Mejores llamadas a herramientas.\n*Medidas en Butter.*',

@@ -10,11 +10,11 @@ const copy: ToolResearchCopy = {
     assumption:
       '示例假设：在这批 144 个请求中，每避免一轮修复可节省 1,000 个 token。这些节省尚未实测。',
     repairs: '避免的修复轮数',
-    estimate: '工作流 token 估算',
+    estimate: '净 token 预算 · 示例',
     difference: '相对基线的 token 差额',
     replay: '重播动画',
     boundary:
-      '准确率保持实测结果。滑块仅改变成本场景，不预测完成任务数或避免的调用数。',
+      '此预算扣除了假设的修复节省量，并非实测 token 总数。准确率保持实测结果，不预测避免的修复轮数或完成任务数。',
   },
   eyebrow: 'Juke → Butter · 实测研究',
   title: '更准确的工具调用。\n*在 Butter 中实测。*',

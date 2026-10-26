@@ -76,11 +76,11 @@ export const toolResearch: Localized<ToolResearchCopy> = {
       assumption:
         'Illustrative assumption: each avoided repair turn saves 1,000 tokens across this 144-request batch. These savings were not measured.',
       repairs: 'Avoided repair turns',
-      estimate: 'Modeled workflow tokens',
+      estimate: 'Net token budget · illustrative',
       difference: 'Token difference vs. baseline',
       replay: 'Replay animation',
       boundary:
-        'Accuracy stays at the measured result. The slider changes only the cost scenario; it does not predict completed tasks or avoided calls.',
+        'This budget subtracts assumed repair savings; it is not a measured token total. Accuracy stays measured. Avoided repairs and completed tasks are not predicted.',
     },
     eyebrow: 'Juke → Butter · measured research',
     title: 'Better tool calls.\n*Measured in Butter.*',
