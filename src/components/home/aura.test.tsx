@@ -52,6 +52,15 @@ describe('Aura', () => {
     expect(document.body.innerHTML).not.toMatch(/ggml-org/);
   });
 
+  it('links the TurboQuant paper inline in the research paragraph', () => {
+    render(withDictionary(<Aura content={aura.en} />));
+    const paper = screen.getByRole('link', { name: 'TurboQuant paper' });
+    expect(paper.getAttribute('href')).toBe(auraEvidence.paperHref);
+    expect(paper.closest('p')?.textContent).toMatch(
+      /^The leading open-source implementation of the TurboQuant paper \(Google/,
+    );
+  });
+
   it('shows the GitHub star counts on the open research links', () => {
     render(withDictionary(<Aura content={aura.en} />));
     const tq = screen.getByRole('link', { name: /^TurboQuant\+/ });

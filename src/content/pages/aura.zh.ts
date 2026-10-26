@@ -11,7 +11,7 @@ const copy: AuraCopy = {
       {
         kicker: '01 · 开放研究',
         title: 'TurboQuant+',
-        body: 'TurboQuant 论文（Google Research，ICLR 2026）领先的开源实现，并附带后续发现：压缩 value 几乎没有代价，质量损失来自 key，首尾两层需要保护。随我们的 llama.cpp 分支 llama-cpp-turboquant 一起发布。',
+        body: '[TurboQuant 论文]（Google Research，ICLR 2026）领先的开源实现，并附带后续发现：压缩 value 几乎没有代价，质量损失来自 key，首尾两层需要保护。随我们的 llama.cpp 分支 llama-cpp-turboquant 一起发布。',
       },
       {
         kicker: '02 · 被上游采纳',

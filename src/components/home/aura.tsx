@@ -33,6 +33,28 @@ function tiles(copy: AuraCopy['tiles']) {
   ];
 }
 
+/**
+ * Renders a step body, turning the one `[bracketed]` phrase (the paper's name
+ * in each locale) into an inline link to the TurboQuant paper.
+ * e.g. 'the [TurboQuant paper] (Google…' → the <a>TurboQuant paper</a> (Google…
+ */
+function withPaperLink(body: string) {
+  const match = /\[([^\]]+)\]/.exec(body);
+  if (!match) return body;
+  return (
+    <>
+      {body.slice(0, match.index)}
+      <LocalizedLink
+        href={evidence.paperHref}
+        className="text-foreground underline decoration-foreground/30 underline-offset-4 transition-colors hover:text-brand-ink hover:decoration-brand-ink"
+      >
+        {match[1]}
+      </LocalizedLink>
+      {body.slice(match.index + match[0].length)}
+    </>
+  );
+}
+
 /** Public links for a lineage step: the research repos, then the upstream PRs. */
 const STEP_LINKS: readonly (readonly {
   label: string;
@@ -86,7 +108,7 @@ export function Aura({ content }: { content: AuraCopy }) {
               {step.title}
             </span>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              {step.body}
+              {withPaperLink(step.body)}
             </p>
             {STEP_LINKS[index].length > 0 && (
               <ul className="mt-auto flex flex-wrap gap-2 pt-2">

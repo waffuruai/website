@@ -11,7 +11,7 @@ const copy: AuraCopy = {
       {
         kicker: '01 · オープンな研究',
         title: 'TurboQuant+',
-        body: 'TurboQuant 論文（Google Research、ICLR 2026）の代表的なオープンソース実装と、その後の知見です。value の圧縮はほぼ無償で、品質低下は key から来ること、そして最初と最後の層は保護が必要なこと。私たちの llama.cpp フォーク llama-cpp-turboquant で公開しています。',
+        body: '[TurboQuant 論文]（Google Research、ICLR 2026）の代表的なオープンソース実装と、その後の知見です。value の圧縮はほぼ無償で、品質低下は key から来ること、そして最初と最後の層は保護が必要なこと。私たちの llama.cpp フォーク llama-cpp-turboquant で公開しています。',
       },
       {
         kicker: '02 · 上流で採用',

@@ -48,6 +48,8 @@ describe('aura copy', () => {
       const copy = localize(aura, locale);
       const text = JSON.stringify(copy);
       expect(text).not.toMatch(/—|–/);
+      // Exactly one bracketed phrase: the inline paper link.
+      expect(copy.lineage.steps[0].body.match(/\[[^\]]+\]/g)).toHaveLength(1);
       expect(text).not.toMatch(HYPE);
       expect(text).not.toMatch(/github\.com|https?:/);
       expect(text).not.toMatch(
