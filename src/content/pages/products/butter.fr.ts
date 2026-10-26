@@ -35,15 +35,15 @@ const butterFr: (typeof butter)['en'] = {
     ],
   },
   story: {
-    heading: 'Oubliez Python et la *conversion*.',
+    heading: 'Vos modèles. Votre matériel. *Aucune* facture au token.',
     problem:
-      'Pour qu’un modèle réponde, il faut généralement un environnement Python, une étape de conversion et un runtime qui compile au fil de l’eau. Sur un portable ou une machine à un seul GPU, cela fait beaucoup de mécanique entre vous et une réponse.',
+      'La plupart des équipes louent l’IA au token. Chaque prompt quitte l’entreprise, la facture grimpe avec chaque utilisateur et le matériel déjà payé reste inutilisé. Faire tourner des modèles en interne demande en général une équipe spécialisée et des semaines de mise en place.',
     outcome:
-      'Pointez Butter vers un modèle sur Hugging Face. Il charge safetensors, MLX, JANG et GGUF tels quels, et butter serve vous donne un serveur compatible OpenAI sur le matériel que vous possédez déjà.',
+      'Butter transforme un Mac ou une station GPU que vous possédez déjà en serveur d’IA privé. Choisissez un modèle, lancez Butter, et les applications et agents de votre équipe peuvent l’utiliser le jour même.',
     outcomes: [
-      'Faites tourner des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et des modèles MoE (mixture of experts) sur un Mac ou une station RTX.',
-      'Pointez les outils que vous utilisez déjà : un endpoint compatible OpenAI et un endpoint de type Anthropic Messages, avec streaming, appel d’outils et un préfixe de prompt qui survit aux tours d’outils.',
-      'Gardez la mémoire sous contrôle sur les longs contextes grâce à un cache KV quantifié, et un cache qui évince au lieu d’échouer quand une session dépasse son plafond.',
+      'Réduisez la facture : des modèles ouverts sur du matériel déjà payé, compressés pour qu’une seule machine serve plus de personnes et des conversations plus longues. Pas de prix au token.',
+      'Vos données restent chez vous : prompts, documents et réponses ne quittent jamais vos machines.',
+      'Rien à changer en amont : Butter parle les mêmes API OpenAI et Anthropic que vos outils, changer se résume à une URL.',
     ],
   },
   capabilities: {

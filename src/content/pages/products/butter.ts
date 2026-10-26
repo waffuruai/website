@@ -53,15 +53,15 @@ export const butter: Localized<ProductCopy> = {
       ],
     },
     story: {
-      heading: 'Skip the Python and the *conversion*.',
+      heading: 'Your models. Your hardware. *No* token bill.',
       problem:
-        'Getting a model to answer usually means a Python environment, a conversion step and a runtime that compiles as it goes. On a laptop or a single GPU box, that is a lot of machinery standing between you and a response.',
+        'Most teams rent AI by the token. Every prompt leaves the building, the bill grows with every user, and the hardware you already paid for sits idle. Running models in-house usually takes a specialist team and weeks of setup.',
       outcome:
-        'Point Butter at a model on Hugging Face. It loads safetensors, MLX, JANG and GGUF as they are, and butter serve gives you an OpenAI-compatible server on the hardware you already own.',
+        "Butter turns a Mac or a GPU workstation you already own into a private AI server. Pick a model, start Butter, and your team's apps and agents can use it the same day.",
       outcomes: [
-        'Run 2- to 8-bit quantized checkpoints, hybrid models and mixture-of-experts models on a Mac or an RTX workstation.',
-        'Point the tools you already use at it: an OpenAI-compatible endpoint and an Anthropic-style Messages endpoint, with streaming, tool calling and a prompt prefix that survives tool rounds.',
-        'Keep memory use down on long contexts with a quantized KV cache, and a cache that evicts instead of erroring when a session passes its ceiling.',
+        'Cut the bill: open models run on hardware you already paid for, compressed so one machine serves more people and longer conversations. No per-token pricing.',
+        'Keep data in-house: prompts, documents and answers never leave your machines.',
+        'Change nothing upstream: Butter speaks the same OpenAI and Anthropic APIs your tools already use, so switching is a URL change.',
       ],
     },
     capabilities: {

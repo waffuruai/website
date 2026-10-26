@@ -35,15 +35,15 @@ const butterZh: (typeof butter)['en'] = {
     ],
   },
   story: {
-    heading: '省掉 Python，也省掉*转换*。',
+    heading: '你的模型。你的硬件。*不再*按 token 付费。',
     problem:
-      '想让一个模型开口回答，通常意味着要有 Python 环境、一道转换步骤，以及一个边运行边编译的运行时。在笔记本或单卡机器上，这是横在你和一次回复之间的一大堆东西。',
+      '大多数团队按 token 租用 AI。每条提示都离开公司，账单随用户增长，而已经买下的硬件却闲置着。在内部运行模型通常需要专门团队和数周的部署。',
     outcome:
-      '把 Butter 指向 Hugging Face 上的模型。它会原样加载 safetensors、MLX、JANG 和 GGUF，butter serve 则在你已有的硬件上为你起一个兼容 OpenAI 的服务器。',
+      'Butter 把你已有的 Mac 或 GPU 工作站变成私有的 AI 服务器。选一个模型，启动 Butter，团队的应用和智能体当天就能用上。',
     outcomes: [
-      '在 Mac 或 RTX 工作站上运行 2 至 8 位量化检查点、混合模型和混合专家（MoE）模型。',
-      '让你已在用的工具指向它：一个兼容 OpenAI 的端点和一个 Anthropic Messages 风格的端点，支持流式输出、工具调用，以及在多轮工具调用间保留的提示前缀。',
-      '借助量化 KV 缓存压低长上下文的内存占用；会话超出上限时缓存会淘汰旧 token 而不是报错。',
+      '降低成本：开放模型运行在你已付费的硬件上，经过压缩，一台机器就能服务更多人、更长的对话。没有按 token 计费。',
+      '数据留在内部：提示、文档和回答从不离开你的机器。',
+      '上游无需改动：Butter 使用你的工具已在用的 OpenAI 与 Anthropic API，切换只需改一个 URL。',
     ],
   },
   capabilities: {

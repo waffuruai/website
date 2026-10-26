@@ -35,15 +35,15 @@ const butterEs: (typeof butter)['en'] = {
     ],
   },
   story: {
-    heading: 'Olvídate de Python y de la *conversión*.',
+    heading: 'Tus modelos. Tu hardware. *Sin* factura por token.',
     problem:
-      'Conseguir que un modelo responda suele significar un entorno de Python, un paso de conversión y un runtime que compila sobre la marcha. En una laptop o en un equipo con una sola GPU, es mucha maquinaria entre tú y una respuesta.',
+      'La mayoría de los equipos alquilan la IA por token. Cada prompt sale de la empresa, la factura crece con cada usuario y el hardware que ya pagaste queda sin uso. Ejecutar modelos en casa suele exigir un equipo especializado y semanas de configuración.',
     outcome:
-      'Apunta Butter a un modelo de Hugging Face. Carga safetensors, MLX, JANG y GGUF tal cual, y butter serve te da un servidor compatible con OpenAI en el hardware que ya tienes.',
+      'Butter convierte un Mac o una estación con GPU que ya tienes en un servidor de IA privado. Elige un modelo, inicia Butter y las apps y agentes de tu equipo pueden usarlo el mismo día.',
     outcomes: [
-      'Ejecuta checkpoints cuantizados de 2 a 8 bits, modelos híbridos y modelos de mezcla de expertos en un Mac o en una estación de trabajo RTX.',
-      'Apunta las herramientas que ya usas: un endpoint compatible con OpenAI y un endpoint tipo Anthropic Messages, con streaming, llamada a herramientas y un prefijo de prompt que sobrevive a las rondas de herramientas.',
-      'Mantén bajo el uso de memoria en contextos largos con una caché KV cuantizada, y una caché que desaloja en lugar de fallar cuando una sesión supera su límite.',
+      'Recorta la factura: modelos abiertos en hardware que ya pagaste, comprimidos para que una sola máquina atienda a más personas y conversaciones más largas. Sin precio por token.',
+      'Los datos se quedan en casa: prompts, documentos y respuestas nunca salen de tus máquinas.',
+      'Nada cambia aguas arriba: Butter habla las mismas API de OpenAI y Anthropic que ya usan tus herramientas, así que cambiar es cambiar una URL.',
     ],
   },
   capabilities: {
