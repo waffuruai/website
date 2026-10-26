@@ -73,13 +73,13 @@ const homeZh: (typeof home)['en'] = {
     title: '菜单上的模型。',
     intro:
       '直接从 Hugging Face 加载。Metal 上覆盖最广；CUDA 的支持逐个模型添加。',
-    legend: { supported: '已支持', inProgress: '进行中' },
+    legend: { supported: '已支持', inProgress: '即将推出' },
     lanes: [
       [
         {
           lab: 'Meta',
           logo: 'meta',
-          models: 'Llama 3 · 3.1 · 3.2 · 3.3',
+          models: 'Llama 3 · 3.1 · 3.2 · 3.3, Muse Glimmer',
         },
         {
           lab: 'Google',
@@ -89,7 +89,7 @@ const homeZh: (typeof home)['en'] = {
         {
           lab: 'Qwen',
           logo: 'qwen',
-          models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni',
+          models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni, ASR',
         },
         {
           lab: 'OpenAI',
@@ -99,20 +99,35 @@ const homeZh: (typeof home)['en'] = {
         {
           lab: 'Mistral AI',
           logo: 'mistral',
-          models: 'Mistral, Mistral 3 VL, Voxtral',
+          models: 'Mistral, Mistral 3 VL, Pixtral, Voxtral',
         },
         {
           lab: 'NVIDIA',
           logo: 'nvidia',
-          models: 'Nemotron H, Nemotron VLM',
+          models: 'Nemotron H · 3.5, VLM, Diffusion, Parakeet',
         },
         {
           lab: 'DeepSeek',
           logo: 'deepseek',
-          models: 'DeepSeek V4',
+          models: 'DeepSeek V4 · V4.1',
           status: 'in-progress',
         },
-        { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4' },
+        { lab: 'Z.ai', logo: 'zai', models: 'GLM-5.3, GLM-OCR, GLM-ASR' },
+        { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4, Granite Speech' },
+        {
+          lab: 'OpenBMB',
+          logo: 'openbmb',
+          models: 'MiniCPM 5, MiniCPM-V 4.6, MiniCPM-o',
+        },
+        { lab: 'Tencent', logo: 'tencent', models: 'Hy3' },
+        { lab: 'inclusionAI', logo: 'inclusionai', models: 'Ling 3.0' },
+        {
+          lab: 'StepFun',
+          logo: 'stepfun',
+          models: 'Step 3',
+          status: 'in-progress',
+        },
+        { lab: 'BigCode', logo: 'bigcode', models: 'StarCoder2' },
       ],
       [
         { lab: 'Microsoft', logo: 'microsoft', models: 'Phi 3' },
@@ -131,6 +146,20 @@ const homeZh: (typeof home)['en'] = {
           logo: 'internlm',
           models: 'InternLM 2',
         },
+        { lab: 'hexgrad', logo: 'hexgrad', models: 'Kokoro' },
+        { lab: '01.AI', logo: '01ai', models: 'Yi 1.5' },
+        { lab: 'Recursive', logo: 'recursive', models: 'Flint' },
+        {
+          lab: 'Poolside',
+          logo: 'poolside',
+          models: 'Laguna S 2.1 · XS 2.1',
+        },
+        {
+          lab: 'Nanbeige',
+          logo: 'nanbeige',
+          models: 'Nanbeige 4.3',
+          status: 'in-progress',
+        },
         {
           lab: 'Fish Audio',
           logo: 'fishaudio',
@@ -138,9 +167,9 @@ const homeZh: (typeof home)['en'] = {
           status: 'in-progress',
         },
         {
-          lab: 'Recursive',
-          logo: 'recursive',
-          models: 'Flint',
+          lab: 'Cohere',
+          logo: 'cohere',
+          models: 'Cohere Transcribe',
           status: 'in-progress',
         },
       ],
@@ -180,13 +209,13 @@ const homeZh: (typeof home)['en'] = {
         name: 'NVIDIA · CUDA',
         level: 'secondary',
         label: '其次',
-        note: '已在 RTX 和 DGX Spark 上投入生产。数据中心 GPU 正在进行中。CUDA → PTX。',
+        note: '已在 RTX 和 DGX Spark 上投入生产。CUDA → PTX。',
       },
       {
         name: 'AMD ROCm · Vulkan',
         level: 'runs',
         label: '可运行',
-        note: '目前可以运行，尚未调优。HIP → AMDGPU，Vulkan → SPIR-V。',
+        note: 'AMD 上进展迅速。HIP → AMDGPU，Vulkan → SPIR-V。',
       },
     ],
     runsOn: {
@@ -198,7 +227,7 @@ const homeZh: (typeof home)['en'] = {
         'Strix Halo',
         '新型云服务商集群',
       ],
-      pending: '企业级数据中心 GPU · 进行中',
+      pending: '企业级数据中心 GPU · 下一步',
     },
   },
 

@@ -12,7 +12,7 @@ const zh: Dictionary = {
     copied: '已复制',
     opensInNewTab: '（在新标签页中打开）',
     private: '未公开',
-    inProgress: '进行中',
+    inProgress: '下一步',
     faqHeading: '常见问题',
   },
   meta: {

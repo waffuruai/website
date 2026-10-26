@@ -62,7 +62,7 @@ describe('ToolResearch', () => {
     expect(
       within(details).getByText(/8,304 input and 536 generated tokens/),
     ).toBeTruthy();
-    expect(within(details).getByText(/not in a release yet/)).toBeTruthy();
+    expect(within(details).getByText(/outside it/)).toBeTruthy();
     expect(within(details).queryByRole('link')).toBeNull();
   });
 

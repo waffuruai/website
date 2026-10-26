@@ -114,10 +114,10 @@ export type ToolResearchCopy = {
 
 export const toolResearch: Localized<ToolResearchCopy> = {
   en: {
-    eyebrow: 'Measured in Butter · fix in progress',
+    eyebrow: 'Measured in Butter',
     title: 'Fewer wrong arguments.\n*Cheaper correct ones.*',
     intro:
-      'A tool call with a wrong argument fails, triggers a retry, or runs with the wrong value. We trace execution and behavior, then test targeted inference changes. In a 144-request screen, a Butter fix we are now landing produced {more} more exact arguments while lowering tokens per correct argument from about {before} to about {after}.',
+      'A tool call with a wrong argument fails, triggers a retry, or runs with the wrong value. We trace execution and behavior, then test targeted inference changes. In a 144-request screen, the Butter fix produced {more} more exact arguments while lowering tokens per correct argument from about {before} to about {after}.',
     figure: {
       headline: 'Tokens per correct argument',
       baseline: 'Before',
@@ -166,7 +166,7 @@ export const toolResearch: Localized<ToolResearchCopy> = {
       'The breadth screen contains 72 prompts, each tested in buffered and streaming modes: 144 requests per arm. These are new values in known failure families, not 144 independent workflows. No external tools were executed.',
     cost: 'The change adds 8,304 input and 536 generated tokens across the breadth screen, so total inference tokens rose from 50,382 to 59,222 while tokens per correct argument fell.',
     limits:
-      'The fix is going into Butter and is not in a release yet. Results apply to this limited screen; other models, APIs and completed workflows require separate qualification.',
+      'Results apply to this limited screen of exact argument values; other models, APIs and completed workflows are outside it.',
   },
   es,
   fr,

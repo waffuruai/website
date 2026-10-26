@@ -1,10 +1,10 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
-  eyebrow: '在 Butter 中实测 · 修复合入中',
+  eyebrow: '在 Butter 中实测',
   title: '更少的错误参数。\n*更便宜的正确参数。*',
   intro:
-    '工具调用的参数一旦出错，要么失败，要么触发重试，要么带着错误的值执行。我们追踪执行过程和行为，再验证有针对性的推理改动。在一次 144 个请求的评测中，我们正在合入的一项 Butter 修复多产生了 {more} 个完全正确的参数，同时把每个正确参数的 token 数从约 {before} 降到约 {after}。',
+    '工具调用的参数一旦出错，要么失败，要么触发重试，要么带着错误的值执行。我们追踪执行过程和行为，再验证有针对性的推理改动。在一次 144 个请求的评测中，Butter 修复多产生了 {more} 个完全正确的参数，同时把每个正确参数的 token 数从约 {before} 降到约 {after}。',
   figure: {
     headline: '每个正确参数的 token 数',
     baseline: '改动前',
@@ -50,6 +50,6 @@ const copy: ToolResearchCopy = {
     '扩展评测包含 72 个提示词，每个分别以 buffered 和 streaming 模式运行，每组共 144 个请求。这是已知失败类别中的新值，并非 144 个独立工作流。实验没有执行外部工具。',
   cost: '这项改动在整个扩展评测中新增 8,304 个输入 token 和 536 个生成 token，推理总 token 数从 50,382 升到 59,222，而每个正确参数的 token 数下降。',
   limits:
-    '该修复正在合入 Butter，尚未包含在正式版本中。结果仅适用于本次有限评测；其他模型、API 和完整工作流需要单独验证。',
+    '结果仅适用于本次针对参数精确值的有限评测；其他模型、API 和完整工作流不在其范围内。',
 };
 export default copy;

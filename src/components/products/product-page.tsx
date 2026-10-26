@@ -1,5 +1,6 @@
 import { CapabilityGrid } from '@/components/products/capability-grid';
 import { CodeSection } from '@/components/products/code-section';
+import { ExtraSections } from '@/components/products/extra-sections';
 import { PlatformTiers } from '@/components/products/platform-tiers';
 import { ProductHeroPanel } from '@/components/products/product-hero-panel';
 import { ProductStory } from '@/components/products/product-story';
@@ -84,6 +85,9 @@ export function ProductPage({
       <CapabilityGrid capabilities={copy.capabilities} />
       {facts.code && copy.code && (
         <CodeSection copy={copy.code} sample={facts.code} />
+      )}
+      {copy.extras && copy.extras.length > 0 && (
+        <ExtraSections sections={copy.extras} />
       )}
       <SpecList specs={copy.specs} inProgressLabel={common.inProgress} />
       {copy.platforms && (

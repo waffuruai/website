@@ -1,10 +1,10 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
-  eyebrow: 'Medido en Butter · corrección en curso',
+  eyebrow: 'Medido en Butter',
   title: 'Menos argumentos erróneos.\n*Aciertos más baratos.*',
   intro:
-    'Una llamada a herramienta con un argumento erróneo falla, provoca un reintento o se ejecuta con el valor equivocado. Rastreamos la ejecución y el comportamiento, y después probamos cambios específicos de inferencia. En una evaluación de 144 solicitudes, una corrección de Butter que estamos integrando produjo {more} argumentos exactos más y redujo los tokens por argumento correcto de unos {before} a unos {after}.',
+    'Una llamada a herramienta con un argumento erróneo falla, provoca un reintento o se ejecuta con el valor equivocado. Rastreamos la ejecución y el comportamiento, y después probamos cambios específicos de inferencia. En una evaluación de 144 solicitudes, la corrección de Butter produjo {more} argumentos exactos más y redujo los tokens por argumento correcto de unos {before} a unos {after}.',
   figure: {
     headline: 'Tokens por argumento correcto',
     baseline: 'Antes',
@@ -53,6 +53,6 @@ const copy: ToolResearchCopy = {
     'La evaluación ampliada contiene 72 prompts, cada uno probado en modos buffered y streaming: 144 solicitudes por variante. Son valores nuevos en familias de fallos conocidas, no 144 flujos independientes. No se ejecutaron herramientas externas.',
   cost: 'El cambio añade 8.304 tokens de entrada y 536 generados en la evaluación ampliada, así que los tokens totales de inferencia subieron de 50.382 a 59.222 mientras los tokens por argumento correcto bajaron.',
   limits:
-    'La corrección se está integrando en Butter y aún no está en una versión publicada. Los resultados se limitan a esta evaluación; otros modelos, APIs y flujos completos requieren validación independiente.',
+    'Los resultados se limitan a esta evaluación de valores exactos de argumentos; otros modelos, APIs y flujos completos quedan fuera de ella.',
 };
 export default copy;

@@ -73,13 +73,13 @@ const homeFr: (typeof home)['en'] = {
     title: 'Des modèles au menu.',
     intro:
       'Chargés directement depuis Hugging Face. La couverture est la plus large sur Metal ; la prise en charge de CUDA s’ajoute modèle par modèle.',
-    legend: { supported: 'Pris en charge', inProgress: 'En cours' },
+    legend: { supported: 'Pris en charge', inProgress: 'Bientôt' },
     lanes: [
       [
         {
           lab: 'Meta',
           logo: 'meta',
-          models: 'Llama 3 · 3.1 · 3.2 · 3.3',
+          models: 'Llama 3 · 3.1 · 3.2 · 3.3, Muse Glimmer',
         },
         {
           lab: 'Google',
@@ -89,7 +89,7 @@ const homeFr: (typeof home)['en'] = {
         {
           lab: 'Qwen',
           logo: 'qwen',
-          models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni',
+          models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni, ASR',
         },
         {
           lab: 'OpenAI',
@@ -99,20 +99,35 @@ const homeFr: (typeof home)['en'] = {
         {
           lab: 'Mistral AI',
           logo: 'mistral',
-          models: 'Mistral, Mistral 3 VL, Voxtral',
+          models: 'Mistral, Mistral 3 VL, Pixtral, Voxtral',
         },
         {
           lab: 'NVIDIA',
           logo: 'nvidia',
-          models: 'Nemotron H, Nemotron VLM',
+          models: 'Nemotron H · 3.5, VLM, Diffusion, Parakeet',
         },
         {
           lab: 'DeepSeek',
           logo: 'deepseek',
-          models: 'DeepSeek V4',
+          models: 'DeepSeek V4 · V4.1',
           status: 'in-progress',
         },
-        { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4' },
+        { lab: 'Z.ai', logo: 'zai', models: 'GLM-5.3, GLM-OCR, GLM-ASR' },
+        { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4, Granite Speech' },
+        {
+          lab: 'OpenBMB',
+          logo: 'openbmb',
+          models: 'MiniCPM 5, MiniCPM-V 4.6, MiniCPM-o',
+        },
+        { lab: 'Tencent', logo: 'tencent', models: 'Hy3' },
+        { lab: 'inclusionAI', logo: 'inclusionai', models: 'Ling 3.0' },
+        {
+          lab: 'StepFun',
+          logo: 'stepfun',
+          models: 'Step 3',
+          status: 'in-progress',
+        },
+        { lab: 'BigCode', logo: 'bigcode', models: 'StarCoder2' },
       ],
       [
         { lab: 'Microsoft', logo: 'microsoft', models: 'Phi 3' },
@@ -131,6 +146,20 @@ const homeFr: (typeof home)['en'] = {
           logo: 'internlm',
           models: 'InternLM 2',
         },
+        { lab: 'hexgrad', logo: 'hexgrad', models: 'Kokoro' },
+        { lab: '01.AI', logo: '01ai', models: 'Yi 1.5' },
+        { lab: 'Recursive', logo: 'recursive', models: 'Flint' },
+        {
+          lab: 'Poolside',
+          logo: 'poolside',
+          models: 'Laguna S 2.1 · XS 2.1',
+        },
+        {
+          lab: 'Nanbeige',
+          logo: 'nanbeige',
+          models: 'Nanbeige 4.3',
+          status: 'in-progress',
+        },
         {
           lab: 'Fish Audio',
           logo: 'fishaudio',
@@ -138,9 +167,9 @@ const homeFr: (typeof home)['en'] = {
           status: 'in-progress',
         },
         {
-          lab: 'Recursive',
-          logo: 'recursive',
-          models: 'Flint',
+          lab: 'Cohere',
+          logo: 'cohere',
+          models: 'Cohere Transcribe',
           status: 'in-progress',
         },
       ],
@@ -183,13 +212,13 @@ const homeFr: (typeof home)['en'] = {
         name: 'NVIDIA · CUDA',
         level: 'secondary',
         label: 'Secondaire',
-        note: 'En production sur RTX et DGX Spark. GPU de datacenter en cours. CUDA → PTX.',
+        note: 'En production sur RTX et DGX Spark. CUDA → PTX.',
       },
       {
         name: 'AMD ROCm · Vulkan',
         level: 'runs',
         label: 'Fonctionne',
-        note: 'Fonctionne aujourd’hui, pas encore optimisé. HIP → AMDGPU, Vulkan → SPIR-V.',
+        note: 'Avance vite sur AMD. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
     runsOn: {
@@ -201,7 +230,7 @@ const homeFr: (typeof home)['en'] = {
         'Strix Halo',
         'Flottes de neoclouds',
       ],
-      pending: 'GPU de datacenter pour entreprises · en cours',
+      pending: 'GPU de datacenter pour entreprises · à suivre',
     },
   },
 

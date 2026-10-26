@@ -72,6 +72,7 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
       copy.cta.title,
       ...(copy.code ? [copy.code.heading] : []),
       ...(copy.platforms ? [copy.platforms.heading] : []),
+      ...(copy.extras ?? []).map((section) => section.heading),
     ]) {
       expect(accentCount(heading), heading).toBe(1);
     }
@@ -170,10 +171,59 @@ describe('product specifics from the brief', () => {
       (row) => row.term === 'Model families',
     )?.groups;
     expect(families).toHaveLength(16);
-    expect(
-      families?.find((group) => group.label === 'DeepSeek')?.inProgress,
-    ).toBe(true);
-    expect(families?.filter((group) => group.inProgress)).toHaveLength(1);
+    expect(families?.find((group) => group.label === 'DeepSeek')?.text).toBe(
+      'V4',
+    );
+    // No status badges on the Butter page: every family is listed plainly.
+    expect(families?.filter((group) => group.inProgress)).toHaveLength(0);
+  });
+
+  it('Butter names both APIs and states the quantized KV cache plainly', () => {
+    const copy = productCopy.butter.en;
+    const api = copy.specs.rows.find((row) => row.term === 'Serving API');
+    expect(api?.detail).toMatch(/Chat Completions/);
+    expect(api?.detail).toMatch(/Anthropic Messages/);
+    const chips = api?.chips?.map((chip) => chip.label);
+    expect(chips).toContain('Speculative decoding');
+    expect(chips).toContain('LoRA');
+    const kv = copy.specs.rows.find((row) => row.term === 'KV cache');
+    expect(kv?.detail).toMatch(/Quantized/);
+    expect(kv?.detail).not.toMatch(/Apple silicon|on CUDA/);
+    // The CUDA host compiles kernels at runtime, so "no JIT" stays off the page.
+    for (const text of strings(copy)) expect(text).not.toMatch(/\bJIT\b/);
+  });
+
+  it('Butter’s harness and quirks sections are compact and name no PRs', () => {
+    const extras = productCopy.butter.en.extras ?? [];
+    expect(extras.map((section) => section.id)).toEqual(['agents', 'quirks']);
+    for (const section of extras) {
+      expect(section.items.length).toBeGreaterThanOrEqual(3);
+      expect(section.items.length).toBeLessThanOrEqual(6);
+      for (const text of strings(section)) {
+        expect(text).not.toMatch(/#\d{2,}/);
+        expect(text).not.toMatch(/\bPR\b/);
+      }
+    }
+    const agents = extras.find((section) => section.id === 'agents');
+    const quirks = extras.find((section) => section.id === 'quirks');
+    expect(agents?.note).toMatch(/Exercised end to end/);
+    expect(agents?.note).not.toMatch(/Not there yet/);
+    expect(strings(agents).join(' ')).toMatch(/Messages/);
+    expect(strings(quirks).join(' ')).toMatch(/Nanbeige/);
+    // Every locale carries the same sections, in the same order.
+    for (const locale of ['es', 'fr', 'zh', 'ja', 'ko'] as const) {
+      expect(
+        productCopy.butter[locale]?.extras?.map((section) => section.id),
+      ).toEqual(['agents', 'quirks']);
+    }
+  });
+
+  it('Butter lists no gaps', () => {
+    const terms = productCopy.butter.en.specs.rows.map((row) => row.term);
+    expect(terms).not.toContain('Not yet');
+    for (const text of strings(productCopy.butter.en)) {
+      expect(text).not.toMatch(/not there yet|not yet\b/i);
+    }
   });
 
   it('Butter’s snippet is illustrative and keeps placeholders', () => {

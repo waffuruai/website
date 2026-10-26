@@ -55,7 +55,7 @@ const supportJa: (typeof support)['en'] = {
     {
       question: 'どのハードウェアで動きますか？',
       answer:
-        'Apple シリコンが第一の対象で、すべてのカーネルをまず Metal 向けに書き、チューニングしています。NVIDIA CUDA は第二の対象で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。AMD ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。想定しているのは、MacBook と Mac Studio、RTX ワークステーション、DGX Spark、Strix Halo、そしてネオクラウドのフリートです。',
+        'Apple シリコンが第一の対象で、すべてのカーネルをまず Metal 向けに書き、チューニングしています。NVIDIA CUDA は第二の対象で、RTX と DGX Spark では本番稼働中です。ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。想定しているのは、MacBook と Mac Studio、RTX ワークステーション、DGX Spark、Strix Halo、そしてネオクラウドのフリートです。',
     },
     {
       question: '不具合はどう報告すればよいですか？',

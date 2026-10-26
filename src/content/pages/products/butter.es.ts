@@ -4,23 +4,24 @@ const butterEs: (typeof butter)['en'] = {
   layer: 'Serving',
   tagline: 'Servir modelos sin Python.',
   summary:
-    'Swift sobre Metal para Apple silicon, Rust para CUDA y el resto. Carga checkpoints cuantizados de 2 a 8 bits, modelos híbridos y MoE, con una caché KV cuantizada.',
+    'Swift sobre Metal para Apple silicon, Rust para CUDA y el resto. Carga checkpoints cuantizados de 2 a 8 bits, modelos híbridos y MoE, y los sirve con APIs compatibles con OpenAI y con Anthropic Messages.',
   seo: {
     title: 'Butter: inferencia de LLM sin Python',
     description:
-      'Motor de inferencia de LLM: Swift sobre Metal en Apple silicon, Rust para CUDA. Carga modelos de Hugging Face tal cual, con API compatible con OpenAI.',
+      'Motor de inferencia de LLM: Swift sobre Metal en Apple silicon, Rust para CUDA. Sirve modelos de Hugging Face con APIs compatibles con OpenAI y con Anthropic Messages, pensado para harnesses de agentes.',
     keywords: [
       'motor de inferencia de LLM',
       'servidor de LLM local',
       'inferencia en Apple silicon',
       'servidor compatible con OpenAI',
+      'servidor de API Anthropic Messages',
       'caché KV cuantizada',
       'GGUF MLX safetensors',
     ],
   },
   hero: {
     title: 'Servir modelos *sin* Python.',
-    lede: 'Butter es un motor de inferencia escrito en Swift sobre Metal para Apple silicon y en Rust para CUDA y el resto. Sin Python, sin JIT, y los modelos se cargan directo desde Hugging Face.',
+    lede: 'Butter es un motor de inferencia escrito en Swift sobre Metal para Apple silicon y en Rust para CUDA y el resto. Sin Python, con kernels Metal precompilados, y los modelos se cargan directo desde Hugging Face.',
     highlights: [
       {
         value: '4',
@@ -28,9 +29,9 @@ const butterEs: (typeof butter)['en'] = {
       },
       {
         value: '2–8 bit',
-        label: 'checkpoints cuantizados, con una caché KV cuantizada',
+        label: 'checkpoints cuantizados, con caché KV cuantizada',
       },
-      { value: 'Sin Python', label: 'y sin JIT' },
+      { value: '2 APIs', label: 'compatible con OpenAI y Anthropic Messages' },
     ],
   },
   story: {
@@ -41,8 +42,8 @@ const butterEs: (typeof butter)['en'] = {
       'Apunta Butter a un modelo de Hugging Face. Carga safetensors, MLX, JANG y GGUF tal cual, y butter serve te da un servidor compatible con OpenAI en el hardware que ya tienes.',
     outcomes: [
       'Ejecuta checkpoints cuantizados de 2 a 8 bits, modelos híbridos y modelos de mezcla de expertos en un Mac o en una estación de trabajo RTX.',
-      'Apunta las herramientas que ya usas a un endpoint compatible con OpenAI, con streaming y llamada a herramientas.',
-      'Mantén bajo el uso de memoria en contextos largos con una caché KV cuantizada.',
+      'Apunta las herramientas que ya usas: un endpoint compatible con OpenAI y un endpoint tipo Anthropic Messages, con streaming, llamada a herramientas y un prefijo de prompt que sobrevive a las rondas de herramientas.',
+      'Mantén bajo el uso de memoria en contextos largos con una caché KV cuantizada, y una caché que desaloja en lugar de fallar cuando una sesión supera su límite.',
     ],
   },
   capabilities: {
@@ -56,19 +57,19 @@ const butterEs: (typeof butter)['en'] = {
       },
       {
         title: 'Cuantizados, híbridos y MoE',
-        body: 'Ejecuta checkpoints cuantizados de 2 a 8 bits, modelos híbridos y modelos de mezcla de expertos.',
+        body: 'Ejecuta checkpoints cuantizados de 2 a 8 bits, checkpoints MXFP4 y NVFP4 con escalas por bloque, modelos híbridos y modelos de mezcla de expertos.',
       },
       {
-        title: 'Una caché KV cuantizada',
-        body: 'Guarda la caché KV cuantizada, para mantener bajo el uso de memoria a medida que crece el contexto.',
+        title: 'Una caché KV que cabe',
+        body: 'La caché KV puede guardarse en 4 u 8 bits o comprimida con AURA. Toda caché es un anillo en el límite de contexto: una sesión larga desaloja sus tokens más antiguos con un aviso en lugar de fallar la solicitud.',
       },
       {
-        title: 'Serving compatible con OpenAI',
-        body: 'butter serve expone una API compatible con OpenAI, con streaming y llamada a herramientas.',
+        title: 'Dos APIs, un servidor',
+        body: 'butter serve habla la API Chat Completions de OpenAI y la API Messages de Anthropic, con streaming, llamadas a herramientas estructuradas, razonamiento en su propio campo y un prefijo de prompt reutilizado entre turnos.',
       },
       {
         title: 'Decodificación especulativa y LoRA',
-        body: 'Decodificación especulativa para generar, y LoRA para los adaptadores que entrenas tú.',
+        body: 'Decodificación especulativa para la generación, y LoRA para los adaptadores que entrenas tú.',
       },
       {
         title: 'Más que texto',
@@ -83,6 +84,71 @@ const butterEs: (typeof butter)['en'] = {
     caption:
       'Ilustrativo. Sustituye los marcadores por tu modelo y tu puerto. No es un benchmark.',
   },
+  extras: [
+    {
+      id: 'agents',
+      heading: 'Funciona con tu harness de *agentes*.',
+      intro:
+        'Butter es el servidor. Tu harness conserva su bucle, sus herramientas, sus aprobaciones y su compactación.',
+      items: [
+        {
+          title: 'Dos APIs, una sesión',
+          body: 'Chat Completions y Completions de OpenAI, y la API Messages de Anthropic con bloques system, historial de tool_use y tool_result y bloques de thinking. Configura una URL base y listo.',
+        },
+        {
+          title: 'Llamadas a herramientas estructuradas, en streaming',
+          body: 'Las llamadas a herramientas vuelven como JSON con ids únicos entre turnos, transmitidas como deltas. Los tipos de los argumentos siguen tu esquema: un entero sigue siendo un entero.',
+        },
+        {
+          title: 'Razonamiento visible u oculto',
+          body: 'Pensamiento activado o desactivado por solicitud. Cuando está activado, el razonamiento llega en su propio campo o bloque de thinking y la respuesta queda limpia.',
+        },
+        {
+          title:
+            'Un prefijo de prompt que sobrevive a las rondas de herramientas',
+          body: 'La segunda ronda no vuelve a procesar tu system prompt ni tu lista de herramientas. usage.cached_tokens y cache_read_input_tokens informan de lo que se reutilizó.',
+        },
+        {
+          title: 'Cancelar es cancelar',
+          body: 'Cierra la conexión y esa solicitud se detiene, en pleno prefill o en pleno decode. El trabajo pendiente no se ejecuta y las demás solicitudes continúan.',
+        },
+        {
+          title: 'Un contexto que se degrada, no que falla',
+          body: 'El presupuesto de contexto se informa en /v1/models. Pasado el límite, la caché desaloja los tokens más antiguos con un aviso en lugar de romper el bucle.',
+        },
+      ],
+      note: 'Probado de extremo a extremo con Oh My Pi sobre Chat Completions y con un cliente tipo Claude Code sobre Messages, en Qwen 3.6, Qwen 3.8 y Flint.',
+    },
+    {
+      id: 'quirks',
+      heading:
+        'Nos ocupamos de las *manías* del modelo para que tu agente no tenga que hacerlo.',
+      intro:
+        'Cada familia trae su propia plantilla, sus tokens y sus costumbres. Butter las absorbe en el servidor.',
+      items: [
+        {
+          title: 'Plantillas de chat y tokens',
+          body: 'La plantilla de Nanbeige conserva sus espacios en blanco, los tokens de control de los GGUF de Qwen se mantienen enteros y los dígitos se tokenizan en los límites del checkpoint, así que los prompts coinciden con el tokenizador oficial y las llamadas a herramientas se parsean. Gemma e InternLM se detienen al final del turno en lugar de divagar.',
+        },
+        {
+          title: 'Control del razonamiento',
+          body: 'Los bloques de pensamiento se separan de la respuesta y se conservan entre rondas de herramientas para que la caché de prefijo sobreviva. Al razonamiento de Flint se le puede asignar un presupuesto de tokens y un mensaje de transición.',
+        },
+        {
+          title: 'Llamadas a herramientas',
+          body: 'Las llamadas XML de Qwen se convierten en JSON tipado, en la respuesta y en el historial reproducido. Una respuesta sin herramientas anunciadas nunca se convierte en una llamada, y un tool_choice no soportado se rechaza de entrada en lugar de ignorarse en silencio.',
+        },
+        {
+          title: 'Front-ends de audio',
+          body: 'Los modelos de la familia Whisper reciben el banco de filtros mel Slaney con el que se entrenaron, la cabecera de idioma de Qwen3-ASR se elimina de las transcripciones y los checkpoints de Kokoro se enrutan a Kokoro y no a StyleTTS2.',
+        },
+        {
+          title: 'Cargadores y memoria',
+          body: 'Los GGUF con embeddings compartidos cargan sin cabeza de salida, los repositorios que solo traen SentencePiece tokenizan, el texto en streaming conserva sus espacios y una conversación de Qwen que supera su caché se recupera en lugar de ser rechazada.',
+        },
+      ],
+    },
+  ],
   specs: {
     heading: 'Detalles *técnicos*.',
     intro: 'Los detalles, para quienes los van a leer.',
@@ -90,7 +156,7 @@ const butterEs: (typeof butter)['en'] = {
       {
         term: 'Runtime',
         detail:
-          'Swift sobre Metal para Apple silicon. Rust para CUDA y el resto. Sin Python, sin JIT.',
+          'Swift sobre Metal para Apple silicon, macOS 14 o posterior. Rust para CUDA y el resto. Sin Python.',
       },
       {
         term: 'Formatos de modelo',
@@ -104,19 +170,29 @@ const butterEs: (typeof butter)['en'] = {
       },
       {
         term: 'Cuantización',
-        detail: 'Checkpoints cuantizados de 2 a 8 bits.',
+        detail:
+          'Checkpoints afines de 2, 3, 4, 5, 6 y 8 bits, con el ancho derivado por tensor. Checkpoints MXFP4 y NVFP4 con escalas por bloque. Block FP8 en CUDA.',
       },
       {
         term: 'Arquitecturas',
-        detail: 'Modelos híbridos y de mezcla de expertos (MoE).',
+        detail:
+          'Modelos densos, híbridos (atención mezclada con recurrencia) y de mezcla de expertos (MoE).',
       },
-      { term: 'Caché KV', detail: 'Cuantizada.' },
+      {
+        term: 'Caché KV',
+        detail:
+          'Cuantizada: afín de 4 u 8 bits, o comprimida con AURA. Toda caché es un anillo en el límite de contexto.',
+      },
       {
         term: 'API de serving',
-        detail: 'Compatible con OpenAI, se inicia con butter serve.',
+        detail:
+          'Chat Completions y Completions de OpenAI, Anthropic Messages, rutas de tokenización y recuento de tokens, salud, readiness y métricas Prometheus. Se inicia con butter serve, con --parallel para sesiones concurrentes.',
         chips: [
           { label: 'Streaming' },
           { label: 'Llamada a herramientas' },
+          { label: 'Campos de razonamiento' },
+          { label: 'Reutilización de prefijo' },
+          { label: 'Entrada de visión' },
           { label: 'Decodificación especulativa' },
           { label: 'LoRA' },
         ],
@@ -140,7 +216,7 @@ const butterEs: (typeof butter)['en'] = {
           { label: 'OpenAI', text: 'GPT-OSS 20B, 120B; Whisper' },
           { label: 'Mistral', text: 'Mistral; Mistral 3 VL; Voxtral' },
           { label: 'NVIDIA', text: 'Nemotron H; Nemotron VLM' },
-          { label: 'DeepSeek', text: 'V4', inProgress: true },
+          { label: 'DeepSeek', text: 'V4' },
           { label: 'IBM', text: 'Granite 3, 4' },
           { label: 'Microsoft', text: 'Phi 3' },
           { label: 'Liquid AI', text: 'LFM2, LFM2.5' },
@@ -161,22 +237,22 @@ const butterEs: (typeof butter)['en'] = {
   platforms: {
     heading: 'Dónde *funciona*.',
     intro:
-      'Metal es el objetivo principal. CUDA es secundario, y ROCm y Vulkan funcionan, pero aún sin afinar.',
+      'Metal es el objetivo principal. CUDA es secundario, y AMD a través de ROCm y Vulkan avanza rápido.',
     tiers: [
       {
         platform: 'Apple · Metal',
         level: 'primary',
-        note: 'Swift sobre Metal para Apple silicon: MacBook y Mac Studio.',
+        note: 'Swift sobre Metal para Apple silicon, macOS 14 o posterior: MacBook, Mac mini y Mac Studio.',
       },
       {
         platform: 'NVIDIA · CUDA',
         level: 'secondary',
-        note: 'Rust sobre CUDA. En producción en RTX y DGX Spark; las GPU de centros de datos están en desarrollo.',
+        note: 'Rust sobre CUDA. En producción en RTX y DGX Spark.',
       },
       {
         platform: 'AMD ROCm · Vulkan',
         level: 'runs',
-        note: 'Funciona hoy, aún sin afinar.',
+        note: 'AMD a través de ROCm y Vulkan, avanzando rápido.',
       },
     ],
   },
@@ -194,22 +270,23 @@ const butterEs: (typeof butter)['en'] = {
     {
       question: '¿En qué hardware funciona?',
       answer:
-        'Swift sobre Metal para Apple silicon es el objetivo principal, desde un MacBook hasta un Mac Studio. CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
+        'Swift sobre Metal para Apple silicon es el objetivo principal, desde un MacBook hasta un Mac Studio con macOS 14 o posterior. CUDA es secundario, en producción en RTX y DGX Spark. AMD a través de ROCm y Vulkan avanza rápido.',
     },
     {
       question: '¿Qué modelos ejecuta?',
       answer:
-        'La cobertura actual incluye Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite y Phi, entre otros de los listados arriba, en variantes de texto, visión, voz y omni. DeepSeek V4 está en desarrollo.',
+        'La cobertura actual incluye Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite y Phi, entre otros de los listados arriba, en variantes de texto, visión, voz y omni.',
     },
     {
       question: '¿Necesito Python?',
       answer:
-        'No. Butter es Swift sobre Metal para Apple silicon y Rust para CUDA y el resto, sin Python y sin JIT.',
+        'No. Butter es Swift sobre Metal para Apple silicon y Rust para CUDA y el resto, sin Python en ningún punto de la ruta de serving.',
     },
     {
-      question: '¿Funcionarán mis herramientas actuales?',
+      question:
+        '¿Funcionarán mis herramientas y harnesses de agentes actuales?',
       answer:
-        'Butter sirve una API compatible con OpenAI con butter serve, incluidos streaming y llamada a herramientas, así que los clientes que hablan esa API pueden apuntar a él.',
+        'Butter sirve la API Chat Completions de OpenAI y la API Messages de Anthropic desde un solo proceso de butter serve, con streaming, llamadas a herramientas estructuradas, campos de razonamiento y un prefijo de prompt reutilizado. Los clientes que hablan cualquiera de las dos APIs pueden apuntar a él.',
     },
     {
       question: '¿Cuál es su velocidad?',

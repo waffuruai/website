@@ -158,13 +158,13 @@ export const home: Localized<HomeContent> = {
       title: 'Models on the menu.',
       intro:
         'Loaded straight from Hugging Face. Coverage is widest on Metal; CUDA support is added model by model.',
-      legend: { supported: 'Supported', inProgress: 'In progress' },
+      legend: { supported: 'Supported', inProgress: 'Coming soon' },
       lanes: [
         [
           {
             lab: 'Meta',
             logo: 'meta',
-            models: 'Llama 3 · 3.1 · 3.2 · 3.3',
+            models: 'Llama 3 · 3.1 · 3.2 · 3.3, Muse Glimmer',
           },
           {
             lab: 'Google',
@@ -174,7 +174,7 @@ export const home: Localized<HomeContent> = {
           {
             lab: 'Qwen',
             logo: 'qwen',
-            models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni',
+            models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni, ASR',
           },
           {
             lab: 'OpenAI',
@@ -184,20 +184,35 @@ export const home: Localized<HomeContent> = {
           {
             lab: 'Mistral AI',
             logo: 'mistral',
-            models: 'Mistral, Mistral 3 VL, Voxtral',
+            models: 'Mistral, Mistral 3 VL, Pixtral, Voxtral',
           },
           {
             lab: 'NVIDIA',
             logo: 'nvidia',
-            models: 'Nemotron H, Nemotron VLM',
+            models: 'Nemotron H · 3.5, VLM, Diffusion, Parakeet',
           },
           {
             lab: 'DeepSeek',
             logo: 'deepseek',
-            models: 'DeepSeek V4',
+            models: 'DeepSeek V4 · V4.1',
             status: 'in-progress',
           },
-          { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4' },
+          { lab: 'Z.ai', logo: 'zai', models: 'GLM-5.3, GLM-OCR, GLM-ASR' },
+          { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4, Granite Speech' },
+          {
+            lab: 'OpenBMB',
+            logo: 'openbmb',
+            models: 'MiniCPM 5, MiniCPM-V 4.6, MiniCPM-o',
+          },
+          { lab: 'Tencent', logo: 'tencent', models: 'Hy3' },
+          { lab: 'inclusionAI', logo: 'inclusionai', models: 'Ling 3.0' },
+          {
+            lab: 'StepFun',
+            logo: 'stepfun',
+            models: 'Step 3',
+            status: 'in-progress',
+          },
+          { lab: 'BigCode', logo: 'bigcode', models: 'StarCoder2' },
         ],
         [
           { lab: 'Microsoft', logo: 'microsoft', models: 'Phi 3' },
@@ -216,6 +231,20 @@ export const home: Localized<HomeContent> = {
             logo: 'internlm',
             models: 'InternLM 2',
           },
+          { lab: 'hexgrad', logo: 'hexgrad', models: 'Kokoro' },
+          { lab: '01.AI', logo: '01ai', models: 'Yi 1.5' },
+          { lab: 'Recursive', logo: 'recursive', models: 'Flint' },
+          {
+            lab: 'Poolside',
+            logo: 'poolside',
+            models: 'Laguna S 2.1 · XS 2.1',
+          },
+          {
+            lab: 'Nanbeige',
+            logo: 'nanbeige',
+            models: 'Nanbeige 4.3',
+            status: 'in-progress',
+          },
           {
             lab: 'Fish Audio',
             logo: 'fishaudio',
@@ -223,9 +252,9 @@ export const home: Localized<HomeContent> = {
             status: 'in-progress',
           },
           {
-            lab: 'Recursive',
-            logo: 'recursive',
-            models: 'Flint',
+            lab: 'Cohere',
+            logo: 'cohere',
+            models: 'Cohere Transcribe',
             status: 'in-progress',
           },
         ],
@@ -268,13 +297,13 @@ export const home: Localized<HomeContent> = {
           name: 'NVIDIA · CUDA',
           level: 'secondary',
           label: 'Secondary',
-          note: 'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
+          note: 'In production on RTX and DGX Spark. CUDA → PTX.',
         },
         {
           name: 'AMD ROCm · Vulkan',
           level: 'runs',
           label: 'Runs',
-          note: 'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
+          note: 'Moving fast on AMD. HIP → AMDGPU, Vulkan → SPIR-V.',
         },
       ],
       runsOn: {
@@ -286,7 +315,7 @@ export const home: Localized<HomeContent> = {
           'Strix Halo',
           'Neocloud fleets',
         ],
-        pending: 'Enterprise datacenter GPUs · in progress',
+        pending: 'Enterprise datacenter GPUs · next',
       },
     },
 

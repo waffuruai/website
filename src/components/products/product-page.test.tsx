@@ -199,8 +199,39 @@ describe('Butter’s page', () => {
     expect(screen.getByText('butter · illustrative')).toBeTruthy();
   });
 
-  it('marks DeepSeek V4 as in progress', () => {
+  it('lists DeepSeek V4 without a status badge', () => {
     const { container } = renderPage('butter');
-    expect(container.textContent).toContain('V4 · In progress');
+    expect(container.textContent).toContain('V4');
+    expect(container.textContent).not.toContain('In progress');
   });
+
+  it('renders the agent harness and model quirks sections between the code and the specs', () => {
+    const { container } = renderPage('butter');
+    const extras = productCopy.butter.en.extras ?? [];
+    for (const section of extras) {
+      const region = container.querySelector(
+        `section#${section.id}, section[aria-labelledby="${section.id}"]`,
+      );
+      expect(region, section.id).not.toBeNull();
+      expect(region!.querySelectorAll('h3')).toHaveLength(section.items.length);
+      if (section.note) expect(region!.textContent).toContain(section.note);
+    }
+    const ids = [...container.querySelectorAll('section[aria-labelledby]')].map(
+      (section) => section.getAttribute('aria-labelledby'),
+    );
+    expect(ids.indexOf('agents')).toBeGreaterThan(ids.indexOf('capabilities'));
+    expect(ids.indexOf('quirks')).toBe(ids.indexOf('agents') + 1);
+    expect(ids.indexOf('specs')).toBeGreaterThan(ids.indexOf('quirks'));
+  });
+});
+
+describe('Other product pages', () => {
+  it.each(['iron', 'waffle', 'syrup'] as const)(
+    '%s has no extra sections',
+    (slug) => {
+      const { container } = renderPage(slug);
+      expect(container.querySelector('#agents')).toBeNull();
+      expect(container.querySelector('#quirks')).toBeNull();
+    },
+  );
 });

@@ -1,10 +1,10 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
-  eyebrow: 'Mesuré dans Butter · correctif en cours',
+  eyebrow: 'Mesuré dans Butter',
   title: 'Moins d’arguments faux.\n*Des bons moins chers.*',
   intro:
-    'Un appel d’outil avec un argument faux échoue, déclenche une nouvelle tentative ou s’exécute avec la mauvaise valeur. Nous traçons l’exécution et le comportement, puis testons des changements ciblés de l’inférence. Sur une évaluation de 144 requêtes, un correctif Butter en cours d’intégration a produit {more} arguments exacts de plus et fait passer les tokens par argument correct d’environ {before} à environ {after}.',
+    'Un appel d’outil avec un argument faux échoue, déclenche une nouvelle tentative ou s’exécute avec la mauvaise valeur. Nous traçons l’exécution et le comportement, puis testons des changements ciblés de l’inférence. Sur une évaluation de 144 requêtes, le correctif Butter a produit {more} arguments exacts de plus et fait passer les tokens par argument correct d’environ {before} à environ {after}.',
   figure: {
     headline: 'Tokens par argument correct',
     baseline: 'Avant',
@@ -53,6 +53,6 @@ const copy: ToolResearchCopy = {
     'L’évaluation élargie comporte 72 prompts, chacun testé en modes buffered et streaming : 144 requêtes par variante. Ce sont de nouvelles valeurs dans des familles d’échecs connues, pas 144 tâches indépendantes. Aucun outil externe n’a été exécuté.',
   cost: 'Le changement ajoute 8 304 tokens d’entrée et 536 tokens générés sur l’évaluation élargie : les tokens totaux d’inférence passent de 50 382 à 59 222 tandis que les tokens par argument correct baissent.',
   limits:
-    'Le correctif est en cours d’intégration dans Butter et ne figure pas encore dans une version publiée. Ces résultats se limitent à cette évaluation ; autres modèles, API et tâches complètes exigent une validation distincte.',
+    'Ces résultats se limitent à cette évaluation de valeurs exactes d’arguments ; autres modèles, API et tâches complètes en sont exclus.',
 };
 export default copy;

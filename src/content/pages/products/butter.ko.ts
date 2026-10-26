@@ -4,23 +4,24 @@ const butterKo: (typeof butter)['en'] = {
   layer: '서빙',
   tagline: 'Python 없는 모델 서빙.',
   summary:
-    'Apple 실리콘에는 Metal 위의 Swift를, CUDA를 비롯한 나머지에는 Rust를 씁니다. 2~8비트 양자화 체크포인트와 하이브리드·MoE 모델을 불러오고, 양자화된 KV 캐시를 지원합니다.',
+    'Apple 실리콘에는 Metal 위의 Swift를, CUDA를 비롯한 나머지에는 Rust를 씁니다. 2~8비트 양자화 체크포인트와 하이브리드·MoE 모델을 불러오고, OpenAI 호환 API와 Anthropic Messages API로 서빙합니다.',
   seo: {
     title: 'Butter: Python 없는 LLM 추론',
     description:
-      'Apple 실리콘은 Swift, CUDA는 Rust로 만든 LLM 추론 엔진. Hugging Face 모델을 그대로 불러 OpenAI 호환 API로 서빙합니다.',
+      'Apple 실리콘은 Swift, CUDA는 Rust로 만든 LLM 추론 엔진. Hugging Face 모델을 OpenAI 호환 API와 Anthropic Messages API로 서빙하며, 에이전트 하니스를 위해 만들었습니다.',
     keywords: [
       'LLM 추론 엔진',
       '로컬 LLM 서빙',
       'Apple 실리콘 추론',
       'OpenAI 호환 서버',
+      'Anthropic Messages API 서버',
       '양자화 KV 캐시',
       'GGUF MLX safetensors',
     ],
   },
   hero: {
     title: 'Python *없는* 모델 서빙.',
-    lede: 'Butter는 Apple 실리콘에는 Metal 위의 Swift로, CUDA를 비롯한 나머지에는 Rust로 작성한 추론 엔진입니다. Python도 JIT도 없고, 모델은 Hugging Face에서 곧바로 불러옵니다.',
+    lede: 'Butter는 Apple 실리콘에는 Metal 위의 Swift로, CUDA를 비롯한 나머지에는 Rust로 작성한 추론 엔진입니다. Python이 없고, Metal 커널은 미리 컴파일해 배포하며, 모델은 Hugging Face에서 곧바로 불러옵니다.',
     highlights: [
       {
         value: '4',
@@ -28,9 +29,9 @@ const butterKo: (typeof butter)['en'] = {
       },
       {
         value: '2–8 bit',
-        label: '양자화 체크포인트, 양자화된 KV 캐시 지원',
+        label: '양자화 체크포인트, 양자화된 KV 캐시까지',
       },
-      { value: 'Python 없음', label: 'JIT도 없음' },
+      { value: 'API 2종', label: 'OpenAI 호환과 Anthropic Messages' },
     ],
   },
   story: {
@@ -41,8 +42,8 @@ const butterKo: (typeof butter)['en'] = {
       'Hugging Face의 모델을 Butter에 지정하세요. safetensors, MLX, JANG, GGUF를 그대로 불러오며, butter serve 한 줄이면 이미 가진 하드웨어에서 OpenAI 호환 서버가 뜹니다.',
     outcomes: [
       'Mac이나 RTX 워크스테이션에서 2~8비트 양자화 체크포인트, 하이브리드 모델, 전문가 혼합(MoE) 모델을 돌리세요.',
-      '이미 쓰는 도구를 스트리밍과 도구 호출을 지원하는 OpenAI 호환 엔드포인트에 연결하세요.',
-      '양자화된 KV 캐시로 긴 컨텍스트에서도 메모리 사용량을 낮추세요.',
+      '이미 쓰는 도구를 그대로 연결하세요. OpenAI 호환 엔드포인트와 Anthropic Messages 방식 엔드포인트를 제공하며, 스트리밍, 도구 호출, 도구 라운드를 넘어 유지되는 프롬프트 접두사를 지원합니다.',
+      '양자화된 KV 캐시로 긴 컨텍스트의 메모리 사용량을 낮추고, 세션이 한도를 넘으면 캐시가 오류 대신 오래된 토큰을 밀어냅니다.',
     ],
   },
   capabilities: {
@@ -56,23 +57,23 @@ const butterKo: (typeof butter)['en'] = {
       },
       {
         title: '양자화, 하이브리드, MoE',
-        body: '2~8비트 양자화 체크포인트, 하이브리드 모델, 전문가 혼합(MoE) 모델을 실행합니다.',
+        body: '2~8비트 양자화 체크포인트, MXFP4와 NVFP4 블록 스케일 체크포인트, 하이브리드 모델, 전문가 혼합(MoE) 모델을 실행합니다.',
       },
       {
-        title: '양자화된 KV 캐시',
-        body: '컨텍스트가 길어져도 메모리 사용량을 억제할 수 있도록 KV 캐시를 양자화해 저장합니다.',
+        title: '들어맞는 KV 캐시',
+        body: 'KV 캐시는 4비트나 8비트로 저장하거나 AURA로 압축할 수 있습니다. 모든 캐시는 컨텍스트 한도에서 도는 링이라, 긴 세션은 요청을 실패시키는 대신 경고와 함께 가장 오래된 토큰을 밀어냅니다.',
       },
       {
-        title: 'OpenAI 호환 서빙',
-        body: 'butter serve는 스트리밍과 도구 호출을 지원하는 OpenAI 호환 API를 제공합니다.',
+        title: 'API 2종, 서버 하나',
+        body: 'butter serve는 OpenAI Chat Completions API와 Anthropic Messages API를 모두 지원하며, 스트리밍, 구조화된 도구 호출, 별도 필드의 추론, 턴을 넘어 재사용되는 프롬프트 접두사를 제공합니다.',
       },
       {
         title: '추측 디코딩과 LoRA',
-        body: '생성에는 추측 디코딩을, 직접 학습한 어댑터에는 LoRA를 지원합니다.',
+        body: '생성에는 추측 디코딩을, 직접 학습한 어댑터에는 LoRA를 씁니다.',
       },
       {
         title: '텍스트 그 이상',
-        body: '텍스트, 비전, 음성 인식, 음성 합성, 옴니 모델을 지원합니다.',
+        body: '텍스트, 비전, 음성 인식, 음성 합성, 옴니 모델.',
       },
     ],
   },
@@ -83,6 +84,69 @@ const butterKo: (typeof butter)['en'] = {
     caption:
       '예시입니다. 플레이스홀더는 사용하는 모델과 포트로 바꾸세요. 벤치마크가 아닙니다.',
   },
+  extras: [
+    {
+      id: 'agents',
+      heading: '당신의 *에이전트* 하니스와 함께 동작합니다.',
+      intro:
+        'Butter는 서버입니다. 하니스는 자기 루프, 도구, 승인, 압축을 그대로 유지합니다.',
+      items: [
+        {
+          title: 'API 2종, 세션 하나',
+          body: 'OpenAI Chat Completions와 Completions, 그리고 system 블록, tool_use와 tool_result 기록, thinking 블록을 갖춘 Anthropic Messages API. 기본 URL만 설정하면 됩니다.',
+        },
+        {
+          title: '구조화된 도구 호출을 스트리밍으로',
+          body: '도구 호출은 턴을 넘어 고유한 id를 가진 JSON으로 돌아오며 델타로 스트리밍됩니다. 인수 타입이 스키마를 따르므로 정수는 정수로 남습니다.',
+        },
+        {
+          title: '추론을 보이거나 숨기거나',
+          body: '요청마다 사고를 켜거나 끌 수 있습니다. 켜져 있으면 추론은 별도 필드나 thinking 블록으로 스트리밍되고 답변은 깔끔하게 유지됩니다.',
+        },
+        {
+          title: '도구 라운드를 넘어 살아남는 프롬프트 접두사',
+          body: '두 번째 라운드에서 시스템 프롬프트와 도구 목록을 다시 프리필하지 않습니다. usage.cached_tokens와 cache_read_input_tokens가 재사용된 양을 알려 줍니다.',
+        },
+        {
+          title: '취소는 취소입니다',
+          body: '연결을 닫으면 프리필 중이든 디코딩 중이든 그 요청은 멈춥니다. 남은 작업은 실행되지 않고 다른 요청은 계속됩니다.',
+        },
+        {
+          title: '오류 대신 완만하게 줄어드는 컨텍스트',
+          body: '컨텍스트 예산은 /v1/models에서 알려 줍니다. 한도를 넘으면 캐시는 루프를 실패시키는 대신 경고와 함께 가장 오래된 토큰을 밀어냅니다.',
+        },
+      ],
+      note: 'Oh My Pi(Chat Completions)와 Claude Code 방식 클라이언트(Messages)로 Qwen 3.6, Qwen 3.8, Flint에서 끝까지 검증했습니다.',
+    },
+    {
+      id: 'quirks',
+      heading: '모델의 *별난 습성*은 에이전트 대신 저희가 처리합니다.',
+      intro:
+        '모델 계열마다 템플릿, 토큰, 습성이 다릅니다. Butter는 이를 서버에서 흡수합니다.',
+      items: [
+        {
+          title: '채팅 템플릿과 토큰',
+          body: 'Nanbeige 템플릿의 공백은 그대로 유지되고, Qwen GGUF 제어 토큰은 쪼개지지 않으며, 숫자는 체크포인트의 경계대로 토큰화되어 프롬프트가 공식 토크나이저와 일치하고 도구 호출이 제대로 파싱됩니다. Gemma와 InternLM은 횡설수설하지 않고 턴 끝에서 멈춥니다.',
+        },
+        {
+          title: '추론 제어',
+          body: '사고 블록은 답변과 분리되고, 접두사 캐시가 살아남도록 도구 라운드를 넘어 유지됩니다. Flint의 추론에는 토큰 예산과 전환 메시지를 지정할 수 있습니다.',
+        },
+        {
+          title: '도구 호출',
+          body: 'Qwen의 XML 도구 호출은 응답에서도 재생된 기록에서도 타입이 있는 JSON이 됩니다. 도구를 선언하지 않은 응답은 절대 호출로 바뀌지 않고, 지원하지 않는 tool_choice는 조용히 무시되는 대신 처음부터 거부됩니다.',
+        },
+        {
+          title: '오디오 프런트엔드',
+          body: 'Whisper 계열 모델은 학습 때 쓴 Slaney 멜 필터뱅크를 그대로 받고, Qwen3-ASR의 언어 헤더는 전사에서 제거되며, Kokoro 체크포인트는 StyleTTS2가 아니라 Kokoro로 라우팅됩니다.',
+        },
+        {
+          title: '로더와 메모리',
+          body: '임베딩을 공유하는 GGUF는 출력 헤드 없이 불러오고, SentencePiece만 있는 저장소도 토큰화되며, 스트리밍 텍스트는 공백을 유지하고, 캐시를 넘어선 Qwen 대화는 거부되는 대신 복구됩니다.',
+        },
+      ],
+    },
+  ],
   specs: {
     heading: '기술 *세부 사항*.',
     intro: '꼼꼼히 읽어 보실 분들을 위한 상세 정보.',
@@ -90,7 +154,7 @@ const butterKo: (typeof butter)['en'] = {
       {
         term: '런타임',
         detail:
-          'Apple 실리콘에는 Metal 위의 Swift, CUDA를 비롯한 나머지에는 Rust. Python도 JIT도 없습니다.',
+          'Apple 실리콘에는 Metal 위의 Swift(macOS 14 이상), CUDA를 비롯한 나머지에는 Rust. Python은 없습니다.',
       },
       {
         term: '모델 형식',
@@ -102,18 +166,31 @@ const butterKo: (typeof butter)['en'] = {
           { label: 'GGUF' },
         ],
       },
-      { term: '양자화', detail: '2~8비트 양자화 체크포인트.' },
+      {
+        term: '양자화',
+        detail:
+          '2, 3, 4, 5, 6, 8비트 어파인 양자화 체크포인트, 비트 폭은 텐서별로 유도. MXFP4와 NVFP4 블록 스케일 체크포인트. CUDA에서는 블록 FP8.',
+      },
       {
         term: '아키텍처',
-        detail: '하이브리드 및 전문가 혼합(MoE) 모델.',
+        detail:
+          '밀집 모델, 하이브리드(어텐션과 순환의 혼합) 모델, 전문가 혼합(MoE) 모델.',
       },
-      { term: 'KV 캐시', detail: '양자화 지원.' },
+      {
+        term: 'KV 캐시',
+        detail:
+          '양자화: 4비트 또는 8비트 어파인, 또는 AURA 압축. 모든 캐시는 컨텍스트 한도에서 도는 링입니다.',
+      },
       {
         term: '서빙 API',
-        detail: 'OpenAI 호환, butter serve로 시작.',
+        detail:
+          'OpenAI Chat Completions와 Completions, Anthropic Messages, 토큰화와 토큰 수 계산 라우트, 헬스, 레디니스, Prometheus 메트릭. butter serve로 시작하며 --parallel로 동시 세션 수를 지정합니다.',
         chips: [
           { label: '스트리밍' },
           { label: '도구 호출' },
+          { label: '추론 필드' },
+          { label: '접두사 재사용' },
+          { label: '비전 입력' },
           { label: '추측 디코딩' },
           { label: 'LoRA' },
         ],
@@ -137,7 +214,7 @@ const butterKo: (typeof butter)['en'] = {
           { label: 'OpenAI', text: 'GPT-OSS 20B, 120B; Whisper' },
           { label: 'Mistral', text: 'Mistral; Mistral 3 VL; Voxtral' },
           { label: 'NVIDIA', text: 'Nemotron H; Nemotron VLM' },
-          { label: 'DeepSeek', text: 'V4', inProgress: true },
+          { label: 'DeepSeek', text: 'V4' },
           { label: 'IBM', text: 'Granite 3, 4' },
           { label: 'Microsoft', text: 'Phi 3' },
           { label: 'Liquid AI', text: 'LFM2, LFM2.5' },
@@ -158,22 +235,22 @@ const butterKo: (typeof butter)['en'] = {
   platforms: {
     heading: '*구동*되는 곳.',
     intro:
-      'Metal이 주력 대상입니다. CUDA는 그다음이며, ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+      'Metal이 주력 대상입니다. CUDA는 그다음이며, ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
     tiers: [
       {
         platform: 'Apple · Metal',
         level: 'primary',
-        note: 'Apple 실리콘에는 Metal 위의 Swift: MacBook과 Mac Studio.',
+        note: 'Apple 실리콘에는 Metal 위의 Swift, macOS 14 이상: MacBook, Mac mini, Mac Studio.',
       },
       {
         platform: 'NVIDIA · CUDA',
         level: 'secondary',
-        note: 'CUDA 위의 Rust. RTX와 DGX Spark에서 프로덕션으로 운영 중이며, 데이터센터 GPU는 진행 중입니다.',
+        note: 'CUDA 위의 Rust. RTX와 DGX Spark에서 프로덕션으로 운영 중입니다.',
       },
       {
         platform: 'AMD ROCm · Vulkan',
         level: 'runs',
-        note: '지금도 동작하지만 아직 튜닝하지 않았습니다.',
+        note: 'ROCm과 Vulkan을 통한 AMD 지원, 빠르게 나아가고 있습니다.',
       },
     ],
   },
@@ -191,22 +268,22 @@ const butterKo: (typeof butter)['en'] = {
     {
       question: '어떤 하드웨어에서 돌아가나요?',
       answer:
-        'Apple 실리콘의 Metal 위 Swift가 주력 대상이며, MacBook부터 Mac Studio까지 지원합니다. CUDA는 그다음으로, RTX와 DGX Spark에서 프로덕션으로 운영 중이고 데이터센터 GPU는 진행 중입니다. ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
+        'Apple 실리콘의 Metal 위 Swift가 주력 대상이며, macOS 14 이상의 MacBook부터 Mac Studio까지 지원합니다. CUDA는 그다음으로, RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
     },
     {
       question: '어떤 모델을 돌릴 수 있나요?',
       answer:
-        '현재 Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite, Phi를 비롯해 위에 나열한 여러 모델을 텍스트, 비전, 음성, 옴니 변형까지 지원합니다. DeepSeek V4는 진행 중입니다.',
+        '현재 Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite, Phi를 비롯해 위에 나열한 여러 모델을 텍스트, 비전, 음성, 옴니 변형까지 지원합니다.',
     },
     {
       question: 'Python이 필요한가요?',
       answer:
-        '아니요. Butter는 Apple 실리콘에는 Metal 위의 Swift, CUDA를 비롯한 나머지에는 Rust로 만들어져 Python도 JIT도 없습니다.',
+        '아니요. Butter는 Apple 실리콘에는 Metal 위의 Swift, CUDA를 비롯한 나머지에는 Rust로 만들어져 서빙 경로 어디에도 Python이 없습니다.',
     },
     {
-      question: '기존에 쓰던 도구도 연결할 수 있나요?',
+      question: '기존에 쓰던 도구와 에이전트 하니스도 연결할 수 있나요?',
       answer:
-        'Butter는 butter serve로 스트리밍과 도구 호출을 포함한 OpenAI 호환 API를 제공하므로, 해당 API를 쓰는 클라이언트를 그대로 연결할 수 있습니다.',
+        'Butter는 butter serve 프로세스 하나로 OpenAI Chat Completions API와 Anthropic Messages API를 제공하며, 스트리밍, 구조화된 도구 호출, 추론 필드, 재사용되는 프롬프트 접두사를 지원합니다. 두 API 중 하나를 쓰는 클라이언트라면 그대로 연결할 수 있습니다.',
     },
     {
       question: '얼마나 빠른가요?',
