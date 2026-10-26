@@ -1,0 +1,42 @@
+/*
+ * The AURA ribbon: one row of KV blocks. Older blocks are compressed (narrow,
+ * gold, striped like packed codes); the recent window is raw (wide, outlined).
+ * The widths come from `--ratio` (raw : compressed), set inline from the
+ * public turbo4 number, so the drawing cannot drift from the copy. Pure CSS,
+ * fixed height, and the only motion is the write cursor's blink, which the
+ * global reduced-motion rule stops.
+ */
+.ribbon {
+  display: flex;
+  align-items: stretch;
+  gap: 3px;
+  height: 56px;
+  min-width: 0;
+}
+
+.cell {
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 3px;
+}
+
+.compressed {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--brand) 0 3px,
+    color-mix(in oklab, var(--brand) 32%, transparent) 3px 5px
+  );
+  opacity: 0.92;
+}
+
+.raw {
+  flex-grow: var(--ratio, 3.8);
+  border: 1px solid color-mix(in oklab, var(--foreground) 30%, transparent);
+  background: color-mix(in oklab, var(--foreground) 5%, transparent);
+}
+
+.cursor {
+  flex: 0 0 3px;
+  border-radius: 2px;
+  background: var(--brand);
+}
