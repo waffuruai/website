@@ -10,7 +10,7 @@ The design is Tom's "After Hours" page (`design/after-hours.html` is the referen
 
 ## Before you finish
 
-- `mise run check` (typecheck site + worker, lint, test, format check). Fix everything it reports.
+- `mise run check` (lint: eslint, shellcheck, typecheck site + worker; every test suite; format check). Fix everything it reports. One part alone: `mise run lint typecheck`, `mise run test unit -- <files>`.
 - `mise run build` if you touched routes, config, MDX or content. It must finish, including the postbuild steps.
 - Format with `mise run format`, or `pnpm exec prettier --write <files>` for a few files.
 - `mise run dev` serves http://localhost:3000 (dev rewrites stand in for the Worker). `mise run preview` builds and runs the real Worker at http://127.0.0.1:8787. `mise tasks ls` lists the rest; new commands go in `mise.toml` `[tasks]`, using only tools from its `[tools]`.

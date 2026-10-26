@@ -25,15 +25,20 @@ description = "Serve http://localhost:PORT with dev rewrites standing in for the
 usage = 'flag "--port <port>" default="3000" help="Port for next dev"'
 run = "pnpm run dev --port ${usage_port}"
 
-[tasks.typecheck]
-description = "Typecheck the site and the Worker"
-depends = ["generate"]
-run = "pnpm run typecheck"
-
 [tasks.lint]
-description = "eslint on the site, shellcheck on scripts/*.sh"
+description = "Lint: all = eslint, shellcheck on scripts/*.sh and typecheck (site + Worker); or one of them"
 depends = ["generate"]
-run = ["pnpm run lint", "shellcheck scripts/*.sh"]
+usage = '''
+arg "[target]" default="all" help="What to lint" {
+  choices "all" "eslint" "shellcheck" "typecheck"
+}
+'''
+run = '''
+set -e
+case "$usage_target" in all|eslint) pnpm run lint ;; esac
+case "$usage_target" in all|shellcheck) shellcheck scripts/*.sh ;; esac
+case "$usage_target" in all|typecheck) pnpm run typecheck ;; esac
+'''
 
 [tasks.format]
 description = "Format every source file with prettier"
@@ -44,7 +49,7 @@ description = "Check formatting with prettier (what the pre-commit hook runs)"
 run = "pnpm run format:check"
 
 [tasks.test-unit]
-description = "Vitest suite; pass files or a filter after --"
+description = "Vitest suite, as `mise run test unit` (the name the pre-push hook looks for); arguments after --"
 depends = ["generate"]
 usage = 'arg "[args]" var=#true double_dash="required" help="vitest arguments, after --, such as -- src/lib"'
 run = '''
@@ -52,20 +57,28 @@ eval "set -- ${usage_args:-}"
 exec pnpm exec vitest run "$@"
 '''
 
-[tasks.test-release]
-description = "Validate releases/products.json and test the release fetcher against a stub gh"
-run = [
-  "jq -e 'type == \"array\" and all(.[]; .product and .repo and .asset)' releases/products.json",
-  "scripts/test-fetch-releases.sh",
-]
-
 [tasks.test]
-description = "Unit tests and the release fetcher tests"
-depends = ["test-unit", "test-release"]
+description = "Tests: all = unit (vitest) and release (the products.json check and the fetcher tests against a stub gh)"
+depends = ["generate"]
+usage = '''
+arg "[suite]" default="all" help="Which suite" {
+  choices "all" "unit" "release"
+}
+arg "[args]" var=#true double_dash="required" help="vitest arguments for the unit suite, after --, such as -- src/lib"
+'''
+run = '''
+set -e
+eval "set -- ${usage_args:-}"
+case "$usage_suite" in all|unit) pnpm exec vitest run "$@" ;; esac
+case "$usage_suite" in all|release)
+  jq -e 'type == "array" and all(.[]; .product and .repo and .asset)' releases/products.json
+  scripts/test-fetch-releases.sh ;;
+esac
+'''
 
 [tasks.check]
-description = "Typecheck, lint, test and format check (what CI runs before the build)"
-depends = ["typecheck", "lint", "test", "format-check"]
+description = "lint, test and format check, everything (what CI runs before the build)"
+depends = ["lint", "test", "format-check"]
 
 [tasks.audit]
 description = "Fail on high or critical advisories in production dependencies"

@@ -66,7 +66,7 @@ jobs:
       - name: Install
         run: mise run bootstrap
 
-      # Typecheck, lint (eslint, shellcheck), unit and release fetcher tests, format check.
+      # lint (eslint, shellcheck, typecheck), test (unit, release fetcher), format check.
       - name: Check
         run: mise run check
 

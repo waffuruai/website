@@ -28,14 +28,14 @@ Tools are pinned in [`mise.toml`](mise.toml) (`packageManager` in `package.json`
 
 ```bash
 mise bootstrap    # installs node, pnpm and the other pinned tools, then the locked dependencies
-mise run test     # unit tests and the release fetcher tests
+mise run test     # all suites: unit (vitest) and release (the fetcher); `mise run test unit` for one
 ```
 
 `mise tasks ls` lists every task. The ones you will use most:
 
 ```bash
 mise run dev           # http://localhost:3000 (--port to change), dev rewrites stand in for the Worker
-mise run check         # typecheck (site + worker), lint, tests, format check: what CI runs
+mise run check         # lint (eslint, shellcheck, typecheck), every test suite, format check: what CI runs
 mise run build         # images → static export (out/) → postbuild (404, markdown, llms.txt, OG cards, CSP hashes)
 mise run preview       # build, assemble _site/, run the real Worker with wrangler at http://127.0.0.1:8787
 ```
@@ -161,11 +161,11 @@ Any failure exits non-zero naming the product and tag.
 ### Running the checks locally
 
 ```bash
-mise run lint            # eslint, and shellcheck on scripts/*.sh
-mise run test-release    # the manifest check and the fetcher tests; stubs gh, no network, no token
+mise run lint shellcheck   # shellcheck on scripts/*.sh (`mise run lint` adds eslint and typecheck)
+mise run test release      # the manifest check and the fetcher tests; stubs gh, no network, no token
 ```
 
-`mise run test-release` runs `scripts/test-fetch-releases.sh`, which puts a fake
+`mise run test release` runs `scripts/test-fetch-releases.sh`, which puts a fake
 `gh` on `PATH` and covers the happy path, a tampered asset, a failing attestation,
 a skipped attestation and a product with no release. The workflows run it (in
 `mise run check`) before the build.
