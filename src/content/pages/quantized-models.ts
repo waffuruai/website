@@ -46,7 +46,7 @@ export const quantizedModelsEvidence = {
       reduction: 41,
       ppl: 1.4,
       context: '32K',
-      source: 'Config I + turbo3 KV vs q8_0 + f16 KV · 32K context',
+      source: 'Config I + turbo3 KV vs q8_0 + f16 KV · 32K',
     },
   },
   /** Boundary layers kept at higher precision in Config I: first 2, last 2. */

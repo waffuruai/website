@@ -123,7 +123,7 @@ export function Aura({ content }: { content: AuraCopy }) {
                         <span className="text-brand-ink">
                           <span aria-hidden>★ </span>
                           {link.stars}
-                          <span className="sr-only"> GitHub stars</span>
+                          <span className="sr-only"> {content.starsLabel}</span>
                         </span>
                       )}
                       <span aria-hidden className="text-muted-foreground">

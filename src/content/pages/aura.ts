@@ -40,7 +40,7 @@ export const auraEvidence = {
       context: '128K',
       peakGb: 74,
       ppl: 4.024,
-      source: 'turbo3 · one MacBook',
+      source: 'turbo3 · 128K',
     },
   },
   /** The ribbon draws raw blocks this many times wider than compressed ones. */
@@ -75,6 +75,8 @@ export const auraEvidence = {
 
 export type AuraCopy = {
   eyebrow: string;
+  /** Screen-reader suffix after a star count, e.g. "7,000+ GitHub stars". */
+  starsLabel: string;
   /** Serif title; `*word*` is the gold accent. */
   title: string;
   intro: string;
@@ -112,6 +114,7 @@ export type AuraCopy = {
 export const aura: Localized<AuraCopy> = {
   en: {
     eyebrow: 'KV cache compression · from our open research',
+    starsLabel: 'GitHub stars',
     title: 'More context per *gigabyte*.',
     intro:
       'AURA compresses the KV cache, so longer contexts and more concurrent sessions fit in the same memory. It began as our open TurboQuant+ research and now runs natively in Iron and Butter.',

@@ -2,6 +2,7 @@ import type { AuraCopy } from './aura';
 
 const copy: AuraCopy = {
   eyebrow: 'KV キャッシュ圧縮 · 私たちのオープンな研究から',
+  starsLabel: 'GitHub スター',
   title: 'ギガバイトあたり、より多くの*コンテキスト*を。',
   intro:
     'AURA は KV キャッシュを圧縮し、より長いコンテキストとより多くの同時セッションを同じメモリに収めます。私たちのオープンな研究 TurboQuant+ から始まり、いまは Iron と Butter でネイティブに動いています。',

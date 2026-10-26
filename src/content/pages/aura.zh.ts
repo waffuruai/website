@@ -2,6 +2,7 @@ import type { AuraCopy } from './aura';
 
 const copy: AuraCopy = {
   eyebrow: 'KV 缓存压缩 · 源自我们的开放研究',
+  starsLabel: 'GitHub 星标',
   title: '每 GB 装下更多*上下文*。',
   intro:
     'AURA 压缩 KV 缓存，让更长的上下文和更多并发会话装进同样的内存。它始于我们的开放研究 TurboQuant+，如今原生运行在 Iron 和 Butter 中。',

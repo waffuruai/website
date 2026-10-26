@@ -2,6 +2,7 @@ import type { AuraCopy } from './aura';
 
 const copy: AuraCopy = {
   eyebrow: 'Compresión de la caché KV · desde nuestra investigación abierta',
+  starsLabel: 'estrellas en GitHub',
   title: 'Más contexto por *gigabyte*.',
   intro:
     'AURA comprime la caché KV, de modo que contextos más largos y más sesiones concurrentes caben en la misma memoria. Empezó como nuestra investigación abierta TurboQuant+ y hoy se ejecuta de forma nativa en Iron y Butter.',
