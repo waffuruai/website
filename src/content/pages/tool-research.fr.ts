@@ -1,14 +1,14 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
-  eyebrow: 'Mesuré dans Butter · expérimental',
+  eyebrow: 'Mesuré dans Butter · correctif en cours',
   title: 'Moins d’arguments faux.\n*Des bons moins chers.*',
   intro:
-    'Un appel d’outil avec un argument faux échoue, déclenche une nouvelle tentative ou s’exécute avec la mauvaise valeur. Nous traçons l’exécution et le comportement, puis testons des changements ciblés de l’inférence. Sur une évaluation de 144 requêtes, un changement expérimental de Butter a produit {more} arguments exacts de plus et fait passer les tokens par argument correct d’environ {before} à environ {after}.',
+    'Un appel d’outil avec un argument faux échoue, déclenche une nouvelle tentative ou s’exécute avec la mauvaise valeur. Nous traçons l’exécution et le comportement, puis testons des changements ciblés de l’inférence. Sur une évaluation de 144 requêtes, un correctif Butter en cours d’intégration a produit {more} arguments exacts de plus et fait passer les tokens par argument correct d’environ {before} à environ {after}.',
   figure: {
     headline: 'Tokens par argument correct',
     baseline: 'Avant',
-    candidate: 'Avec des modifications expérimentales',
+    candidate: 'Avec le correctif Butter',
     fewer: 'environ {percent}% de moins',
     unit: 'tokens',
     exact: 'Arguments exacts',
@@ -17,7 +17,7 @@ const copy: ToolResearchCopy = {
     perAdditional: 'Coût par argument correct supplémentaire',
     development: 'Jeu de développement distinct',
     caption:
-      'Évaluation expérimentale : 72 prompts, chacun en mode buffered et streaming (144 requêtes par variante). Qwen3.5-0.8B Q4_K_M, température 0, M5 Max. Aucun outil externe n’a été exécuté. On mesure des valeurs d’arguments exactes, pas la fiabilité générale des tâches.',
+      'Évaluation : 72 prompts, chacun en mode buffered et streaming (144 requêtes par variante). Qwen3.5-0.8B Q4_K_M, température 0, M5 Max. Aucun outil externe n’a été exécuté. On mesure des valeurs d’arguments exactes, pas la fiabilité générale des tâches.',
   },
   wrongTitle: 'Ce que coûte un argument faux',
   wrongBody:
@@ -48,11 +48,11 @@ const copy: ToolResearchCopy = {
     },
   ],
   details: 'Voir les conditions et limites',
-  scopeTitle: 'Résultat expérimental de l’API native · 26 octobre 2026',
+  scopeTitle: 'Résultat de l’API native · 26 octobre 2026',
   scope:
     'L’évaluation élargie comporte 72 prompts, chacun testé en modes buffered et streaming : 144 requêtes par variante. Ce sont de nouvelles valeurs dans des familles d’échecs connues, pas 144 tâches indépendantes. Aucun outil externe n’a été exécuté.',
   cost: 'Le changement ajoute 8 304 tokens d’entrée et 536 tokens générés sur l’évaluation élargie : les tokens totaux d’inférence passent de 50 382 à 59 222 tandis que les tokens par argument correct baissent. Aucune réduction des tokens totaux du flux, de la latence ou du coût par tâche terminée n’est démontrée.',
   limits:
-    'Cette capacité est expérimentale et non publiée. Ces résultats se limitent à cette évaluation ; autres modèles, API et tâches complètes exigent une validation distincte.',
+    'Le correctif est en cours d’intégration dans Butter et ne figure pas encore dans une version publiée. Ces résultats se limitent à cette évaluation ; autres modèles, API et tâches complètes exigent une validation distincte.',
 };
 export default copy;
