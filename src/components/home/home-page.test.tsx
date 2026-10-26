@@ -33,6 +33,7 @@ describe('HomePage', () => {
       'The stack.',
       '27B.16 requests. One Mac.',
       'More context per gigabyte.',
+      'Smaller models, quantized with care.',
       'Fewer wrong arguments.Cheaper correct ones.',
       'Models on the menu.',
       'You write this.Iron writes the rest.',
@@ -48,7 +49,10 @@ describe('HomePage', () => {
     );
     expect(ids.indexOf('stack')).toBeLessThan(ids.indexOf('native-inference'));
     expect(ids.indexOf('native-inference')).toBeLessThan(ids.indexOf('aura'));
-    expect(ids.indexOf('aura')).toBeLessThan(ids.indexOf('tool-reliability'));
+    expect(ids.indexOf('aura')).toBeLessThan(ids.indexOf('quantized-models'));
+    expect(ids.indexOf('quantized-models')).toBeLessThan(
+      ids.indexOf('tool-reliability'),
+    );
     expect(ids.indexOf('tool-reliability')).toBeLessThan(ids.indexOf('models'));
     expect(
       screen.getByRole('link', { name: /see the stack/i }).getAttribute('href'),
