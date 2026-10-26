@@ -1,6 +1,12 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  neural: {
+    label: '연구 순환 · 개념도',
+    replay: '신호 다시 재생',
+    controls: '연구 단계 살펴보기',
+    note: '연구 과정을 표현한 시각적 비유이며 뉴런 활성 캡처가 아닙니다. 실측 결과는 옆에 표시합니다.',
+  },
   animation: {
     title: '정확도 향상. 낭비도 줄일 수 있을까요?',
     measured: '실측 실험',

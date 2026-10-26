@@ -1,3 +1,4 @@
+import { ResearchSignal } from './research-signal';
 import { ToolCostAnimation } from './tool-cost-animation';
 import { LocalizedLink } from '@/components/localized-link';
 import { MonoLabel } from '@/components/sections/mono-label';
@@ -107,32 +108,13 @@ export function ToolResearch({ content }: { content: ToolResearchCopy }) {
           <h3 className="mb-3 label-mono text-muted-foreground">
             {content.methodTitle}
           </h3>
-          <ol>
-            {content.steps.map((step, index) => (
-              <li
-                key={step.title}
-                className="flex gap-5 border-t border-foreground/12 py-5"
-              >
-                <span
-                  aria-hidden
-                  className="pt-1 font-mono text-xs text-brand-ink"
-                >
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div>
-                  <h4 className="mb-2 text-xl text-foreground">{step.title}</h4>
-                  <p className="text-sm leading-[1.65] text-muted-foreground">
-                    {step.body}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <p className="mt-4 border-l-2 border-brand pl-5 text-base leading-[1.65] text-soft">
-            {content.implication}
-          </p>
+          <ResearchSignal steps={content.steps} copy={content.neural} />
         </div>
       </div>
+
+      <p className="mt-7 border-l-2 border-brand pl-5 text-base leading-[1.65] text-soft">
+        {content.implication}
+      </p>
 
       <ToolCostAnimation
         copy={content.animation}

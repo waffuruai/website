@@ -1,6 +1,12 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  neural: {
+    label: 'Boucle de recherche · vue conceptuelle',
+    replay: 'Rejouer le signal',
+    controls: 'Explorer les étapes de recherche',
+    note: 'Une métaphore visuelle de la recherche, pas une capture d’activations neuronales. Les résultats mesurés figurent à côté.',
+  },
   animation: {
     title: 'Plus de précision. Moins de travail perdu ?',
     measured: 'Expérience mesurée',

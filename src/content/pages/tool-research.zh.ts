@@ -1,6 +1,12 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  neural: {
+    label: '研究循环 · 概念图',
+    replay: '重播信号',
+    controls: '探索研究阶段',
+    note: '这是研究过程的视觉比喻，并非神经元激活实测。旁边展示的是测量结果。',
+  },
   animation: {
     title: '准确率提高。能否减少浪费？',
     measured: '实测实验',

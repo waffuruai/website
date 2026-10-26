@@ -29,6 +29,7 @@ export const toolResearchEvidence = {
 } as const;
 
 export type ToolResearchCopy = {
+  neural: { label: string; replay: string; controls: string; note: string };
   animation: {
     title: string;
     measured: string;
@@ -67,6 +68,12 @@ export type ToolResearchCopy = {
 
 export const toolResearch: Localized<ToolResearchCopy> = {
   en: {
+    neural: {
+      label: 'Research loop · conceptual view',
+      replay: 'Replay signal',
+      controls: 'Explore the research stages',
+      note: 'A visual metaphor for the research process, not a neuron activation capture. The measured results sit alongside it.',
+    },
     animation: {
       title: 'Accuracy up. Less wasted work?',
       measured: 'Measured experiment',

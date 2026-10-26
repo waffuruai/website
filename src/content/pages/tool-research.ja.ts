@@ -1,6 +1,12 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  neural: {
+    label: '研究ループ · 概念図',
+    replay: '信号を再生',
+    controls: '研究の各段階を見る',
+    note: '研究プロセスを表す視覚的なたとえであり、ニューロン活性の実測画像ではありません。実測結果は隣に示しています。',
+  },
   animation: {
     title: '精度向上。無駄な処理は減らせる？',
     measured: '実測した実験',

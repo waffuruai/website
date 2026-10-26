@@ -85,3 +85,22 @@ See [native speculative decoding](native-speculative-decoding.md) for the PR
 audit, actual Butter/Iron pins, fingerprints, model/draft identity and the
 **Reproduce with Butter** launch/client commands. No new performance workload
 was run to build this website. Human review precedes production publication.
+
+## Neural research motif
+
+The research-method panel uses an original isometric, layered neural weave
+derived from Waffuru’s waffle grid. Warm gold paths connect three curved mesh
+layers; choosing inspect, change or verify highlights a different layer and
+explains that step. TensorFold’s folded lattice at https://tensorfold.dev/ was
+reviewed as visual inspiration; no assets, geometry, code or copy were reused.
+The local design keeps Waffuru’s semantic palette, serif/mono typography and
+quiet evidence-first layout.
+
+The diagram is visibly labeled conceptual. It is not a neuron activation
+capture, causal steering map, actual tensor topology or new research finding.
+Existing measured counts, denominators, model scope and token accounting are
+unchanged. Native buttons support keyboard selection, explanations are
+announced on selection, and decorative SVG is hidden from assistive technology.
+Motion runs finitely on entry, selection or replay; no ongoing timer, WebGL
+context, network source, dependency or capture/replay workload is added.
+Reduced-motion preferences leave the full static weave readable.

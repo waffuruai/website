@@ -1,6 +1,12 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  neural: {
+    label: 'Ciclo de investigación · vista conceptual',
+    replay: 'Repetir señal',
+    controls: 'Explorar las etapas de investigación',
+    note: 'Una metáfora visual del proceso de investigación, no una captura de activaciones neuronales. Los resultados medidos aparecen al lado.',
+  },
   animation: {
     title: 'Más precisión. ¿Menos trabajo desperdiciado?',
     measured: 'Experimento medido',
