@@ -31,12 +31,12 @@ const copy: QuantizedModelsCopy = {
     scope:
       '当社の llama.cpp フォーク llama-cpp-turboquant 上で TurboQuant+ により計測。',
     weights: {
-      label: 'Config I ポリシーによる重みの削減',
-      detail: 'q8_0 比のパープレキシティ',
+      label: 'モデルファイルの削減',
+      detail: '8 ビット原版比のパープレキシティ',
     },
     stacked: {
       label: '重みと KV を同時に圧縮したときの総メモリ削減',
-      detail: 'q8_0 の重みと f16 KV 比のパープレキシティ',
+      detail: '8 ビットの重みと 16 ビットのキャッシュ比のパープレキシティ',
     },
     source: '出典',
     paper: '重み圧縮の論文を読む',

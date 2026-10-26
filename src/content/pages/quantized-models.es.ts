@@ -31,12 +31,12 @@ const copy: QuantizedModelsCopy = {
     scope:
       'Medido con TurboQuant+ en nuestro fork de llama.cpp, llama-cpp-turboquant.',
     weights: {
-      label: 'menos tamaño en los pesos con la política Config I',
-      detail: 'de perplejidad frente a q8_0',
+      label: 'archivos de modelo más pequeños',
+      detail: 'de perplejidad frente al original de 8 bits',
     },
     stacked: {
       label: 'menos memoria total con pesos y KV comprimidos a la vez',
-      detail: 'de perplejidad frente a pesos q8_0 y KV f16',
+      detail: 'de perplejidad frente a pesos de 8 bits y caché de 16 bits',
     },
     source: 'Fuente',
     paper: 'Leer el artículo sobre compresión de pesos',

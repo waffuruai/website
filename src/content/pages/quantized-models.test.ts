@@ -47,10 +47,8 @@ describe('quantized models copy', () => {
         'TurboQuant+',
         'llama-cpp-turboquant',
         'Butter',
-        'Config I',
         'Juke',
         'ffn_down',
-        'q8_0',
       ])
         expect(text).toContain(name);
       expect(numbers(copy)).toEqual(numbers(quantizedModels.en));

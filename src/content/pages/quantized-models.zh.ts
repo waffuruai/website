@@ -31,12 +31,12 @@ const copy: QuantizedModelsCopy = {
     scope:
       '使用 TurboQuant+ 在我们的 llama.cpp 分支 llama-cpp-turboquant 上测得。',
     weights: {
-      label: '采用 Config I 策略后权重体积减少',
-      detail: '困惑度相对 q8_0 的变化',
+      label: '模型文件更小',
+      detail: '困惑度相对 8 位原版的变化',
     },
     stacked: {
       label: '权重和 KV 一起压缩后总内存减少',
-      detail: '困惑度相对 q8_0 权重加 f16 KV 的变化',
+      detail: '困惑度相对 8 位权重加 16 位缓存的变化',
     },
     source: '来源',
     paper: '阅读权重压缩论文',

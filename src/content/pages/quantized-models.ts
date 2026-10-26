@@ -39,14 +39,14 @@ export const quantizedModelsEvidence = {
     weights: {
       reduction: 37,
       ppl: 1.4,
-      source: 'Config I vs q8_0 · Qwen3.5-35B-A3B',
+      source: 'Qwen3.5-35B-A3B · vs q8_0',
     },
     /** Weights and KV together at 32K context, vs q8_0 weights + f16 KV. */
     stacked: {
       reduction: 41,
       ppl: 1.4,
       context: '32K',
-      source: 'Config I + turbo3 KV vs q8_0 + f16 KV · 32K',
+      source: 'Qwen3.5-35B-A3B · vs q8_0 + f16 KV · 32K',
     },
   },
   /** Boundary layers kept at higher precision in Config I: first 2, last 2. */
@@ -147,12 +147,12 @@ export const quantizedModels: Localized<QuantizedModelsCopy> = {
       scope:
         'Measured with TurboQuant+ on our llama.cpp fork, llama-cpp-turboquant.',
       weights: {
-        label: 'smaller weights with the Config I policy',
-        detail: 'perplexity vs q8_0',
+        label: 'smaller model files',
+        detail: 'perplexity vs the 8-bit original',
       },
       stacked: {
-        label: 'less total memory with weights and KV compressed together',
-        detail: 'perplexity vs q8_0 weights and f16 KV',
+        label: 'less total memory, model and cache compressed together',
+        detail: 'perplexity vs 8-bit weights and a 16-bit cache',
       },
       source: 'Source',
       paper: 'Read the weight-compression paper',

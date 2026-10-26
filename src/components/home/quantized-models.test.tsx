@@ -28,13 +28,13 @@ describe('QuantizedModels', () => {
     expect(within(section).getByText('37%')).toBeTruthy();
     expect(within(section).getByText('41%')).toBeTruthy();
     expect(
-      within(section).getAllByText('+1.4% perplexity vs q8_0', {
+      within(section).getAllByText('+1.4% perplexity vs', {
         exact: false,
       }),
     ).toHaveLength(2);
     // Every tile names its source and conditions.
     expect(
-      within(section).getAllByText(/^Source: TurboQuant\+ · Config I/),
+      within(section).getAllByText(/^Source: TurboQuant\+ · Qwen3\.5-35B-A3B/),
     ).toHaveLength(2);
     expect(
       within(section).getByText(

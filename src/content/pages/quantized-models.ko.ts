@@ -31,12 +31,12 @@ const copy: QuantizedModelsCopy = {
     scope:
       '당사의 llama.cpp 포크 llama-cpp-turboquant에서 TurboQuant+로 측정했습니다.',
     weights: {
-      label: 'Config I 정책으로 줄어든 가중치 크기',
-      detail: 'q8_0 대비 퍼플렉서티',
+      label: '더 작아진 모델 파일',
+      detail: '8비트 원본 대비 퍼플렉서티',
     },
     stacked: {
       label: '가중치와 KV를 함께 압축했을 때 줄어든 총 메모리',
-      detail: 'q8_0 가중치와 f16 KV 대비 퍼플렉서티',
+      detail: '8비트 가중치와 16비트 캐시 대비 퍼플렉서티',
     },
     source: '출처',
     paper: '가중치 압축 논문 읽기',
