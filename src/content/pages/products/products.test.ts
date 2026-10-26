@@ -104,12 +104,22 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
   });
 
   it('keeps the voice: no hype words, no exclamation marks, no speed claims', () => {
+    // The one measured number lives in the "How fast is it?" answer, which
+    // repeats the homepage's measurement and points at its test conditions.
+    const measured = copy.faq.find((item) =>
+      /how fast/i.test(item.question),
+    )?.answer;
+    if (measured) {
+      expect(measured).toMatch(/test conditions/i);
+      expect(measured).toMatch(/depend on model/i);
+    }
     for (const text of strings(copy)) {
       expect(text).not.toMatch(
         /revolutionary|game-changing|seamless|unleash|supercharge|cutting-edge|blazing/i,
       );
       expect(text).not.toContain('!');
-      expect(text).not.toMatch(/tok\/s|tokens per second|\d+\s?x faster/i);
+      if (text !== measured)
+        expect(text).not.toMatch(/tok\/s|tokens per second|\d+\s?x faster/i);
       // Names that are internal or undecided stay off the site.
       expect(text).not.toMatch(/\b(wrunner|wci|morpheus|juke)\b/i);
     }

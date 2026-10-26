@@ -214,7 +214,7 @@ const butterFr: (typeof butter)['en'] = {
     {
       question: 'À quelle vitesse tourne-t-il ?',
       answer:
-        'Nous n’avons publié aucun chiffre de benchmark, donc nous n’en citerons pas ici. Le décodage spéculatif et un cache KV quantifié sont intégrés, et nous préférons vous montrer une mesure plutôt que d’avancer une affirmation.',
+        'Sur un M5 Max avec 128 Go, Butter a servi Qwen3.8-27B en 4 bits à 75,4 tokens par seconde pour une seule requête (prompt de 2 052 tokens, glouton) et 157,3 tokens par seconde au total sur 16 requêtes simultanées, soit environ 12,9 par requête. Les résultats dépendent du modèle, de la longueur du prompt et du matériel ; la page d’accueil donne les conditions de test.',
     },
   ],
   cta: {

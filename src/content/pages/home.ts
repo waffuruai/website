@@ -105,9 +105,9 @@ export const home: Localized<HomeContent> = {
 
     hero: {
       eyebrow: 'Four products · closed source for now',
-      title: 'More from your models.\n*On your own silicon.*',
-      lede: 'Run local AI for your team, from the GPU kernels to the tools your agents call. We measure throughput, investigate failures and improve the inference path—so you can see what changed and why.',
-      secondary: { label: 'See the results', href: '#native-inference' },
+      title: 'Raw math, *pressed* into silicon.',
+      lede: 'We write GPU kernels, an inference engine, a control plane and a retrieval layer, so your team can run models on its own hardware. They run on a laptop, a home lab or a neocloud fleet, and we publish what we measure.',
+      secondary: { label: 'See the stack', href: '#stack' },
       emits: {
         label: 'Emits',
         targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
@@ -253,7 +253,10 @@ export const home: Localized<HomeContent> = {
           },
         ],
       },
-      tuned: { title: 'Where it’s tuned', note: 'Pulse = relative speed' },
+      tuned: {
+        title: 'Where it’s tuned',
+        note: 'Pulse = how far tuning has gone',
+      },
       tiers: [
         {
           name: 'Apple · Metal',

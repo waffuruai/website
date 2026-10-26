@@ -21,24 +21,18 @@ describe('Hero', () => {
     );
     const headings = screen.getAllByRole('heading', { level: 1 });
     expect(headings).toHaveLength(1);
-    expect(headings[0].textContent).toBe(
-      'More from your models.On your own silicon.',
-    );
-    expect(headings[0].querySelector('em')?.textContent).toBe(
-      'On your own silicon.',
-    );
+    expect(headings[0].textContent).toBe('Raw math, pressed into silicon.');
+    expect(headings[0].querySelector('em')?.textContent).toBe('pressed');
     expect(container.querySelector('h1.heading-hero')).not.toBeNull();
   });
 
-  it('offers early access first and a jump to the measured results second', () => {
+  it('offers early access first and a jump to the stack second', () => {
     render(withDictionary(<Hero content={home.en.hero} primary={primary} />));
     const access = screen.getByRole('link', { name: /request early access/i });
     expect(access.getAttribute('href')).toBe(site.urls.earlyAccess);
     expect(
-      screen
-        .getByRole('link', { name: /see the results/i })
-        .getAttribute('href'),
-    ).toBe('#native-inference');
+      screen.getByRole('link', { name: /see the stack/i }).getAttribute('href'),
+    ).toBe('#stack');
   });
 
   it('lists every backend Iron emits, with a decorative cursor', () => {

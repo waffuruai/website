@@ -43,7 +43,10 @@ export async function generateMetadata({
   };
 }
 
-/** Home: the After Hours page, section by section. */
+/**
+ * Home: the After Hours page, section by section. The stack comes right after
+ * the hero (the product is the point); the measured research follows it.
+ */
 export default async function HomePage({ params }: { params: LocaleParams }) {
   const locale = await resolveLocale(params);
   const { common, meta } = await getDictionary(locale);
@@ -64,9 +67,9 @@ export default async function HomePage({ params }: { params: LocaleParams }) {
         content={content.hero}
         primary={{ label: common.requestAccess, href: site.urls.earlyAccess }}
       />
-      <SpeculativeResearch content={localize(speculativeResearch, locale)} />
-      <ToolResearch content={localize(toolResearch, locale)} />
       <Stack content={content.stack} privateLabel={common.private} />
+      <SpeculativeResearch content={localize(speculativeResearch, locale)} />
+      <ToolResearch content={localize(toolResearch, locale)} locale={locale} />
       <Models content={content.models} />
       <KernelCode content={content.kernel} />
       <TeamTeaser content={content.team} copy={localize(teamCopy, locale)} />

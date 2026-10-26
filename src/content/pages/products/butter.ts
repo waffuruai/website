@@ -223,7 +223,7 @@ export const butter: Localized<ProductCopy> = {
       {
         question: 'How fast is it?',
         answer:
-          'We haven’t published benchmark numbers, so we won’t quote one here. Speculative decoding and a quantized KV cache are built in, and we’d rather show you a measurement than make a claim.',
+          'On an M5 Max with 128 GB, Butter served Qwen3.8-27B 4-bit at 75.4 tokens per second for a single request (2,052-token prompt, greedy) and 157.3 tokens per second total across 16 concurrent requests, about 12.9 per request. Results depend on model, prompt length and hardware; the homepage lists the test conditions.',
       },
     ],
     cta: {

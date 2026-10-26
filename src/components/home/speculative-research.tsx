@@ -12,43 +12,59 @@ export function SpeculativeResearch({
 }: {
   content: SpeculativeResearchCopy;
 }) {
-  const rows = [
+  const { greedy, sampled } = evidence;
+  // Each row says how it was aggregated: the single-stream rows are medians
+  // of three runs, the burst row pools three runs, the per-request rows are
+  // per-request statistics across those runs (see `speculativeEvidence`).
+  const rows: [string, string, string, string][] = [
     [
       content.singleTitle,
-      `${evidence.greedy.single} / ${evidence.sampled.single}`,
+      `${greedy.single} / ${sampled.single}`,
       content.unit,
+      content.aggregation.single,
     ],
     [
       content.metrics.prefill,
-      `${evidence.greedy.prefill} / ${evidence.sampled.prefill}`,
+      `${greedy.prefill} / ${sampled.prefill}`,
       content.unit,
+      content.aggregation.single,
     ],
     [
       content.metrics.singleTtft,
-      `${evidence.greedy.ttft.toFixed(2)} / ${evidence.sampled.ttft.toFixed(2)}`,
+      `${greedy.ttft.toFixed(2)} / ${sampled.ttft.toFixed(2)}`,
       's',
+      content.aggregation.single,
     ],
     [
       content.burstTitle,
-      `${evidence.greedy.burst} / ${evidence.sampled.burst}`,
+      `${greedy.burst} / ${sampled.burst}`,
       content.unit,
+      content.aggregation.burst,
     ],
     [
       content.metrics.lane,
-      `${evidence.greedy.lane} / ${evidence.sampled.lane}`,
+      `${greedy.lane} / ${sampled.lane}`,
       content.unit,
+      content.aggregation.perRequest,
     ],
     [
       content.metrics.concurrentTtft,
-      `${evidence.greedy.concurrentTtft.toFixed(2)} / ${evidence.sampled.concurrentTtft.toFixed(2)}`,
+      `${greedy.concurrentTtft.toFixed(2)} / ${sampled.concurrentTtft.toFixed(2)}`,
       's',
+      content.aggregation.perRequest,
+    ],
+    [
+      content.metrics.concurrentTtftP90,
+      `${greedy.concurrentTtftP90.toFixed(1)} / ${sampled.concurrentTtftP90.toFixed(1)}`,
+      's',
+      content.aggregation.perRequest,
     ],
   ];
   return (
     <section
       id="native-inference"
       aria-labelledby="native-inference-title"
-      className="relative z-[6] mx-auto max-w-site px-site pt-24 pb-12 max-[720px]:pt-18"
+      className="relative z-[6] mx-auto max-w-site px-site pt-30 pb-12 max-[720px]:pt-18"
     >
       <MonoLabel dot className="mb-6">
         {content.eyebrow}
@@ -92,12 +108,18 @@ export function SpeculativeResearch({
                 </tr>
               </thead>
               <tbody>
-                {rows.map(([label, value, unit]) => (
+                {rows.map(([label, value, unit, aggregation]) => (
                   <tr key={label} className="border-b border-foreground/8">
-                    <th scope="row" className="py-3 pr-3 font-normal text-soft">
+                    <th
+                      scope="row"
+                      className="py-3 pr-3 align-top font-normal text-soft"
+                    >
                       {label}
+                      <span className="mt-0.5 block text-xs text-muted-foreground">
+                        {content.metrics.aggregation}: {aggregation}
+                      </span>
                     </th>
-                    <td className="py-3 text-right font-mono text-xs text-foreground tabular-nums">
+                    <td className="py-3 text-right align-top font-mono text-xs whitespace-nowrap text-foreground tabular-nums">
                       {value}
                       <span className="ml-1 text-muted-foreground">{unit}</span>
                     </td>

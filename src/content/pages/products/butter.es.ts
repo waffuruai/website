@@ -214,7 +214,7 @@ const butterEs: (typeof butter)['en'] = {
     {
       question: '¿Cuál es su velocidad?',
       answer:
-        'No hemos publicado cifras de benchmarks, así que no daremos ninguna aquí. La decodificación especulativa y una caché KV cuantizada vienen integradas, y preferimos mostrarte una medición antes que hacer una afirmación.',
+        'En un M5 Max con 128 GB, Butter sirvió Qwen3.8-27B en 4 bits a 75,4 tokens por segundo para una sola solicitud (prompt de 2.052 tokens, greedy) y 157,3 tokens por segundo en total con 16 solicitudes concurrentes, unos 12,9 por solicitud. Los resultados dependen del modelo, la longitud del prompt y el hardware; la página de inicio detalla las condiciones de prueba.',
     },
   ],
   cta: {

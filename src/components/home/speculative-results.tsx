@@ -10,6 +10,11 @@ import styles from './speculative-results.module.css';
 
 type Evidence = typeof speculativeEvidence;
 
+/**
+ * The measured cards (absolute throughput, with the per-user experience on
+ * the burst card), then the paired optimization gain under its own heading
+ * so the two kinds of number never read as one.
+ */
 export function SpeculativeResults({
   content,
   evidence,
@@ -42,18 +47,34 @@ export function SpeculativeResults({
       value: result.single.toFixed(1),
       unit: content.unit,
       scope: content.singleScope,
+      highlight: false,
+      rows: [
+        {
+          label: content.metrics.prefill,
+          value: `${result.prefill} ${content.unit}`,
+        },
+        {
+          label: content.ttft,
+          value: `${result.ttft.toFixed(2)} s`,
+        },
+      ],
     },
     {
       label: content.burstTitle,
       value: result.burst.toFixed(1),
       unit: content.unit,
       scope: content.burstScope,
-    },
-    {
-      label: content.gainTitle,
-      value: `+${result.gain.toFixed(2)}`,
-      unit: '%',
-      scope: content.gainScope,
+      highlight: true,
+      rows: [
+        {
+          label: content.perRequest,
+          value: `${result.lane.toFixed(1)} ${content.unit}`,
+        },
+        {
+          label: `${content.ttft} ${content.p50} / ${content.p90}`,
+          value: `${result.concurrentTtft.toFixed(1)} s / ${result.concurrentTtftP90.toFixed(1)} s`,
+        },
+      ],
     },
   ];
   return (
@@ -85,15 +106,15 @@ export function SpeculativeResults({
       <div
         aria-live="polite"
         aria-atomic="true"
-        className="grid gap-3 md:grid-cols-3"
+        className="grid gap-3 md:grid-cols-2"
       >
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <div
             key={card.label}
-            className={`rounded-2xl border p-6 sm:p-7 ${index === 1 ? 'border-brand/40 bg-brand/6' : 'border-foreground/12 bg-card'}`}
+            className={`flex flex-col rounded-2xl border p-6 sm:p-7 ${card.highlight ? 'border-brand/40 bg-brand/6' : 'border-foreground/12 bg-card'}`}
           >
             <h3 className="text-sm text-soft">{card.label}</h3>
-            <p className="mt-7 mb-5 flex flex-wrap items-baseline gap-2 font-mono text-[clamp(38px,4.5vw,60px)] leading-none tracking-[-0.06em] text-foreground tabular-nums">
+            <p className="mt-7 mb-4 flex flex-wrap items-baseline gap-2 font-mono text-[clamp(38px,4.5vw,60px)] leading-none tracking-[-0.06em] text-foreground tabular-nums">
               {card.value}
               <span className="text-base tracking-normal text-brand-ink">
                 {card.unit}
@@ -102,10 +123,27 @@ export function SpeculativeResults({
             <p className="text-xs leading-relaxed text-muted-foreground">
               {card.scope}
             </p>
+            <dl className="mt-auto grid gap-2 border-t border-foreground/12 pt-5 text-sm">
+              {card.rows.map((row) => (
+                <div
+                  key={row.label}
+                  className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
+                >
+                  <dt className="text-muted-foreground">{row.label}</dt>
+                  <dd className="font-mono text-sm text-foreground tabular-nums">
+                    {row.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         ))}
       </div>
-      <div className="mt-5 overflow-hidden rounded-2xl border border-foreground/12 bg-card">
+
+      <h3 className="mt-12 mb-4 label-mono text-muted-foreground">
+        {content.gainHeading}
+      </h3>
+      <div className="overflow-hidden rounded-2xl border border-foreground/12 bg-card">
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-foreground/12 px-6 py-5 sm:px-8">
           <p className="label-mono text-brand-ink">{content.illustration}</p>
           <Button
@@ -130,7 +168,7 @@ export function SpeculativeResults({
             >
               <div>
                 <div className="grid grid-cols-4 gap-1.5">
-                  {Array.from({ length: 16 }, (_, i) => (
+                  {Array.from({ length: evidence.concurrency }, (_, i) => (
                     <span
                       key={i}
                       className={`${styles.lane} flex aspect-square items-center justify-center rounded border border-brand/25 bg-brand/10 font-mono text-xs text-brand-ink`}
@@ -180,7 +218,17 @@ export function SpeculativeResults({
             </p>
           </div>
           <div className="border-t border-foreground/12 p-6 sm:p-8 lg:border-t-0 lg:border-l">
-            <h3 className="font-serif text-3xl leading-tight text-foreground">
+            <h4 className="text-sm text-soft">{content.gainTitle}</h4>
+            <p className="mt-4 flex flex-wrap items-baseline gap-2 font-mono text-[clamp(34px,3.5vw,48px)] leading-none tracking-[-0.06em] text-foreground tabular-nums">
+              +{result.gain.toFixed(2)}
+              <span className="text-base tracking-normal text-brand-ink">
+                %
+              </span>
+            </p>
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              {content.gainScope}
+            </p>
+            <h3 className="mt-7 font-serif text-3xl leading-tight text-foreground">
               {content.activeTitle}
             </h3>
             <dl className="mt-6 space-y-5">

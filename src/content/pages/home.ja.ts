@@ -20,9 +20,9 @@ const homeJa: (typeof home)['en'] = {
 
   hero: {
     eyebrow: '4 つの製品 · 現時点ではクローズドソース',
-    title: 'モデルの力を、もっと。\n*自分のシリコンで。*',
-    lede: 'GPUカーネルからエージェントのツール呼び出しまで、チームで使うローカルAIを。スループットを測定し、失敗を調べ、推論経路を改善します。何が変わり、なぜ変わったかを示します。',
-    secondary: { label: '結果を見る', href: '#native-inference' },
+    title: '生の数式を、シリコンに*焼き付ける*。',
+    lede: 'GPUカーネル、推論エンジン、コントロールプレーン、検索レイヤーを私たちが書き、チームが自分のハードウェアでモデルを動かせるようにします。ノートPCでも、自宅のラボでも、neocloud のフリートでも動き、計測した結果は公開します。',
+    secondary: { label: 'スタックを見る', href: '#stack' },
     emits: {
       label: '出力先',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
@@ -168,7 +168,10 @@ const homeJa: (typeof home)['en'] = {
         },
       ],
     },
-    tuned: { title: 'チューニングの状況', note: 'パルスの速さ = 相対速度' },
+    tuned: {
+      title: 'チューニングの状況',
+      note: 'パルスの速さ = チューニングの進み具合',
+    },
     tiers: [
       {
         name: 'Apple · Metal',

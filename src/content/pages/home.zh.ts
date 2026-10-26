@@ -20,9 +20,9 @@ const homeZh: (typeof home)['en'] = {
 
   hero: {
     eyebrow: '四款产品 · 暂未开源',
-    title: '释放模型的更多价值。\n*在自己的芯片上。*',
-    lede: '从 GPU 内核到智能体的工具调用，为团队运行本地 AI。我们测量吞吐量、调查失败并改进推理路径，让你看清改变及其原因。',
-    secondary: { label: '查看结果', href: '#native-inference' },
+    title: '原始数学，*压*进芯片。',
+    lede: '我们编写 GPU 内核、推理引擎、控制平面和检索层，让你的团队在自己的硬件上运行模型。它们可以跑在一台笔记本、一个家庭实验室或一支 neocloud 集群上，而且我们公开自己测到的结果。',
+    secondary: { label: '查看技术栈', href: '#stack' },
     emits: {
       label: '生成',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
@@ -168,7 +168,7 @@ const homeZh: (typeof home)['en'] = {
         },
       ],
     },
-    tuned: { title: '调优在哪里', note: '脉冲 = 相对速度' },
+    tuned: { title: '调优在哪里', note: '脉冲 = 调优进展' },
     tiers: [
       {
         name: 'Apple · Metal',

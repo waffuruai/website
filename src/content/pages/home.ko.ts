@@ -20,9 +20,9 @@ const homeKo: (typeof home)['en'] = {
 
   hero: {
     eyebrow: '제품 4종 · 당분간 비공개 소스',
-    title: '모델에서 더 많은 가치를.\n*내 실리콘에서.*',
-    lede: 'GPU 커널부터 에이전트의 도구 호출까지 팀을 위한 로컬 AI를 실행하세요. 처리량을 측정하고 실패를 조사하며 추론 경로를 개선해 무엇이 왜 달라졌는지 보여줍니다.',
-    secondary: { label: '결과 보기', href: '#native-inference' },
+    title: '날것의 수학을 실리콘에 *눌러 담다*.',
+    lede: '우리는 GPU 커널, 추론 엔진, 컨트롤 플레인, 검색 레이어를 만들어 팀이 자체 하드웨어에서 모델을 실행할 수 있게 합니다. 노트북, 홈 랩, neocloud 플릿 어디서든 돌아가며, 측정한 결과는 공개합니다.',
+    secondary: { label: '스택 보기', href: '#stack' },
     emits: {
       label: '출력',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
@@ -168,7 +168,7 @@ const homeKo: (typeof home)['en'] = {
         },
       ],
     },
-    tuned: { title: '튜닝 현황', note: '펄스 = 상대 속도' },
+    tuned: { title: '튜닝 현황', note: '펄스 = 튜닝 진행 정도' },
     tiers: [
       {
         name: 'Apple · Metal',

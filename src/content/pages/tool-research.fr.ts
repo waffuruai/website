@@ -1,35 +1,38 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
-  neural: {
-    label: 'Boucle de recherche · vue conceptuelle',
-    replay: 'Rejouer le signal',
-    controls: 'Explorer les étapes de recherche',
-    note: 'Une métaphore visuelle de la recherche, pas une capture d’activations neuronales. Les résultats mesurés figurent à côté.',
-  },
-  animation: {
-    title: 'De meilleurs arguments. Plus de calcul.',
-    measured: 'Compromis mesuré · mêmes 144 requêtes',
-    accuracy: 'Précision des arguments exacts',
-    tokens: 'Tokens totaux d’inférence',
-    replay: 'Rejouer l’animation',
-    boundary:
-      'La continuation améliore les arguments exacts avec davantage de calcul. Les économies de tokens du flux et le coût par tâche terminée ne sont pas démontrés.',
-    accuracyGain: 'réponses exactes supplémentaires',
-    tokenOverhead: 'tokens d’inférence supplémentaires',
-  },
-  eyebrow: 'Juke → Butter · recherche mesurée',
-  title: 'De meilleurs appels d’outils.\n*Mesurés dans Butter.*',
+  eyebrow: 'Mesuré dans Butter · expérimental',
+  title: 'Moins d’arguments faux.\n*Des bons moins chers.*',
   intro:
-    'Un argument incorrect peut transformer un outil utile en action ratée. Nous utilisons Juke pour examiner l’exécution et le comportement, puis tester des changements ciblés de l’inférence. Une expérience native de Butter a corrigé davantage d’arguments sans réentraînement.',
-  resultTitle: 'Réponses aux arguments exacts',
-  baseline: 'Avant',
-  candidate: 'Avec des modifications expérimentales',
-  denominator: 'correctes / requêtes',
-  gain: '20 réponses correctes supplémentaires',
-  retained: 'Réussites initiales conservées',
-  development: 'Jeu de développement distinct',
+    'Un appel d’outil avec un argument faux échoue, déclenche une nouvelle tentative ou s’exécute avec la mauvaise valeur. Nous traçons l’exécution et le comportement, puis testons des changements ciblés de l’inférence. Sur une évaluation de 144 requêtes, un changement expérimental de Butter a produit {more} arguments exacts de plus et fait passer les tokens par argument correct d’environ {before} à environ {after}.',
+  figure: {
+    headline: 'Tokens par argument correct',
+    baseline: 'Avant',
+    candidate: 'Avec des modifications expérimentales',
+    fewer: 'environ {percent}% de moins',
+    unit: 'tokens',
+    exact: 'Arguments exacts',
+    totalTokens: 'Tokens totaux d’inférence',
+    retained: 'Réussites initiales conservées',
+    perAdditional: 'Coût par argument correct supplémentaire',
+    development: 'Jeu de développement distinct',
+    caption:
+      'Évaluation expérimentale : 72 prompts, chacun en mode buffered et streaming (144 requêtes par variante). Qwen3.5-0.8B Q4_K_M, température 0, M5 Max. Aucun outil externe n’a été exécuté. On mesure des valeurs d’arguments exactes, pas la fiabilité générale des tâches.',
+  },
+  wrongTitle: 'Ce que coûte un argument faux',
+  wrongBody:
+    'Une mauvaise valeur fait échouer l’appel, ce qui coûte un tour de modèle de plus et un aller-retour vers l’outil, ou s’exécute avec la mauvaise valeur, par exemple en écrivant ou en supprimant le mauvais chemin. Les économies liées aux réparations évitées ne sont pas encore mesurées ; c’est la prochaine expérience.',
   methodTitle: 'Des observations à un changement d’inférence',
+  example: {
+    label: 'Exemple illustratif de la famille d’échecs par mauvais type',
+    controls: 'Étapes de la boucle de recherche',
+    replay: 'Rejouer les étapes',
+    schema: 'schéma',
+    output: 'sortie du modèle',
+    flag: 'chaîne, nombre attendu',
+    inProgress: 'Exécution de la même évaluation de 144 requêtes',
+    check: 'valeur et type exacts',
+  },
   steps: [
     {
       title: 'Examiner l’échec',
@@ -37,20 +40,18 @@ const copy: ToolResearchCopy = {
     },
     {
       title: 'Modifier le chemin d’inférence',
-      body: 'Tester une amélioration ciblée avec la même évaluation, sans réentraîner le modèle.',
+      body: 'Tester un changement ciblé de l’inférence avec la même évaluation, sans réentraîner le modèle.',
     },
     {
       title: 'Vérifier le résultat',
       body: 'Contrôler les arguments et leurs types exacts via l’API normale, en modes buffered et streaming. Conserver chaque réussite initiale et comptabiliser le travail supplémentaire.',
     },
   ],
-  implication:
-    'L’objectif est d’obtenir des actions fiables avec moins de travail perdu. Moins d’actions accidentelles, moins de tours de réparation et un coût total réduit restent les prochains résultats à mesurer.',
   details: 'Voir les conditions et limites',
   scopeTitle: 'Résultat expérimental de l’API native · 26 octobre 2026',
   scope:
     'L’évaluation élargie comporte 72 prompts, chacun testé en modes buffered et streaming : 144 requêtes par variante. Ce sont de nouvelles valeurs dans des familles d’échecs connues, pas 144 tâches indépendantes. Aucun outil externe n’a été exécuté.',
-  cost: 'La continuation ajoute 8 304 tokens d’entrée et 536 tokens générés sur l’évaluation élargie. Cette amélioration de la correction demande davantage de calcul d’inférence. Aucune réduction des tokens totaux, de la latence ou du coût par tâche terminée n’est démontrée.',
+  cost: 'Le changement ajoute 8 304 tokens d’entrée et 536 tokens générés sur l’évaluation élargie : les tokens totaux d’inférence passent de 50 382 à 59 222 tandis que les tokens par argument correct baissent. Aucune réduction des tokens totaux du flux, de la latence ou du coût par tâche terminée n’est démontrée.',
   limits:
     'Cette capacité est expérimentale et non publiée. Ces résultats se limitent à cette évaluation ; autres modèles, API et tâches complètes exigent une validation distincte.',
 };

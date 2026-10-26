@@ -20,9 +20,9 @@ const homeFr: (typeof home)['en'] = {
 
   hero: {
     eyebrow: 'Quatre produits · code fermé pour l’instant',
-    title: 'Plus de vos modèles.\n*Sur votre propre silicium.*',
-    lede: 'Faites fonctionner l’IA locale pour votre équipe, des kernels GPU aux outils de vos agents. Nous mesurons le débit, étudions les échecs et améliorons l’inférence pour montrer ce qui change et pourquoi.',
-    secondary: { label: 'Voir les résultats', href: '#native-inference' },
+    title: 'Des maths brutes, *pressées* dans le silicium.',
+    lede: 'Nous écrivons des kernels GPU, un moteur d’inférence, un plan de contrôle et une couche de recherche, pour que votre équipe exécute des modèles sur son propre matériel. Ils tournent sur un portable, un labo maison ou une flotte neocloud, et nous publions ce que nous mesurons.',
+    secondary: { label: 'Voir la stack', href: '#stack' },
     emits: {
       label: 'Génère',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
@@ -168,7 +168,10 @@ const homeFr: (typeof home)['en'] = {
         },
       ],
     },
-    tuned: { title: 'Où c’est optimisé', note: 'Pulsation = vitesse relative' },
+    tuned: {
+      title: 'Où c’est optimisé',
+      note: 'Pulsation = avancement de l’optimisation',
+    },
     tiers: [
       {
         name: 'Apple · Metal',

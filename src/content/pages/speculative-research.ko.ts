@@ -3,13 +3,20 @@ const copy: SpeculativeResearchCopy = {
   metrics: {
     sampling: '샘플링 모드',
     metric: '지표',
-    comparison: '별도 부하 중앙값',
+    comparison: '부하별 기록 결과',
+    aggregation: '집계 방식',
     prefill: '단일 스트림 프리필',
     singleTtft: '단일 스트림 TTFT',
-    lane: '동시 요청당 디코딩 중앙값',
-    concurrentTtft: '동시 TTFT 중앙값',
+    lane: '동시 요청당 디코딩',
+    concurrentTtft: '동시 TTFT p50',
+    concurrentTtftP90: '동시 TTFT p90',
   },
-  eyebrow: 'Apple silicon 실측 · 2026년 10월 19일',
+  aggregation: {
+    single: '실행 3회의 중앙값',
+    burst: '요청 16개 실행 3회를 합산한 전체 버스트 처리량',
+    perRequest: '요청 16개 실행 3회의 요청별 값',
+  },
+  eyebrow: 'Apple silicon 실측 · 2026년 10월 18일과 19일',
   title: '27B.\n*요청 16개. Mac 한 대.*',
   intro:
     '요청이 겹쳐도 로컬 에이전트를 계속 움직이세요. Butter와 Iron은 네이티브 Metal 커널, 추측 디코딩, 공유 검증을 결합합니다. M5 Max 한 대의 실측 결과입니다.',
@@ -20,6 +27,11 @@ const copy: SpeculativeResearchCopy = {
   singleScope: '입력 2,052토큰 · 출력 상한 128토큰',
   burstTitle: '동시 요청 16개',
   burstScope: '전체 버스트 · 프리필과 마무리 포함',
+  perRequest: '요청당',
+  ttft: '첫 토큰까지의 시간',
+  p50: 'p50',
+  p90: 'p90',
+  gainHeading: '최적화 개선, 쌍 비교 실행',
   gainTitle: '전체 활성 디코딩 가속',
   gainScope: '전체 활성 디코딩 개선 · 요청 16개 쌍 비교',
   before: '변경 전',
@@ -37,7 +49,7 @@ const copy: SpeculativeResearchCopy = {
   details: '시험 조건 및 한계 보기',
   method:
     'Qwen3.8-27B affine 4-bit/group64 + DFlash2, M5 Max 128 GiB, Metal, raw BF16 KV. 단일 스트림: 3회, 입력 2,052, 출력 상한 128. 전체 버스트: 요청 16개를 3회, 요청당 입력 약 937, 출력 상한 600. 새 서버에서 워밍업 제외, 측정 프리픽스 재사용 없음. T0.7은 top-p 0.95, top-k 20, min-p 0입니다.',
-  cost: '쌍 비교는 입력 882–999, 출력 상한 600, 그리디 3쌍과 샘플링 8쌍입니다. 샘플링 첫 토큰 시간 p50은 9.030초에서 9.397초로 늘었습니다. 처리량 개선이며 일률적 지연 감소가 아닙니다.',
+  cost: '쌍 비교는 입력 882에서 999, 출력 상한 600, 그리디 3쌍과 샘플링 8쌍입니다. 샘플링 첫 토큰 시간 p50은 9.030초에서 9.397초로 늘었습니다. 처리량 개선이며 일률적 지연 감소가 아닙니다.',
   qualification:
     '그리디 비교에서 후보 응답 48개 모두의 텍스트와 수를 유지했습니다. 별도 에이전트 재생도 111/111개를 유지했으나 지연은 개선되지 않았습니다. 일반 품질, 도구 정확도, 토큰 절감의 입증은 아닙니다.',
 };
