@@ -18,6 +18,10 @@ const SCHEMA = 'value: number | null';
 const WRONG_OUTPUT = { before: '{"value": ', wrong: '"7"', after: '}' };
 const RIGHT_OUTPUT = { before: '{"value": ', right: '7', after: '}' };
 
+/**
+ * The code block grows to fill whatever height the card has (`flex-1`), so
+ * the step card can match the figure card beside it without a dead zone.
+ */
 function CodeBlock({
   children,
   dimmed = false,
@@ -28,13 +32,21 @@ function CodeBlock({
   return (
     <pre
       className={cn(
-        'mt-5 overflow-x-auto rounded-lg border border-foreground/10 bg-background/60 px-4 py-4 font-mono text-[13px] leading-[1.8] text-foreground transition-opacity duration-300',
+        'mt-5 flex flex-1 flex-col overflow-x-auto rounded-lg border border-foreground/10 bg-background/60 px-4 py-4 font-mono text-[13px] leading-[1.8] text-foreground transition-opacity duration-300',
         dimmed && 'opacity-40',
       )}
     >
-      <code>{children}</code>
+      {/* Rows spread over the block's height at desktop and sit at their
+          natural spacing on phones. */}
+      <code className="flex flex-1 flex-col justify-evenly gap-4">
+        {children}
+      </code>
     </pre>
   );
+}
+
+function Row({ children }: { children: React.ReactNode }) {
+  return <span className="block">{children}</span>;
 }
 
 function Comment({ children }: { children: React.ReactNode }) {
@@ -47,16 +59,20 @@ function Comment({ children }: { children: React.ReactNode }) {
 }
 
 /**
- * "From evidence to an inference change" as a three-step card. Every step's
+ * "From evidence to an inference change" as a three-step card, styled as the
+ * twin of the figure card beside it: same container, a mono label on top, a
+ * hairline-separated tab row, and a caption at the bottom. Every step's
  * panel is rendered in the same grid cell, so the tallest one sets the height
  * and switching steps never moves the content below it; inactive panels are
  * invisible and hidden from assistive tech. Transitions are opacity and
  * transform only (reduced motion turns them off globally).
  */
 export function InferenceExample({
+  title,
   steps,
   copy,
 }: {
+  title: string;
   steps: ToolResearchCopy['steps'];
   copy: ToolResearchCopy['example'];
 }) {
@@ -84,36 +100,41 @@ export function InferenceExample({
       );
   };
 
-  const panels = [
-    <CodeBlock key="inspect">
+  const schema = (
+    <Row>
       <Comment>{copy.schema}</Comment>
       {'\n'}
       {SCHEMA}
-      {'\n\n'}
-      <Comment>{copy.output}</Comment>
-      {'\n'}
-      {WRONG_OUTPUT.before}
-      <span className="underline decoration-brand decoration-2 underline-offset-4">
-        {WRONG_OUTPUT.wrong}
-      </span>
-      {WRONG_OUTPUT.after}
-      {'\n'}
-      <span className="text-brand-ink">
-        <span aria-hidden="true">{'         ^ '}</span>
-        {copy.flag}
-      </span>
-    </CodeBlock>,
-    <div key="change">
-      <CodeBlock dimmed>
-        <Comment>{copy.schema}</Comment>
-        {'\n'}
-        {SCHEMA}
-        {'\n\n'}
+    </Row>
+  );
+  const panels = [
+    <CodeBlock key="inspect">
+      {schema}
+      <Row>
         <Comment>{copy.output}</Comment>
         {'\n'}
         {WRONG_OUTPUT.before}
-        {WRONG_OUTPUT.wrong}
+        <span className="underline decoration-brand decoration-2 underline-offset-4">
+          {WRONG_OUTPUT.wrong}
+        </span>
         {WRONG_OUTPUT.after}
+        {'\n'}
+        <span className="text-brand-ink">
+          <span aria-hidden="true">{'         ^ '}</span>
+          {copy.flag}
+        </span>
+      </Row>
+    </CodeBlock>,
+    <div key="change" className="flex flex-1 flex-col">
+      <CodeBlock dimmed>
+        {schema}
+        <Row>
+          <Comment>{copy.output}</Comment>
+          {'\n'}
+          {WRONG_OUTPUT.before}
+          {WRONG_OUTPUT.wrong}
+          {WRONG_OUTPUT.after}
+        </Row>
       </CodeBlock>
       <p className="mt-4 flex items-center gap-2.5 font-mono text-xs text-brand-ink">
         <span
@@ -127,35 +148,39 @@ export function InferenceExample({
       </p>
     </div>,
     <CodeBlock key="verify">
-      <Comment>{copy.schema}</Comment>
-      {'\n'}
-      {SCHEMA}
-      {'\n\n'}
-      <Comment>{copy.output}</Comment>
-      {'\n'}
-      {RIGHT_OUTPUT.before}
-      <span className="text-brand-ink">{RIGHT_OUTPUT.right}</span>
-      {RIGHT_OUTPUT.after}
-      {'\n'}
-      <span className="text-brand-ink">
-        <span aria-hidden="true">{'         ✓ '}</span>
-        {copy.check}
-      </span>
+      {schema}
+      <Row>
+        <Comment>{copy.output}</Comment>
+        {'\n'}
+        {RIGHT_OUTPUT.before}
+        <span className="text-brand-ink">{RIGHT_OUTPUT.right}</span>
+        {RIGHT_OUTPUT.after}
+        {'\n'}
+        <span className="text-brand-ink">
+          <span aria-hidden="true">{'         ✓ '}</span>
+          {copy.check}
+        </span>
+      </Row>
     </CodeBlock>,
   ];
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-foreground/12 bg-card">
-      <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-4">
-        <p className="min-w-0 flex-1 label-mono text-brand-ink">{copy.label}</p>
-        <Button variant="ghost" size="sm" onClick={replay} className="-mt-1">
+    <div className="flex h-full flex-col rounded-2xl border border-foreground/12 bg-card p-6 sm:p-8">
+      <div className="mb-8 flex items-start justify-between gap-4">
+        <h3 className="min-w-0 label-mono text-muted-foreground">{title}</h3>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={replay}
+          className="-mt-2 -mr-2.5 text-soft"
+        >
           {copy.replay}
         </Button>
       </div>
       <div
         role="group"
         aria-label={copy.controls}
-        className="grid grid-cols-3 border-y border-foreground/12"
+        className="-mx-3 grid grid-cols-3 border-y border-foreground/12"
       >
         {steps.map((step, index) => (
           <button
@@ -184,8 +209,9 @@ export function InferenceExample({
           </button>
         ))}
       </div>
-      {/* One grid cell; every panel stacks in it so the tallest sets the height. */}
-      <div className="grid px-5 py-5">
+      {/* One grid cell; every panel stacks in it so the tallest sets the
+          height, and the cell grows to fill the card. */}
+      <div className="grid flex-1 py-6">
         {steps.map((step, index) => {
           const active = stage === index;
           return (
@@ -195,7 +221,7 @@ export function InferenceExample({
               aria-hidden={!active}
               data-active={active || undefined}
               className={cn(
-                'transition-[opacity,transform] duration-300 ease-out [grid-area:1/1]',
+                'flex flex-col transition-[opacity,transform] duration-300 ease-out [grid-area:1/1]',
                 active
                   ? 'visible translate-y-0 opacity-100'
                   : 'invisible translate-y-1 opacity-0',
@@ -210,6 +236,9 @@ export function InferenceExample({
           );
         })}
       </div>
+      <p className="mt-auto border-t border-foreground/12 pt-5 text-xs leading-relaxed text-muted-foreground">
+        {copy.label}
+      </p>
     </div>
   );
 }

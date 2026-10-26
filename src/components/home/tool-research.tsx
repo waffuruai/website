@@ -116,8 +116,10 @@ export function ToolResearch({
         className="mb-12"
       />
 
-      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] lg:gap-16">
-        <figure className="rounded-2xl border border-foreground/12 bg-card p-6 sm:p-8">
+      {/* Both cards stretch to one height on desktop; the step card's panels
+          share one grid cell, so its height never changes between steps. */}
+      <div className="grid items-stretch gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] lg:gap-16">
+        <figure className="flex h-full flex-col rounded-2xl border border-foreground/12 bg-card p-6 sm:p-8">
           <figcaption className="mb-8 flex flex-col gap-3">
             <span className="label-mono text-muted-foreground">
               {content.figure.headline}
@@ -167,7 +169,7 @@ export function ToolResearch({
               </div>
             ))}
           </div>
-          <dl className="mt-8 grid gap-x-6 gap-y-5 border-t border-foreground/12 pt-6 sm:grid-cols-2">
+          <dl className="mt-8 mb-7 grid gap-x-6 gap-y-5 border-t border-foreground/12 pt-6 sm:grid-cols-2">
             {rows.map((row) => (
               <div key={row.label}>
                 <dt className="text-sm text-muted-foreground">{row.label}</dt>
@@ -177,17 +179,16 @@ export function ToolResearch({
               </div>
             ))}
           </dl>
-          <p className="mt-7 border-t border-foreground/12 pt-5 text-xs leading-relaxed text-muted-foreground">
+          <p className="mt-auto border-t border-foreground/12 pt-5 text-xs leading-relaxed text-muted-foreground">
             {content.figure.caption}
           </p>
         </figure>
 
-        <div>
-          <h3 className="mb-3 label-mono text-muted-foreground">
-            {content.methodTitle}
-          </h3>
-          <InferenceExample steps={content.steps} copy={content.example} />
-        </div>
+        <InferenceExample
+          title={content.methodTitle}
+          steps={content.steps}
+          copy={content.example}
+        />
       </div>
 
       <div className="mt-10 max-w-[820px] border-l-2 border-brand pl-5">

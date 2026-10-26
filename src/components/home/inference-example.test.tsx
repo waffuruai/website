@@ -4,7 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { InferenceExample } from './inference-example';
 import { toolResearch } from '@/content/pages/tool-research';
 
-const { steps, example } = toolResearch.en;
+const { methodTitle, steps, example } = toolResearch.en;
 
 const panels = (container: HTMLElement) => [
   ...container.querySelectorAll(
@@ -19,7 +19,7 @@ describe('InferenceExample', () => {
   it('keeps every step panel in the DOM and switches which one is visible', async () => {
     const user = userEvent.setup();
     const { container } = render(
-      <InferenceExample steps={steps} copy={example} />,
+      <InferenceExample title={methodTitle} steps={steps} copy={example} />,
     );
     const buttons = steps.map((step) =>
       screen.getByRole('button', { name: new RegExp(step.title) }),
@@ -47,6 +47,9 @@ describe('InferenceExample', () => {
     expect(activeHeading(container)).toBe('Verify the result');
     expect(screen.getByText('exact value and type')).toBeTruthy();
     expect(screen.getByText(example.label)).toBeTruthy();
+    expect(
+      screen.getByRole('heading', { level: 3, name: methodTitle }),
+    ).toBeTruthy();
   });
 
   describe('replay', () => {
@@ -59,7 +62,7 @@ describe('InferenceExample', () => {
 
     it('cycles the steps on timers and clears them on unmount', () => {
       const { container, unmount } = render(
-        <InferenceExample steps={steps} copy={example} />,
+        <InferenceExample title={methodTitle} steps={steps} copy={example} />,
       );
       act(() => {
         screen.getByRole('button', { name: example.replay }).click();
