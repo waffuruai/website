@@ -1,6 +1,21 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  animation: {
+    title: 'Plus de précision. Moins de travail perdu ?',
+    measured: 'Expérience mesurée',
+    accuracy: 'Précision des arguments exacts',
+    tokens: 'Tokens totaux d’inférence',
+    scenario: 'Explorer les économies potentielles du flux',
+    assumption:
+      'Hypothèse illustrative : chaque tour de réparation évité économise 1,000 tokens sur ce lot de 144 requêtes. Ces économies ne sont pas mesurées.',
+    repairs: 'Tours de réparation évités',
+    estimate: 'Tokens du flux modélisé',
+    difference: 'Écart de tokens avec la référence',
+    replay: 'Rejouer l’animation',
+    boundary:
+      'La précision reste celle du résultat mesuré. Le curseur modifie uniquement le scénario de coût ; il ne prédit ni tâches terminées ni appels évités.',
+  },
   eyebrow: 'Juke → Butter · recherche mesurée',
   title: 'De meilleurs appels d’outils.\n*Mesurés dans Butter.*',
   intro:

@@ -1,6 +1,21 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  animation: {
+    title: 'Más precisión. ¿Menos trabajo desperdiciado?',
+    measured: 'Experimento medido',
+    accuracy: 'Precisión de argumentos exactos',
+    tokens: 'Tokens totales de inferencia',
+    scenario: 'Explora el ahorro potencial del flujo',
+    assumption:
+      'Supuesto ilustrativo: cada turno de reparación evitado ahorra 1,000 tokens en este lote de 144 solicitudes. Este ahorro no se ha medido.',
+    repairs: 'Turnos de reparación evitados',
+    estimate: 'Tokens modelados del flujo',
+    difference: 'Diferencia de tokens frente al inicio',
+    replay: 'Repetir animación',
+    boundary:
+      'La precisión mantiene el resultado medido. El control solo cambia el escenario de coste; no predice tareas completadas ni llamadas evitadas.',
+  },
   eyebrow: 'Juke → Butter · investigación medida',
   title: 'Mejores llamadas a herramientas.\n*Medidas en Butter.*',
   intro:

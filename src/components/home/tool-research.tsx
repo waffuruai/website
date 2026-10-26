@@ -1,3 +1,4 @@
+import { ToolCostAnimation } from './tool-cost-animation';
 import { LocalizedLink } from '@/components/localized-link';
 import { MonoLabel } from '@/components/sections/mono-label';
 import { SectionHeading } from '@/components/sections/section-heading';
@@ -132,6 +133,13 @@ export function ToolResearch({ content }: { content: ToolResearchCopy }) {
           </p>
         </div>
       </div>
+
+      <ToolCostAnimation
+        copy={content.animation}
+        baselineLabel={content.baseline}
+        candidateLabel={content.candidate}
+        evidence={evidence}
+      />
 
       <details className="mt-9 border-y border-foreground/12 py-5">
         <summary className="min-h-11 content-center text-sm text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">

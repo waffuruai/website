@@ -16,6 +16,8 @@ export const toolResearchEvidence = {
   developmentBaseline: 17,
   developmentCandidate: 21,
   developmentRequests: 29,
+  baselineTokens: 50382,
+  candidateTokens: 59222,
   additionalInputTokens: 8304,
   additionalGeneratedTokens: 536,
   model: 'Qwen3.5-0.8B · Q4_K_M',
@@ -27,6 +29,19 @@ export const toolResearchEvidence = {
 } as const;
 
 export type ToolResearchCopy = {
+  animation: {
+    title: string;
+    measured: string;
+    accuracy: string;
+    tokens: string;
+    scenario: string;
+    assumption: string;
+    repairs: string;
+    estimate: string;
+    difference: string;
+    replay: string;
+    boundary: string;
+  };
   eyebrow: string;
   title: string;
   intro: string;
@@ -52,6 +67,21 @@ export type ToolResearchCopy = {
 
 export const toolResearch: Localized<ToolResearchCopy> = {
   en: {
+    animation: {
+      title: 'Accuracy up. Less wasted work?',
+      measured: 'Measured experiment',
+      accuracy: 'Exact argument accuracy',
+      tokens: 'Total inference tokens',
+      scenario: 'Explore potential workflow savings',
+      assumption:
+        'Illustrative assumption: each avoided repair turn saves 1,000 tokens across this 144-request batch. These savings were not measured.',
+      repairs: 'Avoided repair turns',
+      estimate: 'Modeled workflow tokens',
+      difference: 'Token difference vs. baseline',
+      replay: 'Replay animation',
+      boundary:
+        'Accuracy stays at the measured result. The slider changes only the cost scenario; it does not predict completed tasks or avoided calls.',
+    },
     eyebrow: 'Juke → Butter · measured research',
     title: 'Better tool calls.\n*Measured in Butter.*',
     intro:

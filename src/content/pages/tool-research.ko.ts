@@ -1,6 +1,21 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  animation: {
+    title: '정확도 향상. 낭비도 줄일 수 있을까요?',
+    measured: '실측 실험',
+    accuracy: '인수 완전 일치 정확도',
+    tokens: '총 추론 토큰',
+    scenario: '워크플로의 잠재적 절감 살펴보기',
+    assumption:
+      '설명용 가정: 144개 요청 배치에서 수정 턴을 한 번 피할 때마다 1,000토큰을 절약합니다. 이 절감량은 측정되지 않았습니다.',
+    repairs: '피한 수정 턴',
+    estimate: '모델링한 워크플로 토큰',
+    difference: '기준 대비 토큰 차이',
+    replay: '애니메이션 다시 재생',
+    boundary:
+      '정확도는 실측 결과로 고정됩니다. 슬라이더는 비용 시나리오만 바꾸며 완료 작업이나 회피한 호출 수를 예측하지 않습니다.',
+  },
   eyebrow: 'Juke → Butter · 실측 연구',
   title: '더 정확한 도구 호출.\n*Butter에서 측정했습니다.*',
   intro:

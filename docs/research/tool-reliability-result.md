@@ -26,7 +26,17 @@ new product launch or a claim of universal reliability.
 
 `src/content/pages/tool-research.ts` holds shared evidence facts and the pinned
 source URL; six translated copies preserve the claim and its limits. The
-homepage is static/server-rendered, with no new JavaScript or dependency.
+homepage remains statically exported. A small bundled client component adds a
+replayable CSS bar animation and an accessible scenario slider, with no new
+dependency. Reduced-motion preferences disable transitions and animation.
+
+The measured animation pairs 36/144 → 56/144 accuracy with 50,382 → 59,222
+total inference tokens (input plus generated). A separate, explicitly modeled
+workflow budget starts at zero avoided repairs. Its illustrative assumption is
+1,000 tokens saved per avoided repair across the entire batch, not per request.
+Eight assumed repairs leave 840 extra tokens; nine produce 160 fewer tokens
+than baseline. This arithmetic is not observed workflow savings, and the slider
+never changes accuracy or infers avoided repairs from the 20 corrected responses.
 
 ## Claim boundary
 

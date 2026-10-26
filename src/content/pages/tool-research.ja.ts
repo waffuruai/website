@@ -1,6 +1,21 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  animation: {
+    title: '精度向上。無駄な処理は減らせる？',
+    measured: '実測した実験',
+    accuracy: '引数の完全一致率',
+    tokens: '推論の合計トークン数',
+    scenario: 'ワークフローの節約可能性を試す',
+    assumption:
+      '説明用の仮定：144リクエストのバッチで修正ターンを1回回避するごとに1,000トークンを節約します。この節約は実測されていません。',
+    repairs: '回避した修正ターン数',
+    estimate: '試算したワークフロートークン数',
+    difference: 'ベースラインとのトークン差',
+    replay: 'アニメーションを再生',
+    boundary:
+      '精度は実測値のままです。スライダーが変えるのはコストの試算のみで、完了タスク数や回避した呼び出し数の予測ではありません。',
+  },
   eyebrow: 'Juke → Butter · 実測に基づく研究',
   title: 'より正確なツール呼び出し。\n*Butterで実測。*',
   intro:

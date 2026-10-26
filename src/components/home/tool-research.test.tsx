@@ -36,7 +36,7 @@ describe('ToolResearch', () => {
     const details = container.querySelector('details')!;
     expect(details.open).toBe(false);
     const summary = details.querySelector('summary')!;
-    await user.tab();
+    summary.focus();
     expect(document.activeElement).toBe(summary);
     await user.click(summary);
     expect(details.open).toBe(true);

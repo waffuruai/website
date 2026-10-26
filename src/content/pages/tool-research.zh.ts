@@ -1,6 +1,21 @@
 import type { ToolResearchCopy } from './tool-research';
 
 const copy: ToolResearchCopy = {
+  animation: {
+    title: '准确率提高。能否减少浪费？',
+    measured: '实测实验',
+    accuracy: '参数完全匹配准确率',
+    tokens: '推理总 token 数',
+    scenario: '探索工作流的潜在节省',
+    assumption:
+      '示例假设：在这批 144 个请求中，每避免一轮修复可节省 1,000 个 token。这些节省尚未实测。',
+    repairs: '避免的修复轮数',
+    estimate: '工作流 token 估算',
+    difference: '相对基线的 token 差额',
+    replay: '重播动画',
+    boundary:
+      '准确率保持实测结果。滑块仅改变成本场景，不预测完成任务数或避免的调用数。',
+  },
   eyebrow: 'Juke → Butter · 实测研究',
   title: '更准确的工具调用。\n*在 Butter 中实测。*',
   intro:
