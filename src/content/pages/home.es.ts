@@ -20,9 +20,9 @@ const homeEs: (typeof home)['en'] = {
 
   hero: {
     eyebrow: 'Cuatro productos · código cerrado por ahora',
-    title: 'Matemática pura, *prensada* en silicio.',
-    lede: 'Escribimos kernels de GPU, un motor de inferencia, un plano de control y una capa de recuperación. Funcionan en una laptop, en un laboratorio casero o en la flota de un neocloud.',
-    secondary: { label: 'Ver el stack', href: '#stack' },
+    title: 'Más de tus modelos.\n*En tu propio silicio.*',
+    lede: 'Ejecuta IA local para tu equipo, desde los kernels de GPU hasta las herramientas de tus agentes. Medimos rendimiento, investigamos fallos y mejoramos la inferencia para que veas qué cambió y por qué.',
+    secondary: { label: 'Ver los resultados', href: '#native-inference' },
     emits: {
       label: 'Emite',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],

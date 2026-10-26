@@ -20,9 +20,9 @@ const homeZh: (typeof home)['en'] = {
 
   hero: {
     eyebrow: '四款产品 · 暂未开源',
-    title: '把纯粹的数学，*压进*硅片。',
-    lede: '我们编写 GPU 内核、推理引擎、控制平面和检索层。它们可以运行在笔记本、家庭实验室或新型云服务商的集群上。',
-    secondary: { label: '查看技术栈', href: '#stack' },
+    title: '释放模型的更多价值。\n*在自己的芯片上。*',
+    lede: '从 GPU 内核到智能体的工具调用，为团队运行本地 AI。我们测量吞吐量、调查失败并改进推理路径，让你看清改变及其原因。',
+    secondary: { label: '查看结果', href: '#native-inference' },
     emits: {
       label: '生成',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],

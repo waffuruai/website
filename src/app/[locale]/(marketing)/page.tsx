@@ -1,3 +1,5 @@
+import { SpeculativeResearch } from '@/components/home/speculative-research';
+import { speculativeResearch } from '@/content/pages/speculative-research';
 import type { Metadata } from 'next';
 
 import { FilmGrain } from '@/components/home/film-grain';
@@ -62,8 +64,9 @@ export default async function HomePage({ params }: { params: LocaleParams }) {
         content={content.hero}
         primary={{ label: common.requestAccess, href: site.urls.earlyAccess }}
       />
-      <Stack content={content.stack} privateLabel={common.private} />
+      <SpeculativeResearch content={localize(speculativeResearch, locale)} />
       <ToolResearch content={localize(toolResearch, locale)} />
+      <Stack content={content.stack} privateLabel={common.private} />
       <Models content={content.models} />
       <KernelCode content={content.kernel} />
       <TeamTeaser content={content.team} copy={localize(teamCopy, locale)} />

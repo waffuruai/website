@@ -105,9 +105,9 @@ export const home: Localized<HomeContent> = {
 
     hero: {
       eyebrow: 'Four products · closed source for now',
-      title: 'Raw math, *pressed* into silicon.',
-      lede: 'We write GPU kernels, an inference engine, a control plane and a retrieval layer. They run on a laptop, a home lab or a neocloud fleet.',
-      secondary: { label: 'See the stack', href: '#stack' },
+      title: 'More from your models.\n*On your own silicon.*',
+      lede: 'Run local AI for your team, from the GPU kernels to the tools your agents call. We measure throughput, investigate failures and improve the inference path—so you can see what changed and why.',
+      secondary: { label: 'See the results', href: '#native-inference' },
       emits: {
         label: 'Emits',
         targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],

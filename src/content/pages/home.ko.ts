@@ -20,9 +20,9 @@ const homeKo: (typeof home)['en'] = {
 
   hero: {
     eyebrow: '제품 4종 · 당분간 비공개 소스',
-    title: '순수한 수학을 실리콘에 *새기다*.',
-    lede: 'GPU 커널, 추론 엔진, 컨트롤 플레인, 검색 계층을 만듭니다. 노트북에서도, 홈 랩에서도, 네오클라우드 플릿에서도 돌아갑니다.',
-    secondary: { label: '스택 살펴보기', href: '#stack' },
+    title: '모델에서 더 많은 가치를.\n*내 실리콘에서.*',
+    lede: 'GPU 커널부터 에이전트의 도구 호출까지 팀을 위한 로컬 AI를 실행하세요. 처리량을 측정하고 실패를 조사하며 추론 경로를 개선해 무엇이 왜 달라졌는지 보여줍니다.',
+    secondary: { label: '결과 보기', href: '#native-inference' },
     emits: {
       label: '출력',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],

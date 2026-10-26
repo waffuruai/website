@@ -1,7 +1,7 @@
 # Homepage tool-reliability result
 
 Audience: developers building tool-using agents who need correct arguments and
-predictable execution. The homepage section after the product stack connects
+predictable execution. The homepage section after the native performance result connects
 that job to Juke's evidence-driven engineering and a concrete native Butter
 result. It uses measured counts, a proportional chart and three stages of the
 method, with a native disclosure for scope, costs, limits and source access.
@@ -61,3 +61,27 @@ change. Keep the existing consent-managed analytics; no additional tracking or
 unconsented events are added. Review the rendered section, localized copy and
 research disclosure before production publication. Validation covers numerical
 counts/denominators, keyboard disclosure, locale parity and full site checks/build.
+
+## Homepage refresh for VCs and engineers
+
+Audience: investors assessing concrete differentiation and engineers evaluating
+local inference for teams and agents. Venue: the existing homepage, in its
+After Hours design. Lead with a customer outcome, then evidence, then the stack.
+The order is hero → native performance/concurrency → tool correctness → products
+→ model coverage → kernel portability → team → early access. Both result sections
+expose method and limits through native disclosures rather than requiring every
+reader to follow the implementation. No new analytics or tracking is introduced.
+Success is comprehension and qualified early-access interest, not an invented
+conversion forecast. Review the existing consent-managed analytics after an
+authorized production release.
+
+The native section preserves three different trial sets: short single stream,
+whole-burst N16, and paired all-active N16 optimization. T0/T0.7 switching changes
+all associated numbers together. The schematic is explicitly not a timing or
+acceptance visualization; 16 active lanes rotate through cohorts of up to eight.
+Animation is finite, replayable, and respects reduced motion.
+
+See [native speculative decoding](native-speculative-decoding.md) for the PR
+audit, actual Butter/Iron pins, fingerprints, model/draft identity and the
+**Reproduce with Butter** launch/client commands. No new performance workload
+was run to build this website. Human review precedes production publication.

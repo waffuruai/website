@@ -20,9 +20,9 @@ const homeJa: (typeof home)['en'] = {
 
   hero: {
     eyebrow: '4 つの製品 · 現時点ではクローズドソース',
-    title: '純粋な数学を、シリコンに*焼き込む*。',
-    lede: 'GPU カーネル、推論エンジン、コントロールプレーン、検索レイヤーをつくっています。ノート PC でも、ホームラボでも、ネオクラウドのフリートでも動きます。',
-    secondary: { label: 'スタックを見る', href: '#stack' },
+    title: 'モデルの力を、もっと。\n*自分のシリコンで。*',
+    lede: 'GPUカーネルからエージェントのツール呼び出しまで、チームで使うローカルAIを。スループットを測定し、失敗を調べ、推論経路を改善します。何が変わり、なぜ変わったかを示します。',
+    secondary: { label: '結果を見る', href: '#native-inference' },
     emits: {
       label: '出力先',
       targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],

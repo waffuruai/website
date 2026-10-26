@@ -29,9 +29,10 @@ describe('HomePage', () => {
         heading.textContent?.replace(/\s+/g, ' ').trim(),
       ),
     ).toEqual([
-      'Raw math, pressed into silicon.',
-      'The stack.',
+      'More from your models.On your own silicon.',
+      '27B.16 requests. One Mac.',
       'Better tool calls.Measured in Butter.',
+      'The stack.',
       'Models on the menu.',
       'You write this.Iron writes the rest.',
       'Who’s in the kitchen.',
