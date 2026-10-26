@@ -30,14 +30,14 @@ jobs:
         with:
           cache: true
 
-      - name: Shellcheck
-        run: shellcheck scripts/*.sh
+      - name: Validate the tasks
+        run: mise tasks validate
 
-      - name: Validate the manifest
-        run: jq -e 'type == "array" and all(.[]; .product and .repo and .asset)' releases/products.json
-
-      - name: Test the release fetcher
-        run: scripts/test-fetch-releases.sh
+      # S10: tasks see only mise and its pinned tools plus the base system (no
+      # Homebrew prefix, no /usr/local, no ~/.cargo/bin), so a tool missing from
+      # [tools] fails here. The tool directories mise-action added stay first.
+      - name: Cut PATH to mise and the base system
+        run: echo "PATH=$(dirname "$(command -v mise)"):/usr/bin:/bin:/usr/sbin:/sbin" >> "$GITHUB_ENV"
 
       - name: Locate the pnpm store
         id: pnpm-store
@@ -51,16 +51,17 @@ jobs:
           restore-keys: pnpm-store-${{ runner.os }}-
 
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: mise run bootstrap
 
       - name: Audit production dependencies
-        run: pnpm audit --prod --audit-level high
+        run: mise run audit
 
-      - name: Typecheck, lint, test, format
-        run: pnpm check
+      # Typecheck, lint (eslint, shellcheck), unit and release fetcher tests, format check.
+      - name: Check
+        run: mise run check
 
       - name: Build
-        run: pnpm build
+        run: mise run build
 
   preview:
     name: Preview deploy
@@ -81,6 +82,10 @@ jobs:
         with:
           cache: true
 
+      # S10, as in the test job.
+      - name: Cut PATH to mise and the base system
+        run: echo "PATH=$(dirname "$(command -v mise)"):/usr/bin:/bin:/usr/sbin:/sbin" >> "$GITHUB_ENV"
+
       - name: Locate the pnpm store
         id: pnpm-store
         run: echo "path=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
@@ -93,17 +98,17 @@ jobs:
           restore-keys: pnpm-store-${{ runner.os }}-
 
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: mise run bootstrap
 
       # No NEXT_PUBLIC_GA_ID: previews never load analytics.
       - name: Build and assemble
-        run: pnpm build && node scripts/assemble-site.mjs
+        run: mise run assemble
 
       - name: Fetch and verify the product installers
         env:
           GH_TOKEN: ${{ secrets.RELEASE_READ_TOKEN || github.token }}
           RELEASE_VERIFY_ATTESTATION: ${{ vars.RELEASE_VERIFY_ATTESTATION || 'auto' }}
-        run: scripts/fetch-releases.sh releases/products.json _site
+        run: mise run fetch-releases
 
       - name: Deploy the preview Worker
         id: deploy
@@ -142,6 +147,10 @@ jobs:
         with:
           cache: true
 
+      # S10, as in the test job.
+      - name: Cut PATH to mise and the base system
+        run: echo "PATH=$(dirname "$(command -v mise)"):/usr/bin:/bin:/usr/sbin:/sbin" >> "$GITHUB_ENV"
+
       - name: Locate the pnpm store
         id: pnpm-store
         run: echo "path=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
@@ -154,7 +163,7 @@ jobs:
           restore-keys: pnpm-store-${{ runner.os }}-
 
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: mise run bootstrap
 
       - name: Delete the preview Worker
         env:

@@ -24,15 +24,20 @@ look: dark roast, Instrument Serif with a gold italic accent, CSS-only motifs.
 
 ## Development
 
-Node and pnpm are pinned in [`mise.toml`](mise.toml); `packageManager` in `package.json` mirrors the pnpm pin. Add `eval "$(mise activate zsh)"` to your shell profile once, then:
+Tools are pinned in [`mise.toml`](mise.toml) (`packageManager` in `package.json` mirrors the pnpm pin) and every command is a mise task. In a fresh clone:
 
 ```bash
-mise install
-pnpm install
-pnpm dev          # http://localhost:3000, dev rewrites stand in for the Worker
-pnpm check        # typecheck (site + worker), lint, tests, format
-pnpm build        # images → static export (out/) → postbuild (404, markdown, llms.txt, OG cards, CSP hashes)
-pnpm preview      # build, assemble _site/, run the real Worker with wrangler at http://127.0.0.1:8787
+mise bootstrap    # installs node, pnpm and the other pinned tools, then the locked dependencies
+mise run test     # unit tests and the release fetcher tests
+```
+
+`mise tasks ls` lists every task. The ones you will use most:
+
+```bash
+mise run dev           # http://localhost:3000 (--port to change), dev rewrites stand in for the Worker
+mise run check         # typecheck (site + worker), lint, tests, format check: what CI runs
+mise run build         # images → static export (out/) → postbuild (404, markdown, llms.txt, OG cards, CSP hashes)
+mise run preview       # build, assemble _site/, run the real Worker with wrangler at http://127.0.0.1:8787
 ```
 
 Agent and contributor conventions (tokens, content model, i18n, hard rules)
@@ -156,14 +161,14 @@ Any failure exits non-zero naming the product and tag.
 ### Running the checks locally
 
 ```bash
-shellcheck scripts/*.sh
-scripts/test-fetch-releases.sh   # stubs gh; no network, no token
-actionlint
+mise run lint            # eslint, and shellcheck on scripts/*.sh
+mise run test-release    # the manifest check and the fetcher tests; stubs gh, no network, no token
 ```
 
-`scripts/test-fetch-releases.sh` puts a fake `gh` on `PATH` and covers the happy
-path, a tampered asset, a failing attestation, a skipped attestation and a product
-with no release. The workflow runs it in a `test` job before the build.
+`mise run test-release` runs `scripts/test-fetch-releases.sh`, which puts a fake
+`gh` on `PATH` and covers the happy path, a tampered asset, a failing attestation,
+a skipped attestation and a product with no release. The workflows run it (in
+`mise run check`) before the build.
 
 ## Repository settings the owner must create
 
@@ -183,7 +188,7 @@ with no release. The workflow runs it in a `test` job before the build.
 
 Repository variable with the GA4 measurement ID. Only the production build
 reads it; the deploy fails if it is missing. Locally, put it in `.env.local`
-and run `pnpm preview` to see analytics after accepting cookies.
+and run `mise run preview` to see analytics after accepting cookies.
 
 ### Secret: `RELEASE_READ_TOKEN`
 
