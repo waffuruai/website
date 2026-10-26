@@ -9,15 +9,15 @@ const renderModels = () =>
   render(withDictionary(<Models content={home.en.models} />));
 
 describe('Models', () => {
-  it('has the heading and two lanes at 70s and 85s, the second reversed', () => {
+  it('has the heading and two lanes at 120s and 130s, the second reversed', () => {
     const { container } = renderModels();
     expect(screen.getByRole('heading', { level: 2 }).textContent).toBe(
       'Models on the menu.',
     );
     const tracks = [...container.querySelectorAll('.wf-marquee')];
     expect(tracks).toHaveLength(2);
-    expect(tracks[0].className).toContain('[--marquee-duration:70s]');
-    expect(tracks[1].className).toContain('[--marquee-duration:85s]');
+    expect(tracks[0].className).toContain('[--marquee-duration:120s]');
+    expect(tracks[1].className).toContain('[--marquee-duration:130s]');
     expect(tracks[0].hasAttribute('data-reverse')).toBe(false);
     expect(tracks[1].hasAttribute('data-reverse')).toBe(true);
   });
@@ -43,13 +43,13 @@ describe('Models', () => {
   it('exposes each lab once to screen readers, with its status', () => {
     renderModels();
     const visible = screen.getAllByRole('listitem');
-    // 18 real cards + the legend is aria-hidden, so it is not listed.
-    expect(visible).toHaveLength(18);
+    // 29 real cards + the legend is aria-hidden, so it is not listed.
+    expect(visible).toHaveLength(29);
     const deepseek = visible.find((item) =>
       within(item).queryByText('DeepSeek'),
     );
-    expect(within(deepseek!).getByText('DeepSeek V4')).toBeTruthy();
-    expect(within(deepseek!).getByText('In progress')).toBeTruthy();
+    expect(within(deepseek!).getByText('DeepSeek V4 · V4.1')).toBeTruthy();
+    expect(within(deepseek!).getByText('Coming soon')).toBeTruthy();
     const meta = visible.find((item) => within(item).queryByText('Meta'));
     expect(within(meta!).getByText('Supported')).toBeTruthy();
   });
@@ -62,13 +62,28 @@ describe('Models', () => {
     expect(logo?.getAttribute('aria-hidden')).toBe('true');
   });
 
-  it('covers DeepSeek V4, Drama-3 and Flint as in progress, the rest as supported', () => {
+  it('covers DeepSeek V4, Step 3, Drama-3, Nanbeige and Cohere Transcribe as coming soon, the rest as supported', () => {
     const labs = home.en.models.lanes.flat();
     expect(labs.filter((lab) => lab.status === 'in-progress')).toEqual([
-      expect.objectContaining({ lab: 'DeepSeek', models: 'DeepSeek V4' }),
+      expect.objectContaining({
+        lab: 'DeepSeek',
+        models: 'DeepSeek V4 · V4.1',
+      }),
+      expect.objectContaining({ lab: 'StepFun', models: 'Step 3' }),
+      expect.objectContaining({ lab: 'Nanbeige', models: 'Nanbeige 4.3' }),
       expect.objectContaining({ lab: 'Fish Audio', models: 'Drama-3' }),
-      expect.objectContaining({ lab: 'Recursive', models: 'Flint' }),
+      expect.objectContaining({ lab: 'Cohere', models: 'Cohere Transcribe' }),
     ]);
-    expect(labs).toHaveLength(18);
+    expect(labs).toHaveLength(29);
+    // Lanes stay close in length so the two marquees read at a similar pace.
+    const [first, second] = home.en.models.lanes;
+    expect(Math.abs(first.length - second.length)).toBeLessThanOrEqual(1);
+  });
+
+  it('keeps every lab, model and logo key identical across locales', () => {
+    const en = home.en.models.lanes;
+    for (const locale of ['es', 'fr', 'zh', 'ja', 'ko'] as const) {
+      expect(home[locale]?.models.lanes).toEqual(en);
+    }
   });
 });
