@@ -2,7 +2,7 @@ import type { QuantizedModelsCopy } from './quantized-models';
 
 const copy: QuantizedModelsCopy = {
   eyebrow: '量化模型 · 即将推出',
-  title: '模型，量化得*用心*。',
+  title: '模型 量化得*用心*',
   intro:
     '我们正在为 Butter 所服务的模型准备量化版本，采用与我们公开的 TurboQuant+ 权重研究相同的方法。文件更小，质量不打折，还有余量同时运行更多模型。',
   method: {

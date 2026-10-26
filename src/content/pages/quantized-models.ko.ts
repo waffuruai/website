@@ -2,7 +2,7 @@ import type { QuantizedModelsCopy } from './quantized-models';
 
 const copy: QuantizedModelsCopy = {
   eyebrow: '양자화 모델 · 곧 공개',
-  title: '모델을, *신중하게* 양자화했습니다.',
+  title: '모델을 *신중하게* 양자화',
   intro:
     'Butter가 서비스하는 모델의 양자화 버전을, 공개된 TurboQuant+ 가중치 연구와 같은 방법으로 준비하고 있습니다. 파일은 더 작고, 품질은 그대로이며, 더 많은 모델을 동시에 돌릴 여유가 생깁니다.',
   method: {

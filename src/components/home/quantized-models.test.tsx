@@ -22,7 +22,7 @@ describe('QuantizedModels', () => {
   it('renders the title, the method, the public tiles with their source and the status', () => {
     render(withDictionary(<QuantizedModels content={quantizedModels.en} />));
     const section = screen.getByRole('region', {
-      name: 'Models, quantized with care.',
+      name: 'Models quantized with care',
     });
     expect(section.id).toBe('quantized-models');
     expect(within(section).getByText('37%')).toBeTruthy();
