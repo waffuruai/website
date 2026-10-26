@@ -22,7 +22,7 @@ How waffuru.ai is found by people, search engines and AI agents, what each page 
 | Cache and content types  | `public/_headers` (only for paths the Worker bypasses)                            |
 | Headers on pages         | `worker/headers.ts` (CSP, `Link`, `Vary: Accept`)                                 |
 
-Rules every page follows (`pnpm site:check` enforces the measurable ones):
+Rules every page follows (`mise run site-check` enforces the measurable ones):
 
 - One `h1`. The `title` is the page name plus the layout's " · Waffuru" suffix, at most 70 characters, never the brand twice.
 - A meta description of 50–160 characters (20–110 for zh, ja, ko) that opens with the outcome for the reader and names the product. No two pages in a locale share one.
@@ -182,7 +182,7 @@ Share cards render their own text for en, es and fr; zh, ja and ko reuse the Eng
 
 ## Agent-readiness checklist
 
-The checks are the ones Cloudflare's [Agent Readiness score](https://blog.cloudflare.com/agent-readiness/) and [isitagentready.com](https://isitagentready.com) run, plus the advice in Vercel's [guide to making a site readable by AI agents](https://vercel.com/kb/guide/make-your-site-readable-by-ai-agents). "Verify" commands assume production; swap in `http://127.0.0.1:8787` for a local `pnpm preview` (preview hosts answer `noindex` and a disallow-all `robots.txt` by design).
+The checks are the ones Cloudflare's [Agent Readiness score](https://blog.cloudflare.com/agent-readiness/) and [isitagentready.com](https://isitagentready.com) run, plus the advice in Vercel's [guide to making a site readable by AI agents](https://vercel.com/kb/guide/make-your-site-readable-by-ai-agents). "Verify" commands assume production; swap in `http://127.0.0.1:8787` for a local `mise run preview` (preview hosts answer `noindex` and a disallow-all `robots.txt` by design).
 
 ### Discoverability
 
@@ -203,7 +203,7 @@ The checks are the ones Cloudflare's [Agent Readiness score](https://blog.cloudf
 | Answers in the first HTML    | Static export; no client-only content. Headings, links and copy are in the prerendered document                                                                                                                                                         | `curl -s https://waffuru.ai/ \| grep -c '<h1'`                        |
 | Fenced, language-tagged code | rehype-pretty-code sets `data-language`; both converters keep it as the fence info string                                                                                                                                                               | `curl -s https://waffuru.ai/products/iron.md \| grep '^```'`          |
 | Correct status codes         | Unknown URLs get a real 404 (the locale's 404 page); moves are 308 (`worker/routing.ts`); no soft 404s                                                                                                                                                  | `curl -sI https://waffuru.ai/nope \| head -1`                         |
-| Structured data              | JSON-LD from `src/lib/json-ld.ts`, only for what the page shows (Organization, WebSite, BreadcrumbList, FAQPage, SoftwareApplication, Person)                                                                                                           | `pnpm site:check` (parses every block)                                |
+| Structured data              | JSON-LD from `src/lib/json-ld.ts`, only for what the page shows (Organization, WebSite, BreadcrumbList, FAQPage, SoftwareApplication, Person)                                                                                                           | `mise run site-check` (parses every block)                            |
 | Share images                 | `postbuild` renders 1200×630 PNGs for en, es and fr (zh, ja, ko use the English card); referenced by `og:image` and `twitter:image`                                                                                                                     | `curl -sI https://waffuru.ai/og/en/index.png \| grep -i content-type` |
 
 ### Bot access control
@@ -211,7 +211,7 @@ The checks are the ones Cloudflare's [Agent Readiness score](https://blog.cloudf
 | Check                   | How this site implements it                                                                                                                                                                                                                                                                                                                                                        | Verify                                                         |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | Content Signals         | robots.txt opens with Cloudflare's Content Signals Policy text and sets `Content-Signal: search=yes, ai-input=yes, ai-train=no` for everyone                                                                                                                                                                                                                                       | `curl -s https://waffuru.ai/robots.txt \| grep Content-Signal` |
-| AI bot rules            | Search crawlers and user-triggered agents are named and allowed (Googlebot, Bingbot, OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User, DuckAssistBot, Applebot). Training-only crawlers are disallowed (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended, CCBot, Meta-ExternalAgent, Bytespider), each with its source in a comment | `pnpm site:check` (against production) or read the file        |
+| AI bot rules            | Search crawlers and user-triggered agents are named and allowed (Googlebot, Bingbot, OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User, DuckAssistBot, Applebot). Training-only crawlers are disallowed (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended, CCBot, Meta-ExternalAgent, Bytespider), each with its source in a comment | `mise run site-check` (against production) or read the file    |
 | No indexing of previews | The Worker sends a disallow-all `robots.txt` and `X-Robots-Tag: noindex, nofollow` on every host but `waffuru.ai`                                                                                                                                                                                                                                                                  | `curl -sI https://waffuru-site.<account>.workers.dev/`         |
 | Web Bot Auth            | Not applicable: it is for sites that run a bot and sign its requests. We run none                                                                                                                                                                                                                                                                                                  | n/a                                                            |
 
@@ -229,9 +229,9 @@ The checks are the ones Cloudflare's [Agent Readiness score](https://blog.cloudf
 ### Run all of it
 
 ```sh
-pnpm preview                      # builds and serves the real Worker on :8787
-pnpm site:check                   # crawls it: pages, links, markdown, OG, discovery files, 404s
-pnpm site:check --base https://waffuru.ai   # the same against production
+mise run preview                  # builds and serves the real Worker on :8787
+mise run site-check               # crawls it: pages, links, markdown, OG, discovery files, 404s
+mise run site-check --base https://waffuru.ai   # the same against production
 curl -s -X POST https://isitagentready.com/api/scan \
   -H 'Content-Type: application/json' -d '{"url":"https://waffuru.ai"}'
 ```

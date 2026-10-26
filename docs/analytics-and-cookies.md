@@ -46,13 +46,13 @@ How waffuru.ai decides what to load, and where each piece lives. There is one op
 
 ## Environment
 
-| Variable            | Used for                                                                                                                                                                                     |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_GA_ID` | The GA4 measurement id. Must match `/^G-[A-Z0-9]+$/`; a missing or malformed value (or `UA-…`) turns GA off completely. Inlined at build time, so it must be present when `pnpm build` runs. |
+| Variable            | Used for                                                                                                                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `NEXT_PUBLIC_GA_ID` | The GA4 measurement id. Must match `/^G-[A-Z0-9]+$/`; a missing or malformed value (or `UA-…`) turns GA off completely. Inlined at build time, so it must be present when `mise run build` runs. |
 
 - **Production:** set the repository variable `NEXT_PUBLIC_GA_ID` (Settings, Secrets and variables, Actions, Variables) and pass it to the build step as `env: NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}`.
 - **Locally:** put it in `.env.local` (git-ignored). `.env.example` lists it.
-- GA runs only when `process.env.NODE_ENV === 'production'` AND the id is valid AND analytics consent is granted. `pnpm dev` never loads GA, whatever the id.
+- GA runs only when `process.env.NODE_ENV === 'production'` AND the id is valid AND analytics consent is granted. `mise run dev` never loads GA, whatever the id.
 - Localhost is not blocked (we verify with a production build served locally). When `location.hostname` is `localhost` or `127.0.0.1`, `config` carries `debug_mode: true`, so test hits land in GA4 DebugView, not in the live reports.
 
 ## Content Security Policy
@@ -70,16 +70,16 @@ There is no inline script anywhere in this flow: `gtag`, `dataLayer` and the con
 ## Verify locally
 
 1. Put `NEXT_PUBLIC_GA_ID=G-CJS2GCF4EQ` in `.env.local`.
-2. Run `pnpm preview` (builds, assembles and runs the real Worker at http://127.0.0.1:8787; add `--port` if taken). `wrangler dev` answers `/api/geo` with where you really are (for example `{"country":"CA","region":"AB"}`), so you may land in a notice region: the banner then reads OK / Opt out and analytics is already on by notice (step 4 happens by itself). To force a tier, run this in the console, then reload: `localStorage.clear(); sessionStorage.setItem('waffuru:geo', JSON.stringify({ country: 'DE', region: null }))` for strict (Accept / Decline), or `country: 'US'` for notice.
+2. Run `mise run preview` (builds, assembles and runs the real Worker at http://127.0.0.1:8787; add `--port` if taken). `wrangler dev` answers `/api/geo` with where you really are (for example `{"country":"CA","region":"AB"}`), so you may land in a notice region: the banner then reads OK / Opt out and analytics is already on by notice (step 4 happens by itself). To force a tier, run this in the console, then reload: `localStorage.clear(); sessionStorage.setItem('waffuru:geo', JSON.stringify({ country: 'DE', region: null }))` for strict (Accept / Decline), or `country: 'US'` for notice.
 3. Open DevTools, Network tab. Before you answer the banner there must be **no** request to `googletagmanager.com` or `google-analytics.com`.
 4. Click **Accept** (or **OK** in a notice region). Move the pointer or scroll. You should see `gtag/js?id=G-CJS2GCF4EQ` from `www.googletagmanager.com`, then `/g/collect` requests (a `page_view`), and `_ga` / `_ga_CJS2GCF4EQ` cookies. Open GA4, Admin, DebugView: the hit shows up there (`debug_mode` is on at 127.0.0.1) with `page_path` and `page_language`. Navigate to another page for a second `page_view`.
 5. Open **Cookie settings** in the footer, turn Analytics off, Save (or use **Opt out** on the notice). No further `/g/collect` requests are sent and the `_ga*` cookies are gone.
 6. Reload with `localStorage['waffuru:consent']` cleared and click **Decline**: no requests at all.
 7. With Global Privacy Control on (Firefox: `privacy.globalprivacycontrol.enabled`, or DuckDuckGo/Brave), there is no banner and no requests.
-8. `pnpm dev` (any id, any consent): the banner works, but there is no `window.gtag` and no GA request, because `NODE_ENV` is not `production`.
+8. `mise run dev` (any id, any consent): the banner works, but there is no `window.gtag` and no GA request, because `NODE_ENV` is not `production`.
 9. Remove the id (or break it, for example `UA-1`): production build, nothing loads either.
 
-`pnpm test` covers the gating (no gtag.js without consent, nothing when `NODE_ENV` is not production or the id is missing or malformed, `debug_mode` on localhost, `page_view` paths).
+`mise run test` covers the gating (no gtag.js without consent, nothing when `NODE_ENV` is not production or the id is missing or malformed, `debug_mode` on localhost, `page_view` paths).
 
 ## Changing things
 

@@ -1,0 +1,5 @@
+# The mise config runs code on every machine that bootstraps this repo (its `bootstrap` task and
+# every `mise run`), so changes to it need the owner's review. ops planning/specs/02-mise-bootstrap.md S9.
+/mise*.toml @ekryski
+/mise.lock  @ekryski
+/mise-tasks/ @ekryski
