@@ -2,17 +2,21 @@ import { SpeculativeResearch } from '@/components/home/speculative-research';
 import { speculativeResearch } from '@/content/pages/speculative-research';
 import type { Metadata } from 'next';
 
+import { Aura } from '@/components/home/aura';
 import { FilmGrain } from '@/components/home/film-grain';
 import { Hero } from '@/components/home/hero';
 import { KernelCode } from '@/components/home/kernel-code';
 import { Models } from '@/components/home/models';
+import { QuantizedModels } from '@/components/home/quantized-models';
 import { Stack } from '@/components/home/stack';
 import { TeamTeaser } from '@/components/home/team-teaser';
 import { ToolResearch } from '@/components/home/tool-research';
 import { NewsletterSignup } from '@/components/newsletter/newsletter-signup';
 import { JsonLd } from '@/components/seo/json-ld';
 import { CtaCard } from '@/components/sections/cta-card';
+import { aura } from '@/content/pages/aura';
 import { home } from '@/content/pages/home';
+import { quantizedModels } from '@/content/pages/quantized-models';
 import { toolResearch } from '@/content/pages/tool-research';
 import { mailto, site } from '@/content/site';
 import { teamCopy } from '@/content/team';
@@ -45,7 +49,8 @@ export async function generateMetadata({
 
 /**
  * Home: the After Hours page, section by section. The stack comes right after
- * the hero (the product is the point); the measured research follows it.
+ * the hero (the product is the point); the measured research follows it:
+ * how fast (speculative), how much fits (AURA), how correct (tools).
  */
 export default async function HomePage({ params }: { params: LocaleParams }) {
   const locale = await resolveLocale(params);
@@ -69,6 +74,9 @@ export default async function HomePage({ params }: { params: LocaleParams }) {
       />
       <Stack content={content.stack} privateLabel={common.private} />
       <SpeculativeResearch content={localize(speculativeResearch, locale)} />
+      <Aura content={localize(aura, locale)} />
+      {/* TODO(founder): temporary placement; move this one line to its final home. */}
+      <QuantizedModels content={localize(quantizedModels, locale)} />
       <ToolResearch content={localize(toolResearch, locale)} locale={locale} />
       <Models content={content.models} />
       <KernelCode content={content.kernel} />

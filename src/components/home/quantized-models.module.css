@@ -1,0 +1,63 @@
+/*
+ * The precision strip: one row of transformer layers, left to right. The
+ * boundary layers (first and last `--boundary`, from the public Config I
+ * policy) are tall outlined blocks at full precision. Every middle layer is
+ * split into three bands by tensor role: attention (gold), FFN gate and up
+ * (lighter gold), FFN down (a native type, drawn in the foreground tone).
+ * Pure CSS, fixed height, no motion, so it cannot shift layout and has
+ * nothing to stop under prefers-reduced-motion.
+ */
+.strip {
+  display: flex;
+  align-items: stretch;
+  gap: 3px;
+  height: 64px;
+  min-width: 0;
+}
+
+.layer {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.boundary {
+  flex-grow: 1.6;
+  border: 1px solid color-mix(in oklab, var(--foreground) 55%, transparent);
+  background: color-mix(in oklab, var(--foreground) 9%, transparent);
+}
+
+.band {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.attention {
+  background: var(--brand);
+}
+
+.ffnRead {
+  background: color-mix(in oklab, var(--brand) 52%, transparent);
+}
+
+.ffnDown {
+  background: color-mix(in oklab, var(--foreground) 24%, transparent);
+}
+
+/* Legend swatches reuse the band colours so the key cannot drift. */
+.swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex: none;
+}
+
+.swatchBoundary {
+  border: 1px solid color-mix(in oklab, var(--foreground) 55%, transparent);
+  background: color-mix(in oklab, var(--foreground) 9%, transparent);
+}
