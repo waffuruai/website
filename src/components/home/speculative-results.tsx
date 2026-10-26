@@ -240,21 +240,22 @@ export function SpeculativeResults({
                 },
                 { label: content.after, value: result.after, candidate: true },
               ].map((row) => (
-                <div key={row.label}>
-                  <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-                    <dt className="text-sm text-muted-foreground">
-                      {row.label}
-                    </dt>
-                    <dd className="font-mono text-xl text-foreground tabular-nums">
-                      {row.value.toFixed(2)}{' '}
-                      <span className="text-xs text-muted-foreground">
-                        {content.unit}
-                      </span>
-                    </dd>
-                  </div>
-                  <div
+                // dt/dd must be direct children of the row div (axe
+                // `definition-list` / `dlitem`); the bar is a second dd.
+                <div
+                  key={row.label}
+                  className="flex flex-wrap items-baseline justify-between gap-x-2"
+                >
+                  <dt className="text-sm text-muted-foreground">{row.label}</dt>
+                  <dd className="font-mono text-xl text-foreground tabular-nums">
+                    {row.value.toFixed(2)}{' '}
+                    <span className="text-xs text-muted-foreground">
+                      {content.unit}
+                    </span>
+                  </dd>
+                  <dd
                     aria-hidden="true"
-                    className="h-2 overflow-hidden rounded-sm bg-foreground/6"
+                    className="mt-2 h-2 basis-full overflow-hidden rounded-sm bg-foreground/6"
                   >
                     <div
                       className={`${styles.bar} h-full origin-left ${row.candidate ? 'bg-brand' : 'bg-foreground/30'}`}
@@ -263,7 +264,7 @@ export function SpeculativeResults({
                         animationDelay: row.candidate ? '400ms' : '0ms',
                       }}
                     />
-                  </div>
+                  </dd>
                 </div>
               ))}
             </dl>
