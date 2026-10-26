@@ -134,7 +134,7 @@ export const toolResearch: Localized<ToolResearchCopy> = {
     },
     wrongTitle: 'What a wrong argument costs',
     wrongBody:
-      'A wrong value either fails the call, which costs another model turn plus a tool round trip, or executes with the wrong value, such as writing to or deleting the wrong path. Savings from avoided repairs are not measured yet; that is the next experiment.',
+      'A wrong value either fails the call, which costs another model turn plus a tool round trip, or executes with the wrong value, such as writing to or deleting the wrong path.',
     methodTitle: 'From evidence to an inference change',
     example: {
       label: 'Illustrative example from the type-mismatch failure family',
@@ -164,7 +164,7 @@ export const toolResearch: Localized<ToolResearchCopy> = {
     scopeTitle: 'Native API result · 26 October 2026',
     scope:
       'The breadth screen contains 72 prompts, each tested in buffered and streaming modes: 144 requests per arm. These are new values in known failure families, not 144 independent workflows. No external tools were executed.',
-    cost: 'The change adds 8,304 input and 536 generated tokens across the breadth screen, so total inference tokens rose from 50,382 to 59,222 while tokens per correct argument fell. Reduced total workflow tokens, latency and cost per completed task have not been demonstrated.',
+    cost: 'The change adds 8,304 input and 536 generated tokens across the breadth screen, so total inference tokens rose from 50,382 to 59,222 while tokens per correct argument fell.',
     limits:
       'The fix is going into Butter and is not in a release yet. Results apply to this limited screen; other models, APIs and completed workflows require separate qualification.',
   },

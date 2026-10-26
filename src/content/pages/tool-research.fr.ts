@@ -21,7 +21,7 @@ const copy: ToolResearchCopy = {
   },
   wrongTitle: 'Ce que coûte un argument faux',
   wrongBody:
-    'Une mauvaise valeur fait échouer l’appel, ce qui coûte un tour de modèle de plus et un aller-retour vers l’outil, ou s’exécute avec la mauvaise valeur, par exemple en écrivant ou en supprimant le mauvais chemin. Les économies liées aux réparations évitées ne sont pas encore mesurées ; c’est la prochaine expérience.',
+    'Une mauvaise valeur fait échouer l’appel, ce qui coûte un tour de modèle de plus et un aller-retour vers l’outil, ou s’exécute avec la mauvaise valeur, par exemple en écrivant ou en supprimant le mauvais chemin.',
   methodTitle: 'Des observations à un changement d’inférence',
   example: {
     label: 'Exemple illustratif de la famille d’échecs par mauvais type',
@@ -51,7 +51,7 @@ const copy: ToolResearchCopy = {
   scopeTitle: 'Résultat de l’API native · 26 octobre 2026',
   scope:
     'L’évaluation élargie comporte 72 prompts, chacun testé en modes buffered et streaming : 144 requêtes par variante. Ce sont de nouvelles valeurs dans des familles d’échecs connues, pas 144 tâches indépendantes. Aucun outil externe n’a été exécuté.',
-  cost: 'Le changement ajoute 8 304 tokens d’entrée et 536 tokens générés sur l’évaluation élargie : les tokens totaux d’inférence passent de 50 382 à 59 222 tandis que les tokens par argument correct baissent. Aucune réduction des tokens totaux du flux, de la latence ou du coût par tâche terminée n’est démontrée.',
+  cost: 'Le changement ajoute 8 304 tokens d’entrée et 536 tokens générés sur l’évaluation élargie : les tokens totaux d’inférence passent de 50 382 à 59 222 tandis que les tokens par argument correct baissent.',
   limits:
     'Le correctif est en cours d’intégration dans Butter et ne figure pas encore dans une version publiée. Ces résultats se limitent à cette évaluation ; autres modèles, API et tâches complètes exigent une validation distincte.',
 };

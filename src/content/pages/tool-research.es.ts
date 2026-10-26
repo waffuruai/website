@@ -21,7 +21,7 @@ const copy: ToolResearchCopy = {
   },
   wrongTitle: 'Lo que cuesta un argumento erróneo',
   wrongBody:
-    'Un valor erróneo hace fallar la llamada, lo que cuesta otro turno del modelo más un viaje de ida y vuelta a la herramienta, o se ejecuta con el valor equivocado, por ejemplo escribiendo o borrando la ruta incorrecta. El ahorro por reparaciones evitadas aún no está medido; es el siguiente experimento.',
+    'Un valor erróneo hace fallar la llamada, lo que cuesta otro turno del modelo más un viaje de ida y vuelta a la herramienta, o se ejecuta con el valor equivocado, por ejemplo escribiendo o borrando la ruta incorrecta.',
   methodTitle: 'De la evidencia a un cambio de inferencia',
   example: {
     label: 'Ejemplo ilustrativo de la familia de fallos por tipo incorrecto',
@@ -51,7 +51,7 @@ const copy: ToolResearchCopy = {
   scopeTitle: 'Resultado de la API nativa · 26 de octubre de 2026',
   scope:
     'La evaluación ampliada contiene 72 prompts, cada uno probado en modos buffered y streaming: 144 solicitudes por variante. Son valores nuevos en familias de fallos conocidas, no 144 flujos independientes. No se ejecutaron herramientas externas.',
-  cost: 'El cambio añade 8.304 tokens de entrada y 536 generados en la evaluación ampliada, así que los tokens totales de inferencia subieron de 50.382 a 59.222 mientras los tokens por argumento correcto bajaron. No se han demostrado reducciones de tokens totales del flujo, latencia ni coste por tarea completada.',
+  cost: 'El cambio añade 8.304 tokens de entrada y 536 generados en la evaluación ampliada, así que los tokens totales de inferencia subieron de 50.382 a 59.222 mientras los tokens por argumento correcto bajaron.',
   limits:
     'La corrección se está integrando en Butter y aún no está en una versión publicada. Los resultados se limitan a esta evaluación; otros modelos, APIs y flujos completos requieren validación independiente.',
 };

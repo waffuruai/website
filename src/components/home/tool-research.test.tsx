@@ -64,7 +64,6 @@ describe('ToolResearch', () => {
     ).toBeTruthy();
     expect(within(details).getByText(/not in a release yet/)).toBeTruthy();
     expect(within(details).queryByRole('link')).toBeNull();
-    expect(screen.getByText(/not measured yet/)).toBeTruthy();
   });
 
   it.each(locales)(
