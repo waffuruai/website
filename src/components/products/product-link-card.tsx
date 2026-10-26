@@ -17,11 +17,16 @@ export function ProductLinkCard({
 }) {
   return (
     <article className="group relative flex h-full flex-col gap-5 rounded-2xl border border-foreground/10 bg-card p-6 transition-colors hover:border-foreground/30 has-focus-visible:outline-2 has-focus-visible:outline-offset-4 has-focus-visible:outline-ring md:p-8">
-      <div className="flex items-start justify-between gap-4">
+      {/*
+       * Fixed-height header with the motif out of flow, so every card's name
+       * starts at the same height whatever its motif's size (the tallest,
+       * Syrup's drip, renders 90px at scale-75).
+       */}
+      <div className="relative h-24">
         <MonoLabel>
           {product.index} · {product.layer}
         </MonoLabel>
-        <div className="origin-top-right scale-75">
+        <div className="pointer-events-none absolute top-0 right-0 origin-top-right scale-75">
           <ProductMotif slug={product.slug} size="sm" />
         </div>
       </div>
