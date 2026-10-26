@@ -103,8 +103,8 @@ export type AuraCopy = {
   changed: {
     heading: string;
     items: string[];
-    /** The one plain sentence about the hybrid work in progress. No numbers. */
-    inProgress: string;
+    /** One sentence on the hybrid mode. No numbers. */
+    hybrid: string;
   };
   footnote: string;
 };
@@ -167,11 +167,11 @@ export const aura: Localized<AuraCopy> = {
         'Compression is scheduled around speculative decoding, so drafted tokens never overwrite accepted history.',
         'Long-context prefill is windowed and sink-aware, so the first tokens stay in reach as the context grows.',
       ],
-      inProgress:
-        'In progress: a hybrid mode that keeps recent history uncompressed while older context is compressed. We are qualifying it on Qwen3.8-27B before publishing numbers.',
+      hybrid:
+        'Hybrid mode: recent history stays at full precision while older context compresses, so long sessions keep their sharpest memory where it counts.',
     },
     footnote:
-      'Compression ratios, perplexity deltas and the 104B result come from our open TurboQuant+ research measured on llama-cpp-turboquant, not from Butter. AURA runs in Iron and Butter today; its own numbers on Qwen3.8-27B are being qualified and will be published with their test conditions.',
+      'Compression ratios, perplexity deltas and the 104B result come from our open TurboQuant+ research, measured on llama-cpp-turboquant. AURA takes that work further inside Iron and Butter.',
   },
   es,
   fr,

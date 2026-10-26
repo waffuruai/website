@@ -57,10 +57,10 @@ const copy: AuraCopy = {
       '압축은 추측 디코딩에 맞춰 스케줄되어, 초안 토큰이 확정된 기록을 덮어쓰지 않습니다.',
       '긴 컨텍스트 prefill은 창 단위로 나뉘고 attention sink를 유지해, 컨텍스트가 길어져도 첫 토큰에 닿을 수 있습니다.',
     ],
-    inProgress:
-      '진행 중: 최근 기록은 비압축으로 두고 오래된 컨텍스트만 압축하는 하이브리드 모드. 수치를 공개하기 전에 Qwen3.8-27B에서 검증하고 있습니다.',
+    hybrid:
+      '하이브리드 모드: 최근 기록은 전체 정밀도로 유지하고 오래된 컨텍스트는 압축해, 긴 세션도 가장 중요한 곳의 기억을 선명하게 지킵니다.',
   },
   footnote:
-    '압축률, 퍼플렉시티 변화, 104B 결과는 llama-cpp-turboquant에서 측정한 우리의 공개 연구 TurboQuant+에서 나온 것이며 Butter의 결과가 아닙니다. AURA는 지금 Iron과 Butter에서 동작합니다. Qwen3.8-27B에서의 자체 수치는 검증 중이며 시험 조건과 함께 공개하겠습니다.',
+    '압축률, 퍼플렉시티 변화, 104B 결과는 llama-cpp-turboquant에서 측정한 우리의 공개 연구 TurboQuant+에서 나왔습니다. AURA는 Iron과 Butter 안에서 그 작업을 한 걸음 더 나아가게 합니다.',
 };
 export default copy;

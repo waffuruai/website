@@ -57,10 +57,10 @@ const copy: AuraCopy = {
       '压缩围绕推测解码来调度，草稿 token 永远不会覆盖已接受的历史。',
       '长上下文 prefill 采用分窗并保留 attention sink，上下文增长时最初的 token 依然可达。',
     ],
-    inProgress:
-      '进行中：一种混合模式，最近的历史保持未压缩，较早的上下文则被压缩。我们正在 Qwen3.8-27B 上验证它，之后才会公布数字。',
+    hybrid:
+      '混合模式：最近的历史保持全精度，较早的上下文被压缩，让长会话在最关键的地方保留最清晰的记忆。',
   },
   footnote:
-    '压缩比、困惑度变化和 104B 结果来自我们的开放研究 TurboQuant+，在 llama-cpp-turboquant 上测得，而非来自 Butter。AURA 如今已运行在 Iron 和 Butter 中；它在 Qwen3.8-27B 上的数据正在验证，届时会连同测试条件一并公布。',
+    '压缩比、困惑度变化和 104B 结果来自我们的开放研究 TurboQuant+，在 llama-cpp-turboquant 上测得。AURA 在 Iron 和 Butter 中将这项工作推进得更远。',
 };
 export default copy;

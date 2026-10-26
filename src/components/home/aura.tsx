@@ -215,7 +215,7 @@ export function Aura({ content }: { content: AuraCopy }) {
             ))}
           </ul>
           <p className="mt-5 border-t border-foreground/12 pt-4 text-xs leading-relaxed text-muted-foreground">
-            {content.changed.inProgress}
+            {content.changed.hybrid}
           </p>
         </div>
       </div>

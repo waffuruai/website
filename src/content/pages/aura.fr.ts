@@ -57,10 +57,10 @@ const copy: AuraCopy = {
       'La compression est planifiée autour du décodage spéculatif, si bien que les tokens brouillons n’écrasent jamais l’historique accepté.',
       'Le prefill de long contexte est fenêtré et tient compte des attention sinks, pour que les premiers tokens restent accessibles quand le contexte grandit.',
     ],
-    inProgress:
-      'En cours : un mode hybride qui garde l’historique récent non compressé pendant que le contexte ancien est compressé. Nous le qualifions sur Qwen3.8-27B avant de publier des chiffres.',
+    hybrid:
+      'Mode hybride : l’historique récent reste en pleine précision pendant que le contexte ancien est compressé, pour que les longues sessions gardent leur mémoire la plus nette là où elle compte.',
   },
   footnote:
-    'Les ratios de compression, les écarts de perplexité et le résultat 104B proviennent de notre recherche ouverte TurboQuant+ mesurée sur llama-cpp-turboquant, pas de Butter. AURA tourne déjà dans Iron et Butter ; ses propres chiffres sur Qwen3.8-27B sont en cours de qualification et seront publiés avec leurs conditions de test.',
+    'Les ratios de compression, les écarts de perplexité et le résultat 104B proviennent de notre recherche ouverte TurboQuant+, mesurée sur llama-cpp-turboquant. AURA pousse ce travail plus loin dans Iron et Butter.',
 };
 export default copy;

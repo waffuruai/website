@@ -62,7 +62,6 @@ describe('aura copy', () => {
         'llama-cpp-turboquant',
         'Iron',
         'Butter',
-        'Qwen3.8-27B',
       ])
         expect(text).toContain(name);
       expect(numbers(copy)).toEqual(numbers(aura.en));

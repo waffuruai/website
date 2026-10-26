@@ -35,7 +35,7 @@ describe('Aura', () => {
       within(section).getByText(/These are not Butter numbers/),
     ).toBeTruthy();
     expect(within(section).getByText(/Schematic/)).toBeTruthy();
-    expect(within(section).getByText(/^In progress:/)).toBeTruthy();
+    expect(within(section).getByText(/^Hybrid mode:/)).toBeTruthy();
     expect(within(section).getAllByRole('listitem').length).toBeGreaterThan(6);
   });
 
@@ -85,7 +85,7 @@ describe('Aura', () => {
     expect(screen.getByText('3.8×')).toBeTruthy();
     expect(screen.getByText('104B')).toBeTruthy();
     expect(screen.getByText(copy.footnote)).toBeTruthy();
-    expect(screen.getByText(copy.changed.inProgress)).toBeTruthy();
+    expect(screen.getByText(copy.changed.hybrid)).toBeTruthy();
     expect(screen.getAllByRole('link')).toHaveLength(PUBLIC_LINKS.length);
   });
 });
