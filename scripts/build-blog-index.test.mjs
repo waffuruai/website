@@ -1,5 +1,14 @@
 // @vitest-environment node
-import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
+import {
+  copyFile,
+  mkdir,
+  mkdtemp,
+  readFile,
+  realpath,
+  rm,
+  writeFile,
+} from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -36,6 +45,19 @@ describe('blog index', () => {
       "    en: () => import('@/content/blog/post/page.mdx'),\n    es: () => import('@/content/blog/post/page.es.mdx'),\n    ko: () => import('@/content/blog/post/page.ko.mdx'),",
     );
     expect(text).not.toContain('${');
+  });
+
+  it('runs as a CLI from a checkout path containing spaces', async () => {
+    dir = await realpath(await mkdtemp(join(tmpdir(), 'website blog ')));
+    await mkdir(join(dir, 'scripts'));
+    await mkdir(join(dir, 'src/content/blog/example'), { recursive: true });
+    await writeFile(join(dir, 'src/content/blog/example/page.mdx'), '');
+    const script = join(dir, 'scripts/build-blog-index.mjs');
+    await copyFile(new URL('./build-blog-index.mjs', import.meta.url), script);
+    execFileSync(process.execPath, [script], { cwd: dir });
+    expect(
+      await readFile(join(dir, 'src/generated/blog-posts.ts'), 'utf8'),
+    ).toContain('@/content/blog/example/page.mdx');
   });
 
   it('handles a missing blog folder', async () => {

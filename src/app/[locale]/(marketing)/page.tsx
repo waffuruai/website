@@ -6,10 +6,12 @@ import { KernelCode } from '@/components/home/kernel-code';
 import { Models } from '@/components/home/models';
 import { Stack } from '@/components/home/stack';
 import { TeamTeaser } from '@/components/home/team-teaser';
+import { ToolResearch } from '@/components/home/tool-research';
 import { NewsletterSignup } from '@/components/newsletter/newsletter-signup';
 import { JsonLd } from '@/components/seo/json-ld';
 import { CtaCard } from '@/components/sections/cta-card';
 import { home } from '@/content/pages/home';
+import { toolResearch } from '@/content/pages/tool-research';
 import { mailto, site } from '@/content/site';
 import { teamCopy } from '@/content/team';
 import { localeInfo, localizePath } from '@/i18n/config';
@@ -61,6 +63,7 @@ export default async function HomePage({ params }: { params: LocaleParams }) {
         primary={{ label: common.requestAccess, href: site.urls.earlyAccess }}
       />
       <Stack content={content.stack} privateLabel={common.private} />
+      <ToolResearch content={localize(toolResearch, locale)} />
       <Models content={content.models} />
       <KernelCode content={content.kernel} />
       <TeamTeaser content={content.team} copy={localize(teamCopy, locale)} />

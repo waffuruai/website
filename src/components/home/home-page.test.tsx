@@ -31,6 +31,7 @@ describe('HomePage', () => {
     ).toEqual([
       'Raw math, pressed into silicon.',
       'The stack.',
+      'Better tool calls.Measured in Butter.',
       'Models on the menu.',
       'You write this.Iron writes the rest.',
       'Who’s in the kitchen.',
