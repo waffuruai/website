@@ -52,6 +52,14 @@ describe('Aura', () => {
     expect(document.body.innerHTML).not.toMatch(/ggml-org/);
   });
 
+  it('shows the GitHub star counts on the open research links', () => {
+    render(withDictionary(<Aura content={aura.en} />));
+    const tq = screen.getByRole('link', { name: /^TurboQuant\+/ });
+    expect(tq.textContent).toContain('7,000+');
+    const fork = screen.getByRole('link', { name: /^llama-cpp-turboquant/ });
+    expect(fork.textContent).toContain('2,400+');
+  });
+
   it('draws the ribbon from the public ratio, hidden from assistive tech', () => {
     const { container } = render(withDictionary(<Aura content={aura.en} />));
     const ribbon = container.querySelector('[style*="--ratio"]')!;

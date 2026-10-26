@@ -32,7 +32,6 @@ export const auraEvidence = {
   hardware: 'M5 Max · 128 GB · Metal',
   fork: 'llama-cpp-turboquant',
   /** GitHub star counts, rounded down, read on 26 October 2026. */
-  stars: { turboquantPlus: '7,000+', fork: '2,400+' },
   tiles: {
     turbo4: { compression: 3.8, ppl: 0.23, source: 'turbo4 · wikitext-2' },
     turbo3: { compression: 4.6, ppl: 1.06, source: 'turbo3 · wikitext-2' },
@@ -55,10 +54,12 @@ export const auraEvidence = {
       {
         label: 'TurboQuant+',
         href: 'https://github.com/TheTom/turboquant_plus',
+        stars: '7,000+',
       },
       {
         label: 'llama-cpp-turboquant',
         href: 'https://github.com/TheTom/llama-cpp-turboquant',
+        stars: '2,400+',
       },
     ],
     upstream: [

@@ -34,11 +34,11 @@ function tiles(copy: AuraCopy['tiles']) {
 }
 
 /** Public links for a lineage step: the research repos, then the upstream PRs. */
-const STEP_LINKS: readonly (readonly { label: string; href: string }[])[] = [
-  evidence.links.research,
-  evidence.links.upstream,
-  [],
-];
+const STEP_LINKS: readonly (readonly {
+  label: string;
+  href: string;
+  stars?: string;
+}[])[] = [evidence.links.research, evidence.links.upstream, []];
 
 /**
  * AURA, Waffuru's KV cache compression: where it comes from (our open
@@ -97,6 +97,13 @@ export function Aura({ content }: { content: AuraCopy }) {
                       className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-foreground/16 px-3.5 font-mono text-xs text-foreground transition-colors hover:border-foreground/40 hover:text-brand-ink"
                     >
                       {link.label}
+                      {link.stars && (
+                        <span className="text-brand-ink">
+                          <span aria-hidden>★ </span>
+                          {link.stars}
+                          <span className="sr-only"> GitHub stars</span>
+                        </span>
+                      )}
                       <span aria-hidden className="text-muted-foreground">
                         ↗
                       </span>
