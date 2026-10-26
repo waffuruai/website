@@ -27,18 +27,15 @@ new product launch or a claim of universal reliability.
 `src/content/pages/tool-research.ts` holds shared evidence facts and the pinned
 source URL; six translated copies preserve the claim and its limits. The
 homepage remains statically exported. A small bundled client component adds a
-replayable CSS bar animation and an accessible scenario slider, with no new
+replayable CSS bar animation and a measured accuracy/token comparison, with no new
 dependency. Reduced-motion preferences disable transitions and animation.
 
 The measured animation pairs 36/144 → 56/144 accuracy with 50,382 → 59,222
-total inference tokens (input plus generated). A separate, explicitly modeled
-net token budget (candidate inference tokens minus assumed avoided-repair
-savings) starts at zero avoided repairs. Its illustrative assumption is
-1,000 tokens saved per avoided repair across the entire batch, not per request.
-Eight assumed repairs leave 840 extra tokens; nine produce 160 fewer tokens
-than the baseline inference token budget. This net budget is an accounting
-offset, not a prediction of generated token totals. This arithmetic is not observed workflow savings, and the slider
-never changes accuracy or infers avoided repairs from the 20 corrected responses.
+total inference tokens (input plus generated). It states the tradeoff directly:
+20 additional exact responses and 8,840 additional inference tokens (+17.5%).
+Only the accuracy improvement uses the gold emphasis; the increased token work
+uses neutral styling. Workflow token savings and cost per completed task have
+not been demonstrated. The hypothetical savings calculator has been removed.
 
 ## Claim boundary
 

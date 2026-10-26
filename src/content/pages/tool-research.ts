@@ -35,13 +35,10 @@ export type ToolResearchCopy = {
     measured: string;
     accuracy: string;
     tokens: string;
-    scenario: string;
-    assumption: string;
-    repairs: string;
-    estimate: string;
-    difference: string;
     replay: string;
     boundary: string;
+    accuracyGain: string;
+    tokenOverhead: string;
   };
   eyebrow: string;
   title: string;
@@ -75,19 +72,15 @@ export const toolResearch: Localized<ToolResearchCopy> = {
       note: 'A visual metaphor for the research process, not a neuron activation capture. The measured results sit alongside it.',
     },
     animation: {
-      title: 'Accuracy up. Less wasted work?',
-      measured: 'Measured experiment',
+      title: 'Better arguments. Extra inference work.',
+      measured: 'Measured tradeoff · same 144-request screen',
       accuracy: 'Exact argument accuracy',
       tokens: 'Total inference tokens',
-      scenario: 'Explore potential workflow savings',
-      assumption:
-        'Illustrative assumption: each avoided repair turn saves 1,000 tokens across this 144-request batch. These savings were not measured.',
-      repairs: 'Avoided repair turns',
-      estimate: 'Net token budget · illustrative',
-      difference: 'Token difference vs. baseline',
       replay: 'Replay animation',
       boundary:
-        'This budget subtracts assumed repair savings; it is not a measured token total. Accuracy stays measured. Avoided repairs and completed tasks are not predicted.',
+        'The continuation improved exact arguments while adding inference work. Workflow token savings and cost per completed task have not been demonstrated.',
+      accuracyGain: 'additional exact responses',
+      tokenOverhead: 'additional inference tokens',
     },
     eyebrow: 'Juke → Butter · measured research',
     title: 'Better tool calls.\n*Measured in Butter.*',
