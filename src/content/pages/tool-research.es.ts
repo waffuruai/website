@@ -24,7 +24,7 @@ const copy: ToolResearchCopy = {
     'Un argumento incorrecto puede convertir una herramienta útil en una acción fallida. Usamos Juke para investigar la ejecución y el comportamiento, y después probar cambios específicos de inferencia. Un experimento nativo de Butter corrigió más argumentos sin reentrenar el modelo.',
   resultTitle: 'Respuestas con argumentos exactos',
   baseline: 'Antes',
-  candidate: 'Con continuación nativa',
+  candidate: 'Con cambios experimentales',
   denominator: 'correctas / solicitudes',
   gain: '20 respuestas correctas adicionales',
   retained: 'Aciertos de referencia conservados',
@@ -37,7 +37,7 @@ const copy: ToolResearchCopy = {
     },
     {
       title: 'Cambiar la ruta de inferencia',
-      body: 'Butter realiza una continuación acotada con la función elegida y el esquema recibido. Aporta estructura, nunca los valores esperados de los argumentos.',
+      body: 'Probamos una mejora específica de inferencia con la misma evaluación, sin reentrenar el modelo.',
     },
     {
       title: 'Verificar el resultado',
@@ -46,17 +46,12 @@ const copy: ToolResearchCopy = {
   ],
   implication:
     'El objetivo son acciones fiables con menos trabajo desperdiciado. Menos acciones accidentales, menos turnos de reparación y un menor coste total del flujo son los próximos resultados que debemos medir.',
-  details: 'Ver el método, el alcance y las limitaciones pendientes',
+  details: 'Ver condiciones y limitaciones',
   scopeTitle: 'Resultado experimental de la API nativa · 26 de octubre de 2026',
   scope:
     'La evaluación ampliada contiene 72 prompts, cada uno probado en modos buffered y streaming: 144 solicitudes por variante. Son valores nuevos en familias de fallos conocidas, no 144 flujos independientes. No se ejecutaron herramientas externas.',
-  method:
-    'La referencia y la candidata usan los mismos tokens iniciales, modelo y recursos de Iron, temperatura 0 y un presupuesto compartido de 512 tokens de generación. El oráculo comprueba valores y tipos JSON exactos. Se conservan los 36 aciertos previos; las 20 mejoras corresponden a diez prompts de uniones de tipos escalares en ambos modos.',
   cost: 'La continuación añade 8.304 tokens de entrada y 536 generados en la evaluación ampliada. La mejora de corrección exige trabajo adicional de inferencia. No se han demostrado reducciones de tokens totales, latencia ni coste por tarea completada.',
   limits:
-    'Es una implementación experimental de Swift Chat, no una capacidad publicada. Los arrays anidados y las cadenas literales siguen sin resolverse en esta evaluación. Otros modelos, APIs, flujos completos de varios turnos y menos llamadas innecesarias requieren validación independiente.',
-  source: 'Leer el paquete de investigación fijado',
-  sourceNote:
-    'PR de investigación de Butter #1508 · Puede requerir acceso a GitHub.',
+    'Es una capacidad experimental, no una función publicada. Los resultados se limitan a esta evaluación; otros modelos, APIs y flujos completos requieren validación independiente.',
 };
 export default copy;

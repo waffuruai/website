@@ -1,6 +1,5 @@
 import { ResearchSignal } from './research-signal';
 import { ToolCostAnimation } from './tool-cost-animation';
-import { LocalizedLink } from '@/components/localized-link';
 import { MonoLabel } from '@/components/sections/mono-label';
 import { SectionHeading } from '@/components/sections/section-heading';
 import {
@@ -134,18 +133,10 @@ export function ToolResearch({ content }: { content: ToolResearchCopy }) {
               {evidence.model} · {evidence.hardware} · {evidence.api}
             </p>
             <p>{content.scope}</p>
-            <p className="mt-4">{content.method}</p>
           </div>
           <div>
             <p>{content.cost}</p>
             <p className="mt-4">{content.limits}</p>
-            <LocalizedLink
-              href={evidence.sourceHref}
-              className="mt-5 inline-block min-h-11 content-center text-brand-ink underline"
-            >
-              {content.source}
-            </LocalizedLink>
-            <p className="mt-2 text-xs">{content.sourceNote}</p>
           </div>
         </div>
       </details>

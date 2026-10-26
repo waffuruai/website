@@ -31,23 +31,6 @@ export const speculativeEvidence = {
     after: 236.8,
     gain: 8.81,
   },
-  sources: [
-    {
-      label: 'Butter #1149',
-      href: 'https://github.com/waffuruai/butter/pull/1149',
-    },
-    {
-      label: 'Butter #1121',
-      href: 'https://github.com/waffuruai/butter/pull/1121',
-    },
-    {
-      label: 'Butter #1095',
-      href: 'https://github.com/waffuruai/butter/pull/1095',
-    },
-    { label: 'Iron #654', href: 'https://github.com/waffuruai/iron/pull/654' },
-    { label: 'Iron #663', href: 'https://github.com/waffuruai/iron/pull/663' },
-    { label: 'Bench #6', href: 'https://github.com/waffuruai/bench/pull/6' },
-  ],
 } as const;
 
 export type SpeculativeResearchCopy = {
@@ -86,8 +69,6 @@ export type SpeculativeResearchCopy = {
   method: string;
   cost: string;
   qualification: string;
-  sources: string;
-  steps: { title: string; body: string }[];
 };
 
 export const speculativeResearch: Localized<SpeculativeResearchCopy> = {
@@ -125,32 +106,13 @@ export const speculativeResearch: Localized<SpeculativeResearchCopy> = {
     sharedVerify: 'Shared target verification',
     committed: 'Verified tokens advance',
     diagramNote:
-      '16 active requests rotate through cohorts of up to 8 lanes. The target checks proposals; each request keeps its own cache, recurrent state and sampler. This animation illustrates the architecture, not timing or acceptance.',
-    details: 'Open the engineering, conditions and evidence',
+      '16 requests share one local inference system. This conceptual animation illustrates concurrent processing, not internal scheduling, timing or acceptance.',
+    details: 'See test conditions and limitations',
     method:
       'Qwen3.8-27B affine 4-bit/group64 + DFlash2, M5 Max 128 GiB, Metal, raw BF16 KV. Single-stream: three runs, 2,052 input tokens and a 128-token output cap. Whole-burst: three runs of 16 requests, roughly 937 input tokens per request and a 600-token output cap. Fresh servers with excluded warmups; no timed prefix-cache reuse. T0.7 uses top-p 0.95, top-k 20 and min-p 0.',
     cost: 'The paired optimization trials use 882–999 input tokens and a 600-token output cap: three greedy pairs and eight sampled pairs. Sampled p50 time to first token increased from 9.030 to 9.397 seconds. This is a throughput result, not a uniform latency improvement.',
     qualification:
       'Greedy paired trials retained all 48 candidate response texts and token counts. A separate agentic regression replay retained 111/111 responses and counts, but did not improve replay latency. These throughput workloads do not establish broad task quality, tool accuracy or lower token usage.',
-    sources: 'Source PRs and Reproduce with Butter',
-    steps: [
-      {
-        title: 'Native arithmetic, matched row by row',
-        body: 'Serial and batched verification use matched reduction orders. Tree attention and recurrent state follow each proposal’s ancestry; only the accepted path is committed.',
-      },
-      {
-        title: 'Target sampling stays in charge',
-        body: 'At T0 the target uses greedy verification. At T0.7 it draws from its own distribution and follows a proposed branch only when it matches the draw. Each request owns its randomness.',
-      },
-      {
-        title: 'Share work, keep state private',
-        body: 'Measured cost and observed acceptance allocate verification rows across requests. The cohort prepares, verifies and settles together while caches, histories and samplers remain request-local.',
-      },
-      {
-        title: 'Prepare the draft when it is needed',
-        body: 'A one-row lane still runs the target. Draft features stay in an existing bounded buffer until drafting resumes or it fills, removing repeated preparation without skipping verification.',
-      },
-    ],
   },
   es,
   fr,

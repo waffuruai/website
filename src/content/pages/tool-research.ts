@@ -23,9 +23,6 @@ export const toolResearchEvidence = {
   model: 'Qwen3.5-0.8B · Q4_K_M',
   hardware: 'M5 Max · Metal',
   api: 'Swift Chat API',
-  sourceHref:
-    'https://github.com/waffuruai/butter/blob/5156441ccbbff6e4948cc94852448b9a5baebefc/research/tool-json-continuation/README.md',
-  pullRequestHref: 'https://github.com/waffuruai/butter/pull/1508',
 } as const;
 
 export type ToolResearchCopy = {
@@ -56,11 +53,8 @@ export type ToolResearchCopy = {
   details: string;
   scopeTitle: string;
   scope: string;
-  method: string;
   cost: string;
   limits: string;
-  source: string;
-  sourceNote: string;
 };
 
 export const toolResearch: Localized<ToolResearchCopy> = {
@@ -88,7 +82,7 @@ export const toolResearch: Localized<ToolResearchCopy> = {
       'An incorrect argument can turn a useful tool into a failed action. We use Juke to investigate execution and behavior, then test targeted inference changes. One native Butter experiment corrected more tool arguments without retraining.',
     resultTitle: 'Exact tool-argument responses',
     baseline: 'Before',
-    candidate: 'With native continuation',
+    candidate: 'With experimental changes',
     denominator: 'correct / requests',
     gain: '20 additional correct responses',
     retained: 'Baseline successes retained',
@@ -101,7 +95,7 @@ export const toolResearch: Localized<ToolResearchCopy> = {
       },
       {
         title: 'Change the inference path',
-        body: 'Butter makes one bounded continuation using the selected function and supplied schema. It supplies structure, never expected argument values.',
+        body: 'Test a targeted inference improvement against the same evaluation, without retraining the model.',
       },
       {
         title: 'Verify the result',
@@ -110,17 +104,13 @@ export const toolResearch: Localized<ToolResearchCopy> = {
     ],
     implication:
       'The goal is dependable actions with less wasted work. Fewer accidental actions, fewer repair turns and lower total workflow cost are the next outcomes to measure.',
-    details: 'See the method, scope and remaining gaps',
+    details: 'See test conditions and limitations',
     scopeTitle: 'Experimental native API result · 26 October 2026',
     scope:
       'The breadth screen contains 72 prompts, each tested in buffered and streaming modes: 144 requests per arm. These are new values in known failure families, not 144 independent workflows. No external tools were executed.',
-    method:
-      'Baseline and candidate use identical initial prompt tokens, the same model and Iron resources, temperature 0 and a shared 512-token generation budget. The oracle checks exact JSON values and types. All 36 baseline successes remain correct; the 20 gains are ten scalar-union prompts in both modes.',
     cost: 'The continuation adds 8,304 input and 536 generated tokens across the breadth screen. This is a correctness improvement with additional inference work. Reduced total workflow tokens, latency and cost per completed task have not been demonstrated.',
     limits:
-      'This is an experimental Swift Chat implementation, not a released capability. Nested arrays and literal strings remain unresolved in this screen. Larger models, other APIs, completed multi-turn workflows and fewer unnecessary tool calls require separate qualification.',
-    source: 'Read the frozen research package',
-    sourceNote: 'Butter research PR #1508 · GitHub access may be required.',
+      'This is an experimental capability, not a released feature. Results apply to this limited screen; other models, APIs and completed workflows require separate qualification.',
   },
   es,
   fr,

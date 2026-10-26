@@ -3,10 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
 import { ToolResearch } from '@/components/home/tool-research';
-import {
-  toolResearch,
-  toolResearchEvidence,
-} from '@/content/pages/tool-research';
+import { toolResearch } from '@/content/pages/tool-research';
 import { locales } from '@/i18n/config';
 import { localize } from '@/lib/content';
 import { withDictionary } from '@/i18n/test-utils';
@@ -47,12 +44,8 @@ describe('ToolResearch', () => {
     expect(
       within(details).getByText(/8,304 input and 536 generated tokens/),
     ).toBeTruthy();
-    expect(within(details).getByText(/not a released capability/)).toBeTruthy();
-    expect(
-      within(details)
-        .getByRole('link', { name: toolResearch.en.source })
-        .getAttribute('href'),
-    ).toBe(toolResearchEvidence.sourceHref);
+    expect(within(details).getByText(/not a released feature/)).toBeTruthy();
+    expect(within(details).queryByRole('link')).toBeNull();
     expect(screen.getByText(/next outcomes to measure/)).toBeTruthy();
   });
 
@@ -68,9 +61,7 @@ describe('ToolResearch', () => {
           .getAllByRole('meter')
           .map((meter) => meter.getAttribute('aria-valuenow')),
       ).toEqual(['36', '56']);
-      expect(
-        screen.getByRole('link', { name: copy.source }).getAttribute('href'),
-      ).toBe(toolResearchEvidence.sourceHref);
+      expect(screen.queryByRole('link')).toBeNull();
     },
   );
 });

@@ -259,3 +259,7 @@ Frozen script hashes, fixture hashes and receipt notes:
   "notes": "Best-runs rerun of the Oct 18 reference config on the clean b34adcd7 binary (a0f00089). Correction of 111a1883-7304-5dd2-9462-20b14d911eb7: adds the server-timed cohort prefill_tps measured in the same 3 runs (first version recorded it as not measured); all other measurements unchanged. Cohort prefill per rep 894, 878, 886 tok/s. TTFT p90 15426 ms. Lane decode min/max 6.26/20.74. Per rep (burst tok/s, p50 s, p90 s): 144.4, 8.86, 15.39; 149.4, 9.04, 15.61; 154.5, 8.87, 15.43. All runs passed the harness memory guard (min free 56%, no swap rise) and the external-compiler overlap check; attempts that overlapped an external compiler were kept in juke-runs and excluded. Juke shim loaded with MTLPROF_TIMING=0 (no per-encoder timing), same as the Oct 18 receipts. b34adcd7 is not an ancestor of origin/dev or origin/main (its work landed via a different commit); the measured binary is the b34adcd7 build."
 }
 ```
+
+## Public disclosure boundary
+
+The marketing page retains measured results, workload definitions and limitations. Private PR links, detailed scheduling and verification mechanics, and reproduction recipes remain internal to this research record rather than shipped website content. The animation is a conceptual view of concurrent processing.

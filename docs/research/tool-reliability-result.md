@@ -101,3 +101,7 @@ announced on selection, and decorative SVG is hidden from assistive technology.
 Motion runs finitely on entry, selection or replay; no ongoing timer, WebGL
 context, network source, dependency or capture/replay workload is added.
 Reduced-motion preferences leave the full static weave readable.
+
+## Public disclosure boundary
+
+The marketing page publishes measured outcomes, test conditions, token overhead and limitations. It does not link to private research repositories or publish the continuation recipe, internal failure taxonomy, source revisions or reproduction commands. This document retains internal evidence for review; it is not website copy.

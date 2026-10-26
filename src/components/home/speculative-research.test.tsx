@@ -2,10 +2,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 import { SpeculativeResearch } from './speculative-research';
-import {
-  speculativeEvidence,
-  speculativeResearch,
-} from '@/content/pages/speculative-research';
+import { speculativeResearch } from '@/content/pages/speculative-research';
 import { locales } from '@/i18n/config';
 import { localize } from '@/lib/content';
 import { withDictionary } from '@/i18n/test-utils';
@@ -44,7 +41,7 @@ describe('native speculative results', () => {
     expect(screen.queryByText('236.80')).toBeNull();
   });
 
-  it('keeps the research scope, losing latency and implementation evidence inspectable', () => {
+  it('keeps the research scope, losing latency and public test conditions inspectable', () => {
     const { container } = render(
       withDictionary(<SpeculativeResearch content={speculativeResearch.en} />),
     );
@@ -53,13 +50,8 @@ describe('native speculative results', () => {
     expect(within(details).getByText(/9.030 to 9.397 seconds/)).toBeTruthy();
     expect(within(details).getByText(/111\/111/)).toBeTruthy();
     expect(within(details).getByRole('table')).toBeTruthy();
-    for (const source of speculativeEvidence.sources)
-      expect(
-        within(details)
-          .getByRole('link', { name: source.label })
-          .getAttribute('href'),
-      ).toBe(source.href);
-    expect(screen.getByText(/cohorts of up to 8 lanes/)).toBeTruthy();
+    expect(within(details).queryByRole('link')).toBeNull();
+    expect(screen.getByText(/not internal scheduling/)).toBeTruthy();
   });
 
   it.each(locales)(

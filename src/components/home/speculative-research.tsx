@@ -1,4 +1,3 @@
-import { LocalizedLink } from '@/components/localized-link';
 import { MonoLabel } from '@/components/sections/mono-label';
 import { SectionHeading } from '@/components/sections/section-heading';
 import {
@@ -65,19 +64,6 @@ export function SpeculativeResearch({
         <summary className="min-h-11 content-center text-sm text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">
           {content.details}
         </summary>
-        <ol className="mt-7 grid gap-x-10 md:grid-cols-2">
-          {content.steps.map((step, index) => (
-            <li key={step.title} className="border-t border-foreground/12 py-5">
-              <span className="label-mono text-brand-ink">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <h3 className="mt-2 text-xl text-foreground">{step.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {step.body}
-              </p>
-            </li>
-          ))}
-        </ol>
         <div className="mt-6 grid gap-8 lg:grid-cols-2">
           <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
             <p>{content.method}</p>
@@ -119,19 +105,6 @@ export function SpeculativeResearch({
                 ))}
               </tbody>
             </table>
-            <p className="mt-6 text-sm text-soft">{content.sources}</p>
-            <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1">
-              {evidence.sources.map((source) => (
-                <li key={source.href}>
-                  <LocalizedLink
-                    href={source.href}
-                    className="inline-block min-h-11 content-center text-sm text-brand-ink underline"
-                  >
-                    {source.label}
-                  </LocalizedLink>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </details>
