@@ -24,9 +24,10 @@ look: dark roast, Instrument Serif with a gold italic accent, CSS-only motifs.
 
 ## Development
 
-Node 24 and pnpm (see `.nvmrc` and `packageManager`).
+Node and pnpm are pinned in [`mise.toml`](mise.toml); `packageManager` in `package.json` mirrors the pnpm pin. Add `eval "$(mise activate zsh)"` to your shell profile once, then:
 
 ```bash
+mise install
 pnpm install
 pnpm dev          # http://localhost:3000, dev rewrites stand in for the Worker
 pnpm check        # typecheck (site + worker), lint, tests, format
