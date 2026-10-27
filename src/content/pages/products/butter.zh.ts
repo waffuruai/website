@@ -289,7 +289,7 @@ const butterZh: (typeof butter)['en'] = {
     {
       question: '它有多快？',
       answer:
-        '在一台 128 GB 的 M5 Max 上，Butter 以 4-bit 运行 Qwen3.8-27B，单个请求达到每秒 75.4 个 token（2,052 token 的提示词，贪心解码），16 个并发请求合计每秒 157.3 个 token，约合每个请求 12.9。结果取决于模型、提示词长度和硬件；首页列出了测试条件。',
+        '在一台 128 GB 的 M5 Max 上，Butter 以 4-bit 运行 Qwen3.8-27B，单个请求达到每秒 103 个 token（约 937 token 的提示词，贪心解码），8 个并发请求合计每秒 146 个 token，约合每个请求 26。结果取决于模型、提示词长度和硬件；首页列出了测试条件。',
     },
   ],
   cta: {

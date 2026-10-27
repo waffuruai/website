@@ -31,7 +31,7 @@ describe('HomePage', () => {
     ).toEqual([
       'Raw math, pressed into silicon.',
       'The stack.',
-      '27B.16 requests. One Mac.',
+      '27B.8 requests. One Mac.',
       'More context per gigabyte.',
       'Models quantized with care',
       'Fewer wrong arguments.Cheaper correct ones.',

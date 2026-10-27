@@ -10,10 +10,15 @@ import styles from './speculative-results.module.css';
 
 type Evidence = typeof speculativeEvidence;
 
+/** Full-width mark on the scaling strip; the highest level lands near it. */
+const STRIP_SCALE = 160;
+
 /**
- * The measured cards (absolute throughput, with the per-user experience on
- * the burst card), then the paired optimization gain under its own heading
- * so the two kinds of number never read as one.
+ * The measured cards (whole-burst throughput at one and at eight concurrent
+ * requests, with the per-user experience on the burst card), a scaling strip
+ * across every measured concurrency level, then the paired optimization gain
+ * under its own heading so the two kinds of number never read as one. The
+ * sampling toggle drives the cards, the strip and the gain panel together.
  */
 export function SpeculativeResults({
   content,
@@ -41,38 +46,41 @@ export function SpeculativeResults({
     return () => observer.disconnect();
   }, []);
   const result = evidence[mode];
+  const { levels } = result;
+  const single = levels[0];
+  const burst = levels[levels.length - 1];
   const cards = [
     {
       label: content.singleTitle,
-      value: result.single.toFixed(1),
+      value: single.burst.toFixed(1),
       unit: content.unit,
       scope: content.singleScope,
       highlight: false,
       rows: [
         {
           label: content.metrics.prefill,
-          value: `${result.prefill} ${content.unit}`,
+          value: `${single.prefill.toLocaleString('en-US')} ${content.unit}`,
         },
         {
           label: content.ttft,
-          value: `${result.ttft.toFixed(2)} s`,
+          value: `${single.ttft.toFixed(2)} s`,
         },
       ],
     },
     {
       label: content.burstTitle,
-      value: result.burst.toFixed(1),
+      value: burst.burst.toFixed(1),
       unit: content.unit,
       scope: content.burstScope,
       highlight: true,
       rows: [
         {
           label: content.perRequest,
-          value: `${result.lane.toFixed(1)} ${content.unit}`,
+          value: `${burst.lane.toFixed(1)} ${content.unit}`,
         },
         {
           label: `${content.ttft} ${content.p50} / ${content.p90}`,
-          value: `${result.concurrentTtft.toFixed(1)} s / ${result.concurrentTtftP90.toFixed(1)} s`,
+          value: `${burst.ttft.toFixed(1)} s / ${burst.ttftP90.toFixed(1)} s`,
         },
       ],
     },
@@ -138,6 +146,59 @@ export function SpeculativeResults({
             </dl>
           </div>
         ))}
+        <div
+          className={`${visible ? styles.ready : ''} rounded-2xl border border-foreground/12 bg-card p-6 sm:p-7 md:col-span-2`}
+        >
+          <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+            <h3 className="label-mono text-brand-ink">
+              {content.scalingTitle}
+            </h3>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              {content.scalingScope}
+            </p>
+          </div>
+          <div className="mt-5 flex justify-between gap-4 text-xs text-muted-foreground">
+            <span>{content.metrics.requests}</span>
+            <span>{content.metrics.burst}</span>
+          </div>
+          <dl className="mt-2 grid gap-3">
+            {levels.map((level, index) => {
+              const highlight = index === levels.length - 1;
+              return (
+                // dt/dd must be direct children of the row div (axe
+                // `definition-list` / `dlitem`); the bar is a second dd.
+                <div
+                  key={level.requests}
+                  className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-4 text-sm"
+                >
+                  <dt className="w-10 font-mono text-foreground tabular-nums">
+                    {level.requests}
+                  </dt>
+                  <dd
+                    aria-hidden="true"
+                    className="h-2.5 overflow-hidden rounded-sm bg-foreground/6"
+                  >
+                    <div
+                      className={`${styles.bar} h-full origin-left ${highlight ? 'bg-brand' : 'bg-foreground/30'}`}
+                      style={{
+                        width: `${(level.burst / STRIP_SCALE) * 100}%`,
+                        animationDelay: `${index * 120}ms`,
+                      }}
+                    />
+                  </dd>
+                  <dd
+                    className={`w-24 text-right font-mono tabular-nums sm:w-28 ${highlight ? 'text-foreground' : 'text-soft'}`}
+                  >
+                    {level.burst.toFixed(1)}{' '}
+                    <span className="text-xs text-muted-foreground">
+                      {content.unit}
+                    </span>
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
+        </div>
       </div>
 
       <h3 className="mt-12 mb-4 label-mono text-muted-foreground">
@@ -172,7 +233,7 @@ export function SpeculativeResults({
                     <span
                       key={i}
                       className={`${styles.lane} flex aspect-square items-center justify-center rounded border border-brand/25 bg-brand/10 font-mono text-xs text-brand-ink`}
-                      style={{ animationDelay: `${i < 8 ? 0 : 1.3}s` }}
+                      style={{ animationDelay: `${i < 4 ? 0 : 1.3}s` }}
                     >
                       {String(i + 1).padStart(2, '0')}
                     </span>

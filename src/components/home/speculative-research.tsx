@@ -13,51 +13,47 @@ export function SpeculativeResearch({
   content: SpeculativeResearchCopy;
 }) {
   const { greedy, sampled } = evidence;
-  // Each row says how it was aggregated: the single-stream rows are medians
-  // of three runs, the burst row pools three runs, the per-request rows are
-  // per-request statistics across those runs (see `speculativeEvidence`).
-  const rows: [string, string, string, string][] = [
+  const levels = greedy.levels;
+  // One column per measured concurrency level, each cell T0 over T0.7; each
+  // row says how it was aggregated (see `speculativeEvidence`). The paired
+  // optimization gain is a separate trial and stays in the gain panel.
+  const pair = (
+    format: (level: (typeof levels)[number]) => string,
+  ): [string, string][] =>
+    levels.map((level, index) => [
+      format(level),
+      format(sampled.levels[index]),
+    ]);
+  const rows: [string, [string, string][], string, string][] = [
     [
-      content.singleTitle,
-      `${greedy.single} / ${sampled.single}`,
-      content.unit,
-      content.aggregation.single,
-    ],
-    [
-      content.metrics.prefill,
-      `${greedy.prefill} / ${sampled.prefill}`,
-      content.unit,
-      content.aggregation.single,
-    ],
-    [
-      content.metrics.singleTtft,
-      `${greedy.ttft.toFixed(2)} / ${sampled.ttft.toFixed(2)}`,
-      's',
-      content.aggregation.single,
-    ],
-    [
-      content.burstTitle,
-      `${greedy.burst} / ${sampled.burst}`,
+      content.metrics.burst,
+      pair((level) => level.burst.toFixed(1)),
       content.unit,
       content.aggregation.burst,
     ],
     [
       content.metrics.lane,
-      `${greedy.lane} / ${sampled.lane}`,
+      pair((level) => level.lane.toFixed(1)),
       content.unit,
       content.aggregation.perRequest,
     ],
     [
       content.metrics.concurrentTtft,
-      `${greedy.concurrentTtft.toFixed(2)} / ${sampled.concurrentTtft.toFixed(2)}`,
+      pair((level) => level.ttft.toFixed(2)),
       's',
-      content.aggregation.perRequest,
+      content.aggregation.ttft,
     ],
     [
       content.metrics.concurrentTtftP90,
-      `${greedy.concurrentTtftP90.toFixed(1)} / ${sampled.concurrentTtftP90.toFixed(1)}`,
+      pair((level) => level.ttftP90.toFixed(2)),
       's',
-      content.aggregation.perRequest,
+      content.aggregation.ttft,
+    ],
+    [
+      content.metrics.prefill,
+      pair((level) => level.prefill.toLocaleString('en-US')),
+      content.unit,
+      content.aggregation.prefill,
     ],
   ];
   return (
@@ -98,17 +94,23 @@ export function SpeculativeResearch({
                     className="pb-3 font-normal text-muted-foreground"
                   >
                     {content.metrics.metric}
+                    <span className="mt-0.5 block text-xs">
+                      {content.metrics.requests} →
+                    </span>
                   </th>
-                  <th
-                    scope="col"
-                    className="pb-3 text-right font-normal text-muted-foreground"
-                  >
-                    T0 / T0.7
-                  </th>
+                  {levels.map((level) => (
+                    <th
+                      key={level.requests}
+                      scope="col"
+                      className="pb-3 pl-2 text-right align-bottom font-mono text-xs font-normal text-muted-foreground tabular-nums"
+                    >
+                      {level.requests}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                {rows.map(([label, value, unit, aggregation]) => (
+                {rows.map(([label, values, unit, aggregation]) => (
                   <tr key={label} className="border-b border-foreground/8">
                     <th
                       scope="row"
@@ -119,10 +121,30 @@ export function SpeculativeResearch({
                         {content.metrics.aggregation}: {aggregation}
                       </span>
                     </th>
-                    <td className="py-3 text-right align-top font-mono text-xs whitespace-nowrap text-foreground tabular-nums">
-                      {value}
-                      <span className="ml-1 text-muted-foreground">{unit}</span>
-                    </td>
+                    {values.map(([greedyValue, sampledValue], index) => (
+                      <td
+                        key={levels[index].requests}
+                        className="py-3 pl-2 text-right align-top font-mono text-xs whitespace-nowrap text-foreground tabular-nums"
+                      >
+                        {[greedyValue, sampledValue].map((value, line) => (
+                          <span
+                            key={line}
+                            className={
+                              line === 0
+                                ? 'block'
+                                : 'mt-0.5 block text-muted-foreground'
+                            }
+                          >
+                            {value}
+                            {index === values.length - 1 ? (
+                              <span className="ml-1 text-muted-foreground">
+                                {unit}
+                              </span>
+                            ) : null}
+                          </span>
+                        ))}
+                      </td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
