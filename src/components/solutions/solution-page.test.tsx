@@ -2,7 +2,11 @@ import { render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { SolutionPage } from '@/components/solutions/solution-page';
-import { solutionSlugs, solutions } from '@/content/pages/solutions/registry';
+import {
+  solutionPath,
+  solutionSlugs,
+  solutions,
+} from '@/content/pages/solutions/registry';
 import { solutionsShared } from '@/content/pages/solutions/shared';
 import { mailto, site } from '@/content/site';
 import type { Locale } from '@/i18n/config';
@@ -18,7 +22,8 @@ function renderPage(
   return render(
     withDictionary(
       <SolutionPage
-        slug={slug}
+        path={solutionPath(slug)}
+        parent={{ label: shared.breadcrumb.solutions, href: '/solutions' }}
         page={solutions[slug].en}
         shared={shared}
         locale={locale}
