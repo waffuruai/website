@@ -10,6 +10,7 @@ import {
   installerLines,
   orderPages,
   sectionOf,
+  summary,
   writeLlmsTxt,
 } from './llms-txt.mjs';
 import { writeMarkdownMirrors } from './markdown-mirrors.mjs';
@@ -34,6 +35,8 @@ describe('sectionOf', () => {
   it('groups routes by their first segment', () => {
     expect(sectionOf('/products/iron')).toBe('Products');
     expect(sectionOf('/solutions')).toBe('Solutions');
+    expect(sectionOf('/industries/government')).toBe('Industries');
+    expect(sectionOf('/products/pantry')).toBe('Products');
     expect(sectionOf('/about/team')).toBe('Company');
     expect(sectionOf('/brand')).toBe('Company');
     expect(sectionOf('/blog/hello')).toBe('Blog');
@@ -41,6 +44,30 @@ describe('sectionOf', () => {
     expect(sectionOf('/support')).toBe('Help');
     expect(sectionOf('/legal/terms')).toBe('Legal');
     expect(sectionOf('/pricing')).toBe('Other');
+  });
+});
+
+describe('summary', () => {
+  const none = {
+    pantry: false,
+    stack: false,
+    solutions: false,
+    industries: false,
+  };
+
+  it('names the stack and Pantry only once they launch', () => {
+    const unlaunched = summary({ launched: none, unreleased: false });
+    expect(unlaunched).toMatch(/^> Waffuru is on a mission/);
+    expect(unlaunched).not.toMatch(/Iron|Pantry/);
+    expect(unlaunched).toContain('kernels, an inference engine');
+
+    const launched = summary({
+      launched: { ...none, stack: true, pantry: true },
+      unreleased: false,
+    });
+    expect(launched).toContain('Iron compiles the kernels');
+    expect(launched).toContain('Pantry (the `wscanner` command)');
+    expect(summary({ launched: none, unreleased: true })).toContain('Pantry');
   });
 });
 

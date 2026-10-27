@@ -16,6 +16,61 @@ export const SITE = {
   email: 'hello@waffuru.ai',
 };
 
+/**
+ * Launch sections: `LAUNCHED` mirrors `site.launched`, `SECTION_ROUTES` and
+ * `showUnreleased` mirror `src/lib/launch.ts`.
+ */
+export const LAUNCHED = {
+  pantry: false,
+  stack: true,
+  solutions: true,
+  industries: false,
+};
+
+export const SECTION_ROUTES = {
+  pantry: ['/products/pantry'],
+  stack: [
+    '/products',
+    '/products/iron',
+    '/products/butter',
+    '/products/waffle',
+    '/products/syrup',
+  ],
+  solutions: [
+    '/solutions',
+    '/solutions/small-business',
+    '/solutions/enterprise',
+    '/solutions/neoclouds',
+    '/solutions/ai-companies',
+  ],
+  industries: [
+    '/industries',
+    '/industries/cloud-infrastructure',
+    '/industries/financial-services',
+    '/industries/life-sciences',
+    '/industries/government',
+    '/industries/military',
+  ],
+};
+
+/**
+ * Whether this build shows unlaunched sections. Postbuild only ever follows
+ * a production build, so it is `NEXT_PUBLIC_SHOW_UNRELEASED=1` or nothing.
+ */
+export const showUnreleased = (env = process.env) =>
+  env.NEXT_PUBLIC_SHOW_UNRELEASED === '1';
+
+/** Whether `section` is visible in this build. */
+export const isPublished = (section, { launched, unreleased } = {}) =>
+  (unreleased ?? showUnreleased()) || (launched ?? LAUNCHED)[section];
+
+/** Routes this build must not ship (unprefixed), deepest first. */
+export const unreleasedRoutes = (options) =>
+  Object.keys(SECTION_ROUTES)
+    .filter((section) => !isPublished(section, options))
+    .flatMap((section) => SECTION_ROUTES[section])
+    .sort((a, z) => z.split('/').length - a.split('/').length);
+
 export const DEFAULT_LOCALE = 'en';
 export const LOCALES = ['en', 'es', 'fr', 'zh', 'ja', 'ko'];
 

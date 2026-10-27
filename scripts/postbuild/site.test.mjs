@@ -8,11 +8,14 @@ import {
   localizePath,
   locales,
 } from '../../src/i18n/config';
+import { sectionRoutes } from '../../src/lib/launch';
 import { ogImagePath } from '../../src/lib/seo';
 import {
   DEFAULT_LOCALE,
+  LAUNCHED,
   LOCALES,
   LOCALE_LANG,
+  SECTION_ROUTES,
   OG_LOCALES,
   SITE,
   SITE_URL,
@@ -31,6 +34,11 @@ describe('site facts', () => {
       earlyAccessUrl: site.urls.earlyAccess,
       email: site.emails.hello,
     });
+  });
+
+  it('match the launch sections in site.ts and launch.ts', () => {
+    expect(LAUNCHED).toEqual(site.launched);
+    expect(SECTION_ROUTES).toEqual(sectionRoutes);
   });
 
   it('match src/i18n/config.ts', () => {

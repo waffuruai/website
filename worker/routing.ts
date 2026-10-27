@@ -13,6 +13,7 @@ import {
   readCookie,
   type Locale,
 } from '../src/i18n/config';
+import { site } from '../src/content/site';
 import { prefersMarkdown } from './accept';
 import products from '../releases/products.json';
 
@@ -21,16 +22,41 @@ export const INSTALLER_PRODUCTS: readonly string[] = products.map(
   (entry) => entry.product,
 );
 
+type Section = keyof typeof site.launched;
+
 /**
- * Old or typed-from-memory URLs and where they live now. Bare product names
- * point at their product pages; `/iron/…` and `/butter/…` stay installers.
+ * Shortcuts into launch sections, live only once their section launches.
+ * Bare product names point at their product pages; `/iron/…`, `/butter/…`
+ * and `/wscanner/…` stay installers.
  */
+const SECTION_REDIRECTS: Record<Section, Record<string, string>> = {
+  pantry: { '/pantry': '/products/pantry', '/wscanner': '/products/pantry' },
+  stack: {
+    '/iron': '/products/iron',
+    '/butter': '/products/butter',
+    '/waffle': '/products/waffle',
+    '/syrup': '/products/syrup',
+    '/stack': '/products',
+  },
+  solutions: {},
+  industries: {},
+};
+
+/** The redirects to pages in sections `launched` says are live. */
+export function sectionRedirects(
+  launched: Record<Section, boolean>,
+): Record<string, string> {
+  return Object.assign(
+    {},
+    ...(Object.keys(SECTION_REDIRECTS) as Section[])
+      .filter((section) => launched[section])
+      .map((section) => SECTION_REDIRECTS[section]),
+  );
+}
+
+/** Old or typed-from-memory URLs and where they live now. */
 export const REDIRECTS: Record<string, string> = {
-  '/iron': '/products/iron',
-  '/butter': '/products/butter',
-  '/waffle': '/products/waffle',
-  '/syrup': '/products/syrup',
-  '/stack': '/products',
+  ...sectionRedirects(site.launched),
   '/team': '/about/team',
   '/careers': '/about#hiring',
   '/branding': '/brand',

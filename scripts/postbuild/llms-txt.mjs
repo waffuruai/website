@@ -2,7 +2,7 @@ import { readFile, stat, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 import { builtPages } from './pages.mjs';
-import { SITE, SITE_URL, markdownPath } from './site.mjs';
+import { SITE, SITE_URL, isPublished, markdownPath } from './site.mjs';
 
 /**
  * llms.txt (https://llmstxt.org) and llms-full.txt, both written to `out/`.
@@ -16,6 +16,7 @@ import { SITE, SITE_URL, markdownPath } from './site.mjs';
 const SECTIONS = [
   'Products',
   'Solutions',
+  'Industries',
   'Company',
   'Blog',
   'Help',
@@ -32,6 +33,8 @@ export function sectionOf(path) {
       return 'Products';
     case 'solutions':
       return 'Solutions';
+    case 'industries':
+      return 'Industries';
     case 'about':
     case 'brand':
       return 'Company';
@@ -50,6 +53,7 @@ export function sectionOf(path) {
 /** Reading order inside sections; unlisted pages follow, alphabetically. */
 const PATH_ORDER = [
   '/products',
+  '/products/pantry',
   '/products/iron',
   '/products/butter',
   '/products/waffle',
@@ -59,6 +63,12 @@ const PATH_ORDER = [
   '/solutions/enterprise',
   '/solutions/neoclouds',
   '/solutions/ai-companies',
+  '/industries',
+  '/industries/cloud-infrastructure',
+  '/industries/financial-services',
+  '/industries/life-sciences',
+  '/industries/government',
+  '/industries/military',
   '/about',
   '/about/team',
   '/brand',
@@ -121,8 +131,25 @@ export function installerLines(products) {
 
 const INTRO = `Every page has a markdown twin: send \`Accept: text/markdown\` or append \`.md\` to its URL (\`/index.md\` for the home page). The pages are also written in Spanish, French, Chinese, Japanese and Korean under /es, /fr, /zh, /ja and /ko (for example ${SITE_URL}/es/about.md). The links below are the English pages.`;
 
-/** The summary blockquote shared by llms.txt and llms-full.txt. */
-const SUMMARY = `> ${SITE.name} is on a mission to ${SITE.mission.replace(/^D/, 'd').replace(/\.$/, '')}. Iron compiles the kernels, Butter runs models on them, Waffle watches the GPUs and Syrup remembers what you were working on, all on the hardware you already own. The products are closed source and in early access.`;
+const MISSION = `${SITE.name} is on a mission to ${SITE.mission.replace(/^D/, 'd').replace(/\.$/, '')}.`;
+const STACK =
+  'Iron compiles the kernels, Butter runs models on them, Waffle watches the GPUs and Syrup remembers what you were working on, all on the hardware you already own. The stack is closed source and in early access.';
+const STACK_UNNAMED =
+  'It builds the stack that runs AI on the hardware you already own: kernels, an inference engine, a GPU control plane and memory, all closed source and in early access.';
+const PANTRY =
+  'Pantry (the `wscanner` command) is its free, open-source vulnerability scanner for macOS and Linux.';
+
+/**
+ * The summary blockquote shared by llms.txt and llms-full.txt. It names only
+ * what this build publishes (`site.launched`).
+ */
+export function summary(options) {
+  return `> ${[
+    MISSION,
+    isPublished('stack', options) ? STACK : STACK_UNNAMED,
+    ...(isPublished('pantry', options) ? [PANTRY] : []),
+  ].join(' ')}`;
+}
 
 /**
  * llms.txt as text. `pages` are the English pages (`path`, `title`,
@@ -173,7 +200,7 @@ export function buildLlmsTxt({ pages, products, feed = false }) {
 
   return `${[
     `# ${SITE.name}`,
-    SUMMARY,
+    summary(),
     `Home page: ${SITE_URL} (markdown: ${SITE_URL}/index.md). Contact: ${SITE.email}. Made in North America.`,
     INTRO,
     ...sections,
@@ -191,7 +218,7 @@ export function buildLlmsFull(mirrors) {
   );
   return `${[
     `# ${SITE.name}: full text`,
-    SUMMARY,
+    summary(),
     `Every English page of ${SITE_URL}, as markdown, in the order of ${SITE_URL}/llms.txt.`,
   ].join('\n\n')}\n\n${documents.join('\n')}`;
 }
