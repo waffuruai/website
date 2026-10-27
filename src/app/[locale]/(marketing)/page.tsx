@@ -1,25 +1,13 @@
-import { SpeculativeResearch } from '@/components/research/speculative-research';
-import { speculativeResearch } from '@/content/pages/speculative-research';
 import type { Metadata } from 'next';
 
-import { Aura } from '@/components/research/aura';
 import { FilmGrain } from '@/components/home/film-grain';
 import { Hero } from '@/components/home/hero';
-import { KernelCode } from '@/components/research/kernel-code';
-import { Models } from '@/components/research/models';
-import { QuantizedModels } from '@/components/research/quantized-models';
 import { Stack } from '@/components/home/stack';
 import { TeamTeaser } from '@/components/home/team-teaser';
-import { ToolResearch } from '@/components/research/tool-research';
 import { NewsletterSignup } from '@/components/newsletter/newsletter-signup';
 import { JsonLd } from '@/components/seo/json-ld';
 import { CtaCard } from '@/components/sections/cta-card';
-import { aura } from '@/content/pages/aura';
 import { home } from '@/content/pages/home';
-import { kernelCode } from '@/content/pages/kernel-code';
-import { models } from '@/content/pages/models';
-import { quantizedModels } from '@/content/pages/quantized-models';
-import { toolResearch } from '@/content/pages/tool-research';
 import { mailto, site } from '@/content/site';
 import { teamCopy } from '@/content/team';
 import { localeInfo, localizePath } from '@/i18n/config';
@@ -50,9 +38,10 @@ export async function generateMetadata({
 }
 
 /**
- * Home: the After Hours page, section by section. The stack comes right after
- * the hero (the product is the point); the measured research follows it:
- * how fast (speculative), how much fits (AURA), how correct (tools).
+ * Home: the After Hours page, kept short. The stack comes right after the
+ * hero (the product is the point), then the team and the closing card. The
+ * measured research lives on the product pages it is about: Butter (speed,
+ * AURA, quantized models, tool calls, the model menu) and Iron (the kernel).
  */
 export default async function HomePage({ params }: { params: LocaleParams }) {
   const locale = await resolveLocale(params);
@@ -75,13 +64,6 @@ export default async function HomePage({ params }: { params: LocaleParams }) {
         primary={{ label: common.requestAccess, href: site.urls.earlyAccess }}
       />
       <Stack content={content.stack} privateLabel={common.private} />
-      <SpeculativeResearch content={localize(speculativeResearch, locale)} />
-      <Aura content={localize(aura, locale)} />
-      {/* TODO(founder): temporary placement; move this one line to its final home. */}
-      <QuantizedModels content={localize(quantizedModels, locale)} />
-      <ToolResearch content={localize(toolResearch, locale)} locale={locale} />
-      <Models content={localize(models, locale)} />
-      <KernelCode content={localize(kernelCode, locale)} />
       <TeamTeaser content={content.team} copy={localize(teamCopy, locale)} />
       <CtaCard
         title={content.cta.title}
