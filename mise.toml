@@ -1,0 +1,114 @@
+# Toolchain and tasks, pinned. `mise bootstrap` installs [tools] (checksummed through mise's
+# registries) and runs the `bootstrap` task; `mise run <task>` does the rest (`mise tasks ls`).
+# CI installs the same file with jdx/mise-action and calls the same tasks. Keep `packageManager`
+# in package.json equal to the pnpm pin: pnpm and the Cloudflare build read it there. Tasks use
+# only what [tools] puts on PATH; nothing installs a tool inside a task. See ops
+# planning/specs/02-mise-bootstrap.md (F8, F10, S10).
+[tools]
+node = "26.12.1"
+pnpm = "12.15.0"
+shellcheck = "0.11.0"
+# scripts/fetch-releases.sh and the manifest check; same pins as ops.
+jq = "1.8.2"
+gh = "2.103.2"
+
+[tasks.bootstrap]
+description = "Install the locked dependencies (what `mise bootstrap` runs after [tools]); safe to repeat"
+run = "pnpm install --frozen-lockfile"
+
+[tasks.generate]
+description = "Build the images and the blog index (src/generated, public/img)"
+run = "pnpm run generate"
+
+[tasks.dev]
+description = "Serve http://localhost:PORT with dev rewrites standing in for the Worker"
+usage = 'flag "--port <port>" default="3000" help="Port for next dev"'
+run = "pnpm run dev --port ${usage_port}"
+
+[tasks.lint]
+description = "Lint: all = eslint, shellcheck on scripts/*.sh and typecheck (site + Worker); or one of them"
+depends = ["generate"]
+usage = '''
+arg "[target]" default="all" help="What to lint" {
+  choices "all" "eslint" "shellcheck" "typecheck"
+}
+'''
+run = '''
+set -e
+case "$usage_target" in all|eslint) pnpm run lint ;; esac
+case "$usage_target" in all|shellcheck) shellcheck scripts/*.sh ;; esac
+case "$usage_target" in all|typecheck) pnpm run typecheck ;; esac
+'''
+
+[tasks.format]
+description = "Format every source file with prettier"
+run = "pnpm run format"
+
+[tasks.format-check]
+description = "Check formatting with prettier (what the pre-commit hook runs)"
+run = "pnpm run format:check"
+
+[tasks.test-unit]
+description = "Vitest suite, as `mise run test unit` (the name the pre-push hook looks for); arguments after --"
+depends = ["generate"]
+usage = 'arg "[args]" var=#true double_dash="required" help="vitest arguments, after --, such as -- src/lib"'
+run = '''
+eval "set -- ${usage_args:-}"
+exec pnpm exec vitest run "$@"
+'''
+
+[tasks.test]
+description = "Tests: all = unit (vitest) and release (the products.json check and the fetcher tests against a stub gh)"
+depends = ["generate"]
+usage = '''
+arg "[suite]" default="all" help="Which suite" {
+  choices "all" "unit" "release"
+}
+arg "[args]" var=#true double_dash="required" help="vitest arguments for the unit suite, after --, such as -- src/lib"
+'''
+run = '''
+set -e
+eval "set -- ${usage_args:-}"
+case "$usage_suite" in all|unit) pnpm exec vitest run "$@" ;; esac
+case "$usage_suite" in all|release)
+  jq -e 'type == "array" and all(.[]; .product and .repo and .asset)' releases/products.json
+  scripts/test-fetch-releases.sh ;;
+esac
+'''
+
+[tasks.check]
+description = "lint, test and format check, everything (what CI runs before the build)"
+depends = ["lint", "test", "format-check"]
+
+[tasks.audit]
+description = "Fail on high or critical advisories in production dependencies"
+run = "pnpm audit --prod --audit-level high"
+
+[tasks.build]
+description = "Images, static export to out/, then postbuild (404, markdown, llms.txt, OG cards, CSP hashes)"
+run = "pnpm run build"
+
+[tasks.assemble]
+description = "Build, then assemble _site/ (the static export plus what the Worker serves)"
+depends = ["build"]
+run = "node scripts/assemble-site.mjs"
+
+[tasks.fetch-releases]
+description = "Fetch and verify every product's installers into the assembled site (needs GH_TOKEN)"
+usage = '''
+arg "[manifest]" default="releases/products.json" help="Product manifest"
+arg "[out]" default="_site" help="Assembled site to add the installers to"
+'''
+run = 'scripts/fetch-releases.sh "${usage_manifest}" "${usage_out}"'
+
+[tasks.preview]
+description = "Build, assemble and run the real Worker with wrangler at http://127.0.0.1:8787"
+run = "pnpm run preview"
+
+[tasks.site-check]
+description = "Crawl a running site (preview by default): pages, links, markdown, OG, discovery files, 404s"
+usage = '''
+flag "--base <url>" help="Site to crawl, such as https://waffuru.ai (default: the local preview)"
+flag "--verbose" help="Print every URL checked"
+'''
+run = 'node scripts/check-site.mjs ${usage_base:+--base "$usage_base"} ${usage_verbose:+--verbose}'

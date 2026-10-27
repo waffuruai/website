@@ -41,7 +41,7 @@ describe('guardReservedPaths', () => {
 
   it('reads the products from the release manifest', async () => {
     expect(await installerProducts(ROOT)).toEqual(
-      expect.arrayContaining(['ops', 'wrunner', 'wci', 'iron', 'butter']),
+      expect.arrayContaining(['wrunner', 'iron', 'butter']),
     );
   });
 

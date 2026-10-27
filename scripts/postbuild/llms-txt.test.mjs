@@ -19,7 +19,7 @@ const dirs = tempDirs();
 afterEach(() => dirs.cleanup());
 
 const PRODUCTS = [
-  { product: 'ops', repo: 'waffuruai/ops', asset: 'bootstrap.sh' },
+  { product: 'butter', repo: 'waffuruai/butter', asset: 'install.sh' },
   { product: 'iron', repo: 'waffuruai/iron', asset: 'install.sh' },
 ];
 
@@ -117,11 +117,11 @@ describe('buildLlmsTxt', () => {
 
   it('lists the installers from the release manifest', () => {
     const installers = text.slice(text.indexOf('## Installers'));
-    expect(installers).toContain('(https://waffuru.ai/ops/bootstrap.sh)');
+    expect(installers).toContain('(https://waffuru.ai/butter/install.sh)');
     expect(installers).toContain(
-      '(https://waffuru.ai/ops/bootstrap.sh.sha256)',
+      '(https://waffuru.ai/butter/install.sh.sha256)',
     );
-    expect(installers).toContain('(https://waffuru.ai/ops/releases.json)');
+    expect(installers).toContain('(https://waffuru.ai/butter/releases.json)');
     expect(installers).toContain('(https://waffuru.ai/iron/install.sh)');
     expect(installerLines(PRODUCTS)).toHaveLength(6);
   });

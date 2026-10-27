@@ -53,7 +53,7 @@ const supportZh: (typeof support)['en'] = {
     {
       question: '支持哪些硬件？',
       answer:
-        'Apple 芯片是首要目标：每个内核都先为 Metal 编写并调优。NVIDIA CUDA 其次，已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。AMD ROCm 和 Vulkan 目前可以运行，但尚未调优。典型环境包括 MacBook 和 Mac Studio、RTX 工作站、DGX Spark、Strix Halo，以及新型云服务商的集群。',
+        'Apple 芯片是首要目标：每个内核都先为 Metal 编写并调优。NVIDIA CUDA 其次，已在 RTX 和 DGX Spark 上投入生产。通过 ROCm 和 Vulkan 支持 AMD，进展迅速。典型环境包括 MacBook 和 Mac Studio、RTX 工作站、DGX Spark、Strix Halo，以及新型云服务商的集群。',
     },
     {
       question: '如何报告 bug？',

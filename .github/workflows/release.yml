@@ -39,26 +39,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Shellcheck
-        run: shellcheck scripts/*.sh
-
-      - name: Test the release fetcher
-        run: scripts/test-fetch-releases.sh
-
-      - name: Set up pnpm
-        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
-
-      - name: Set up Node
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      - uses: jdx/mise-action@82a612c5ab8bcda7cc5db6b7e81a8e7584c3dc6e # v5.2.3
         with:
-          node-version-file: .nvmrc
-          cache: pnpm
+          cache: true
+
+      - name: Validate the tasks
+        run: mise tasks validate
+
+      # S10: tasks see only mise and its pinned tools plus the base system (no
+      # Homebrew prefix, no /usr/local, no ~/.cargo/bin), so a tool missing from
+      # [tools] fails here. The tool directories mise-action added stay first.
+      - name: Cut PATH to mise and the base system
+        run: echo "PATH=$(dirname "$(command -v mise)"):/usr/bin:/bin:/usr/sbin:/sbin" >> "$GITHUB_ENV"
+
+      - name: Locate the pnpm store
+        id: pnpm-store
+        run: echo "path=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache the pnpm store
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ steps.pnpm-store.outputs.path }}
+          key: pnpm-store-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: pnpm-store-${{ runner.os }}-
 
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: mise run bootstrap
 
-      - name: Typecheck, lint, test, format
-        run: pnpm check
+      # lint (eslint, shellcheck, typecheck), test (unit, release fetcher), format check.
+      - name: Check
+        run: mise run check
 
   deploy:
     name: deploy
@@ -72,6 +82,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      - uses: jdx/mise-action@82a612c5ab8bcda7cc5db6b7e81a8e7584c3dc6e # v5.2.3
+        with:
+          cache: true
+
+      # S10, as in the test job.
+      - name: Cut PATH to mise and the base system
+        run: echo "PATH=$(dirname "$(command -v mise)"):/usr/bin:/bin:/usr/sbin:/sbin" >> "$GITHUB_ENV"
+
       - name: Note the dispatching release
         if: inputs.product != ''
         env:
@@ -79,21 +97,23 @@ jobs:
           TAG: ${{ inputs.tag }}
         run: echo "triggered by $PRODUCT $TAG"
 
-      - name: Set up pnpm
-        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - name: Locate the pnpm store
+        id: pnpm-store
+        run: echo "path=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
 
-      - name: Set up Node
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      - name: Cache the pnpm store
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          node-version-file: .nvmrc
-          cache: pnpm
+          path: ${{ steps.pnpm-store.outputs.path }}
+          key: pnpm-store-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: pnpm-store-${{ runner.os }}-
 
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: mise run bootstrap
 
       # Production is the only build that carries the GA ID; previews and
       # local builds never load analytics.
-      - name: Build the site
+      - name: Build and assemble the site
         env:
           NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
         run: |
@@ -101,16 +121,13 @@ jobs:
             echo "::error::Repository variable NEXT_PUBLIC_GA_ID is not set"
             exit 1
           fi
-          pnpm build
-
-      - name: Assemble the site
-        run: node scripts/assemble-site.mjs
+          mise run assemble
 
       - name: Fetch and verify the product installers
         env:
           GH_TOKEN: ${{ secrets.RELEASE_READ_TOKEN || github.token }}
           RELEASE_VERIFY_ATTESTATION: ${{ vars.RELEASE_VERIFY_ATTESTATION || 'auto' }}
-        run: scripts/fetch-releases.sh releases/products.json _site
+        run: mise run fetch-releases
 
       - name: Deploy to Cloudflare
         env:

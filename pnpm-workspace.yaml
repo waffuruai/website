@@ -11,3 +11,7 @@ minimumReleaseAgeExclude:
 overrides:
   # GHSA-rj75-hqrm-r3gf (build-time only, via @tailwindcss/typography).
   postcss-selector-parser: '>=7.1.6'
+  # GHSA-27r3-jxmh-p828 (dev-only, via shadcn's MCP server).
+  body-parser: ^2.4.0
+  # GHSA-4qv8-2p9j-2685, GHSA-f72v-6w45-q472, GHSA-xjj6-f33q-929c (dev-only; miniflare pins 7.29.1).
+  'undici@<7.30.1': ^7.30.1

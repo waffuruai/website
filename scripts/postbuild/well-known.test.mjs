@@ -20,7 +20,7 @@ const dirs = tempDirs();
 afterEach(() => dirs.cleanup());
 
 const PRODUCTS = [
-  { product: 'ops', repo: 'waffuruai/ops', asset: 'bootstrap.sh' },
+  { product: 'butter', repo: 'waffuruai/butter', asset: 'install.sh' },
   { product: 'iron', repo: 'waffuruai/iron', asset: 'install.sh' },
 ];
 
@@ -41,7 +41,7 @@ describe('buildApiCatalog', () => {
     const [bookmarks] = catalog.linkset;
     expect(bookmarks.anchor).toBe('https://waffuru.ai/.well-known/api-catalog');
     expect(bookmarks.item.map((link) => link.href)).toEqual([
-      'https://waffuru.ai/ops/releases.json',
+      'https://waffuru.ai/butter/releases.json',
       'https://waffuru.ai/iron/releases.json',
     ]);
   });

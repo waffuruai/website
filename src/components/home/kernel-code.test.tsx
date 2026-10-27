@@ -82,25 +82,21 @@ describe('KernelCode', () => {
   it('keeps the CUDA and ROCm notes honest', () => {
     renderKernel();
     expect(
-      screen.getByText(
-        'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
-      ),
+      screen.getByText('In production on RTX and DGX Spark. CUDA → PTX.'),
     ).toBeTruthy();
     expect(
-      screen.getByText(
-        'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
-      ),
+      screen.getByText('Moving fast on AMD. HIP → AMDGPU, Vulkan → SPIR-V.'),
     ).toBeTruthy();
   });
 
-  it('lists where it runs, with datacenter GPUs as a dashed in-progress chip', () => {
+  it('lists where it runs, with datacenter GPUs as a dashed chip', () => {
     renderKernel();
     const group = screen.getByRole('group', { name: 'Runs on' });
     for (const item of home.en.kernel.runsOn.items) {
       expect(within(group).getByText(item)).toBeTruthy();
     }
     const pending = within(group).getByText(
-      'Enterprise datacenter GPUs · in progress',
+      'Enterprise datacenter GPUs · next',
     );
     expect(pending.className).toContain('border-dashed');
   });

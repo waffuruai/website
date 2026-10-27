@@ -1,0 +1,16 @@
+/* The in-progress dot on step 02: opacity and scale only, so it never reflows.
+   Reduced motion turns every animation off globally (see tailwind.css). */
+@keyframes working {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+.working {
+  animation: working 1.2s ease-in-out infinite;
+}

@@ -53,7 +53,7 @@ const supportEs: (typeof support)['en'] = {
     {
       question: '¿En qué hardware funciona?',
       answer:
-        'Apple silicon es el objetivo principal: cada kernel se escribe y se afina primero para Metal. NVIDIA CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. AMD ROCm y Vulkan funcionan hoy, pero aún sin afinar. Piensa en MacBook y Mac Studio, estaciones de trabajo RTX, DGX Spark, Strix Halo y flotas de neoclouds.',
+        'Apple silicon es el objetivo principal: cada kernel se escribe y se afina primero para Metal. NVIDIA CUDA es secundario, en producción en RTX y DGX Spark. AMD a través de ROCm y Vulkan avanza rápido. Piensa en MacBook y Mac Studio, estaciones de trabajo RTX, DGX Spark, Strix Halo y flotas de neoclouds.',
     },
     {
       question: '¿Cómo reporto un error?',

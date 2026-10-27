@@ -12,7 +12,7 @@ const ko: Dictionary = {
     copied: '복사됨',
     opensInNewTab: '(새 탭에서 열림)',
     private: '비공개',
-    inProgress: '진행 중',
+    inProgress: '다음 차례',
     faqHeading: '자주 묻는 질문',
   },
   meta: {

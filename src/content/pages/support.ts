@@ -77,7 +77,7 @@ export const support: Localized<SupportContent> = {
       {
         question: 'Which hardware does it run on?',
         answer:
-          'Apple silicon is the primary target: every kernel is written and tuned for Metal first. NVIDIA CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run today but are not tuned yet. Think MacBook and Mac Studio, RTX workstations, DGX Spark, Strix Halo and neocloud fleets.',
+          'Apple silicon is the primary target: every kernel is written and tuned for Metal first. NVIDIA CUDA is secondary, in production on RTX and DGX Spark. AMD through ROCm and Vulkan is moving fast. Think MacBook and Mac Studio, RTX workstations, DGX Spark, Strix Halo and neocloud fleets.',
       },
       {
         question: 'How do I report a bug?',
