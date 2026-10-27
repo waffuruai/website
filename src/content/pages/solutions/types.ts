@@ -30,7 +30,16 @@ export type ProductKey = 'iron' | 'butter' | 'waffle' | 'syrup';
 export type HardwareStatus = 'primary' | 'secondary' | 'runs';
 
 /** A job to be done: a title and two sentences. */
-export type UseCase = { tag: SolutionTag; title: string; body: string };
+export type UseCase = {
+  tag: SolutionTag;
+  title: string;
+  body: string;
+  /**
+   * A page that goes further, such as Pantry. Shown only once that page's
+   * section has launched (`site.launched`); the body must stand without it.
+   */
+  link?: { label: string; href: string };
+};
 
 /** One product mapped to the need it answers for this audience. */
 export type StackFitItem = { product: ProductKey; need: string; body: string };

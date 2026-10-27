@@ -1,11 +1,14 @@
+import { LocalizedLink } from '@/components/localized-link';
 import { MonoLabel } from '@/components/sections/mono-label';
 import { SectionOpener } from '@/components/solutions/section-opener';
 import type { SolutionTag, UseCase } from '@/content/pages/solutions/types';
+import { isPublishedPath } from '@/lib/launch';
 
 /**
  * Use cases as raised cards: a mono value-prop tag (cost, inference or
- * control), the job to be done as the title and two sentences under it.
- * An odd last card spans both columns so the grid never leaves a hole.
+ * control), the job to be done as the title and two sentences under it,
+ * plus an optional link onward once its page is published. An odd last
+ * card spans both columns so the grid never leaves a hole.
  */
 export function UseCases({
   id,
@@ -51,6 +54,15 @@ export function UseCases({
             <p className="max-w-[60ch] text-base leading-[1.6] text-pretty text-muted-foreground">
               {item.body}
             </p>
+            {item.link && isPublishedPath(item.link.href) && (
+              <LocalizedLink
+                href={item.link.href}
+                className="mt-auto -mb-2 inline-flex min-h-11 items-center gap-2 self-start rounded-sm label-mono text-foreground underline decoration-foreground/35 underline-offset-[6px] transition-colors hover:text-brand-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              >
+                {item.link.label}
+                <span aria-hidden>→</span>
+              </LocalizedLink>
+            )}
           </li>
         ))}
       </ul>
