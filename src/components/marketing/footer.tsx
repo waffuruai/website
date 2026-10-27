@@ -2,10 +2,20 @@ import { CookieSettingsButton } from '@/components/consent/cookie-settings-butto
 import { LocalizedLink } from '@/components/localized-link';
 import { NewsletterSignup } from '@/components/newsletter/newsletter-signup';
 import { Wordmark } from '@/components/wordmark';
-import { navigation } from '@/content/navigation';
+import { navigation, publishedNavigation } from '@/content/navigation';
 import { site } from '@/content/site';
 import { interpolate } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries/en';
+import { cn } from '@/lib/utils';
+
+/** Column classes by count; Tailwind needs whole class names. */
+const COLUMNS: Record<number, string> = {
+  1: 'sm:grid-cols-2',
+  2: 'sm:grid-cols-2',
+  3: 'sm:grid-cols-3',
+  4: 'sm:grid-cols-4',
+  5: 'sm:grid-cols-3 xl:grid-cols-5',
+};
 
 /** Copyright year, fixed at build time (the site rebuilds on every release). */
 const YEAR = new Date().getFullYear();
@@ -22,6 +32,7 @@ const SOCIALS = [
  */
 export function Footer({ dictionary }: { dictionary: Dictionary }) {
   const { footer, nav, common } = dictionary;
+  const { columns } = publishedNavigation().footer;
 
   return (
     <footer className="mt-24 border-t border-foreground/10">
@@ -38,9 +49,12 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
         </div>
         <nav
           aria-label={footer.heading}
-          className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4"
+          className={cn(
+            'grid grid-cols-2 gap-x-8 gap-y-10',
+            COLUMNS[columns.length] ?? 'sm:grid-cols-4',
+          )}
         >
-          {navigation.footer.columns.map((column) => (
+          {columns.map((column) => (
             <div key={column.headingKey}>
               <p className="label-mono text-[11px] text-muted-foreground">
                 {footer[column.headingKey]}

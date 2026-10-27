@@ -24,6 +24,19 @@ export const site = {
    * the nav, product pages and support page leave the docs out.
    */
   docsPublished: false,
+  /**
+   * Sections live in production. An unlaunched section still builds and
+   * shows in dev and tests, like a blog draft, so it can be reviewed;
+   * production leaves it out of the nav, sitemap and llms.txt and prunes its
+   * pages after the build (`scripts/postbuild/unreleased.mjs`). Routes per
+   * section are in `src/lib/launch.ts`. Flip one to true to launch it.
+   */
+  launched: {
+    pantry: false,
+    stack: true,
+    solutions: true,
+    industries: false,
+  },
   urls: {
     docs: 'https://docs.waffuru.ai',
     /** Early-access sign-up (Google Form), the primary call to action. */

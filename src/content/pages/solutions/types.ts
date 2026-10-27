@@ -8,8 +8,17 @@ import type { FaqItem, Seo } from '@/content/types';
  * against the same `T`.
  */
 
-export type SolutionSlug =
-  'small-business' | 'enterprise' | 'neoclouds' | 'ai-companies';
+/** Route slugs, in the order the overview and navigation list them. */
+export const solutionSlugs = [
+  'small-business',
+  'enterprise',
+  'neoclouds',
+  'ai-companies',
+] as const;
+
+export type SolutionSlug = (typeof solutionSlugs)[number];
+
+export const solutionPath = (slug: SolutionSlug) => `/solutions/${slug}`;
 
 /** The three value props every audience hears, each in its own words. */
 export type SolutionTag = 'cost' | 'inference' | 'control';

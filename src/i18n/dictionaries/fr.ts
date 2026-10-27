@@ -46,6 +46,10 @@ const fr: Dictionary = {
     help: 'Aide',
     allProducts: 'Voir toute la stack',
     allSolutions: 'Toutes les solutions',
+    industries: 'Secteurs',
+    byIndustry: 'Par secteur',
+    allIndustries: 'Tous les secteurs',
+    openSource: 'Libre et open source',
     items: {
       stack: {
         label: 'La stack Waffuru',
@@ -68,6 +72,10 @@ const fr: Dictionary = {
         label: 'Syrup',
         description: 'Votre IA se souvient de ce sur quoi vous travailliez.',
       },
+      pantry: {
+        label: 'Pantry',
+        description: 'Scanner de vulnérabilités gratuit pour macOS et Linux.',
+      },
       smallBusiness: {
         label: 'Petites entreprises',
         description: 'Une IA privée sur le matériel que vous avez déjà.',
@@ -85,6 +93,27 @@ const fr: Dictionary = {
         label: 'Entreprises de modèles et d’inférence',
         description:
           'Des kernels et un serving plus rapides sur chaque backend.',
+      },
+      cloudInfrastructure: {
+        label: 'Infrastructure cloud',
+        description: 'Plus de production et des marges claires sur chaque GPU.',
+      },
+      financialServices: {
+        label: 'Services financiers',
+        description: 'Une IA privée qui garde les données clients chez vous.',
+      },
+      lifeSciences: {
+        label: 'Sciences de la vie',
+        description:
+          'Des modèles au plus près de données de recherche sensibles.',
+      },
+      government: {
+        label: 'Secteur public',
+        description: 'Une IA souveraine sur un matériel que vous maîtrisez.',
+      },
+      military: {
+        label: 'Défense',
+        description: 'Une IA capable, sur un matériel à vous et sécurisé.',
       },
       about: {
         label: 'Qui sommes-nous',
@@ -125,6 +154,7 @@ const fr: Dictionary = {
     heading: 'Pied de page',
     products: 'Produits',
     solutions: 'Solutions',
+    industries: 'Secteurs',
     company: 'Entreprise',
     help: 'Aide',
     terms: 'Conditions d’utilisation',

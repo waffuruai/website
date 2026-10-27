@@ -46,6 +46,10 @@ const es: Dictionary = {
     help: 'Ayuda',
     allProducts: 'Ver el stack completo',
     allSolutions: 'Todas las soluciones',
+    industries: 'Industrias',
+    byIndustry: 'Por industria',
+    allIndustries: 'Todas las industrias',
+    openSource: 'Libre y de código abierto',
     items: {
       stack: {
         label: 'El stack de Waffuru',
@@ -67,6 +71,10 @@ const es: Dictionary = {
         label: 'Syrup',
         description: 'Tu IA recuerda en qué estabas trabajando.',
       },
+      pantry: {
+        label: 'Pantry',
+        description: 'Escáner de vulnerabilidades gratuito para macOS y Linux.',
+      },
       smallBusiness: {
         label: 'Pequeñas empresas',
         description: 'IA privada en el hardware que ya tienes.',
@@ -82,6 +90,27 @@ const es: Dictionary = {
       aiCompanies: {
         label: 'Empresas de modelos e inferencia',
         description: 'Kernels y serving más rápidos en cada backend.',
+      },
+      cloudInfrastructure: {
+        label: 'Infraestructura cloud',
+        description: 'Más rendimiento y márgenes claros en cada GPU.',
+      },
+      financialServices: {
+        label: 'Servicios financieros',
+        description: 'IA privada que mantiene los datos de clientes en casa.',
+      },
+      lifeSciences: {
+        label: 'Ciencias de la vida',
+        description:
+          'Ejecuta modelos junto a datos de investigación sensibles.',
+      },
+      government: {
+        label: 'Gobierno',
+        description: 'IA soberana en hardware que tú controlas.',
+      },
+      military: {
+        label: 'Defensa',
+        description: 'IA capaz en hardware propio y seguro.',
       },
       about: {
         label: 'Quiénes somos',
@@ -121,6 +150,7 @@ const es: Dictionary = {
     heading: 'Pie de página',
     products: 'Productos',
     solutions: 'Soluciones',
+    industries: 'Industrias',
     company: 'Empresa',
     help: 'Ayuda',
     terms: 'Términos de uso',

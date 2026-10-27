@@ -6,7 +6,9 @@ import path from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { internalNavHrefs } from '@/content/navigation';
+import { site } from '@/content/site';
 import { localeInfo, locales } from '@/i18n/config';
+import { sectionRoutes, type LaunchSection } from '@/lib/launch';
 
 import sitemap, { dynamic } from './sitemap';
 
@@ -27,6 +29,7 @@ function withBlog(files: Record<string, string>) {
 
 afterEach(() => {
   vi.restoreAllMocks();
+  vi.unstubAllEnvs();
   for (const dir of temp.splice(0))
     rmSync(dir, { recursive: true, force: true });
 });
@@ -59,6 +62,23 @@ describe('sitemap.xml', () => {
       for (const locale of locales) {
         const url = `https://waffuru.ai${locale === 'en' ? '' : `/${locale}`}${route === '/' ? '' : route}`;
         expect(urls, url).toContain(url);
+      }
+    }
+  });
+
+  it('lists a gated section in production only once it has launched', () => {
+    vi.stubEnv('NODE_ENV', 'production');
+    vi.stubEnv('NEXT_PUBLIC_SHOW_UNRELEASED', '');
+    const urls = withBlog({}).map((entry) => entry.url);
+    for (const [section, routes] of Object.entries(sectionRoutes)) {
+      const launched = site.launched[section as LaunchSection];
+      for (const route of routes) {
+        expect(urls.includes(`https://waffuru.ai${route}`), route).toBe(
+          launched,
+        );
+        expect(urls.includes(`https://waffuru.ai/ja${route}`), route).toBe(
+          launched,
+        );
       }
     }
   });

@@ -46,6 +46,10 @@ const ko: Dictionary = {
     help: '도움말',
     allProducts: '전체 스택 보기',
     allSolutions: '모든 솔루션',
+    industries: '산업',
+    byIndustry: '산업별',
+    allIndustries: '모든 산업',
+    openSource: '무료 오픈 소스',
     items: {
       stack: {
         label: 'Waffuru 스택',
@@ -67,6 +71,10 @@ const ko: Dictionary = {
         label: 'Syrup',
         description: '당신의 AI가 하던 일을 기억합니다.',
       },
+      pantry: {
+        label: 'Pantry',
+        description: 'macOS와 Linux용 무료 취약점 스캐너.',
+      },
       smallBusiness: {
         label: '중소기업',
         description: '이미 가진 하드웨어에서 돌아가는 프라이빗 AI.',
@@ -82,6 +90,26 @@ const ko: Dictionary = {
       aiCompanies: {
         label: 'AI 모델·추론 기업',
         description: '모든 백엔드에서 더 빠른 커널과 서빙.',
+      },
+      cloudInfrastructure: {
+        label: '클라우드 인프라',
+        description: '모든 GPU에서 더 많은 산출과 분명한 마진을.',
+      },
+      financialServices: {
+        label: '금융 서비스',
+        description: '고객 데이터를 내부에 두는 프라이빗 AI.',
+      },
+      lifeSciences: {
+        label: '생명과학',
+        description: '민감한 연구 데이터 곁에서 모델을 실행하세요.',
+      },
+      government: {
+        label: '공공·정부',
+        description: '직접 통제하는 하드웨어 위의 소버린 AI.',
+      },
+      military: {
+        label: '국방',
+        description: '직접 소유하고 보호하는 하드웨어 위의 유능한 AI.',
       },
       about: {
         label: '회사 소개',
@@ -121,6 +149,7 @@ const ko: Dictionary = {
     heading: '푸터',
     products: '제품',
     solutions: '솔루션',
+    industries: '산업',
     company: '회사',
     help: '도움말',
     terms: '이용약관',

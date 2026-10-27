@@ -50,6 +50,10 @@ const en = {
     help: 'Help',
     allProducts: 'See the whole stack',
     allSolutions: 'All solutions',
+    industries: 'Industries',
+    byIndustry: 'By industry',
+    allIndustries: 'All industries',
+    openSource: 'Free and open source',
     items: {
       stack: {
         label: 'The Waffuru stack',
@@ -71,6 +75,10 @@ const en = {
         label: 'Syrup',
         description: 'Your AI remembers what you were working on.',
       },
+      pantry: {
+        label: 'Pantry',
+        description: 'Free vulnerability scanner for macOS and Linux.',
+      },
       smallBusiness: {
         label: 'Small business',
         description: 'Private AI on hardware you already own.',
@@ -86,6 +94,26 @@ const en = {
       aiCompanies: {
         label: 'AI model and inference companies',
         description: 'Faster kernels and serving across every backend.',
+      },
+      cloudInfrastructure: {
+        label: 'Cloud infrastructure',
+        description: 'More output and clear margins from every GPU.',
+      },
+      financialServices: {
+        label: 'Financial services',
+        description: 'Private AI that keeps client data in house.',
+      },
+      lifeSciences: {
+        label: 'Life sciences',
+        description: 'Run models next to sensitive research data.',
+      },
+      government: {
+        label: 'Government',
+        description: 'Sovereign AI on hardware you control.',
+      },
+      military: {
+        label: 'Military',
+        description: 'Capable AI on hardware you own and secure.',
       },
       about: {
         label: 'About us',
@@ -125,6 +153,7 @@ const en = {
     heading: 'Footer',
     products: 'Products',
     solutions: 'Solutions',
+    industries: 'Industries',
     company: 'Company',
     help: 'Help',
     terms: 'Terms of use',

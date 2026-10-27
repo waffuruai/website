@@ -30,7 +30,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Wordmark } from '@/components/wordmark';
-import { navigation } from '@/content/navigation';
+import { navigation, publishedNavigation } from '@/content/navigation';
 import { site } from '@/content/site';
 import type { NavColumn, NavLink, NavMenu } from '@/content/types';
 import { splitLocale } from '@/i18n/config';
@@ -149,13 +149,16 @@ function Column({
   );
 }
 
+/** The menus this build shows (unlaunched sections left out). */
+const menus = () => publishedNavigation().main;
+
 function DesktopNav({ nav, path }: { nav: Nav; path: string }) {
   const { header } = useDictionary();
 
   return (
     <NavigationMenu className="hidden lg:flex" aria-label={header.mainNav}>
       <NavigationMenuList className="gap-1">
-        {navigation.main.map((menu) => {
+        {menus().map((menu) => {
           const active = menuIsActive(menu, path);
           if (menu.type === 'link') {
             return (
@@ -268,7 +271,7 @@ function MobileNav({ nav, path }: { nav: Nav; path: string }) {
         </SheetHeader>
         <nav aria-label={header.mainNav} className="px-4 pb-8">
           <Accordion type="multiple">
-            {navigation.main.map((menu) =>
+            {menus().map((menu) =>
               menu.type === 'link' ? (
                 <ul key={menu.labelKey} className="border-b py-2">
                   {link(menu.href, nav[menu.labelKey], menu.labelKey)}

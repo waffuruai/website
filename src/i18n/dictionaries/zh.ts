@@ -46,6 +46,10 @@ const zh: Dictionary = {
     help: '帮助',
     allProducts: '查看完整技术栈',
     allSolutions: '全部解决方案',
+    industries: '行业',
+    byIndustry: '按行业',
+    allIndustries: '全部行业',
+    openSource: '免费开源',
     items: {
       stack: {
         label: 'Waffuru 技术栈',
@@ -67,6 +71,10 @@ const zh: Dictionary = {
         label: 'Syrup',
         description: '让你的 AI 记得你在做什么。',
       },
+      pantry: {
+        label: 'Pantry',
+        description: '适用于 macOS 和 Linux 的免费漏洞扫描器。',
+      },
       smallBusiness: {
         label: '小型企业',
         description: '在你已有的硬件上运行私有 AI。',
@@ -82,6 +90,26 @@ const zh: Dictionary = {
       aiCompanies: {
         label: 'AI 模型与推理公司',
         description: '在每种后端上获得更快的内核与模型服务。',
+      },
+      cloudInfrastructure: {
+        label: '云基础设施',
+        description: '让每块 GPU 产出更多，利润清晰可见。',
+      },
+      financialServices: {
+        label: '金融服务',
+        description: '让客户数据留在内部的私有 AI。',
+      },
+      lifeSciences: {
+        label: '生命科学',
+        description: '在敏感研究数据旁运行模型。',
+      },
+      government: {
+        label: '政府',
+        description: '运行在自主可控硬件上的主权 AI。',
+      },
+      military: {
+        label: '国防',
+        description: '在自有且安全的硬件上运行强大的 AI。',
       },
       about: {
         label: '关于我们',
@@ -121,6 +149,7 @@ const zh: Dictionary = {
     heading: '页脚',
     products: '产品',
     solutions: '解决方案',
+    industries: '行业',
     company: '公司',
     help: '帮助',
     terms: '使用条款',

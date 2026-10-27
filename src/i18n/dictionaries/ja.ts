@@ -46,6 +46,10 @@ const ja: Dictionary = {
     help: 'ヘルプ',
     allProducts: 'スタック全体を見る',
     allSolutions: 'すべてのソリューション',
+    industries: '業界',
+    byIndustry: '業界別',
+    allIndustries: 'すべての業界',
+    openSource: '無料・オープンソース',
     items: {
       stack: {
         label: 'Waffuru スタック',
@@ -67,6 +71,10 @@ const ja: Dictionary = {
         label: 'Syrup',
         description: 'あなたの AI が、取り組んでいたことを覚えています。',
       },
+      pantry: {
+        label: 'Pantry',
+        description: 'macOS と Linux 向けの無料脆弱性スキャナー。',
+      },
       smallBusiness: {
         label: '中小企業',
         description: 'お手持ちのハードウェアでプライベート AI を。',
@@ -82,6 +90,26 @@ const ja: Dictionary = {
       aiCompanies: {
         label: 'AI モデル・推論企業',
         description: 'あらゆるバックエンドで、より速いカーネルとサービングを。',
+      },
+      cloudInfrastructure: {
+        label: 'クラウドインフラ',
+        description: 'すべての GPU から、より多くの出力と明確な利益を。',
+      },
+      financialServices: {
+        label: '金融サービス',
+        description: '顧客データを社内に留めるプライベート AI。',
+      },
+      lifeSciences: {
+        label: 'ライフサイエンス',
+        description: '機密性の高い研究データのそばでモデルを動かす。',
+      },
+      government: {
+        label: '政府・公共',
+        description: '自ら管理するハードウェア上のソブリン AI。',
+      },
+      military: {
+        label: '防衛',
+        description: '自ら所有し守るハードウェア上で動く、実用的な AI。',
       },
       about: {
         label: '私たちについて',
@@ -121,6 +149,7 @@ const ja: Dictionary = {
     heading: 'フッター',
     products: '製品',
     solutions: 'ソリューション',
+    industries: '業界',
     company: '会社',
     help: 'ヘルプ',
     terms: '利用規約',
