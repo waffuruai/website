@@ -48,7 +48,13 @@ export type Site = typeof site;
 
 /** Topics for `mailto:` callouts; each becomes the email's subject line. */
 export type MailSubject =
-  'Sales' | 'Partnerships' | 'Press' | 'Support' | 'Hiring' | 'Security';
+  | 'Sales'
+  | 'Partnerships'
+  | 'Press'
+  | 'Support'
+  | 'Hiring'
+  | 'Security'
+  | 'Pantry on Windows';
 
 /** `mailto:hello@waffuru.ai?subject=…`, the destination for formless CTAs. */
 export const mailto = (

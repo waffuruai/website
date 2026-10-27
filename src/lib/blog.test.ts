@@ -293,8 +293,12 @@ describe('posts on disk', () => {
     ).toEqual(sorted(translated));
   });
 
-  it('has no related posts for a lone post', async () => {
-    expect(await getRelatedPosts('introducing-waffuru')).toEqual([]);
+  it('relates real posts to each other, never to themselves', async () => {
+    const related = await getRelatedPosts('introducing-pantry');
+    expect(related.map((post) => post.slug)).toContain('introducing-waffuru');
+    expect(related.map((post) => post.slug)).not.toContain(
+      'introducing-pantry',
+    );
     expect(await getRelatedPosts('missing')).toEqual([]);
   });
 });

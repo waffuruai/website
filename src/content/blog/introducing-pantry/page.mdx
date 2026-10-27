@@ -1,0 +1,115 @@
+import { ArticleLayout } from '@/components/blog/article-layout';
+import { PantryArchitecture } from '@/components/blog/diagrams/pantry-architecture';
+
+export const article = {
+  title: 'Introducing Pantry: know what is exposed, and patch it fast',
+  description:
+    'Pantry is a free, open-source vulnerability scanner for macOS and Linux. Why we built it, how it works, and how to verify it before it runs.',
+  author: 'eric-kryski',
+  date: '2026-10-28',
+  published: true,
+  category: 'Product',
+  tags: ['pantry', 'security', 'open source', 'rust'],
+  keywords: [
+    'Pantry',
+    'wscanner',
+    'vulnerability scanner',
+    'CVE scanner',
+    'open source security',
+    'OSV',
+    'CISA KEV',
+    'Rust',
+  ],
+};
+
+export default (props) => (
+  <ArticleLayout article={article} slug="introducing-pantry" {...props} />
+);
+
+Every security team asks two questions. What am I exposed to? And how fast can I fix it? Most tools answer the first with a firehose and leave the second to you.
+
+[Pantry](/products/pantry) answers both. It checks everything installed on your Mac or Linux machine, and every repo on it, against open vulnerability data. It reports only what actually applies, names the version that fixes it, and applies the fixes it safely can. It is free, open source, written in Rust, and its first signed release is out today. The command is `wscanner`.
+
+## Why we _built_ it
+
+**The feeds are noise.** Tens of thousands of CVEs are published every year. A list or an RSS feed tells you about all of them, on every platform, in every package. Almost none of them touch your machine, and the few that do get lost in the scroll.
+
+**The answers sit behind a paywall.** The tools that match advisories to what you actually run are mostly sold per seat or per asset. The teams that can afford them get protected. Students, solo developers, small companies and open-source maintainers, the people who can least afford a breach, are left guessing. Security should not depend on what you can pay.
+
+**We needed it ourselves.** We run Pantry on every Waffuru machine, our CI checks every pull request with it, and our agents use it to triage what they find. It started as an internal tool. It is good enough, and important enough, that it should be everyone's.
+
+## How it _works_
+
+Pantry does four things, in order, all on your machine.
+
+<PantryArchitecture />
+
+1. **Take stock.** It inventories what is installed: every runtime and compiler your version managers keep (not just the one on your `PATH`), package managers and global packages, apps and browsers, operating system updates, the MCP servers and plugins your AI coding tools run, your trust stores, and the lockfiles, git history and container images of every repo you point it at.
+2. **Ask about exact versions.** It asks [OSV.dev](https://osv.dev), CISA's [Known Exploited Vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) list and [endoflife.date](https://endoflife.date) about those versions, and nothing else. It checks every package name against the OpenSSF malicious-packages index, and git history for committed secrets.
+3. **Report what applies.** It fails only when something on your machine has a known vulnerability with a released fix, is past its end of life, is a known malicious package, or is a committed secret. Each finding names the version that fixes it. If a source cannot be reached, Pantry says "not checked". It never calls that clean.
+4. **Fix what it safely can.** `wscanner --update --dryrun` shows the plan. `wscanner --update` runs the unattended, user-level fixes (Homebrew, pip, npm, cargo, rustup, uv, editor extensions) and checks again. Anything that needs sudo, a vendor update or a code change is printed for you to run. It picks one fix per component, the version that clears every advisory at once.
+
+```sh
+wscanner                     # scan this machine and its repos
+wscanner --update --dryrun   # see the plan
+wscanner --update            # run the safe fixes, then check again
+```
+
+## Open data, not a _paywall_
+
+Pantry uses open sources only. OSV.dev brings together advisories from GitHub, the language ecosystems and the Linux distributions. CISA's list marks what attackers are exploiting right now, so Pantry ranks it first. endoflife.date says when a runtime or datastore stops getting fixes. The OpenSSF index covers packages published to do harm.
+
+Only package names and versions leave your machine, to look them up. File contents, paths and secrets never do. There is no telemetry and no account. The one exception is an optional email breach check, and it runs only after you say yes.
+
+## A cache that is _yours_
+
+Answers land in a SQLite database at `~/.cache/wscanner/wscanner.db`, with a record of every run: an audit trail of what was checked on this machine, and when. OSV answers stay fresh for a day and end-of-life dates for a week, so a second scan the same day takes seconds.
+
+It is plain SQLite, so you can read it yourself, and search it offline:
+
+```sh
+wscanner search "openssl" --applicable   # cached advisories that apply here
+sqlite3 -readonly ~/.cache/wscanner/wscanner.db .tables
+```
+
+It is a cache, not a mirror. It holds what your machine asked about, nothing more.
+
+## Built to be _trusted_
+
+A vulnerability scanner reads your whole home directory. That makes it a target, so we hold it to a higher bar than most of the software it checks.
+
+- **Written in Rust**, with unsafe code forbidden, compiled to one static binary.
+- **Dependency-light.** A handful of pinned crates, each vetted with `cargo deny` and `cargo vet`. No runtime to install.
+- **No AI.** Plain, deterministic code: the same machine gets the same answer every time.
+- **Versioned and hashed.** Every release is tagged, built twice and published only if both builds match byte for byte, and listed in `SHA256SUMS`.
+- **Verifiable two ways.** Install with [packslip](https://packslip.dev), which checks the signature and SHA-256 before installing, or check the GitHub build attestation yourself. A cosign bundle ships with every binary too.
+
+```sh
+packslip install github.com/waffuruai/wscanner
+```
+
+Or by hand:
+
+```sh
+ASSET=wscanner-universal-apple-darwin   # Linux: wscanner-x86_64-unknown-linux-musl
+gh release download --repo waffuruai/wscanner -p "$ASSET" -p SHA256SUMS
+grep " $ASSET$" SHA256SUMS | shasum -a 256 -c -
+gh attestation verify "$ASSET" --repo waffuruai/wscanner
+install -m 0755 "$ASSET" ~/.local/bin/wscanner
+```
+
+The [install guide](https://github.com/waffuruai/wscanner/blob/main/docs/public/install.md) covers cosign, `cargo install` and rebuilding a release yourself. It is Apache-2.0: [read every line](https://github.com/waffuruai/wscanner) before you run it. That is the point.
+
+## For people, agents and _fleets_
+
+The same binary works on a laptop, in CI and across a fleet of servers.
+
+- **People** run it, read the plan and apply the safe fixes. The exit code says whether anything still needs you.
+- **Agents** get structured findings from `wscanner --json --no-input`, and `wscanner skill` prints a skill that teaches a coding agent to triage (malicious packages, then secrets, then actively exploited, then end of life) and fix, without ever running the steps that need sudo.
+- **CI and fleets** point it at a checkout with `--path . --no-machine`, and fail the build when something has a released fix.
+
+## What is _next_
+
+Pantry runs on macOS and Linux today. Windows support is planned, and demand sets the date, so [tell us if you need it](mailto:hello@waffuru.ai?subject=Pantry%20on%20Windows).
+
+Run it on your machine and tell us what it found that you did not expect. Issues and pull requests are welcome on [GitHub](https://github.com/waffuruai/wscanner), and the [Pantry page](/products/pantry) has the rest. Pull up a seat.

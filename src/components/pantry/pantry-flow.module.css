@@ -1,0 +1,98 @@
+/*
+ * Pantry's "How it works": transcript lines type in one after another, the
+ * flow's stops light up left to right with a pulse running along each track,
+ * and the selected step's progress bar fills while the sequence plays.
+ * Reduced motion turns every animation off (tailwind.css), leaving the
+ * finished frame.
+ */
+@keyframes type {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes light {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  from {
+    left: 100%;
+    opacity: 1;
+  }
+  to {
+    left: calc(100% + var(--gap) - 6px);
+    opacity: 0.2;
+  }
+}
+@keyframes fill {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.line {
+  animation: type 0.35s ease-out both;
+  animation-delay: calc(var(--i) * 140ms);
+}
+
+.flow {
+  --gap: 28px;
+  gap: var(--gap);
+}
+@media (min-width: 640px) {
+  .flow {
+    --gap: 44px;
+  }
+}
+
+.stop {
+  animation: light 0.5s ease-out both;
+  animation-delay: calc(0.4s + var(--i) * 0.6s);
+}
+/* The track to the next stop, and the pulse that runs along it. */
+.stop:not(:last-child)::after,
+.stop:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  pointer-events: none;
+}
+.stop:not(:last-child)::after {
+  width: var(--gap);
+  height: 1px;
+  background: color-mix(in oklab, var(--foreground) 22%, transparent);
+}
+.stop:not(:last-child)::before {
+  z-index: 1;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 999px;
+  background: var(--brand);
+  animation: pulse 1.4s ease-in-out infinite;
+  animation-delay: calc(0.6s + var(--i) * 0.6s);
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 2px;
+  height: 100%;
+  background: var(--brand);
+  transform-origin: top;
+  animation: fill linear both;
+}
