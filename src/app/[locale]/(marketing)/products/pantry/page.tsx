@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { coverSrc } from '@/components/blog/cover';
 import { PantryPage } from '@/components/pantry/pantry-page';
 import { pantryFacts } from '@/content/pages/pantry/facts';
 import { pantry } from '@/content/pages/pantry/pantry';
@@ -22,6 +23,12 @@ export async function generateMetadata({
     keywords: seo.keywords,
     path: pantryFacts.path,
     locale,
+    // The launch card: headline, tags and an example scan.
+    image: {
+      src: coverSrc('blog/introducing-pantry'),
+      width: 1200,
+      height: 630,
+    },
   });
 }
 
