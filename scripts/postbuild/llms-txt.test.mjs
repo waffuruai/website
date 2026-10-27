@@ -34,6 +34,7 @@ describe('sectionOf', () => {
   it('groups routes by their first segment', () => {
     expect(sectionOf('/products/iron')).toBe('Products');
     expect(sectionOf('/solutions')).toBe('Solutions');
+    expect(sectionOf('/industries/government')).toBe('Industries');
     expect(sectionOf('/about/team')).toBe('Company');
     expect(sectionOf('/brand')).toBe('Company');
     expect(sectionOf('/blog/hello')).toBe('Blog');

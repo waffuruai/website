@@ -16,6 +16,7 @@ import { SITE, SITE_URL, markdownPath } from './site.mjs';
 const SECTIONS = [
   'Products',
   'Solutions',
+  'Industries',
   'Company',
   'Blog',
   'Help',
@@ -32,6 +33,8 @@ export function sectionOf(path) {
       return 'Products';
     case 'solutions':
       return 'Solutions';
+    case 'industries':
+      return 'Industries';
     case 'about':
     case 'brand':
       return 'Company';
@@ -59,6 +62,12 @@ const PATH_ORDER = [
   '/solutions/enterprise',
   '/solutions/neoclouds',
   '/solutions/ai-companies',
+  '/industries',
+  '/industries/cloud-infrastructure',
+  '/industries/financial-services',
+  '/industries/life-sciences',
+  '/industries/government',
+  '/industries/military',
   '/about',
   '/about/team',
   '/brand',
