@@ -2,7 +2,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
-import { ToolResearch } from '@/components/home/tool-research';
+import { ToolResearch } from './tool-research';
 import { toolResearch } from '@/content/pages/tool-research';
 import { locales } from '@/i18n/config';
 import { localize } from '@/lib/content';

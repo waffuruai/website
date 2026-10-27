@@ -1,12 +1,12 @@
 import { render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { Models } from '@/components/home/models';
-import { home } from '@/content/pages/home';
+import { Models } from './models';
+import { models } from '@/content/pages/models';
 import { withDictionary } from '@/i18n/test-utils';
 
 const renderModels = () =>
-  render(withDictionary(<Models content={home.en.models} />));
+  render(withDictionary(<Models content={models.en} />));
 
 describe('Models', () => {
   it('has the heading and two lanes at 120s and 130s, the second reversed', () => {
@@ -28,7 +28,7 @@ describe('Models', () => {
     lanes.forEach((lane, index) => {
       const cards = lane.querySelectorAll(':scope > li');
       const copies = lane.querySelectorAll(':scope > li[aria-hidden="true"]');
-      const labs = home.en.models.lanes[index].length;
+      const labs = models.en.lanes[index].length;
       expect(cards).toHaveLength(labs * 2);
       expect(copies).toHaveLength(labs);
       // The copy is the second half, in the same order as the first.
@@ -63,7 +63,7 @@ describe('Models', () => {
   });
 
   it('covers DeepSeek V4, Step 3, Drama-3, Nanbeige and Cohere Transcribe as coming soon, the rest as supported', () => {
-    const labs = home.en.models.lanes.flat();
+    const labs = models.en.lanes.flat();
     expect(labs.filter((lab) => lab.status === 'in-progress')).toEqual([
       expect.objectContaining({
         lab: 'DeepSeek',
@@ -76,14 +76,14 @@ describe('Models', () => {
     ]);
     expect(labs).toHaveLength(29);
     // Lanes stay close in length so the two marquees read at a similar pace.
-    const [first, second] = home.en.models.lanes;
+    const [first, second] = models.en.lanes;
     expect(Math.abs(first.length - second.length)).toBeLessThanOrEqual(1);
   });
 
   it('keeps every lab, model and logo key identical across locales', () => {
-    const en = home.en.models.lanes;
+    const en = models.en.lanes;
     for (const locale of ['es', 'fr', 'zh', 'ja', 'ko'] as const) {
-      expect(home[locale]?.models.lanes).toEqual(en);
+      expect(models[locale]?.lanes).toEqual(en);
     }
   });
 });

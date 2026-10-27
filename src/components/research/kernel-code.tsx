@@ -1,5 +1,9 @@
 import { Accent } from '@/components/sections/accent';
-import type { CodeToken, HomeContent, TuneLevel } from '@/content/pages/home';
+import type {
+  CodeToken,
+  KernelCodeCopy,
+  TuneLevel,
+} from '@/content/pages/kernel-code';
 import { cn } from '@/lib/utils';
 
 /** Syntax colours, all from tokens so both themes keep their contrast. */
@@ -38,7 +42,7 @@ const LEVELS: Record<
   },
 };
 
-function Tier({ tier }: { tier: HomeContent['kernel']['tiers'][number] }) {
+function Tier({ tier }: { tier: KernelCodeCopy['tiers'][number] }) {
   const level = LEVELS[tier.level];
 
   return (
@@ -80,7 +84,7 @@ function Tier({ tier }: { tier: HomeContent['kernel']['tiers'][number] }) {
  * backends it lowers to (and how well each is tuned) on the right, and the
  * hardware it runs on underneath.
  */
-export function KernelCode({ content }: { content: HomeContent['kernel'] }) {
+export function KernelCode({ content }: { content: KernelCodeCopy }) {
   const { title, code, tuned, tiers, runsOn } = content;
 
   return (

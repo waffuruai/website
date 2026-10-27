@@ -1,21 +1,23 @@
-import { SpeculativeResearch } from '@/components/home/speculative-research';
+import { SpeculativeResearch } from '@/components/research/speculative-research';
 import { speculativeResearch } from '@/content/pages/speculative-research';
 import type { Metadata } from 'next';
 
-import { Aura } from '@/components/home/aura';
+import { Aura } from '@/components/research/aura';
 import { FilmGrain } from '@/components/home/film-grain';
 import { Hero } from '@/components/home/hero';
-import { KernelCode } from '@/components/home/kernel-code';
-import { Models } from '@/components/home/models';
-import { QuantizedModels } from '@/components/home/quantized-models';
+import { KernelCode } from '@/components/research/kernel-code';
+import { Models } from '@/components/research/models';
+import { QuantizedModels } from '@/components/research/quantized-models';
 import { Stack } from '@/components/home/stack';
 import { TeamTeaser } from '@/components/home/team-teaser';
-import { ToolResearch } from '@/components/home/tool-research';
+import { ToolResearch } from '@/components/research/tool-research';
 import { NewsletterSignup } from '@/components/newsletter/newsletter-signup';
 import { JsonLd } from '@/components/seo/json-ld';
 import { CtaCard } from '@/components/sections/cta-card';
 import { aura } from '@/content/pages/aura';
 import { home } from '@/content/pages/home';
+import { kernelCode } from '@/content/pages/kernel-code';
+import { models } from '@/content/pages/models';
 import { quantizedModels } from '@/content/pages/quantized-models';
 import { toolResearch } from '@/content/pages/tool-research';
 import { mailto, site } from '@/content/site';
@@ -78,8 +80,8 @@ export default async function HomePage({ params }: { params: LocaleParams }) {
       {/* TODO(founder): temporary placement; move this one line to its final home. */}
       <QuantizedModels content={localize(quantizedModels, locale)} />
       <ToolResearch content={localize(toolResearch, locale)} locale={locale} />
-      <Models content={content.models} />
-      <KernelCode content={content.kernel} />
+      <Models content={localize(models, locale)} />
+      <KernelCode content={localize(kernelCode, locale)} />
       <TeamTeaser content={content.team} copy={localize(teamCopy, locale)} />
       <CtaCard
         title={content.cta.title}

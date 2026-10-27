@@ -1,5 +1,5 @@
 import { Accent } from '@/components/sections/accent';
-import type { HomeContent, ModelLab } from '@/content/pages/home';
+import type { ModelLab, ModelsCopy } from '@/content/pages/models';
 import { cn } from '@/lib/utils';
 
 /** Marquee speed and direction per lane (classes are spelled out for Tailwind). */
@@ -31,7 +31,7 @@ function ModelCard({
   clone = false,
 }: {
   model: ModelLab;
-  legend: HomeContent['models']['legend'];
+  legend: ModelsCopy['legend'];
   /** The second copy that makes the loop seamless: hidden from assistive tech. */
   clone?: boolean;
 }) {
@@ -79,7 +79,7 @@ function ModelCard({
  * so the loop never jumps; the second copy is `aria-hidden`. Hovering a lane
  * pauses it, and with reduced motion the lane is a plain scrollable row.
  */
-export function Models({ content }: { content: HomeContent['models'] }) {
+export function Models({ content }: { content: ModelsCopy }) {
   const { title, intro, legend, lanes } = content;
 
   return (

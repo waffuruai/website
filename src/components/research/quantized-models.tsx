@@ -39,7 +39,7 @@ function tiles(copy: QuantizedModelsCopy['tiles']) {
  * number is shown until one exists (see `quantizedModelsEvidence`).
  *
  * Self-contained: content comes from `src/content/pages/quantized-models.ts`,
- * so the section moves to a product or models page with one import.
+ * so the section can move between pages with one import (it sits on Butter).
  */
 export function QuantizedModels({ content }: { content: QuantizedModelsCopy }) {
   const stats = tiles(content.tiles);
