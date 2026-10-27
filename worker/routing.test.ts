@@ -63,7 +63,7 @@ describe('sectionRedirects', () => {
     expect(sectionRedirects(none)).toEqual({});
     expect(sectionRedirects({ ...none, pantry: true })).toEqual({
       '/pantry': '/products/pantry',
-      '/wscanner': '/products/pantry',
+      '/wpantry': '/products/pantry',
     });
     expect(sectionRedirects({ ...none, stack: true })['/iron']).toBe(
       '/products/iron',
@@ -160,7 +160,7 @@ describe('route', () => {
     for (const [from, to, live] of [
       ['/butter', '/products/butter', site.launched.stack],
       ['/pantry', '/products/pantry', site.launched.pantry],
-      ['/wscanner', '/products/pantry', site.launched.pantry],
+      ['/wpantry', '/products/pantry', site.launched.pantry],
     ] as const) {
       if (live) {
         expect(decide(from), from).toMatchObject({

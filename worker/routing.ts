@@ -26,11 +26,11 @@ type Section = keyof typeof site.launched;
 
 /**
  * Shortcuts into launch sections, live only once their section launches.
- * Bare product names point at their product pages; `/iron/…`, `/butter/…`
- * and `/wscanner/…` stay installers.
+ * Bare product names point at their product pages (`/wpantry` too, after
+ * the command's w- prefix); `/iron/…` and `/butter/…` stay installers.
  */
 const SECTION_REDIRECTS: Record<Section, Record<string, string>> = {
-  pantry: { '/pantry': '/products/pantry', '/wscanner': '/products/pantry' },
+  pantry: { '/pantry': '/products/pantry', '/wpantry': '/products/pantry' },
   stack: {
     '/iron': '/products/iron',
     '/butter': '/products/butter',
