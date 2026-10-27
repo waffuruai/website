@@ -20,9 +20,9 @@ export type AudienceKey = (typeof audienceKeys)[number];
 export type CodeSample = {
   /** Shown left in the panel's header bar. */
   filename: string;
-  /** Shown right in the header bar ("iron · rust dsl"). */
+  /** Shown right in the header bar ("butter · illustrative"). */
   label: string;
-  language: 'rust' | 'shell';
+  language: 'shell';
   source: string;
 };
 
@@ -108,7 +108,10 @@ export type ProductCopy = {
   /** Optional product-specific sections, in order, after the code sample. */
   extras?: ExtraSection[];
   specs: { heading: string; intro?: string; rows: SpecRow[] };
-  /** Only where hardware tiers matter (Iron, Butter). */
+  /**
+   * Only where hardware tiers matter: Butter. Iron's tiers are part of its
+   * kernel section (`kernel-code.ts`), so it leaves this out.
+   */
   platforms?: { heading: string; intro?: string; tiers: PlatformTier[] };
   stack: { heading: string; intro: string };
   faq: FaqItem[];

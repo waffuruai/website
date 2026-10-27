@@ -72,13 +72,6 @@ const ironZh: (typeof iron)['en'] = {
       },
     ],
   },
-  code: {
-    heading: '一个完整的内核，*从头到尾*。',
-    intro:
-      '这是对张量逐元素求 exp。每个实例加载一个元素，应用 exp，再存回结果。#[kernel] 属性标注了运算类型及其容差。',
-    caption:
-      'Iron DSL 源码。Iron 会把它转换为 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。',
-  },
   specs: {
     heading: '技术*细节*。',
     intro: '给会细读的人看的细节。',
@@ -112,27 +105,6 @@ const ironZh: (typeof iron)['en'] = {
       {
         term: '可用性',
         detail: '抢先体验期间为私有闭源。',
-      },
-    ],
-  },
-  platforms: {
-    heading: '调优在*哪里*。',
-    intro: 'Metal 排在第一位，因为每个内核都在这里编写和调优。',
-    tiers: [
-      {
-        platform: 'Apple · Metal',
-        level: 'primary',
-        note: '每个内核都先在这里编写并调优。MSL → .metallib。',
-      },
-      {
-        platform: 'NVIDIA · CUDA',
-        level: 'secondary',
-        note: '已在 RTX 和 DGX Spark 上投入生产。数据中心 GPU 正在进行中。CUDA → PTX。',
-      },
-      {
-        platform: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        note: '目前可以运行，尚未调优。HIP → AMDGPU，Vulkan → SPIR-V。',
       },
     ],
   },

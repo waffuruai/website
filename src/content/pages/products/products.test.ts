@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
+import { kernelCode } from '@/content/pages/kernel-code';
 import {
   audienceHrefs,
   audienceKeys,
@@ -128,17 +129,23 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
 });
 
 describe('hardware tiers', () => {
-  it.each(['iron', 'butter'] as const)(
-    '%s ranks Metal over CUDA over the rest',
-    (slug) => {
-      const tiers = productCopy[slug].en.platforms?.tiers ?? [];
-      expect(tiers.map((tier) => [tier.platform, tier.level])).toEqual([
-        ['Apple · Metal', 'primary'],
-        ['NVIDIA · CUDA', 'secondary'],
-        ['AMD ROCm · Vulkan', 'runs'],
-      ]);
-    },
-  );
+  const ranked = [
+    ['Apple · Metal', 'primary'],
+    ['NVIDIA · CUDA', 'secondary'],
+    ['AMD ROCm · Vulkan', 'runs'],
+  ];
+
+  it('Butter ranks Metal over CUDA over the rest', () => {
+    const tiers = productCopy.butter.en.platforms?.tiers ?? [];
+    expect(tiers.map((tier) => [tier.platform, tier.level])).toEqual(ranked);
+  });
+
+  it('Iron ranks them the same way, once, in its kernel section', () => {
+    expect(kernelCode.en.tiers.map((tier) => [tier.name, tier.level])).toEqual(
+      ranked,
+    );
+    expect(productCopy.iron.en.platforms).toBeUndefined();
+  });
 
   it('keeps tiers off the pages where hardware is not the point', () => {
     expect(productCopy.waffle.en.platforms).toBeUndefined();
@@ -154,11 +161,12 @@ describe('hardware tiers', () => {
 });
 
 describe('product specifics from the brief', () => {
-  it('Iron shows the brief’s kernel and its public numbers', () => {
-    const { code } = productFacts.iron;
-    expect(code?.language).toBe('rust');
-    expect(code?.label).toBe('iron · rust dsl');
-    expect(code?.source).toContain(
+  it('Iron shows the brief’s kernel once, in its kernel section, and its public numbers', () => {
+    // One kernel on the page: the kernel section, not a second code sample.
+    expect(productFacts.iron.code).toBeUndefined();
+    const { code } = kernelCode.en;
+    expect(code.label).toBe('iron · rust dsl');
+    expect(code.tokens.map((token) => token.text).join('')).toContain(
       'pub fn iron_exp<T>(a: Tensor<T>, out: Tensor<T>) {',
     );
     const text = strings(productCopy.iron.en).join(' ');

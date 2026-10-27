@@ -72,13 +72,6 @@ const ironKo: (typeof iron)['en'] = {
       },
     ],
   },
-  code: {
-    heading: '커널 하나를 *처음부터 끝까지*.',
-    intro:
-      '텐서에 exp를 적용하는 커널입니다. 각 인스턴스가 원소 하나를 읽어 exp를 적용하고 결과를 저장합니다. #[kernel] 속성에는 연산과 허용 오차가 표시됩니다.',
-    caption:
-      'Iron DSL 소스입니다. Iron이 이를 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환합니다.',
-  },
   specs: {
     heading: '기술 *세부 사항*.',
     intro: '꼼꼼히 읽어 보실 분들을 위한 상세 정보.',
@@ -113,28 +106,6 @@ const ironKo: (typeof iron)['en'] = {
       {
         term: '제공 현황',
         detail: '얼리 액세스 기간 동안 비공개 소스.',
-      },
-    ],
-  },
-  platforms: {
-    heading: '*튜닝*된 곳.',
-    intro:
-      'Metal이 먼저입니다. 모든 커널을 그곳에서 작성하고 튜닝하기 때문입니다.',
-    tiers: [
-      {
-        platform: 'Apple · Metal',
-        level: 'primary',
-        note: '모든 커널을 이곳에서 가장 먼저 작성하고 튜닝합니다. MSL → .metallib.',
-      },
-      {
-        platform: 'NVIDIA · CUDA',
-        level: 'secondary',
-        note: 'RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. 데이터센터 GPU는 진행 중입니다. CUDA → PTX.',
-      },
-      {
-        platform: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        note: '지금도 동작하지만 아직 튜닝하지 않았습니다. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
   },

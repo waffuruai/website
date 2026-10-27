@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { ProductPage } from '@/components/products/product-page';
@@ -175,20 +175,31 @@ describe('ProductPage: locale', () => {
   });
 });
 
-describe('Iron’s page', () => {
-  it('shows the kernel in a panel with its file name and label', () => {
-    renderPage('iron');
-    const panel = screen.getByRole('region', { name: /unary\.rs/ });
-    expect(within(panel).getByText('iron_exp')).toBeTruthy();
-    expect(screen.getByText('iron · rust dsl')).toBeTruthy();
+describe('ProductPage: extra sections from the route', () => {
+  it('renders them after the product’s own sections and before the specifics', () => {
+    const { container } = render(
+      withDictionary(
+        <ProductPage slug="butter" locale="en" dictionary={en}>
+          <section aria-labelledby="extra">
+            <h2 id="extra">Extra</h2>
+          </section>
+        </ProductPage>,
+      ),
+    );
+    const ids = [...container.querySelectorAll('section[aria-labelledby]')].map(
+      (section) => section.getAttribute('aria-labelledby'),
+    );
+    expect(ids.indexOf('extra')).toBe(ids.indexOf('quirks') + 1);
+    expect(ids.indexOf('specs')).toBe(ids.indexOf('extra') + 1);
   });
+});
 
-  it('spells out the three hardware tiers', () => {
-    renderPage('iron');
-    for (const tier of ['Primary', 'Secondary', 'Runs']) {
-      expect(screen.getAllByText(tier).length).toBeGreaterThan(0);
-    }
-    expect(screen.getByRole('heading', { name: 'Apple · Metal' })).toBeTruthy();
+describe('Iron’s page', () => {
+  it('leaves the kernel and its tiers to the kernel section', () => {
+    const { container } = renderPage('iron');
+    expect(container.querySelector('pre')).toBeNull();
+    expect(container.querySelector('#code')).toBeNull();
+    expect(container.querySelector('#platforms')).toBeNull();
   });
 });
 
