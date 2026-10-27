@@ -163,7 +163,7 @@ const fr: Dictionary = {
     madeIn: 'Fait avec 🤖 en Amérique du Nord',
     flagsLabel: 'États-Unis et Canada',
     social: 'Waffuru sur {network}',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
   },
   newsletter: {
     heading: 'Restez informé',

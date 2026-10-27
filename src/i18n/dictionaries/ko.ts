@@ -158,7 +158,7 @@ const ko: Dictionary = {
     madeIn: '북미에서 🤖와 함께 만들었습니다',
     flagsLabel: '미국과 캐나다',
     social: '{network}의 Waffuru',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
   },
   newsletter: {
     heading: '소식 받기',

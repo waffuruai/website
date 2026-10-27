@@ -4,6 +4,8 @@
  */
 export const site = {
   name: 'Waffuru',
+  /** The company: a Delaware corporation. Terms, privacy and the footer. */
+  legalName: 'Waffuru AI Inc.',
   /** Katakana for "waffle"; shown beside the wordmark. */
   kana: 'ワッフル',
   description:

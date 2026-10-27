@@ -158,7 +158,7 @@ const ja: Dictionary = {
     madeIn: '北米で 🤖 とともに制作',
     flagsLabel: 'アメリカ合衆国とカナダ',
     social: '{network} の Waffuru',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
   },
   newsletter: {
     heading: '最新情報を受け取る',
