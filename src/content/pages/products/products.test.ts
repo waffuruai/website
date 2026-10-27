@@ -13,6 +13,7 @@ import {
   productsTopDown,
   type ProductSlug,
 } from '@/content/pages/products';
+import { speculativeEvidence } from '@/content/pages/speculative-research';
 
 /** Every string in a content tree, so copy rules apply to all of it. */
 function strings(value: unknown): string[] {
@@ -106,14 +107,18 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
   });
 
   it('keeps the voice: no hype words, no exclamation marks, no speed claims', () => {
-    // The one measured number lives in the "How fast is it?" answer, which
-    // repeats the homepage's measurement and points at its test conditions.
+    // The one measured number in the product copy is the "How fast is it?"
+    // answer. It repeats the measurement from the research section on the
+    // same page, which lists the test conditions, and the answer says so.
+    // That section's numbers come from its own content file, not from here.
     const measured = copy.faq.find((item) =>
       /how fast/i.test(item.question),
     )?.answer;
     if (measured) {
       expect(measured).toMatch(/test conditions/i);
       expect(measured).toMatch(/depend on model/i);
+      expect(measured).toMatch(/this page/i);
+      expect(measured).not.toMatch(/home ?page/i);
     }
     for (const text of strings(copy)) {
       expect(text).not.toMatch(
@@ -232,6 +237,20 @@ describe('product specifics from the brief', () => {
     for (const text of strings(productCopy.butter.en)) {
       expect(text).not.toMatch(/not there yet|not yet\b/i);
     }
+  });
+
+  it('Butter’s speed answer repeats the numbers from the section on its page', () => {
+    const answer = productCopy.butter.en.faq.find((item) =>
+      /how fast/i.test(item.question),
+    )?.answer;
+    const levels = speculativeEvidence.greedy.levels;
+    const single = levels[0];
+    const busiest = levels.at(-1)!;
+    expect(single.requests).toBe(1);
+    expect(answer).toContain(`${Math.round(single.burst)} tokens per second`);
+    expect(answer).toContain(`${Math.round(busiest.burst)} tokens per second`);
+    expect(answer).toContain(`${busiest.requests} concurrent requests`);
+    expect(answer).toContain(`about ${Math.round(busiest.lane)} per request`);
   });
 
   it('Butter’s snippet is illustrative and keeps placeholders', () => {
