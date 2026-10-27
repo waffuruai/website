@@ -8,8 +8,9 @@ import ironKo from './iron.ko';
 
 /*
  * Iron, 01 · Kernels. Facts come from the content brief only: no benchmark
- * numbers, no claims that CUDA or ROCm beat anything. The code sample lives
- * in `facts.ts` because code does not translate.
+ * numbers, no claims that CUDA or ROCm beat anything. The kernel, its
+ * backend tiers and the hardware it runs on are one section with its own
+ * copy (`../kernel-code.ts`), so this page has no `code` or `platforms`.
  */
 export const iron: Localized<ProductCopy> = {
   en: {
@@ -84,13 +85,6 @@ export const iron: Localized<ProductCopy> = {
         },
       ],
     },
-    code: {
-      heading: 'A whole kernel, *start to finish*.',
-      intro:
-        'This is exp over a tensor. Each instance loads one element, applies exp and stores the result. The #[kernel] attribute tags the op and its tolerance.',
-      caption:
-        'Iron DSL source. Iron lowers it to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V.',
-    },
     specs: {
       heading: 'Technical *specifics*.',
       intro: 'The details, for the people who will read them.',
@@ -127,28 +121,6 @@ export const iron: Localized<ProductCopy> = {
         {
           term: 'Availability',
           detail: 'Private and closed source during early access.',
-        },
-      ],
-    },
-    platforms: {
-      heading: 'Where it’s *tuned*.',
-      intro:
-        'Metal comes first, because that is where every kernel is written and tuned.',
-      tiers: [
-        {
-          platform: 'Apple · Metal',
-          level: 'primary',
-          note: 'Every kernel is written and tuned here first. MSL → .metallib.',
-        },
-        {
-          platform: 'NVIDIA · CUDA',
-          level: 'secondary',
-          note: 'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
-        },
-        {
-          platform: 'AMD ROCm · Vulkan',
-          level: 'runs',
-          note: 'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
         },
       ],
     },

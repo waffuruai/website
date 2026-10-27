@@ -1,12 +1,12 @@
 import { render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { KernelCode } from '@/components/home/kernel-code';
-import { home } from '@/content/pages/home';
+import { KernelCode } from './kernel-code';
+import { kernelCode } from '@/content/pages/kernel-code';
 import { withDictionary } from '@/i18n/test-utils';
 
 const renderKernel = () =>
-  render(withDictionary(<KernelCode content={home.en.kernel} />));
+  render(withDictionary(<KernelCode content={kernelCode.en} />));
 
 describe('KernelCode', () => {
   it('breaks the heading and accents the second line', () => {
@@ -36,7 +36,7 @@ describe('KernelCode', () => {
     expect(classOf('pub fn')).toContain('text-foreground');
     expect(classOf('let')).toContain('text-foreground');
     expect(classOf('iron_exp')).toContain('text-brand-ink');
-    expect(classOf(home.en.kernel.code.tokens[0].text)).toContain(
+    expect(classOf(kernelCode.en.code.tokens[0].text)).toContain(
       'text-muted-foreground',
     );
     expect(screen.getByText('unary.rs')).toBeTruthy();
@@ -92,7 +92,7 @@ describe('KernelCode', () => {
   it('lists where it runs, with datacenter GPUs as a dashed chip', () => {
     renderKernel();
     const group = screen.getByRole('group', { name: 'Runs on' });
-    for (const item of home.en.kernel.runsOn.items) {
+    for (const item of kernelCode.en.runsOn.items) {
       expect(within(group).getByText(item)).toBeTruthy();
     }
     const pending = within(group).getByText(

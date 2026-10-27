@@ -76,13 +76,6 @@ const ironJa: (typeof iron)['en'] = {
       },
     ],
   },
-  code: {
-    heading: 'カーネル全体を、*最初から最後まで*。',
-    intro:
-      'テンソルに対する exp です。各インスタンスが要素を 1 つ読み込み、exp を適用して、結果を書き込みます。#[kernel] 属性には、演算とその許容誤差を記します。',
-    caption:
-      'Iron DSL のソース。Iron が Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ変換します。',
-  },
   specs: {
     heading: '技術的な*詳細*',
     intro: '細部まで読みたい人のための、詳細です。',
@@ -119,28 +112,6 @@ const ironJa: (typeof iron)['en'] = {
       {
         term: '提供状況',
         detail: '早期アクセス期間中は非公開で、クローズドソース。',
-      },
-    ],
-  },
-  platforms: {
-    heading: '*チューニング*の状況',
-    intro:
-      'Metal が最優先です。すべてのカーネルを、まずここで書き、チューニングするからです。',
-    tiers: [
-      {
-        platform: 'Apple · Metal',
-        level: 'primary',
-        note: 'すべてのカーネルを、まずここで書き、チューニングします。MSL → .metallib。',
-      },
-      {
-        platform: 'NVIDIA · CUDA',
-        level: 'secondary',
-        note: 'RTX と DGX Spark では本番稼働中。データセンター GPU は対応中です。CUDA → PTX。',
-      },
-      {
-        platform: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        note: '現時点で動作しますが、チューニングはこれからです。HIP → AMDGPU、Vulkan → SPIR-V。',
       },
     ],
   },

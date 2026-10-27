@@ -1,55 +1,14 @@
 /**
- * A tiny highlighter for the two snippets on the product pages (Iron's Rust
- * DSL and Butter's shell example). It sorts text into four roles the code
- * panel colours with tokens, so there is no syntax-highlighting dependency
- * and nothing runs in the browser.
+ * A tiny highlighter for the snippet on the product pages (Butter's shell
+ * example; Iron's kernel is pre-tokenized in its own section). It sorts text
+ * into four roles the code panel colours with tokens, so there is no
+ * syntax-highlighting dependency and nothing runs in the browser.
  */
 export type TokenRole = 'muted' | 'strong' | 'accent' | 'plain';
 
 export type Token = { role: TokenRole; text: string };
 
-export type CodeLanguage = 'rust' | 'shell';
-
-const RUST_KEYWORDS = new Set([
-  'as',
-  'const',
-  'else',
-  'enum',
-  'fn',
-  'for',
-  'if',
-  'impl',
-  'in',
-  'let',
-  'match',
-  'mod',
-  'mut',
-  'pub',
-  'return',
-  'struct',
-  'trait',
-  'unsafe',
-  'use',
-  'where',
-]);
-
-/** Comment, attribute, string, word, anything else. */
-const RUST_TOKEN =
-  /(\/\/.*$)|(#!?\[.*\])|("(?:[^"\\]|\\.)*")|([A-Za-z_][A-Za-z0-9_]*)|(\s+|.)/g;
-
-function rustLine(line: string): Token[] {
-  const tokens: Token[] = [];
-  let afterFn = false;
-  for (const [text, comment, attribute, , word] of line.matchAll(RUST_TOKEN)) {
-    let role: TokenRole = 'plain';
-    if (comment || attribute) role = 'muted';
-    else if (word && RUST_KEYWORDS.has(word)) role = 'strong';
-    else if (word && afterFn) role = 'accent';
-    if (word) afterFn = word === 'fn';
-    tokens.push({ role, text });
-  }
-  return tokens;
-}
+export type CodeLanguage = 'shell';
 
 /** Prompt, line-continuation backslash, flag, string, anything else. */
 const SHELL_TOKEN =
@@ -77,8 +36,7 @@ function shellLine(line: string): Token[] {
 
 /**
  * Joins neighbouring tokens that share a role, and folds a lone space into
- * the tokens either side of it when they match ("pub fn"), so the HTML stays
- * small.
+ * the tokens either side of it when they match, so the HTML stays small.
  */
 function merge(tokens: Token[]): Token[] {
   const merged: Token[] = [];
@@ -102,8 +60,11 @@ function merge(tokens: Token[]): Token[] {
   return folded;
 }
 
+const LINE: Record<CodeLanguage, (line: string) => Token[]> = {
+  shell: shellLine,
+};
+
 /** Splits `source` into lines of role-tagged tokens. */
 export function highlight(source: string, language: CodeLanguage): Token[][] {
-  const line = language === 'rust' ? rustLine : shellLine;
-  return source.split('\n').map((text) => merge(line(text)));
+  return source.split('\n').map((text) => merge(LINE[language](text)));
 }

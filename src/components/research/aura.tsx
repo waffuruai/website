@@ -70,7 +70,7 @@ const STEP_LINKS: readonly (readonly {
  * it is qualified (see `auraEvidence`).
  *
  * Self-contained: content comes from `src/content/pages/aura.ts`, so the
- * section can move to a product page with one import.
+ * section can move between pages with one import (it sits on Butter).
  */
 export function Aura({ content }: { content: AuraCopy }) {
   const stats = tiles(content.tiles);

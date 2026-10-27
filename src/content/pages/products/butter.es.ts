@@ -296,7 +296,7 @@ const butterEs: (typeof butter)['en'] = {
     {
       question: '¿Cuál es su velocidad?',
       answer:
-        'En un M5 Max con 128 GB, Butter sirvió Qwen3.8-27B en 4 bits a 103 tokens por segundo para una sola solicitud (prompts de unos 937 tokens, greedy) y 146 tokens por segundo en total con 8 solicitudes concurrentes, unos 26 por solicitud. Los resultados dependen del modelo, la longitud del prompt y el hardware; la página de inicio detalla las condiciones de prueba.',
+        'En un M5 Max con 128 GB, Butter sirvió Qwen3.8-27B en 4 bits a 103 tokens por segundo para una sola solicitud (prompts de unos 937 tokens, greedy) y 146 tokens por segundo en total con 8 solicitudes concurrentes, unos 26 por solicitud. Los resultados dependen del modelo, la longitud del prompt y el hardware; las condiciones de prueba aparecen junto a las mediciones en esta página.',
     },
   ],
   cta: {

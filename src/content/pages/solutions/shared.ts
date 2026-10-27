@@ -10,7 +10,7 @@ import solutionsSharedKo from './shared.ko';
 /**
  * Strings every audience page shares: section labels, the four products as
  * they appear in "How the stack fits", and the hardware tiers for "Where we
- * are". Tiers and chips are the exact public wording from the home page;
+ * are". Tiers and chips follow the public wording on the product pages;
  * never overclaim (Metal primary, CUDA secondary, ROCm and Vulkan run).
  */
 export const solutionsShared: Localized<SolutionsShared> = {

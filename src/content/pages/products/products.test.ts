@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
+import { kernelCode } from '@/content/pages/kernel-code';
 import {
   audienceHrefs,
   audienceKeys,
@@ -12,6 +13,7 @@ import {
   productsTopDown,
   type ProductSlug,
 } from '@/content/pages/products';
+import { speculativeEvidence } from '@/content/pages/speculative-research';
 
 /** Every string in a content tree, so copy rules apply to all of it. */
 function strings(value: unknown): string[] {
@@ -105,14 +107,18 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
   });
 
   it('keeps the voice: no hype words, no exclamation marks, no speed claims', () => {
-    // The one measured number lives in the "How fast is it?" answer, which
-    // repeats the homepage's measurement and points at its test conditions.
+    // The one measured number in the product copy is the "How fast is it?"
+    // answer. It repeats the measurement from the research section on the
+    // same page, which lists the test conditions, and the answer says so.
+    // That section's numbers come from its own content file, not from here.
     const measured = copy.faq.find((item) =>
       /how fast/i.test(item.question),
     )?.answer;
     if (measured) {
       expect(measured).toMatch(/test conditions/i);
       expect(measured).toMatch(/depend on model/i);
+      expect(measured).toMatch(/this page/i);
+      expect(measured).not.toMatch(/home ?page/i);
     }
     for (const text of strings(copy)) {
       expect(text).not.toMatch(
@@ -128,17 +134,23 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
 });
 
 describe('hardware tiers', () => {
-  it.each(['iron', 'butter'] as const)(
-    '%s ranks Metal over CUDA over the rest',
-    (slug) => {
-      const tiers = productCopy[slug].en.platforms?.tiers ?? [];
-      expect(tiers.map((tier) => [tier.platform, tier.level])).toEqual([
-        ['Apple · Metal', 'primary'],
-        ['NVIDIA · CUDA', 'secondary'],
-        ['AMD ROCm · Vulkan', 'runs'],
-      ]);
-    },
-  );
+  const ranked = [
+    ['Apple · Metal', 'primary'],
+    ['NVIDIA · CUDA', 'secondary'],
+    ['AMD ROCm · Vulkan', 'runs'],
+  ];
+
+  it('Butter ranks Metal over CUDA over the rest', () => {
+    const tiers = productCopy.butter.en.platforms?.tiers ?? [];
+    expect(tiers.map((tier) => [tier.platform, tier.level])).toEqual(ranked);
+  });
+
+  it('Iron ranks them the same way, once, in its kernel section', () => {
+    expect(kernelCode.en.tiers.map((tier) => [tier.name, tier.level])).toEqual(
+      ranked,
+    );
+    expect(productCopy.iron.en.platforms).toBeUndefined();
+  });
 
   it('keeps tiers off the pages where hardware is not the point', () => {
     expect(productCopy.waffle.en.platforms).toBeUndefined();
@@ -154,11 +166,12 @@ describe('hardware tiers', () => {
 });
 
 describe('product specifics from the brief', () => {
-  it('Iron shows the brief’s kernel and its public numbers', () => {
-    const { code } = productFacts.iron;
-    expect(code?.language).toBe('rust');
-    expect(code?.label).toBe('iron · rust dsl');
-    expect(code?.source).toContain(
+  it('Iron shows the brief’s kernel once, in its kernel section, and its public numbers', () => {
+    // One kernel on the page: the kernel section, not a second code sample.
+    expect(productFacts.iron.code).toBeUndefined();
+    const { code } = kernelCode.en;
+    expect(code.label).toBe('iron · rust dsl');
+    expect(code.tokens.map((token) => token.text).join('')).toContain(
       'pub fn iron_exp<T>(a: Tensor<T>, out: Tensor<T>) {',
     );
     const text = strings(productCopy.iron.en).join(' ');
@@ -224,6 +237,20 @@ describe('product specifics from the brief', () => {
     for (const text of strings(productCopy.butter.en)) {
       expect(text).not.toMatch(/not there yet|not yet\b/i);
     }
+  });
+
+  it('Butter’s speed answer repeats the numbers from the section on its page', () => {
+    const answer = productCopy.butter.en.faq.find((item) =>
+      /how fast/i.test(item.question),
+    )?.answer;
+    const levels = speculativeEvidence.greedy.levels;
+    const single = levels[0];
+    const busiest = levels.at(-1)!;
+    expect(single.requests).toBe(1);
+    expect(answer).toContain(`${Math.round(single.burst)} tokens per second`);
+    expect(answer).toContain(`${Math.round(busiest.burst)} tokens per second`);
+    expect(answer).toContain(`${busiest.requests} concurrent requests`);
+    expect(answer).toContain(`about ${Math.round(busiest.lane)} per request`);
   });
 
   it('Butter’s snippet is illustrative and keeps placeholders', () => {

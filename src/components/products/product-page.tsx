@@ -27,7 +27,8 @@ import { breadcrumbs, softwareApplication } from '@/lib/json-ld';
 
 /**
  * One template for every product page, driven by typed content: hero with the
- * product's motif, problem to outcome, capabilities, an optional code sample,
+ * product's motif, problem to outcome, capabilities, an optional code sample
+ * and product-specific sections, any research sections the route passes in,
  * technical specifics, hardware tiers where they matter, links to the rest
  * of the stack, the FAQ and the closing call to action.
  */
@@ -35,10 +36,18 @@ export function ProductPage({
   slug,
   locale,
   dictionary,
+  children,
 }: {
   slug: ProductSlug;
   locale: Locale;
   dictionary: Dictionary;
+  /**
+   * Full sections with their own content files (Butter's measured research,
+   * Iron's kernel). They follow what the product does and how you use it, as
+   * the evidence for it, and come before the specifics, which stay the
+   * reference block at the end.
+   */
+  children?: React.ReactNode;
 }) {
   const facts = productFacts[slug];
   const copy = localize(productCopy[slug], locale);
@@ -89,6 +98,7 @@ export function ProductPage({
       {copy.extras && copy.extras.length > 0 && (
         <ExtraSections sections={copy.extras} />
       )}
+      {children}
       <SpecList specs={copy.specs} inProgressLabel={common.inProgress} />
       {copy.platforms && (
         <PlatformTiers

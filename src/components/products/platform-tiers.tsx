@@ -89,7 +89,7 @@ function Tier({
 
 /**
  * Hardware tiers (Metal primary, CUDA secondary, ROCm and Vulkan "runs, not
- * tuned yet") in the home page's vocabulary, plus the "runs on" machines.
+ * tuned yet") in the kernel section's vocabulary, plus the "runs on" machines.
  */
 export function PlatformTiers({
   platforms,

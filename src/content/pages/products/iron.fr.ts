@@ -76,13 +76,6 @@ const ironFr: (typeof iron)['en'] = {
       },
     ],
   },
-  code: {
-    heading: 'Un kernel complet, *de bout en bout*.',
-    intro:
-      'Voici exp appliquée à un tenseur. Chaque instance charge un élément, applique exp et stocke le résultat. L’attribut #[kernel] indique l’opération et sa tolérance.',
-    caption:
-      'Source du DSL Iron. Iron la compile vers Metal, CUDA, HIP/ROCm ou Vulkan SPIR-V.',
-  },
   specs: {
     heading: 'Les *détails* techniques.',
     intro: 'Les détails, pour celles et ceux qui les liront.',
@@ -122,28 +115,6 @@ const ironFr: (typeof iron)['en'] = {
       {
         term: 'Disponibilité',
         detail: 'Privé et à code fermé pendant l’accès anticipé.',
-      },
-    ],
-  },
-  platforms: {
-    heading: 'Où c’est *optimisé*.',
-    intro:
-      'Metal passe en premier, car c’est là que chaque kernel est écrit et optimisé.',
-    tiers: [
-      {
-        platform: 'Apple · Metal',
-        level: 'primary',
-        note: 'Chaque kernel est d’abord écrit et optimisé ici. MSL → .metallib.',
-      },
-      {
-        platform: 'NVIDIA · CUDA',
-        level: 'secondary',
-        note: 'En production sur RTX et DGX Spark. GPU de datacenter en cours. CUDA → PTX.',
-      },
-      {
-        platform: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        note: 'Fonctionne aujourd’hui, pas encore optimisé. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
   },

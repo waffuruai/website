@@ -1,7 +1,7 @@
 /**
  * Shiki themes for code blocks, built from the site palette so code reads as
  * part of the page: soft cream text, gold for what you define, a muted
- * attribute line (the home page's Iron sample), and one restrained hue each
+ * attribute line (Iron's kernel sample), and one restrained hue each
  * for keywords, strings, types and numbers.
  *
  * Plain JSON, so Turbopack can pass it to the MDX loader. The block's own

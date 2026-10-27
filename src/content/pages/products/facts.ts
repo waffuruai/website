@@ -12,17 +12,7 @@ export const productFacts: Record<ProductSlug, ProductFacts> = {
     name: 'Iron',
     path: '/products/iron',
     secondaryCta: 'docs',
-    code: {
-      filename: 'unary.rs',
-      label: 'iron · rust dsl',
-      language: 'rust',
-      // The kernel from the home page, verbatim.
-      source: `#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]
-pub fn iron_exp<T>(a: Tensor<T>, out: Tensor<T>) {
-    let idx = program_id(0);
-    store(out[idx], exp(load(a[idx])));
-}`,
-    },
+    // The kernel is in the page's KernelCode section (`../kernel-code.ts`).
   },
   butter: {
     slug: 'butter',

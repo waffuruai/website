@@ -10,8 +10,11 @@ import butterKo from './butter.ko';
  * Butter, 02 · Serving. Facts come from the content brief and from Butter's
  * own docs on `origin/dev` (documentation/serve.md, README.md, models.md,
  * quantization.md, kv-cache.md) plus merged PRs, verified 2026-10-26. The
- * only measured number is in the "How fast is it?" answer. The terminal
- * snippet lives in `facts.ts` (placeholders, captioned as illustrative).
+ * only measured number in this copy is the "How fast is it?" answer, which
+ * repeats the speculative decoding section rendered on the same page (its
+ * numbers and test conditions live in `../speculative-research.ts`). The
+ * terminal snippet lives in `facts.ts` (placeholders, captioned as
+ * illustrative).
  *
  * TODO(founder): "no JIT" stays off the page because the CUDA host compiles
  * kernels through NVRTC at runtime (rust/README.md); Metal kernels ship
@@ -311,7 +314,7 @@ export const butter: Localized<ProductCopy> = {
       {
         question: 'How fast is it?',
         answer:
-          'On an M5 Max with 128 GB, Butter served Qwen3.8-27B 4-bit at 103 tokens per second for a single request (about 937-token prompts, greedy) and 146 tokens per second total across 8 concurrent requests, about 26 per request. Results depend on model, prompt length and hardware; the homepage lists the test conditions.',
+          'On an M5 Max with 128 GB, Butter served Qwen3.8-27B 4-bit at 103 tokens per second for a single request (about 937-token prompts, greedy) and 146 tokens per second total across 8 concurrent requests, about 26 per request. Results depend on model, prompt length and hardware; the test conditions are listed with the measurements on this page.',
       },
     ],
     cta: {
