@@ -12,7 +12,7 @@
  */
 import { mkdir, readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const POST_FILE = /^page(?:\.([a-z]{2}))?\.mdx$/;
 
@@ -66,4 +66,4 @@ async function main() {
   console.log(`blog index: ${Object.keys(posts).length} posts`);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) await main();
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) await main();

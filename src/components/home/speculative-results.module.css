@@ -1,0 +1,50 @@
+@keyframes lane {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  25%,
+  70% {
+    opacity: 1;
+    background: color-mix(in oklab, var(--brand) 30%, transparent);
+  }
+}
+@keyframes verify {
+  0%,
+  100% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 32px color-mix(in oklab, var(--brand) 18%, transparent);
+  }
+}
+@keyframes advance {
+  from {
+    opacity: 0.25;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.ready .lane {
+  animation: lane 1.3s ease-in-out both;
+}
+.ready .verifier {
+  animation: verify 2.6s ease-in-out;
+}
+.ready .token {
+  animation: advance 0.7s ease-out both;
+}
+.ready .bar {
+  animation: fill 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

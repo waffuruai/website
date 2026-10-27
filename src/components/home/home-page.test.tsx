@@ -31,11 +31,32 @@ describe('HomePage', () => {
     ).toEqual([
       'Raw math, pressed into silicon.',
       'The stack.',
+      '27B.8 requests. One Mac.',
+      'More context per gigabyte.',
+      'Models quantized with care',
+      'Fewer wrong arguments.Cheaper correct ones.',
       'Models on the menu.',
       'You write this.Iron writes the rest.',
       'Who’s in the kitchen.',
       'Pull up a seat.',
     ]);
+  });
+
+  it('puts the stack right after the hero and the research after the stack', async () => {
+    const { container } = await renderPage();
+    const ids = [...container.querySelectorAll('section[id]')].map(
+      (section) => section.id,
+    );
+    expect(ids.indexOf('stack')).toBeLessThan(ids.indexOf('native-inference'));
+    expect(ids.indexOf('native-inference')).toBeLessThan(ids.indexOf('aura'));
+    expect(ids.indexOf('aura')).toBeLessThan(ids.indexOf('quantized-models'));
+    expect(ids.indexOf('quantized-models')).toBeLessThan(
+      ids.indexOf('tool-reliability'),
+    );
+    expect(ids.indexOf('tool-reliability')).toBeLessThan(ids.indexOf('models'));
+    expect(
+      screen.getByRole('link', { name: /see the stack/i }).getAttribute('href'),
+    ).toBe('#stack');
   });
 
   it('paints the film grain over the top, hidden from assistive tech', async () => {

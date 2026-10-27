@@ -12,7 +12,7 @@ const es: Dictionary = {
     copied: 'Copiado',
     opensInNewTab: '(se abre en una pestaña nueva)',
     private: 'Privado',
-    inProgress: 'En desarrollo',
+    inProgress: 'Próximo',
     faqHeading: 'Preguntas frecuentes',
   },
   meta: {

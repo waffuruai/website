@@ -12,7 +12,7 @@ const ja: Dictionary = {
     copied: 'コピーしました',
     opensInNewTab: '（新しいタブで開きます）',
     private: '非公開',
-    inProgress: '対応中',
+    inProgress: '次の対象',
     faqHeading: 'よくある質問',
   },
   meta: {

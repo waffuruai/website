@@ -46,6 +46,19 @@ export type Highlight = { value: string; label: string };
 
 export type Capability = { title: string; body: string };
 
+/**
+ * A compact, product-specific section rendered between the code sample and
+ * the technical specifics (Butter: agent harness compatibility, model quirks).
+ * `id` is the section anchor; `note` is an honest caveat under the list.
+ */
+export type ExtraSection = {
+  id: string;
+  heading: string;
+  intro?: string;
+  items: Capability[];
+  note?: string;
+};
+
 export type SpecChip = { label: string; inProgress?: boolean };
 
 /** A named cluster inside a spec row (a vendor and its model families). */
@@ -92,6 +105,8 @@ export type ProductCopy = {
   capabilities: { heading: string; intro?: string; items: Capability[] };
   /** Only for products with a `code` sample in their facts. */
   code?: { heading: string; intro?: string; caption?: string };
+  /** Optional product-specific sections, in order, after the code sample. */
+  extras?: ExtraSection[];
   specs: { heading: string; intro?: string; rows: SpecRow[] };
   /** Only where hardware tiers matter (Iron, Butter). */
   platforms?: { heading: string; intro?: string; tiers: PlatformTier[] };

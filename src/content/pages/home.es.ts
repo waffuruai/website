@@ -21,7 +21,7 @@ const homeEs: (typeof home)['en'] = {
   hero: {
     eyebrow: 'Cuatro productos · código cerrado por ahora',
     title: 'Matemática pura, *prensada* en silicio.',
-    lede: 'Escribimos kernels de GPU, un motor de inferencia, un plano de control y una capa de recuperación. Funcionan en una laptop, en un laboratorio casero o en la flota de un neocloud.',
+    lede: 'Escribimos kernels de GPU, un motor de inferencia, un plano de control y una capa de recuperación para que tu equipo ejecute modelos en su propio hardware. Funcionan en un portátil, un laboratorio casero o una flota de neocloud, y publicamos lo que medimos.',
     secondary: { label: 'Ver el stack', href: '#stack' },
     emits: {
       label: 'Emite',
@@ -73,13 +73,13 @@ const homeEs: (typeof home)['en'] = {
     title: 'Modelos a la carta.',
     intro:
       'Se cargan directo desde Hugging Face. La cobertura es más amplia en Metal; el soporte de CUDA se añade modelo por modelo.',
-    legend: { supported: 'Compatible', inProgress: 'En desarrollo' },
+    legend: { supported: 'Compatible', inProgress: 'Próximamente' },
     lanes: [
       [
         {
           lab: 'Meta',
           logo: 'meta',
-          models: 'Llama 3 · 3.1 · 3.2 · 3.3',
+          models: 'Llama 3 · 3.1 · 3.2 · 3.3, Muse Glimmer',
         },
         {
           lab: 'Google',
@@ -89,7 +89,7 @@ const homeEs: (typeof home)['en'] = {
         {
           lab: 'Qwen',
           logo: 'qwen',
-          models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni',
+          models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni, ASR',
         },
         {
           lab: 'OpenAI',
@@ -99,20 +99,35 @@ const homeEs: (typeof home)['en'] = {
         {
           lab: 'Mistral AI',
           logo: 'mistral',
-          models: 'Mistral, Mistral 3 VL, Voxtral',
+          models: 'Mistral, Mistral 3 VL, Pixtral, Voxtral',
         },
         {
           lab: 'NVIDIA',
           logo: 'nvidia',
-          models: 'Nemotron H, Nemotron VLM',
+          models: 'Nemotron H · 3.5, VLM, Diffusion, Parakeet',
         },
         {
           lab: 'DeepSeek',
           logo: 'deepseek',
-          models: 'DeepSeek V4',
+          models: 'DeepSeek V4 · V4.1',
           status: 'in-progress',
         },
-        { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4' },
+        { lab: 'Z.ai', logo: 'zai', models: 'GLM-5.3, GLM-OCR, GLM-ASR' },
+        { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4, Granite Speech' },
+        {
+          lab: 'OpenBMB',
+          logo: 'openbmb',
+          models: 'MiniCPM 5, MiniCPM-V 4.6, MiniCPM-o',
+        },
+        { lab: 'Tencent', logo: 'tencent', models: 'Hy3' },
+        { lab: 'inclusionAI', logo: 'inclusionai', models: 'Ling 3.0' },
+        {
+          lab: 'StepFun',
+          logo: 'stepfun',
+          models: 'Step 3',
+          status: 'in-progress',
+        },
+        { lab: 'BigCode', logo: 'bigcode', models: 'StarCoder2' },
       ],
       [
         { lab: 'Microsoft', logo: 'microsoft', models: 'Phi 3' },
@@ -131,6 +146,20 @@ const homeEs: (typeof home)['en'] = {
           logo: 'internlm',
           models: 'InternLM 2',
         },
+        { lab: 'hexgrad', logo: 'hexgrad', models: 'Kokoro' },
+        { lab: '01.AI', logo: '01ai', models: 'Yi 1.5' },
+        { lab: 'Recursive', logo: 'recursive', models: 'Flint' },
+        {
+          lab: 'Poolside',
+          logo: 'poolside',
+          models: 'Laguna S 2.1 · XS 2.1',
+        },
+        {
+          lab: 'Nanbeige',
+          logo: 'nanbeige',
+          models: 'Nanbeige 4.3',
+          status: 'in-progress',
+        },
         {
           lab: 'Fish Audio',
           logo: 'fishaudio',
@@ -138,9 +167,9 @@ const homeEs: (typeof home)['en'] = {
           status: 'in-progress',
         },
         {
-          lab: 'Recursive',
-          logo: 'recursive',
-          models: 'Flint',
+          lab: 'Cohere',
+          logo: 'cohere',
+          models: 'Cohere Transcribe',
           status: 'in-progress',
         },
       ],
@@ -168,7 +197,10 @@ const homeEs: (typeof home)['en'] = {
         },
       ],
     },
-    tuned: { title: 'Dónde está afinado', note: 'Pulso = velocidad relativa' },
+    tuned: {
+      title: 'Dónde está afinado',
+      note: 'Pulso = hasta dónde llega el ajuste',
+    },
     tiers: [
       {
         name: 'Apple · Metal',
@@ -180,13 +212,13 @@ const homeEs: (typeof home)['en'] = {
         name: 'NVIDIA · CUDA',
         level: 'secondary',
         label: 'Secundario',
-        note: 'En producción en RTX y DGX Spark. Las GPU de centros de datos están en desarrollo. CUDA → PTX.',
+        note: 'En producción en RTX y DGX Spark. CUDA → PTX.',
       },
       {
         name: 'AMD ROCm · Vulkan',
         level: 'runs',
         label: 'Funciona',
-        note: 'Funciona hoy, aún sin afinar. HIP → AMDGPU, Vulkan → SPIR-V.',
+        note: 'Avanzando rápido en AMD. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
     runsOn: {
@@ -198,7 +230,7 @@ const homeEs: (typeof home)['en'] = {
         'Strix Halo',
         'Flotas de neoclouds',
       ],
-      pending: 'GPU de centros de datos empresariales · en desarrollo',
+      pending: 'GPU de centros de datos empresariales · próximas',
     },
   },
 

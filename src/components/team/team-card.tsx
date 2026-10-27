@@ -52,7 +52,8 @@ export function TeamCard({
         />
         <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 border-t border-foreground/15 bg-background/80 px-4 py-3 backdrop-blur-md">
           <p className="label-mono text-foreground">{copy.role}</p>
-          <p className="text-[13px] leading-[1.4] text-pretty text-soft">
+          {/* Two lines reserved (2 × 1.4em) so every band is the same height. */}
+          <p className="min-h-[2.8em] text-[13px] leading-[1.4] text-pretty text-soft">
             {copy.background}
           </p>
         </div>

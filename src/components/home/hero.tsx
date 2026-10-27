@@ -22,7 +22,7 @@ export function Hero({
   const { eyebrow, title, lede, secondary, emits } = content;
 
   return (
-    <section className="relative flex min-h-[900px] flex-col justify-end max-[720px]:min-h-0 max-[720px]:pt-28">
+    <section className="relative flex min-h-[min(900px,100svh)] flex-col justify-end pt-32 max-[720px]:min-h-0 max-[720px]:pt-28">
       <HeroTiles />
 
       <div className="relative z-[6] mx-auto flex w-full max-w-site flex-col gap-9 px-site pb-18 max-[720px]:gap-7 max-[720px]:pb-12">

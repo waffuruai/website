@@ -16,7 +16,7 @@ const en = {
     copied: 'Copied',
     opensInNewTab: '(opens in a new tab)',
     private: 'Private',
-    inProgress: 'In progress',
+    inProgress: 'Next',
     faqHeading: 'Questions, answered',
   },
   meta: {

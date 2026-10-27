@@ -4,8 +4,8 @@ import { cn } from '@/lib/utils';
 
 /** Marquee speed and direction per lane (classes are spelled out for Tailwind). */
 const LANES = [
-  { duration: '[--marquee-duration:70s]', reverse: false },
-  { duration: '[--marquee-duration:85s]', reverse: true },
+  { duration: '[--marquee-duration:120s]', reverse: false },
+  { duration: '[--marquee-duration:130s]', reverse: true },
 ] as const;
 
 function StatusDot({ inProgress }: { inProgress: boolean }) {
