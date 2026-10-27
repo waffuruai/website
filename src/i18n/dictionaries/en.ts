@@ -20,9 +20,9 @@ const en = {
     faqHeading: 'Questions, answered',
   },
   meta: {
-    defaultTitle: 'Waffuru: raw math, pressed into silicon',
+    defaultTitle: 'Waffuru: more intelligence from the hardware you own',
     defaultDescription:
-      'GPU kernels, inference, fleet control and memory for the hardware you already own. Waffuru builds Iron, Butter, Waffle and Syrup.',
+      'Waffuru builds the stack that runs AI on the hardware you already own, private by default. Start with Pantry, our free vulnerability scanner for macOS and Linux.',
   },
   header: {
     mainNav: 'Main',

@@ -16,9 +16,9 @@ const zh: Dictionary = {
     faqHeading: '常见问题',
   },
   meta: {
-    defaultTitle: 'Waffuru：把纯粹的数学压进硅片',
+    defaultTitle: 'Waffuru：让你已有的硬件发挥更多智能',
     defaultDescription:
-      '为你已有的硬件提供 GPU 内核、推理、集群管理与记忆。Waffuru 打造 Iron、Butter、Waffle 和 Syrup。',
+      'Waffuru 打造在你已有硬件上运行 AI 的技术栈，默认私密。从 Pantry 开始：适用于 macOS 和 Linux 的免费漏洞扫描器。',
   },
   header: {
     mainNav: '主导航',

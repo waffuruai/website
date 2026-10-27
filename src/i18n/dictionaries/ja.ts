@@ -16,9 +16,9 @@ const ja: Dictionary = {
     faqHeading: 'よくある質問',
   },
   meta: {
-    defaultTitle: 'Waffuru：純粋な数学を、シリコンに焼き込む',
+    defaultTitle: 'Waffuru：今あるハードウェアから、もっと多くの知能を',
     defaultDescription:
-      'お手持ちのハードウェアのための GPU カーネル、推論、フリート管理、メモリ。Waffuru は Iron、Butter、Waffle、Syrup をつくっています。',
+      'Waffuru は、お持ちのハードウェアで AI を動かすスタックをつくっています。デフォルトでプライベート。まずは macOS と Linux 向けの無料脆弱性スキャナー Pantry から。',
   },
   header: {
     mainNav: 'メイン',

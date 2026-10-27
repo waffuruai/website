@@ -106,22 +106,20 @@ describe('compiled post', () => {
     const code = await compile(readFileSync(file, 'utf8'), file);
 
     const words = Number(/"words": (\d+)/.exec(code)?.[1]);
-    expect(words).toBeGreaterThanOrEqual(900);
+    expect(words).toBeGreaterThanOrEqual(700);
     expect(words).toBeLessThanOrEqual(1300);
 
     const ids = [...code.matchAll(/"id": "([a-z0-9-]+)"/g)].map((m) => m[1]);
     expect(ids).toEqual([
-      'why-now',
-      'what-we-are-building',
-      'what-we-value',
+      'what-we-believe',
+      'the-stack',
+      'first-off-the-griddle-pantry',
       'whos-in-the-kitchen',
       'where-we-are',
-      'follow-along',
+      'pull-up-a-seat',
     ]);
 
-    // Both blocks are highlighted, and the Rust one carries its file name.
-    expect(code).toContain('children: "unary.rs"');
-    expect(code).toContain('"data-language": "rust"');
+    // The install block is highlighted as shell.
     expect(code).toContain('"data-language": "sh"');
     expect(code).toContain('export const article');
   });

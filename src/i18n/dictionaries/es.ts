@@ -16,9 +16,9 @@ const es: Dictionary = {
     faqHeading: 'Preguntas frecuentes',
   },
   meta: {
-    defaultTitle: 'Waffuru: matemática pura, prensada en silicio',
+    defaultTitle: 'Waffuru: más inteligencia del hardware que ya tienes',
     defaultDescription:
-      'Kernels de GPU, inferencia, control de flotas y memoria para el hardware que ya tienes. Waffuru crea Iron, Butter, Waffle y Syrup.',
+      'Waffuru crea el stack que ejecuta IA en el hardware que ya tienes, privado por defecto. Empieza con Pantry, nuestro escáner de vulnerabilidades gratuito para macOS y Linux.',
   },
   header: {
     mainNav: 'Principal',

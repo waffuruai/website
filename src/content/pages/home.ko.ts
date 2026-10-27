@@ -3,69 +3,136 @@ import type { home } from './home';
 const homeKo: (typeof home)['en'] = {
   seo: {
     keywords: [
-      '로컬 LLM 추론',
-      'GPU 커널',
-      '추론 엔진',
-      'Apple 실리콘',
-      'Metal',
-      'CUDA',
-      'ROCm',
-      'Vulkan',
-      'GPU 플릿 관리',
-      '네오클라우드',
-      '온디바이스 AI',
       '프라이빗 AI',
+      '로컬 AI',
+      '온디바이스 AI',
+      '내 하드웨어에서 돌리는 AI',
+      '로컬 LLM 추론',
+      '추론 엔진',
+      'GPU 커널',
+      'Apple silicon',
+      '취약점 스캐너',
+      'Pantry',
     ],
   },
 
   hero: {
-    eyebrow: '제품 4종 · 당분간 비공개 소스',
-    title: '날것의 수학을 실리콘에 *눌러 담다*.',
-    lede: '우리는 GPU 커널, 추론 엔진, 컨트롤 플레인, 검색 레이어를 만들어 팀이 자체 하드웨어에서 모델을 실행할 수 있게 합니다. 노트북, 홈 랩, neocloud 플릿 어디서든 돌아가며, 측정한 결과는 공개합니다.',
-    secondary: { label: '스택 보기', href: '#stack' },
-    emits: {
-      label: '출력',
-      targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
+    eyebrow: '내 하드웨어 · 내 데이터 · 내 AI',
+    title: '이미 *가진* 하드웨어로 더 많은 지능을.',
+    lede: 'Waffuru는 노트북부터 GPU 플릿까지, 내 컴퓨터에서 AI를 돌리는 스택을 만듭니다. 가진 하드웨어에서 더 많은 것을 얻고, 데이터는 내 곁에 머물며, 프롬프트마다 클라우드 요금이 나오지도 않습니다.',
+    launch: {
+      label: '신규',
+      text: 'macOS와 Linux를 위한 무료 취약점 스캐너, Pantry',
     },
+    secondary: { label: '작동 방식 보기', href: '#stack' },
+  },
+
+  pantry: {
+    label: '무료 · 오픈소스 · 오늘 출시',
+    title: '무엇이 *노출*됐는지 알고, 빠르게 패치하세요.',
+    body: '어시스턴트가 내 컴퓨터에서 돌아가려면 먼저 그 컴퓨터가 안전해야 합니다. Pantry는 설치된 모든 것과 모든 저장소를 공개 취약점 데이터와 대조해, 실제로 해당하는 것만 알려 주고 안전하게 고칠 수 있는 것은 고칩니다.',
+    points: [
+      '내 버전에 정확히 해당하는 것만',
+      '안전한 수정은 대신 실행하고, sudo 단계는 출력',
+      '텔레메트리 없음, AI 없음, Rust로 작성',
+    ],
+    primary: '시스템 보호하기',
+    secondary: 'Pantry 작동 방식',
+    caption: '한 컴퓨터의 출력 예시입니다.',
   },
 
   stack: {
-    title: '스택.',
+    title: '실리콘에서 *답*까지.',
     intro:
-      'Iron이 커널을 컴파일하고, Butter가 그 위에서 모델을 실행합니다. Waffle은 GPU를 지켜보고, Syrup은 하던 일을 기억합니다.',
-    products: [
+      '따로도, 함께도 작동하는 네 개의 레이어. 요청은 아래로 내려가고 답은 다시 올라오며, 그 어느 것도 내 하드웨어를 떠날 필요가 없습니다.',
+    note: '스택은 비공개이며 얼리 액세스 중입니다. Metal이 우선, 그다음이 CUDA입니다. ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+    flow: {
+      you: '나, 내 앱, 내 에이전트',
+      boundary: '내 하드웨어 · 내 네트워크',
+      layers: [
+        {
+          role: '컨트롤',
+          name: 'Waffle',
+          line: '모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에.',
+        },
+        {
+          role: '메모리',
+          name: 'Syrup',
+          line: '내 노트와 코드에서 가져온 컨텍스트를 출처와 함께.',
+        },
+        {
+          role: '엔진',
+          name: 'Butter',
+          line: '모델을 실행합니다. 서빙 경로에 Python은 없습니다.',
+        },
+        {
+          role: '커널',
+          name: 'Iron',
+          line: '하나의 커널 정의를 칩마다 튜닝.',
+        },
+      ],
+      hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
+      outside: {
+        title: '남의 클라우드',
+        note: '필요 없습니다. 내가 동의하지 않는 한 데이터는 내 곁에 머뭅니다.',
+      },
+      outcomes: [
+        '기본값은 프라이빗',
+        '가진 하드웨어에서 더 많이',
+        '모든 GPU를 한눈에',
+      ],
+      caption:
+        '요청은 컨트롤 플레인, 메모리, 엔진, 커널을 거쳐 내 하드웨어에 닿고, 답은 같은 길로 돌아옵니다. 모든 과정이 내 하드웨어와 네트워크 안에서 이루어집니다. 그 결과, 기본값은 프라이빗이고, 가진 하드웨어에서 더 많이 얻으며, 모든 GPU를 한눈에 봅니다.',
+    },
+  },
+
+  audiences: {
+    title: '모두를 위한 *자리*.',
+    intro: '누구든 같은 스택을 쓸 수 있습니다.',
+    items: [
       {
-        slug: 'syrup',
-        index: '04',
-        kicker: '메모리',
-        name: 'Syrup',
-        tagline: '당신의 AI가 하던 일을 기억합니다.',
-        body: '노트와 코드를 로컬에서 검색합니다. 임베딩은 TurboQuant+로 압축하고, 검색은 어휘 검색과 벡터 검색을 함께 사용하며, 결과는 MCP를 통해 출처와 함께 돌려줍니다.',
+        title: '개인을 위해',
+        body: '내 노트북에서 돌아가는 프라이빗 어시스턴트. 노트, 코드, 질문이 모두 내 컴퓨터에 머뭅니다.',
       },
       {
-        slug: 'waffle',
-        index: '03',
-        kicker: '컨트롤 플레인',
-        name: 'Waffle',
-        tagline: '모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에.',
-        body: 'GPU 위에서 도는 LLM을 위한 컨트롤 플레인입니다. 책상 아래 서버 한 대부터 플릿을 임대하는 네오클라우드까지 다룹니다. 각 호스트에서 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다. Butter, vLLM, SGLang, llama.cpp 등 OpenAI 호환 서버와 함께 동작합니다.',
+        title: '기업을 위해',
+        body: 'AI를 사내로 들이세요. 민감한 데이터는 있어야 할 곳에 두고, 하드웨어로 할 수 있는 일에 프롬프트당 비용을 내지 마세요.',
+        href: '/solutions/enterprise',
       },
       {
-        slug: 'butter',
-        index: '02',
-        kicker: '서빙',
-        name: 'Butter',
-        tagline: 'Python 없는 모델 서빙.',
-        body: 'Apple 실리콘에는 Metal 위의 Swift를, CUDA를 비롯한 나머지에는 Rust를 씁니다. 2~8비트 양자화 체크포인트와 하이브리드·MoE 모델을 불러오고, 양자화된 KV 캐시를 지원합니다.',
+        title: 'GPU 클라우드를 위해',
+        body: '임대하는 모든 GPU에서 더 많이 서빙하고, 플릿 전체를 한곳에서 보세요.',
+        href: '/solutions/neoclouds',
       },
       {
-        slug: 'iron',
-        index: '01',
-        kicker: '커널',
-        name: 'Iron',
-        tagline: '하나의 커널 정의, 네 가지 백엔드.',
-        body: 'Rust에 내장된 DSL입니다. 커널은 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다. 버전이 관리되는 C·Rust ABI로 기존 호스트에서도 호출할 수 있습니다.',
+        title: 'AI 개발자를 위해',
+        body: '커널을 한 번 작성해 Metal, CUDA, ROCm, Vulkan에 배포하세요.',
+        href: '/solutions/ai-companies',
       },
+    ],
+    linkLabel: '자세히 보기',
+  },
+
+  beliefs: {
+    title: '우리가 *요리하는* 이유.',
+    intro: '우리가 만드는 모든 것의 바탕에 있는 세 가지 믿음.',
+    items: [
+      {
+        title: '모두를 위한 지능',
+        body: 'AI에 대한 접근이 사는 곳, 버는 돈, 가진 자격에 좌우되어서는 안 됩니다.',
+      },
+      {
+        title: '와트마다 더 많이',
+        body: '지능에 대한 수요는 끝이 없지만, 전력과 칩은 그렇지 않습니다. 핵심은 컴퓨트 한 단위에서 더 쓸모 있는 일을 뽑아내는 것입니다.',
+      },
+      {
+        title: '내 하드웨어에서, 충분히 좋게',
+        body: '약 2년 안에, 사람들이 이미 가진 컴퓨터에서 돌아가는 모델로도 의미 있는 일을 할 수 있게 될 것입니다. 우리는 그때를 위해 만들고 있습니다.',
+      },
+    ],
+    links: [
+      { label: '발표 읽기', href: '/blog/introducing-waffuru' },
+      { label: '우리가 믿는 것', href: '/about#beliefs' },
     ],
   },
 
@@ -78,7 +145,7 @@ const homeKo: (typeof home)['en'] = {
 
   cta: {
     title: '자리에 앉으세요.',
-    body: '아직 공개된 것은 없습니다. 얼리 액세스를 신청하시거나 아래에 이메일을 남겨 주세요. 공개되는 대로 연락드리겠습니다.',
+    body: '오늘 Pantry를 무료로 써 보세요. 스택의 나머지는 얼리 액세스 중입니다. 자리를 신청하시거나 이메일을 남겨 주시면 소식이 있을 때 연락드리겠습니다.',
   },
 };
 

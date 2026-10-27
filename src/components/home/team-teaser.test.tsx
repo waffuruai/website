@@ -33,11 +33,7 @@ describe('TeamTeaser', () => {
     const heading = screen.getByRole('heading', { level: 2 });
     expect(heading.textContent).toBe('Who’s in the kitchen.');
     expect(heading.querySelector('em')?.textContent).toBe('kitchen');
-    expect(
-      screen.getByText(
-        'Research, security, revenue and a couple of founders who have shipped before.',
-      ),
-    ).toBeTruthy();
+    expect(screen.getByText(home.en.team.intro)).toBeTruthy();
   });
 
   it('shows all five people with their portrait, name and role', () => {

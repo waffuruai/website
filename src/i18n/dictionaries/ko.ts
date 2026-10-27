@@ -16,9 +16,9 @@ const ko: Dictionary = {
     faqHeading: '자주 묻는 질문',
   },
   meta: {
-    defaultTitle: 'Waffuru: 순수한 수학을 실리콘에 새기다',
+    defaultTitle: 'Waffuru: 이미 가진 하드웨어에서 더 많은 지능을',
     defaultDescription:
-      '이미 가진 하드웨어를 위한 GPU 커널, 추론, 플릿 관리, 메모리. Waffuru는 Iron, Butter, Waffle, Syrup을 만듭니다.',
+      'Waffuru는 이미 가진 하드웨어에서 AI를 실행하는 스택을 만듭니다. 기본적으로 프라이빗합니다. macOS와 Linux용 무료 취약점 스캐너 Pantry로 시작하세요.',
   },
   header: {
     mainNav: '주 메뉴',

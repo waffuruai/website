@@ -250,7 +250,7 @@ describe('posts on disk', () => {
     expect(launch).toMatchObject({
       slug: 'introducing-waffuru',
       author: 'eric-kryski',
-      date: '2026-10-26',
+      date: '2026-10-28',
       category: 'Company',
       published: true,
       locale: 'en',

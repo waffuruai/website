@@ -21,6 +21,24 @@ export type Cta = {
 
 export type FaqItem = { question: string; answer: string };
 
+/** Copy for `StackFlow`, the stack drawn as the path a request takes. */
+export type StackFlowCopy = {
+  /** Who asks: the top of the flow ("You, your apps, your agents"). */
+  you: string;
+  /** Mono caps label on the dashed boundary. */
+  boundary: string;
+  /** The stack from the top down: what each layer does for you. */
+  layers: { role: string; line: string; name?: string }[];
+  /** The bottom row: hardware it runs on. */
+  hardware: string[];
+  /** Outside the boundary: where data does not go. */
+  outside: { title: string; note: string };
+  /** What lights up when the answer comes back. */
+  outcomes: string[];
+  /** The text alternative for the whole figure. */
+  caption: string;
+};
+
 export type Seo = {
   title: string;
   description: string;

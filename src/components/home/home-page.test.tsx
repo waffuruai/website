@@ -3,7 +3,8 @@ import { describe, expect, it, vi } from 'vitest';
 
 import HomePage, { generateMetadata } from '@/app/[locale]/(marketing)/page';
 import { home } from '@/content/pages/home';
-import { mailto, site } from '@/content/site';
+import { pantryFacts } from '@/content/pages/pantry/facts';
+import { site } from '@/content/site';
 import en from '@/i18n/dictionaries/en';
 import { withDictionary } from '@/i18n/test-utils';
 
@@ -29,18 +30,22 @@ describe('HomePage', () => {
         heading.textContent?.replace(/\s+/g, ' ').trim(),
       ),
     ).toEqual([
-      'Raw math, pressed into silicon.',
-      'The stack.',
+      'More intelligence from the hardware you already own.',
+      'Know what’s exposed. Patch it fast.',
+      'From silicon to answer.',
+      'A seat at the table.',
+      'Why we’re cooking.',
       'Who’s in the kitchen.',
       'Pull up a seat.',
     ]);
   });
 
-  it('puts the stack right after the hero and leaves the research to the product pages', async () => {
+  it('leads with Pantry, then the stack, and leaves research to the product pages', async () => {
     const { container } = await renderPage();
-    const sections = [...container.querySelectorAll('section')];
-    expect(sections[1]?.id).toBe('stack');
-    const ids = sections.map((section) => section.id).filter(Boolean);
+    const ids = [...container.querySelectorAll('section')]
+      .map((section) => section.id)
+      .filter(Boolean);
+    expect(ids.slice(0, 4)).toEqual(['pantry', 'stack', 'who', 'why']);
     for (const research of [
       'native-inference',
       'aura',
@@ -51,8 +56,34 @@ describe('HomePage', () => {
       expect(ids).not.toContain(research);
     }
     expect(
-      screen.getByRole('link', { name: /see the stack/i }).getAttribute('href'),
+      screen
+        .getByRole('link', { name: /see how it works/i })
+        .getAttribute('href'),
     ).toBe('#stack');
+  });
+
+  it('points every way into Pantry at its page', async () => {
+    await renderPage();
+    expect(
+      screen
+        .getByRole('link', { name: new RegExp(home.en.hero.launch.text) })
+        .getAttribute('href'),
+    ).toBe(pantryFacts.path);
+    const secure = screen.getAllByRole('link', { name: /secure your system/i });
+    // The Pantry section and the closing card.
+    expect(secure).toHaveLength(2);
+    for (const link of secure) {
+      expect(link.getAttribute('href')).toBe(`${pantryFacts.path}#install`);
+    }
+  });
+
+  it('shows the stack as a flow, with no deep links into unlaunched pages', async () => {
+    const { container } = await renderPage();
+    const stack = container.querySelector('#stack')!;
+    for (const layer of home.en.stack.flow.layers) {
+      expect(stack.textContent).toContain(layer.role);
+    }
+    expect(stack.querySelectorAll('a')).toHaveLength(0);
   });
 
   it('paints the film grain over the top, hidden from assistive tech', async () => {
@@ -62,7 +93,7 @@ describe('HomePage', () => {
     expect(grain?.querySelector('feTurbulence')).not.toBeNull();
   });
 
-  it('sends early access to the form and sales to email', async () => {
+  it('sends early access to the form', async () => {
     await renderPage();
     const access = screen.getAllByRole('link', {
       name: /request early access/i,
@@ -72,18 +103,16 @@ describe('HomePage', () => {
     for (const link of access) {
       expect(link.getAttribute('href')).toBe(site.urls.earlyAccess);
     }
-    expect(
-      screen.getByRole('link', { name: /talk to us/i }).getAttribute('href'),
-    ).toBe(mailto('Sales'));
   });
 
-  it('links the stack to its product pages and the team to its page', async () => {
+  it('links each audience on once its page is live, and the team', async () => {
     await renderPage();
-    for (const name of ['Syrup', 'Waffle', 'Butter', 'Iron']) {
-      expect(screen.getByRole('link', { name }).getAttribute('href')).toBe(
-        `/products/${name.toLowerCase()}`,
-      );
-    }
+    const linked = home.en.audiences.items.filter((item) => item.href);
+    expect(
+      screen
+        .getAllByRole('link', { name: /^see how:/i })
+        .map((link) => link.getAttribute('href')),
+    ).toEqual(linked.map((item) => item.href));
     expect(
       screen.getByRole('link', { name: /meet the team/i }).getAttribute('href'),
     ).toBe('/about/team');
@@ -117,18 +146,11 @@ describe('home metadata', () => {
     expect(metadata.description).toBe(en.meta.defaultDescription);
     expect(metadata.keywords).toEqual(
       expect.arrayContaining([
-        'local LLM inference',
-        'GPU kernels',
-        'inference engine',
-        'Apple silicon',
-        'Metal',
-        'CUDA',
-        'ROCm',
-        'Vulkan',
-        'GPU fleet management',
-        'neocloud',
-        'on-device AI',
         'private AI',
+        'local AI',
+        'local LLM inference',
+        'vulnerability scanner',
+        'Pantry',
       ]),
     );
     expect(metadata.alternates?.canonical).toBe('/');
