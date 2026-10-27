@@ -31,6 +31,7 @@ export function organization(): JsonLdObject {
     '@type': 'Organization',
     '@id': ORG_ID,
     name: site.name,
+    legalName: site.legalName,
     alternateName: site.kana,
     url: site.url,
     logo: absoluteUrl('/img/brand/waffle-384.png'),

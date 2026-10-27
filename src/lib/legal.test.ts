@@ -142,11 +142,24 @@ describe('policy text', () => {
     }
   });
 
-  it('flags the entity, address and governing law for the founder', async () => {
+  it('names the company and its governing law', async () => {
+    const terms = rendered(await sourceOf('terms'));
+    const privacy = rendered(await sourceOf('privacy'));
+    expect(terms).toContain('Waffuru AI Inc., a Delaware corporation');
+    expect(terms).toContain('laws of the State of Delaware');
+    expect(privacy).toContain('Waffuru AI Inc., a Delaware corporation');
+    expect(privacy).toMatch(/Waffuru AI Inc\. decides why and how/);
+  });
+
+  it('flags the address and the venue for the founder', async () => {
     const terms = await sourceOf('terms');
-    expect(terms).toMatch(/TODO\(founder\): legal entity name/);
-    expect(terms).toMatch(/TODO\(founder\): name the governing law/);
-    expect(await sourceOf('privacy')).toMatch(/TODO\(founder\): legal entity/);
+    expect(terms).toMatch(
+      /TODO\(founder\): add Waffuru AI Inc\.'s registered address/,
+    );
+    expect(terms).toMatch(/TODO\(founder\): confirm Delaware law/);
+    expect(await sourceOf('privacy')).toMatch(
+      /TODO\(founder\): add the data controller's registered address/,
+    );
   });
 
   it('covers what the privacy policy has to', async () => {

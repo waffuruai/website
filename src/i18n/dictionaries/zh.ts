@@ -129,7 +129,7 @@ const zh: Dictionary = {
     madeIn: '在北美用 🤖 打造',
     flagsLabel: '美国和加拿大',
     social: 'Waffuru 的 {network}',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
   },
   newsletter: {
     heading: '获取最新动态',

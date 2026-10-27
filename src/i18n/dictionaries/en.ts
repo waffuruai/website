@@ -133,7 +133,7 @@ const en = {
     madeIn: 'Made with 🤖 in North America',
     flagsLabel: 'United States and Canada',
     social: 'Waffuru on {network}',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
   },
   newsletter: {
     heading: 'Stay in the loop',
