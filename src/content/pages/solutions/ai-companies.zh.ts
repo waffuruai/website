@@ -39,7 +39,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
       },
       {
         tag: 'inference',
-        title: '不用 Python，也不用 JIT 提供服务。',
+        title: '无需 Python 即可提供服务。',
         body: 'Butter 在 Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust，提供兼容 OpenAI 的 API、流式输出和工具调用。混合模型和 MoE 模型、推测解码和 LoRA 一应俱全。',
       },
       {

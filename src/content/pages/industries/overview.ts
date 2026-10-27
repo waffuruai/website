@@ -60,7 +60,7 @@ export const industriesOverview: Localized<IndustriesOverview> = {
         {
           tag: 'inference',
           title: 'Fewer moving *parts*.',
-          body: 'Butter serves models with no Python and no JIT in the serving path, on kernels tuned for each backend. Less to patch, less to break and less to explain.',
+          body: 'Butter serves models with no Python in the serving path, on kernels tuned for each backend. Less to patch, less to break and less to explain.',
           points: [
             'Metal first, CUDA next, ROCm and Vulkan running',
             'OpenAI-compatible serving, so apps keep working',

@@ -69,7 +69,7 @@ export const financialServices: Localized<IndustryPage> = {
         {
           tag: 'inference',
           title: 'Serve with fewer moving parts.',
-          body: 'Butter has no Python and no JIT in the serving path, and its OpenAI-compatible API means internal tools change an address, not an SDK. Fewer dependencies means less to track between review and production.',
+          body: 'Butter has no Python in the serving path, and its OpenAI-compatible API means internal tools change an address, not an SDK. Fewer dependencies means less to track between review and production.',
         },
         {
           tag: 'control',
@@ -86,7 +86,7 @@ export const financialServices: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'Serve models inside your boundary.',
-          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python and no JIT in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so a new model needs no conversion pipeline.',
+          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so a new model needs no conversion pipeline.',
         },
         {
           product: 'waffle',

@@ -46,7 +46,7 @@ const financialServicesZh: (typeof financialServices)['en'] = {
       {
         tag: 'inference',
         title: '用更少的组件提供服务。',
-        body: 'Butter 的服务路径上没有 Python，也没有 JIT；它兼容 OpenAI 的 API 意味着内部工具只需换一个地址，不用换 SDK。依赖更少，从审查到生产之间要跟踪的东西就更少。',
+        body: 'Butter 的服务路径上没有 Python；它兼容 OpenAI 的 API 意味着内部工具只需换一个地址，不用换 SDK。依赖更少，从审查到生产之间要跟踪的东西就更少。',
       },
       {
         tag: 'control',
@@ -63,7 +63,7 @@ const financialServicesZh: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: '在你的边界内提供模型服务。',
-        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python，也没有 JIT。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，所以新模型不需要转换流水线。',
+        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，所以新模型不需要转换流水线。',
       },
       {
         product: 'waffle',

@@ -71,7 +71,7 @@ const neocloudsJa: (typeof neoclouds)['en'] = {
       {
         product: 'butter',
         need: '自分で制御できる、Python なしのエンジン。',
-        body: 'Metal 上の Swift、CUDA などでは Rust。量子化されたチェックポイントと KV キャッシュ、投機的デコーディング、LoRA が OpenAI 互換 API の背後にあり、Python も JIT もありません。',
+        body: 'Metal 上の Swift、CUDA などでは Rust。量子化されたチェックポイントと KV キャッシュ、投機的デコーディング、LoRA が OpenAI 互換 API の背後にあり、Python は使っていません。',
       },
       {
         product: 'iron',

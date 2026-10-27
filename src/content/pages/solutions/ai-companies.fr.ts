@@ -41,7 +41,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
       },
       {
         tag: 'inference',
-        title: 'Servez sans Python ni JIT.',
+        title: 'Servez sans Python.',
         body: 'Butter, c’est du Swift sur Metal pour le silicium Apple et du Rust pour CUDA et le reste, avec une API compatible OpenAI, du streaming et de l’appel d’outils. Modèles hybrides et MoE, décodage spéculatif et LoRA sont fournis.',
       },
       {

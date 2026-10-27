@@ -14,9 +14,11 @@ import cloudInfrastructureKo from './cloud-infrastructure.ko';
  * one GPU vendor. No utilisation percentages, no revenue or margin claims,
  * no comparisons with other engines.
  *
- * TODO(founder): confirm (1) whether Waffle breaks cost down per tenant
- * (billing-grade attribution) before the page says more than "who runs
- * what"; (2) licensing terms for offering Butter as a managed service to
+ * Cost per tenant: the founder believes Waffle shows it today and it is on
+ * the roadmap regardless (2026-10-27), so the page says so.
+ *
+ * TODO(founder): before Industries launches, confirm (1) cost per tenant is
+ * shipping, and whether it is billing-grade; (2) licensing terms for offering Butter as a managed service to
  * tenants; (3) how the telemetry signature is verified.
  */
 export const cloudInfrastructure: Localized<IndustryPage> = {
@@ -67,7 +69,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
         {
           tag: 'inference',
           title: 'Offer managed inference you can stand behind.',
-          body: 'Butter serves an OpenAI-compatible API with streaming and tool calling, with no Python and no JIT in the serving path. Fewer moving parts means less to patch and less to break under someone else’s workload.',
+          body: 'Butter serves an OpenAI-compatible API with streaming and tool calling, with no Python in the serving path. Fewer moving parts means less to patch and less to break under someone else’s workload.',
         },
         {
           tag: 'control',
@@ -84,12 +86,12 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
         {
           product: 'waffle',
           need: 'Every GPU, engine and tenant in one view.',
-          body: 'A small Rust sidecar on each host reports signed telemetry. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so tenants keep the engines they chose.',
+          body: 'A small Rust sidecar on each host reports signed telemetry, and Waffle breaks cost down per tenant. It works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so tenants keep the engines they chose.',
         },
         {
           product: 'butter',
           need: 'Managed inference with fewer moving parts.',
-          body: 'Swift on Metal and Rust for CUDA, with no Python and no JIT in the serving path. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API.',
+          body: 'Swift on Metal and Rust for CUDA, with no Python in the serving path. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API.',
         },
         {
           product: 'iron',
@@ -121,7 +123,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
       {
         question: 'How much will it add to our margin?',
         answer:
-          'We will not promise a number. Seeing what each GPU runs, and for whom, comes first. Output per GPU-hour and dollars per workload are what we then try to move, measured on your fleet.',
+          'We will not promise a number. Seeing what each GPU runs, for whom and at what cost per tenant comes first. Output per GPU-hour and dollars per workload are what we then try to move, measured on your fleet.',
       },
       {
         question: 'Why should we trust the telemetry?',

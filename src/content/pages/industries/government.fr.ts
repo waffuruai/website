@@ -53,7 +53,7 @@ const governmentFr: (typeof government)['en'] = {
       {
         tag: 'inference',
         title: 'Utilisez le matériel que vous avez déjà acheté.',
-        body: 'Des Mac sur les bureaux aux stations RTX et à DGX Spark, une seule stack sert des modèles sur ce qui est déjà payé. Butter n’a ni Python ni JIT dans le chemin de serving : moins à corriger, et moins à justifier.',
+        body: 'Des Mac sur les bureaux aux stations RTX et à DGX Spark, une seule stack sert des modèles sur ce qui est déjà payé. Butter se passe de Python dans le chemin de serving : moins à corriger, et moins à justifier.',
       },
     ],
   },
@@ -65,7 +65,7 @@ const governmentFr: (typeof government)['en'] = {
       {
         product: 'butter',
         need: 'Servir des modèles sur une infrastructure que vous exploitez.',
-        body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python et sans JIT dans le chemin de serving. Vos outils existants changent d’adresse, pas de SDK.',
+        body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python dans le chemin de serving. Vos outils existants changent d’adresse, pas de SDK.',
       },
       {
         product: 'waffle',
@@ -90,6 +90,7 @@ const governmentFr: (typeof government)['en'] = {
     notes: [
       'Prévoyez vos pilotes sur silicium Apple, stations RTX et DGX Spark, là où la stack tourne aujourd’hui. Les GPU de datacenter sont en cours.',
       'ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+      'La majeure partie de la stack fonctionne hors ligne une fois les modèles sur vos machines. La prise en charge des environnements physiquement isolés arrive bientôt.',
       'Soumettez-nous directement vos exigences en matière d’achats et de sécurité, et nous y répondrons précisément.',
     ],
   },
@@ -98,6 +99,11 @@ const governmentFr: (typeof government)['en'] = {
       question: 'Des données quittent-elles notre infrastructure ?',
       answer:
         'Les données d’inférence ne sortent pas par défaut, car les données restent sur la machine, sauf si vous choisissez de les partager. Chaque hôte Waffle exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
+    },
+    {
+      question: 'Cela peut-il fonctionner hors ligne ?',
+      answer:
+        'La majeure partie de la stack fonctionne hors ligne une fois les modèles sur vos machines. La prise en charge des environnements physiquement isolés arrive bientôt, et nous vous dirons ce qui fonctionne aujourd’hui dans votre environnement.',
     },
     {
       question: 'Êtes-vous accrédités pour un usage dans le secteur public ?',

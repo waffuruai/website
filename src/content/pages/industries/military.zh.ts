@@ -4,7 +4,7 @@ const militaryZh: (typeof military)['en'] = {
   seo: {
     title: '面向军事与国防的私有 AI 推理',
     description:
-      '在自有并由你保障安全的硬件上运行强大的模型，从 Mac 到 RTX 工作站和 DGX Spark，服务栈精简，没有 Python，也没有 JIT。抢先体验。',
+      '在自有并由你保障安全的硬件上运行强大的模型，从 Mac 到 RTX 工作站和 DGX Spark，服务栈精简，没有 Python。抢先体验。',
     keywords: [
       '国防 AI 基础设施',
       '军事 AI 推理',
@@ -22,13 +22,13 @@ const militaryZh: (typeof military)['en'] = {
   },
   hero: {
     title: '在*自有*硬件上运行强大的 AI。',
-    lede: '在你购买、持有并保障安全的机器上运行模型，从 Mac Studio 到 RTX 工作站和 DGX Spark。服务栈很精简，没有 Python，也没有 JIT，需要加固的更少，需要信任的也更少。',
+    lede: '在你购买、持有并保障安全的机器上运行模型，从 Mac Studio 到 RTX 工作站和 DGX Spark。服务栈很精简，没有 Python，需要加固的更少，需要信任的也更少。',
   },
   problem: {
     title: '每个依赖都是一扇*门*。',
     statement:
       '任务数据不能进入别人的云，运行模型的硬件也必须是你拥有、持有并保障安全的硬件。',
-    body: '大多数 AI 服务栈都带着一长串 Python 包、一个 JIT 编译器和某家厂商的运行时，每一样都需要审查、打补丁和跟踪。硬件来自当时签约的供应商，本该运行模型的机器从工位散落到机架，没有一个统一视图能看清什么在哪里运行。',
+    body: '大多数 AI 服务栈都带着一长串 Python 包和某家厂商的运行时，每一样都需要审查、打补丁和跟踪。硬件来自当时签约的供应商，本该运行模型的机器从工位散落到机架，没有一个统一视图能看清什么在哪里运行。',
   },
   useCases: {
     title: '更小的*体量*。',
@@ -42,7 +42,7 @@ const militaryZh: (typeof military)['en'] = {
       {
         tag: 'inference',
         title: '砍短依赖链。',
-        body: 'Butter 在 Metal 上用 Swift，CUDA 上用 Rust，服务路径上没有 Python，也没有 JIT。组件更少，意味着要审查的更少，要打的补丁更少，在关键时刻出故障的可能也更少。',
+        body: 'Butter 在 Metal 上用 Swift，CUDA 上用 Rust，服务路径上没有 Python。组件更少，意味着要审查的更少，要打的补丁更少，在关键时刻出故障的可能也更少。',
       },
       {
         tag: 'control',
@@ -64,7 +64,7 @@ const militaryZh: (typeof military)['en'] = {
       {
         product: 'butter',
         need: '需要审查的东西很少的服务栈。',
-        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python，也没有 JIT。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，无需转换步骤。',
+        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，无需转换步骤。',
       },
       {
         product: 'waffle',
@@ -84,6 +84,7 @@ const militaryZh: (typeof military)['en'] = {
     notes: [
       'Apple 芯片是每个内核最先调优的地方。CUDA 已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。',
       'ROCm 和 Vulkan 可以运行，但尚未调优。',
+      '模型放到你的机器上之后，大部分技术栈都能离线运行。物理隔离环境的支持即将推出。',
       '告诉我们你的安全要求和你的硬件，我们会具体回答。',
     ],
   },
@@ -101,7 +102,12 @@ const militaryZh: (typeof military)['en'] = {
     {
       question: '服务路径上没有 Python，为什么重要？',
       answer:
-        '服务栈里的每个包，都需要审查、打补丁和跟踪。Butter 在 Metal 上用 Swift，CUDA 上用 Rust，没有 Python，也没有 JIT，所以从模型到答案之间的链条更短。',
+        '服务栈里的每个包，都需要审查、打补丁和跟踪。Butter 在 Metal 上用 Swift，CUDA 上用 Rust，没有 Python，所以从模型到答案之间的链条更短。',
+    },
+    {
+      question: '它能离线运行吗？',
+      answer:
+        '大部分可以，前提是模型已经放到你的机器上。对物理隔离环境的完整支持即将推出。告诉我们你的环境，我们会告诉你目前哪些部分能在那里运行。',
     },
     {
       question: '你们是否具备国防工作的资质认定？',

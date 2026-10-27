@@ -4,7 +4,7 @@ const militaryFr: (typeof military)['en'] = {
   seo: {
     title: 'Inférence IA privée pour la défense et les armées',
     description:
-      'Des modèles capables sur votre matériel sécurisé, du Mac aux stations RTX et DGX Spark, avec une stack de serving réduite, sans Python ni JIT. Accès anticipé.',
+      'Des modèles capables sur votre matériel sécurisé, du Mac aux stations RTX et DGX Spark, avec une stack de serving réduite, sans Python. Accès anticipé.',
     keywords: [
       'infrastructure IA de défense',
       'inférence IA militaire',
@@ -22,13 +22,13 @@ const militaryFr: (typeof military)['en'] = {
   },
   hero: {
     title: 'Une IA capable, sur du matériel qui vous *appartient*.',
-    lede: 'Faites tourner des modèles sur des machines que vous achetez, détenez et sécurisez, d’un Mac Studio aux stations RTX et à DGX Spark. La stack de serving est réduite, sans Python et sans JIT : moins de choses à durcir, moins de choses auxquelles se fier.',
+    lede: 'Faites tourner des modèles sur des machines que vous achetez, détenez et sécurisez, d’un Mac Studio aux stations RTX et à DGX Spark. La stack de serving est réduite, sans Python : moins de choses à durcir, moins de choses auxquelles se fier.',
   },
   problem: {
     title: 'Chaque dépendance est une *porte*.',
     statement:
       'Les données de mission ne peuvent pas partir vers le cloud de quelqu’un d’autre, et le matériel qui fait tourner un modèle doit être du matériel que vous possédez, détenez et sécurisez.',
-    body: 'La plupart des stacks de serving IA arrivent sous la forme d’une longue chaîne de paquets Python, d’un compilateur JIT et du runtime d’un fournisseur, chacun à vérifier, corriger et suivre. Le matériel vient de celui qui est sous contrat, et les machines qui devraient faire tourner le modèle sont éparpillées des bureaux aux baies, sans vue d’ensemble de ce qui tourne où.',
+    body: 'La plupart des stacks de serving IA arrivent sous la forme d’une longue chaîne de paquets Python et du runtime d’un fournisseur, chacun à vérifier, corriger et suivre. Le matériel vient de celui qui est sous contrat, et les machines qui devraient faire tourner le modèle sont éparpillées des bureaux aux baies, sans vue d’ensemble de ce qui tourne où.',
   },
   useCases: {
     title: 'Une *empreinte* plus réduite.',
@@ -44,7 +44,7 @@ const militaryFr: (typeof military)['en'] = {
       {
         tag: 'inference',
         title: 'Raccourcissez la chaîne de dépendances.',
-        body: 'Butter, c’est du Swift sur Metal et du Rust pour CUDA, sans Python et sans JIT dans le chemin de serving. Moins de composants, c’est moins à vérifier, moins à corriger et moins de choses qui peuvent casser au mauvais moment.',
+        body: 'Butter, c’est du Swift sur Metal et du Rust pour CUDA, sans Python dans le chemin de serving. Moins de composants, c’est moins à vérifier, moins à corriger et moins de choses qui peuvent casser au mauvais moment.',
       },
       {
         tag: 'control',
@@ -67,7 +67,7 @@ const militaryFr: (typeof military)['en'] = {
       {
         product: 'butter',
         need: 'Une stack de serving avec peu à vérifier.',
-        body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python et sans JIT dans le chemin de serving. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF, sans étape de conversion.',
+        body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python dans le chemin de serving. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF, sans étape de conversion.',
       },
       {
         product: 'waffle',
@@ -87,6 +87,7 @@ const militaryFr: (typeof military)['en'] = {
     notes: [
       'Le silicium Apple est l’endroit où chaque kernel est optimisé en premier. CUDA est en production sur RTX et DGX Spark, et les GPU de datacenter sont en cours.',
       'ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+      'La majeure partie de la stack fonctionne hors ligne une fois les modèles sur vos machines. La prise en charge des environnements physiquement isolés arrive bientôt.',
       'Dites-nous vos exigences de sécurité et votre matériel, et nous vous répondrons précisément.',
     ],
   },
@@ -105,7 +106,12 @@ const militaryFr: (typeof military)['en'] = {
       question:
         'Pourquoi l’absence de Python dans le chemin de serving compte-t-elle ?',
       answer:
-        'Chaque paquet d’une stack de serving est un élément à vérifier, corriger et suivre. Butter, c’est du Swift sur Metal et du Rust pour CUDA, sans Python et sans JIT : la chaîne entre un modèle et une réponse est plus courte.',
+        'Chaque paquet d’une stack de serving est un élément à vérifier, corriger et suivre. Butter, c’est du Swift sur Metal et du Rust pour CUDA, sans Python : la chaîne entre un modèle et une réponse est plus courte.',
+    },
+    {
+      question: 'Cela fonctionne-t-il hors ligne ?',
+      answer:
+        'Pour l’essentiel, oui, une fois les modèles sur vos machines. La prise en charge complète des environnements physiquement isolés arrive bientôt. Parlez-nous de votre environnement, et nous vous dirons ce qui y fonctionne aujourd’hui.',
     },
     {
       question: 'Êtes-vous accrédités pour des travaux de défense ?',

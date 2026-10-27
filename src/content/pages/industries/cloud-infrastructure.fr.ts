@@ -48,7 +48,7 @@ const cloudInfrastructureFr: (typeof cloudInfrastructure)['en'] = {
         tag: 'inference',
         title:
           'Proposez une inférence managée sur laquelle vous pouvez vous engager.',
-        body: 'Butter sert une API compatible OpenAI avec streaming et appel d’outils, sans Python et sans JIT dans le chemin de serving. Moins de rouages, c’est moins à corriger et moins de pannes sous la charge de travail de quelqu’un d’autre.',
+        body: 'Butter sert une API compatible OpenAI avec streaming et appel d’outils, sans Python dans le chemin de serving. Moins de rouages, c’est moins à corriger et moins de pannes sous la charge de travail de quelqu’un d’autre.',
       },
       {
         tag: 'control',
@@ -65,12 +65,12 @@ const cloudInfrastructureFr: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'waffle',
         need: 'Chaque GPU, moteur et locataire en une seule vue.',
-        body: 'Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée. Waffle fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : les locataires gardent les moteurs qu’ils ont choisis.',
+        body: 'Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée, et Waffle ventile le coût par locataire. Il fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : les locataires gardent les moteurs qu’ils ont choisis.',
       },
       {
         product: 'butter',
         need: 'De l’inférence managée avec moins de rouages.',
-        body: 'Swift sur Metal et Rust pour CUDA, sans Python et sans JIT dans le chemin de serving. Checkpoints et cache KV quantifiés, décodage spéculatif et LoRA derrière une API compatible OpenAI.',
+        body: 'Swift sur Metal et Rust pour CUDA, sans Python dans le chemin de serving. Checkpoints et cache KV quantifiés, décodage spéculatif et LoRA derrière une API compatible OpenAI.',
       },
       {
         product: 'iron',
@@ -102,7 +102,7 @@ const cloudInfrastructureFr: (typeof cloudInfrastructure)['en'] = {
     {
       question: 'Combien cela ajoutera-t-il à notre marge ?',
       answer:
-        'Nous ne promettrons pas de chiffre. Voir ce que fait tourner chaque GPU, et pour qui, vient d’abord. Le rendement par heure GPU et les dollars par charge de travail sont ensuite ce que nous cherchons à faire bouger, mesurés sur votre flotte.',
+        'Nous ne promettrons pas de chiffre. Voir ce que fait tourner chaque GPU, pour qui et à quel coût par locataire, vient d’abord. Le rendement par heure GPU et les dollars par charge de travail sont ensuite ce que nous cherchons à faire bouger, mesurés sur votre flotte.',
     },
     {
       question: 'Pourquoi faire confiance à la télémétrie ?',

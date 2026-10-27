@@ -48,7 +48,7 @@ const financialServicesKo: (typeof financialServices)['en'] = {
       {
         tag: 'inference',
         title: '더 적은 구성 요소로 서빙하세요.',
-        body: 'Butter는 서빙 경로에 Python도 JIT도 없고, OpenAI 호환 API를 제공하므로 사내 도구는 SDK가 아니라 주소만 바꾸면 됩니다. 의존성이 적을수록 검토와 프로덕션 사이에서 추적할 것도 줄어듭니다.',
+        body: 'Butter는 서빙 경로에 Python이 없고, OpenAI 호환 API를 제공하므로 사내 도구는 SDK가 아니라 주소만 바꾸면 됩니다. 의존성이 적을수록 검토와 프로덕션 사이에서 추적할 것도 줄어듭니다.',
       },
       {
         tag: 'control',
@@ -65,7 +65,7 @@ const financialServicesKo: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: '경계 안에서 모델을 서빙하세요.',
-        body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python도 JIT도 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 직접 불러오므로 새 모델에 변환 파이프라인이 필요 없습니다.',
+        body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 직접 불러오므로 새 모델에 변환 파이프라인이 필요 없습니다.',
       },
       {
         product: 'waffle',

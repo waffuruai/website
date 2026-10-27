@@ -47,7 +47,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'inference',
         title: '자신 있게 내놓을 수 있는 매니지드 추론을 제공하세요.',
-        body: 'Butter는 스트리밍과 도구 호출을 지원하는 OpenAI 호환 API를 제공하며, 서빙 경로에 Python도 JIT도 없습니다. 구성 요소가 적을수록 남의 워크로드 아래에서 패치할 것도, 고장 날 것도 줄어듭니다.',
+        body: 'Butter는 스트리밍과 도구 호출을 지원하는 OpenAI 호환 API를 제공하며, 서빙 경로에 Python이 없습니다. 구성 요소가 적을수록 남의 워크로드 아래에서 패치할 것도, 고장 날 것도 줄어듭니다.',
       },
       {
         tag: 'control',
@@ -64,12 +64,12 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'waffle',
         need: '모든 GPU, 엔진, 테넌트를 하나의 화면으로.',
-        body: '호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다. Waffle은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 테넌트는 자신이 고른 엔진을 그대로 씁니다.',
+        body: '호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고하고, Waffle은 비용을 테넌트별로 나누어 보여 줍니다. Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 테넌트는 자신이 고른 엔진을 그대로 씁니다.',
       },
       {
         product: 'butter',
         need: '구성 요소가 더 적은 매니지드 추론.',
-        body: 'Metal 위의 Swift와 CUDA용 Rust로, 서빙 경로에 Python도 JIT도 없습니다. 양자화 체크포인트와 KV 캐시, 추측 디코딩, LoRA를 OpenAI 호환 API 뒤에서 제공합니다.',
+        body: 'Metal 위의 Swift와 CUDA용 Rust로, 서빙 경로에 Python이 없습니다. 양자화 체크포인트와 KV 캐시, 추측 디코딩, LoRA를 OpenAI 호환 API 뒤에서 제공합니다.',
       },
       {
         product: 'iron',
@@ -101,7 +101,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
     {
       question: '마진을 얼마나 늘려 주나요?',
       answer:
-        '수치를 약속하지는 않겠습니다. 각 GPU가 누구를 위해 무엇을 돌리는지 보는 것이 먼저입니다. 그다음 우리가 움직이려는 숫자는 GPU 시간당 산출과 워크로드당 비용이며, 고객의 플릿에서 직접 측정합니다.',
+        '수치를 약속하지는 않겠습니다. 각 GPU가 누구를 위해 무엇을 돌리는지, 테넌트당 비용이 얼마인지 보는 것이 먼저입니다. 그다음 우리가 움직이려는 숫자는 GPU 시간당 산출과 워크로드당 비용이며, 고객의 플릿에서 직접 측정합니다.',
     },
     {
       question: '텔레메트리를 왜 믿어야 하나요?',

@@ -62,7 +62,7 @@ const lifeSciencesZh: (typeof lifeSciences)['en'] = {
       {
         product: 'butter',
         need: '模型紧挨着数据。',
-        body: 'Apple 芯片上用 Swift 搭配 Metal，CUDA 上用 Rust，服务路径上没有 Python，也没有 JIT。文本、视觉、语音和全模态模型都在兼容 OpenAI 的 API 背后，检查点直接从 Hugging Face 加载。',
+        body: 'Apple 芯片上用 Swift 搭配 Metal，CUDA 上用 Rust，服务路径上没有 Python。文本、视觉、语音和全模态模型都在兼容 OpenAI 的 API 背后，检查点直接从 Hugging Face 加载。',
       },
       {
         product: 'syrup',

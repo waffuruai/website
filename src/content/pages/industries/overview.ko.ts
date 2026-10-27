@@ -41,7 +41,7 @@ const industriesOverviewKo: (typeof industriesOverview)['en'] = {
       {
         tag: 'inference',
         title: '*구성 요소*는 더 적게.',
-        body: 'Butter는 백엔드별로 튜닝한 커널 위에서, 서빙 경로에 Python도 JIT도 없이 모델을 서빙합니다. 패치할 것도, 고장 날 것도, 설명할 것도 줄어듭니다.',
+        body: 'Butter는 백엔드별로 튜닝한 커널 위에서, 서빙 경로에 Python 없이 모델을 서빙합니다. 패치할 것도, 고장 날 것도, 설명할 것도 줄어듭니다.',
         points: [
           'Metal이 먼저, 그다음 CUDA, ROCm과 Vulkan은 구동 중',
           'OpenAI 호환 서빙이라 기존 앱이 그대로 동작',

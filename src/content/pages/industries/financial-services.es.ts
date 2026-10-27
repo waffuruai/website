@@ -49,7 +49,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
       {
         tag: 'inference',
         title: 'Sirve con menos piezas móviles.',
-        body: 'Butter no tiene Python ni JIT en la ruta de serving, y su API compatible con OpenAI hace que las herramientas internas cambien una dirección, no un SDK. Menos dependencias significa menos que rastrear entre la revisión y producción.',
+        body: 'Butter no tiene Python en la ruta de serving, y su API compatible con OpenAI hace que las herramientas internas cambien una dirección, no un SDK. Menos dependencias significa menos que rastrear entre la revisión y producción.',
       },
       {
         tag: 'control',
@@ -66,7 +66,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: 'Sirve modelos dentro de tu perímetro.',
-        body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python y sin JIT en la ruta de serving. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que un modelo nuevo no necesita un pipeline de conversión.',
+        body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que un modelo nuevo no necesita un pipeline de conversión.',
       },
       {
         product: 'waffle',

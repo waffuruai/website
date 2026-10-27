@@ -51,7 +51,7 @@ const governmentZh: (typeof government)['en'] = {
       {
         tag: 'inference',
         title: '用好你已经买下的硬件。',
-        body: '从桌上的 Mac，到 RTX 工作站和 DGX Spark，一套技术栈在已经付过钱的硬件上提供模型服务。Butter 的服务路径上没有 Python，也没有 JIT，要打的补丁更少，要论证的理由也更少。',
+        body: '从桌上的 Mac，到 RTX 工作站和 DGX Spark，一套技术栈在已经付过钱的硬件上提供模型服务。Butter 的服务路径上没有 Python，要打的补丁更少，要论证的理由也更少。',
       },
     ],
   },
@@ -63,7 +63,7 @@ const governmentZh: (typeof government)['en'] = {
       {
         product: 'butter',
         need: '在你运营的基础设施上提供模型服务。',
-        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python，也没有 JIT。现有工具只需换一个地址，不用换 SDK。',
+        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。现有工具只需换一个地址，不用换 SDK。',
       },
       {
         product: 'waffle',
@@ -88,6 +88,7 @@ const governmentZh: (typeof government)['en'] = {
     notes: [
       '在 Apple 芯片、RTX 工作站和 DGX Spark 上规划试点，整套技术栈目前就运行在这些平台上。数据中心 GPU 正在进行中。',
       'ROCm 和 Vulkan 可以运行，但尚未调优。',
+      '模型放到你的机器上之后，大部分技术栈都能离线运行。物理隔离环境的支持即将推出。',
       '请直接把你的采购和安全要求带来，我们会逐项具体回答。',
     ],
   },
@@ -96,6 +97,11 @@ const governmentZh: (typeof government)['en'] = {
       question: '会有数据离开我们的基础设施吗？',
       answer:
         '推理数据默认不会离开，因为除非你主动选择开启，数据始终留在机器上。每台 Waffle 主机运行一个 sidecar，上报带签名的遥测数据，我们会针对你的环境，逐项讲清楚其中包含什么。',
+    },
+    {
+      question: '可以离线运行吗？',
+      answer:
+        '模型放到你的机器上之后，大部分技术栈都能离线运行。物理隔离环境的支持即将推出，我们也会告诉你，目前在你的环境中哪些部分能运行。',
     },
     {
       question: '你们是否具备政府使用的资质认定？',

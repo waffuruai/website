@@ -11,14 +11,14 @@ import governmentKo from './government.ko';
  * Government: agencies and public bodies bringing inference in-house.
  * Sovereignty and residency, procurement scrutiny, avoiding lock-in, a mix
  * of hardware already bought. No compliance, accreditation or certification
- * claims (FedRAMP, IL levels and the like), no customers, no claim of
- * offline or air-gapped operation.
+ * claims (FedRAMP, IL levels and the like), no customers. Offline: most of
+ * the stack runs offline once models are on the machines, and air-gapped
+ * support is coming soon (founder, 2026-10-27); say no more than that.
  *
  * TODO(founder): confirm (1) on-prem support terms and procurement routes
  * we can name; (2) any accreditation status we may state; (3) what Waffle's
  * signed telemetry contains and whether the control plane runs fully
- * self-hosted, so "does any data leave" can be specific; (4) fully offline
- * operation, before any page says so.
+ * self-hosted, so "does any data leave" can be specific.
  */
 export const government: Localized<IndustryPage> = {
   en: {
@@ -74,7 +74,7 @@ export const government: Localized<IndustryPage> = {
         {
           tag: 'inference',
           title: 'Use the hardware you already bought.',
-          body: 'From Macs on desks to RTX workstations and DGX Spark, one stack serves models on what is already paid for. Butter has no Python and no JIT in the serving path, so there is less to patch and less to justify.',
+          body: 'From Macs on desks to RTX workstations and DGX Spark, one stack serves models on what is already paid for. Butter has no Python in the serving path, so there is less to patch and less to justify.',
         },
       ],
     },
@@ -86,7 +86,7 @@ export const government: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'Serve models on infrastructure you operate.',
-          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python and no JIT in the serving path. Existing tools change an address, not an SDK.',
+          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. Existing tools change an address, not an SDK.',
         },
         {
           product: 'waffle',
@@ -111,6 +111,7 @@ export const government: Localized<IndustryPage> = {
       notes: [
         'Plan pilots on Apple silicon, RTX workstations and DGX Spark, where the stack runs today. Datacenter GPUs are in progress.',
         'ROCm and Vulkan run but are not tuned yet.',
+        'Most of the stack runs offline once models are on your machines. Air-gapped support is coming soon.',
         'Bring your procurement and security requirements to us directly, and we will answer them specifically.',
       ],
     },
@@ -119,6 +120,11 @@ export const government: Localized<IndustryPage> = {
         question: 'Does any data leave our infrastructure?',
         answer:
           'Inference data does not leave by default, because data stays on the machine unless you opt in. Each Waffle host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
+      },
+      {
+        question: 'Can it run offline?',
+        answer:
+          'Most of the stack runs offline once models are on your machines. Air-gapped support is coming soon, and we will tell you what works in your environment today.',
       },
       {
         question: 'Are you accredited for government use?',

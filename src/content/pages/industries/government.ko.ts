@@ -52,7 +52,7 @@ const governmentKo: (typeof government)['en'] = {
       {
         tag: 'inference',
         title: '이미 구매한 하드웨어를 활용하세요.',
-        body: '책상 위의 Mac부터 RTX 워크스테이션과 DGX Spark까지, 하나의 스택이 이미 값을 치른 하드웨어에서 모델을 서빙합니다. Butter는 서빙 경로에 Python도 JIT도 없어, 패치할 것도 정당화할 것도 줄어듭니다.',
+        body: '책상 위의 Mac부터 RTX 워크스테이션과 DGX Spark까지, 하나의 스택이 이미 값을 치른 하드웨어에서 모델을 서빙합니다. Butter는 서빙 경로에 Python이 없어, 패치할 것도 정당화할 것도 줄어듭니다.',
       },
     ],
   },
@@ -64,7 +64,7 @@ const governmentKo: (typeof government)['en'] = {
       {
         product: 'butter',
         need: '직접 운영하는 인프라에서 모델을 서빙하세요.',
-        body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python도 JIT도 없습니다. 기존 도구는 SDK가 아니라 주소만 바꾸면 됩니다.',
+        body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. 기존 도구는 SDK가 아니라 주소만 바꾸면 됩니다.',
       },
       {
         product: 'waffle',
@@ -89,6 +89,7 @@ const governmentKo: (typeof government)['en'] = {
     notes: [
       '파일럿은 스택이 지금 돌아가는 Apple 실리콘, RTX 워크스테이션, DGX Spark에서 계획하세요. 데이터센터 GPU는 진행 중입니다.',
       'ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+      '모델을 직접 보유한 머신에 올려 두면 스택 대부분이 오프라인으로 동작합니다. 에어갭 환경은 곧 지원할 예정입니다.',
       '조달 및 보안 요구 사항을 직접 가져오시면 구체적으로 답변드리겠습니다.',
     ],
   },
@@ -97,6 +98,11 @@ const governmentKo: (typeof government)['en'] = {
       question: '우리 인프라 밖으로 나가는 데이터가 있나요?',
       answer:
         '추론 데이터는 기본적으로 나가지 않습니다. 직접 동의하지 않는 한 데이터는 그 컴퓨터에 남기 때문입니다. Waffle 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 고객 환경에서 정확히 무엇인지 함께 짚어 드리겠습니다.',
+    },
+    {
+      question: '오프라인으로 운영할 수 있나요?',
+      answer:
+        '모델을 직접 보유한 머신에 올려 두면 스택 대부분이 오프라인으로 동작합니다. 에어갭 환경은 곧 지원할 예정이며, 고객 환경에서 지금 무엇이 되는지 말씀드리겠습니다.',
     },
     {
       question: '정부 사용 인가를 받았나요?',

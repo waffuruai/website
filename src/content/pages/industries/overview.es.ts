@@ -42,7 +42,7 @@ const industriesOverviewEs: (typeof industriesOverview)['en'] = {
       {
         tag: 'inference',
         title: 'Menos *piezas* móviles.',
-        body: 'Butter sirve modelos sin Python y sin JIT en la ruta de serving, sobre kernels afinados para cada backend. Menos que parchear, menos que se rompa y menos que explicar.',
+        body: 'Butter sirve modelos sin Python en la ruta de serving, sobre kernels afinados para cada backend. Menos que parchear, menos que se rompa y menos que explicar.',
         points: [
           'Metal primero, CUDA después, ROCm y Vulkan funcionando',
           'Serving compatible con OpenAI, para que tus apps sigan funcionando',

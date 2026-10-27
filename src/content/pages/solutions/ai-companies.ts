@@ -55,7 +55,7 @@ export const aiCompanies: Localized<SolutionPage> = {
         },
         {
           tag: 'inference',
-          title: 'Serve without Python or a JIT.',
+          title: 'Serve without Python.',
           body: 'Butter is Swift on Metal for Apple silicon and Rust for CUDA and the rest, with an OpenAI-compatible API, streaming and tool calling. Hybrid and MoE models, speculative decoding and LoRA are in the box.',
         },
         {

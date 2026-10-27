@@ -16,19 +16,20 @@ import militaryKo from './military.ko';
  * linked once its page launches. No compliance, accreditation or export
  * claims (ITAR, CMMC, IL levels and the like), no customers, no programs.
  *
- * TODO(founder): edge and disconnected deployments are a design goal only.
- * Confirm fully offline / air-gapped operation (licence checks, where
- * Waffle's signed telemetry goes, whether its control plane runs fully
- * self-hosted, how models are delivered) before "offline", "disconnected",
- * "air-gapped" or "edge" appears in rendered copy. Also confirm on-prem
- * support terms and any accreditation status we may state.
+ * The founder confirmed (2026-10-27) that most of the stack runs offline
+ * once models are on the machines, and that air-gapped support is coming
+ * soon; the copy says exactly that. Edge and disconnected deployments stay
+ * out of the copy until they are confirmed.
+ *
+ * TODO(founder): confirm on-prem support terms and any accreditation status
+ * we may state.
  */
 export const military: Localized<IndustryPage> = {
   en: {
     seo: {
       title: 'Private AI inference for military and defense',
       description:
-        'Run capable models on hardware you own and secure, from Macs to RTX workstations and DGX Spark, on a small serving stack with no Python or JIT. Early access.',
+        'Run capable models on hardware you own and secure, from Macs to RTX workstations and DGX Spark, on a small serving stack with no Python. Early access.',
       keywords: [
         'defense AI infrastructure',
         'military AI inference',
@@ -46,13 +47,13 @@ export const military: Localized<IndustryPage> = {
     },
     hero: {
       title: 'Capable AI on hardware you *own*.',
-      lede: 'Run models on machines you buy, hold and secure, from a Mac Studio to RTX workstations and DGX Spark. The serving stack is small, with no Python and no JIT, so there is less to harden and less to trust.',
+      lede: 'Run models on machines you buy, hold and secure, from a Mac Studio to RTX workstations and DGX Spark. The serving stack is small, with no Python, so there is less to harden and less to trust.',
     },
     problem: {
       title: 'Every dependency is a *door*.',
       statement:
         'Mission data cannot go to someone else’s cloud, and the hardware that runs a model has to be hardware you own, hold and secure.',
-      body: 'Most AI serving stacks arrive as a long chain of Python packages, a JIT compiler and a vendor’s runtime, each one something to vet, patch and track. Hardware comes from whoever is on contract, and the machines that should run the model are scattered from desks to racks, with no single view of what runs where.',
+      body: 'Most AI serving stacks arrive as a long chain of Python packages and a vendor’s runtime, each one something to vet, patch and track. Hardware comes from whoever is on contract, and the machines that should run the model are scattered from desks to racks, with no single view of what runs where.',
     },
     useCases: {
       title: 'A smaller *footprint*.',
@@ -66,7 +67,7 @@ export const military: Localized<IndustryPage> = {
         {
           tag: 'inference',
           title: 'Cut the dependency chain.',
-          body: 'Butter is Swift on Metal and Rust for CUDA, with no Python and no JIT in the serving path. Fewer components means less to vet, less to patch and less that can break at the wrong moment.',
+          body: 'Butter is Swift on Metal and Rust for CUDA, with no Python in the serving path. Fewer components means less to vet, less to patch and less that can break at the wrong moment.',
         },
         {
           tag: 'control',
@@ -89,7 +90,7 @@ export const military: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'A serving stack with little to vet.',
-          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python and no JIT in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, with no conversion step.',
+          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, with no conversion step.',
         },
         {
           product: 'waffle',
@@ -109,6 +110,7 @@ export const military: Localized<IndustryPage> = {
       notes: [
         'Apple silicon is where every kernel is tuned first. CUDA is in production on RTX and DGX Spark, and datacenter GPUs are in progress.',
         'ROCm and Vulkan run but are not tuned yet.',
+        'Most of the stack runs offline once models are on your machines. Air-gapped support is coming soon.',
         'Tell us your security requirements and your hardware, and we will answer specifically.',
       ],
     },
@@ -126,7 +128,12 @@ export const military: Localized<IndustryPage> = {
       {
         question: 'Why does no Python in the serving path matter?',
         answer:
-          'Every package in a serving stack is something to vet, patch and track. Butter is Swift on Metal and Rust for CUDA, with no Python and no JIT, so the chain between a model and an answer is shorter.',
+          'Every package in a serving stack is something to vet, patch and track. Butter is Swift on Metal and Rust for CUDA, with no Python, so the chain between a model and an answer is shorter.',
+      },
+      {
+        question: 'Does it run offline?',
+        answer:
+          'Most of it does, once models are on your machines. Full air-gapped support is coming soon. Tell us about your environment, and we will tell you what works there today.',
       },
       {
         question: 'Are you accredited for defense work?',

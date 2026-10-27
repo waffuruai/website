@@ -4,7 +4,7 @@ const militaryKo: (typeof military)['en'] = {
   seo: {
     title: '군·국방을 위한 프라이빗 AI 추론',
     description:
-      'Mac부터 RTX 워크스테이션, DGX Spark까지 직접 소유하고 보호하는 하드웨어에서, Python도 JIT도 없는 작은 서빙 스택으로 유능한 모델을 돌리세요. 얼리 액세스.',
+      'Mac부터 RTX 워크스테이션, DGX Spark까지 직접 소유하고 보호하는 하드웨어에서, Python 없는 작은 서빙 스택으로 유능한 모델을 돌리세요. 얼리 액세스.',
     keywords: [
       '국방 AI 인프라',
       '군 AI 추론',
@@ -22,13 +22,13 @@ const militaryKo: (typeof military)['en'] = {
   },
   hero: {
     title: '직접 *소유한* 하드웨어 위의 유능한 AI.',
-    lede: 'Mac Studio부터 RTX 워크스테이션, DGX Spark까지, 직접 구매하고 보관하며 보호하는 머신에서 모델을 돌리세요. 서빙 스택은 작고 Python도 JIT도 없어서, 보안을 강화할 대상도, 믿어야 할 대상도 줄어듭니다.',
+    lede: 'Mac Studio부터 RTX 워크스테이션, DGX Spark까지, 직접 구매하고 보관하며 보호하는 머신에서 모델을 돌리세요. 서빙 스택은 작고 Python이 없어서, 보안을 강화할 대상도, 믿어야 할 대상도 줄어듭니다.',
   },
   problem: {
     title: '모든 의존성은 하나의 *문*입니다.',
     statement:
       '임무 데이터는 남의 클라우드로 갈 수 없고, 모델을 돌리는 하드웨어는 직접 소유하고 보관하며 보호하는 하드웨어여야 합니다.',
-    body: '대부분의 AI 서빙 스택은 긴 Python 패키지 사슬, JIT 컴파일러, 벤더 런타임을 달고 오며, 그 하나하나가 검증하고 패치하고 추적해야 할 대상입니다. 하드웨어는 그때그때 계약한 업체에서 들어오고, 모델을 돌려야 할 머신은 책상부터 랙까지 흩어져 있어 무엇이 어디서 도는지 한눈에 볼 수 없습니다.',
+    body: '대부분의 AI 서빙 스택은 긴 Python 패키지 사슬과 벤더 런타임을 달고 오며, 그 하나하나가 검증하고 패치하고 추적해야 할 대상입니다. 하드웨어는 그때그때 계약한 업체에서 들어오고, 모델을 돌려야 할 머신은 책상부터 랙까지 흩어져 있어 무엇이 어디서 도는지 한눈에 볼 수 없습니다.',
   },
   useCases: {
     title: '더 작은 *풋프린트*.',
@@ -42,7 +42,7 @@ const militaryKo: (typeof military)['en'] = {
       {
         tag: 'inference',
         title: '의존성 사슬을 끊으세요.',
-        body: 'Butter는 Metal 위의 Swift와 CUDA용 Rust로 만들었고, 서빙 경로에 Python도 JIT도 없습니다. 구성 요소가 적을수록 검증할 것도, 패치할 것도, 결정적인 순간에 고장 날 것도 줄어듭니다.',
+        body: 'Butter는 Metal 위의 Swift와 CUDA용 Rust로 만들었고, 서빙 경로에 Python이 없습니다. 구성 요소가 적을수록 검증할 것도, 패치할 것도, 결정적인 순간에 고장 날 것도 줄어듭니다.',
       },
       {
         tag: 'control',
@@ -65,7 +65,7 @@ const militaryKo: (typeof military)['en'] = {
       {
         product: 'butter',
         need: '검증할 것이 적은 서빙 스택.',
-        body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python도 JIT도 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 변환 단계 없이 직접 불러옵니다.',
+        body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 변환 단계 없이 직접 불러옵니다.',
       },
       {
         product: 'waffle',
@@ -85,6 +85,7 @@ const militaryKo: (typeof military)['en'] = {
     notes: [
       'Apple 실리콘은 모든 커널을 가장 먼저 튜닝하는 곳입니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이고, 데이터센터 GPU는 진행 중입니다.',
       'ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+      '모델을 직접 보유한 머신에 올려 두면 스택 대부분이 오프라인으로 동작합니다. 에어갭 환경은 곧 지원할 예정입니다.',
       '보안 요구 사항과 하드웨어를 알려 주시면 구체적으로 답변드리겠습니다.',
     ],
   },
@@ -102,7 +103,12 @@ const militaryKo: (typeof military)['en'] = {
     {
       question: '서빙 경로에 Python이 없다는 것이 왜 중요한가요?',
       answer:
-        '서빙 스택의 모든 패키지는 검증하고 패치하고 추적해야 할 대상입니다. Butter는 Metal 위의 Swift와 CUDA용 Rust로 만들었고 Python도 JIT도 없으므로, 모델과 답 사이의 사슬이 더 짧습니다.',
+        '서빙 스택의 모든 패키지는 검증하고 패치하고 추적해야 할 대상입니다. Butter는 Metal 위의 Swift와 CUDA용 Rust로 만들었고 Python이 없으므로, 모델과 답 사이의 사슬이 더 짧습니다.',
+    },
+    {
+      question: '오프라인에서도 돌아가나요?',
+      answer:
+        '모델을 직접 보유한 머신에 올려 두면 대부분은 그렇습니다. 완전한 에어갭 환경 지원은 곧 제공할 예정입니다. 환경을 알려 주시면 지금 그곳에서 무엇이 되는지 말씀드리겠습니다.',
     },
     {
       question: '국방 업무용 인가를 받았나요?',

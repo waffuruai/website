@@ -48,7 +48,7 @@ const financialServicesJa: (typeof financialServices)['en'] = {
       {
         tag: 'inference',
         title: '少ない構成要素で、提供する。',
-        body: 'Butter はサービングの経路に Python も JIT もなく、OpenAI 互換 API なので、社内ツールで変えるのは接続先であり、SDK ではありません。依存関係が少ないほど、レビューから本番までのあいだに追跡するものも減ります。',
+        body: 'Butter はサービングの経路に Python がなく、OpenAI 互換 API なので、社内ツールで変えるのは接続先であり、SDK ではありません。依存関係が少ないほど、レビューから本番までのあいだに追跡するものも減ります。',
       },
       {
         tag: 'control',
@@ -65,7 +65,7 @@ const financialServicesJa: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: '自社の境界の内側で、モデルを提供する。',
-        body: 'Metal 上の Swift と CUDA 向けの Rust による OpenAI 互換のサービング。サービングの経路に Python も JIT もありません。safetensors、MLX、JANG、GGUF のチェックポイントを直接読み込むので、新しいモデルに変換のパイプラインは要りません。',
+        body: 'Metal 上の Swift と CUDA 向けの Rust による OpenAI 互換のサービング。サービングの経路に Python はありません。safetensors、MLX、JANG、GGUF のチェックポイントを直接読み込むので、新しいモデルに変換のパイプラインは要りません。',
       },
       {
         product: 'waffle',

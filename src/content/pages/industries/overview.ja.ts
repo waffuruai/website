@@ -42,7 +42,7 @@ const industriesOverviewJa: (typeof industriesOverview)['en'] = {
       {
         tag: 'inference',
         title: '*構成要素*を、より少なく。',
-        body: 'Butter は、バックエンドごとにチューニングしたカーネルの上で、サービングの経路に Python も JIT もなしでモデルを提供します。パッチを当てるもの、壊れるもの、説明すべきものが減ります。',
+        body: 'Butter は、バックエンドごとにチューニングしたカーネルの上で、サービングの経路で Python を使わずにモデルを提供します。パッチを当てるもの、壊れるもの、説明すべきものが減ります。',
         points: [
           'まず Metal、次に CUDA、ROCm と Vulkan は動作',
           'OpenAI 互換のサービング。アプリはそのまま動く',

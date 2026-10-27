@@ -66,7 +66,7 @@ const lifeSciencesFr: (typeof lifeSciences)['en'] = {
       {
         product: 'butter',
         need: 'Des modèles à côté des données.',
-        body: 'Swift sur Metal pour le silicium Apple et Rust pour CUDA, sans Python et sans JIT dans le chemin de serving. Des modèles de texte, de vision, de voix et omni se trouvent derrière une API compatible OpenAI, et les checkpoints se chargent directement depuis Hugging Face.',
+        body: 'Swift sur Metal pour le silicium Apple et Rust pour CUDA, sans Python dans le chemin de serving. Des modèles de texte, de vision, de voix et omni se trouvent derrière une API compatible OpenAI, et les checkpoints se chargent directement depuis Hugging Face.',
       },
       {
         product: 'syrup',

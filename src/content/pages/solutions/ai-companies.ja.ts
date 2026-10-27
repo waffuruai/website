@@ -40,7 +40,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
       },
       {
         tag: 'inference',
-        title: 'Python も JIT もなしで、提供する。',
+        title: 'Python なしで、提供する。',
         body: 'Butter は、Apple シリコンでは Metal 上の Swift、CUDA などでは Rust で書かれ、OpenAI 互換 API、ストリーミング、ツール呼び出しに対応しています。ハイブリッドモデル、MoE モデル、投機的デコーディング、LoRA も最初から備えています。',
       },
       {

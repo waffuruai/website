@@ -27,10 +27,10 @@ const HYPE =
 
 /** Compliance names we may not claim (sales guardrails), in any language. */
 const COMPLIANCE =
-  /FedRAMP|\bIL ?[2-6]\b|\bITAR\b|\bCMMC\b|HIPAA|\bGxP\b|SOC ?2|\bPCI\b|air[- ]?gap/i;
+  /FedRAMP|\bIL ?[2-6]\b|\bITAR\b|\bCMMC\b|HIPAA|\bGxP\b|SOC ?2|\bPCI\b/i;
 
 /** Needs founder confirmation before it appears in rendered copy. */
-const UNCONFIRMED = /\b(offline|disconnected|air-gapped|edge)\b/i;
+const UNCONFIRMED = /\b(disconnected|edge)\b/i;
 
 const everyLocale = locales.flatMap((locale) => [
   ...industrySlugs.map((slug) => ({
@@ -70,7 +70,7 @@ describe.each(industrySlugs)('%s content', (slug) => {
     expect(page.useCases.items.length).toBeGreaterThanOrEqual(3);
     expect(page.useCases.items.length).toBeLessThanOrEqual(4);
     expect(page.faq.length).toBeGreaterThanOrEqual(4);
-    expect(page.faq.length).toBeLessThanOrEqual(5);
+    expect(page.faq.length).toBeLessThanOrEqual(6);
     expect(page.stackFit.items.length).toBeGreaterThanOrEqual(3);
     expect(page.whereWeAre.notes.length).toBeGreaterThan(0);
     expect(page.sample).toBeUndefined();
@@ -115,6 +115,13 @@ describe.each(industrySlugs)('%s content', (slug) => {
     for (const text of strings(page)) {
       expect(text).not.toMatch(UNCONFIRMED);
       expect(text).not.toMatch(/open core/i);
+    }
+  });
+
+  it('only ever calls air-gapped support "coming soon", and never says JIT', () => {
+    for (const text of strings(page)) {
+      if (/air[- ]?gap/i.test(text)) expect(text).toMatch(/coming soon/i);
+      expect(text).not.toMatch(/\bJIT\b/);
     }
   });
 

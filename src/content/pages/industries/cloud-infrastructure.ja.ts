@@ -47,7 +47,7 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'inference',
         title: '責任を持てるマネージド推論を、提供する。',
-        body: 'Butter は、ストリーミングとツール呼び出しに対応した OpenAI 互換 API を提供し、サービングの経路に Python も JIT もありません。構成要素が少ないほど、パッチを当てるものも、他人のワークロードの下で壊れるものも減ります。',
+        body: 'Butter は、ストリーミングとツール呼び出しに対応した OpenAI 互換 API を提供し、サービングの経路に Python はありません。構成要素が少ないほど、パッチを当てるものも、他人のワークロードの下で壊れるものも減ります。',
       },
       {
         tag: 'control',
@@ -64,12 +64,12 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'waffle',
         need: 'すべての GPU、エンジン、テナントを、ひとつの画面で。',
-        body: '各ホストの小さな Rust 製サイドカーが、署名付きテレメトリを報告します。Waffle は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携するので、テナントは自分で選んだエンジンをそのまま使えます。',
+        body: '各ホストの小さな Rust 製サイドカーが署名付きテレメトリを報告し、Waffle はコストをテナントごとに内訳で示します。Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携するので、テナントは自分で選んだエンジンをそのまま使えます。',
       },
       {
         product: 'butter',
         need: '構成要素の少ない、マネージド推論。',
-        body: 'Metal 上の Swift と CUDA 向けの Rust。サービングの経路に Python も JIT もありません。量子化されたチェックポイントと KV キャッシュ、投機的デコーディング、LoRA が OpenAI 互換 API の背後にあります。',
+        body: 'Metal 上の Swift と CUDA 向けの Rust。サービングの経路に Python はありません。量子化されたチェックポイントと KV キャッシュ、投機的デコーディング、LoRA が OpenAI 互換 API の背後にあります。',
       },
       {
         product: 'iron',
@@ -101,7 +101,7 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
     {
       question: '利益率は、どのくらい上がりますか？',
       answer:
-        '数字はお約束しません。まずは、各 GPU が何を、誰のために動かしているかを見ることからです。そのうえで私たちが動かそうとしているのは、GPU 時間あたりの出力と、ワークロードあたりのコストで、それをお客様のフリートで計測します。',
+        '数字はお約束しません。まずは、各 GPU が何を、誰のために動かしているか、テナントあたりのコストがいくらかを見ることからです。そのうえで私たちが動かそうとしているのは、GPU 時間あたりの出力と、ワークロードあたりのコストで、それをお客様のフリートで計測します。',
     },
     {
       question: 'テレメトリを信頼できる理由は何ですか？',

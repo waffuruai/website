@@ -47,7 +47,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'inference',
         title: '提供你敢于担保的托管推理。',
-        body: 'Butter 提供兼容 OpenAI 的 API，支持流式输出和工具调用，服务路径上没有 Python，也没有 JIT。组件更少，意味着要打的补丁更少，在别人的工作负载下会出的故障也更少。',
+        body: 'Butter 提供兼容 OpenAI 的 API，支持流式输出和工具调用，服务路径上没有 Python。组件更少，意味着要打的补丁更少，在别人的工作负载下会出的故障也更少。',
       },
       {
         tag: 'control',
@@ -63,12 +63,12 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'waffle',
         need: '一个视图，看清每一块 GPU、每个引擎和每个租户。',
-        body: '每台主机上的小型 Rust sidecar 上报带签名的遥测数据。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以租户可以继续使用他们选定的引擎。',
+        body: '每台主机上的小型 Rust sidecar 上报带签名的遥测数据，Waffle 还会按租户拆分成本。它支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以租户可以继续使用他们选定的引擎。',
       },
       {
         product: 'butter',
         need: '组件更少的托管推理。',
-        body: 'Metal 上用 Swift，CUDA 上用 Rust，服务路径上没有 Python，也没有 JIT。量化检查点与 KV 缓存、推测解码和 LoRA 都在兼容 OpenAI 的 API 背后。',
+        body: 'Metal 上用 Swift，CUDA 上用 Rust，服务路径上没有 Python。量化检查点与 KV 缓存、推测解码和 LoRA 都在兼容 OpenAI 的 API 背后。',
       },
       {
         product: 'iron',
@@ -100,7 +100,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
     {
       question: '它能为我们的毛利增加多少？',
       answer:
-        '我们不会承诺一个数字。第一步是看清每块 GPU 在跑什么、为谁而跑。之后，每个 GPU 小时的产出和每个工作负载的成本，才是我们努力改善的数字，并在你的集群上测量。',
+        '我们不会承诺一个数字。第一步是看清每块 GPU 在跑什么、为谁而跑，以及每个租户的成本是多少。之后，每个 GPU 小时的产出和每个工作负载的成本，才是我们努力改善的数字，并在你的集群上测量。',
     },
     {
       question: '我们为什么该信任这些遥测数据？',

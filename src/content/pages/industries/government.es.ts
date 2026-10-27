@@ -53,7 +53,7 @@ const governmentEs: (typeof government)['en'] = {
       {
         tag: 'inference',
         title: 'Usa el hardware que ya compraste.',
-        body: 'De los Mac en los escritorios a las estaciones de trabajo RTX y DGX Spark, un solo stack sirve modelos en lo que ya está pagado. Butter no tiene Python ni JIT en la ruta de serving, así que hay menos que parchear y menos que justificar.',
+        body: 'De los Mac en los escritorios a las estaciones de trabajo RTX y DGX Spark, un solo stack sirve modelos en lo que ya está pagado. Butter no tiene Python en la ruta de serving, así que hay menos que parchear y menos que justificar.',
       },
     ],
   },
@@ -65,7 +65,7 @@ const governmentEs: (typeof government)['en'] = {
       {
         product: 'butter',
         need: 'Sirve modelos en infraestructura que tú operas.',
-        body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python y sin JIT en la ruta de serving. Las herramientas existentes cambian una dirección, no un SDK.',
+        body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Las herramientas existentes cambian una dirección, no un SDK.',
       },
       {
         product: 'waffle',
@@ -90,6 +90,7 @@ const governmentEs: (typeof government)['en'] = {
     notes: [
       'Planifica los pilotos en Apple silicon, estaciones de trabajo RTX y DGX Spark, donde el stack funciona hoy. Las GPU de centros de datos están en desarrollo.',
       'ROCm y Vulkan funcionan, pero aún sin afinar.',
+      'La mayor parte del stack funciona sin conexión una vez que los modelos están en tus máquinas. El soporte para entornos con aislamiento físico llegará pronto.',
       'Tráenos directamente tus requisitos de contratación y de seguridad, y los responderemos de forma concreta.',
     ],
   },
@@ -98,6 +99,11 @@ const governmentEs: (typeof government)['en'] = {
       question: '¿Algún dato sale de nuestra infraestructura?',
       answer:
         'Los datos de inferencia no salen por defecto, porque los datos se quedan en el equipo a menos que tú lo autorices. Cada host de Waffle ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
+    },
+    {
+      question: '¿Puede funcionar sin conexión?',
+      answer:
+        'La mayor parte del stack funciona sin conexión una vez que los modelos están en tus máquinas. El soporte para entornos con aislamiento físico llegará pronto, y te diremos qué funciona hoy en tu entorno.',
     },
     {
       question: '¿Están acreditados para uso gubernamental?',

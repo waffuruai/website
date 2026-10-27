@@ -41,7 +41,7 @@ const industriesOverviewZh: (typeof industriesOverview)['en'] = {
       {
         tag: 'inference',
         title: '更少的*组件*。',
-        body: 'Butter 提供模型服务，服务路径上没有 Python，也没有 JIT，运行在为每种后端调优的内核上。要打的补丁更少，会出的故障更少，要解释的也更少。',
+        body: 'Butter 提供模型服务，服务路径上没有 Python，运行在为每种后端调优的内核上。要打的补丁更少，会出的故障更少，要解释的也更少。',
         points: [
           'Metal 优先，其次 CUDA，ROCm 和 Vulkan 可运行',
           '兼容 OpenAI 的服务，应用照常工作',

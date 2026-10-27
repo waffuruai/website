@@ -61,7 +61,7 @@ const neocloudsZh: (typeof neoclouds)['en'] = {
       {
         product: 'butter',
         need: '一个由你掌控、没有 Python 的引擎。',
-        body: 'Metal 上用 Swift，CUDA 及其他平台用 Rust。量化检查点与 KV 缓存、推测解码和 LoRA 都在兼容 OpenAI 的 API 背后，没有 Python，也没有 JIT。',
+        body: 'Metal 上用 Swift，CUDA 及其他平台用 Rust。量化检查点与 KV 缓存、推测解码和 LoRA 都在兼容 OpenAI 的 API 背后，没有 Python。',
       },
       {
         product: 'iron',

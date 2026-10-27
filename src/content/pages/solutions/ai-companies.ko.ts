@@ -40,7 +40,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
       },
       {
         tag: 'inference',
-        title: 'Python도 JIT도 없이 서빙하세요.',
+        title: 'Python 없이 서빙하세요.',
         body: 'Butter는 Apple 실리콘에는 Metal 위의 Swift, CUDA를 비롯한 나머지에는 Rust로 만들었고, 스트리밍과 도구 호출을 지원하는 OpenAI 호환 API를 제공합니다. 하이브리드·MoE 모델, 추측 디코딩, LoRA도 기본으로 갖추고 있습니다.',
       },
       {

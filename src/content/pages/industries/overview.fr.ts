@@ -42,7 +42,7 @@ const industriesOverviewFr: (typeof industriesOverview)['en'] = {
       {
         tag: 'inference',
         title: 'Moins de *rouages*.',
-        body: 'Butter sert des modèles sans Python et sans JIT dans le chemin de serving, sur des kernels optimisés pour chaque backend. Moins à corriger, moins de pannes possibles et moins à expliquer.',
+        body: 'Butter sert des modèles sans Python dans le chemin de serving, sur des kernels optimisés pour chaque backend. Moins à corriger, moins de pannes possibles et moins à expliquer.',
         points: [
           'Metal d’abord, CUDA ensuite, ROCm et Vulkan fonctionnent',
           'Serving compatible OpenAI : vos applications continuent de fonctionner',
