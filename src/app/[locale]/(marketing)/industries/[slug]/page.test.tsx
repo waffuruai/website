@@ -122,10 +122,12 @@ describe('/industries/[slug] route', () => {
     ).toBe('/products/pantry');
   });
 
-  it('keeps the Pantry mention but drops the link while it is unlaunched', async () => {
+  it('keeps the Pantry mention, linked only once Pantry launches', async () => {
     vi.stubEnv('NEXT_PUBLIC_SHOW_UNRELEASED', '0');
     await renderRoute('military');
-    expect(screen.queryByRole('link', { name: /Explore Pantry/ })).toBeNull();
+    expect(
+      screen.queryByRole('link', { name: /Explore Pantry/ }) !== null,
+    ).toBe(site.launched.pantry);
     expect(
       screen.getByText(/Pantry, our free and open-source scanner/),
     ).toBeTruthy();

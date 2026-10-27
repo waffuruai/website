@@ -4,6 +4,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { UseCases } from '@/components/solutions/use-cases';
 import { solutionsShared } from '@/content/pages/solutions/shared';
 import type { UseCase } from '@/content/pages/solutions/types';
+import { site } from '@/content/site';
 import type { Locale } from '@/i18n/config';
 import { withDictionary } from '@/i18n/test-utils';
 
@@ -57,11 +58,13 @@ describe('UseCases', () => {
     expect(links[0]?.getAttribute('href')).toBe('/ja/products/pantry');
   });
 
-  it('leaves the link out while its section is unlaunched', () => {
+  it('links only once its section launches', () => {
     vi.stubEnv('NEXT_PUBLIC_SHOW_UNRELEASED', '0');
     renderUseCases();
-    expect(screen.queryByRole('link')).toBeNull();
-    expect(screen.queryByText('Explore Pantry')).toBeNull();
+    expect(screen.queryByRole('link') !== null).toBe(site.launched.pantry);
+    expect(screen.queryByText('Explore Pantry') !== null).toBe(
+      site.launched.pantry,
+    );
     expect(screen.getByText('Scan every machine.')).toBeTruthy();
   });
 });

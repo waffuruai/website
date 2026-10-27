@@ -21,9 +21,9 @@ export const SITE = {
  * `showUnreleased` mirror `src/lib/launch.ts`.
  */
 export const LAUNCHED = {
-  pantry: false,
-  stack: true,
-  solutions: true,
+  pantry: true,
+  stack: false,
+  solutions: false,
   industries: false,
 };
 

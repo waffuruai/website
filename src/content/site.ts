@@ -34,9 +34,9 @@ export const site = {
    * section are in `src/lib/launch.ts`. Flip one to true to launch it.
    */
   launched: {
-    pantry: false,
-    stack: true,
-    solutions: true,
+    pantry: true,
+    stack: false,
+    solutions: false,
     industries: false,
   },
   urls: {

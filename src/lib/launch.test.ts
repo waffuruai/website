@@ -31,9 +31,9 @@ describe('site.launched', () => {
   // A tripwire: launching a section is a deliberate edit to this test too.
   it('launches exactly these sections', () => {
     expect(site.launched).toEqual({
-      pantry: false,
-      stack: true,
-      solutions: true,
+      pantry: true,
+      stack: false,
+      solutions: false,
       industries: false,
     });
   });

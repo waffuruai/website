@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 
 import { describe, expect, it } from 'vitest';
 
+import { site } from '../src/content/site';
 import { isPublishedPath } from '../src/lib/launch';
 import {
   canonicalPath,
@@ -155,11 +156,21 @@ describe('route', () => {
     }
   });
 
-  it('sends bare product names to their product pages', () => {
-    expect(decide('/butter')).toMatchObject({
-      kind: 'redirect',
-      location: '/products/butter',
-    });
+  it('sends bare product names to their pages once their section launches', () => {
+    for (const [from, to, live] of [
+      ['/butter', '/products/butter', site.launched.stack],
+      ['/pantry', '/products/pantry', site.launched.pantry],
+      ['/wscanner', '/products/pantry', site.launched.pantry],
+    ] as const) {
+      if (live) {
+        expect(decide(from), from).toMatchObject({
+          kind: 'redirect',
+          location: to,
+        });
+      } else {
+        expect(decide(from), from).not.toMatchObject({ kind: 'redirect' });
+      }
+    }
   });
 
   it('routes /api and robots.txt to the Worker', () => {

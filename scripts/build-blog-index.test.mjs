@@ -14,7 +14,7 @@ import { join } from 'node:path';
 
 import { afterEach, describe, expect, it } from 'vitest';
 
-import { renderIndex, scanPosts } from './build-blog-index.mjs';
+import { renderIndex, renderLocales, scanPosts } from './build-blog-index.mjs';
 
 let dir;
 afterEach(async () => {
@@ -45,6 +45,16 @@ describe('blog index', () => {
       "    en: () => import('@/content/blog/post/page.mdx'),\n    es: () => import('@/content/blog/post/page.es.mdx'),\n    ko: () => import('@/content/blog/post/page.ko.mdx'),",
     );
     expect(text).not.toContain('${');
+  });
+
+  it('lists the locales each post is written in, English first', () => {
+    const text = renderLocales({
+      post: { ko: 'page.ko.mdx', en: 'page.mdx' },
+      solo: { en: 'page.mdx' },
+    });
+    expect(text).toContain("  'post': ['en', 'ko'],");
+    expect(text).toContain("  'solo': ['en'],");
+    expect(text).not.toContain('import(');
   });
 
   it('runs as a CLI from a checkout path containing spaces', async () => {
