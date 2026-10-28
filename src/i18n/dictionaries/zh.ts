@@ -18,7 +18,7 @@ const zh: Dictionary = {
   meta: {
     defaultTitle: 'Waffuru：在你已有的硬件上获得更多智能',
     defaultDescription:
-      'Waffuru 打造 AI 技术栈，在你自有或租用的硬件上又快又省地运行模型，默认私密。从 Pantry 开始：适用于 macOS 和 Linux 的免费漏洞扫描器。',
+      'Waffuru 打造 AI 技术栈，在你自有或租用的硬件上又快又安全地运行模型，默认私密。从 Pantry 开始：适用于 macOS 和 Linux 的免费漏洞扫描器。',
   },
   header: {
     mainNav: '主导航',
