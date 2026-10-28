@@ -16,7 +16,7 @@ const es: Dictionary = {
     faqHeading: 'Preguntas frecuentes',
   },
   meta: {
-    defaultTitle: 'Waffuru: más inteligencia del hardware que ya tienes',
+    defaultTitle: 'Waffuru: más inteligencia en el hardware que ya tienes',
     defaultDescription:
       'Waffuru crea el stack de IA que ejecuta modelos rápido y a bajo costo en hardware propio o alquilado, privado por defecto. Empieza con Pantry, nuestro escáner de vulnerabilidades gratuito para macOS y Linux.',
   },
@@ -61,7 +61,7 @@ const es: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Inferencia multimodal, sin Python.',
+        description: 'Inferencia multimodal, sin concesiones.',
       },
       syrup: {
         label: 'Syrup',

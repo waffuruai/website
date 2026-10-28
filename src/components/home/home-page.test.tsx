@@ -30,7 +30,7 @@ describe('HomePage', () => {
         heading.textContent?.replace(/\s+/g, ' ').trim(),
       ),
     ).toEqual([
-      'More intelligence from the hardware you already own.',
+      'More intelligence on hardware you already own.',
       'Know what’s exposed. Patch it fast.',
       'From silicon to answer.',
       'A seat at the table.',

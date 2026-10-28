@@ -16,7 +16,8 @@ const fr: Dictionary = {
     faqHeading: 'Vos questions, nos réponses',
   },
   meta: {
-    defaultTitle: 'Waffuru : plus d’intelligence du matériel que vous possédez',
+    defaultTitle:
+      'Waffuru : plus d’intelligence sur le matériel que vous possédez déjà',
     defaultDescription:
       'Waffuru construit la stack d’IA qui fait tourner les modèles vite et à moindre coût sur du matériel que vous possédez ou louez, privée par défaut. Commencez par Pantry, notre scanner de vulnérabilités gratuit pour macOS et Linux.',
   },
@@ -61,7 +62,7 @@ const fr: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Inférence multimodale, sans Python.',
+        description: 'Inférence multimodale, sans compromis.',
       },
       syrup: {
         label: 'Syrup',

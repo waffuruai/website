@@ -16,7 +16,7 @@ const zh: Dictionary = {
     faqHeading: '常见问题',
   },
   meta: {
-    defaultTitle: 'Waffuru：让你已有的硬件发挥更多智能',
+    defaultTitle: 'Waffuru：在你已有的硬件上获得更多智能',
     defaultDescription:
       'Waffuru 打造 AI 技术栈，在你自有或租用的硬件上又快又省地运行模型，默认私密。从 Pantry 开始：适用于 macOS 和 Linux 的免费漏洞扫描器。',
   },
@@ -61,7 +61,7 @@ const zh: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: '多模态推理，无需 Python。',
+        description: '多模态推理，绝不妥协。',
       },
       syrup: {
         label: 'Syrup',

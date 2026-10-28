@@ -86,7 +86,7 @@ export const home: Localized<HomeContent> = {
 
     hero: {
       eyebrow: 'Your hardware · your data · your AI',
-      title: 'More intelligence from the hardware you already *own*.',
+      title: 'More intelligence on hardware you already *own*.',
       lede: 'Waffuru builds the AI stack that runs on hardware you own or rent, from a laptop to a GPU fleet in the data centre. You get more from every GPU, spend less per token, and your data stays with you.',
       launch: {
         label: 'New',

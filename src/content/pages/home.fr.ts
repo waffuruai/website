@@ -18,7 +18,7 @@ const homeFr: (typeof home)['en'] = {
 
   hero: {
     eyebrow: 'Votre matériel · vos données · votre IA',
-    title: 'Plus d’intelligence, avec le matériel que vous *possédez* déjà.',
+    title: 'Plus d’intelligence sur le matériel que vous *possédez* déjà.',
     lede: 'Waffuru construit la stack d’IA qui tourne sur le matériel que vous possédez ou louez, du portable à la flotte de GPU en datacenter. Vous tirez davantage de chaque GPU, dépensez moins par token, et vos données restent chez vous.',
     launch: {
       label: 'Nouveau',

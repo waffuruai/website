@@ -18,7 +18,7 @@ const homeEs: (typeof home)['en'] = {
 
   hero: {
     eyebrow: 'Tu hardware · tus datos · tu IA',
-    title: 'Más inteligencia del hardware que ya *tienes*.',
+    title: 'Más inteligencia en el hardware que ya *tienes*.',
     lede: 'Waffuru construye el stack de IA que funciona en el hardware que tienes o alquilas, desde un portátil hasta una flota de GPU en el centro de datos. Sacas más de cada GPU, gastas menos por token y tus datos se quedan contigo.',
     launch: {
       label: 'Nuevo',

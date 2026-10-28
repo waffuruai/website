@@ -61,7 +61,7 @@ const ko: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Python 없는 멀티모달 추론.',
+        description: '타협 없는 멀티모달 추론.',
       },
       syrup: {
         label: 'Syrup',

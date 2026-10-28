@@ -16,7 +16,7 @@ const ja: Dictionary = {
     faqHeading: 'よくある質問',
   },
   meta: {
-    defaultTitle: 'Waffuru：今あるハードウェアから、もっと多くの知能を',
+    defaultTitle: 'Waffuru：今あるハードウェアで、もっと多くの知能を',
     defaultDescription:
       'Waffuru は、所有またはレンタルのハードウェアでモデルを速く、安く動かす AI スタックをつくっています。デフォルトでプライベート。まずは macOS と Linux 向けの無料脆弱性スキャナー Pantry から。',
   },
@@ -61,7 +61,7 @@ const ja: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Python 不要のマルチモーダル推論。',
+        description: '妥協のないマルチモーダル推論。',
       },
       syrup: {
         label: 'Syrup',

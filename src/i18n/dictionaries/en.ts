@@ -20,7 +20,7 @@ const en = {
     faqHeading: 'Questions, answered',
   },
   meta: {
-    defaultTitle: 'Waffuru: more intelligence from the hardware you own',
+    defaultTitle: 'Waffuru: more intelligence on hardware you already own',
     defaultDescription:
       'Waffuru builds the AI stack that runs models fast and cheap on hardware you own or rent, private by default. Start with Pantry, our free vulnerability scanner for macOS and Linux.',
   },
@@ -65,7 +65,7 @@ const en = {
       },
       butter: {
         label: 'Butter',
-        description: 'Multi-modal inference, without Python.',
+        description: 'Multi-modal inference, without compromise.',
       },
       syrup: {
         label: 'Syrup',

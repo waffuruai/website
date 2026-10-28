@@ -25,22 +25,22 @@ export function Hero({
   const { eyebrow, title, lede, launch, secondary } = content;
 
   return (
-    <section className="relative flex min-h-[min(900px,100svh)] flex-col justify-end pt-32 max-[720px]:min-h-0 max-[720px]:pt-28">
+    <section className="relative flex min-h-[min(860px,100svh)] flex-col justify-end pt-21 max-[720px]:min-h-0 max-[720px]:pt-19">
       <HeroTiles />
 
       <div className="relative z-[6] mx-auto flex w-full max-w-site flex-col gap-9 px-site pb-18 max-[720px]:gap-7 max-[720px]:pb-12">
         {isPublishedPath(pantryFacts.path) && (
           <LocalizedLink
             href={pantryFacts.path}
-            className="wf-rise group inline-flex w-fit max-w-full items-center gap-3 rounded-full border border-foreground/15 bg-background/60 py-1.5 pr-4 pl-1.5 text-[14px] text-soft backdrop-blur-sm transition-colors hover:border-foreground/40 hover:text-foreground"
+            className="wf-rise group inline-flex w-fit max-w-full items-center gap-3 rounded-full border border-brand/70 bg-brand/20 py-1.5 pr-4 pl-1.5 text-[14px] text-foreground backdrop-blur-sm transition-colors hover:border-brand hover:bg-brand/30"
           >
-            <span className="rounded-full bg-brand px-2.5 py-0.5 label-mono text-[11px] text-primary-foreground">
+            <span className="rounded-full bg-foreground px-2.5 py-0.5 label-mono text-[11px] text-background">
               {launch.label}
             </span>
             <span className="truncate">{launch.text}</span>
             <span
               aria-hidden
-              className="text-brand-ink transition-transform group-hover:translate-x-0.5"
+              className="transition-transform group-hover:translate-x-0.5"
             >
               →
             </span>

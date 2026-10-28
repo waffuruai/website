@@ -18,7 +18,7 @@ const homeZh: (typeof home)['en'] = {
 
   hero: {
     eyebrow: '你的硬件 · 你的数据 · 你的 AI',
-    title: '用你*已有*的硬件，获得更多智能。',
+    title: '在你*已有*的硬件上，获得更多智能。',
     lede: 'Waffuru 打造在你自有或租用的硬件上运行的 AI 技术栈，从一台笔记本到数据中心里的一整支 GPU 集群。你能从每块 GPU 中获得更多，每个 token 花得更少，数据也留在你手里。',
     launch: {
       label: '新品',

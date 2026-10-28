@@ -23,7 +23,7 @@ describe('Hero', () => {
     const headings = screen.getAllByRole('heading', { level: 1 });
     expect(headings).toHaveLength(1);
     expect(headings[0].textContent).toBe(
-      'More intelligence from the hardware you already own.',
+      'More intelligence on hardware you already own.',
     );
     expect(headings[0].querySelector('em')?.textContent).toBe('own');
     expect(container.querySelector('h1.heading-hero')).not.toBeNull();
