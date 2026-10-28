@@ -106,7 +106,7 @@ const whiskJa: (typeof whisk)['en'] = {
     {
       question: 'AURA とは何ですか？',
       answer:
-        '私たち独自の圧縮アルゴリズムで、データが占める容量を小さくします。Google の [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) に Tom Turney が改良を加えた TurboQuant+ に着想を得て、私たち自身の新しい手法でさらに先へ進めました。AURA は、Eric Kryski と Tom Turney の共同作業から生まれました。',
+        'KV キャッシュ、埋め込み、モデルの重みに使う、私たち独自の圧縮アルゴリズムです。Whisk では埋め込みを圧縮し、データが占める容量を小さくします。Google の [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) に Tom Turney が改良を加えた TurboQuant+ に着想を得て、私たち自身の新しい手法でさらに先へ進めました。AURA は、Eric Kryski と Tom Turney の共同作業から生まれました。',
     },
     {
       question: '何から Whisk を使えますか？',

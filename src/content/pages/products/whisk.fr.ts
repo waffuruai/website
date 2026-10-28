@@ -113,7 +113,7 @@ const whiskFr: (typeof whisk)['en'] = {
     {
       question: 'Qu’est-ce qu’AURA ?',
       answer:
-        'Notre algorithme de compression propriétaire, pour que vos données prennent moins de place. Il s’inspire de TurboQuant+, les améliorations apportées par Tom Turney au [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) de Google, et nous sommes allés encore plus loin avec quelques techniques inédites de notre cru. AURA est né d’une collaboration entre Eric Kryski et Tom Turney.',
+        'Notre algorithme de compression propriétaire, que nous utilisons pour le cache KV, les embeddings et les poids des modèles. Dans Whisk, il compresse les embeddings, pour que vos données prennent moins de place. Il s’inspire de TurboQuant+, les améliorations apportées par Tom Turney au [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) de Google, et nous sommes allés encore plus loin avec quelques techniques inédites de notre cru. AURA est né d’une collaboration entre Eric Kryski et Tom Turney.',
     },
     {
       question: 'Qu’est-ce qui peut utiliser Whisk ?',

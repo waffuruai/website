@@ -20,7 +20,7 @@ const ironFr: (typeof iron)['en'] = {
   },
   hero: {
     title: 'Une définition de kernel, *quatre* backends.',
-    lede: 'Pressez des maths brutes directement dans du silicium haute performance. Iron est un DSL embarqué dans Rust : vous écrivez le kernel une fois, il est compilé vers une IR partagée, puis vers Metal, CUDA, HIP/ROCm ou Vulkan SPIR-V.',
+    lede: 'Faites faire brrrr à votre moteur d’inférence. Iron est un DSL embarqué dans Rust : vous écrivez le kernel une fois, il est compilé en kernels optimisés pour un matériel précis, réglés pour les modèles de pointe et les charges de travail courantes.',
     highlights: [
       {
         value: '4',

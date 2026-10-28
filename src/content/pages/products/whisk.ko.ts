@@ -95,7 +95,7 @@ const whiskKo: (typeof whisk)['en'] = {
     {
       question: 'AURA는 무엇인가요?',
       answer:
-        '데이터가 차지하는 공간을 줄여 주는, 자체 개발한 압축 알고리즘입니다. Google의 [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/)를 Tom Turney가 개선한 TurboQuant+에서 영감을 받았고, 우리만의 새로운 기법으로 한층 더 발전시켰습니다. AURA는 Eric Kryski와 Tom Turney의 협업에서 나왔습니다.',
+        'KV 캐시, 임베딩, 모델 가중치에 쓰는 자체 개발 압축 알고리즘입니다. Whisk에서는 임베딩을 압축해 데이터가 차지하는 공간을 줄여 줍니다. Google의 [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/)를 Tom Turney가 개선한 TurboQuant+에서 영감을 받았고, 우리만의 새로운 기법으로 한층 더 발전시켰습니다. AURA는 Eric Kryski와 Tom Turney의 협업에서 나왔습니다.',
     },
     {
       question: 'Whisk는 무엇과 함께 쓸 수 있나요?',

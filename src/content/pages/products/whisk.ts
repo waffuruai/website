@@ -120,7 +120,7 @@ export const whisk: Localized<ProductCopy> = {
       {
         question: 'What is AURA?',
         answer:
-          'Our proprietary compression algorithm, so your data takes up less space. It was inspired by TurboQuant+, Tom Turney’s improvements to Google’s [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/), and we took it even further with some novel techniques of our own. AURA came out of a collaboration between Eric Kryski and Tom Turney.',
+          'Our proprietary compression algorithm, which we use for the KV cache, embeddings and model weights. In Whisk it compresses embeddings, so your data takes up less space. It was inspired by TurboQuant+, Tom Turney’s improvements to Google’s [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/), and we took it even further with some novel techniques of our own. AURA came out of a collaboration between Eric Kryski and Tom Turney.',
       },
       {
         question: 'What can use Whisk?',

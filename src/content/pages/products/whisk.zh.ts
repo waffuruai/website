@@ -95,7 +95,7 @@ const whiskZh: (typeof whisk)['en'] = {
     {
       question: 'AURA 是什么？',
       answer:
-        '我们专有的压缩算法，让你的数据占用更少的空间。它的灵感来自 TurboQuant+，即 Tom Turney 对 Google [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) 的改进；我们又用一些自己独创的新技术，把它推进得更远。AURA 出自 Eric Kryski 与 Tom Turney 的合作。',
+        '我们专有的压缩算法，用于 KV 缓存、嵌入向量和模型权重。在 Whisk 中，它压缩嵌入向量，让你的数据占用更少的空间。它的灵感来自 TurboQuant+，即 Tom Turney 对 Google [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) 的改进；我们又用一些自己独创的新技术，把它推进得更远。AURA 出自 Eric Kryski 与 Tom Turney 的合作。',
     },
     {
       question: '什么可以使用 Whisk？',

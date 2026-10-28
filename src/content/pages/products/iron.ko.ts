@@ -20,7 +20,7 @@ const ironKo: (typeof iron)['en'] = {
   },
   hero: {
     title: '하나의 커널 정의, *네 가지* 백엔드.',
-    lede: '순수한 수학을 고성능 실리콘에 곧바로 새깁니다. Iron은 Rust에 내장된 DSL입니다. 커널을 한 번 작성하면 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다.',
+    lede: '추론 엔진이 brrrr 하고 질주하게 하세요. Iron은 Rust에 내장된 DSL입니다. 커널을 한 번 작성하면 특정 하드웨어에 최적화된 커널로 컴파일되고, 주요 모델과 일반적인 워크로드에 맞게 튜닝됩니다.',
     highlights: [
       { value: '4', label: '하나의 커널 정의에서 나오는 GPU 백엔드' },
       { value: '~1,139', label: '커널 선언' },

@@ -39,8 +39,8 @@ export function generateStaticParams() {
  * The research sections a product page carries, each reading its own content
  * file. Butter: how fast (speculative decoding), how much context fits
  * (AURA), the quantized models, how reliable tool calls are, and the labs it
- * runs. Iron: the kernel, its backends and how far each is tuned. Syrup and
- * Whisk have none yet.
+ * runs. Iron: the kernel, its backends and how far each is tuned, and the
+ * labs whose models it runs. Syrup and Whisk have none yet.
  */
 const research: Partial<
   Record<ProductSlug, (locale: Locale) => React.ReactNode>
@@ -54,7 +54,12 @@ const research: Partial<
       <Models content={localize(models, locale)} />
     </>
   ),
-  iron: (locale) => <KernelCode content={localize(kernelCode, locale)} />,
+  iron: (locale) => (
+    <>
+      <KernelCode content={localize(kernelCode, locale)} />
+      <Models content={localize(models, locale)} />
+    </>
+  ),
 };
 
 export async function generateMetadata({

@@ -33,7 +33,7 @@ export const iron: Localized<ProductCopy> = {
     },
     hero: {
       title: 'One kernel definition, *four* backends.',
-      lede: 'Press raw math directly into high-performance silicon. Iron is a Rust-embedded DSL: you write the kernel once, it lowers to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V.',
+      lede: 'Make your inference engine go brrrr. Iron is a Rust-embedded DSL: you write the kernel once, it compiles to optimized kernels for specific hardware, tuned for leading models and common workloads.',
       highlights: [
         { value: '4', label: 'GPU backends from one kernel definition' },
         { value: '~1,139', label: 'kernel declarations' },

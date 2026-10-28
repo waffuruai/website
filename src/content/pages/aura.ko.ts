@@ -5,7 +5,7 @@ const copy: AuraCopy = {
   starsLabel: 'GitHub 스타',
   title: '기가바이트당 더 많은 *컨텍스트*.',
   intro:
-    'AURA는 KV 캐시를 압축해 더 긴 컨텍스트와 더 많은 동시 세션을 같은 메모리에 담습니다. 우리의 공개 연구 TurboQuant+에서 시작해 지금은 Iron과 Butter에서 네이티브로 동작합니다.',
+    'AURA는 KV 캐시, 임베딩, 모델 가중치에 쓰는 우리의 압축 기술입니다. 여기서는 KV 캐시를 압축해 더 긴 컨텍스트와 더 많은 동시 세션을 같은 메모리에 담습니다. 우리의 공개 연구 TurboQuant+에서 시작해 지금은 Iron과 Butter에서 네이티브로 동작합니다.',
   lineage: {
     heading: '어디에서 왔는가',
     steps: [
