@@ -22,9 +22,9 @@ export const SITE = {
  */
 export const LAUNCHED = {
   pantry: true,
-  stack: false,
-  solutions: false,
-  industries: false,
+  stack: true,
+  solutions: true,
+  industries: true,
 };
 
 export const SECTION_ROUTES = {

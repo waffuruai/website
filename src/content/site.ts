@@ -35,9 +35,9 @@ export const site = {
    */
   launched: {
     pantry: true,
-    stack: false,
-    solutions: false,
-    industries: false,
+    stack: true,
+    solutions: true,
+    industries: true,
   },
   urls: {
     docs: 'https://docs.waffuru.ai',
