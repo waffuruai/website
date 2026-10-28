@@ -21,6 +21,10 @@ export type Cta = {
 
 export type FaqItem = { question: string; answer: string };
 
+/** Every product with an icon (`components/products/product-icon.tsx`). */
+export type ProductIconName =
+  'pantry' | 'waffle' | 'whisk' | 'syrup' | 'butter' | 'iron';
+
 /** Copy for `StackFlow`, the stack drawn as the path a request takes. */
 export type StackFlowCopy = {
   /** Who asks: the top of the flow ("You, your apps, your agents"). */
@@ -28,7 +32,12 @@ export type StackFlowCopy = {
   /** Mono caps label on the dashed boundary. */
   boundary: string;
   /** The stack from the top down: what each layer does for you. */
-  layers: { role: string; line: string; name?: string }[];
+  layers: {
+    role: string;
+    line: string;
+    name?: string;
+    icon?: ProductIconName;
+  }[];
   /** The bottom row: hardware it runs on. */
   hardware: string[];
   /** Outside the boundary: where data does not go. */
@@ -65,6 +74,8 @@ export type NavLink = {
   href: string;
   /** Mono index shown before the label, as on the stack rows ("01"). */
   index?: string;
+  /** Product icon shown before the label, in place of the index. */
+  icon?: ProductIconName;
 };
 
 export type NavColumn = {

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 
 import { isExternalHref, LocalizedLink } from '@/components/localized-link';
 import { LanguageSwitcher } from '@/components/marketing/language-switcher';
+import { ProductIcon } from '@/components/products/product-icon';
 import { ThemeToggle } from '@/components/theme-toggle';
 import {
   Accordion,
@@ -81,10 +82,17 @@ function MenuLink({
           aria-current={active ? 'page' : undefined}
           className="group/item flex items-start gap-4 rounded-xl p-3 hover:bg-accent focus-visible:bg-accent"
         >
-          {link.index && (
-            <span className="mt-1.5 font-mono text-[11px] tracking-[0.08em] text-muted-foreground">
-              {link.index}
-            </span>
+          {link.icon ? (
+            <ProductIcon
+              name={link.icon}
+              className="mt-0.5 text-soft transition-colors group-hover/item:text-foreground"
+            />
+          ) : (
+            link.index && (
+              <span className="mt-1.5 font-mono text-[11px] tracking-[0.08em] text-muted-foreground">
+                {link.index}
+              </span>
+            )
           )}
           <span className="flex flex-col gap-1">
             <span

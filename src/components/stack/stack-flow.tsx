@@ -1,3 +1,4 @@
+import { ProductIcon } from '@/components/products/product-icon';
 import type { StackFlowCopy } from '@/content/types';
 import { cn } from '@/lib/utils';
 
@@ -45,12 +46,18 @@ export function StackFlow({
                   <li
                     key={layer.role}
                     className={cn(
-                      'relative grid grid-cols-[minmax(0,1fr)] items-center gap-1 rounded-2xl border border-foreground/10 bg-card px-4 py-3 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-4 md:px-5',
+                      'relative grid grid-cols-[minmax(0,1fr)] items-center gap-1 rounded-2xl border border-foreground/10 bg-card px-4 py-3 sm:grid-cols-[230px_minmax(0,1fr)] sm:gap-4 md:px-5',
                       styles.layer,
                     )}
                     style={{ '--i': index } as React.CSSProperties}
                   >
-                    <span className="flex items-baseline gap-2">
+                    <span className="flex items-center gap-2.5">
+                      {layer.icon && (
+                        <ProductIcon
+                          name={layer.icon}
+                          className="size-5 text-soft"
+                        />
+                      )}
                       <span className="font-serif text-[22px] leading-none text-foreground">
                         {layer.role}
                       </span>
