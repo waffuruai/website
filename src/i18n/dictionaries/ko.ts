@@ -18,7 +18,7 @@ const ko: Dictionary = {
   meta: {
     defaultTitle: 'Waffuru: 이미 가진 하드웨어에서 더 많은 지능을',
     defaultDescription:
-      'Waffuru는 보유하거나 임대한 하드웨어에서 모델을 빠르고 저렴하게 실행하는 AI 스택을 만듭니다. 기본적으로 프라이빗합니다. macOS와 Linux용 무료 취약점 스캐너 Pantry로 시작하세요.',
+      'Waffuru는 보유하거나 임대한 하드웨어에서 모델을 빠르고 안전하게 실행하는 AI 스택을 만듭니다. 기본적으로 프라이빗합니다. macOS와 Linux용 무료 취약점 스캐너 Pantry로 시작하세요.',
   },
   header: {
     mainNav: '주 메뉴',
