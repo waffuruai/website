@@ -28,7 +28,7 @@ const financialServicesKo: (typeof financialServices)['en'] = {
     title: '프롬프트 하나하나가 *정보 공개*입니다.',
     statement:
       '자동화할 가치가 있는 업무는 고객 데이터 위에 있고, 이를 남의 API로 보내는 것은 아무도 프롬프트마다 내리고 싶지 않은 정보 공개 결정입니다.',
-    body: '그사이 모델 리스크팀은 무엇이 어디서 도는지 알고 싶어 하고, 감사팀은 추적 기록을 원하며, 재무팀은 아무도 내놓지 못하는 워크로드별 비용을 원합니다. GPU는 책상과 클러스터에 흩어지고, 서빙 스택은 매주 바뀌는 Python 의존성 더미가 됩니다.',
+    body: '그사이 모델 리스크팀은 무엇이 어디서 도는지 알고 싶어 하고, 감사팀은 추적 기록을 원하며, 재무팀은 아무도 내놓지 못하는 워크로드별 비용을 원합니다. GPU는 책상과 클러스터에 흩어지고, 서빙 스택은 매주 바뀌는 의존성 더미가 됩니다.',
   },
   useCases: {
     title: '*장부* 안에서 끝나는 업무.',
@@ -48,7 +48,7 @@ const financialServicesKo: (typeof financialServices)['en'] = {
       {
         tag: 'inference',
         title: '더 적은 구성 요소로 서빙하세요.',
-        body: 'Butter는 서빙 경로에 Python이 없고, OpenAI 호환 API를 제공하므로 사내 도구는 SDK가 아니라 주소만 바꾸면 됩니다. 의존성이 적을수록 검토와 프로덕션 사이에서 추적할 것도 줄어듭니다.',
+        body: 'Butter는 의존성을 최소한으로 줄였고, OpenAI 호환 API를 제공하므로 사내 도구는 SDK가 아니라 주소만 바꾸면 됩니다. 의존성이 적을수록 검토와 프로덕션 사이에서 추적할 것도 줄어듭니다.',
       },
       {
         tag: 'control',
@@ -65,7 +65,7 @@ const financialServicesKo: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: '경계 안에서 모델을 서빙하세요.',
-        body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 직접 불러오므로 새 모델에 변환 파이프라인이 필요 없습니다.',
+        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust로 만든 OpenAI 호환 서빙이며, 의존성은 최소한입니다. safetensors, MLX, JANG, GGUF 체크포인트를 직접 불러오므로 새 모델에 변환 파이프라인이 필요 없습니다.',
       },
       {
         product: 'syrup',

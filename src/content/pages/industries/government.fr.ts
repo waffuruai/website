@@ -53,7 +53,7 @@ const governmentFr: (typeof government)['en'] = {
       {
         tag: 'inference',
         title: 'Utilisez le matériel que vous avez déjà acheté.',
-        body: 'Des Mac sur les bureaux aux stations RTX et à DGX Spark, une seule stack sert des modèles sur ce qui est déjà payé. Butter se passe de Python dans le chemin de serving : moins à corriger, et moins à justifier.',
+        body: 'Des Mac sur les bureaux aux stations RTX et à DGX Spark, une seule stack sert des modèles sur ce qui est déjà payé. Butter réduit ses dépendances au minimum : moins à corriger, et moins à justifier.',
       },
     ],
   },
@@ -65,7 +65,7 @@ const governmentFr: (typeof government)['en'] = {
       {
         product: 'butter',
         need: 'Servir des modèles sur une infrastructure que vous exploitez.',
-        body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python dans le chemin de serving. Vos outils existants changent d’adresse, pas de SDK.',
+        body: 'Du serving compatible OpenAI en Swift pour macOS et iOS et en Rust pour tout le reste, avec un minimum de dépendances. Vos outils existants changent d’adresse, pas de SDK.',
       },
       {
         product: 'syrup',

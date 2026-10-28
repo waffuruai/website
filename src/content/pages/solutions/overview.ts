@@ -49,7 +49,7 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
         {
           tag: 'inference',
           title: 'Better *inference*.',
-          body: 'Kernels tuned for each backend, quantized models and KV cache, and speculative decoding, in an engine with no Python on the hot path.',
+          body: 'Kernels tuned for each backend, quantized models and KV cache, and speculative decoding, in an engine with minimal dependencies.',
           points: [
             'Metal first, CUDA next, ROCm and Vulkan running',
             'Loads Hugging Face models with no conversion',

@@ -84,7 +84,7 @@ export const lifeSciences: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'Models next to the data.',
-          body: 'Swift on Metal for Apple silicon and Rust for CUDA, with no Python in the serving path. Text, vision, speech and omni models sit behind an OpenAI-compatible API, and checkpoints load straight from Hugging Face.',
+          body: 'Swift for macOS and iOS and Rust for everything else, with minimal dependencies. Text, vision, speech and omni models sit behind an OpenAI-compatible API, and checkpoints load straight from Hugging Face.',
         },
         {
           product: 'whisk',

@@ -28,7 +28,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
     title: '노는 시간은 *청구*되지 않습니다.',
     statement:
       'GPU 시간당 매출과 마진이 사업을 좌우하는데, 플릿은 그 어느 쪽도 좀처럼 알려 주지 않습니다.',
-    body: '테넌트는 각자의 엔진과 설정을 가져오고, 벤더마다 보고 방식이 다르며, 비용은 그것을 쓴 고객이 아니라 카드에 쌓입니다. 이제 고객은 베어메탈만이 아니라 매니지드 추론을 원하고, 이를 취약한 Python 스택 위에 쌓는 것은 고객 대신 떠안는 위험입니다.',
+    body: '테넌트는 각자의 엔진과 설정을 가져오고, 벤더마다 보고 방식이 다르며, 비용은 그것을 쓴 고객이 아니라 카드에 쌓입니다. 이제 고객은 베어메탈만이 아니라 매니지드 추론을 원하고, 이를 취약한 의존성 더미 위에 쌓는 것은 고객 대신 떠안는 위험입니다.',
   },
   useCases: {
     title: '*랙*마다 더 많은 성과를.',
@@ -47,7 +47,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'inference',
         title: '자신 있게 내놓을 수 있는 매니지드 추론을 제공하세요.',
-        body: 'Butter는 스트리밍과 도구 호출을 지원하는 OpenAI 호환 API를 제공하며, 서빙 경로에 Python이 없습니다. 구성 요소가 적을수록 남의 워크로드 아래에서 패치할 것도, 고장 날 것도 줄어듭니다.',
+        body: 'Butter는 스트리밍과 도구 호출을 지원하는 OpenAI 호환 API를 제공하며, 의존성을 최소한으로 줄였습니다. 구성 요소가 적을수록 남의 워크로드 아래에서 패치할 것도, 고장 날 것도 줄어듭니다.',
       },
       {
         tag: 'control',
@@ -68,7 +68,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'butter',
         need: '구성 요소가 더 적은 매니지드 추론.',
-        body: 'Metal 위의 Swift와 CUDA용 Rust로, 서빙 경로에 Python이 없습니다. 양자화 체크포인트와 KV 캐시, 추측 디코딩, LoRA를 OpenAI 호환 API 뒤에서 제공합니다.',
+        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust를 쓰며, 의존성은 최소한입니다. 양자화 체크포인트와 KV 캐시, 추측 디코딩, LoRA를 OpenAI 호환 API 뒤에서 제공합니다.',
       },
       {
         product: 'iron',

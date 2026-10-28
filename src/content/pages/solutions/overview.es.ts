@@ -36,7 +36,7 @@ const solutionsOverviewEs: (typeof solutionsOverview)['en'] = {
       {
         tag: 'inference',
         title: 'Mejor *inferencia*.',
-        body: 'Kernels afinados para cada backend, modelos y caché KV cuantizados, y decodificación especulativa, en un motor sin Python en la ruta crítica.',
+        body: 'Kernels afinados para cada backend, modelos y caché KV cuantizados, y decodificación especulativa, en un motor con dependencias mínimas.',
         points: [
           'Metal primero, CUDA después, ROCm y Vulkan funcionando',
           'Carga modelos de Hugging Face sin conversión',

@@ -45,7 +45,7 @@ export const industriesOverview: Localized<IndustriesOverview> = {
       label: 'What holds everywhere',
       title: 'Three answers for every *sector*.',
       intro:
-        'The rules change from one industry to the next. These three questions come up in all of them.',
+        'Finance gets a cost for every workload. IT gets fewer parts to run and patch. Security gets data that stays on hardware you choose. And the CEO gets all three, without a rewrite.',
       items: [
         {
           tag: 'cost',
@@ -60,7 +60,7 @@ export const industriesOverview: Localized<IndustriesOverview> = {
         {
           tag: 'inference',
           title: 'Fewer moving *parts*.',
-          body: 'Butter serves models with no Python in the serving path, on kernels tuned for each backend. Less to patch, less to break and less to explain.',
+          body: 'Butter serves models with minimal dependencies, using Swift for macOS and iOS and Rust for everything else, on kernels tuned for each backend. You get safety and maximal performance without compromises. Less to patch, less to break and less to explain.',
           points: [
             'Metal first, CUDA next, ROCm and Vulkan running',
             'OpenAI-compatible serving, so apps keep working',

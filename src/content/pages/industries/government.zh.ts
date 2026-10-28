@@ -51,7 +51,7 @@ const governmentZh: (typeof government)['en'] = {
       {
         tag: 'inference',
         title: '用好你已经买下的硬件。',
-        body: '从桌上的 Mac，到 RTX 工作站和 DGX Spark，一套技术栈在已经付过钱的硬件上提供模型服务。Butter 的服务路径上没有 Python，要打的补丁更少，要论证的理由也更少。',
+        body: '从桌上的 Mac，到 RTX 工作站和 DGX Spark，一套技术栈在已经付过钱的硬件上提供模型服务。Butter 的依赖降到最少，要打的补丁更少，要论证的理由也更少。',
       },
     ],
   },
@@ -63,7 +63,7 @@ const governmentZh: (typeof government)['en'] = {
       {
         product: 'butter',
         need: '在你运营的基础设施上提供模型服务。',
-        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。现有工具只需换一个地址，不用换 SDK。',
+        body: 'macOS 和 iOS 上用 Swift、其他平台用 Rust，提供兼容 OpenAI 的服务，依赖极少。现有工具只需换一个地址，不用换 SDK。',
       },
       {
         product: 'syrup',

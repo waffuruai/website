@@ -28,7 +28,7 @@ const financialServicesJa: (typeof financialServices)['en'] = {
     title: 'すべてのプロンプトが、*開示*になる。',
     statement:
       '自動化する価値のある業務は顧客データの上にあり、それを他社の API に送ることは開示の判断です。その判断を、プロンプトごとに下したい人はいません。',
-    body: '一方で、モデルリスク管理は何がどこで動いているかを知りたがり、監査は記録を求め、財務は誰も出せないワークロードごとのコストを求めます。GPU はデスクやクラスターに散らばり、サービングスタックは、毎週変わる Python の依存関係の山になっています。',
+    body: '一方で、モデルリスク管理は何がどこで動いているかを知りたがり、監査は記録を求め、財務は誰も出せないワークロードごとのコストを求めます。GPU はデスクやクラスターに散らばり、サービングスタックは、毎週変わる依存関係の山になっています。',
   },
   useCases: {
     title: '*自社*で完結する仕事',
@@ -48,7 +48,7 @@ const financialServicesJa: (typeof financialServices)['en'] = {
       {
         tag: 'inference',
         title: '少ない構成要素で、提供する。',
-        body: 'Butter はサービングの経路に Python がなく、OpenAI 互換 API なので、社内ツールで変えるのは接続先であり、SDK ではありません。依存関係が少ないほど、レビューから本番までのあいだに追跡するものも減ります。',
+        body: 'Butter は依存関係を最小限に抑え、OpenAI 互換 API なので、社内ツールで変えるのは接続先であり、SDK ではありません。依存関係が少ないほど、レビューから本番までのあいだに追跡するものも減ります。',
       },
       {
         tag: 'control',
@@ -65,7 +65,7 @@ const financialServicesJa: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: '自社の境界の内側で、モデルを提供する。',
-        body: 'Metal 上の Swift と CUDA 向けの Rust による OpenAI 互換のサービング。サービングの経路に Python はありません。safetensors、MLX、JANG、GGUF のチェックポイントを直接読み込むので、新しいモデルに変換のパイプラインは要りません。',
+        body: 'macOS と iOS では Swift、それ以外では Rust による OpenAI 互換のサービング。依存関係は最小限です。safetensors、MLX、JANG、GGUF のチェックポイントを直接読み込むので、新しいモデルに変換のパイプラインは要りません。',
       },
       {
         product: 'syrup',

@@ -4,7 +4,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
   seo: {
     title: 'AI 公司的 GPU 内核与大模型服务',
     description:
-      '一次编写内核，发布到 Metal、CUDA、ROCm 和 Vulkan。无需 Python 即可提供模型服务，支持量化 KV 缓存和推测解码。抢先体验。',
+      '一次编写内核，发布到 Metal、CUDA、ROCm 和 Vulkan。以极少的依赖提供模型服务，支持量化 KV 缓存和推测解码。抢先体验。',
     keywords: [
       '推理加速',
       'GPU 内核可移植性',
@@ -16,17 +16,17 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
   serviceType: 'GPU 内核编译器与大模型服务引擎',
   card: {
     title: 'AI 模型与推理*公司*',
-    summary: '为每种 GPU 后端提供一份内核定义，以及无需 Python 的模型服务。',
+    summary: '为每种 GPU 后端提供一份内核定义，以及依赖极少的模型服务。',
   },
   hero: {
     title: '内核只写一次，交付*四种*后端。',
-    lede: 'Iron 把一份内核定义编译到 Metal、CUDA、ROCm 和 Vulkan。Butter 在其上提供无需 Python 的模型服务，Whisk 则给你的智能体一份记忆。',
+    lede: 'Iron 把一份内核定义编译到 Metal、CUDA、ROCm 和 Vulkan。Butter 在其上以极少的依赖提供模型服务，Whisk 则给你的智能体一份记忆。',
   },
   problem: {
     title: '每多一个后端，就是一次*重写*。',
     statement:
       '你的模型能移植到什么程度，取决于你的内核，而内核通常是每家厂商各写一份。',
-    body: '要同时支持 Apple 芯片、NVIDIA、AMD 和 Vulkan，往往意味着多套代码库、多套 bug，而且服务栈的热路径上还有 Python。推理成本直接落在你的毛利上，智能体在会话结束的那一刻就丢掉了上下文。',
+    body: '要同时支持 Apple 芯片、NVIDIA、AMD 和 Vulkan，往往意味着多套代码库、多套 bug，服务栈还背着一大堆依赖。推理成本直接落在你的毛利上，智能体在会话结束的那一刻就丢掉了上下文。',
   },
   useCases: {
     title: '你能*交付*什么。',
@@ -39,8 +39,8 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
       },
       {
         tag: 'inference',
-        title: '无需 Python 即可提供服务。',
-        body: 'Butter 在 Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust，提供兼容 OpenAI 的 API、流式输出和工具调用。混合模型和 MoE 模型、推测解码和 LoRA 一应俱全。',
+        title: '提供服务，绝不妥协。',
+        body: 'Butter 在 macOS 和 iOS 上用 Swift，其他平台用 Rust，依赖极少，提供兼容 OpenAI 的 API、流式输出和工具调用。混合模型和 MoE 模型、推测解码和 LoRA 一应俱全。',
       },
       {
         tag: 'cost',
@@ -80,7 +80,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
       },
       {
         product: 'butter',
-        need: '无需 Python 的模型服务。',
+        need: '依赖极少的模型服务。',
         body: '无需转换即可加载 safetensors、MLX、JANG 和 GGUF，并支持 2 至 8 位量化检查点、混合模型和 MoE 模型、量化 KV 缓存、推测解码和 LoRA。文本、视觉、语音转文字、文字转语音和全模态模型，都在兼容 OpenAI 的 API 背后。',
       },
       {
@@ -133,7 +133,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
   ],
   cta: {
     title: '把你的数学压进*硅片*。',
-    body: '抢先体验，暂未开源。告诉我们你在构建什么、哪些后端重要、Python 在哪里挡了你的路，我们会回信。',
+    body: '抢先体验，暂未开源。告诉我们你在构建什么、哪些后端重要、现有技术栈在哪里挡了你的路，我们会回信。',
   },
 };
 

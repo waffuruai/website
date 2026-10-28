@@ -50,7 +50,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
       title: 'Idle hours don’t *invoice*.',
       statement:
         'Revenue and margin per GPU-hour decide your business, and the fleet rarely tells you either one.',
-      body: 'Tenants bring their own engines and settings, every vendor reports in its own way, and cost lands on the card rather than on the customer who used it. Customers now want managed inference, not just bare metal, and building that on a fragile Python stack is a risk you carry for them.',
+      body: 'Tenants bring their own engines and settings, every vendor reports in its own way, and cost lands on the card rather than on the customer who used it. Customers now want managed inference, not just bare metal, and building that on a fragile stack of dependencies is a risk you carry for them.',
     },
     useCases: {
       title: 'More from every *rack*.',
@@ -69,7 +69,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
         {
           tag: 'inference',
           title: 'Offer managed inference you can stand behind.',
-          body: 'Butter serves an OpenAI-compatible API with streaming and tool calling, with no Python in the serving path. Fewer moving parts means less to patch and less to break under someone else’s workload.',
+          body: 'Butter serves an OpenAI-compatible API with streaming and tool calling, and keeps its dependencies minimal. Fewer moving parts means less to patch and less to break under someone else’s workload.',
         },
         {
           tag: 'control',
@@ -91,7 +91,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'Managed inference with fewer moving parts.',
-          body: 'Swift on Metal and Rust for CUDA, with no Python in the serving path. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API.',
+          body: 'Swift for macOS and iOS, Rust for everything else, with minimal dependencies. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API.',
         },
         {
           product: 'iron',

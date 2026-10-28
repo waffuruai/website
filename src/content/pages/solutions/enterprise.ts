@@ -83,7 +83,7 @@ export const enterprise: Localized<SolutionPage> = {
         {
           product: 'butter',
           need: 'Serve models on servers you operate.',
-          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so there is no conversion pipeline between a new model and your servers.',
+          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, with minimal dependencies. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so there is no conversion pipeline between a new model and your servers.',
         },
         {
           product: 'syrup',

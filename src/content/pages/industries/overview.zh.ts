@@ -26,7 +26,8 @@ const industriesOverviewZh: (typeof industriesOverview)['en'] = {
   values: {
     label: '各行业通用',
     title: '三个答案，适用于每个*行业*。',
-    intro: '规则因行业而异，而这三个问题在每个行业都会出现。',
+    intro:
+      '财务能拿到每个工作负载的成本。IT 要运维、要打补丁的组件更少。安全部门能确保数据留在你选定的硬件上。而 CEO 三者兼得，无需推倒重写。',
     items: [
       {
         tag: 'cost',
@@ -41,7 +42,7 @@ const industriesOverviewZh: (typeof industriesOverview)['en'] = {
       {
         tag: 'inference',
         title: '更少的*组件*。',
-        body: 'Butter 提供模型服务，服务路径上没有 Python，运行在为每种后端调优的内核上。要打的补丁更少，会出的故障更少，要解释的也更少。',
+        body: 'Butter 以极少的依赖提供模型服务：macOS 和 iOS 上用 Swift，其他平台用 Rust，运行在为每种后端调优的内核上。安全与极致性能兼得，无需妥协。要打的补丁更少，会出的故障更少，要解释的也更少。',
         points: [
           'Metal 优先，其次 CUDA，ROCm 和 Vulkan 可运行',
           '兼容 OpenAI 的服务，应用照常工作',

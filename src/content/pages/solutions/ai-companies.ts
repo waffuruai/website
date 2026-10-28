@@ -9,8 +9,8 @@ import aiCompaniesKo from './ai-companies.ko';
 
 /*
  * AI model and inference companies: one kernel definition shipped to
- * Metal/CUDA/ROCm/Vulkan, serving without Python, a memory layer for
- * agents. The numbers on this page (about 1,139 kernel declarations,
+ * Metal/CUDA/ROCm/Vulkan, serving with minimal dependencies, a memory
+ * layer for agents. The numbers on this page (about 1,139 kernel declarations,
  * 4,164/4,164 HIP and Vulkan test cases) are public facts from the content
  * brief. No tok/s, no "faster than" claims.
  */
@@ -19,7 +19,7 @@ export const aiCompanies: Localized<SolutionPage> = {
     seo: {
       title: 'GPU kernels and LLM serving for AI companies',
       description:
-        'Write a kernel once and ship it to Metal, CUDA, ROCm and Vulkan. Serve models without Python, with a quantized KV cache and speculative decoding. Early access.',
+        'Write a kernel once and ship it to Metal, CUDA, ROCm and Vulkan. Serve models with minimal dependencies, a quantized KV cache and speculative decoding. Early access.',
       keywords: [
         'inference optimization',
         'GPU kernel portability',
@@ -32,17 +32,17 @@ export const aiCompanies: Localized<SolutionPage> = {
     card: {
       title: 'AI model and inference *companies*',
       summary:
-        'One kernel definition for every GPU backend, and serving that needs no Python.',
+        'One kernel definition for every GPU backend, and serving with minimal dependencies.',
     },
     hero: {
       title: 'Write the kernel once. Ship it to four *backends*.',
-      lede: 'Iron compiles one kernel definition to Metal, CUDA, ROCm and Vulkan. Butter serves models on top without Python, and Whisk gives your agents a memory.',
+      lede: 'Iron compiles one kernel definition to Metal, CUDA, ROCm and Vulkan. Butter serves models on top with minimal dependencies, and Whisk gives your agents a memory.',
     },
     problem: {
       title: 'Every backend is a *rewrite*.',
       statement:
         'Your model is only as portable as your kernels, and kernels are usually written once per vendor.',
-      body: 'Supporting Apple silicon, NVIDIA, AMD and Vulkan tends to mean separate codebases and separate bugs, with Python on the hot path of the serving stack. Inference cost lands straight on your margin, and agents lose their context the moment a session ends.',
+      body: 'Supporting Apple silicon, NVIDIA, AMD and Vulkan tends to mean separate codebases and separate bugs, and a serving stack heavy with dependencies. Inference cost lands straight on your margin, and agents lose their context the moment a session ends.',
     },
     useCases: {
       title: 'What you can *ship*.',
@@ -55,8 +55,8 @@ export const aiCompanies: Localized<SolutionPage> = {
         },
         {
           tag: 'inference',
-          title: 'Serve without Python.',
-          body: 'Butter is Swift on Metal for Apple silicon and Rust for CUDA and the rest, with an OpenAI-compatible API, streaming and tool calling. Hybrid and MoE models, speculative decoding and LoRA are in the box.',
+          title: 'Serve without compromise.',
+          body: 'Butter is Swift for macOS and iOS and Rust for everything else, with minimal dependencies, an OpenAI-compatible API, streaming and tool calling. Hybrid and MoE models, speculative decoding and LoRA are in the box.',
         },
         {
           tag: 'cost',
@@ -97,7 +97,7 @@ export const aiCompanies: Localized<SolutionPage> = {
         },
         {
           product: 'butter',
-          need: 'Model serving without Python.',
+          need: 'Model serving with minimal dependencies.',
           body: 'Loads safetensors, MLX, JANG and GGUF with no conversion, plus 2- to 8-bit quantized checkpoints, hybrid and MoE models, a quantized KV cache, speculative decoding and LoRA. Text, vision, speech-to-text, text-to-speech and omni models sit behind an OpenAI-compatible API.',
         },
         {
@@ -150,7 +150,7 @@ export const aiCompanies: Localized<SolutionPage> = {
     ],
     cta: {
       title: 'Press your math into *silicon*.',
-      body: 'Early access, closed source for now. Tell us what you build, which backends matter and where Python is in your way, and we will write back.',
+      body: 'Early access, closed source for now. Tell us what you build, which backends matter and where your current stack gets in the way, and we will write back.',
     },
   },
   es: aiCompaniesEs,

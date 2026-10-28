@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterFr: (typeof butter)['en'] = {
   layer: 'Serving',
-  tagline: 'Inférence multimodale, sans Python.',
+  tagline: 'Inférence multimodale, sans compromis.',
   summary:
     'Swift sur Metal pour le silicium Apple, Rust pour CUDA et le reste. Charge des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et MoE, et les sert via des API compatibles OpenAI et Anthropic Messages.',
   seo: {
-    title: 'Butter : inférence LLM sans Python',
+    title: 'Butter : inférence multimodale avec un minimum de dépendances',
     description:
-      'Moteur d’inférence LLM : Swift sur Metal pour le silicium Apple, Rust pour CUDA et le reste. Sert les modèles Hugging Face via des API compatibles OpenAI et Anthropic Messages, pensé pour les harnais d’agents.',
+      'Moteur d’inférence LLM avec un minimum de dépendances : Swift pour macOS et iOS, Rust pour tout le reste. Sert les modèles Hugging Face via des API compatibles OpenAI et Anthropic Messages, pensé pour les harnais d’agents.',
     keywords: [
       'moteur d’inférence LLM',
       'serving LLM local',
@@ -20,8 +20,8 @@ const butterFr: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: 'Servir des modèles *sans* Python.',
-    lede: 'Butter est un moteur d’inférence écrit en Swift sur Metal pour le silicium Apple et en Rust pour CUDA et le reste. Pas de Python, des kernels Metal livrés précompilés, et les modèles se chargent directement depuis Hugging Face.',
+    title: 'Servir des modèles sans *compromis*.',
+    lede: 'Butter sert des modèles avec un minimum de dépendances, en Swift pour macOS et iOS et en Rust pour tout le reste, sur des kernels optimisés pour chaque backend. Vous obtenez la sécurité et des performances maximales, sans compromis. Les kernels Metal sont livrés précompilés, et les modèles se chargent directement depuis Hugging Face.',
     highlights: [
       {
         value: '4',
@@ -49,7 +49,7 @@ const butterFr: (typeof butter)['en'] = {
   capabilities: {
     heading: 'Ce que fait *Butter*.',
     intro:
-      'Du chargement d’un checkpoint au streaming des tokens, sans Python entre les deux.',
+      'Du chargement d’un checkpoint au streaming des tokens, avec un minimum de dépendances tout du long.',
     items: [
       {
         title: 'Charge les modèles tels quels',
@@ -155,7 +155,7 @@ const butterFr: (typeof butter)['en'] = {
       {
         term: 'Runtime',
         detail:
-          'Swift sur Metal pour le silicium Apple, macOS 14 ou plus récent. Rust pour CUDA et le reste. Pas de Python.',
+          'Swift sur Metal pour macOS et iOS, avec macOS 14 ou plus récent. Rust pour CUDA et tout le reste. Un minimum de dépendances.',
       },
       {
         term: 'Formats de modèles',
@@ -282,9 +282,9 @@ const butterFr: (typeof butter)['en'] = {
         'La couverture actuelle comprend Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite et Phi, entre autres listés plus haut, en variantes texte, vision, voix et omni.',
     },
     {
-      question: 'Ai-je besoin de Python ?',
+      question: 'En quoi Butter est-il écrit ?',
       answer:
-        'Non. Butter, c’est du Swift sur Metal pour le silicium Apple et du Rust pour CUDA et le reste, sans Python nulle part dans le chemin de serving.',
+        'En Swift pour macOS et iOS, et en Rust pour tout le reste. Butter réduit ses dépendances au minimum et tourne sur des kernels optimisés pour chaque backend : vous obtenez la sécurité et des performances maximales, sans compromis.',
     },
     {
       question:

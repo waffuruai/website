@@ -68,8 +68,8 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
       },
       {
         product: 'butter',
-        need: 'Un motor que controlas, sin Python.',
-        body: 'Swift sobre Metal, Rust para CUDA y el resto. Checkpoints y caché KV cuantizados, decodificación especulativa y LoRA tras una API compatible con OpenAI, sin Python.',
+        need: 'Un motor que controlas, con dependencias mínimas.',
+        body: 'Swift para macOS e iOS, Rust para todo lo demás. Checkpoints y caché KV cuantizados, decodificación especulativa y LoRA tras una API compatible con OpenAI.',
       },
       {
         product: 'iron',

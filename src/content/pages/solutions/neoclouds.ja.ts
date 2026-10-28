@@ -70,8 +70,8 @@ const neocloudsJa: (typeof neoclouds)['en'] = {
       },
       {
         product: 'butter',
-        need: '自分で制御できる、Python なしのエンジン。',
-        body: 'Metal 上の Swift、CUDA などでは Rust。量子化されたチェックポイントと KV キャッシュ、投機的デコーディング、LoRA が OpenAI 互換 API の背後にあり、Python は使っていません。',
+        need: '自分で制御できる、依存関係が最小限のエンジン。',
+        body: 'macOS と iOS では Swift、それ以外では Rust。量子化されたチェックポイントと KV キャッシュ、投機的デコーディング、LoRA が OpenAI 互換 API の背後にあります。',
       },
       {
         product: 'iron',

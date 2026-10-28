@@ -27,7 +27,7 @@ const industriesOverviewEs: (typeof industriesOverview)['en'] = {
     label: 'Lo que vale en todas partes',
     title: 'Tres respuestas para cada *sector*.',
     intro:
-      'Las reglas cambian de una industria a otra. Estas tres preguntas surgen en todas.',
+      'Finanzas obtiene un costo por cada carga de trabajo. TI, menos piezas que operar y parchear. Seguridad, datos que se quedan en el hardware que tú eliges. Y el CEO, las tres cosas, sin reescribir nada.',
     items: [
       {
         tag: 'cost',
@@ -42,7 +42,7 @@ const industriesOverviewEs: (typeof industriesOverview)['en'] = {
       {
         tag: 'inference',
         title: 'Menos *piezas* móviles.',
-        body: 'Butter sirve modelos sin Python en la ruta de serving, sobre kernels afinados para cada backend. Menos que parchear, menos que se rompa y menos que explicar.',
+        body: 'Butter sirve modelos con dependencias mínimas, usando Swift para macOS e iOS y Rust para todo lo demás, sobre kernels afinados para cada backend. Obtienes seguridad y el máximo rendimiento, sin concesiones. Menos que parchear, menos que se rompa y menos que explicar.',
         points: [
           'Metal primero, CUDA después, ROCm y Vulkan funcionando',
           'Serving compatible con OpenAI, para que tus apps sigan funcionando',

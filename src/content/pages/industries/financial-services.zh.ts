@@ -27,7 +27,7 @@ const financialServicesZh: (typeof financialServices)['en'] = {
     title: '每条提示词都是一次*披露*。',
     statement:
       '值得自动化的工作都建立在客户数据之上，而把它发给别人的 API，是一个没人愿意每条提示词都做一次的披露决定。',
-    body: '与此同时，模型风险团队想知道什么在哪里运行，审计想要可追溯的记录，财务想要每个工作负载的成本，却没人拿得出来。GPU 最终散落在各个工位和集群上，而服务栈是一堆每周都在变的 Python 依赖。',
+    body: '与此同时，模型风险团队想知道什么在哪里运行，审计想要可追溯的记录，财务想要每个工作负载的成本，却没人拿得出来。GPU 最终散落在各个工位和集群上，而服务栈是一堆每周都在变的依赖。',
   },
   useCases: {
     title: '留在*账内*的工作。',
@@ -46,7 +46,7 @@ const financialServicesZh: (typeof financialServices)['en'] = {
       {
         tag: 'inference',
         title: '用更少的组件提供服务。',
-        body: 'Butter 的服务路径上没有 Python；它兼容 OpenAI 的 API 意味着内部工具只需换一个地址，不用换 SDK。依赖更少，从审查到生产之间要跟踪的东西就更少。',
+        body: 'Butter 把依赖降到最少；它兼容 OpenAI 的 API 意味着内部工具只需换一个地址，不用换 SDK。依赖更少，从审查到生产之间要跟踪的东西就更少。',
       },
       {
         tag: 'control',
@@ -63,7 +63,7 @@ const financialServicesZh: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: '在你的边界内提供模型服务。',
-        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，所以新模型不需要转换流水线。',
+        body: 'macOS 和 iOS 上用 Swift、其他平台用 Rust，提供兼容 OpenAI 的服务，依赖极少。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，所以新模型不需要转换流水线。',
       },
       {
         product: 'syrup',

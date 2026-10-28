@@ -32,7 +32,7 @@ const productsOverviewZh: (typeof productsOverview)['en'] = {
     aloneLabel: '单独使用',
     alone: {
       iron: '一次编写 GPU 内核，在 Metal、CUDA、ROCm 和 Vulkan 上运行。',
-      butter: '通过兼容 OpenAI 的 API 提供模型服务，不被 Python 挡路。',
+      butter: '通过兼容 OpenAI 的 API 提供模型服务，依赖极少。',
       syrup: '看清每一块 GPU 和其上运行的每个引擎，不论是哪种引擎。',
       whisk: '让你的 AI 对你的笔记和代码拥有本地记忆，并附带引用。',
       waffle: '在同一个框架里运行你的智能体，内置你的助手 W。',

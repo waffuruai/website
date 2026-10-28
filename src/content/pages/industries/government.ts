@@ -74,7 +74,7 @@ export const government: Localized<IndustryPage> = {
         {
           tag: 'inference',
           title: 'Use the hardware you already bought.',
-          body: 'From Macs on desks to RTX workstations and DGX Spark, one stack serves models on what is already paid for. Butter has no Python in the serving path, so there is less to patch and less to justify.',
+          body: 'From Macs on desks to RTX workstations and DGX Spark, one stack serves models on what is already paid for. Butter keeps its dependencies minimal, so there is less to patch and less to justify.',
         },
       ],
     },
@@ -86,7 +86,7 @@ export const government: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'Serve models on infrastructure you operate.',
-          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. Existing tools change an address, not an SDK.',
+          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, with minimal dependencies. Existing tools change an address, not an SDK.',
         },
         {
           product: 'syrup',

@@ -33,7 +33,7 @@ const productsOverviewKo: (typeof productsOverview)['en'] = {
     aloneLabel: '단독으로 쓸 때',
     alone: {
       iron: 'GPU 커널을 한 번만 작성해 Metal, CUDA, ROCm, Vulkan에서 실행합니다.',
-      butter: 'Python 없이 OpenAI 호환 API 뒤에서 모델을 서빙합니다.',
+      butter: '최소한의 의존성으로, OpenAI 호환 API 뒤에서 모델을 서빙합니다.',
       syrup:
         '어떤 엔진이든, 모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에 봅니다.',
       whisk: 'AI에 노트와 코드에 대한 로컬 메모리를 출처와 함께 제공합니다.',

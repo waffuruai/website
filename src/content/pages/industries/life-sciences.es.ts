@@ -66,7 +66,7 @@ const lifeSciencesEs: (typeof lifeSciences)['en'] = {
       {
         product: 'butter',
         need: 'Modelos junto a los datos.',
-        body: 'Swift sobre Metal para Apple silicon y Rust para CUDA, sin Python en la ruta de serving. Modelos de texto, visión, voz y omni tras una API compatible con OpenAI, y los checkpoints se cargan directo desde Hugging Face.',
+        body: 'Swift para macOS e iOS y Rust para todo lo demás, con dependencias mínimas. Modelos de texto, visión, voz y omni tras una API compatible con OpenAI, y los checkpoints se cargan directo desde Hugging Face.',
       },
       {
         product: 'whisk',

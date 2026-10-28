@@ -68,7 +68,7 @@ const enterpriseJa: (typeof enterprise)['en'] = {
       {
         product: 'butter',
         need: '自社で運用するサーバーで、モデルを提供する。',
-        body: 'Metal 上の Swift と CUDA 向けの Rust による OpenAI 互換のサービング。サービングの経路に Python はありません。safetensors、MLX、JANG、GGUF のチェックポイントを直接読み込むので、新しいモデルとサーバーのあいだに変換のパイプラインは要りません。',
+        body: 'macOS と iOS では Swift、それ以外では Rust による OpenAI 互換のサービング。依存関係は最小限です。safetensors、MLX、JANG、GGUF のチェックポイントを直接読み込むので、新しいモデルとサーバーのあいだに変換のパイプラインは要りません。',
       },
       {
         product: 'syrup',

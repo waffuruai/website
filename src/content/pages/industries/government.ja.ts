@@ -53,7 +53,7 @@ const governmentJa: (typeof government)['en'] = {
       {
         tag: 'inference',
         title: '購入済みのハードウェアを、活かす。',
-        body: 'デスクの Mac から RTX ワークステーション、DGX Spark まで、ひとつのスタックが、支払い済みのハードウェアでモデルを提供します。Butter はサービングの経路に Python がないので、パッチを当てるものも、正当性を説明すべきものも減ります。',
+        body: 'デスクの Mac から RTX ワークステーション、DGX Spark まで、ひとつのスタックが、支払い済みのハードウェアでモデルを提供します。Butter は依存関係を最小限に抑えているので、パッチを当てるものも、正当性を説明すべきものも減ります。',
       },
     ],
   },
@@ -65,7 +65,7 @@ const governmentJa: (typeof government)['en'] = {
       {
         product: 'butter',
         need: '自ら運用するインフラで、モデルを提供する。',
-        body: 'Metal 上の Swift と CUDA 向けの Rust による OpenAI 互換のサービング。サービングの経路に Python はありません。既存のツールで変えるのは接続先であり、SDK ではありません。',
+        body: 'macOS と iOS では Swift、それ以外では Rust による OpenAI 互換のサービング。依存関係は最小限です。既存のツールで変えるのは接続先であり、SDK ではありません。',
       },
       {
         product: 'syrup',

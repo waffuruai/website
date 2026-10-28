@@ -65,7 +65,7 @@ const enterpriseEs: (typeof enterprise)['en'] = {
       {
         product: 'butter',
         need: 'Sirve modelos en servidores que tú operas.',
-        body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que no hay un pipeline de conversión entre un modelo nuevo y tus servidores.',
+        body: 'Serving compatible con OpenAI en Swift para macOS e iOS y Rust para todo lo demás, con dependencias mínimas. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que no hay un pipeline de conversión entre un modelo nuevo y tus servidores.',
       },
       {
         product: 'syrup',

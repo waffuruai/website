@@ -4,7 +4,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
   seo: {
     title: 'AI 企業向け GPU カーネルと LLM サービング',
     description:
-      'カーネルを一度書いて、Metal、CUDA、ROCm、Vulkan へ。Python なしのサービング、量子化 KV キャッシュ、投機的デコーディング。早期アクセス中。',
+      'カーネルを一度書いて、Metal、CUDA、ROCm、Vulkan へ。依存関係を最小限にしたサービング、量子化 KV キャッシュ、投機的デコーディング。早期アクセス中。',
     keywords: [
       '推論の高速化',
       'GPU カーネルの移植性',
@@ -17,17 +17,17 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
   card: {
     title: 'AI モデル・推論*企業*',
     summary:
-      'すべての GPU バックエンドに向けたひとつのカーネル定義と、Python 不要のサービング。',
+      'すべての GPU バックエンドに向けたひとつのカーネル定義と、依存関係を最小限にしたサービング。',
   },
   hero: {
     title: 'カーネルは一度書くだけ。4 つの*バックエンド*へ届ける。',
-    lede: 'Iron は、ひとつのカーネル定義を Metal、CUDA、ROCm、Vulkan にコンパイルします。その上で Butter が Python なしでモデルを提供し、Whisk がエージェントに記憶を与えます。',
+    lede: 'Iron は、ひとつのカーネル定義を Metal、CUDA、ROCm、Vulkan にコンパイルします。その上で Butter が最小限の依存関係でモデルを提供し、Whisk がエージェントに記憶を与えます。',
   },
   problem: {
     title: 'バックエンドが増えるたび、*書き直し*。',
     statement:
       'モデルの移植性は、カーネルの移植性で決まります。そしてカーネルは、たいていベンダーごとに書かれています。',
-    body: 'Apple シリコン、NVIDIA、AMD、Vulkan に対応しようとすれば、コードベースもバグも別々になりがちで、サービングスタックのホットパスには Python が居座ります。推論コストは利益率に直撃し、エージェントはセッションが終わった瞬間に文脈を失います。',
+    body: 'Apple シリコン、NVIDIA、AMD、Vulkan に対応しようとすれば、コードベースもバグも別々になりがちで、サービングスタックは依存関係で膨れ上がります。推論コストは利益率に直撃し、エージェントはセッションが終わった瞬間に文脈を失います。',
   },
   useCases: {
     title: 'リリースできる*もの*',
@@ -40,8 +40,8 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
       },
       {
         tag: 'inference',
-        title: 'Python なしで、提供する。',
-        body: 'Butter は、Apple シリコンでは Metal 上の Swift、CUDA などでは Rust で書かれ、OpenAI 互換 API、ストリーミング、ツール呼び出しに対応しています。ハイブリッドモデル、MoE モデル、投機的デコーディング、LoRA も最初から備えています。',
+        title: '妥協なしで、提供する。',
+        body: 'Butter は、macOS と iOS では Swift、それ以外では Rust で書かれ、依存関係を最小限に抑えつつ、OpenAI 互換 API、ストリーミング、ツール呼び出しに対応しています。ハイブリッドモデル、MoE モデル、投機的デコーディング、LoRA も最初から備えています。',
       },
       {
         tag: 'cost',
@@ -82,7 +82,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
       },
       {
         product: 'butter',
-        need: 'Python 不要のモデルサービング。',
+        need: '依存関係を最小限にしたモデルサービング。',
         body: 'safetensors、MLX、JANG、GGUF を変換なしで読み込み、さらに 2〜8 ビットの量子化チェックポイント、ハイブリッドモデルと MoE モデル、量子化された KV キャッシュ、投機的デコーディング、LoRA に対応します。テキスト、ビジョン、音声認識、音声合成、オムニの各モデルが、OpenAI 互換 API の背後にあります。',
       },
       {
@@ -135,7 +135,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
   ],
   cta: {
     title: '計算を、*シリコン*に焼き込む。',
-    body: '現時点では早期アクセスで、クローズドソースです。何をつくっているか、どのバックエンドが重要か、どこで Python が邪魔になっているかを教えていただければ、返信します。',
+    body: '現時点では早期アクセスで、クローズドソースです。何をつくっているか、どのバックエンドが重要か、いまのスタックのどこが邪魔になっているかを教えていただければ、返信します。',
   },
 };
 

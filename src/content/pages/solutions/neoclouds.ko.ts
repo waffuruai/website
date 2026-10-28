@@ -66,8 +66,8 @@ const neocloudsKo: (typeof neoclouds)['en'] = {
       },
       {
         product: 'butter',
-        need: 'Python 없이 직접 통제하는 엔진.',
-        body: 'Metal 위의 Swift, CUDA를 비롯한 나머지에는 Rust. 양자화 체크포인트와 KV 캐시, 추측 디코딩, LoRA를 OpenAI 호환 API 뒤에서 제공하며, Python은 쓰지 않습니다.',
+        need: '의존성을 최소화한, 직접 통제하는 엔진.',
+        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust. 양자화 체크포인트와 KV 캐시, 추측 디코딩, LoRA를 OpenAI 호환 API 뒤에서 제공합니다.',
       },
       {
         product: 'iron',

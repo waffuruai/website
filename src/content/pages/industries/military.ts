@@ -29,7 +29,7 @@ export const military: Localized<IndustryPage> = {
     seo: {
       title: 'Private AI inference for military and defense',
       description:
-        'Run capable models on hardware you own and secure, from Macs to RTX workstations and DGX Spark, on a small serving stack with no Python. Early access.',
+        'Run capable models on hardware you own and secure, from Macs to RTX workstations and DGX Spark, on a small serving stack with minimal dependencies. Early access.',
       keywords: [
         'defense AI infrastructure',
         'military AI inference',
@@ -47,13 +47,13 @@ export const military: Localized<IndustryPage> = {
     },
     hero: {
       title: 'Capable AI on hardware you *own*.',
-      lede: 'Run models on machines you buy, hold and secure, from a Mac Studio to RTX workstations and DGX Spark. The serving stack is small, with no Python, so there is less to harden and less to trust.',
+      lede: 'Run models on machines you buy, hold and secure, from a Mac Studio to RTX workstations and DGX Spark. The serving stack is small, with minimal dependencies, so there is less to harden and less to trust.',
     },
     problem: {
       title: 'Every dependency is a *door*.',
       statement:
         'Mission data cannot go to someone else’s cloud, and the hardware that runs a model has to be hardware you own, hold and secure.',
-      body: 'Most AI serving stacks arrive as a long chain of Python packages and a vendor’s runtime, each one something to vet, patch and track. Hardware comes from whoever is on contract, and the machines that should run the model are scattered from desks to racks, with no single view of what runs where.',
+      body: 'Most AI serving stacks arrive as a long chain of third-party packages and a vendor’s runtime, each one something to vet, patch and track. Hardware comes from whoever is on contract, and the machines that should run the model are scattered from desks to racks, with no single view of what runs where.',
     },
     useCases: {
       title: 'A smaller *footprint*.',
@@ -67,7 +67,7 @@ export const military: Localized<IndustryPage> = {
         {
           tag: 'inference',
           title: 'Cut the dependency chain.',
-          body: 'Butter is Swift on Metal and Rust for CUDA, with no Python in the serving path. Fewer components means less to vet, less to patch and less that can break at the wrong moment.',
+          body: 'Butter is Swift for macOS and iOS and Rust for everything else, with minimal dependencies. Fewer components means less to vet, less to patch and less that can break at the wrong moment.',
         },
         {
           tag: 'control',
@@ -90,7 +90,7 @@ export const military: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'A serving stack with little to vet.',
-          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, with no conversion step.',
+          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, with minimal dependencies. It loads safetensors, MLX, JANG and GGUF checkpoints directly, with no conversion step.',
         },
         {
           product: 'syrup',
@@ -126,9 +126,9 @@ export const military: Localized<IndustryPage> = {
           'Commodity hardware you can buy and hold. Apple silicon through Metal is primary, and NVIDIA through CUDA is in production on RTX and DGX Spark. Datacenter GPUs are in progress, and AMD ROCm and Vulkan run but are not tuned yet.',
       },
       {
-        question: 'Why does no Python in the serving path matter?',
+        question: 'Why do minimal dependencies matter?',
         answer:
-          'Every package in a serving stack is something to vet, patch and track. Butter is Swift on Metal and Rust for CUDA, with no Python, so the chain between a model and an answer is shorter.',
+          'Every package in a serving stack is something to vet, patch and track. Butter keeps dependencies minimal, with Swift for macOS and iOS and Rust for everything else, so the chain between a model and an answer is shorter.',
       },
       {
         question: 'Does it run offline?',

@@ -84,8 +84,8 @@ export const neoclouds: Localized<SolutionPage> = {
         },
         {
           product: 'butter',
-          need: 'An engine you control, with no Python.',
-          body: 'Swift on Metal, Rust for CUDA and the rest. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API, with no Python.',
+          need: 'An engine you control, with minimal dependencies.',
+          body: 'Swift for macOS and iOS, Rust for everything else. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API.',
         },
         {
           product: 'iron',

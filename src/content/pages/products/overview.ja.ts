@@ -33,8 +33,7 @@ const productsOverviewJa: (typeof productsOverview)['en'] = {
     aloneLabel: '単体で',
     alone: {
       iron: 'GPU カーネルを一度書けば、Metal、CUDA、ROCm、Vulkan で動かせます。',
-      butter:
-        'OpenAI 互換 API でモデルを提供できます。間に Python は入りません。',
+      butter: 'OpenAI 互換 API でモデルを提供できます。依存関係は最小限です。',
       syrup:
         'どのエンジンであっても、すべての GPU と、その上で動くすべてのエンジンを見渡せます。',
       whisk:

@@ -45,7 +45,7 @@ export const productsOverview: Localized<ProductsOverviewCopy> = {
       alone: {
         iron: 'Write a GPU kernel once and run it on Metal, CUDA, ROCm and Vulkan.',
         butter:
-          'Serve models behind an OpenAI-compatible API, with no Python in the way.',
+          'Serve models behind an OpenAI-compatible API, with minimal dependencies.',
         syrup:
           'See every GPU and every engine running on it, whichever engine that is.',
         whisk: 'Give your AI local, cited memory of your notes and code.',

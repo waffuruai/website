@@ -28,7 +28,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
     title: '闲置的小时*开不出*账单。',
     statement:
       '每个 GPU 小时的收入和毛利决定着你的生意，而集群很少告诉你其中任何一个。',
-    body: '租户带来他们自己的引擎和配置，每家厂商的上报方式各不相同，成本落在显卡上，而不是落在用了它的客户身上。客户如今想要的是托管推理，而不只是裸金属，而在脆弱的 Python 技术栈上构建它，风险由你替他们承担。',
+    body: '租户带来他们自己的引擎和配置，每家厂商的上报方式各不相同，成本落在显卡上，而不是落在用了它的客户身上。客户如今想要的是托管推理，而不只是裸金属，而在一堆脆弱的依赖之上构建它，风险由你替他们承担。',
   },
   useCases: {
     title: '每个*机架*产出更多。',
@@ -47,7 +47,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'inference',
         title: '提供你敢于担保的托管推理。',
-        body: 'Butter 提供兼容 OpenAI 的 API，支持流式输出和工具调用，服务路径上没有 Python。组件更少，意味着要打的补丁更少，在别人的工作负载下会出的故障也更少。',
+        body: 'Butter 提供兼容 OpenAI 的 API，支持流式输出和工具调用，依赖降到最少。组件更少，意味着要打的补丁更少，在别人的工作负载下会出的故障也更少。',
       },
       {
         tag: 'control',
@@ -68,7 +68,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'butter',
         need: '组件更少的托管推理。',
-        body: 'Metal 上用 Swift，CUDA 上用 Rust，服务路径上没有 Python。量化检查点与 KV 缓存、推测解码和 LoRA 都在兼容 OpenAI 的 API 背后。',
+        body: 'macOS 和 iOS 上用 Swift，其他平台用 Rust，依赖极少。量化检查点与 KV 缓存、推测解码和 LoRA 都在兼容 OpenAI 的 API 背后。',
       },
       {
         product: 'iron',

@@ -65,7 +65,7 @@ const lifeSciencesJa: (typeof lifeSciences)['en'] = {
       {
         product: 'butter',
         need: 'データのそばで動くモデル。',
-        body: 'Apple シリコンでは Metal 上の Swift、CUDA では Rust。サービングの経路に Python はありません。テキスト、ビジョン、音声、オムニの各モデルが OpenAI 互換 API の背後にあり、チェックポイントは Hugging Face から直接読み込めます。',
+        body: 'macOS と iOS では Swift、それ以外では Rust。依存関係は最小限です。テキスト、ビジョン、音声、オムニの各モデルが OpenAI 互換 API の背後にあり、チェックポイントは Hugging Face から直接読み込めます。',
       },
       {
         product: 'whisk',

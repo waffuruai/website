@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterJa: (typeof butter)['en'] = {
   layer: 'サービング',
-  tagline: 'Python 不要のマルチモーダル推論。',
+  tagline: '妥協のないマルチモーダル推論。',
   summary:
     'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。2〜8 ビットの量子化チェックポイント、ハイブリッドモデルや MoE モデルを読み込み、OpenAI 互換と Anthropic Messages の API で提供します。',
   seo: {
-    title: 'Butter：Python 不要の LLM 推論エンジン',
+    title: 'Butter：依存関係を最小限にしたマルチモーダル推論',
     description:
-      'Hugging Face のモデルを OpenAI 互換と Anthropic Messages の API で提供する LLM 推論エンジン。Swift と Rust で書かれ、Python は不要。エージェントハーネス向けに作られています。',
+      'Hugging Face のモデルを OpenAI 互換と Anthropic Messages の API で提供する LLM 推論エンジン。macOS と iOS では Swift、それ以外では Rust で書かれ、依存関係は最小限。エージェントハーネス向けに作られています。',
     keywords: [
       'LLM 推論エンジン',
       'ローカル LLM サービング',
@@ -20,8 +20,8 @@ const butterJa: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: 'モデルサービングを、Python *なし*で。',
-    lede: 'Butter は、Apple シリコンでは Metal 上の Swift、CUDA などでは Rust で書かれた推論エンジンです。Python は使わず、Metal カーネルは事前コンパイル済みで出荷され、モデルは Hugging Face から直接読み込みます。',
+    title: 'モデルサービングを、*妥協*なしで。',
+    lede: 'Butter は最小限の依存関係でモデルを提供します。macOS と iOS では Swift、それ以外ではすべて Rust を使い、バックエンドごとにチューニングしたカーネルの上で動きます。安全性と最大限の性能を、妥協なく両立します。Metal カーネルは事前コンパイル済みで出荷され、モデルは Hugging Face から直接読み込みます。',
     highlights: [
       {
         value: '4',
@@ -49,7 +49,7 @@ const butterJa: (typeof butter)['en'] = {
   capabilities: {
     heading: 'Butter が*できる*こと',
     intro:
-      'チェックポイントの読み込みから、トークンのストリーミングまで。間に Python は入りません。',
+      'チェックポイントの読み込みから、トークンのストリーミングまで。依存関係は最小限です。',
     items: [
       {
         title: 'モデルをそのまま読み込む',
@@ -154,7 +154,7 @@ const butterJa: (typeof butter)['en'] = {
       {
         term: 'ランタイム',
         detail:
-          'Apple シリコンでは Metal 上の Swift（macOS 14 以降）、CUDA などでは Rust。Python は不要。',
+          'macOS と iOS では Metal 上の Swift（macOS は 14 以降）、CUDA などそれ以外では Rust。依存関係は最小限。',
       },
       {
         term: 'モデル形式',
@@ -281,9 +281,9 @@ const butterJa: (typeof butter)['en'] = {
         '現時点では、Llama、Gemma、Qwen、GPT-OSS、Mistral、Nemotron、Granite、Phi のほか、上に挙げたモデルに対応しています。テキスト、ビジョン、音声、オムニの各バリエーションがあります。',
     },
     {
-      question: 'Python は必要ですか？',
+      question: 'Butter は何で書かれていますか？',
       answer:
-        '必要ありません。Butter は、Apple シリコンでは Metal 上の Swift、CUDA などでは Rust で書かれており、サービングの経路に Python は一切ありません。',
+        'macOS と iOS では Swift、それ以外ではすべて Rust です。Butter は依存関係を最小限に抑え、バックエンドごとにチューニングしたカーネルの上で動くので、安全性と最大限の性能を妥協なく両立できます。',
     },
     {
       question: 'いま使っているツールやエージェントハーネスは使えますか？',

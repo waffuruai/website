@@ -37,7 +37,7 @@ const solutionsOverviewJa: (typeof solutionsOverview)['en'] = {
       {
         tag: 'inference',
         title: 'より良い*推論*',
-        body: 'バックエンドごとにチューニングしたカーネル、量子化されたモデルと KV キャッシュ、投機的デコーディング。それを、ホットパスに Python のないエンジンで。',
+        body: 'バックエンドごとにチューニングしたカーネル、量子化されたモデルと KV キャッシュ、投機的デコーディング。それを、依存関係が最小限のエンジンで。',
         points: [
           'まず Metal、次に CUDA、ROCm と Vulkan は動作',
           '変換なしで Hugging Face のモデルを読み込み',

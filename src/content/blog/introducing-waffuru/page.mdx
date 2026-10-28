@@ -55,7 +55,7 @@ Six products, from the top down:
 - **Waffle** is the agent harness, with W, our assistant, inside. It runs local models first and reaches for the cloud only when a task needs more. Coming soon.
 - **Whisk** mixes the right documents and context into every request, from your own notes and code, with citations.
 - **Syrup** is the control plane: monitoring, telemetry, access control and cost, for every GPU and every engine on it.
-- **Butter** is the multi-modal inference engine: text, vision and audio, streamed, with no Python in the serving path.
+- **Butter** is the multi-modal inference engine: text, vision and audio, streamed, in Swift for macOS and iOS and Rust for everything else, with minimal dependencies.
 - **Iron** is the kernels: written once in Rust and optimized for each chip. Metal first, then CUDA, with ROCm and Vulkan running and not tuned yet.
 
 Your request goes down through them and the answer comes back the same way, on hardware you own or rent, and nothing leaves it unless you say so. Each product works on its own, and together they do more.

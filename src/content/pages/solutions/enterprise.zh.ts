@@ -63,7 +63,7 @@ const enterpriseZh: (typeof enterprise)['en'] = {
       {
         product: 'butter',
         need: '在你运营的服务器上提供模型服务。',
-        body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，所以新模型到你的服务器之间，没有转换流水线。',
+        body: 'macOS 和 iOS 上用 Swift、其他平台用 Rust，提供兼容 OpenAI 的服务，依赖极少。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，所以新模型到你的服务器之间，没有转换流水线。',
       },
       {
         product: 'syrup',

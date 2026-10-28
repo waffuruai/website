@@ -63,7 +63,7 @@ const lifeSciencesKo: (typeof lifeSciences)['en'] = {
       {
         product: 'butter',
         need: '데이터 곁의 모델.',
-        body: 'Apple 실리콘에는 Metal 위의 Swift, CUDA에는 Rust를 쓰며, 서빙 경로에 Python이 없습니다. 텍스트, 비전, 음성, 옴니 모델을 OpenAI 호환 API 뒤에서 제공하며, 체크포인트는 Hugging Face에서 곧바로 불러옵니다.',
+        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust를 쓰며, 의존성은 최소한입니다. 텍스트, 비전, 음성, 옴니 모델을 OpenAI 호환 API 뒤에서 제공하며, 체크포인트는 Hugging Face에서 곧바로 불러옵니다.',
       },
       {
         product: 'whisk',

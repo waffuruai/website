@@ -36,7 +36,7 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
       {
         tag: 'inference',
         title: '더 나은 *추론*.',
-        body: '핫 패스에 Python이 없는 엔진에서, 백엔드별로 튜닝한 커널과 양자화된 모델·KV 캐시, 추측 디코딩을 제공합니다.',
+        body: '의존성을 최소화한 엔진에서, 백엔드별로 튜닝한 커널과 양자화된 모델·KV 캐시, 추측 디코딩을 제공합니다.',
         points: [
           'Metal이 먼저, 그다음 CUDA, ROCm과 Vulkan은 구동 중',
           '변환 없이 Hugging Face 모델 로드',

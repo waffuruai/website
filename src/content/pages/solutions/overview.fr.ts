@@ -37,7 +37,7 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
       {
         tag: 'inference',
         title: 'Une meilleure *inférence*.',
-        body: 'Des kernels optimisés pour chaque backend, des modèles et un cache KV quantifiés, et du décodage spéculatif, dans un moteur sans Python sur le chemin critique.',
+        body: 'Des kernels optimisés pour chaque backend, des modèles et un cache KV quantifiés, et du décodage spéculatif, dans un moteur avec un minimum de dépendances.',
         points: [
           'Metal d’abord, CUDA ensuite, ROCm et Vulkan fonctionnent',
           'Charge les modèles Hugging Face sans conversion',

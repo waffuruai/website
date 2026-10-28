@@ -26,7 +26,8 @@ const industriesOverviewKo: (typeof industriesOverview)['en'] = {
   values: {
     label: '어디서나 통하는 것',
     title: '모든 *산업*을 위한 세 가지 답.',
-    intro: '규칙은 산업마다 다르지만, 이 세 가지 질문은 어디서나 나옵니다.',
+    intro:
+      '재무팀은 워크로드마다 비용을 확인합니다. IT팀은 운영하고 패치할 구성 요소가 줄어듭니다. 보안팀은 직접 고른 하드웨어에 데이터를 그대로 둡니다. 그리고 CEO는 다시 짤 필요 없이 이 세 가지를 모두 얻습니다.',
     items: [
       {
         tag: 'cost',
@@ -41,7 +42,7 @@ const industriesOverviewKo: (typeof industriesOverview)['en'] = {
       {
         tag: 'inference',
         title: '*구성 요소*는 더 적게.',
-        body: 'Butter는 백엔드별로 튜닝한 커널 위에서, 서빙 경로에 Python 없이 모델을 서빙합니다. 패치할 것도, 고장 날 것도, 설명할 것도 줄어듭니다.',
+        body: 'Butter는 최소한의 의존성으로 모델을 서빙합니다. macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 쓰며, 백엔드별로 튜닝한 커널 위에서 돌아갑니다. 안전성과 최고의 성능을 타협 없이 얻을 수 있습니다. 패치할 것도, 고장 날 것도, 설명할 것도 줄어듭니다.',
         points: [
           'Metal이 먼저, 그다음 CUDA, ROCm과 Vulkan은 구동 중',
           'OpenAI 호환 서빙이라 기존 앱이 그대로 동작',

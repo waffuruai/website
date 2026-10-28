@@ -52,7 +52,7 @@ const governmentKo: (typeof government)['en'] = {
       {
         tag: 'inference',
         title: '이미 구매한 하드웨어를 활용하세요.',
-        body: '책상 위의 Mac부터 RTX 워크스테이션과 DGX Spark까지, 하나의 스택이 이미 값을 치른 하드웨어에서 모델을 서빙합니다. Butter는 서빙 경로에 Python이 없어, 패치할 것도 정당화할 것도 줄어듭니다.',
+        body: '책상 위의 Mac부터 RTX 워크스테이션과 DGX Spark까지, 하나의 스택이 이미 값을 치른 하드웨어에서 모델을 서빙합니다. Butter는 의존성을 최소한으로 줄여, 패치할 것도 정당화할 것도 줄어듭니다.',
       },
     ],
   },
@@ -64,7 +64,7 @@ const governmentKo: (typeof government)['en'] = {
       {
         product: 'butter',
         need: '직접 운영하는 인프라에서 모델을 서빙하세요.',
-        body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. 기존 도구는 SDK가 아니라 주소만 바꾸면 됩니다.',
+        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust로 만든 OpenAI 호환 서빙이며, 의존성은 최소한입니다. 기존 도구는 SDK가 아니라 주소만 바꾸면 됩니다.',
       },
       {
         product: 'syrup',

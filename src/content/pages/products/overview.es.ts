@@ -34,7 +34,7 @@ const productsOverviewEs: (typeof productsOverview)['en'] = {
     alone: {
       iron: 'Escribe un kernel de GPU una vez y ejecútalo en Metal, CUDA, ROCm y Vulkan.',
       butter:
-        'Sirve modelos tras una API compatible con OpenAI, sin Python de por medio.',
+        'Sirve modelos tras una API compatible con OpenAI, con dependencias mínimas.',
       syrup:
         'Ve cada GPU y cada motor que corre en ella, sea cual sea el motor.',
       whisk:

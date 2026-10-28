@@ -27,7 +27,7 @@ const industriesOverviewFr: (typeof industriesOverview)['en'] = {
     label: 'Ce qui vaut partout',
     title: 'Trois réponses pour chaque *secteur*.',
     intro:
-      'Les règles changent d’un secteur à l’autre. Ces trois questions se posent dans chacun d’eux.',
+      'La finance obtient un coût pour chaque charge de travail. La DSI, moins de rouages à exploiter et à corriger. La sécurité, des données qui restent sur le matériel que vous choisissez. Et la direction générale, les trois à la fois, sans rien réécrire.',
     items: [
       {
         tag: 'cost',
@@ -42,7 +42,7 @@ const industriesOverviewFr: (typeof industriesOverview)['en'] = {
       {
         tag: 'inference',
         title: 'Moins de *rouages*.',
-        body: 'Butter sert des modèles sans Python dans le chemin de serving, sur des kernels optimisés pour chaque backend. Moins à corriger, moins de pannes possibles et moins à expliquer.',
+        body: 'Butter sert des modèles avec un minimum de dépendances, en Swift pour macOS et iOS et en Rust pour tout le reste, sur des kernels optimisés pour chaque backend. Vous obtenez la sécurité et des performances maximales, sans compromis. Moins à corriger, moins de pannes possibles et moins à expliquer.',
         points: [
           'Metal d’abord, CUDA ensuite, ROCm et Vulkan fonctionnent',
           'Serving compatible OpenAI : vos applications continuent de fonctionner',

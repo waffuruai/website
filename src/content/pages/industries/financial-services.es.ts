@@ -29,7 +29,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
     title: 'Cada prompt es una *divulgación*.',
     statement:
       'El trabajo que vale la pena automatizar se apoya en datos de clientes, y enviarlos a la API de otro es una decisión de divulgación que nadie quiere tomar prompt a prompt.',
-    body: 'Mientras tanto, riesgo de modelos quiere saber qué corre dónde, auditoría quiere un rastro y finanzas quiere un costo por cada carga de trabajo que nadie puede dar. Las GPU acaban repartidas entre escritorios y clústeres, y el stack de serving es un montón de dependencias de Python que cambia cada semana.',
+    body: 'Mientras tanto, riesgo de modelos quiere saber qué corre dónde, auditoría quiere un rastro y finanzas quiere un costo por cada carga de trabajo que nadie puede dar. Las GPU acaban repartidas entre escritorios y clústeres, y el stack de serving es un montón de dependencias que cambia cada semana.',
   },
   useCases: {
     title: 'Trabajo que no sale de tus *libros*.',
@@ -49,7 +49,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
       {
         tag: 'inference',
         title: 'Sirve con menos piezas móviles.',
-        body: 'Butter no tiene Python en la ruta de serving, y su API compatible con OpenAI hace que las herramientas internas cambien una dirección, no un SDK. Menos dependencias significa menos que rastrear entre la revisión y producción.',
+        body: 'Butter mantiene sus dependencias al mínimo, y su API compatible con OpenAI hace que las herramientas internas cambien una dirección, no un SDK. Menos dependencias significa menos que rastrear entre la revisión y producción.',
       },
       {
         tag: 'control',
@@ -66,7 +66,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: 'Sirve modelos dentro de tu perímetro.',
-        body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que un modelo nuevo no necesita un pipeline de conversión.',
+        body: 'Serving compatible con OpenAI en Swift para macOS e iOS y Rust para todo lo demás, con dependencias mínimas. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que un modelo nuevo no necesita un pipeline de conversión.',
       },
       {
         product: 'syrup',

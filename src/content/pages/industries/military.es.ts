@@ -4,7 +4,7 @@ const militaryEs: (typeof military)['en'] = {
   seo: {
     title: 'Inferencia de IA privada para defensa y uso militar',
     description:
-      'Ejecuta modelos capaces en hardware propio y seguro, de Mac a estaciones RTX y DGX Spark, con un stack de serving pequeño sin Python. Acceso anticipado.',
+      'Ejecuta modelos capaces en hardware propio y seguro, de Mac a estaciones RTX y DGX Spark, con un stack de serving pequeño y dependencias mínimas. Acceso anticipado.',
     keywords: [
       'infraestructura de IA para defensa',
       'inferencia de IA militar',
@@ -23,13 +23,13 @@ const militaryEs: (typeof military)['en'] = {
   },
   hero: {
     title: 'IA capaz en hardware *propio*.',
-    lede: 'Ejecuta modelos en máquinas que compras, custodias y aseguras, de un Mac Studio a estaciones de trabajo RTX y DGX Spark. El stack de serving es pequeño, sin Python, así que hay menos que blindar y menos en qué confiar.',
+    lede: 'Ejecuta modelos en máquinas que compras, custodias y aseguras, de un Mac Studio a estaciones de trabajo RTX y DGX Spark. El stack de serving es pequeño, con dependencias mínimas, así que hay menos que blindar y menos en qué confiar.',
   },
   problem: {
     title: 'Cada dependencia es una *puerta*.',
     statement:
       'Los datos de misión no pueden ir a la nube de otro, y el hardware que ejecuta un modelo tiene que ser hardware que posees, custodias y aseguras.',
-    body: 'La mayoría de los stacks de serving de IA llegan como una larga cadena de paquetes de Python y el runtime de un proveedor, y cada uno es algo que verificar, parchear y rastrear. El hardware viene de quien tenga el contrato, y las máquinas que deberían ejecutar el modelo están repartidas de los escritorios a los racks, sin una sola vista de qué corre dónde.',
+    body: 'La mayoría de los stacks de serving de IA llegan como una larga cadena de paquetes de terceros y el runtime de un proveedor, y cada uno es algo que verificar, parchear y rastrear. El hardware viene de quien tenga el contrato, y las máquinas que deberían ejecutar el modelo están repartidas de los escritorios a los racks, sin una sola vista de qué corre dónde.',
   },
   useCases: {
     title: 'Una *huella* más pequeña.',
@@ -44,7 +44,7 @@ const militaryEs: (typeof military)['en'] = {
       {
         tag: 'inference',
         title: 'Acorta la cadena de dependencias.',
-        body: 'Butter es Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Menos componentes significa menos que verificar, menos que parchear y menos que pueda fallar en el peor momento.',
+        body: 'Butter es Swift para macOS e iOS y Rust para todo lo demás, con dependencias mínimas. Menos componentes significa menos que verificar, menos que parchear y menos que pueda fallar en el peor momento.',
       },
       {
         tag: 'control',
@@ -67,7 +67,7 @@ const militaryEs: (typeof military)['en'] = {
       {
         product: 'butter',
         need: 'Un stack de serving con poco que verificar.',
-        body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, sin paso de conversión.',
+        body: 'Serving compatible con OpenAI en Swift para macOS e iOS y Rust para todo lo demás, con dependencias mínimas. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, sin paso de conversión.',
       },
       {
         product: 'syrup',
@@ -103,9 +103,9 @@ const militaryEs: (typeof military)['en'] = {
         'Hardware comercial que puedes comprar y custodiar. Apple silicon mediante Metal es el principal, y NVIDIA mediante CUDA está en producción en RTX y DGX Spark. Las GPU de centros de datos están en desarrollo, y AMD ROCm y Vulkan funcionan, pero aún sin afinar.',
     },
     {
-      question: '¿Por qué importa que no haya Python en la ruta de serving?',
+      question: '¿Por qué importa tener dependencias mínimas?',
       answer:
-        'Cada paquete de un stack de serving es algo que verificar, parchear y rastrear. Butter es Swift sobre Metal y Rust para CUDA, sin Python, así que la cadena entre un modelo y una respuesta es más corta.',
+        'Cada paquete de un stack de serving es algo que verificar, parchear y rastrear. Butter mantiene sus dependencias al mínimo, con Swift para macOS e iOS y Rust para todo lo demás, así que la cadena entre un modelo y una respuesta es más corta.',
     },
     {
       question: '¿Funciona sin conexión?',

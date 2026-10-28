@@ -14,7 +14,7 @@ Waffuru's products are closed source and in early access. If an installer fails 
 | Product  | What it is                                                                                  | Installer                              |
 | -------- | ------------------------------------------------------------------------------------------- | -------------------------------------- |
 | `iron`   | GPU kernels: one kernel definition lowered to Metal, CUDA, HIP/ROCm or Vulkan               | `https://waffuru.ai/iron/install.sh`   |
-| `butter` | Model serving without Python, with an OpenAI-compatible `butter serve` and loading from Hugging Face | `https://waffuru.ai/butter/install.sh` |
+| `butter` | Model serving with minimal dependencies, with an OpenAI-compatible `butter serve` and loading from Hugging Face | `https://waffuru.ai/butter/install.sh` |
 
 Check fit before installing. Apple silicon (Metal) is the primary target. NVIDIA (CUDA) is secondary and in production on RTX and DGX Spark. AMD (ROCm) and Vulkan run, but are not tuned yet.
 

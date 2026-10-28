@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterKo: (typeof butter)['en'] = {
   layer: '서빙',
-  tagline: 'Python 없는 멀티모달 추론.',
+  tagline: '타협 없는 멀티모달 추론.',
   summary:
     'Apple 실리콘에는 Metal 위의 Swift를, CUDA를 비롯한 나머지에는 Rust를 씁니다. 2~8비트 양자화 체크포인트와 하이브리드·MoE 모델을 불러오고, OpenAI 호환 API와 Anthropic Messages API로 서빙합니다.',
   seo: {
-    title: 'Butter: Python 없는 LLM 추론',
+    title: 'Butter: 의존성을 최소화한 멀티모달 추론',
     description:
-      'Apple 실리콘은 Swift, CUDA는 Rust로 만든 LLM 추론 엔진. Hugging Face 모델을 OpenAI 호환 API와 Anthropic Messages API로 서빙하며, 에이전트 하니스를 위해 만들었습니다.',
+      'macOS와 iOS는 Swift, 그 밖의 모든 곳은 Rust로 만든, 의존성을 최소화한 LLM 추론 엔진. Hugging Face 모델을 OpenAI 호환 API와 Anthropic Messages API로 서빙하며, 에이전트 하니스를 위해 만들었습니다.',
     keywords: [
       'LLM 추론 엔진',
       '로컬 LLM 서빙',
@@ -20,8 +20,8 @@ const butterKo: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: 'Python *없는* 모델 서빙.',
-    lede: 'Butter는 Apple 실리콘에는 Metal 위의 Swift로, CUDA를 비롯한 나머지에는 Rust로 작성한 추론 엔진입니다. Python이 없고, Metal 커널은 미리 컴파일해 배포하며, 모델은 Hugging Face에서 곧바로 불러옵니다.',
+    title: '*타협* 없는 모델 서빙.',
+    lede: 'Butter는 최소한의 의존성으로 모델을 서빙합니다. macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 쓰며, 백엔드별로 튜닝한 커널 위에서 돌아갑니다. 안전성과 최고의 성능을 타협 없이 얻을 수 있습니다. Metal 커널은 미리 컴파일해 배포하며, 모델은 Hugging Face에서 곧바로 불러옵니다.',
     highlights: [
       {
         value: '4',
@@ -49,7 +49,7 @@ const butterKo: (typeof butter)['en'] = {
   capabilities: {
     heading: 'Butter가 *하는* 일.',
     intro:
-      '체크포인트를 불러오는 순간부터 토큰을 스트리밍하기까지, 그 사이에 Python은 없습니다.',
+      '체크포인트를 불러오는 순간부터 토큰을 스트리밍하기까지, 의존성은 최소한입니다.',
     items: [
       {
         title: '모델을 그대로 불러옵니다',
@@ -154,7 +154,7 @@ const butterKo: (typeof butter)['en'] = {
       {
         term: '런타임',
         detail:
-          'Apple 실리콘에는 Metal 위의 Swift(macOS 14 이상), CUDA를 비롯한 나머지에는 Rust. Python은 없습니다.',
+          'macOS와 iOS에는 Metal 위의 Swift(macOS 14 이상), CUDA를 비롯한 그 밖의 모든 곳에는 Rust. 의존성은 최소한입니다.',
       },
       {
         term: '모델 형식',
@@ -281,9 +281,9 @@ const butterKo: (typeof butter)['en'] = {
         '현재 Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite, Phi를 비롯해 위에 나열한 여러 모델을 텍스트, 비전, 음성, 옴니 변형까지 지원합니다.',
     },
     {
-      question: 'Python이 필요한가요?',
+      question: 'Butter는 어떤 언어로 만들었나요?',
       answer:
-        '아니요. Butter는 Apple 실리콘에는 Metal 위의 Swift, CUDA를 비롯한 나머지에는 Rust로 만들어져 서빙 경로 어디에도 Python이 없습니다.',
+        'macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 씁니다. Butter는 의존성을 최소한으로 줄이고 백엔드별로 튜닝한 커널 위에서 돌아가므로, 안전성과 최고의 성능을 타협 없이 얻을 수 있습니다.',
     },
     {
       question: '기존에 쓰던 도구와 에이전트 하니스도 연결할 수 있나요?',

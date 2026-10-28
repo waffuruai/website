@@ -28,7 +28,7 @@ const cloudInfrastructureFr: (typeof cloudInfrastructure)['en'] = {
     title: 'Une heure inactive ne se *facture* pas.',
     statement:
       'Le revenu et la marge par heure GPU décident de votre activité, et la flotte vous indique rarement l’un ou l’autre.',
-    body: 'Les locataires apportent leurs propres moteurs et réglages, chaque fournisseur remonte l’information à sa façon, et le coût retombe sur la carte plutôt que sur le client qui l’a utilisée. Les clients veulent désormais de l’inférence managée, pas seulement du bare metal, et la construire sur une stack Python fragile est un risque que vous portez pour eux.',
+    body: 'Les locataires apportent leurs propres moteurs et réglages, chaque fournisseur remonte l’information à sa façon, et le coût retombe sur la carte plutôt que sur le client qui l’a utilisée. Les clients veulent désormais de l’inférence managée, pas seulement du bare metal, et la construire sur un empilement fragile de dépendances est un risque que vous portez pour eux.',
   },
   useCases: {
     title: 'Tirez plus de chaque *baie*.',
@@ -48,7 +48,7 @@ const cloudInfrastructureFr: (typeof cloudInfrastructure)['en'] = {
         tag: 'inference',
         title:
           'Proposez une inférence managée sur laquelle vous pouvez vous engager.',
-        body: 'Butter sert une API compatible OpenAI avec streaming et appel d’outils, sans Python dans le chemin de serving. Moins de rouages, c’est moins à corriger et moins de pannes sous la charge de travail de quelqu’un d’autre.',
+        body: 'Butter sert une API compatible OpenAI avec streaming et appel d’outils, et réduit ses dépendances au minimum. Moins de rouages, c’est moins à corriger et moins de pannes sous la charge de travail de quelqu’un d’autre.',
       },
       {
         tag: 'control',
@@ -70,7 +70,7 @@ const cloudInfrastructureFr: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'butter',
         need: 'De l’inférence managée avec moins de rouages.',
-        body: 'Swift sur Metal et Rust pour CUDA, sans Python dans le chemin de serving. Checkpoints et cache KV quantifiés, décodage spéculatif et LoRA derrière une API compatible OpenAI.',
+        body: 'Swift pour macOS et iOS, Rust pour tout le reste, avec un minimum de dépendances. Checkpoints et cache KV quantifiés, décodage spéculatif et LoRA derrière une API compatible OpenAI.',
       },
       {
         product: 'iron',

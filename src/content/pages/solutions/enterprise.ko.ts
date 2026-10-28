@@ -64,7 +64,7 @@ const enterpriseKo: (typeof enterprise)['en'] = {
       {
         product: 'butter',
         need: '직접 운영하는 서버에서 모델을 서빙하세요.',
-        body: 'Apple 실리콘의 Metal 위 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 직접 불러오므로 새 모델과 서버 사이에 변환 파이프라인이 필요 없습니다.',
+        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust로 만든 OpenAI 호환 서빙이며, 의존성은 최소한입니다. safetensors, MLX, JANG, GGUF 체크포인트를 직접 불러오므로 새 모델과 서버 사이에 변환 파이프라인이 필요 없습니다.',
       },
       {
         product: 'syrup',

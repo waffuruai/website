@@ -29,7 +29,7 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
     title: 'Las horas ociosas no se *facturan*.',
     statement:
       'Los ingresos y el margen por hora de GPU deciden tu negocio, y la flota rara vez te muestra ninguno de los dos.',
-    body: 'Los inquilinos traen sus propios motores y configuraciones, cada proveedor reporta a su manera, y el costo cae en la tarjeta en lugar de en el cliente que la usó. Los clientes ahora quieren inferencia gestionada, no solo bare metal, y construirla sobre un frágil stack de Python es un riesgo que cargas por ellos.',
+    body: 'Los inquilinos traen sus propios motores y configuraciones, cada proveedor reporta a su manera, y el costo cae en la tarjeta en lugar de en el cliente que la usó. Los clientes ahora quieren inferencia gestionada, no solo bare metal, y construirla sobre un frágil stack de dependencias es un riesgo que cargas por ellos.',
   },
   useCases: {
     title: 'Más de cada *rack*.',
@@ -48,7 +48,7 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'inference',
         title: 'Ofrece inferencia gestionada que puedes respaldar.',
-        body: 'Butter sirve una API compatible con OpenAI con streaming y llamada a herramientas, sin Python en la ruta de serving. Menos piezas móviles significa menos que parchear y menos que se rompa bajo la carga de trabajo de otro.',
+        body: 'Butter sirve una API compatible con OpenAI con streaming y llamada a herramientas, y mantiene sus dependencias al mínimo. Menos piezas móviles significa menos que parchear y menos que se rompa bajo la carga de trabajo de otro.',
       },
       {
         tag: 'control',
@@ -70,7 +70,7 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'butter',
         need: 'Inferencia gestionada con menos piezas móviles.',
-        body: 'Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Checkpoints y caché KV cuantizados, decodificación especulativa y LoRA tras una API compatible con OpenAI.',
+        body: 'Swift para macOS e iOS, Rust para todo lo demás, con dependencias mínimas. Checkpoints y caché KV cuantizados, decodificación especulativa y LoRA tras una API compatible con OpenAI.',
       },
       {
         product: 'iron',

@@ -49,7 +49,7 @@ export const financialServices: Localized<IndustryPage> = {
       title: 'Every prompt is a *disclosure*.',
       statement:
         'The work worth automating sits on client data, and sending it to someone else’s API is a disclosure decision nobody wants to make one prompt at a time.',
-      body: 'Meanwhile model risk wants to know what runs where, audit wants a trail, and finance wants a cost for each workload that nobody can produce. GPUs end up spread across desks and clusters, and the serving stack is a pile of Python dependencies that changes every week.',
+      body: 'Meanwhile model risk wants to know what runs where, audit wants a trail, and finance wants a cost for each workload that nobody can produce. GPUs end up spread across desks and clusters, and the serving stack is a pile of dependencies that changes every week.',
     },
     useCases: {
       title: 'Work that stays on the *books*.',
@@ -69,7 +69,7 @@ export const financialServices: Localized<IndustryPage> = {
         {
           tag: 'inference',
           title: 'Serve with fewer moving parts.',
-          body: 'Butter has no Python in the serving path, and its OpenAI-compatible API means internal tools change an address, not an SDK. Fewer dependencies means less to track between review and production.',
+          body: 'Butter keeps its dependencies minimal, so there is less to track between review and production, and its OpenAI-compatible API means internal tools change an address, not an SDK.',
         },
         {
           tag: 'control',
@@ -86,7 +86,7 @@ export const financialServices: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'Serve models inside your boundary.',
-          body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so a new model needs no conversion pipeline.',
+          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, with minimal dependencies. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so a new model needs no conversion pipeline.',
         },
         {
           product: 'syrup',

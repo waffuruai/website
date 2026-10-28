@@ -28,7 +28,7 @@ const financialServicesFr: (typeof financialServices)['en'] = {
     title: 'Chaque prompt est une *divulgation*.',
     statement:
       'Le travail qui vaut la peine d’être automatisé repose sur des données clients, et les envoyer à l’API de quelqu’un d’autre est une décision de divulgation que personne ne veut prendre prompt après prompt.',
-    body: 'Pendant ce temps, les équipes risque de modèle veulent savoir ce qui tourne où, l’audit veut une traçabilité, et la finance veut un coût par charge de travail que personne ne sait produire. Les GPU finissent éparpillés entre les desks et les clusters, et la stack de serving est un empilement de dépendances Python qui change chaque semaine.',
+    body: 'Pendant ce temps, les équipes risque de modèle veulent savoir ce qui tourne où, l’audit veut une traçabilité, et la finance veut un coût par charge de travail que personne ne sait produire. Les GPU finissent éparpillés entre les desks et les clusters, et la stack de serving est un empilement de dépendances qui change chaque semaine.',
   },
   useCases: {
     title: 'Un travail qui reste *dans vos livres*.',
@@ -49,7 +49,7 @@ const financialServicesFr: (typeof financialServices)['en'] = {
       {
         tag: 'inference',
         title: 'Servez avec moins de rouages.',
-        body: 'Butter se passe de Python dans le chemin de serving, et son API compatible OpenAI permet à vos outils internes de changer d’adresse, pas de SDK. Moins de dépendances, c’est moins de choses à suivre entre la revue et la production.',
+        body: 'Butter réduit ses dépendances au minimum, et son API compatible OpenAI permet à vos outils internes de changer d’adresse, pas de SDK. Moins de dépendances, c’est moins de choses à suivre entre la revue et la production.',
       },
       {
         tag: 'control',
@@ -66,7 +66,7 @@ const financialServicesFr: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: 'Servir des modèles dans votre périmètre.',
-        body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python dans le chemin de serving. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF : un nouveau modèle ne demande aucune chaîne de conversion.',
+        body: 'Du serving compatible OpenAI en Swift pour macOS et iOS et en Rust pour tout le reste, avec un minimum de dépendances. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF : un nouveau modèle ne demande aucune chaîne de conversion.',
       },
       {
         product: 'syrup',
