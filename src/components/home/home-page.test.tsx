@@ -36,7 +36,7 @@ describe('HomePage', () => {
       'A seat at the table.',
       'Why we’re cooking.',
       'Who’s in the kitchen.',
-      'Pull up a seat.',
+      'Reserve your seat.',
     ]);
   });
 
@@ -121,7 +121,7 @@ describe('HomePage', () => {
   it('ends with the closing card and the newsletter signup', async () => {
     await renderPage();
     const cta = screen.getByRole('heading', {
-      name: 'Pull up a seat.',
+      name: 'Reserve your seat.',
     }).parentElement!;
     expect(within(cta).getByText(home.en.cta.body)).toBeTruthy();
     expect(within(cta).getByText(en.newsletter.heading)).toBeTruthy();

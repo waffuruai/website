@@ -251,7 +251,7 @@ const pantryEs: (typeof pantry)['en'] = {
     {
       question: '¿Funciona en Windows?',
       answer:
-        'Todavía no. Hoy Pantry funciona en macOS y Linux. La compatibilidad con Windows está prevista y la demanda marcará la fecha, así que dinos si la necesitas.',
+        'Todavía no. Hoy Pantry funciona en macOS y Linux. La compatibilidad con Windows está prevista y, si vemos suficiente demanda, adelantaremos los plazos, así que dinos si la necesitas.',
     },
     {
       question: '¿Puede usarlo mi agente de IA?',

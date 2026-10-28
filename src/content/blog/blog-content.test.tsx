@@ -139,10 +139,10 @@ describe('the launch post', () => {
     expect(h2).toEqual([
       'What we believe',
       'The stack',
-      'First off the griddle: Pantry',
+      'First out the kitchen: Pantry',
       'Who’s in the kitchen',
       'Where we are',
-      'Pull up a seat',
+      'Reserve your seat',
     ]);
   });
 
@@ -188,11 +188,13 @@ describe('the launch post', () => {
     expect(screen.getAllByRole('button', { name: /^Copy/ })).toHaveLength(1);
   });
 
-  it('keeps to the brand voice: no exclamation marks or hype words', async () => {
+  it('keeps to the brand voice: no hype words, and one exclamation mark', async () => {
     const { default: Content } = await load!();
     const { container } = renderPost(Content);
     const text = container.textContent ?? '';
-    expect(text).not.toContain('!');
+    // The founder's own line in "Where we are" is the one allowed.
+    expect(text.match(/!/g)).toHaveLength(1);
+    expect(text).toContain('executing at lightning pace!');
     for (const word of [
       'revolutionary',
       'game-changing',

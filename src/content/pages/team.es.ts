@@ -10,7 +10,7 @@ const teamPageEs: (typeof teamPage)['en'] = {
   hero: {
     label: 'Equipo',
     title: 'Quién está en la *cocina*.',
-    lede: 'Ciberseguridad, sector militar, consumo y empresa. Hemos creado y escalado startups, y hemos trabajado con todos, desde pequeños negocios hasta grandes empresas.',
+    lede: 'Constructores experimentados con trayectoria en ciberseguridad, sector militar, consumo y empresa. Hemos creado y escalado startups, y hemos trabajado con todos, desde pequeños negocios hasta grandes empresas.',
   },
   portraitAlt: 'Retrato de {name}',
   linkAria: '{name} en {network}',

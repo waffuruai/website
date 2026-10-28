@@ -204,7 +204,7 @@ export const about: Localized<AboutContent> = {
     },
     teamTeaser: {
       title: 'The people *behind* it.',
-      body: 'Cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
+      body: 'Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
       cta: 'Meet the team',
       portraitAlt: 'Portrait of {name}',
     },

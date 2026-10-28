@@ -265,7 +265,7 @@ export const pantry: Localized<PantryContent> = {
       {
         question: 'Does it run on Windows?',
         answer:
-          'Not yet. Pantry runs on macOS and Linux today. Windows support is planned, and demand sets the date, so tell us if you need it.',
+          'Not yet. Pantry runs on macOS and Linux today. Windows support is planned, and if we see enough demand, we’ll bump up the timeline, so tell us if you need it.',
       },
       {
         question: 'Can my AI agent use it?',

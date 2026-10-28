@@ -35,7 +35,7 @@ export const teamPage: Localized<TeamPageContent> = {
     hero: {
       label: 'Team',
       title: 'Who’s in the *kitchen*.',
-      lede: 'Cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
+      lede: 'Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
     },
     portraitAlt: 'Portrait of {name}',
     linkAria: '{name} on {network}',

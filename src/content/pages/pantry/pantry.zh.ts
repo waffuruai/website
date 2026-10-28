@@ -250,7 +250,7 @@ const pantryZh: (typeof pantry)['en'] = {
     {
       question: '能在 Windows 上运行吗？',
       answer:
-        '暂时不能。Pantry 目前支持 macOS 和 Linux。Windows 支持已在计划中，上线时间取决于需求，如果你需要，请告诉我们。',
+        '暂时不能。Pantry 目前支持 macOS 和 Linux。Windows 支持已在计划中，如果需求足够多，我们会加快进度，所以需要的话请告诉我们。',
     },
     {
       question: '我的 AI 智能体能用它吗？',

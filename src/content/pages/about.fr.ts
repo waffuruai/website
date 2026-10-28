@@ -136,7 +136,7 @@ const aboutFr: (typeof about)['en'] = {
   },
   teamTeaser: {
     title: 'Les personnes *derrière* le projet.',
-    body: 'Cybersécurité, armée, grand public et entreprise. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
+    body: 'Des bâtisseurs expérimentés, issus de la cybersécurité, de l’armée, du grand public et de l’entreprise. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
     cta: 'Rencontrer l’équipe',
     portraitAlt: 'Portrait de {name}',
   },

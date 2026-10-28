@@ -251,7 +251,7 @@ const pantryKo: (typeof pantry)['en'] = {
     {
       question: 'Windows에서 실행되나요?',
       answer:
-        '아직은 아닙니다. Pantry는 현재 macOS와 Linux에서 실행됩니다. Windows 지원은 계획 중이며 시기는 수요에 따라 정해지니, 필요하다면 알려 주세요.',
+        '아직은 아닙니다. Pantry는 현재 macOS와 Linux에서 실행됩니다. Windows 지원은 계획 중이며 수요가 충분하면 일정을 앞당길 테니, 필요하다면 알려 주세요.',
     },
     {
       question: 'AI 에이전트도 쓸 수 있나요?',

@@ -10,7 +10,7 @@ const teamPageFr: (typeof teamPage)['en'] = {
   hero: {
     label: 'Équipe',
     title: 'Qui est en *cuisine*.',
-    lede: 'Cybersécurité, armée, grand public et entreprise. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
+    lede: 'Des bâtisseurs expérimentés, issus de la cybersécurité, de l’armée, du grand public et de l’entreprise. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
   },
   portraitAlt: 'Portrait de {name}',
   linkAria: '{name} sur {network}',

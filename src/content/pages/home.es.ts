@@ -155,14 +155,14 @@ const homeEs: (typeof home)['en'] = {
   team: {
     title: 'Quién está en la *cocina*.',
     intro:
-      'Ciberseguridad, sector militar, consumo y empresa. Hemos creado y escalado startups, y hemos trabajado con todos, desde pequeños negocios hasta grandes empresas.',
+      'Constructores experimentados con trayectoria en ciberseguridad, sector militar, consumo y empresa. Hemos creado y escalado startups, y hemos trabajado con todos, desde pequeños negocios hasta grandes empresas.',
     portraitAlt: 'Retrato de {name}',
     link: { label: 'Conoce al equipo', href: '/about/team' },
   },
 
   cta: {
-    title: 'Siéntate a la mesa.',
-    body: 'Prueba Pantry hoy, gratis. El resto del stack está en acceso anticipado: pide un sitio o deja tu correo y te escribiremos cuando haya novedades.',
+    title: 'Reserva tu sitio.',
+    body: 'Prueba Pantry hoy, gratis. El resto del stack está en acceso anticipado: reserva un sitio o deja tu correo y te escribiremos cuando haya novedades.',
   },
 };
 

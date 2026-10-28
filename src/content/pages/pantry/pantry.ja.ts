@@ -251,7 +251,7 @@ const pantryJa: (typeof pantry)['en'] = {
     {
       question: 'Windows で動きますか？',
       answer:
-        'まだです。現在 Pantry は macOS と Linux で動作します。Windows 対応は予定しており、時期は需要次第です。必要でしたらお知らせください。',
+        'まだです。現在 Pantry は macOS と Linux で動作します。Windows 対応は予定しており、需要が多ければ時期を前倒しします。必要でしたらお知らせください。',
     },
     {
       question: 'AI エージェントでも使えますか？',

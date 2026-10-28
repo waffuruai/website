@@ -26,11 +26,11 @@ export default (props) => (
   <ArticleLayout article={article} slug="introducing-waffuru" {...props} />
 );
 
-You should be able to run intelligence on the machine in front of you, and keep what it learns about you right there. Today we are announcing Waffuru, the company building the stack to make that real, and shipping our first product with it: [Pantry](/products/pantry), a free, open-source vulnerability scanner for macOS and Linux.
+You should be able to run intelligence on the machine in front of you, and keep what it learns about you right there. Today we are announcing Waffuru, the company building the stack to make that real, and shipping our first product with it: [Pantry](/products/pantry), a **free**, open-source vulnerability scanner for macOS and Linux.
 
 Our mission fits on one line: **Democratize access to intelligence.**
 
-The name is the Japanese word for waffles, ワッフル (waffuru). It nods to our respect for Japanese culture and its deep history, to a shared love of waffles on the team, and to a mission that does not stop at any border.
+The name is the Japanese word for waffles, ワッフル (waffuru). It is a nod to our respect for Japanese culture and its deep history, a shared love of waffles on the team, and to a mission that does not stop at any border.
 
 ## What we _believe_
 
@@ -41,7 +41,7 @@ We wrote our theses down so you can hold us to them. The short version:
 - **Everyone will have a personal assistant, or a team of them.** People want agency, so an assistant has to be a trusted extension of you: helpful, approachable, never scary, and yours.
 - **Access must not depend on geography, wealth or credentials.** Raising earning potential everywhere takes open, local access to intelligence.
 
-Two constraints follow: minimize token usage and cost per token, on consumer and data-centre hardware alike, and keep your data on your hardware unless you choose otherwise. The [about page](/about#beliefs) has all seven theses and the values behind them.
+Two constraints follow: minimize token usage and cost per token, on consumer and data-centre hardware alike, and keep your data on your hardware unless you choose otherwise. [Our about page](/about#beliefs) has all seven theses and the values behind them.
 
 ## The _stack_
 
@@ -51,7 +51,7 @@ To run capable models and agents on hardware you own or rent, every layer betwee
 
 Six products, from the top down:
 
-- **Pantry** keeps every machine safe: it finds what is exposed and patches it. It is free and open source today.
+- **Pantry** keeps every machine safe: it finds what is exposed and patches it. It is **free** and open source today.
 - **Waffle** is the agent harness, with W, our assistant, inside. It runs local models first and reaches for the cloud only when a task needs more. Coming soon.
 - **Whisk** mixes the right documents and context into every request, from your own notes and code, with citations.
 - **Syrup** is the control plane: monitoring, telemetry, access control and cost, for every GPU and every engine on it.
@@ -60,11 +60,11 @@ Six products, from the top down:
 
 Your request goes down through them and the answer comes back the same way, on hardware you own or rent, and nothing leaves it unless you say so. Each product works on its own, and together they do more.
 
-Apart from Pantry, the stack is private and in early access while we harden it. The [home page](/) shows how the pieces fit, and you can [request a seat](https://forms.gle/SHaVSRRWmZKy8UJy7).
+Apart from Pantry, the stack is private and in early access while we harden it. The [home page](/) shows how the pieces fit, and you can **[reserve a seat](https://forms.gle/SHaVSRRWmZKy8UJy7)** to be one of the first to experience a brand new local AI experience.
 
-## First off the _griddle_: Pantry
+## First out the _kitchen_: Pantry
 
-Before AI runs on your machines, they have to be safe. Pantry is the tool we built to keep ours that way, and today it is yours, free.
+Before AI runs on your machines, they have to be safe. Pantry is the tool we built to keep ours that way, and today it is yours, **free**.
 
 Security teams ask two questions: what am I exposed to, and how fast can I patch it? CVE lists and feeds answer the first with noise, and the tools that answer it well are mostly behind a paywall. Pantry closes the gap. It checks everything installed on your machine, and every repo on it, against open vulnerability data, reports only what applies to your exact versions, and fixes what it safely can.
 
@@ -72,9 +72,13 @@ Security teams ask two questions: what am I exposed to, and how fast can I patch
 - **No AI, no telemetry.** Plain, deterministic code. Only package names and versions leave your machine, to look them up.
 - **Written in Rust** for speed and safety, dependency-light, and every release is versioned, hashed and verifiable before it runs.
 - **For people and agents**, on a personal computer or a fleet of servers.
-- **macOS and Linux today.** Windows support is planned, and demand sets the date.
+- **macOS and Linux today.** Windows support is planned, and if we see enough demand, we’ll bump up the timeline.
 
 Read [how Pantry works](/blog/introducing-pantry), see the [Pantry page](/products/pantry), or [read the source on GitHub](https://github.com/waffuruai/pantry).
+
+<p className="not-prose mt-8 -mb-5 label-mono text-muted-foreground">
+  {'Basic usage'}
+</p>
 
 ```sh
 mise use -g packslip:github.com/waffuruai/pantry
@@ -83,7 +87,7 @@ wpantry
 
 ## Who’s in the _kitchen_
 
-Cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise. The [team page](/about/team) has the longer version.
+Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise. The [team page](/about/team) has the longer version.
 
 - **Kyle Croll, Chief Executive Officer.** Served in the Navy, with a background in threat intelligence and threat hunting, then earned an MBA at McCombs. He brings a security lens to how AI gets built and deployed.
 - **Eric Gonzalez, Chief Revenue Officer.** Has scaled companies from $50M to $2B in ARR, at Oracle NetSuite and at Anaconda, and holds an MBA from McCombs.
@@ -93,9 +97,11 @@ Cybersecurity, military, consumer and enterprise. We’ve built and scaled start
 
 ## Where we _are_
 
-Early, and we will say so plainly. Pantry is public and free today. The rest of the stack is private, closed source for now, and open by request. We are not quoting speed numbers in this post; when we publish them, they come with the conditions we measured them under.
+We’re coming out of stealth after Tom and I started building six months ago. Tom brought in Eric Gonzalez and Kyle, and I brought in my long-time business partner Cory. We’re still early in our journey, but we have an aggressive product roadmap and are executing at lightning pace!
 
-## Pull up a _seat_
+Pantry is public and free today. The rest of the stack is private, closed source for now, and open by request. We are not quoting speed numbers in this post; when we publish them, they come with the conditions we measured them under.
+
+## Reserve your _seat_
 
 [Secure your system with Pantry](/products/pantry), then tell us what it found. If you want the rest of the stack, [request early access](https://forms.gle/SHaVSRRWmZKy8UJy7). If you would rather watch first, sign up for the newsletter at the bottom of this page, or follow us on [X](https://x.com/waffuruai) and [LinkedIn](https://www.linkedin.com/company/waffuru/).
 

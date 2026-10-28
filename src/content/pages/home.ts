@@ -223,14 +223,14 @@ export const home: Localized<HomeContent> = {
     team: {
       title: 'Who’s in the *kitchen*.',
       intro:
-        'Cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
+        'Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
       portraitAlt: 'Portrait of {name}',
       link: { label: 'Meet the team', href: '/about/team' },
     },
 
     cta: {
-      title: 'Pull up a seat.',
-      body: 'Try Pantry today, free. The rest of the stack is in early access: request a seat, or leave your email and we will write when there is news.',
+      title: 'Reserve your seat.',
+      body: 'Try Pantry today, free. The rest of the stack is in early access: reserve a seat, or leave your email and we will write when there is news.',
     },
   },
   es: homeEs,

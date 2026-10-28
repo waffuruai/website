@@ -10,7 +10,7 @@ const teamPageZh: (typeof teamPage)['en'] = {
   hero: {
     label: '团队',
     title: '谁在*厨房*里。',
-    lede: '我们来自网络安全、军队、消费和企业领域。创办并做大过创业公司，合作对象从小企业到大型企业都有。',
+    lede: '我们是一群经验丰富的构建者，背景横跨网络安全、军队、消费和企业领域。创办并做大过创业公司，合作对象从小企业到大型企业都有。',
   },
   portraitAlt: '{name} 的肖像',
   linkAria: '{name} 的 {network} 主页',

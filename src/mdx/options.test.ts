@@ -113,10 +113,10 @@ describe('compiled post', () => {
     expect(ids).toEqual([
       'what-we-believe',
       'the-stack',
-      'first-off-the-griddle-pantry',
+      'first-out-the-kitchen-pantry',
       'whos-in-the-kitchen',
       'where-we-are',
-      'pull-up-a-seat',
+      'reserve-your-seat',
     ]);
 
     // The install block is highlighted as shell.

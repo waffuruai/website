@@ -155,14 +155,14 @@ const homeFr: (typeof home)['en'] = {
   team: {
     title: 'Qui est en *cuisine*.',
     intro:
-      'Cybersécurité, armée, grand public et entreprise. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
+      'Des bâtisseurs expérimentés, issus de la cybersécurité, de l’armée, du grand public et de l’entreprise. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
     portraitAlt: 'Portrait de {name}',
     link: { label: 'Rencontrer l’équipe', href: '/about/team' },
   },
 
   cta: {
-    title: 'Prenez place.',
-    body: 'Essayez Pantry dès aujourd’hui, gratuitement. Le reste de la stack est en accès anticipé : demandez une place, ou laissez votre e-mail et nous vous écrirons quand il y aura du nouveau.',
+    title: 'Réservez votre place.',
+    body: 'Essayez Pantry dès aujourd’hui, gratuitement. Le reste de la stack est en accès anticipé : réservez une place, ou laissez votre e-mail et nous vous écrirons quand il y aura du nouveau.',
   },
 };
 
