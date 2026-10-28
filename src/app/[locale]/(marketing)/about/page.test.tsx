@@ -23,7 +23,7 @@ describe('About page', () => {
 
   it('says what the name means, with the katakana', async () => {
     await renderPage();
-    expect(screen.getByText(/how Japanese says waffles/)).toBeTruthy();
+    expect(screen.getByText(/how the Japanese say waffles/)).toBeTruthy();
     expect(screen.getByText('ワッフル').getAttribute('lang')).toBe('ja');
   });
 
