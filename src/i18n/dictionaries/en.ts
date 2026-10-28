@@ -22,7 +22,7 @@ const en = {
   meta: {
     defaultTitle: 'Waffuru: more intelligence on hardware you already own',
     defaultDescription:
-      'Waffuru builds the AI stack that runs models fast and cheap on hardware you own or rent, private by default. Start with Pantry, our free vulnerability scanner for macOS and Linux.',
+      'Waffuru builds the AI stack that runs models fast and secure on hardware you own or rent, private by default. Start with Pantry, our free vulnerability scanner for macOS and Linux.',
   },
   header: {
     mainNav: 'Main',

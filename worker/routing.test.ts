@@ -76,15 +76,6 @@ describe('sectionRedirects', () => {
     }
   });
 
-  it('sends /pantry/install.sh to the latest release script, temporarily', () => {
-    expect(decide('/pantry/install.sh')).toEqual({
-      kind: 'redirect',
-      location:
-        'https://github.com/waffuruai/pantry/releases/latest/download/install.sh',
-      status: 302,
-    });
-  });
-
   it('redirects bare names only, never an installer path under them', () => {
     for (const from of Object.keys(REDIRECTS)) {
       expect(from).toMatch(/^\/[a-z-]+$/);
@@ -159,7 +150,22 @@ describe('route', () => {
   it('passes installer paths through untouched', () => {
     for (const product of INSTALLER_PRODUCTS) {
       expect(decide(`/${product}/install.sh`)).toEqual({ kind: 'passthrough' });
+      expect(decide(`/${product}/v1.2.3/install.sh`)).toEqual({
+        kind: 'passthrough',
+      });
       expect(decide(`/${product}/releases.json`)).toEqual({
+        kind: 'passthrough',
+      });
+    }
+  });
+
+  it('serves the Pantry installer from the release receiver', () => {
+    expect(INSTALLER_PRODUCTS).toContain('pantry');
+  });
+
+  it('routes a bare installer product name like any other path', () => {
+    for (const product of INSTALLER_PRODUCTS) {
+      expect(decide(`/${product}`), product).not.toEqual({
         kind: 'passthrough',
       });
     }

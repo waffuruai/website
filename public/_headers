@@ -110,3 +110,19 @@
 
 /butter/:tag/install.sh.sha256
   Content-Type: text/plain; charset=utf-8
+
+/pantry/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+
+/pantry/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/pantry/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8
+
+/pantry/:tag/install.sh
+  Content-Type: text/plain; charset=utf-8
+
+/pantry/:tag/install.sh.sha256
+  Content-Type: text/plain; charset=utf-8

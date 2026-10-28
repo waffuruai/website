@@ -18,7 +18,7 @@ const es: Dictionary = {
   meta: {
     defaultTitle: 'Waffuru: más inteligencia en el hardware que ya tienes',
     defaultDescription:
-      'Waffuru crea el stack de IA que ejecuta modelos rápido y a bajo costo en hardware propio o alquilado, privado por defecto. Empieza con Pantry, nuestro escáner de vulnerabilidades gratuito para macOS y Linux.',
+      'Waffuru crea el stack de IA que ejecuta modelos de forma rápida y segura en hardware propio o alquilado, privado por defecto. Empieza con Pantry, nuestro escáner de vulnerabilidades gratuito para macOS y Linux.',
   },
   header: {
     mainNav: 'Principal',
