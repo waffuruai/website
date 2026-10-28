@@ -17,7 +17,7 @@ description = "Install the locked dependencies (what `mise bootstrap` runs after
 run = "pnpm install --frozen-lockfile"
 
 [tasks.generate]
-description = "Build the images and the blog index (src/generated, public/img)"
+description = "Build the images, the blog index and the build info (src/generated, public/img)"
 run = "pnpm run generate"
 
 [tasks.dev]

@@ -173,6 +173,7 @@ const en = {
     flagsLabel: 'United States and Canada',
     social: 'Waffuru on {network}',
     rights: '© {year} Waffuru AI Inc.',
+    versionLabel: 'Website version, commit and date',
   },
   newsletter: {
     heading: 'Stay in the loop',

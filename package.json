@@ -10,7 +10,7 @@
     "build": "next build",
     "postbuild": "node scripts/postbuild.mjs",
     "preview": "pnpm run build && node scripts/assemble-site.mjs && wrangler dev",
-    "generate": "node scripts/build-images.mjs && node scripts/build-blog-index.mjs",
+    "generate": "node scripts/build-images.mjs && node scripts/build-blog-index.mjs && node scripts/build-info.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit && tsc --noEmit -p worker",

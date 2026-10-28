@@ -168,6 +168,7 @@ const ja: Dictionary = {
     flagsLabel: 'アメリカ合衆国とカナダ',
     social: '{network} の Waffuru',
     rights: '© {year} Waffuru AI Inc.',
+    versionLabel: 'サイトのバージョン、コミット、日付',
   },
   newsletter: {
     heading: '最新情報を受け取る',

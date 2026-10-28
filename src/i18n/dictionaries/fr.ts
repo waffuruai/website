@@ -175,6 +175,7 @@ const fr: Dictionary = {
     flagsLabel: 'États-Unis et Canada',
     social: 'Waffuru sur {network}',
     rights: '© {year} Waffuru AI Inc.',
+    versionLabel: 'Version du site, commit et date',
   },
   newsletter: {
     heading: 'Restez informé',
