@@ -21,17 +21,18 @@ import { isPublishedPath } from '@/lib/launch';
  * sections that are not launched (`site.launched`).
  */
 
-/** The stack, numbered from the metal up: kernels (01) to memory (04). */
+/** The stack, numbered from the metal up: kernels (01) to agents (05). */
 export const productLinks: NavLink[] = [
-  { key: 'iron', href: '/products/iron', index: '01' },
-  { key: 'butter', href: '/products/butter', index: '02' },
-  { key: 'syrup', href: '/products/syrup', index: '03' },
-  { key: 'whisk', href: '/products/whisk', index: '04' },
+  { key: 'iron', href: '/products/iron', index: '01', icon: 'iron' },
+  { key: 'butter', href: '/products/butter', index: '02', icon: 'butter' },
+  { key: 'syrup', href: '/products/syrup', index: '03', icon: 'syrup' },
+  { key: 'whisk', href: '/products/whisk', index: '04', icon: 'whisk' },
+  { key: 'waffle', href: '/products/waffle', index: '05', icon: 'waffle' },
 ];
 
 /** Free, open-source tools that stand apart from the stack. */
 export const openSourceLinks: NavLink[] = [
-  { key: 'pantry', href: pantryFacts.path },
+  { key: 'pantry', href: pantryFacts.path, icon: 'pantry' },
 ];
 
 export const solutionLinks: NavLink[] = [

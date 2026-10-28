@@ -2,32 +2,32 @@ import type { productsOverview } from './overview';
 
 const productsOverviewFr: (typeof productsOverview)['en'] = {
   seo: {
-    title: 'Stack Waffuru : kernels, serving, contrôle, mémoire',
+    title: 'Stack Waffuru : kernels, serving, contrôle, mémoire, agents',
     description:
-      'Iron compile les kernels. Butter exécute les modèles. Syrup surveille les GPU. Whisk se souvient de votre travail. Utilisez-en un, ou les quatre.',
+      'Iron compile les kernels. Butter exécute les modèles. Syrup pilote les GPU. Whisk incorpore mémoire et contexte. Waffle fait tourner vos agents. Utilisez-en un, ou les cinq.',
     keywords: [
       'stack d’inférence IA',
       'des kernels GPU au serving',
-      'infrastructure d’IA local-first',
+      'infrastructure d’IA sur du matériel que vous possédez ou louez',
     ],
   },
   hero: {
-    label: 'Quatre produits',
+    label: 'Cinq produits',
     title: 'La *stack* Waffuru.',
-    lede: 'Iron compile les kernels. Butter y exécute les modèles. Syrup surveille les GPU. Whisk se souvient de ce sur quoi vous travailliez. Les quatre sont conçus pour tourner sur le matériel que vous possédez déjà.',
+    lede: 'Iron compile les kernels. Butter y exécute les modèles. Syrup pilote les GPU. Whisk incorpore la mémoire et le contexte. Waffle fait tourner vos agents, avec W à l’intérieur. Les cinq tournent sur du matériel que vous possédez ou louez.',
   },
   layers: {
-    heading: 'Comment les quatre couches *s’emboîtent*.',
+    heading: 'Comment les cinq couches *s’emboîtent*.',
     intro:
-      'Numérotées depuis le métal. Whisk est au sommet, Iron au contact du métal, et chaque couche a sa propre page.',
+      'Numérotées depuis le métal. Waffle est au sommet, Iron au contact du métal, et chaque couche a sa propre page.',
     metal: {
       label: 'Le métal',
       backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
     },
-    listLabel: 'Les quatre couches de la stack',
+    listLabel: 'Les cinq couches de la stack',
   },
   together: {
-    heading: 'Utilisez-en une, ou *les quatre*.',
+    heading: 'Utilisez-en une, ou *les cinq*.',
     intro:
       'Commencez par la couche qui résout le problème du jour. Ajoutez la suivante quand vous en avez besoin.',
     aloneLabel: 'Utilisé seul',
@@ -39,9 +39,11 @@ const productsOverviewFr: (typeof productsOverview)['en'] = {
         'Voyez chaque GPU et chaque moteur qui y tourne, quel que soit ce moteur.',
       whisk:
         'Donnez à votre IA une mémoire locale et citée de vos notes et de votre code.',
+      waffle:
+        'Faites tourner vos agents dans un seul harnais, avec W, votre assistant, à l’intérieur.',
     },
     allLabel: 'Ensemble',
-    all: 'Butter exécute les modèles sur les kernels qu’Iron compile, Syrup surveille les GPU et les moteurs qui tournent dessus, et Whisk se souvient de ce sur quoi vous travailliez. Chaque couche ajoutée s’appuie sur celles du dessous.',
+    all: 'Butter exécute les modèles sur les kernels qu’Iron compile, Syrup pilote les GPU et les moteurs qui tournent dessus, Whisk incorpore la mémoire et le contexte, et Waffle fait tourner vos agents au sommet. Chaque couche ajoutée s’appuie sur celles du dessous.',
   },
   audience: {
     heading: 'Pour *qui*.',

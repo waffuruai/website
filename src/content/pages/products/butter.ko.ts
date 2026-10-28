@@ -2,7 +2,7 @@ import type { butter } from './butter';
 
 const butterKo: (typeof butter)['en'] = {
   layer: '서빙',
-  tagline: 'Python 없는 모델 서빙.',
+  tagline: 'Python 없는 멀티모달 추론.',
   summary:
     'Apple 실리콘에는 Metal 위의 Swift를, CUDA를 비롯한 나머지에는 Rust를 씁니다. 2~8비트 양자화 체크포인트와 하이브리드·MoE 모델을 불러오고, OpenAI 호환 API와 Anthropic Messages API로 서빙합니다.',
   seo: {

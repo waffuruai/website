@@ -11,6 +11,7 @@ import {
   type ProductSlug,
 } from '@/content/pages/products/types';
 import { syrup } from '@/content/pages/products/syrup';
+import { waffle } from '@/content/pages/products/waffle';
 import type { Localized } from '@/content/types';
 import type { Locale } from '@/i18n/config';
 import { localize } from '@/lib/content';
@@ -25,6 +26,7 @@ export const productCopy: Record<ProductSlug, Localized<ProductCopy>> = {
   butter,
   syrup,
   whisk,
+  waffle,
 };
 
 export const isProductSlug = (value: string): value is ProductSlug =>

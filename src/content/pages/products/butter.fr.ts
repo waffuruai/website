@@ -2,7 +2,7 @@ import type { butter } from './butter';
 
 const butterFr: (typeof butter)['en'] = {
   layer: 'Serving',
-  tagline: 'Servir des modèles sans Python.',
+  tagline: 'Inférence multimodale, sans Python.',
   summary:
     'Swift sur Metal pour le silicium Apple, Rust pour CUDA et le reste. Charge des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et MoE, et les sert via des API compatibles OpenAI et Anthropic Messages.',
   seo: {

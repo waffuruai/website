@@ -4,7 +4,7 @@ const ironKo: (typeof iron)['en'] = {
   layer: '커널',
   tagline: '하나의 커널 정의, 네 가지 백엔드.',
   summary:
-    'Rust에 내장된 DSL입니다. 커널은 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다. 버전이 관리되는 C·Rust ABI로 기존 호스트에서도 호출할 수 있습니다.',
+    'Rust로 한 번 작성하면, 어디서나 최적화된 커널을 얻습니다. Rust에 내장된 DSL입니다. 커널은 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다. 버전이 관리되는 C·Rust ABI로 기존 호스트에서도 호출할 수 있습니다.',
   seo: {
     title: 'Iron: GPU 커널 하나로 네 가지 백엔드',
     description:
@@ -59,8 +59,8 @@ const ironKo: (typeof iron)['en'] = {
         body: '버전이 관리되는 C·Rust ABI 덕분에, 기존 호스트를 Iron에 맞춰 다시 쓰지 않고도 Iron 커널을 호출할 수 있습니다.',
       },
       {
-        title: '테스트로 보증하는 비트 정확도',
-        body: 'HIP·Vulkan 테스트 코퍼스는 4,164개 케이스로 이루어져 있으며, 4,164개 모두 비트 단위로 정확합니다.',
+        title: '테스트로 보증하는 비트 정확도, 벤치로 측정하는 성능',
+        body: 'HIP·Vulkan 테스트 코퍼스는 4,164개 케이스로 이루어져 있으며, 4,164개 모두 비트 단위로 정확합니다. 벤치마크와 성능 측정 도구가 함께 제공되므로, 모든 커널을 검증할 뿐 아니라 측정도 합니다.',
       },
       {
         title: '천 개가 넘는 커널',

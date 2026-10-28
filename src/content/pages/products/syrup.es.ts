@@ -2,9 +2,9 @@ import type { syrup } from './syrup';
 
 const syrupEs: (typeof syrup)['en'] = {
   layer: 'Plano de control',
-  tagline: 'Ve cada GPU y cada motor que corre en ella.',
+  tagline: 'Monitoreo, telemetría, control de acceso y costos, para cada GPU.',
   summary:
-    'Un plano de control para LLM en GPU, desde un equipo bajo el escritorio hasta un neocloud que alquila una flota. Cada host ejecuta un pequeño sidecar en Rust que reporta telemetría firmada. Funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
+    'Un plano de control para LLM en GPU, desde un equipo bajo el escritorio hasta un neocloud que alquila una flota. Cada host ejecuta un pequeño sidecar en Rust que reporta telemetría firmada, con control de acceso basado en roles y un visor de costos encima. Funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
   seo: {
     title: 'Syrup: un plano de control para LLM en GPU',
     description:
@@ -61,16 +61,16 @@ const syrupEs: (typeof syrup)['en'] = {
         body: 'Ve qué motor corre en ella: Butter, vLLM, SGLang, llama.cpp u otro servidor compatible con OpenAI.',
       },
       {
-        title: 'Un pequeño sidecar en Rust',
-        body: 'Cada host ejecuta un pequeño sidecar escrito en Rust, así que añadir una máquina es añadir el sidecar.',
+        title: 'Control de acceso',
+        body: 'El control de acceso basado en roles decide quién puede ver y ejecutar qué, en todos los hosts. Cada host ejecuta un pequeño sidecar escrito en Rust.',
       },
       {
         title: 'Telemetría firmada',
         body: 'Cada sidecar firma la telemetría que reporta.',
       },
       {
-        title: 'De un equipo a una flota',
-        body: 'Empieza con una sola máquina bajo el escritorio. La misma configuración llega hasta un neocloud que alquila una flota.',
+        title: 'Un visor de costos',
+        body: 'Ve lo que cuestan tus GPU junto a lo que ejecutan, desde una sola máquina bajo el escritorio hasta un neocloud que alquila una flota.',
       },
       {
         title: 'Sin ataduras',

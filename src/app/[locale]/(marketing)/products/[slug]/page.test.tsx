@@ -15,12 +15,13 @@ const params = (slug: string, locale = 'en') =>
   Promise.resolve({ locale, slug });
 
 describe('/products/[slug] route', () => {
-  it('prerenders exactly the four products and nothing else', () => {
+  it('prerenders exactly the five products and nothing else', () => {
     expect(generateStaticParams()).toEqual([
       { slug: 'iron' },
       { slug: 'butter' },
       { slug: 'syrup' },
       { slug: 'whisk' },
+      { slug: 'waffle' },
     ]);
     expect(dynamicParams).toBe(false);
   });

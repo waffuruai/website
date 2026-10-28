@@ -2,7 +2,7 @@ import type { butter } from './butter';
 
 const butterZh: (typeof butter)['en'] = {
   layer: '模型服务',
-  tagline: '无需 Python 的模型服务。',
+  tagline: '多模态推理，无需 Python。',
   summary:
     'Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。可加载 2 至 8 位量化检查点、混合模型和 MoE 模型，并通过兼容 OpenAI 和 Anthropic Messages 的 API 提供服务。',
   seo: {

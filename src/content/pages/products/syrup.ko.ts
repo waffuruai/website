@@ -2,9 +2,9 @@ import type { syrup } from './syrup';
 
 const syrupKo: (typeof syrup)['en'] = {
   layer: '컨트롤 플레인',
-  tagline: '모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에.',
+  tagline: '모든 GPU를 위한 모니터링, 텔레메트리, 접근 제어, 비용.',
   summary:
-    'GPU 위에서 도는 LLM을 위한 컨트롤 플레인입니다. 책상 아래 서버 한 대부터 플릿을 임대하는 네오클라우드까지 다룹니다. 각 호스트에서 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다. Butter, vLLM, SGLang, llama.cpp 등 OpenAI 호환 서버와 함께 동작합니다.',
+    'GPU 위에서 도는 LLM을 위한 컨트롤 플레인입니다. 책상 아래 서버 한 대부터 플릿을 임대하는 네오클라우드까지 다룹니다. 각 호스트에서 작은 Rust 사이드카가 서명된 텔레메트리를 보고하고, 그 위에 역할 기반 접근 제어와 비용 뷰어가 있습니다. Butter, vLLM, SGLang, llama.cpp 등 OpenAI 호환 서버와 함께 동작합니다.',
   seo: {
     title: 'Syrup: GPU 위 LLM을 위한 컨트롤 플레인',
     description:
@@ -59,16 +59,16 @@ const syrupKo: (typeof syrup)['en'] = {
         body: 'GPU 위에서 어떤 엔진이 도는지 봅니다. Butter, vLLM, SGLang, llama.cpp, 또는 다른 OpenAI 호환 서버입니다.',
       },
       {
-        title: '작은 Rust 사이드카',
-        body: '호스트마다 Rust로 작성한 작은 사이드카가 돌기 때문에, 머신을 추가한다는 것은 곧 사이드카를 추가한다는 뜻입니다.',
+        title: '접근 제어',
+        body: '역할 기반 접근 제어로 모든 호스트에서 누가 무엇을 보고 실행할 수 있는지 정합니다. 호스트마다 Rust로 작성한 작은 사이드카가 돌아갑니다.',
       },
       {
         title: '서명된 텔레메트리',
         body: '각 사이드카가 보고하는 텔레메트리에 서명합니다.',
       },
       {
-        title: '서버 한 대에서 플릿까지',
-        body: '책상 아래 머신 한 대로 시작하세요. 같은 구성이 플릿을 임대하는 네오클라우드까지 이어집니다.',
+        title: '비용 뷰어',
+        body: 'GPU가 무엇을 실행하는지와 함께 그 비용을 봅니다. 책상 아래 머신 한 대부터 플릿을 임대하는 네오클라우드까지.',
       },
       {
         title: '락인 없음',

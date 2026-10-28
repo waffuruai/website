@@ -13,32 +13,32 @@ import productsOverviewKo from './overview.ko';
 export const productsOverview: Localized<ProductsOverviewCopy> = {
   en: {
     seo: {
-      title: 'The Waffuru stack: kernels, serving, control and memory',
+      title: 'The Waffuru stack: kernels, serving, control, memory and agents',
       description:
-        'Iron compiles the kernels. Butter runs models on them. Syrup watches the GPUs. Whisk remembers what you were working on. Use one, or all four.',
+        'Iron compiles the kernels. Butter runs models on them. Syrup controls the GPUs. Whisk mixes in memory and context. Waffle runs your agents. Use one, or all five.',
       keywords: [
         'AI inference stack',
         'GPU kernels to serving',
-        'local-first AI infrastructure',
+        'AI infrastructure on hardware you own or rent',
       ],
     },
     hero: {
-      label: 'Four products',
+      label: 'Five products',
       title: 'The Waffuru *stack*.',
-      lede: 'Iron compiles the kernels. Butter runs models on them. Syrup watches the GPUs. Whisk remembers what you were working on. All four are built to run on the hardware you already own.',
+      lede: 'Iron compiles the kernels. Butter runs models on them. Syrup controls the GPUs. Whisk mixes in memory and context. Waffle runs your agents, with W inside. All five run on hardware you own or rent.',
     },
     layers: {
-      heading: 'How the four layers *fit*.',
+      heading: 'How the five layers *fit*.',
       intro:
-        'Numbered from the metal up. Whisk sits on top, Iron sits at the metal, and each layer has its own page.',
+        'Numbered from the metal up. Waffle sits on top, Iron sits at the metal, and each layer has its own page.',
       metal: {
         label: 'The metal',
         backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
       },
-      listLabel: 'The four layers of the stack',
+      listLabel: 'The five layers of the stack',
     },
     together: {
-      heading: 'Use one, or *all four*.',
+      heading: 'Use one, or *all five*.',
       intro:
         'Start with the layer that solves today’s problem. Add the next when you need it.',
       aloneLabel: 'On its own',
@@ -49,9 +49,11 @@ export const productsOverview: Localized<ProductsOverviewCopy> = {
         syrup:
           'See every GPU and every engine running on it, whichever engine that is.',
         whisk: 'Give your AI local, cited memory of your notes and code.',
+        waffle:
+          'Run your agents in one harness, with W, your assistant, inside.',
       },
       allLabel: 'Together',
-      all: 'Butter runs models on the kernels Iron compiles, Syrup watches the GPUs and engines under them, and Whisk remembers what you were working on. Each layer you add builds on the ones below.',
+      all: 'Butter runs models on the kernels Iron compiles, Syrup controls the GPUs and engines under them, Whisk mixes in memory and context, and Waffle runs your agents on top. Each layer you add builds on the ones below.',
     },
     audience: {
       heading: 'Who it’s *for*.',

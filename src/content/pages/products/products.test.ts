@@ -28,15 +28,23 @@ function strings(value: unknown): string[] {
 const accentCount = (text: string) => (text.match(/\*[^*]+\*/g) ?? []).length;
 
 describe('stack order', () => {
-  it('lists four products from the metal up, Iron first', () => {
-    expect(productSlugs).toEqual(['iron', 'butter', 'syrup', 'whisk']);
+  it('lists five products from the metal up, Iron first', () => {
+    expect(productSlugs).toEqual([
+      'iron',
+      'butter',
+      'syrup',
+      'whisk',
+      'waffle',
+    ]);
     expect(productsBottomUp.map((p) => p.index)).toEqual([
       '01',
       '02',
       '03',
       '04',
+      '05',
     ]);
     expect(productsTopDown.map((p) => p.slug)).toEqual([
+      'waffle',
       'whisk',
       'syrup',
       'butter',
@@ -303,10 +311,9 @@ describe('the overview', () => {
   it('uses the stack line in the lede', () => {
     expect(copy.hero.lede).toContain('Iron compiles the kernels.');
     expect(copy.hero.lede).toContain('Butter runs models on them.');
-    expect(copy.hero.lede).toContain('Syrup watches the GPUs.');
-    expect(copy.hero.lede).toContain(
-      'Whisk remembers what you were working on.',
-    );
+    expect(copy.hero.lede).toContain('Syrup controls the GPUs.');
+    expect(copy.hero.lede).toContain('Whisk mixes in memory and context.');
+    expect(copy.hero.lede).toContain('Waffle runs your agents');
   });
 
   it('keeps the voice', () => {

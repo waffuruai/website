@@ -17,7 +17,7 @@ export const iron: Localized<ProductCopy> = {
     layer: 'Kernels',
     tagline: 'One kernel definition, four backends.',
     summary:
-      'A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
+      'Write once in Rust, get optimized kernels everywhere. A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
     seo: {
       title: 'Iron: one GPU kernel definition, four backends',
       description:
@@ -72,8 +72,8 @@ export const iron: Localized<ProductCopy> = {
           body: 'A versioned C and Rust ABI lets existing hosts call Iron kernels without being rewritten around them.',
         },
         {
-          title: 'Bit-accurate by test',
-          body: 'The HIP and Vulkan test corpus holds 4,164 cases, and all 4,164 are bit-accurate.',
+          title: 'Bit-accurate by test, measured by bench',
+          body: 'The HIP and Vulkan test corpus holds 4,164 cases, and all 4,164 are bit-accurate. Bench and perf tooling ships with it, so every kernel is measured as well as checked.',
         },
         {
           title: 'Over a thousand kernels',

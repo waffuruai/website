@@ -4,7 +4,7 @@ const ironZh: (typeof iron)['en'] = {
   layer: '内核',
   tagline: '一次定义内核，生成四种后端。',
   summary:
-    '嵌入 Rust 的 DSL。内核先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。版本化的 C 与 Rust ABI 让现有宿主可以直接调用。',
+    '用 Rust 写一次，就能在各处得到优化过的内核。嵌入 Rust 的 DSL。内核先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。版本化的 C 与 Rust ABI 让现有宿主可以直接调用。',
   seo: {
     title: 'Iron：一次定义 GPU 内核，生成四种后端',
     description:
@@ -59,8 +59,8 @@ const ironZh: (typeof iron)['en'] = {
         body: '版本化的 C 与 Rust ABI 让现有宿主无需围绕 Iron 重写，就能调用 Iron 内核。',
       },
       {
-        title: '测试保证逐位精确',
-        body: 'HIP 与 Vulkan 测试集共有 4,164 个用例，全部 4,164 个逐位精确。',
+        title: '测试保证逐位精确，基准测试衡量性能',
+        body: 'HIP 与 Vulkan 测试集共有 4,164 个用例，全部 4,164 个逐位精确。随附基准测试与性能分析工具，每个内核不仅经过检验，也经过测量。',
       },
       {
         title: '上千个内核',

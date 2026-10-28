@@ -4,7 +4,7 @@ const ironEs: (typeof iron)['en'] = {
   layer: 'Kernels',
   tagline: 'Una definición de kernel, cuatro backends.',
   summary:
-    'Un DSL embebido en Rust. Los kernels se traducen a una representación intermedia (IR) compartida y de ahí a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V. Una ABI versionada de C y Rust permite que los hosts existentes los invoquen.',
+    'Escribe una vez en Rust y obtén kernels optimizados en todas partes. Un DSL embebido en Rust. Los kernels se traducen a una representación intermedia (IR) compartida y de ahí a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V. Una ABI versionada de C y Rust permite que los hosts existentes los invoquen.',
   seo: {
     title: 'Iron: un kernel de GPU, cuatro backends',
     description:
@@ -63,8 +63,8 @@ const ironEs: (typeof iron)['en'] = {
         body: 'Una ABI versionada de C y Rust permite que los hosts existentes llamen a los kernels de Iron sin reescribirse a su alrededor.',
       },
       {
-        title: 'Exacto bit a bit, con pruebas',
-        body: 'El corpus de pruebas de HIP y Vulkan reúne 4.164 casos, y los 4.164 son exactos bit a bit.',
+        title: 'Exacto bit a bit en las pruebas, medido en benchmarks',
+        body: 'El corpus de pruebas de HIP y Vulkan reúne 4.164 casos, y los 4.164 son exactos bit a bit. Incluye herramientas de benchmark y de rendimiento, así que cada kernel se mide además de comprobarse.',
       },
       {
         title: 'Más de mil kernels',

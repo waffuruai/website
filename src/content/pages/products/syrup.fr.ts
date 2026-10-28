@@ -2,9 +2,10 @@ import type { syrup } from './syrup';
 
 const syrupFr: (typeof syrup)['en'] = {
   layer: 'Plan de contrôle',
-  tagline: 'Voir chaque GPU et chaque moteur qui y tourne.',
+  tagline:
+    'Supervision, télémétrie, contrôle d’accès et coûts, pour chaque GPU.',
   summary:
-    'Un plan de contrôle pour les LLM sur GPU, d’une machine sous un bureau à un neocloud qui loue une flotte. Chaque hôte exécute un petit sidecar en Rust qui remonte une télémétrie signée. Fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI.',
+    'Un plan de contrôle pour les LLM sur GPU, d’une machine sous un bureau à un neocloud qui loue une flotte. Chaque hôte exécute un petit sidecar en Rust qui remonte une télémétrie signée, avec un contrôle d’accès basé sur les rôles et un visualiseur de coûts par-dessus. Fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI.',
   seo: {
     title: 'Syrup : un plan de contrôle pour les LLM sur GPU',
     description:
@@ -62,16 +63,16 @@ const syrupFr: (typeof syrup)['en'] = {
         body: 'Voyez quel moteur tourne dessus : Butter, vLLM, SGLang, llama.cpp ou un autre serveur compatible OpenAI.',
       },
       {
-        title: 'Un petit sidecar Rust',
-        body: 'Chaque hôte exécute un petit sidecar écrit en Rust : ajouter une machine, c’est ajouter le sidecar.',
+        title: 'Contrôle d’accès',
+        body: 'Le contrôle d’accès basé sur les rôles décide qui peut voir et exécuter quoi, sur chaque hôte. Chaque hôte exécute un petit sidecar écrit en Rust.',
       },
       {
         title: 'Télémétrie signée',
         body: 'Chaque sidecar signe la télémétrie qu’il remonte.',
       },
       {
-        title: 'D’une machine à une flotte',
-        body: 'Commencez avec une seule machine sous un bureau. La même configuration monte jusqu’à un neocloud qui loue une flotte.',
+        title: 'Un visualiseur de coûts',
+        body: 'Voyez ce que coûtent vos GPU à côté de ce qu’ils font tourner, d’une seule machine sous un bureau à un neocloud qui loue une flotte.',
       },
       {
         title: 'Sans verrouillage',

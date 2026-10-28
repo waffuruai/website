@@ -1,7 +1,13 @@
 import type { FaqItem, Seo } from '@/content/types';
 
 /** The four layers of the stack, in the order they sit from the metal up. */
-export const productSlugs = ['iron', 'butter', 'syrup', 'whisk'] as const;
+export const productSlugs = [
+  'iron',
+  'butter',
+  'syrup',
+  'whisk',
+  'waffle',
+] as const;
 
 export type ProductSlug = (typeof productSlugs)[number];
 
@@ -29,7 +35,7 @@ export type CodeSample = {
 export type ProductFacts = {
   slug: ProductSlug;
   /** Position in the stack, counted from the metal up. */
-  index: '01' | '02' | '03' | '04';
+  index: '01' | '02' | '03' | '04' | '05';
   /** Product name; never translated. */
   name: string;
   /** Route path without a locale prefix. */

@@ -4,9 +4,9 @@ import type { syrup } from './syrup';
 // link it from the FAQ; until then the page says plainly that there isn't one.
 const syrupJa: (typeof syrup)['en'] = {
   layer: 'コントロールプレーン',
-  tagline: 'すべての GPU と、その上で動くすべてのエンジンを可視化。',
+  tagline: 'すべての GPU に、監視、テレメトリ、アクセス制御、コストを。',
   summary:
-    'GPU 上の LLM のためのコントロールプレーン。デスクの下の 1 台から、フリートを貸し出すネオクラウドまで対応します。各ホストでは小さな Rust 製サイドカーが動き、署名付きテレメトリを報告します。Butter、vLLM、SGLang、llama.cpp など、OpenAI 互換のサーバーと連携できます。',
+    'GPU 上の LLM のためのコントロールプレーン。デスクの下の 1 台から、フリートを貸し出すネオクラウドまで対応します。各ホストでは小さな Rust 製サイドカーが動き、署名付きテレメトリを報告します。その上に、ロールベースのアクセス制御とコストビューアーを備えています。Butter、vLLM、SGLang、llama.cpp など、OpenAI 互換のサーバーと連携できます。',
   seo: {
     title: 'Syrup：GPU 上の LLM のコントロールプレーン',
     description:
@@ -59,16 +59,16 @@ const syrupJa: (typeof syrup)['en'] = {
         body: 'その上でどのエンジンが動いているかを確認できます。Butter、vLLM、SGLang、llama.cpp、あるいは他の OpenAI 互換サーバーです。',
       },
       {
-        title: '小さな Rust 製サイドカー',
-        body: '各ホストでは Rust で書かれた小さなサイドカーが動きます。マシンを増やすことは、サイドカーを増やすことです。',
+        title: 'アクセス制御',
+        body: 'ロールベースのアクセス制御で、すべてのホストにわたって、誰が何を見て何を実行できるかを決めます。各ホストでは Rust で書かれた小さなサイドカーが動きます。',
       },
       {
         title: '署名付きテレメトリ',
         body: '各サイドカーは、報告するテレメトリに署名します。',
       },
       {
-        title: '1 台からフリートまで',
-        body: 'まずはデスクの下の 1 台から。同じ構成のまま、フリートを貸し出すネオクラウドまで広げられます。',
+        title: 'コストビューアー',
+        body: 'GPU のコストを、その上で動いているものと並べて確認できます。デスクの下の 1 台から、フリートを貸し出すネオクラウドまで。',
       },
       {
         title: 'ロックインなし',

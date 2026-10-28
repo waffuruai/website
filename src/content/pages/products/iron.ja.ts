@@ -4,7 +4,7 @@ const ironJa: (typeof iron)['en'] = {
   layer: 'カーネル',
   tagline: 'ひとつのカーネル定義から、4 つのバックエンドへ。',
   summary:
-    'Rust に埋め込む DSL。カーネルは共通の IR に落とされ、そこから Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ。バージョン管理された C と Rust の ABI で、既存のホストから呼び出せます。',
+    'Rust で一度書けば、どこでも最適化されたカーネルに。Rust に埋め込む DSL。カーネルは共通の IR に落とされ、そこから Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ。バージョン管理された C と Rust の ABI で、既存のホストから呼び出せます。',
   seo: {
     title: 'Iron：GPU カーネルを一度書けば 4 バックエンドへ',
     description:
@@ -63,8 +63,8 @@ const ironJa: (typeof iron)['en'] = {
         body: 'バージョン管理された C と Rust の ABI により、既存のホストを書き直すことなく Iron のカーネルを呼び出せます。',
       },
       {
-        title: 'テストで確かめたビット単位の一致',
-        body: 'HIP と Vulkan のテストコーパスには 4,164 件のケースがあり、4,164 件すべてがビット単位で一致しています。',
+        title: 'テストで確かめたビット単位の一致、ベンチで測った性能',
+        body: 'HIP と Vulkan のテストコーパスには 4,164 件のケースがあり、4,164 件すべてがビット単位で一致しています。ベンチマークと性能計測のツールも同梱しているので、すべてのカーネルは検証されるだけでなく、計測もされます。',
       },
       {
         title: '1,000 を超えるカーネル',

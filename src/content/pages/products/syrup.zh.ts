@@ -2,9 +2,9 @@ import type { syrup } from './syrup';
 
 const syrupZh: (typeof syrup)['en'] = {
   layer: '控制平面',
-  tagline: '看清每一块 GPU 和其上运行的每个引擎。',
+  tagline: '监控、遥测、访问控制与成本，覆盖每一块 GPU。',
   summary:
-    '面向 GPU 上大模型的控制平面，从桌下的一台机器，到出租集群的新型云服务商。每台主机运行一个小型 Rust sidecar，上报带签名的遥测数据。支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
+    '面向 GPU 上大模型的控制平面，从桌下的一台机器，到出租集群的新型云服务商。每台主机运行一个小型 Rust sidecar，上报带签名的遥测数据，其上还有基于角色的访问控制和成本查看器。支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
   seo: {
     title: 'Syrup：GPU 上大模型的控制平面',
     description:
@@ -56,16 +56,16 @@ const syrupZh: (typeof syrup)['en'] = {
         body: '看到其上运行的是哪个引擎：Butter、vLLM、SGLang、llama.cpp，或其他兼容 OpenAI 的服务器。',
       },
       {
-        title: '小型 Rust sidecar',
-        body: '每台主机运行一个用 Rust 编写的小型 sidecar，所以加一台机器，就是加一个 sidecar。',
+        title: '访问控制',
+        body: '基于角色的访问控制决定谁能在每台主机上查看和运行什么。每台主机运行一个用 Rust 编写的小型 sidecar。',
       },
       {
         title: '带签名的遥测',
         body: '每个 sidecar 都会为它上报的遥测数据签名。',
       },
       {
-        title: '从一台机器到整个集群',
-        body: '从桌下的一台机器开始。同样的部署也能覆盖出租集群的新型云服务商。',
+        title: '成本查看器',
+        body: '把 GPU 的成本和它们运行的内容放在一起看，从桌下的一台机器，到出租集群的新型云服务商。',
       },
       {
         title: '无锁定',

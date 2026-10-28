@@ -2,7 +2,7 @@ import type { butter } from './butter';
 
 const butterJa: (typeof butter)['en'] = {
   layer: 'サービング',
-  tagline: 'Python 不要のモデルサービング。',
+  tagline: 'Python 不要のマルチモーダル推論。',
   summary:
     'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。2〜8 ビットの量子化チェックポイント、ハイブリッドモデルや MoE モデルを読み込み、OpenAI 互換と Anthropic Messages の API で提供します。',
   seo: {

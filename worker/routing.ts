@@ -36,6 +36,7 @@ const SECTION_REDIRECTS: Record<Section, Record<string, string>> = {
     '/butter': '/products/butter',
     '/syrup': '/products/syrup',
     '/whisk': '/products/whisk',
+    '/waffle': '/products/waffle',
     '/stack': '/products',
   },
   solutions: {},

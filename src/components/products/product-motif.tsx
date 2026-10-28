@@ -2,9 +2,9 @@ import type { ProductSlug } from '@/content/pages/products/types';
 import { cn } from '@/lib/utils';
 
 /*
- * The four After Hours motifs, one per product, built from the classes in
- * motifs.css: stamps (Iron), a melting pat (Butter), LEDs (Syrup) and a
- * drip (Whisk). `sm` matches the stack rows on the home page; `lg` is the
+ * The After Hours motifs, one per product, built from the classes in
+ * motifs.css: stamps (Iron), a melting pat (Butter), LEDs (Syrup), a drip
+ * (Whisk) and waffle tiles with W lit in the middle (Waffle). `sm` matches the stack rows on the home page; `lg` is the
  * larger version for a product page's hero. Decorative and CSS-only.
  */
 export type MotifSize = 'sm' | 'lg';
@@ -142,11 +142,38 @@ function WhiskMotif({ size, className }: MotifProps) {
   );
 }
 
+function WaffleMotif({ size, className }: MotifProps) {
+  const side = size === 'lg' ? 5 : 3;
+  const centre = Math.floor((side * side) / 2);
+  return (
+    <div
+      className={cn(
+        'grid',
+        size === 'lg' ? 'w-[200px] gap-2' : 'w-20 gap-1.5',
+        className,
+      )}
+      style={{ gridTemplateColumns: `repeat(${side}, minmax(0, 1fr))` }}
+    >
+      {Array.from({ length: side * side }, (_, i) => (
+        <div
+          key={i}
+          className="wf-cell aspect-square rounded-[4px]"
+          data-hot={i === centre ? '' : undefined}
+          style={{
+            animationDelay: `${(((i % side) + Math.floor(i / side)) * RIPPLE).toFixed(2)}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 const MOTIFS: Record<ProductSlug, (props: MotifProps) => React.ReactElement> = {
   iron: IronMotif,
   butter: ButterMotif,
   syrup: SyrupMotif,
   whisk: WhiskMotif,
+  waffle: WaffleMotif,
 };
 
 /** The motif for a product. Always `aria-hidden`: it carries no information. */

@@ -23,7 +23,7 @@ import butterKo from './butter.ko';
 export const butter: Localized<ProductCopy> = {
   en: {
     layer: 'Serving',
-    tagline: 'Model serving without Python.',
+    tagline: 'Multi-modal inference, without Python.',
     summary:
       'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 2- to 8-bit quantized checkpoints, hybrid and MoE models, and serves them over OpenAI-compatible and Anthropic Messages APIs.',
     seo: {

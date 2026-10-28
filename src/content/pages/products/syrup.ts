@@ -14,9 +14,9 @@ import syrupKo from './syrup.ko';
 export const syrup: Localized<ProductCopy> = {
   en: {
     layer: 'Control plane',
-    tagline: 'See every GPU and every engine running on it.',
+    tagline: 'Monitoring, telemetry, access control and cost, for every GPU.',
     summary:
-      'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+      'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry, with role-based access control and a cost viewer on top. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
     seo: {
       title: 'Syrup: a control plane for LLMs on GPUs',
       description:
@@ -70,16 +70,16 @@ export const syrup: Localized<ProductCopy> = {
           body: 'See which engine is running on it: Butter, vLLM, SGLang, llama.cpp or another OpenAI-compatible server.',
         },
         {
-          title: 'A small Rust sidecar',
-          body: 'Each host runs a small sidecar written in Rust, so adding a machine means adding the sidecar.',
+          title: 'Access control',
+          body: 'Role-based access control decides who can see and run what, across every host. Each host runs a small sidecar written in Rust.',
         },
         {
           title: 'Signed telemetry',
           body: 'Each sidecar signs the telemetry it reports.',
         },
         {
-          title: 'One box to a fleet',
-          body: 'Start with a single machine under a desk. The same setup reaches a neocloud renting out a fleet.',
+          title: 'A cost viewer',
+          body: 'See what your GPUs cost next to what they run, from a single machine under a desk to a neocloud renting out a fleet.',
         },
         {
           title: 'No lock-in',

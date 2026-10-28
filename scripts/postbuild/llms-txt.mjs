@@ -58,6 +58,7 @@ const PATH_ORDER = [
   '/products/butter',
   '/products/syrup',
   '/products/whisk',
+  '/products/waffle',
   '/solutions',
   '/solutions/small-business',
   '/solutions/enterprise',

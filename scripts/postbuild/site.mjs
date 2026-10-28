@@ -11,7 +11,7 @@ export const SITE = {
   name: 'Waffuru',
   mission: 'Democratize access to intelligence.',
   description:
-    'Waffuru builds the stack that runs AI on the hardware you already own: GPU kernels (Iron), an inference engine (Butter), a GPU control plane (Syrup) and a memory layer (Whisk). Its first public product is Pantry, a free, open-source vulnerability scanner.',
+    'Waffuru builds the AI stack that runs models fast and at the lowest cost per token, on hardware you own or rent: GPU kernels (Iron), an inference engine (Butter), a control plane (Syrup), memory (Whisk) and an agent harness (Waffle). Its first public product is Pantry, a free, open-source vulnerability scanner.',
   earlyAccessUrl: 'https://forms.gle/SHaVSRRWmZKy8UJy7',
   email: 'hello@waffuru.ai',
 };
@@ -35,6 +35,7 @@ export const SECTION_ROUTES = {
     '/products/butter',
     '/products/syrup',
     '/products/whisk',
+    '/products/waffle',
   ],
   solutions: [
     '/solutions',
