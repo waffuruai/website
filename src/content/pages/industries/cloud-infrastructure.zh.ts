@@ -68,7 +68,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'butter',
         need: '组件更少的托管推理。',
-        body: 'macOS 和 iOS 上用 Swift，其他平台用 Rust，依赖极少。量化检查点与 KV 缓存、推测解码和 LoRA 都在兼容 OpenAI 的 API 背后。',
+        body: 'macOS 和 iOS 上用 Swift，其他平台用 Rust，兼顾速度与内存安全。依赖极少，你替租户承担的供应链风险更少。量化检查点与 KV 缓存、推测解码和 LoRA 都在兼容 OpenAI 的 API 背后。',
       },
       {
         product: 'iron',
@@ -79,9 +79,9 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
   },
   whereWeAre: {
     title: '我们的*进度*。',
-    lede: '先说对 GPU 云最重要的一点：数据中心 GPU 正在进行中。Syrup、Butter 和 Iron 目前处于抢先体验阶段，暂未开源。',
+    lede: '先说对 GPU 云最重要的一点：数据中心 GPU 目前完成的是首次运行，尚未投入生产。Syrup、Butter 和 Iron 目前处于抢先体验阶段，暂未开源。',
     notes: [
-      'CUDA 已在 RTX 和 DGX Spark 上投入生产。告诉我们你的数据中心 GPU 世代，因为我们听到的集群情况会决定先做什么。',
+      'CUDA 已在 RTX 和 DGX Spark 上投入生产。H100、H200、B100、B200 和 MI300 已完成首次运行。告诉我们你的数据中心 GPU 世代，因为我们听到的集群情况会决定先调优哪些。',
       'ROCm 和 Vulkan 目前可以运行，但尚未调优。',
       '我们不声称 Butter 在 CUDA 或 ROCm 上胜过其他引擎。等我们发布测量结果时，会连同方法一起给出。',
     ],
@@ -95,7 +95,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
     {
       question: '它支持哪些 GPU？',
       answer:
-        'Apple 芯片上的 Metal 是首要。NVIDIA 通过 CUDA 其次，已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。AMD ROCm 和 Vulkan 可以运行，但尚未调优。',
+        'Apple 芯片上的 Metal 是首要。NVIDIA 通过 CUDA 已在 RTX 和 DGX Spark 上投入生产，正在调优，并已在 H100、H200、B100 和 B200 上完成首次运行。AMD 方面，已在 MI300 上完成首次运行，ROCm 和 Vulkan 可以运行，但尚未调优。',
     },
     {
       question: '它能为我们的毛利增加多少？',

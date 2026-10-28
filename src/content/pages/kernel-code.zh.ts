@@ -32,14 +32,14 @@ const copy: KernelCodeCopy = {
     {
       name: 'NVIDIA · CUDA',
       level: 'secondary',
-      label: '其次',
+      label: '调优中',
       note: '已在 RTX 和 DGX Spark 上投入生产。CUDA → PTX。',
     },
     {
       name: 'AMD ROCm · Vulkan',
       level: 'runs',
-      label: '可运行',
-      note: 'AMD 上进展迅速。HIP → AMDGPU，Vulkan → SPIR-V。',
+      label: '即将推出',
+      note: 'AMD 上进展迅速，已在 MI300 上完成首次运行。HIP → AMDGPU，Vulkan → SPIR-V。',
     },
   ],
   runsOn: {
@@ -51,7 +51,7 @@ const copy: KernelCodeCopy = {
       'Strix Halo',
       '新型云服务商集群',
     ],
-    pending: '企业级数据中心 GPU · 下一步',
+    pending: 'H100 · H200 · B100 · B200 · 首次运行',
   },
 };
 

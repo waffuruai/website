@@ -85,7 +85,7 @@ const lifeSciencesFr: (typeof lifeSciences)['en'] = {
     lede: 'Les produits sont en accès anticipé et à code fermé pour l’instant. Nous ne revendiquons aucune conformité ni validation : interrogez-nous directement sur vos exigences.',
     notes: [
       'Un Mac Studio ou une station RTX est le point de départ le plus simple : Metal est principal, et CUDA est en production sur RTX et DGX Spark.',
-      'Les GPU de datacenter sont en cours. ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+      'Sur les GPU de datacenter, les premières exécutions sont faites sur H100, H200, B100, B200 et MI300. ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
       'Whisk cite ses sources, mais il ne vérifie pas la science. Vos relecteurs, eux, le font toujours.',
     ],
   },

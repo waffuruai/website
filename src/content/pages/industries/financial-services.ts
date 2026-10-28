@@ -86,7 +86,7 @@ export const financialServices: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'Serve models inside your boundary.',
-          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, with minimal dependencies. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so a new model needs no conversion pipeline.',
+          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, for speed and memory safety. Minimal dependencies mean less supply-chain risk to track. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so a new model needs no conversion pipeline.',
         },
         {
           product: 'syrup',
@@ -107,7 +107,7 @@ export const financialServices: Localized<IndustryPage> = {
     },
     whereWeAre: {
       title: 'Where we *are*.',
-      lede: 'Better you hear it here than in a vendor review. The products are in early access and closed source for now, and datacenter GPUs are in progress.',
+      lede: 'Better you hear it here than in a vendor review. The products are in early access and closed source for now, and on datacenter GPUs we have first runs, not production.',
       notes: [
         'Plan a pilot on Apple silicon, RTX workstations or DGX Spark, where the stack runs today.',
         'ROCm and Vulkan run but are not tuned yet.',
@@ -128,7 +128,7 @@ export const financialServices: Localized<IndustryPage> = {
       {
         question: 'Which hardware does it run on today?',
         answer:
-          'Apple silicon through Metal is primary. NVIDIA through CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run but are not tuned yet.',
+          'Apple silicon through Metal is primary. NVIDIA through CUDA is in production on RTX and DGX Spark and being tuned, with first runs done on H100, H200, B100 and B200. On AMD, first runs are done on MI300, and ROCm and Vulkan run but are not tuned yet.',
       },
       {
         question: 'Is it certified for regulated workloads?',

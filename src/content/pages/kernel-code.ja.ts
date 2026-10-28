@@ -35,14 +35,14 @@ const copy: KernelCodeCopy = {
     {
       name: 'NVIDIA · CUDA',
       level: 'secondary',
-      label: 'セカンダリ',
+      label: 'チューニング中',
       note: 'RTX と DGX Spark では本番稼働中。CUDA → PTX。',
     },
     {
       name: 'AMD ROCm · Vulkan',
       level: 'runs',
-      label: '動作',
-      note: 'AMD では急速に前進中。HIP → AMDGPU、Vulkan → SPIR-V。',
+      label: '近日対応',
+      note: 'AMD では急速に前進中で、MI300 では初回の実行を終えています。HIP → AMDGPU、Vulkan → SPIR-V。',
     },
   ],
   runsOn: {
@@ -54,7 +54,7 @@ const copy: KernelCodeCopy = {
       'Strix Halo',
       'ネオクラウドのフリート',
     ],
-    pending: 'エンタープライズ向けデータセンター GPU · 次の対象',
+    pending: 'H100 · H200 · B100 · B200 · 初回実行',
   },
 };
 

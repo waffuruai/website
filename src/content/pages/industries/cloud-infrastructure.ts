@@ -91,7 +91,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'Managed inference with fewer moving parts.',
-          body: 'Swift for macOS and iOS, Rust for everything else, with minimal dependencies. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API.',
+          body: 'Swift for macOS and iOS and Rust for everything else, for speed and memory safety. Minimal dependencies mean less supply-chain risk to carry for your tenants. Quantized checkpoints and KV cache, speculative decoding and LoRA sit behind an OpenAI-compatible API.',
         },
         {
           product: 'iron',
@@ -102,9 +102,9 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
     },
     whereWeAre: {
       title: 'Where we *are*.',
-      lede: 'The part that matters most to a GPU cloud comes first: datacenter GPUs are in progress. Syrup, Butter and Iron are in early access and closed source for now.',
+      lede: 'The part that matters most to a GPU cloud comes first: on datacenter GPUs we have first runs, not production. Syrup, Butter and Iron are in early access and closed source for now.',
       notes: [
-        'CUDA is in production on RTX and DGX Spark. Tell us your datacenter GPU generations, because the fleets we hear about shape what comes first.',
+        'CUDA is in production on RTX and DGX Spark. First runs are done on H100, H200, B100, B200 and MI300. Tell us your datacenter GPU generations, because the fleets we hear about decide which we tune first.',
         'ROCm and Vulkan run today but are not tuned yet.',
         'We make no claim that Butter beats other engines on CUDA or ROCm. When we publish measurements, they will come with the method.',
       ],
@@ -118,7 +118,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
       {
         question: 'Which GPUs does it support?',
         answer:
-          'Apple silicon through Metal is primary. NVIDIA through CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run but are not tuned yet.',
+          'Apple silicon through Metal is primary. NVIDIA through CUDA is in production on RTX and DGX Spark and being tuned, with first runs done on H100, H200, B100 and B200. On AMD, first runs are done on MI300, and ROCm and Vulkan run but are not tuned yet.',
       },
       {
         question: 'How much will it add to our margin?',

@@ -63,7 +63,7 @@ const governmentZh: (typeof government)['en'] = {
       {
         product: 'butter',
         need: '在你运营的基础设施上提供模型服务。',
-        body: 'macOS 和 iOS 上用 Swift、其他平台用 Rust，提供兼容 OpenAI 的服务，依赖极少。现有工具只需换一个地址，不用换 SDK。',
+        body: 'macOS 和 iOS 上用 Swift、其他平台用 Rust，提供兼容 OpenAI 的服务，兼顾速度与内存安全。依赖极少，需要审查的供应链风险更少。现有工具只需换一个地址，不用换 SDK。',
       },
       {
         product: 'syrup',
@@ -86,7 +86,7 @@ const governmentZh: (typeof government)['en'] = {
     title: '我们的*进度*。',
     lede: '产品目前处于抢先体验阶段，暂未开源，我们也不作任何合规或资质认定声明。以下是目前可用的部分。',
     notes: [
-      '在 Apple 芯片、RTX 工作站和 DGX Spark 上规划试点，整套技术栈目前就运行在这些平台上。数据中心 GPU 正在进行中。',
+      '在 Apple 芯片、RTX 工作站和 DGX Spark 上规划试点，整套技术栈目前就运行在这些平台上。数据中心 GPU 方面，已在 H100、H200、B100、B200 和 MI300 上完成首次运行。',
       'ROCm 和 Vulkan 可以运行，但尚未调优。',
       '模型放到你的机器上之后，大部分技术栈都能离线运行。物理隔离环境的支持即将推出。',
       '请直接把你的采购和安全要求带来，我们会逐项具体回答。',
@@ -116,7 +116,7 @@ const governmentZh: (typeof government)['en'] = {
     {
       question: '它支持哪些硬件？',
       answer:
-        'Apple 芯片上的 Metal 是首要。NVIDIA 通过 CUDA 其次，已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。AMD ROCm 和 Vulkan 可以运行，但尚未调优。',
+        'Apple 芯片上的 Metal 是首要。NVIDIA 通过 CUDA 已在 RTX 和 DGX Spark 上投入生产，正在调优，并已在 H100、H200、B100 和 B200 上完成首次运行。AMD 方面，已在 MI300 上完成首次运行，ROCm 和 Vulkan 可以运行，但尚未调优。',
     },
     {
       question: '我们如何评估？',

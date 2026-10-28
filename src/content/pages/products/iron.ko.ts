@@ -52,7 +52,7 @@ const ironKo: (typeof iron)['en'] = {
       },
       {
         title: 'Rust로 작성',
-        body: 'Rust에 내장된 DSL입니다. 커널은 #[kernel]이 붙은 Rust 함수이며, program_id, load, store 같은 기본 연산으로 구성됩니다.',
+        body: 'Rust에 내장된 DSL입니다. 커널은 #[kernel]이 붙은 Rust 함수이며, program_id, load, store 같은 기본 연산으로 구성됩니다. Iron 자체도 Rust로 만들어 속도와 메모리 안전성을 갖췄고, 의존성이 최소한이어서 공급망 공격의 여지가 줄어듭니다.',
       },
       {
         title: '호스트에서 바로 호출',
@@ -68,7 +68,7 @@ const ironKo: (typeof iron)['en'] = {
       },
       {
         title: '중요한 곳을 먼저 튜닝',
-        body: '모든 커널은 Metal에서 가장 먼저 작성하고 튜닝합니다. CUDA는 그다음이며, ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
+        body: '모든 커널은 Metal에서 가장 먼저 작성하고 튜닝합니다. CUDA는 지금 튜닝을 진행하고 있으며, ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
       },
     ],
   },
@@ -123,7 +123,7 @@ const ironKo: (typeof iron)['en'] = {
     {
       question: '어떤 하드웨어에서 돌아가나요?',
       answer:
-        'Apple 실리콘의 Metal이 주력 대상이며, 모든 커널을 그곳에서 가장 먼저 작성하고 튜닝합니다. CUDA는 그다음으로, RTX와 DGX Spark에서 프로덕션으로 운영 중이며 데이터센터 GPU는 진행 중입니다. ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
+        'Apple 실리콘의 Metal이 주력 대상이며, 모든 커널을 그곳에서 가장 먼저 작성하고 튜닝합니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이며 튜닝을 진행하고 있고, H100, H200, B100, B200에서는 첫 실행을 마쳤습니다. AMD에서는 MI300에서 첫 실행을 마쳤고, ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
     },
     {
       question: '호스트 코드를 다시 작성해야 하나요?',

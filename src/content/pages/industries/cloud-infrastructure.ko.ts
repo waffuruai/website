@@ -68,7 +68,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'butter',
         need: '구성 요소가 더 적은 매니지드 추론.',
-        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust를 쓰며, 의존성은 최소한입니다. 양자화 체크포인트와 KV 캐시, 추측 디코딩, LoRA를 OpenAI 호환 API 뒤에서 제공합니다.',
+        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust를 써서 속도와 메모리 안전성을 갖췄습니다. 의존성이 최소한이어서 테넌트를 위해 떠안는 공급망 위험이 줄어듭니다. 양자화 체크포인트와 KV 캐시, 추측 디코딩, LoRA를 OpenAI 호환 API 뒤에서 제공합니다.',
       },
       {
         product: 'iron',
@@ -79,9 +79,9 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
   },
   whereWeAre: {
     title: '우리는 지금 *어디쯤*인가.',
-    lede: 'GPU 클라우드에 가장 중요한 이야기부터 하겠습니다. 데이터센터 GPU는 진행 중입니다. Syrup, Butter, Iron은 얼리 액세스 중이며 당분간 비공개 소스입니다.',
+    lede: 'GPU 클라우드에 가장 중요한 이야기부터 하겠습니다. 데이터센터 GPU는 첫 실행을 마친 단계로 아직 프로덕션은 아닙니다. Syrup, Butter, Iron은 얼리 액세스 중이며 당분간 비공개 소스입니다.',
     notes: [
-      'CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. 보유한 데이터센터 GPU 세대를 알려 주세요. 우리가 듣는 플릿 이야기가 무엇을 먼저 할지 결정합니다.',
+      'CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. H100, H200, B100, B200, MI300에서는 첫 실행을 마쳤습니다. 보유한 데이터센터 GPU 세대를 알려 주세요. 우리가 듣는 플릿 이야기가 무엇부터 튜닝할지 결정합니다.',
       'ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
       'CUDA나 ROCm에서 Butter가 다른 엔진을 앞선다고 주장하지 않습니다. 측정값을 공개할 때는 방법도 함께 공개하겠습니다.',
     ],
@@ -95,7 +95,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
     {
       question: '어떤 GPU를 지원하나요?',
       answer:
-        'Apple 실리콘은 Metal을 통해 주력입니다. NVIDIA는 CUDA를 통해 보조이며 RTX와 DGX Spark에서 프로덕션으로 운영 중이고 데이터센터 GPU는 진행 중입니다. AMD ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+        'Apple 실리콘은 Metal을 통해 주력입니다. NVIDIA는 CUDA를 통해 RTX와 DGX Spark에서 프로덕션으로 운영 중이며 튜닝을 진행하고 있고, H100, H200, B100, B200에서는 첫 실행을 마쳤습니다. AMD에서는 MI300에서 첫 실행을 마쳤고, ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
     },
     {
       question: '마진을 얼마나 늘려 주나요?',

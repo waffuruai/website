@@ -72,9 +72,9 @@ const neocloudsZh: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: '我们的*进度*。',
-    lede: 'Syrup 和 Butter 目前处于抢先体验阶段，暂未开源。CUDA 已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。',
+    lede: 'Syrup 和 Butter 目前处于抢先体验阶段，暂未开源。CUDA 已在 RTX 和 DGX Spark 上投入生产。H100、H200、B100、B200 和 MI300 已完成首次运行。',
     notes: [
-      '告诉我们你的 GPU 世代。数据中心级 CUDA 正在进行中，我们听到的集群情况会决定先做什么。',
+      '告诉我们你的 GPU 世代。我们听到的集群情况会决定先调优哪些。',
       'ROCm 和 Vulkan 目前可以运行，但尚未调优。',
       '我们不声称 Butter 在 CUDA 或 ROCm 上胜过其他引擎。等我们发布测量结果时，会连同方法一起给出。',
     ],
@@ -88,7 +88,7 @@ const neocloudsZh: (typeof neoclouds)['en'] = {
     {
       question: '它能在哪些 GPU 上运行？',
       answer:
-        'Apple 芯片上的 Metal 是首要。NVIDIA 通过 CUDA 其次，已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。AMD ROCm 和 Vulkan 可以运行，但尚未调优。',
+        'Apple 芯片上的 Metal 是首要。NVIDIA 通过 CUDA 已在 RTX 和 DGX Spark 上投入生产，正在调优，并已在 H100、H200、B100 和 B200 上完成首次运行。AMD 方面，已在 MI300 上完成首次运行，ROCm 和 Vulkan 可以运行，但尚未调优。',
     },
     {
       question: '我们为什么该信任这些遥测数据？',

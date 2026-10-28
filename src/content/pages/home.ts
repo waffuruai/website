@@ -113,7 +113,7 @@ export const home: Localized<HomeContent> = {
       title: 'From silicon to *answer*.',
       intro:
         'Six products that work alone or together. Your request goes down, the answer comes back, and none of it has to leave hardware you control.',
-      note: 'Pantry is free and open source today; the rest of the stack is in private early access, and Waffle is coming soon. Metal first, CUDA next; ROCm and Vulkan run, not tuned yet.',
+      note: 'Pantry is free and open source today; the rest of the stack is in private early access, and Waffle is coming soon. Metal first, CUDA being tuned, ROCm and Vulkan coming soon.',
       flow: {
         you: 'You, your team, your agents',
         boundary: 'Hardware you own or rent',

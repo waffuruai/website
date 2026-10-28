@@ -65,7 +65,7 @@ const financialServicesJa: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: '自社の境界の内側で、モデルを提供する。',
-        body: 'macOS と iOS では Swift、それ以外では Rust による OpenAI 互換のサービング。依存関係は最小限です。safetensors、MLX、JANG、GGUF のチェックポイントを直接読み込むので、新しいモデルに変換のパイプラインは要りません。',
+        body: 'macOS と iOS では Swift、それ以外では Rust による OpenAI 互換のサービングで、速さとメモリ安全性を備えています。依存関係は最小限なので、追跡すべきサプライチェーンのリスクが少なくなります。safetensors、MLX、JANG、GGUF のチェックポイントを直接読み込むので、新しいモデルに変換のパイプラインは要りません。',
       },
       {
         product: 'syrup',
@@ -86,7 +86,7 @@ const financialServicesJa: (typeof financialServices)['en'] = {
   },
   whereWeAre: {
     title: '私たちの*現在地*',
-    lede: 'ベンダー審査の場で知るより、ここで聞いておくほうがよいはずです。製品は、現時点で早期アクセスで、クローズドソースです。データセンター GPU は対応中です。',
+    lede: 'ベンダー審査の場で知るより、ここで聞いておくほうがよいはずです。製品は、現時点で早期アクセスで、クローズドソースです。データセンター GPU は初回の実行を終えた段階で、本番稼働ではありません。',
     notes: [
       'パイロットは、現時点でスタックが動作する Apple シリコン、RTX ワークステーション、DGX Spark で計画してください。',
       'ROCm と Vulkan は動作しますが、チューニングはこれからです。',
@@ -107,7 +107,7 @@ const financialServicesJa: (typeof financialServices)['en'] = {
     {
       question: '現時点で、どのハードウェアで動きますか？',
       answer:
-        'Metal 経由の Apple シリコンが第一です。CUDA 経由の NVIDIA は第二で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。AMD ROCm と Vulkan は動作しますが、チューニングはこれからです。',
+        'Metal 経由の Apple シリコンが第一です。CUDA 経由の NVIDIA は、RTX と DGX Spark では本番稼働中でチューニングを進めており、H100、H200、B100、B200 では初回の実行を終えています。AMD では MI300 で初回の実行を終えており、ROCm と Vulkan は動作しますが、チューニングはこれからです。',
     },
     {
       question: '規制対象のワークロード向けの認証はありますか？',

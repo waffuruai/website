@@ -61,14 +61,14 @@ const solutionsSharedFr: (typeof solutionsShared)['en'] = {
       {
         name: 'NVIDIA · CUDA',
         status: 'secondary',
-        statusLabel: 'Secondaire',
-        note: 'En production sur RTX et DGX Spark. GPU de datacenter en cours. CUDA → PTX.',
+        statusLabel: 'En optimisation',
+        note: 'En production sur RTX et DGX Spark, premières exécutions sur H100, H200, B100 et B200. CUDA → PTX.',
       },
       {
         name: 'AMD ROCm · Vulkan',
         status: 'runs',
-        statusLabel: 'Fonctionne',
-        note: 'Fonctionne aujourd’hui, pas encore optimisé. HIP → AMDGPU, Vulkan → SPIR-V.',
+        statusLabel: 'Bientôt',
+        note: 'Fonctionne aujourd’hui, pas encore optimisé, premières exécutions sur MI300. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
     runsOn: [
@@ -78,9 +78,10 @@ const solutionsSharedFr: (typeof solutionsShared)['en'] = {
       { label: 'Strix Halo' },
       { label: 'Flottes de neoclouds' },
       {
-        label: 'GPU de datacenter pour entreprises · en cours',
+        label: 'H100 · H200 · B100 · B200 · premières exécutions',
         inProgress: true,
       },
+      { label: 'MI300 · premières exécutions', inProgress: true },
     ],
   },
 };

@@ -86,7 +86,7 @@ export const government: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'Serve models on infrastructure you operate.',
-          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, with minimal dependencies. Existing tools change an address, not an SDK.',
+          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, for speed and memory safety. Minimal dependencies mean less supply-chain risk to review. Existing tools change an address, not an SDK.',
         },
         {
           product: 'syrup',
@@ -109,7 +109,7 @@ export const government: Localized<IndustryPage> = {
       title: 'Where we *are*.',
       lede: 'The products are in early access and closed source for now, and we make no compliance or accreditation claims. Here is what works today.',
       notes: [
-        'Plan pilots on Apple silicon, RTX workstations and DGX Spark, where the stack runs today. Datacenter GPUs are in progress.',
+        'Plan pilots on Apple silicon, RTX workstations and DGX Spark, where the stack runs today. On datacenter GPUs, first runs are done on H100, H200, B100, B200 and MI300.',
         'ROCm and Vulkan run but are not tuned yet.',
         'Most of the stack runs offline once models are on your machines. Air-gapped support is coming soon.',
         'Bring your procurement and security requirements to us directly, and we will answer them specifically.',
@@ -139,7 +139,7 @@ export const government: Localized<IndustryPage> = {
       {
         question: 'Which hardware does it support?',
         answer:
-          'Apple silicon through Metal is primary. NVIDIA through CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run but are not tuned yet.',
+          'Apple silicon through Metal is primary. NVIDIA through CUDA is in production on RTX and DGX Spark and being tuned, with first runs done on H100, H200, B100 and B200. On AMD, first runs are done on MI300, and ROCm and Vulkan run but are not tuned yet.',
       },
       {
         question: 'How do we evaluate it?',

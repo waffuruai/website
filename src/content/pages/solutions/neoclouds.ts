@@ -96,9 +96,9 @@ export const neoclouds: Localized<SolutionPage> = {
     },
     whereWeAre: {
       title: 'Where we *are*.',
-      lede: 'Syrup and Butter are in early access and closed source for now. CUDA is in production on RTX and DGX Spark, and datacenter GPUs are in progress.',
+      lede: 'Syrup and Butter are in early access and closed source for now. CUDA is in production on RTX and DGX Spark. First runs are done on H100, H200, B100, B200 and MI300.',
       notes: [
-        'Tell us your GPU generations. Datacenter CUDA is in progress, so the fleets we hear about shape what we do first.',
+        'Tell us your GPU generations. The fleets we hear about decide which ones we tune first.',
         'ROCm and Vulkan run today but are not tuned yet.',
         'We make no claim that Butter beats other engines on CUDA or ROCm. When we publish measurements, they will come with the method.',
       ],
@@ -112,7 +112,7 @@ export const neoclouds: Localized<SolutionPage> = {
       {
         question: 'What GPUs does it run on?',
         answer:
-          'Apple silicon through Metal is primary. NVIDIA through CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. AMD ROCm and Vulkan run but are not tuned yet.',
+          'Apple silicon through Metal is primary. NVIDIA through CUDA is in production on RTX and DGX Spark and being tuned, with first runs done on H100, H200, B100 and B200. On AMD, first runs are done on MI300, and ROCm and Vulkan run but are not tuned yet.',
       },
       {
         question: 'Why should we trust the telemetry?',

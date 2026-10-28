@@ -56,7 +56,7 @@ const ironFr: (typeof iron)['en'] = {
       },
       {
         title: 'Écrit en Rust',
-        body: 'Un DSL embarqué dans Rust. Les kernels sont des fonctions Rust annotées #[kernel], composées de primitives comme program_id, load et store.',
+        body: 'Un DSL embarqué dans Rust. Les kernels sont des fonctions Rust annotées #[kernel], composées de primitives comme program_id, load et store. Iron est lui-même écrit en Rust, pour la vitesse et la sûreté mémoire, et réduit ses dépendances au minimum, ce qui laisse moins de prise à une attaque de la chaîne d’approvisionnement.',
       },
       {
         title: 'Appelable depuis votre hôte',
@@ -72,7 +72,7 @@ const ironFr: (typeof iron)['en'] = {
       },
       {
         title: 'Optimisé là où ça compte',
-        body: 'Chaque kernel est d’abord écrit et optimisé sur Metal. CUDA est secondaire, et ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
+        body: 'Chaque kernel est d’abord écrit et optimisé sur Metal. CUDA est en cours d’optimisation, et ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
       },
     ],
   },
@@ -132,7 +132,7 @@ const ironFr: (typeof iron)['en'] = {
     {
       question: 'Sur quel matériel cela tourne-t-il ?',
       answer:
-        'Metal sur le silicium Apple est la cible principale : chaque kernel y est d’abord écrit et optimisé. CUDA est secondaire, en production sur RTX et DGX Spark, avec les GPU de datacenter en cours. ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
+        'Metal sur le silicium Apple est la cible principale : chaque kernel y est d’abord écrit et optimisé. CUDA est en production sur RTX et DGX Spark et en cours d’optimisation, avec de premières exécutions faites sur H100, H200, B100 et B200. Côté AMD, les premières exécutions sont faites sur MI300, et ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
     },
     {
       question: 'Dois-je réécrire mon code hôte ?',

@@ -103,7 +103,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
     notes: [
       'Iron에는 현재 약 1,139개의 커널 선언이 있습니다.',
       'HIP와 Vulkan은 4,164개 중 4,164개 테스트 케이스를 비트 단위로 정확하게 통과하지만, 아직 튜닝하지는 않았습니다.',
-      'CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이며, 데이터센터 GPU는 진행 중입니다.',
+      'CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이며, H100, H200, B100, B200에서는 첫 실행을 마쳤습니다.',
     ],
   },
   faq: [

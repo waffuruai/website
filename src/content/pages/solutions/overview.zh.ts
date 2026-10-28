@@ -38,7 +38,7 @@ const solutionsOverviewZh: (typeof solutionsOverview)['en'] = {
         title: '更好的*推理*。',
         body: '为每种后端调优的内核，量化模型与 KV 缓存，以及推测解码，运行在依赖极少的引擎里。',
         points: [
-          'Metal 优先，其次 CUDA，ROCm 和 Vulkan 可运行',
+          'Metal 优先，CUDA 调优中，ROCm 和 Vulkan 即将推出',
           '无需转换，直接加载 Hugging Face 模型',
           '文本、视觉、语音和全模态模型',
         ],

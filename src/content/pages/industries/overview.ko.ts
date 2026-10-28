@@ -44,7 +44,7 @@ const industriesOverviewKo: (typeof industriesOverview)['en'] = {
         title: '*구성 요소*는 더 적게.',
         body: 'Butter는 최소한의 의존성으로 모델을 서빙합니다. macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 쓰며, 백엔드별로 튜닝한 커널 위에서 돌아갑니다. 안전성과 최고의 성능을 타협 없이 얻을 수 있습니다. 패치할 것도, 고장 날 것도, 설명할 것도 줄어듭니다.',
         points: [
-          'Metal이 먼저, 그다음 CUDA, ROCm과 Vulkan은 구동 중',
+          'Metal이 먼저, CUDA는 튜닝 중, ROCm과 Vulkan은 곧 지원',
           'OpenAI 호환 서빙이라 기존 앱이 그대로 동작',
           '변환 없이 Hugging Face 모델 로드',
         ],

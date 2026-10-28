@@ -150,11 +150,12 @@ describe.each(solutionSlugs)('SolutionPage: %s', (slug) => {
   it('says where we are: early access and the hardware tiers', () => {
     renderPage(slug);
     expect(screen.getByText('Primary')).toBeTruthy();
-    expect(screen.getByText('Secondary')).toBeTruthy();
-    expect(screen.getByText('Runs')).toBeTruthy();
+    expect(screen.getByText('Tuning')).toBeTruthy();
+    expect(screen.getByText('Coming soon')).toBeTruthy();
     expect(
-      screen.getByText('Enterprise datacenter GPUs · in progress'),
+      screen.getByText('H100 · H200 · B100 · B200 · first runs'),
     ).toBeTruthy();
+    expect(screen.getByText('MI300 · first runs')).toBeTruthy();
   });
 });
 

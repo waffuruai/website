@@ -101,7 +101,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
     notes: [
       'Iron 目前有大约 1,139 个内核声明。',
       'HIP 和 Vulkan 在 4,164 个测试用例中全部逐位精确通过（4,164/4,164），但尚未调优。',
-      'CUDA 已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。',
+      'CUDA 已在 RTX 和 DGX Spark 上投入生产，并已在 H100、H200、B100 和 B200 上完成首次运行。',
     ],
   },
   faq: [

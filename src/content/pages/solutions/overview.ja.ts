@@ -39,7 +39,7 @@ const solutionsOverviewJa: (typeof solutionsOverview)['en'] = {
         title: 'より良い*推論*',
         body: 'バックエンドごとにチューニングしたカーネル、量子化されたモデルと KV キャッシュ、投機的デコーディング。それを、依存関係が最小限のエンジンで。',
         points: [
-          'まず Metal、次に CUDA、ROCm と Vulkan は動作',
+          'まず Metal、CUDA はチューニング中、ROCm と Vulkan は近日対応',
           '変換なしで Hugging Face のモデルを読み込み',
           'テキスト、ビジョン、音声、オムニの各モデル',
         ],

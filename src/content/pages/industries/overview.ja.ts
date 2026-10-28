@@ -44,7 +44,7 @@ const industriesOverviewJa: (typeof industriesOverview)['en'] = {
         title: '*構成要素*を、より少なく。',
         body: 'Butter は最小限の依存関係でモデルを提供します。macOS と iOS では Swift、それ以外ではすべて Rust を使い、バックエンドごとにチューニングしたカーネルの上で動きます。安全性と最大限の性能を、妥協なく両立します。パッチを当てるもの、壊れるもの、説明すべきものが減ります。',
         points: [
-          'まず Metal、次に CUDA、ROCm と Vulkan は動作',
+          'まず Metal、CUDA はチューニング中、ROCm と Vulkan は近日対応',
           'OpenAI 互換のサービング。アプリはそのまま動く',
           '変換なしで Hugging Face のモデルを読み込み',
         ],

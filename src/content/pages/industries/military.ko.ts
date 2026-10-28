@@ -4,7 +4,7 @@ const militaryKo: (typeof military)['en'] = {
   seo: {
     title: '군·국방을 위한 프라이빗 AI 추론',
     description:
-      'Mac부터 RTX 워크스테이션, DGX Spark까지 직접 소유하고 보호하는 하드웨어에서, 의존성을 최소화한 작은 서빙 스택으로 유능한 모델을 돌리세요. 얼리 액세스.',
+      '온디바이스 현장 로보틱스부터 현장 워크스테이션, 지휘 센터, 프라이빗 클라우드까지, 자체 인프라에 유능한 모델을 배포하세요. 얼리 액세스.',
     keywords: [
       '국방 AI 인프라',
       '군 AI 추론',
@@ -22,7 +22,7 @@ const militaryKo: (typeof military)['en'] = {
   },
   hero: {
     title: '직접 *소유한* 하드웨어 위의 유능한 AI.',
-    lede: 'Mac Studio부터 RTX 워크스테이션, DGX Spark까지, 직접 구매하고 보관하며 보호하는 머신에서 모델을 돌리세요. 서빙 스택은 작고 의존성이 최소한이어서, 보안을 강화할 대상도, 믿어야 할 대상도 줄어듭니다.',
+    lede: '스택을 자체 인프라에 배포할 수 있습니다. 온디바이스로 동작하는 현장 로보틱스와 방위 시스템부터 현장의 워크스테이션, 지휘 센터, 프라이빗 클라우드까지. 서빙 스택은 작고 의존성이 최소한이어서, 보안을 강화할 대상도, 믿어야 할 대상도 줄어듭니다.',
   },
   problem: {
     title: '모든 의존성은 하나의 *문*입니다.',
@@ -65,7 +65,7 @@ const militaryKo: (typeof military)['en'] = {
       {
         product: 'butter',
         need: '검증할 것이 적은 서빙 스택.',
-        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust로 만든 OpenAI 호환 서빙이며, 의존성은 최소한입니다. safetensors, MLX, JANG, GGUF 체크포인트를 변환 단계 없이 직접 불러옵니다.',
+        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust로 만든 OpenAI 호환 서빙으로, 속도와 메모리 안전성을 갖췄습니다. 의존성이 최소한이어서 공급망 공격의 여지가 줄어듭니다. safetensors, MLX, JANG, GGUF 체크포인트를 변환 단계 없이 직접 불러옵니다.',
       },
       {
         product: 'syrup',
@@ -83,8 +83,8 @@ const militaryKo: (typeof military)['en'] = {
     title: '우리는 지금 *어디쯤*인가.',
     lede: '제품은 얼리 액세스 중이며 당분간 비공개 소스입니다. 컴플라이언스, 인증, 인가에 관해 어떤 주장도 하지 않으며, 심사 자리보다 여기서 먼저 말씀드리는 편이 낫다고 생각합니다.',
     notes: [
-      'Apple 실리콘은 모든 커널을 가장 먼저 튜닝하는 곳입니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이고, 데이터센터 GPU는 진행 중입니다.',
-      'ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+      'Apple 실리콘은 모든 커널을 가장 먼저 튜닝하는 곳입니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이고, H100, H200, B100, B200에서는 첫 실행을 마쳤습니다.',
+      'AMD에서는 MI300에서 첫 실행을 마쳤습니다. ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
       '모델을 직접 보유한 머신에 올려 두면 스택 대부분이 오프라인으로 동작합니다. 에어갭 환경은 곧 지원할 예정입니다.',
       '보안 요구 사항과 하드웨어를 알려 주시면 구체적으로 답변드리겠습니다.',
     ],
@@ -98,7 +98,7 @@ const militaryKo: (typeof military)['en'] = {
     {
       question: '어떤 하드웨어에서 돌아가나요?',
       answer:
-        '직접 구매하고 보관할 수 있는 범용 하드웨어입니다. Apple 실리콘은 Metal을 통해 주력이고, NVIDIA는 CUDA를 통해 RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. 데이터센터 GPU는 진행 중이며, AMD ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+        '직접 구매하고 보관할 수 있는 범용 하드웨어입니다. Apple 실리콘은 Metal을 통해 주력이고, NVIDIA는 CUDA를 통해 RTX와 DGX Spark에서 프로덕션으로 운영 중이며 H100, H200, B100, B200에서는 첫 실행을 마쳤습니다. AMD에서는 MI300에서 첫 실행을 마쳤고, ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
     },
     {
       question: '의존성이 최소한이라는 것이 왜 중요한가요?',

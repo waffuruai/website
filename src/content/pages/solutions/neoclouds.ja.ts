@@ -82,9 +82,9 @@ const neocloudsJa: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: '私たちの*現在地*',
-    lede: 'Syrup と Butter は、現時点で早期アクセスで、クローズドソースです。CUDA は RTX と DGX Spark で本番稼働中で、データセンター GPU は対応中です。',
+    lede: 'Syrup と Butter は、現時点で早期アクセスで、クローズドソースです。CUDA は RTX と DGX Spark で本番稼働中です。H100、H200、B100、B200、MI300 では初回の実行を終えています。',
     notes: [
-      'お使いの GPU の世代を教えてください。データセンター向けの CUDA は対応中なので、お聞きするフリートの状況が、何から先に取り組むかを左右します。',
+      'お使いの GPU の世代を教えてください。お聞きするフリートの状況が、どれから先にチューニングするかを左右します。',
       'ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
       'CUDA や ROCm で Butter が他のエンジンを上回るとは主張しません。計測結果を公開するときは、方法も併せて示します。',
     ],
@@ -98,7 +98,7 @@ const neocloudsJa: (typeof neoclouds)['en'] = {
     {
       question: 'どの GPU で動きますか？',
       answer:
-        'Metal 経由の Apple シリコンが第一です。CUDA 経由の NVIDIA は第二で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。AMD ROCm と Vulkan は動作しますが、チューニングはこれからです。',
+        'Metal 経由の Apple シリコンが第一です。CUDA 経由の NVIDIA は、RTX と DGX Spark では本番稼働中でチューニングを進めており、H100、H200、B100、B200 では初回の実行を終えています。AMD では MI300 で初回の実行を終えており、ROCm と Vulkan は動作しますが、チューニングはこれからです。',
     },
     {
       question: 'テレメトリを信頼できる理由は何ですか？',

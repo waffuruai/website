@@ -45,7 +45,7 @@ const homeZh: (typeof home)['en'] = {
     title: '从芯片到*答案*。',
     intro:
       '六款产品，可单独使用，也可组合使用。请求向下传递，答案原路返回，全程都不必离开你掌控的硬件。',
-    note: 'Pantry 今天已免费开源；技术栈的其余部分处于非公开抢先体验阶段，Waffle 即将推出。Metal 优先，CUDA 其次；ROCm 和 Vulkan 可以运行，但尚未调优。',
+    note: 'Pantry 今天已免费开源；技术栈的其余部分处于非公开抢先体验阶段，Waffle 即将推出。Metal 优先，CUDA 调优中，ROCm 和 Vulkan 即将推出。',
     flow: {
       you: '你、你的团队、你的智能体',
       boundary: '你自有或租用的硬件',

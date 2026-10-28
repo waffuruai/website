@@ -61,14 +61,14 @@ const solutionsSharedEs: (typeof solutionsShared)['en'] = {
       {
         name: 'NVIDIA · CUDA',
         status: 'secondary',
-        statusLabel: 'Secundario',
-        note: 'En producción en RTX y DGX Spark. Las GPU de centros de datos están en desarrollo. CUDA → PTX.',
+        statusLabel: 'Afinando',
+        note: 'En producción en RTX y DGX Spark, con primeras ejecuciones en H100, H200, B100 y B200. CUDA → PTX.',
       },
       {
         name: 'AMD ROCm · Vulkan',
         status: 'runs',
-        statusLabel: 'Funciona',
-        note: 'Funciona hoy, aún sin afinar. HIP → AMDGPU, Vulkan → SPIR-V.',
+        statusLabel: 'Próximamente',
+        note: 'Funciona hoy, aún sin afinar, con primeras ejecuciones en MI300. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
     runsOn: [
@@ -78,9 +78,10 @@ const solutionsSharedEs: (typeof solutionsShared)['en'] = {
       { label: 'Strix Halo' },
       { label: 'Flotas de neoclouds' },
       {
-        label: 'GPU de centros de datos empresariales · en desarrollo',
+        label: 'H100 · H200 · B100 · B200 · primeras ejecuciones',
         inProgress: true,
       },
+      { label: 'MI300 · primeras ejecuciones', inProgress: true },
     ],
   },
 };

@@ -40,4 +40,4 @@ The design is Tom's "After Hours" page (`design/after-hours.html` is the referen
 
 ## Voice (from MARKETING.md)
 
-The reader is the protagonist; Waffuru is the means. Lead with the job to be done and the outcome (money and time saved, control, privacy), not feature lists. Minimal, confident, concrete; food puns welcome in moderation ("Who's in the kitchen."). Honest: products are private / early access; say so. Metal is primary, CUDA secondary, ROCm/Vulkan "runs, not tuned yet". Never claim CUDA or ROCm beats other engines.
+The reader is the protagonist; Waffuru is the means. Lead with the job to be done and the outcome (money and time saved, control, privacy), not feature lists. Minimal, confident, concrete; food puns welcome in moderation ("Who's in the kitchen."). Honest: products are private / early access; say so. Platform tiers: Metal "Primary"; CUDA "Tuning" (in production on RTX and DGX Spark, first runs on H100, H200, B100 and B200); ROCm/Vulkan "Coming soon" (they run, not tuned yet; first runs on MI300). Never claim CUDA or ROCm beats other engines.

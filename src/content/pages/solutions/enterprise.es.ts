@@ -86,10 +86,10 @@ const enterpriseEs: (typeof enterprise)['en'] = {
   },
   whereWeAre: {
     title: 'Dónde *estamos*.',
-    lede: 'Las GPU de centros de datos empresariales están en desarrollo, y preferimos decirlo desde el principio. Los productos están en acceso anticipado y son de código cerrado por ahora.',
+    lede: 'En GPU de centros de datos tenemos primeras ejecuciones, no producción, y preferimos decirlo desde el principio. Los productos están en acceso anticipado y son de código cerrado por ahora.',
     notes: [
       'Planifica los pilotos en torno a Apple silicon, estaciones de trabajo RTX y DGX Spark, donde el stack funciona hoy.',
-      'Las GPU de centros de datos están en desarrollo. Si son tu objetivo, dinos cuáles, porque eso define qué construimos primero.',
+      'Las primeras ejecuciones ya están hechas en H100, H200, B100, B200 y MI300. Si las GPU de centros de datos son tu objetivo, dinos cuáles, porque eso define qué afinamos primero.',
       'ROCm y Vulkan funcionan, pero aún sin afinar.',
     ],
   },
@@ -98,12 +98,12 @@ const enterpriseEs: (typeof enterprise)['en'] = {
       question:
         '¿Podemos ejecutarlo en nuestras instalaciones o en una nube privada?',
       answer:
-        'Así está construido. Butter sirve modelos en hardware que tú operas, y los datos de un usuario se quedan en su equipo a menos que lo autorice. El soporte para GPU de centros de datos está en desarrollo, así que cuéntanos en qué planeas desplegarlo.',
+        'Así está construido. Butter sirve modelos en hardware que tú operas, y los datos de un usuario se quedan en su equipo a menos que lo autorice. Las primeras ejecuciones en GPU de centros de datos ya están hechas, así que cuéntanos en cuáles planeas desplegarlo.',
     },
     {
       question: '¿Qué GPU admite hoy?',
       answer:
-        'Apple silicon mediante Metal es el principal, y NVIDIA mediante CUDA es secundario y está en producción en RTX y DGX Spark. AMD ROCm y Vulkan funcionan, pero aún sin afinar. Las GPU de centros de datos empresariales están en desarrollo.',
+        'Apple silicon mediante Metal es el principal, y NVIDIA mediante CUDA está en producción en RTX y DGX Spark y se está afinando, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200. En AMD, las primeras ejecuciones en MI300 ya están hechas, y ROCm y Vulkan funcionan, pero aún sin afinar.',
     },
     {
       question: '¿Tenemos que reemplazar el stack de serving que ya usamos?',

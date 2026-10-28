@@ -78,9 +78,9 @@ const neocloudsKo: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: '우리는 지금 *어디쯤*인가.',
-    lede: 'Syrup과 Butter는 얼리 액세스 중이며 당분간 비공개 소스입니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이고, 데이터센터 GPU는 진행 중입니다.',
+    lede: 'Syrup과 Butter는 얼리 액세스 중이며 당분간 비공개 소스입니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. H100, H200, B100, B200, MI300에서는 첫 실행을 마쳤습니다.',
     notes: [
-      '보유한 GPU 세대를 알려 주세요. 데이터센터용 CUDA는 진행 중이므로, 우리가 듣는 플릿 이야기가 무엇을 먼저 할지 결정합니다.',
+      '보유한 GPU 세대를 알려 주세요. 우리가 듣는 플릿 이야기가 무엇부터 튜닝할지 결정합니다.',
       'ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
       'CUDA나 ROCm에서 Butter가 다른 엔진을 앞선다고 주장하지 않습니다. 측정값을 공개할 때는 방법도 함께 공개하겠습니다.',
     ],
@@ -94,7 +94,7 @@ const neocloudsKo: (typeof neoclouds)['en'] = {
     {
       question: '어떤 GPU에서 돌아가나요?',
       answer:
-        'Apple 실리콘은 Metal을 통해 주력입니다. NVIDIA는 CUDA를 통해 보조이며 RTX와 DGX Spark에서 프로덕션으로 운영 중이고 데이터센터 GPU는 진행 중입니다. AMD ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+        'Apple 실리콘은 Metal을 통해 주력입니다. NVIDIA는 CUDA를 통해 RTX와 DGX Spark에서 프로덕션으로 운영 중이며 튜닝을 진행하고 있고, H100, H200, B100, B200에서는 첫 실행을 마쳤습니다. AMD에서는 MI300에서 첫 실행을 마쳤고, ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
     },
     {
       question: '텔레메트리를 왜 믿어야 하나요?',

@@ -63,14 +63,14 @@ export const kernelCode: Localized<KernelCodeCopy> = {
       {
         name: 'NVIDIA · CUDA',
         level: 'secondary',
-        label: 'Secondary',
+        label: 'Tuning',
         note: 'In production on RTX and DGX Spark. CUDA → PTX.',
       },
       {
         name: 'AMD ROCm · Vulkan',
         level: 'runs',
-        label: 'Runs',
-        note: 'Moving fast on AMD. HIP → AMDGPU, Vulkan → SPIR-V.',
+        label: 'Coming soon',
+        note: 'Moving fast on AMD, with first runs on MI300. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
     runsOn: {
@@ -82,7 +82,7 @@ export const kernelCode: Localized<KernelCodeCopy> = {
         'Strix Halo',
         'Neocloud fleets',
       ],
-      pending: 'Enterprise datacenter GPUs · next',
+      pending: 'H100 · H200 · B100 · B200 · first runs',
     },
   },
   es,

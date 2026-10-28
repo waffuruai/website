@@ -154,7 +154,7 @@ const butterJa: (typeof butter)['en'] = {
       {
         term: 'ランタイム',
         detail:
-          'macOS と iOS では Metal 上の Swift（macOS は 14 以降）、CUDA などそれ以外では Rust。依存関係は最小限。',
+          'macOS と iOS では Metal 上の Swift（macOS は 14 以降）、CUDA などそれ以外では Rust。依存関係は最小限で、サプライチェーンのリスクを抑えます。',
       },
       {
         term: 'モデル形式',
@@ -240,7 +240,7 @@ const butterJa: (typeof butter)['en'] = {
   platforms: {
     heading: '*動作*する環境',
     intro:
-      'Metal が第一の対象です。CUDA は第二で、ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。',
+      'Metal が第一の対象です。CUDA はチューニングを進めているところで、ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -273,7 +273,7 @@ const butterJa: (typeof butter)['en'] = {
     {
       question: 'どのハードウェアで動きますか？',
       answer:
-        'Apple シリコン向けの Metal 上の Swift が第一の対象で、macOS 14 以降の MacBook から Mac Studio まで対応します。CUDA は第二の対象で、RTX と DGX Spark では本番稼働中です。ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。',
+        'Apple シリコン向けの Metal 上の Swift が第一の対象で、macOS 14 以降の MacBook から Mac Studio まで対応します。CUDA は RTX と DGX Spark では本番稼働中で、チューニングを進めています。ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。',
     },
     {
       question: 'どのモデルが動きますか？',
@@ -283,7 +283,7 @@ const butterJa: (typeof butter)['en'] = {
     {
       question: 'Butter は何で書かれていますか？',
       answer:
-        'macOS と iOS では Swift、それ以外ではすべて Rust です。Butter は依存関係を最小限に抑え、バックエンドごとにチューニングしたカーネルの上で動くので、安全性と最大限の性能を妥協なく両立できます。',
+        'macOS と iOS では Swift、それ以外ではすべて Rust で、速さとメモリ安全性を備えています。Butter は依存関係を最小限に抑えているので、サプライチェーン攻撃の入り込む余地が少なく、バックエンドごとにチューニングしたカーネルの上で動きます。',
     },
     {
       question: 'いま使っているツールやエージェントハーネスは使えますか？',

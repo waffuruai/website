@@ -56,7 +56,7 @@ const ironEs: (typeof iron)['en'] = {
       },
       {
         title: 'Escrito en Rust',
-        body: 'Un DSL embebido en Rust. Los kernels son funciones de Rust marcadas con #[kernel], construidas con primitivas como program_id, load y store.',
+        body: 'Un DSL embebido en Rust. Los kernels son funciones de Rust marcadas con #[kernel], construidas con primitivas como program_id, load y store. Iron está escrito en Rust, por velocidad y seguridad de memoria, y mantiene sus dependencias al mínimo, lo que deja menos margen a un ataque a la cadena de suministro.',
       },
       {
         title: 'Invocable desde tu host',
@@ -72,7 +72,7 @@ const ironEs: (typeof iron)['en'] = {
       },
       {
         title: 'Afinado donde importa',
-        body: 'Cada kernel se escribe y se afina primero en Metal. CUDA es secundario, y ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
+        body: 'Cada kernel se escribe y se afina primero en Metal. CUDA se está afinando ahora, y ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
       },
     ],
   },
@@ -132,7 +132,7 @@ const ironEs: (typeof iron)['en'] = {
     {
       question: '¿En qué hardware funciona?',
       answer:
-        'Metal en Apple silicon es el objetivo principal: cada kernel se escribe y se afina allí primero. CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
+        'Metal en Apple silicon es el objetivo principal: cada kernel se escribe y se afina allí primero. CUDA está en producción en RTX y DGX Spark y se está afinando, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200. En AMD, las primeras ejecuciones en MI300 ya están hechas, y ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
     },
     {
       question: '¿Tengo que reescribir el código de mi host?',

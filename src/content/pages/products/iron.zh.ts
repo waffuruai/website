@@ -52,7 +52,7 @@ const ironZh: (typeof iron)['en'] = {
       },
       {
         title: '用 Rust 编写',
-        body: '嵌入 Rust 的 DSL。内核是标注了 #[kernel] 的 Rust 函数，由 program_id、load、store 等基本操作构成。',
+        body: '嵌入 Rust 的 DSL。内核是标注了 #[kernel] 的 Rust 函数，由 program_id、load、store 等基本操作构成。Iron 本身用 Rust 编写，兼顾速度与内存安全；它把依赖降到最少，供应链攻击的可乘之机更少。',
       },
       {
         title: '可从你的宿主代码调用',
@@ -68,7 +68,7 @@ const ironZh: (typeof iron)['en'] = {
       },
       {
         title: '调优用在刀刃上',
-        body: '每个内核都先在 Metal 上编写并调优。CUDA 其次，ROCm 和 Vulkan 目前可以运行，但尚未调优。',
+        body: '每个内核都先在 Metal 上编写并调优。CUDA 正在调优，ROCm 和 Vulkan 目前可以运行，但尚未调优。',
       },
     ],
   },
@@ -122,7 +122,7 @@ const ironZh: (typeof iron)['en'] = {
     {
       question: '它能在哪些硬件上运行？',
       answer:
-        'Apple 芯片上的 Metal 是首要目标：每个内核都先在那里编写并调优。CUDA 其次，已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。ROCm 和 Vulkan 目前可以运行，但尚未调优。',
+        'Apple 芯片上的 Metal 是首要目标：每个内核都先在那里编写并调优。CUDA 已在 RTX 和 DGX Spark 上投入生产，正在调优，并已在 H100、H200、B100 和 B200 上完成首次运行。AMD 方面，已在 MI300 上完成首次运行，ROCm 和 Vulkan 目前可以运行，但尚未调优。',
     },
     {
       question: '我需要重写宿主代码吗？',

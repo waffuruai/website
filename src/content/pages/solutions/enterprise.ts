@@ -9,8 +9,9 @@ import enterpriseKo from './enterprise.ko';
 
 /*
  * Enterprise: on-prem or private-cloud inference for sensitive data, with
- * one view of every GPU. Datacenter GPUs are in progress and the page says
- * so. Do not claim certifications, SSO, audit logging or air-gap support
+ * one view of every GPU. Datacenter GPUs have first runs only (H100, H200,
+ * B100, B200 and MI300; founder, 2026-10-28), not tuning or production, and
+ * the page says so. Do not claim certifications, SSO, audit logging or air-gap support
  * until a human confirms them.
  *
  * TODO(founder): confirm (1) exactly what Syrup's signed telemetry contains
@@ -104,10 +105,10 @@ export const enterprise: Localized<SolutionPage> = {
     },
     whereWeAre: {
       title: 'Where we *are*.',
-      lede: 'Enterprise datacenter GPUs are in progress, and we would rather say so up front. The products are in early access and closed source for now.',
+      lede: 'On datacenter GPUs we have first runs, not production, and we would rather say so up front. The products are in early access and closed source for now.',
       notes: [
         'Plan pilots around Apple silicon, RTX workstations and DGX Spark, where the stack runs today.',
-        'Datacenter GPUs are in progress. If they are your target, tell us which ones, because it shapes what we build first.',
+        'First runs are done on H100, H200, B100, B200 and MI300. If datacenter GPUs are your target, tell us which ones, because it shapes what we tune first.',
         'ROCm and Vulkan run but are not tuned yet.',
       ],
     },
@@ -115,12 +116,12 @@ export const enterprise: Localized<SolutionPage> = {
       {
         question: 'Can we run it on-prem or in a private cloud?',
         answer:
-          'That is how it is built. Butter serves models on hardware you operate, and a user’s data stays on their machine unless they opt in. Datacenter GPU support is in progress, so tell us what you plan to deploy on.',
+          'That is how it is built. Butter serves models on hardware you operate, and a user’s data stays on their machine unless they opt in. First runs are done on datacenter GPUs, so tell us which ones you plan to deploy on.',
       },
       {
         question: 'Which GPUs does it support today?',
         answer:
-          'Apple silicon through Metal is primary, and NVIDIA through CUDA is secondary and in production on RTX and DGX Spark. AMD ROCm and Vulkan run but are not tuned yet. Enterprise datacenter GPUs are in progress.',
+          'Apple silicon through Metal is primary, and NVIDIA through CUDA is in production on RTX and DGX Spark and being tuned, with first runs done on H100, H200, B100 and B200. On AMD, first runs are done on MI300, and ROCm and Vulkan run but are not tuned yet.',
       },
       {
         question: 'Do we have to replace the serving stack we already run?',

@@ -44,7 +44,7 @@ const industriesOverviewFr: (typeof industriesOverview)['en'] = {
         title: 'Moins de *rouages*.',
         body: 'Butter sert des modèles avec un minimum de dépendances, en Swift pour macOS et iOS et en Rust pour tout le reste, sur des kernels optimisés pour chaque backend. Vous obtenez la sécurité et des performances maximales, sans compromis. Moins à corriger, moins de pannes possibles et moins à expliquer.',
         points: [
-          'Metal d’abord, CUDA ensuite, ROCm et Vulkan fonctionnent',
+          'Metal d’abord, CUDA en cours d’optimisation, ROCm et Vulkan bientôt',
           'Serving compatible OpenAI : vos applications continuent de fonctionner',
           'Charge les modèles Hugging Face sans conversion',
         ],

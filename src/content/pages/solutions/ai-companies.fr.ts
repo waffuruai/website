@@ -105,7 +105,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
     notes: [
       'Iron compte aujourd’hui environ 1 139 déclarations de kernels.',
       'HIP et Vulkan passent un corpus de tests de 4 164 cas sur 4 164, exacts au bit près, mais ne sont pas encore optimisés.',
-      'CUDA est en production sur RTX et DGX Spark, avec les GPU de datacenter en cours.',
+      'CUDA est en production sur RTX et DGX Spark, avec de premières exécutions faites sur H100, H200, B100 et B200.',
     ],
   },
   faq: [

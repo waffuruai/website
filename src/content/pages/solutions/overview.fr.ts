@@ -39,7 +39,7 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
         title: 'Une meilleure *inférence*.',
         body: 'Des kernels optimisés pour chaque backend, des modèles et un cache KV quantifiés, et du décodage spéculatif, dans un moteur avec un minimum de dépendances.',
         points: [
-          'Metal d’abord, CUDA ensuite, ROCm et Vulkan fonctionnent',
+          'Metal d’abord, CUDA en cours d’optimisation, ROCm et Vulkan bientôt',
           'Charge les modèles Hugging Face sans conversion',
           'Modèles de texte, de vision, de voix et omni',
         ],

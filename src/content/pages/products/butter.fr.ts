@@ -155,7 +155,7 @@ const butterFr: (typeof butter)['en'] = {
       {
         term: 'Runtime',
         detail:
-          'Swift sur Metal pour macOS et iOS, avec macOS 14 ou plus récent. Rust pour CUDA et tout le reste. Un minimum de dépendances.',
+          'Swift sur Metal pour macOS et iOS, avec macOS 14 ou plus récent. Rust pour CUDA et tout le reste. Un minimum de dépendances, pour moins de risques sur la chaîne d’approvisionnement.',
       },
       {
         term: 'Formats de modèles',
@@ -241,7 +241,7 @@ const butterFr: (typeof butter)['en'] = {
   platforms: {
     heading: 'Où ça *tourne*.',
     intro:
-      'Metal est la cible principale. CUDA est secondaire, et AMD via ROCm et Vulkan avance vite.',
+      'Metal est la cible principale. CUDA est en cours d’optimisation, et AMD via ROCm et Vulkan avance vite.',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -274,7 +274,7 @@ const butterFr: (typeof butter)['en'] = {
     {
       question: 'Sur quel matériel cela tourne-t-il ?',
       answer:
-        'Swift sur Metal pour le silicium Apple est la cible principale, du MacBook au Mac Studio sous macOS 14 ou plus récent. CUDA est secondaire, en production sur RTX et DGX Spark. AMD via ROCm et Vulkan avance vite.',
+        'Swift sur Metal pour le silicium Apple est la cible principale, du MacBook au Mac Studio sous macOS 14 ou plus récent. CUDA est en production sur RTX et DGX Spark et en cours d’optimisation. AMD via ROCm et Vulkan avance vite.',
     },
     {
       question: 'Quels modèles fait-il tourner ?',
@@ -284,7 +284,7 @@ const butterFr: (typeof butter)['en'] = {
     {
       question: 'En quoi Butter est-il écrit ?',
       answer:
-        'En Swift pour macOS et iOS, et en Rust pour tout le reste. Butter réduit ses dépendances au minimum et tourne sur des kernels optimisés pour chaque backend : vous obtenez la sécurité et des performances maximales, sans compromis.',
+        'En Swift pour macOS et iOS, et en Rust pour tout le reste, pour la vitesse et la sûreté mémoire. Butter réduit ses dépendances au minimum, ce qui laisse moins de prise à une attaque de la chaîne d’approvisionnement, et tourne sur des kernels optimisés pour chaque backend.',
     },
     {
       question:

@@ -103,7 +103,7 @@ export const lifeSciences: Localized<IndustryPage> = {
       lede: 'The products are in early access and closed source for now. We make no compliance or validation claims, so ask us about your requirements directly.',
       notes: [
         'A Mac Studio or an RTX workstation is the easiest place to start: Metal is primary, and CUDA is in production on RTX and DGX Spark.',
-        'Datacenter GPUs are in progress. ROCm and Vulkan run but are not tuned yet.',
+        'On datacenter GPUs, first runs are done on H100, H200, B100, B200 and MI300. ROCm and Vulkan run but are not tuned yet.',
         'Whisk cites its sources, but it does not check the science. Your reviewers still do.',
       ],
     },

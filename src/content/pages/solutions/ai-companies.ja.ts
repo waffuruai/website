@@ -103,7 +103,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
     notes: [
       '現在、Iron には約 1,139 個のカーネル宣言があります。',
       'HIP と Vulkan は、テストコーパス 4,164 件のうち 4,164 件でビット単位の一致を確認していますが、チューニングはこれからです。',
-      'CUDA は RTX と DGX Spark で本番稼働中で、データセンター GPU は対応中です。',
+      'CUDA は RTX と DGX Spark で本番稼働中で、H100、H200、B100、B200 では初回の実行を終えています。',
     ],
   },
   faq: [

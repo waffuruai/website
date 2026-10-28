@@ -51,7 +51,7 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
           title: 'Better *inference*.',
           body: 'Kernels tuned for each backend, quantized models and KV cache, and speculative decoding, in an engine with minimal dependencies.',
           points: [
-            'Metal first, CUDA next, ROCm and Vulkan running',
+            'Metal first, CUDA being tuned, ROCm and Vulkan coming soon',
             'Loads Hugging Face models with no conversion',
             'Text, vision, speech and omni models',
           ],

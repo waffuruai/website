@@ -104,7 +104,7 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
     notes: [
       'Hoy hay aproximadamente 1.139 declaraciones de kernel en Iron.',
       'HIP y Vulkan pasan un corpus de pruebas de 4.164 de 4.164 casos con exactitud bit a bit, pero aún no están afinados.',
-      'CUDA está en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo.',
+      'CUDA está en producción en RTX y DGX Spark, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200.',
     ],
   },
   faq: [

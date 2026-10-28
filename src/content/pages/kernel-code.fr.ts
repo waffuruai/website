@@ -35,14 +35,14 @@ const copy: KernelCodeCopy = {
     {
       name: 'NVIDIA · CUDA',
       level: 'secondary',
-      label: 'Secondaire',
+      label: 'En optimisation',
       note: 'En production sur RTX et DGX Spark. CUDA → PTX.',
     },
     {
       name: 'AMD ROCm · Vulkan',
       level: 'runs',
-      label: 'Fonctionne',
-      note: 'Avance vite sur AMD. HIP → AMDGPU, Vulkan → SPIR-V.',
+      label: 'Bientôt',
+      note: 'Avance vite sur AMD, premières exécutions sur MI300. HIP → AMDGPU, Vulkan → SPIR-V.',
     },
   ],
   runsOn: {
@@ -54,7 +54,7 @@ const copy: KernelCodeCopy = {
       'Strix Halo',
       'Flottes de neoclouds',
     ],
-    pending: 'GPU de datacenter pour entreprises · à suivre',
+    pending: 'H100 · H200 · B100 · B200 · premières exécutions',
   },
 };
 

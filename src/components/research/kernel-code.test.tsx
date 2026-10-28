@@ -48,7 +48,7 @@ describe('KernelCode', () => {
     expect(container.querySelector('pre')?.getAttribute('tabindex')).toBe('0');
   });
 
-  it('tiers the backends: Metal primary, CUDA secondary, ROCm and Vulkan runs', () => {
+  it('tiers the backends: Metal primary, CUDA tuning, ROCm and Vulkan coming soon', () => {
     const { container } = renderKernel();
     const tiers = screen.getAllByRole('heading', { level: 4 });
     expect(tiers.map((tier) => tier.textContent)).toEqual([
@@ -59,8 +59,8 @@ describe('KernelCode', () => {
     const rows = container.querySelectorAll('ul > li');
     const [metal, cuda, rocm] = [...rows];
     expect(within(metal as HTMLElement).getByText('Primary')).toBeTruthy();
-    expect(within(cuda as HTMLElement).getByText('Secondary')).toBeTruthy();
-    expect(within(rocm as HTMLElement).getByText('Runs')).toBeTruthy();
+    expect(within(cuda as HTMLElement).getByText('Tuning')).toBeTruthy();
+    expect(within(rocm as HTMLElement).getByText('Coming soon')).toBeTruthy();
     // Lit bars out of three: 3, 2, 1. Unlit bars use the "off" token.
     const unlit = (row: Element) => row.querySelectorAll('.bg-off').length;
     expect([metal, cuda, rocm].map(unlit)).toEqual([0, 1, 2]);
@@ -85,18 +85,20 @@ describe('KernelCode', () => {
       screen.getByText('In production on RTX and DGX Spark. CUDA → PTX.'),
     ).toBeTruthy();
     expect(
-      screen.getByText('Moving fast on AMD. HIP → AMDGPU, Vulkan → SPIR-V.'),
+      screen.getByText(
+        'Moving fast on AMD, with first runs on MI300. HIP → AMDGPU, Vulkan → SPIR-V.',
+      ),
     ).toBeTruthy();
   });
 
-  it('lists where it runs, with datacenter GPUs as a dashed chip', () => {
+  it('lists where it runs, with first runs on datacenter GPUs as a dashed chip', () => {
     renderKernel();
     const group = screen.getByRole('group', { name: 'Runs on' });
     for (const item of kernelCode.en.runsOn.items) {
       expect(within(group).getByText(item)).toBeTruthy();
     }
     const pending = within(group).getByText(
-      'Enterprise datacenter GPUs · next',
+      'H100 · H200 · B100 · B200 · first runs',
     );
     expect(pending.className).toContain('border-dashed');
   });

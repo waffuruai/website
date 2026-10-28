@@ -80,9 +80,9 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: 'Dónde *estamos*.',
-    lede: 'Syrup y Butter están en acceso anticipado y son de código cerrado por ahora. CUDA está en producción en RTX y DGX Spark, y las GPU de centros de datos están en desarrollo.',
+    lede: 'Syrup y Butter están en acceso anticipado y son de código cerrado por ahora. CUDA está en producción en RTX y DGX Spark. Las primeras ejecuciones ya están hechas en H100, H200, B100, B200 y MI300.',
     notes: [
-      'Cuéntanos tus generaciones de GPU. CUDA para centros de datos está en desarrollo, así que las flotas que conocemos marcan qué hacemos primero.',
+      'Cuéntanos tus generaciones de GPU. Las flotas que conocemos deciden cuáles afinamos primero.',
       'ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
       'No afirmamos que Butter supere a otros motores en CUDA o ROCm. Cuando publiquemos mediciones, irán acompañadas del método.',
     ],
@@ -96,7 +96,7 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
     {
       question: '¿En qué GPU funciona?',
       answer:
-        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. AMD ROCm y Vulkan funcionan, pero aún sin afinar.',
+        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA está en producción en RTX y DGX Spark y se está afinando, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200. En AMD, las primeras ejecuciones en MI300 ya están hechas, y ROCm y Vulkan funcionan, pero aún sin afinar.',
     },
     {
       question: '¿Por qué deberíamos confiar en la telemetría?',

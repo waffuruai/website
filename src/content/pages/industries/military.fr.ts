@@ -4,7 +4,7 @@ const militaryFr: (typeof military)['en'] = {
   seo: {
     title: 'Inférence IA privée pour la défense et les armées',
     description:
-      'Des modèles capables sur votre matériel sécurisé, du Mac aux stations RTX et DGX Spark, avec une stack de serving réduite et un minimum de dépendances. Accès anticipé.',
+      'Déployez des modèles sur votre infrastructure, de la robotique de terrain embarquée aux stations sur le terrain, un centre de commandement ou un cloud privé. Accès anticipé.',
     keywords: [
       'infrastructure IA de défense',
       'inférence IA militaire',
@@ -22,7 +22,7 @@ const militaryFr: (typeof military)['en'] = {
   },
   hero: {
     title: 'Une IA capable, sur du matériel qui vous *appartient*.',
-    lede: 'Faites tourner des modèles sur des machines que vous achetez, détenez et sécurisez, d’un Mac Studio aux stations RTX et à DGX Spark. La stack de serving est réduite, avec un minimum de dépendances : moins de choses à durcir, moins de choses auxquelles se fier.',
+    lede: 'Déployez la stack sur votre propre infrastructure, de la robotique de terrain et des systèmes de défense embarqués à vos stations de travail sur le terrain, à un centre de commandement ou à un cloud privé. La stack de serving est réduite, avec un minimum de dépendances : moins de choses à durcir, moins de choses auxquelles se fier.',
   },
   problem: {
     title: 'Chaque dépendance est une *porte*.',
@@ -67,7 +67,7 @@ const militaryFr: (typeof military)['en'] = {
       {
         product: 'butter',
         need: 'Une stack de serving avec peu à vérifier.',
-        body: 'Du serving compatible OpenAI en Swift pour macOS et iOS et en Rust pour tout le reste, avec un minimum de dépendances. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF, sans étape de conversion.',
+        body: 'Du serving compatible OpenAI en Swift pour macOS et iOS et en Rust pour tout le reste, pour la vitesse et la sûreté mémoire. Un minimum de dépendances laisse moins de prise à une attaque de la chaîne d’approvisionnement. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF, sans étape de conversion.',
       },
       {
         product: 'syrup',
@@ -85,8 +85,8 @@ const militaryFr: (typeof military)['en'] = {
     title: 'Où nous *en sommes*.',
     lede: 'Les produits sont en accès anticipé et à code fermé pour l’instant. Nous ne revendiquons aucune conformité, certification ou accréditation, et préférons le dire ici plutôt que lors d’une évaluation.',
     notes: [
-      'Le silicium Apple est l’endroit où chaque kernel est optimisé en premier. CUDA est en production sur RTX et DGX Spark, et les GPU de datacenter sont en cours.',
-      'ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+      'Le silicium Apple est l’endroit où chaque kernel est optimisé en premier. CUDA est en production sur RTX et DGX Spark, avec de premières exécutions faites sur H100, H200, B100 et B200.',
+      'Côté AMD, les premières exécutions sont faites sur MI300. ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
       'La majeure partie de la stack fonctionne hors ligne une fois les modèles sur vos machines. La prise en charge des environnements physiquement isolés arrive bientôt.',
       'Dites-nous vos exigences de sécurité et votre matériel, et nous vous répondrons précisément.',
     ],
@@ -100,7 +100,7 @@ const militaryFr: (typeof military)['en'] = {
     {
       question: 'Sur quel matériel cela tourne-t-il ?',
       answer:
-        'Du matériel du commerce que vous pouvez acheter et détenir. Le silicium Apple via Metal est principal, et NVIDIA via CUDA est en production sur RTX et DGX Spark. Les GPU de datacenter sont en cours, et AMD ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+        'Du matériel du commerce que vous pouvez acheter et détenir. Le silicium Apple via Metal est principal, et NVIDIA via CUDA est en production sur RTX et DGX Spark, avec de premières exécutions faites sur H100, H200, B100 et B200. Côté AMD, les premières exécutions sont faites sur MI300, et ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
     },
     {
       question: 'Pourquoi un minimum de dépendances est-il important ?',

@@ -4,7 +4,7 @@ const militaryEs: (typeof military)['en'] = {
   seo: {
     title: 'Inferencia de IA privada para defensa y uso militar',
     description:
-      'Ejecuta modelos capaces en hardware propio y seguro, de Mac a estaciones RTX y DGX Spark, con un stack de serving pequeño y dependencias mínimas. Acceso anticipado.',
+      'Despliega modelos en tu infraestructura, de la robótica de campo en el dispositivo a estaciones sobre el terreno, un centro de mando o una nube privada. Acceso anticipado.',
     keywords: [
       'infraestructura de IA para defensa',
       'inferencia de IA militar',
@@ -23,7 +23,7 @@ const militaryEs: (typeof military)['en'] = {
   },
   hero: {
     title: 'IA capaz en hardware *propio*.',
-    lede: 'Ejecuta modelos en máquinas que compras, custodias y aseguras, de un Mac Studio a estaciones de trabajo RTX y DGX Spark. El stack de serving es pequeño, con dependencias mínimas, así que hay menos que blindar y menos en qué confiar.',
+    lede: 'Despliega el stack en tu propia infraestructura, desde la robótica de campo y los sistemas de defensa en el propio dispositivo hasta tus estaciones de trabajo sobre el terreno, un centro de mando o una nube privada. El stack de serving es pequeño, con dependencias mínimas, así que hay menos que blindar y menos en qué confiar.',
   },
   problem: {
     title: 'Cada dependencia es una *puerta*.',
@@ -67,7 +67,7 @@ const militaryEs: (typeof military)['en'] = {
       {
         product: 'butter',
         need: 'Un stack de serving con poco que verificar.',
-        body: 'Serving compatible con OpenAI en Swift para macOS e iOS y Rust para todo lo demás, con dependencias mínimas. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, sin paso de conversión.',
+        body: 'Serving compatible con OpenAI en Swift para macOS e iOS y Rust para todo lo demás, por velocidad y seguridad de memoria. Unas dependencias mínimas dejan menos margen a un ataque a la cadena de suministro. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, sin paso de conversión.',
       },
       {
         product: 'syrup',
@@ -85,8 +85,8 @@ const militaryEs: (typeof military)['en'] = {
     title: 'Dónde *estamos*.',
     lede: 'Los productos están en acceso anticipado y son de código cerrado por ahora. No hacemos afirmaciones de cumplimiento normativo, certificación ni acreditación, y preferimos decirlo aquí antes que en una revisión.',
     notes: [
-      'Apple silicon es donde se afina primero cada kernel. CUDA está en producción en RTX y DGX Spark, y las GPU de centros de datos están en desarrollo.',
-      'ROCm y Vulkan funcionan, pero aún sin afinar.',
+      'Apple silicon es donde se afina primero cada kernel. CUDA está en producción en RTX y DGX Spark, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200.',
+      'En AMD, las primeras ejecuciones en MI300 ya están hechas. ROCm y Vulkan funcionan, pero aún sin afinar.',
       'La mayor parte del stack funciona sin conexión una vez que los modelos están en tus máquinas. El soporte para entornos con aislamiento físico llegará pronto.',
       'Cuéntanos tus requisitos de seguridad y tu hardware, y te responderemos de forma concreta.',
     ],
@@ -100,7 +100,7 @@ const militaryEs: (typeof military)['en'] = {
     {
       question: '¿En qué hardware funciona?',
       answer:
-        'Hardware comercial que puedes comprar y custodiar. Apple silicon mediante Metal es el principal, y NVIDIA mediante CUDA está en producción en RTX y DGX Spark. Las GPU de centros de datos están en desarrollo, y AMD ROCm y Vulkan funcionan, pero aún sin afinar.',
+        'Hardware comercial que puedes comprar y custodiar. Apple silicon mediante Metal es el principal, y NVIDIA mediante CUDA está en producción en RTX y DGX Spark, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200. En AMD, las primeras ejecuciones en MI300 ya están hechas, y ROCm y Vulkan funcionan, pero aún sin afinar.',
     },
     {
       question: '¿Por qué importa tener dependencias mínimas?',

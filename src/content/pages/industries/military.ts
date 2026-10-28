@@ -18,8 +18,12 @@ import militaryKo from './military.ko';
  *
  * The founder confirmed (2026-10-27) that most of the stack runs offline
  * once models are on the machines, and that air-gapped support is coming
- * soon; the copy says exactly that. Edge and disconnected deployments stay
- * out of the copy until they are confirmed.
+ * soon; the copy says exactly that. On 2026-10-28 the founder confirmed
+ * where it can be deployed: on your own infrastructure, from on-device field
+ * robotics and defense to workstations in the field, a command centre or a
+ * private cloud. The copy says what it can be deployed on, never that it is
+ * deployed anywhere. The words "edge" and "disconnected" stay out of the
+ * copy (see the guardrail test) until they are confirmed.
  *
  * TODO(founder): confirm on-prem support terms and any accreditation status
  * we may state.
@@ -29,7 +33,7 @@ export const military: Localized<IndustryPage> = {
     seo: {
       title: 'Private AI inference for military and defense',
       description:
-        'Run capable models on hardware you own and secure, from Macs to RTX workstations and DGX Spark, on a small serving stack with minimal dependencies. Early access.',
+        'Deploy capable models on infrastructure you own, from on-device field robotics to workstations in the field, a command centre or a private cloud. Early access.',
       keywords: [
         'defense AI infrastructure',
         'military AI inference',
@@ -47,7 +51,7 @@ export const military: Localized<IndustryPage> = {
     },
     hero: {
       title: 'Capable AI on hardware you *own*.',
-      lede: 'Run models on machines you buy, hold and secure, from a Mac Studio to RTX workstations and DGX Spark. The serving stack is small, with minimal dependencies, so there is less to harden and less to trust.',
+      lede: 'Deploy the stack on your own infrastructure, from on-device field robotics and defense systems to your own workstations in the field, a command centre or a private cloud. The serving stack is small, with minimal dependencies, so there is less to harden and less to trust.',
     },
     problem: {
       title: 'Every dependency is a *door*.',
@@ -90,7 +94,7 @@ export const military: Localized<IndustryPage> = {
         {
           product: 'butter',
           need: 'A serving stack with little to vet.',
-          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, with minimal dependencies. It loads safetensors, MLX, JANG and GGUF checkpoints directly, with no conversion step.',
+          body: 'OpenAI-compatible serving in Swift for macOS and iOS and Rust for everything else, for speed and memory safety. Minimal dependencies leave less room for a supply-chain attack. It loads safetensors, MLX, JANG and GGUF checkpoints directly, with no conversion step.',
         },
         {
           product: 'syrup',
@@ -108,8 +112,8 @@ export const military: Localized<IndustryPage> = {
       title: 'Where we *are*.',
       lede: 'The products are in early access and closed source for now. We make no compliance, certification or accreditation claims, and would rather say so here than in a review.',
       notes: [
-        'Apple silicon is where every kernel is tuned first. CUDA is in production on RTX and DGX Spark, and datacenter GPUs are in progress.',
-        'ROCm and Vulkan run but are not tuned yet.',
+        'Apple silicon is where every kernel is tuned first. CUDA is in production on RTX and DGX Spark, with first runs done on H100, H200, B100 and B200.',
+        'On AMD, first runs are done on MI300. ROCm and Vulkan run but are not tuned yet.',
         'Most of the stack runs offline once models are on your machines. Air-gapped support is coming soon.',
         'Tell us your security requirements and your hardware, and we will answer specifically.',
       ],
@@ -123,7 +127,7 @@ export const military: Localized<IndustryPage> = {
       {
         question: 'Which hardware does it run on?',
         answer:
-          'Commodity hardware you can buy and hold. Apple silicon through Metal is primary, and NVIDIA through CUDA is in production on RTX and DGX Spark. Datacenter GPUs are in progress, and AMD ROCm and Vulkan run but are not tuned yet.',
+          'Commodity hardware you can buy and hold. Apple silicon through Metal is primary, and NVIDIA through CUDA is in production on RTX and DGX Spark, with first runs done on H100, H200, B100 and B200. On AMD, first runs are done on MI300, and ROCm and Vulkan run but are not tuned yet.',
       },
       {
         question: 'Why do minimal dependencies matter?',

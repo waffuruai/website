@@ -154,7 +154,7 @@ const butterKo: (typeof butter)['en'] = {
       {
         term: '런타임',
         detail:
-          'macOS와 iOS에는 Metal 위의 Swift(macOS 14 이상), CUDA를 비롯한 그 밖의 모든 곳에는 Rust. 의존성은 최소한입니다.',
+          'macOS와 iOS에는 Metal 위의 Swift(macOS 14 이상), CUDA를 비롯한 그 밖의 모든 곳에는 Rust. 의존성이 최소한이어서 공급망 위험이 적습니다.',
       },
       {
         term: '모델 형식',
@@ -240,7 +240,7 @@ const butterKo: (typeof butter)['en'] = {
   platforms: {
     heading: '*구동*되는 곳.',
     intro:
-      'Metal이 주력 대상입니다. CUDA는 그다음이며, ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
+      'Metal이 주력 대상입니다. CUDA는 지금 튜닝을 진행하고 있으며, ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -273,7 +273,7 @@ const butterKo: (typeof butter)['en'] = {
     {
       question: '어떤 하드웨어에서 돌아가나요?',
       answer:
-        'Apple 실리콘의 Metal 위 Swift가 주력 대상이며, macOS 14 이상의 MacBook부터 Mac Studio까지 지원합니다. CUDA는 그다음으로, RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
+        'Apple 실리콘의 Metal 위 Swift가 주력 대상이며, macOS 14 이상의 MacBook부터 Mac Studio까지 지원합니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이며 튜닝을 진행하고 있습니다. ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
     },
     {
       question: '어떤 모델을 돌릴 수 있나요?',
@@ -283,7 +283,7 @@ const butterKo: (typeof butter)['en'] = {
     {
       question: 'Butter는 어떤 언어로 만들었나요?',
       answer:
-        'macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 씁니다. Butter는 의존성을 최소한으로 줄이고 백엔드별로 튜닝한 커널 위에서 돌아가므로, 안전성과 최고의 성능을 타협 없이 얻을 수 있습니다.',
+        'macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 써서 속도와 메모리 안전성을 갖췄습니다. Butter는 의존성을 최소한으로 유지해 공급망 공격의 여지를 줄이며, 백엔드별로 튜닝한 커널 위에서 돌아갑니다.',
     },
     {
       question: '기존에 쓰던 도구와 에이전트 하니스도 연결할 수 있나요?',

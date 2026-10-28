@@ -85,10 +85,10 @@ const enterpriseFr: (typeof enterprise)['en'] = {
   },
   whereWeAre: {
     title: 'Où nous *en sommes*.',
-    lede: 'Les GPU de datacenter pour entreprises sont en cours, et nous préférons le dire d’emblée. Les produits sont en accès anticipé et à code fermé pour l’instant.',
+    lede: 'Sur les GPU de datacenter, nous en sommes aux premières exécutions, pas à la production, et nous préférons le dire d’emblée. Les produits sont en accès anticipé et à code fermé pour l’instant.',
     notes: [
       'Prévoyez vos pilotes autour du silicium Apple, des stations RTX et de DGX Spark, là où la stack tourne aujourd’hui.',
-      'Les GPU de datacenter sont en cours. S’ils sont votre cible, dites-nous lesquels : cela détermine ce que nous construisons en premier.',
+      'Les premières exécutions sont faites sur H100, H200, B100, B200 et MI300. Si les GPU de datacenter sont votre cible, dites-nous lesquels : cela détermine ce que nous optimisons en premier.',
       'ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
     ],
   },
@@ -96,12 +96,12 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     {
       question: 'Pouvons-nous l’exécuter sur site ou dans un cloud privé ?',
       answer:
-        'C’est ainsi qu’il est conçu. Butter sert des modèles sur du matériel que vous exploitez, et les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. La prise en charge des GPU de datacenter est en cours : dites-nous sur quoi vous comptez le déployer.',
+        'C’est ainsi qu’il est conçu. Butter sert des modèles sur du matériel que vous exploitez, et les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. Les premières exécutions sur GPU de datacenter sont faites : dites-nous sur lesquels vous comptez le déployer.',
     },
     {
       question: 'Quels GPU sont pris en charge aujourd’hui ?',
       answer:
-        'Le silicium Apple via Metal est principal, et NVIDIA via CUDA est secondaire, en production sur RTX et DGX Spark. AMD ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés. Les GPU de datacenter pour entreprises sont en cours.',
+        'Le silicium Apple via Metal est principal, et NVIDIA via CUDA est en production sur RTX et DGX Spark et en cours d’optimisation, avec de premières exécutions faites sur H100, H200, B100 et B200. Côté AMD, les premières exécutions sont faites sur MI300, et ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
     },
     {
       question:

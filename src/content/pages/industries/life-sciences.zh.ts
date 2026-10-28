@@ -81,7 +81,7 @@ const lifeSciencesZh: (typeof lifeSciences)['en'] = {
     lede: '产品目前处于抢先体验阶段，暂未开源。我们不作任何合规或验证声明，有什么要求，请直接问我们。',
     notes: [
       'Mac Studio 或 RTX 工作站是最容易的起点：Metal 是首要平台，CUDA 已在 RTX 和 DGX Spark 上投入生产。',
-      '数据中心 GPU 正在进行中。ROCm 和 Vulkan 可以运行，但尚未调优。',
+      '数据中心 GPU 方面，已在 H100、H200、B100、B200 和 MI300 上完成首次运行。ROCm 和 Vulkan 可以运行，但尚未调优。',
       'Whisk 会注明出处，但不会核查科学本身。这仍然要靠你的评审人员。',
     ],
   },

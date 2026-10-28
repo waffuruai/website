@@ -66,7 +66,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
       {
         product: 'butter',
         need: 'Sirve modelos dentro de tu perímetro.',
-        body: 'Serving compatible con OpenAI en Swift para macOS e iOS y Rust para todo lo demás, con dependencias mínimas. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que un modelo nuevo no necesita un pipeline de conversión.',
+        body: 'Serving compatible con OpenAI en Swift para macOS e iOS y Rust para todo lo demás, por velocidad y seguridad de memoria. Unas dependencias mínimas suponen menos riesgo de cadena de suministro que vigilar. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que un modelo nuevo no necesita un pipeline de conversión.',
       },
       {
         product: 'syrup',
@@ -87,7 +87,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
   },
   whereWeAre: {
     title: 'Dónde *estamos*.',
-    lede: 'Mejor que lo oigas aquí que en una revisión de proveedores. Los productos están en acceso anticipado y son de código cerrado por ahora, y las GPU de centros de datos están en desarrollo.',
+    lede: 'Mejor que lo oigas aquí que en una revisión de proveedores. Los productos están en acceso anticipado y son de código cerrado por ahora, y en GPU de centros de datos tenemos primeras ejecuciones, no producción.',
     notes: [
       'Planifica un piloto en Apple silicon, estaciones de trabajo RTX o DGX Spark, donde el stack funciona hoy.',
       'ROCm y Vulkan funcionan, pero aún sin afinar.',
@@ -108,7 +108,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
     {
       question: '¿En qué hardware funciona hoy?',
       answer:
-        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. AMD ROCm y Vulkan funcionan, pero aún sin afinar.',
+        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA está en producción en RTX y DGX Spark y se está afinando, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200. En AMD, las primeras ejecuciones en MI300 ya están hechas, y ROCm y Vulkan funcionan, pero aún sin afinar.',
     },
     {
       question: '¿Está certificado para cargas de trabajo reguladas?',

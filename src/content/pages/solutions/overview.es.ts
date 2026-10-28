@@ -38,7 +38,7 @@ const solutionsOverviewEs: (typeof solutionsOverview)['en'] = {
         title: 'Mejor *inferencia*.',
         body: 'Kernels afinados para cada backend, modelos y caché KV cuantizados, y decodificación especulativa, en un motor con dependencias mínimas.',
         points: [
-          'Metal primero, CUDA después, ROCm y Vulkan funcionando',
+          'Metal primero, CUDA en afinación, ROCm y Vulkan próximamente',
           'Carga modelos de Hugging Face sin conversión',
           'Modelos de texto, visión, voz y omni',
         ],

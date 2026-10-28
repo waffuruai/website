@@ -4,7 +4,7 @@ const militaryZh: (typeof military)['en'] = {
   seo: {
     title: '面向军事与国防的私有 AI 推理',
     description:
-      '在自有并由你保障安全的硬件上运行强大的模型，从 Mac 到 RTX 工作站和 DGX Spark，服务栈精简，依赖极少。抢先体验。',
+      '在自有的基础设施上部署强大的模型，从设备端的野外机器人，到野外工作站、指挥中心或私有云。抢先体验。',
     keywords: [
       '国防 AI 基础设施',
       '军事 AI 推理',
@@ -22,7 +22,7 @@ const militaryZh: (typeof military)['en'] = {
   },
   hero: {
     title: '在*自有*硬件上运行强大的 AI。',
-    lede: '在你购买、持有并保障安全的机器上运行模型，从 Mac Studio 到 RTX 工作站和 DGX Spark。服务栈很精简，依赖极少，需要加固的更少，需要信任的也更少。',
+    lede: '把技术栈部署在你自己的基础设施上，从设备端运行的野外机器人和防御系统，到你在野外的工作站、指挥中心或私有云。服务栈很精简，依赖极少，需要加固的更少，需要信任的也更少。',
   },
   problem: {
     title: '每个依赖都是一扇*门*。',
@@ -64,7 +64,7 @@ const militaryZh: (typeof military)['en'] = {
       {
         product: 'butter',
         need: '需要审查的东西很少的服务栈。',
-        body: 'macOS 和 iOS 上用 Swift、其他平台用 Rust，提供兼容 OpenAI 的服务，依赖极少。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，无需转换步骤。',
+        body: 'macOS 和 iOS 上用 Swift、其他平台用 Rust，提供兼容 OpenAI 的服务，兼顾速度与内存安全。依赖极少，供应链攻击的可乘之机更少。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，无需转换步骤。',
       },
       {
         product: 'syrup',
@@ -82,8 +82,8 @@ const militaryZh: (typeof military)['en'] = {
     title: '我们的*进度*。',
     lede: '产品目前处于抢先体验阶段，暂未开源。我们不作任何合规、认证或资质认定声明，宁愿在这里说清，也不想等到评审时才说。',
     notes: [
-      'Apple 芯片是每个内核最先调优的地方。CUDA 已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。',
-      'ROCm 和 Vulkan 可以运行，但尚未调优。',
+      'Apple 芯片是每个内核最先调优的地方。CUDA 已在 RTX 和 DGX Spark 上投入生产，并已在 H100、H200、B100 和 B200 上完成首次运行。',
+      'AMD 方面，已在 MI300 上完成首次运行。ROCm 和 Vulkan 可以运行，但尚未调优。',
       '模型放到你的机器上之后，大部分技术栈都能离线运行。物理隔离环境的支持即将推出。',
       '告诉我们你的安全要求和你的硬件，我们会具体回答。',
     ],
@@ -97,7 +97,7 @@ const militaryZh: (typeof military)['en'] = {
     {
       question: '它能在哪些硬件上运行？',
       answer:
-        '你可以购买并持有的通用硬件。Apple 芯片上的 Metal 是首要，NVIDIA 通过 CUDA 已在 RTX 和 DGX Spark 上投入生产。数据中心 GPU 正在进行中，AMD ROCm 和 Vulkan 可以运行，但尚未调优。',
+        '你可以购买并持有的通用硬件。Apple 芯片上的 Metal 是首要，NVIDIA 通过 CUDA 已在 RTX 和 DGX Spark 上投入生产，并已在 H100、H200、B100 和 B200 上完成首次运行。AMD 方面，已在 MI300 上完成首次运行，ROCm 和 Vulkan 可以运行，但尚未调优。',
     },
     {
       question: '依赖极少，为什么重要？',

@@ -45,7 +45,7 @@ const homeEs: (typeof home)['en'] = {
     title: 'Del silicio a la *respuesta*.',
     intro:
       'Seis productos que funcionan solos o juntos. Tu petición baja, la respuesta sube, y nada de eso tiene que salir del hardware que controlas.',
-    note: 'Pantry ya es gratuito y de código abierto; el resto del stack está en acceso anticipado privado, y Waffle llegará pronto. Primero Metal, después CUDA; ROCm y Vulkan funcionan, pero aún sin afinar.',
+    note: 'Pantry ya es gratuito y de código abierto; el resto del stack está en acceso anticipado privado, y Waffle llegará pronto. Primero Metal, CUDA en afinación, ROCm y Vulkan próximamente.',
     flow: {
       you: 'Tú, tu equipo, tus agentes',
       boundary: 'Hardware que tienes o alquilas',

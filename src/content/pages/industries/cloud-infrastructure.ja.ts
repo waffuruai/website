@@ -69,7 +69,7 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'butter',
         need: '構成要素の少ない、マネージド推論。',
-        body: 'macOS と iOS では Swift、それ以外では Rust。依存関係は最小限です。量子化されたチェックポイントと KV キャッシュ、投機的デコーディング、LoRA が OpenAI 互換 API の背後にあります。',
+        body: 'macOS と iOS では Swift、それ以外では Rust で、速さとメモリ安全性を備えています。依存関係は最小限なので、テナントのために抱えるサプライチェーンのリスクが少なくなります。量子化されたチェックポイントと KV キャッシュ、投機的デコーディング、LoRA が OpenAI 互換 API の背後にあります。',
       },
       {
         product: 'iron',
@@ -80,9 +80,9 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
   },
   whereWeAre: {
     title: '私たちの*現在地*',
-    lede: 'GPU クラウドにとっていちばん重要なことを、最初にお伝えします。データセンター GPU は対応中です。Syrup、Butter、Iron は、現時点で早期アクセスで、クローズドソースです。',
+    lede: 'GPU クラウドにとっていちばん重要なことを、最初にお伝えします。データセンター GPU は初回の実行を終えた段階で、本番稼働ではありません。Syrup、Butter、Iron は、現時点で早期アクセスで、クローズドソースです。',
     notes: [
-      'CUDA は RTX と DGX Spark で本番稼働中です。お使いのデータセンター GPU の世代を教えてください。お聞きするフリートの状況が、何から先に取り組むかを左右します。',
+      'CUDA は RTX と DGX Spark で本番稼働中です。H100、H200、B100、B200、MI300 では初回の実行を終えています。お使いのデータセンター GPU の世代を教えてください。お聞きするフリートの状況が、どれから先にチューニングするかを左右します。',
       'ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
       'CUDA や ROCm で Butter が他のエンジンを上回るとは主張しません。計測結果を公開するときは、方法も併せて示します。',
     ],
@@ -96,7 +96,7 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
     {
       question: 'どの GPU に対応していますか？',
       answer:
-        'Metal 経由の Apple シリコンが第一です。CUDA 経由の NVIDIA は第二で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。AMD ROCm と Vulkan は動作しますが、チューニングはこれからです。',
+        'Metal 経由の Apple シリコンが第一です。CUDA 経由の NVIDIA は、RTX と DGX Spark では本番稼働中でチューニングを進めており、H100、H200、B100、B200 では初回の実行を終えています。AMD では MI300 で初回の実行を終えており、ROCm と Vulkan は動作しますが、チューニングはこれからです。',
     },
     {
       question: '利益率は、どのくらい上がりますか？',

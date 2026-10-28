@@ -65,7 +65,7 @@ const governmentJa: (typeof government)['en'] = {
       {
         product: 'butter',
         need: '自ら運用するインフラで、モデルを提供する。',
-        body: 'macOS と iOS では Swift、それ以外では Rust による OpenAI 互換のサービング。依存関係は最小限です。既存のツールで変えるのは接続先であり、SDK ではありません。',
+        body: 'macOS と iOS では Swift、それ以外では Rust による OpenAI 互換のサービングで、速さとメモリ安全性を備えています。依存関係は最小限なので、審査すべきサプライチェーンのリスクが少なくなります。既存のツールで変えるのは接続先であり、SDK ではありません。',
       },
       {
         product: 'syrup',
@@ -88,7 +88,7 @@ const governmentJa: (typeof government)['en'] = {
     title: '私たちの*現在地*',
     lede: '製品は、現時点で早期アクセスで、クローズドソースです。コンプライアンスや認定に関する主張もしていません。今日動くものは、次のとおりです。',
     notes: [
-      'パイロットは、現時点でスタックが動作する Apple シリコン、RTX ワークステーション、DGX Spark で計画してください。データセンター GPU は対応中です。',
+      'パイロットは、現時点でスタックが動作する Apple シリコン、RTX ワークステーション、DGX Spark で計画してください。データセンター GPU では、H100、H200、B100、B200、MI300 で初回の実行を終えています。',
       'ROCm と Vulkan は動作しますが、チューニングはこれからです。',
       'モデルをお使いのマシンに置けば、スタックの大部分はオフラインで動作します。エアギャップ環境には近日対応予定です。',
       '調達とセキュリティの要件を直接お寄せいただければ、具体的にお答えします。',
@@ -118,7 +118,7 @@ const governmentJa: (typeof government)['en'] = {
     {
       question: 'どのハードウェアに対応していますか？',
       answer:
-        'Metal 経由の Apple シリコンが第一です。CUDA 経由の NVIDIA は第二で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。AMD ROCm と Vulkan は動作しますが、チューニングはこれからです。',
+        'Metal 経由の Apple シリコンが第一です。CUDA 経由の NVIDIA は、RTX と DGX Spark では本番稼働中でチューニングを進めており、H100、H200、B100、B200 では初回の実行を終えています。AMD では MI300 で初回の実行を終えており、ROCm と Vulkan は動作しますが、チューニングはこれからです。',
     },
     {
       question: 'どのように評価すればよいですか？',

@@ -56,7 +56,7 @@ const ironJa: (typeof iron)['en'] = {
       },
       {
         title: 'Rust で記述',
-        body: 'Rust に埋め込む DSL。カーネルは #[kernel] を付けた Rust の関数で、program_id、load、store といったプリミティブで組み立てます。',
+        body: 'Rust に埋め込む DSL。カーネルは #[kernel] を付けた Rust の関数で、program_id、load、store といったプリミティブで組み立てます。Iron 自体も Rust で書かれ、速さとメモリ安全性を備えています。依存関係を最小限に抑えているので、サプライチェーン攻撃の入り込む余地が少なくなります。',
       },
       {
         title: 'ホストから呼び出せる',
@@ -72,7 +72,7 @@ const ironJa: (typeof iron)['en'] = {
       },
       {
         title: '効くところをチューニング',
-        body: 'すべてのカーネルを、まず Metal で書いてチューニングします。CUDA は第二の対象で、ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
+        body: 'すべてのカーネルを、まず Metal で書いてチューニングします。CUDA はチューニングを進めているところで、ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
       },
     ],
   },
@@ -129,7 +129,7 @@ const ironJa: (typeof iron)['en'] = {
     {
       question: 'どのハードウェアで動きますか？',
       answer:
-        'Apple シリコン上の Metal が第一の対象で、すべてのカーネルをまずここで書き、チューニングします。CUDA は第二の対象で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
+        'Apple シリコン上の Metal が第一の対象で、すべてのカーネルをまずここで書き、チューニングします。CUDA は、RTX と DGX Spark では本番稼働中でチューニングを進めており、H100、H200、B100、B200 では初回の実行を終えています。AMD では MI300 で初回の実行を終えており、ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
     },
     {
       question: 'ホスト側のコードを書き直す必要はありますか？',

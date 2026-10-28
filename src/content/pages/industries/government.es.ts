@@ -65,7 +65,7 @@ const governmentEs: (typeof government)['en'] = {
       {
         product: 'butter',
         need: 'Sirve modelos en infraestructura que tú operas.',
-        body: 'Serving compatible con OpenAI en Swift para macOS e iOS y Rust para todo lo demás, con dependencias mínimas. Las herramientas existentes cambian una dirección, no un SDK.',
+        body: 'Serving compatible con OpenAI en Swift para macOS e iOS y Rust para todo lo demás, por velocidad y seguridad de memoria. Unas dependencias mínimas suponen menos riesgo de cadena de suministro que revisar. Las herramientas existentes cambian una dirección, no un SDK.',
       },
       {
         product: 'syrup',
@@ -88,7 +88,7 @@ const governmentEs: (typeof government)['en'] = {
     title: 'Dónde *estamos*.',
     lede: 'Los productos están en acceso anticipado y son de código cerrado por ahora, y no hacemos afirmaciones de cumplimiento normativo ni de acreditación. Esto es lo que funciona hoy.',
     notes: [
-      'Planifica los pilotos en Apple silicon, estaciones de trabajo RTX y DGX Spark, donde el stack funciona hoy. Las GPU de centros de datos están en desarrollo.',
+      'Planifica los pilotos en Apple silicon, estaciones de trabajo RTX y DGX Spark, donde el stack funciona hoy. En GPU de centros de datos, las primeras ejecuciones ya están hechas en H100, H200, B100, B200 y MI300.',
       'ROCm y Vulkan funcionan, pero aún sin afinar.',
       'La mayor parte del stack funciona sin conexión una vez que los modelos están en tus máquinas. El soporte para entornos con aislamiento físico llegará pronto.',
       'Tráenos directamente tus requisitos de contratación y de seguridad, y los responderemos de forma concreta.',
@@ -118,7 +118,7 @@ const governmentEs: (typeof government)['en'] = {
     {
       question: '¿Qué hardware admite?',
       answer:
-        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. AMD ROCm y Vulkan funcionan, pero aún sin afinar.',
+        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA está en producción en RTX y DGX Spark y se está afinando, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200. En AMD, las primeras ejecuciones en MI300 ya están hechas, y ROCm y Vulkan funcionan, pero aún sin afinar.',
     },
     {
       question: '¿Cómo lo evaluamos?',

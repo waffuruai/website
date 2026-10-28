@@ -65,7 +65,7 @@ export const iron: Localized<ProductCopy> = {
         },
         {
           title: 'Written in Rust',
-          body: 'A Rust-embedded DSL. Kernels are Rust functions marked #[kernel], built from primitives like program_id, load and store.',
+          body: 'A Rust-embedded DSL. Kernels are Rust functions marked #[kernel], built from primitives like program_id, load and store. Iron itself is Rust, for speed and memory safety, and keeps its dependencies minimal, so there is less room for a supply-chain attack.',
         },
         {
           title: 'Callable from your host',
@@ -81,7 +81,7 @@ export const iron: Localized<ProductCopy> = {
         },
         {
           title: 'Tuned where it counts',
-          body: 'Every kernel is written and tuned on Metal first. CUDA is secondary, and ROCm and Vulkan run today but are not tuned yet.',
+          body: 'Every kernel is written and tuned on Metal first. CUDA is being tuned now, and ROCm and Vulkan run today but are not tuned yet.',
         },
       ],
     },
@@ -138,7 +138,7 @@ export const iron: Localized<ProductCopy> = {
       {
         question: 'Which hardware does it run on?',
         answer:
-          'Metal on Apple silicon is the primary target: every kernel is written and tuned there first. CUDA is secondary, in production on RTX and DGX Spark, with datacenter GPUs in progress. ROCm and Vulkan run today but are not tuned yet.',
+          'Metal on Apple silicon is the primary target: every kernel is written and tuned there first. CUDA is in production on RTX and DGX Spark and being tuned, with first runs done on H100, H200, B100 and B200. On AMD, first runs are done on MI300, and ROCm and Vulkan run today but are not tuned yet.',
       },
       {
         question: 'Do I have to rewrite my host code?',

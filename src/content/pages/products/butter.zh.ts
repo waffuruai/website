@@ -150,7 +150,7 @@ const butterZh: (typeof butter)['en'] = {
       {
         term: '运行时',
         detail:
-          'macOS 和 iOS 上是 Swift 搭配 Metal，macOS 需 14 或更高版本；CUDA 及其他平台是 Rust。依赖极少。',
+          'macOS 和 iOS 上是 Swift 搭配 Metal，macOS 需 14 或更高版本；CUDA 及其他平台是 Rust。依赖极少，供应链风险更低。',
       },
       {
         term: '模型格式',
@@ -236,7 +236,7 @@ const butterZh: (typeof butter)['en'] = {
   platforms: {
     heading: '在*哪里*运行。',
     intro:
-      'Metal 是首要目标。CUDA 其次，通过 ROCm 和 Vulkan 支持的 AMD 进展迅速。',
+      'Metal 是首要目标。CUDA 正在调优，通过 ROCm 和 Vulkan 支持的 AMD 进展迅速。',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -269,7 +269,7 @@ const butterZh: (typeof butter)['en'] = {
     {
       question: '它能在什么硬件上运行？',
       answer:
-        'Apple 芯片上的 Swift 与 Metal 是首要目标，从 MacBook 到 Mac Studio，需要 macOS 14 或更高版本。CUDA 其次，已在 RTX 和 DGX Spark 上投入生产。通过 ROCm 和 Vulkan 支持 AMD，进展迅速。',
+        'Apple 芯片上的 Swift 与 Metal 是首要目标，从 MacBook 到 Mac Studio，需要 macOS 14 或更高版本。CUDA 已在 RTX 和 DGX Spark 上投入生产，正在调优。通过 ROCm 和 Vulkan 支持 AMD，进展迅速。',
     },
     {
       question: '能运行哪些模型？',
@@ -279,7 +279,7 @@ const butterZh: (typeof butter)['en'] = {
     {
       question: 'Butter 是用什么语言写的？',
       answer:
-        'macOS 和 iOS 上用 Swift，其他平台用 Rust。Butter 把依赖降到最少，运行在为每种后端调优的内核上，安全与极致性能兼得，无需妥协。',
+        'macOS 和 iOS 上用 Swift，其他平台用 Rust，兼顾速度与内存安全。Butter 把依赖降到最少，供应链攻击的可乘之机更少，并运行在为每种后端调优的内核上。',
     },
     {
       question: '我现有的工具和智能体框架能用吗？',

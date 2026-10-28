@@ -45,7 +45,7 @@ const homeFr: (typeof home)['en'] = {
     title: 'Du silicium à la *réponse*.',
     intro:
       'Six produits qui fonctionnent seuls ou ensemble. Votre requête descend, la réponse remonte, et rien n’a besoin de quitter le matériel que vous contrôlez.',
-    note: 'Pantry est gratuit et open source dès aujourd’hui ; le reste de la stack est en accès anticipé privé, et Waffle arrive bientôt. Metal d’abord, CUDA ensuite ; ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+    note: 'Pantry est gratuit et open source dès aujourd’hui ; le reste de la stack est en accès anticipé privé, et Waffle arrive bientôt. Metal d’abord, CUDA en cours d’optimisation, ROCm et Vulkan bientôt.',
     flow: {
       you: 'Vous, votre équipe, vos agents',
       boundary: 'Matériel possédé ou loué',

@@ -70,7 +70,7 @@ const cloudInfrastructureFr: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'butter',
         need: 'De l’inférence managée avec moins de rouages.',
-        body: 'Swift pour macOS et iOS, Rust pour tout le reste, avec un minimum de dépendances. Checkpoints et cache KV quantifiés, décodage spéculatif et LoRA derrière une API compatible OpenAI.',
+        body: 'Swift pour macOS et iOS et Rust pour tout le reste, pour la vitesse et la sûreté mémoire. Un minimum de dépendances, c’est moins de risques de chaîne d’approvisionnement à porter pour vos locataires. Checkpoints et cache KV quantifiés, décodage spéculatif et LoRA derrière une API compatible OpenAI.',
       },
       {
         product: 'iron',
@@ -81,9 +81,9 @@ const cloudInfrastructureFr: (typeof cloudInfrastructure)['en'] = {
   },
   whereWeAre: {
     title: 'Où nous *en sommes*.',
-    lede: 'Commençons par ce qui compte le plus pour un cloud GPU : les GPU de datacenter sont en cours. Syrup, Butter et Iron sont en accès anticipé et à code fermé pour l’instant.',
+    lede: 'Commençons par ce qui compte le plus pour un cloud GPU : sur les GPU de datacenter, nous en sommes aux premières exécutions, pas à la production. Syrup, Butter et Iron sont en accès anticipé et à code fermé pour l’instant.',
     notes: [
-      'CUDA est en production sur RTX et DGX Spark. Dites-nous vos générations de GPU de datacenter : les flottes dont nous entendons parler orientent ce qui vient en premier.',
+      'CUDA est en production sur RTX et DGX Spark. Les premières exécutions sont faites sur H100, H200, B100, B200 et MI300. Dites-nous vos générations de GPU de datacenter : les flottes dont nous entendons parler décident lesquelles nous optimisons en premier.',
       'ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
       'Nous ne prétendons pas que Butter fait mieux que d’autres moteurs sur CUDA ou ROCm. Quand nous publierons des mesures, elles seront accompagnées de la méthode.',
     ],
@@ -97,7 +97,7 @@ const cloudInfrastructureFr: (typeof cloudInfrastructure)['en'] = {
     {
       question: 'Quels GPU sont pris en charge ?',
       answer:
-        'Le silicium Apple via Metal est principal. NVIDIA via CUDA est secondaire, en production sur RTX et DGX Spark, avec les GPU de datacenter en cours. AMD ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+        'Le silicium Apple via Metal est principal. NVIDIA via CUDA est en production sur RTX et DGX Spark et en cours d’optimisation, avec de premières exécutions faites sur H100, H200, B100 et B200. Côté AMD, les premières exécutions sont faites sur MI300, et ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
     },
     {
       question: 'Combien cela ajoutera-t-il à notre marge ?',

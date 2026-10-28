@@ -62,7 +62,7 @@ export const industriesOverview: Localized<IndustriesOverview> = {
           title: 'Fewer moving *parts*.',
           body: 'Butter serves models with minimal dependencies, using Swift for macOS and iOS and Rust for everything else, on kernels tuned for each backend. You get safety and maximal performance without compromises. Less to patch, less to break and less to explain.',
           points: [
-            'Metal first, CUDA next, ROCm and Vulkan running',
+            'Metal first, CUDA being tuned, ROCm and Vulkan coming soon',
             'OpenAI-compatible serving, so apps keep working',
             'Loads Hugging Face models with no conversion',
           ],

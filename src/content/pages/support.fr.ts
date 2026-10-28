@@ -53,7 +53,7 @@ const supportFr: (typeof support)['en'] = {
     {
       question: 'Sur quel matériel cela tourne-t-il ?',
       answer:
-        'Le silicium Apple est la cible principale : chaque kernel est d’abord écrit et optimisé pour Metal. NVIDIA CUDA est secondaire, en production sur RTX et DGX Spark. AMD via ROCm et Vulkan avance vite. Pensez MacBook et Mac Studio, stations RTX, DGX Spark, Strix Halo et flottes de neoclouds.',
+        'Le silicium Apple est la cible principale : chaque kernel est d’abord écrit et optimisé pour Metal. NVIDIA CUDA est en production sur RTX et DGX Spark et en cours d’optimisation, avec de premières exécutions sur H100, H200, B100 et B200. AMD via ROCm et Vulkan avance vite. Pensez MacBook et Mac Studio, stations RTX, DGX Spark, Strix Halo et flottes de neoclouds.',
     },
     {
       question: 'Comment signaler un bug ?',

@@ -44,7 +44,7 @@ const industriesOverviewZh: (typeof industriesOverview)['en'] = {
         title: '更少的*组件*。',
         body: 'Butter 以极少的依赖提供模型服务：macOS 和 iOS 上用 Swift，其他平台用 Rust，运行在为每种后端调优的内核上。安全与极致性能兼得，无需妥协。要打的补丁更少，会出的故障更少，要解释的也更少。',
         points: [
-          'Metal 优先，其次 CUDA，ROCm 和 Vulkan 可运行',
+          'Metal 优先，CUDA 调优中，ROCm 和 Vulkan 即将推出',
           '兼容 OpenAI 的服务，应用照常工作',
           '无需转换，直接加载 Hugging Face 模型',
         ],

@@ -44,7 +44,7 @@ const industriesOverviewEs: (typeof industriesOverview)['en'] = {
         title: 'Menos *piezas* móviles.',
         body: 'Butter sirve modelos con dependencias mínimas, usando Swift para macOS e iOS y Rust para todo lo demás, sobre kernels afinados para cada backend. Obtienes seguridad y el máximo rendimiento, sin concesiones. Menos que parchear, menos que se rompa y menos que explicar.',
         points: [
-          'Metal primero, CUDA después, ROCm y Vulkan funcionando',
+          'Metal primero, CUDA en afinación, ROCm y Vulkan próximamente',
           'Serving compatible con OpenAI, para que tus apps sigan funcionando',
           'Carga modelos de Hugging Face sin conversión',
         ],

@@ -79,9 +79,9 @@ const neocloudsFr: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: 'Où nous *en sommes*.',
-    lede: 'Syrup et Butter sont en accès anticipé et à code fermé pour l’instant. CUDA est en production sur RTX et DGX Spark, et les GPU de datacenter sont en cours.',
+    lede: 'Syrup et Butter sont en accès anticipé et à code fermé pour l’instant. CUDA est en production sur RTX et DGX Spark. Les premières exécutions sont faites sur H100, H200, B100, B200 et MI300.',
     notes: [
-      'Dites-nous vos générations de GPU. CUDA pour datacenter est en cours : les flottes dont nous entendons parler orientent ce que nous faisons en premier.',
+      'Dites-nous vos générations de GPU. Les flottes dont nous entendons parler décident lesquelles nous optimisons en premier.',
       'ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
       'Nous ne prétendons pas que Butter fait mieux que d’autres moteurs sur CUDA ou ROCm. Quand nous publierons des mesures, elles seront accompagnées de la méthode.',
     ],
@@ -95,7 +95,7 @@ const neocloudsFr: (typeof neoclouds)['en'] = {
     {
       question: 'Sur quels GPU cela tourne-t-il ?',
       answer:
-        'Le silicium Apple via Metal est principal. NVIDIA via CUDA est secondaire, en production sur RTX et DGX Spark, avec les GPU de datacenter en cours. AMD ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+        'Le silicium Apple via Metal est principal. NVIDIA via CUDA est en production sur RTX et DGX Spark et en cours d’optimisation, avec de premières exécutions faites sur H100, H200, B100 et B200. Côté AMD, les premières exécutions sont faites sur MI300, et ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
     },
     {
       question: 'Pourquoi faire confiance à la télémétrie ?',

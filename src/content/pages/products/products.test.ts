@@ -165,11 +165,24 @@ describe('hardware tiers', () => {
     expect(productCopy.whisk.en.platforms).toBeUndefined();
   });
 
-  it('lists the enterprise datacenter GPUs as still in progress', () => {
-    const item = productsShared.en.runsOn.items.find((entry) =>
-      /datacenter/i.test(entry.label),
+  it('lists datacenter GPUs as first runs, not as in production', () => {
+    const labels = productsShared.en.runsOn.items.map((entry) => entry.label);
+    expect(labels).toContain('H100 · H200 · B100 · B200 · first runs');
+    expect(labels).toContain('MI300 · first runs');
+    // The chips say "first runs" themselves; an inProgress flag would append
+    // the "Next" badge to them.
+    const firstRuns = productsShared.en.runsOn.items.filter((entry) =>
+      /first runs/.test(entry.label),
     );
-    expect(item?.inProgress).toBe(true);
+    expect(firstRuns.every((entry) => !entry.inProgress)).toBe(true);
+  });
+
+  it('names the tiers Primary, Tuning and Coming soon', () => {
+    expect(productsShared.en.tierLabels).toEqual({
+      primary: 'Primary',
+      secondary: 'Tuning',
+      runs: 'Coming soon',
+    });
   });
 });
 

@@ -70,7 +70,7 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
       {
         product: 'butter',
         need: 'Inferencia gestionada con menos piezas móviles.',
-        body: 'Swift para macOS e iOS, Rust para todo lo demás, con dependencias mínimas. Checkpoints y caché KV cuantizados, decodificación especulativa y LoRA tras una API compatible con OpenAI.',
+        body: 'Swift para macOS e iOS y Rust para todo lo demás, por velocidad y seguridad de memoria. Unas dependencias mínimas suponen menos riesgo de cadena de suministro que asumir por tus inquilinos. Checkpoints y caché KV cuantizados, decodificación especulativa y LoRA tras una API compatible con OpenAI.',
       },
       {
         product: 'iron',
@@ -81,9 +81,9 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
   },
   whereWeAre: {
     title: 'Dónde *estamos*.',
-    lede: 'Lo que más le importa a una nube de GPU va primero: las GPU de centros de datos están en desarrollo. Syrup, Butter e Iron están en acceso anticipado y son de código cerrado por ahora.',
+    lede: 'Lo que más le importa a una nube de GPU va primero: en GPU de centros de datos tenemos primeras ejecuciones, no producción. Syrup, Butter e Iron están en acceso anticipado y son de código cerrado por ahora.',
     notes: [
-      'CUDA está en producción en RTX y DGX Spark. Cuéntanos tus generaciones de GPU de centros de datos, porque las flotas que conocemos marcan qué va primero.',
+      'CUDA está en producción en RTX y DGX Spark. Las primeras ejecuciones ya están hechas en H100, H200, B100, B200 y MI300. Cuéntanos tus generaciones de GPU de centros de datos, porque las flotas que conocemos deciden cuáles afinamos primero.',
       'ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
       'No afirmamos que Butter supere a otros motores en CUDA o ROCm. Cuando publiquemos mediciones, irán acompañadas del método.',
     ],
@@ -97,7 +97,7 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
     {
       question: '¿Qué GPU admite?',
       answer:
-        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. AMD ROCm y Vulkan funcionan, pero aún sin afinar.',
+        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA está en producción en RTX y DGX Spark y se está afinando, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200. En AMD, las primeras ejecuciones en MI300 ya están hechas, y ROCm y Vulkan funcionan, pero aún sin afinar.',
     },
     {
       question: '¿Cuánto sumará a nuestro margen?',

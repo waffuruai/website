@@ -156,7 +156,7 @@ const butterEs: (typeof butter)['en'] = {
       {
         term: 'Runtime',
         detail:
-          'Swift sobre Metal para macOS e iOS, con macOS 14 o posterior. Rust para CUDA y todo lo demás. Dependencias mínimas.',
+          'Swift sobre Metal para macOS e iOS, con macOS 14 o posterior. Rust para CUDA y todo lo demás. Dependencias mínimas, con menos riesgo en la cadena de suministro.',
       },
       {
         term: 'Formatos de modelo',
@@ -242,7 +242,7 @@ const butterEs: (typeof butter)['en'] = {
   platforms: {
     heading: 'Dónde *funciona*.',
     intro:
-      'Metal es el objetivo principal. CUDA es secundario, y AMD a través de ROCm y Vulkan avanza rápido.',
+      'Metal es el objetivo principal. CUDA se está afinando ahora, y AMD a través de ROCm y Vulkan avanza rápido.',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -275,7 +275,7 @@ const butterEs: (typeof butter)['en'] = {
     {
       question: '¿En qué hardware funciona?',
       answer:
-        'Swift sobre Metal para Apple silicon es el objetivo principal, desde un MacBook hasta un Mac Studio con macOS 14 o posterior. CUDA es secundario, en producción en RTX y DGX Spark. AMD a través de ROCm y Vulkan avanza rápido.',
+        'Swift sobre Metal para Apple silicon es el objetivo principal, desde un MacBook hasta un Mac Studio con macOS 14 o posterior. CUDA está en producción en RTX y DGX Spark y se está afinando. AMD a través de ROCm y Vulkan avanza rápido.',
     },
     {
       question: '¿Qué modelos ejecuta?',
@@ -285,7 +285,7 @@ const butterEs: (typeof butter)['en'] = {
     {
       question: '¿En qué está escrito Butter?',
       answer:
-        'En Swift para macOS e iOS, y en Rust para todo lo demás. Butter mantiene sus dependencias al mínimo y corre sobre kernels afinados para cada backend, así que obtienes seguridad y el máximo rendimiento, sin concesiones.',
+        'En Swift para macOS e iOS, y en Rust para todo lo demás, por velocidad y seguridad de memoria. Butter mantiene sus dependencias al mínimo, lo que deja menos margen a un ataque a la cadena de suministro, y corre sobre kernels afinados para cada backend.',
     },
     {
       question:

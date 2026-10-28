@@ -175,7 +175,7 @@ export const butter: Localized<ProductCopy> = {
         {
           term: 'Runtime',
           detail:
-            'Swift on Metal for macOS and iOS, with macOS 14 or later. Rust for CUDA and everything else. Minimal dependencies.',
+            'Swift on Metal for macOS and iOS, with macOS 14 or later. Rust for CUDA and everything else. Minimal dependencies, for less supply-chain risk.',
         },
         {
           term: 'Model formats',
@@ -261,7 +261,7 @@ export const butter: Localized<ProductCopy> = {
     platforms: {
       heading: 'Where it *runs*.',
       intro:
-        'Metal is the primary target. CUDA is secondary, and AMD through ROCm and Vulkan is moving fast.',
+        'Metal is the primary target. CUDA is being tuned now, and AMD through ROCm and Vulkan is moving fast.',
       tiers: [
         {
           platform: 'Apple · Metal',
@@ -294,7 +294,7 @@ export const butter: Localized<ProductCopy> = {
       {
         question: 'What hardware does it run on?',
         answer:
-          'Swift on Metal for Apple silicon is the primary target, from a MacBook to a Mac Studio on macOS 14 or later. CUDA is secondary, in production on RTX and DGX Spark. AMD through ROCm and Vulkan is moving fast.',
+          'Swift on Metal for Apple silicon is the primary target, from a MacBook to a Mac Studio on macOS 14 or later. CUDA is in production on RTX and DGX Spark and being tuned. AMD through ROCm and Vulkan is moving fast.',
       },
       {
         question: 'Which models does it run?',
@@ -304,7 +304,7 @@ export const butter: Localized<ProductCopy> = {
       {
         question: 'What is Butter written in?',
         answer:
-          'Swift for macOS and iOS, and Rust for everything else. Butter keeps its dependencies minimal and runs on kernels tuned for each backend, so you get safety and maximal performance without compromises.',
+          'Swift for macOS and iOS, and Rust for everything else, for speed and memory safety. Butter keeps its dependencies minimal, so there is less room for a supply-chain attack, and it runs on kernels tuned for each backend.',
       },
       {
         question: 'Will my existing tools and agent harnesses work with it?',

@@ -118,7 +118,7 @@ export const aiCompanies: Localized<SolutionPage> = {
       notes: [
         'Roughly 1,139 kernel declarations are in Iron today.',
         'HIP and Vulkan pass a test corpus of 4,164 of 4,164 cases bit-accurately, but they are not tuned yet.',
-        'CUDA is in production on RTX and DGX Spark, with datacenter GPUs in progress.',
+        'CUDA is in production on RTX and DGX Spark, with first runs done on H100, H200, B100 and B200.',
       ],
     },
     faq: [

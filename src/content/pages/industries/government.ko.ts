@@ -64,7 +64,7 @@ const governmentKo: (typeof government)['en'] = {
       {
         product: 'butter',
         need: '직접 운영하는 인프라에서 모델을 서빙하세요.',
-        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust로 만든 OpenAI 호환 서빙이며, 의존성은 최소한입니다. 기존 도구는 SDK가 아니라 주소만 바꾸면 됩니다.',
+        body: 'macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust로 만든 OpenAI 호환 서빙으로, 속도와 메모리 안전성을 갖췄습니다. 의존성이 최소한이어서 검토할 공급망 위험이 줄어듭니다. 기존 도구는 SDK가 아니라 주소만 바꾸면 됩니다.',
       },
       {
         product: 'syrup',
@@ -87,7 +87,7 @@ const governmentKo: (typeof government)['en'] = {
     title: '우리는 지금 *어디쯤*인가.',
     lede: '제품은 얼리 액세스 중이며 당분간 비공개 소스이고, 컴플라이언스나 인가에 관해 어떤 주장도 하지 않습니다. 지금 되는 것은 다음과 같습니다.',
     notes: [
-      '파일럿은 스택이 지금 돌아가는 Apple 실리콘, RTX 워크스테이션, DGX Spark에서 계획하세요. 데이터센터 GPU는 진행 중입니다.',
+      '파일럿은 스택이 지금 돌아가는 Apple 실리콘, RTX 워크스테이션, DGX Spark에서 계획하세요. 데이터센터 GPU는 H100, H200, B100, B200, MI300에서 첫 실행을 마쳤습니다.',
       'ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
       '모델을 직접 보유한 머신에 올려 두면 스택 대부분이 오프라인으로 동작합니다. 에어갭 환경은 곧 지원할 예정입니다.',
       '조달 및 보안 요구 사항을 직접 가져오시면 구체적으로 답변드리겠습니다.',
@@ -117,7 +117,7 @@ const governmentKo: (typeof government)['en'] = {
     {
       question: '어떤 하드웨어를 지원하나요?',
       answer:
-        'Apple 실리콘은 Metal을 통해 주력입니다. NVIDIA는 CUDA를 통해 보조이며 RTX와 DGX Spark에서 프로덕션으로 운영 중이고 데이터센터 GPU는 진행 중입니다. AMD ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+        'Apple 실리콘은 Metal을 통해 주력입니다. NVIDIA는 CUDA를 통해 RTX와 DGX Spark에서 프로덕션으로 운영 중이며 튜닝을 진행하고 있고, H100, H200, B100, B200에서는 첫 실행을 마쳤습니다. AMD에서는 MI300에서 첫 실행을 마쳤고, ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
     },
     {
       question: '어떻게 평가할 수 있나요?',
