@@ -6,8 +6,7 @@ import styles from './stack-flow.module.css';
 
 /**
  * The stack as a working path, not a list: a request drops from you through
- * each layer to the hardware, the answer climbs back, and the outcomes light
- * when it arrives. Everything sits inside a dashed "your hardware" boundary;
+ * each layer to the hardware, and the outcomes light when it lands. Everything sits inside a dashed "your hardware" boundary;
  * the cloud waits outside with no line to it. CSS only, on a loop; reduced
  * motion shows the finished frame with every layer lit.
  */
@@ -36,10 +35,9 @@ export function StackFlow({
             </div>
 
             <div className="relative mt-3 pl-7">
-              {/* The path the request and the answer travel. */}
+              {/* The path the request travels. */}
               <span aria-hidden className={styles.rail} />
               <span aria-hidden className={styles.request} />
-              <span aria-hidden className={styles.answer} />
 
               <ol className="relative flex flex-col gap-2">
                 {copy.layers.map((layer, index) => (

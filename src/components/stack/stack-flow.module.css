@@ -1,7 +1,6 @@
 /*
  * One 9 s loop. 0–40%: the request (a gold dot) drops down the rail and each
- * layer lights as it passes. 45–80%: the answer (a ring) climbs back up.
- * 80–100%: the outcomes light. Delays per layer come from --i; the number of
+ * layer lights as it passes. 44–97%: the outcomes light. Delays per layer come from --i; the number of
  * layers from --layers. Reduced motion turns animations off (tailwind.css),
  * and the resting styles below are the finished frame.
  */
@@ -14,8 +13,7 @@
   background: color-mix(in oklab, var(--foreground) 14%, transparent);
 }
 
-.request,
-.answer {
+.request {
   position: absolute;
   left: 12px;
   z-index: 2;
@@ -30,10 +28,6 @@
   background: var(--brand);
   box-shadow: 0 0 16px color-mix(in oklab, var(--brand) 60%, transparent);
   animation: down 9s ease-in-out infinite;
-}
-.answer {
-  border: 2px solid var(--brand);
-  animation: up 9s ease-in-out infinite;
 }
 
 @keyframes down {
@@ -51,25 +45,6 @@
   42%,
   100% {
     top: calc(100% - 24px);
-    opacity: 0;
-  }
-}
-@keyframes up {
-  0%,
-  44% {
-    top: calc(100% - 24px);
-    opacity: 0;
-  }
-  48% {
-    opacity: 1;
-  }
-  78% {
-    top: -12px;
-    opacity: 1;
-  }
-  82%,
-  100% {
-    top: -12px;
     opacity: 0;
   }
 }
@@ -99,11 +74,11 @@
 }
 @keyframes arrive {
   0%,
-  78% {
+  40% {
     border-color: color-mix(in oklab, var(--foreground) 10%, transparent);
     opacity: 0.55;
   }
-  84%,
+  46%,
   97% {
     border-color: var(--brand);
     opacity: 1;
@@ -115,8 +90,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .request,
-  .answer {
+  .request {
     display: none;
   }
   .outcome {
