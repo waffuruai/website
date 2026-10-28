@@ -55,6 +55,19 @@ export function sectionRedirects(
   );
 }
 
+/**
+ * Installers we point at instead of serving: `curl -fsSL
+ * https://waffuru.ai/pantry/install.sh | sh` follows the redirect to the
+ * script the latest release ships, which then verifies the binary itself.
+ * A 302, since "latest" moves with every release. Pantry moves to
+ * `releases/products.json` (served, hashed and pinned like Iron) once its
+ * release publishes the `install.sh.sha256` the receiver checks.
+ */
+export const INSTALLER_REDIRECTS: Record<string, string> = {
+  '/pantry/install.sh':
+    'https://github.com/waffuruai/pantry/releases/latest/download/install.sh',
+};
+
 /** Old or typed-from-memory URLs and where they live now. */
 export const REDIRECTS: Record<string, string> = {
   ...sectionRedirects(site.launched),
@@ -175,6 +188,13 @@ export function route(
 
   if (path === '/robots.txt') return { kind: 'robots' };
   if (first === 'api') return { kind: 'api', name: path.slice(5) };
+  if (INSTALLER_REDIRECTS[path]) {
+    return {
+      kind: 'redirect',
+      location: INSTALLER_REDIRECTS[path],
+      status: 302,
+    };
+  }
   if (INSTALLER_PRODUCTS.includes(first) && path !== `/${first}`) {
     return { kind: 'passthrough' };
   }

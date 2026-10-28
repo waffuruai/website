@@ -131,7 +131,7 @@ export function PantryPage({
           {copy.install.methods.map((method, index) => {
             const link = {
               mise: facts.packslip,
-              script: `${facts.releases}/latest/download/install.sh`,
+              script: facts.installScript,
               verify: facts.installGuide,
             }[method.id];
             return (

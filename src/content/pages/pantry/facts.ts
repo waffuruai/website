@@ -18,7 +18,9 @@ export const pantryFacts = {
   path: '/products/pantry',
   repo,
   releases: `${repo}/releases`,
-  installGuide: `${repo}/blob/main/docs/public/install.md`,
+  installGuide: `${repo}/blob/HEAD/docs/public/install.md`,
+  /** The install script's source, to read before running it. */
+  installScript: `${repo}/blob/HEAD/install.sh`,
   packslip: 'https://packslip.dev',
   /** The deep dive this page's "Learn more" points at. */
   post: '/blog/introducing-pantry',
@@ -26,7 +28,8 @@ export const pantryFacts = {
   platforms: ['macOS', 'Linux'],
   install: {
     mise: 'mise use -g packslip:github.com/waffuruai/pantry',
-    script: `curl -fsSL ${repo}/releases/latest/download/install.sh | sh`,
+    /** Redirects to the latest release's script (`worker/routing.ts`). */
+    script: 'curl -fsSL https://waffuru.ai/pantry/install.sh | sh',
     verify: [
       'ASSET=wpantry-universal-apple-darwin  # Linux: wpantry-x86_64-unknown-linux-musl',
       'gh release download --repo waffuruai/pantry -p "$ASSET" -p SHA256SUMS -p packslip.sigstore.json',

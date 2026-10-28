@@ -3,8 +3,9 @@ import { cn } from '@/lib/utils';
 
 /**
  * A shell command (or a few lines of them) on a raised card with a copy
- * button: the header names it, the body is Geist Mono, wide lines scroll
- * inside the card.
+ * button: the header names it, the body is Geist Mono. Long lines wrap with
+ * a hanging indent under their prompt instead of scrolling; Copy still copies
+ * each command whole.
  */
 export function CommandBlock({
   label,
@@ -31,11 +32,11 @@ export function CommandBlock({
         tabIndex={0}
         role="region"
         aria-label={label}
-        className="overflow-x-auto px-4 py-4 font-mono text-[13px] leading-[1.7] text-foreground"
+        className="px-4 py-4 font-mono text-[13px] leading-[1.7] [overflow-wrap:anywhere] break-words whitespace-pre-wrap text-foreground"
       >
         <code>
           {command.split('\n').map((line, index) => (
-            <span key={index} className="block">
+            <span key={index} className="block pl-[2ch] -indent-[2ch]">
               <span aria-hidden className="text-brand-ink select-none">
                 ${' '}
               </span>

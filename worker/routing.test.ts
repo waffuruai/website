@@ -76,6 +76,15 @@ describe('sectionRedirects', () => {
     }
   });
 
+  it('sends /pantry/install.sh to the latest release script, temporarily', () => {
+    expect(decide('/pantry/install.sh')).toEqual({
+      kind: 'redirect',
+      location:
+        'https://github.com/waffuruai/pantry/releases/latest/download/install.sh',
+      status: 302,
+    });
+  });
+
   it('redirects bare names only, never an installer path under them', () => {
     for (const from of Object.keys(REDIRECTS)) {
       expect(from).toMatch(/^\/[a-z-]+$/);

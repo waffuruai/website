@@ -101,7 +101,7 @@ mise use -g packslip:github.com/waffuruai/pantry
 No mise? The install script checks the download against `SHA256SUMS`, verifies its signature with packslip, the GitHub CLI or cosign, and installs it to `~/.local/bin`:
 
 ```sh
-curl -fsSL https://github.com/waffuruai/pantry/releases/latest/download/install.sh | sh
+curl -fsSL https://waffuru.ai/pantry/install.sh | sh
 ```
 
 Or verify it by hand:
@@ -115,7 +115,7 @@ gh attestation verify "$ASSET" --repo waffuruai/pantry
 install -m 0755 "$ASSET" ~/.local/bin/wpantry
 ```
 
-The [install guide](https://github.com/waffuruai/pantry/blob/main/docs/public/install.md) covers cosign, crates.io and rebuilding a release yourself. It is MIT licensed: [read every line](https://github.com/waffuruai/pantry) before you run it. That is the point.
+The [install guide](https://github.com/waffuruai/pantry/blob/HEAD/docs/public/install.md) covers cosign, crates.io and rebuilding a release yourself. It is MIT licensed: [read every line](https://github.com/waffuruai/pantry) before you run it. That is the point.
 
 ## For people, agents and _fleets_
 
