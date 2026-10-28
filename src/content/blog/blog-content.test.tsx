@@ -265,3 +265,58 @@ describe('the Pantry post', () => {
     expect(container.textContent).not.toContain('!');
   });
 });
+
+describe('the Rust and Swift post', () => {
+  const load = posts['./why-rust-and-swift/page.mdx'];
+
+  const renderPost = async () => {
+    const { default: Content } = await load!();
+    return render(
+      withDictionary(
+        <MDXProvider components={mdxComponents({})}>
+          <Content />
+        </MDXProvider>,
+      ),
+    );
+  };
+
+  it('is a published engineering post by Tom Turney', async () => {
+    const { article } = await load!();
+    expect(article).toMatchObject({
+      author: 'tom-turney',
+      category: 'Engineering',
+      date: '2026-10-28',
+      published: true,
+    });
+  });
+
+  it('links the products it describes and every source it cites', async () => {
+    await renderPost();
+    const hrefs = screen
+      .getAllByRole('link')
+      .map((a) => a.getAttribute('href'));
+    for (const href of [
+      '/products/butter',
+      '/products/iron',
+      pantryFacts.path,
+      pantryFacts.repo,
+      pantryFacts.packslip,
+      'https://github.com/ossf/malicious-packages',
+      'https://blog.npmjs.org/post/180565383195/details-about-the-event-stream-incident',
+      'https://pytorch.org/blog/compromised-nightly-dependency/',
+      'https://www.openwall.com/lists/oss-security/2024/03/29/4',
+      'https://blog.rust-lang.org/2022/05/10/malicious-crate-rustdecimal/',
+    ]) {
+      expect(hrefs, href).toContain(href);
+    }
+  });
+
+  it('keeps to the brand voice, and calls provable execution exploration', async () => {
+    const { container } = await renderPost();
+    const text = container.textContent ?? '';
+    expect(text).not.toContain('!');
+    expect(text).toContain(
+      'we are exploring now: mathematically verifiable, provable execution',
+    );
+  });
+});
