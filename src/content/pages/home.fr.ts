@@ -144,8 +144,8 @@ const homeFr: (typeof home)['en'] = {
         body: 'La demande d’intelligence est sans limite ; l’énergie et les puces, non. L’enjeu, c’est plus de travail utile pour chaque unité de calcul.',
       },
       {
-        title: 'Assez bon, sur votre propre matériel',
-        body: 'D’ici environ deux ans, les modèles qui tournent sur les machines que les gens possèdent déjà seront assez bons pour un vrai travail. C’est pour ce moment que nous construisons.',
+        title: 'Tourner sur votre propre matériel',
+        body: 'Les modèles qui tournent sur les machines que les gens possèdent déjà sont assez bons pour un vrai travail. Nous construisons pour cela depuis un moment déjà.',
       },
     ],
     links: [

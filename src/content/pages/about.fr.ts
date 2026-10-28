@@ -27,7 +27,7 @@ const aboutFr: (typeof about)['en'] = {
     intro:
       'L’intelligence doit tourner là où les gens utilisent déjà la technologie.',
     paragraphs: [
-      'Les modèles deviennent assez bons pour tourner sur le matériel que les gens possèdent déjà.',
+      'Les modèles sont désormais assez bons pour tourner sur le matériel que les gens possèdent déjà.',
       'Encore faut-il que la stack qui les exécute soit prête. Elle doit être plus rapide, moins chère, simple à utiliser et **à vous** : des kernels qui tirent plus de chaque watt, des résultats corrects plus vite, des modèles de vision, d’audio et de texte qui tournent sans une montagne de dépendances et de complexité, et une mémoire et un contexte qui restent sur votre machine.',
       'L’accès à l’intelligence ne doit dépendre ni de la géographie, ni de la fortune, ni des diplômes. Cela suppose un coût par token plus bas partout : sur le portable que l’on possède déjà, et sur les GPU qu’une entreprise possède ou loue.',
     ],
@@ -57,8 +57,8 @@ const aboutFr: (typeof about)['en'] = {
       },
       {
         statement:
-          'Des modèles assez bons sur du matériel courant, c’est pour bientôt.',
-        body: 'D’ici environ deux ans, les modèles exécutés sur le matériel que les gens possèdent déjà seront assez bons pour un vrai travail. La loi de Moore et les progrès rapides de l’IA continuent de se cumuler.',
+          'Des modèles assez bons sur du matériel courant, c’est maintenant.',
+        body: 'Les modèles exécutés sur le matériel que les gens possèdent déjà sont aujourd’hui assez bons pour un vrai travail, tandis que la loi de Moore et les progrès rapides de l’IA continuent de se cumuler.',
       },
       {
         statement:

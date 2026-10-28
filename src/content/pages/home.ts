@@ -215,8 +215,8 @@ export const home: Localized<HomeContent> = {
           body: 'Demand for intelligence is limitless; power and chips are not. The win is more useful work from every unit of compute.',
         },
         {
-          title: 'Good enough, on hardware you own',
-          body: 'Within about two years, models on the machines people already have will be good enough for meaningful work. We are building for that.',
+          title: 'Run on hardware you own',
+          body: 'Models on the machines people already have are good enough for meaningful work. We’ve been building for that.',
         },
       ],
       links: [

@@ -144,8 +144,8 @@ const homeEs: (typeof home)['en'] = {
         body: 'La demanda de inteligencia es ilimitada; la energía y los chips, no. La clave es sacar más trabajo útil de cada unidad de cómputo.',
       },
       {
-        title: 'Suficientemente bueno, en tu propio hardware',
-        body: 'En unos dos años, los modelos en las máquinas que la gente ya tiene serán lo bastante buenos para un trabajo con sentido. Construimos para ese momento.',
+        title: 'Corre en tu propio hardware',
+        body: 'Los modelos en las máquinas que la gente ya tiene son lo bastante buenos para un trabajo con sentido. Llevamos tiempo construyendo para eso.',
       },
     ],
     links: [
