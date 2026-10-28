@@ -53,12 +53,14 @@ export default async function SolutionRoute({
   const page = getSolution(slug, locale);
   if (!page || !isSolutionSlug(slug)) notFound();
   const { common } = await getDictionary(locale);
+  const shared = localize(solutionsShared, locale);
 
   return (
     <SolutionPage
-      slug={slug}
+      path={solutionPath(slug)}
+      parent={{ label: shared.breadcrumb.solutions, href: '/solutions' }}
       page={page}
-      shared={localize(solutionsShared, locale)}
+      shared={shared}
       locale={locale}
       common={common}
     />

@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterKo: (typeof butter)['en'] = {
   layer: '서빙',
-  tagline: 'Python 없는 모델 서빙.',
+  tagline: '타협 없는 멀티모달 추론.',
   summary:
     'Apple 실리콘에는 Metal 위의 Swift를, CUDA를 비롯한 나머지에는 Rust를 씁니다. 2~8비트 양자화 체크포인트와 하이브리드·MoE 모델을 불러오고, OpenAI 호환 API와 Anthropic Messages API로 서빙합니다.',
   seo: {
-    title: 'Butter: Python 없는 LLM 추론',
+    title: 'Butter: 의존성을 최소화한 멀티모달 추론',
     description:
-      'Apple 실리콘은 Swift, CUDA는 Rust로 만든 LLM 추론 엔진. Hugging Face 모델을 OpenAI 호환 API와 Anthropic Messages API로 서빙하며, 에이전트 하니스를 위해 만들었습니다.',
+      'macOS와 iOS는 Swift, 그 밖의 모든 곳은 Rust로 만든, 의존성을 최소화한 LLM 추론 엔진. Hugging Face 모델을 OpenAI 호환 API와 Anthropic Messages API로 서빙하며, 에이전트 하니스를 위해 만들었습니다.',
     keywords: [
       'LLM 추론 엔진',
       '로컬 LLM 서빙',
@@ -20,8 +20,8 @@ const butterKo: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: 'Python *없는* 모델 서빙.',
-    lede: 'Butter는 Apple 실리콘에는 Metal 위의 Swift로, CUDA를 비롯한 나머지에는 Rust로 작성한 추론 엔진입니다. Python이 없고, Metal 커널은 미리 컴파일해 배포하며, 모델은 Hugging Face에서 곧바로 불러옵니다.',
+    title: '*타협* 없는 모델 서빙.',
+    lede: 'Butter는 최소한의 의존성으로 모델을 서빙합니다. macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 쓰며, 백엔드별로 튜닝한 커널 위에서 돌아갑니다. 안전성과 최고의 성능을 타협 없이 얻을 수 있습니다. Metal 커널은 미리 컴파일해 배포하며, 모델은 Hugging Face에서 곧바로 불러옵니다.',
     highlights: [
       {
         value: '4',
@@ -49,7 +49,7 @@ const butterKo: (typeof butter)['en'] = {
   capabilities: {
     heading: 'Butter가 *하는* 일.',
     intro:
-      '체크포인트를 불러오는 순간부터 토큰을 스트리밍하기까지, 그 사이에 Python은 없습니다.',
+      '체크포인트를 불러오는 순간부터 토큰을 스트리밍하기까지, 의존성은 최소한입니다.',
     items: [
       {
         title: '모델을 그대로 불러옵니다',
@@ -149,12 +149,11 @@ const butterKo: (typeof butter)['en'] = {
   ],
   specs: {
     heading: '기술 *세부 사항*.',
-    intro: '꼼꼼히 읽어 보실 분들을 위한 상세 정보.',
     rows: [
       {
         term: '런타임',
         detail:
-          'Apple 실리콘에는 Metal 위의 Swift(macOS 14 이상), CUDA를 비롯한 나머지에는 Rust. Python은 없습니다.',
+          'macOS와 iOS에는 Metal 위의 Swift(macOS 14 이상), CUDA를 비롯한 그 밖의 모든 곳에는 Rust. 의존성이 최소한이어서 공급망 위험이 적습니다.',
       },
       {
         term: '모델 형식',
@@ -240,7 +239,7 @@ const butterKo: (typeof butter)['en'] = {
   platforms: {
     heading: '*구동*되는 곳.',
     intro:
-      'Metal이 주력 대상입니다. CUDA는 그다음이며, ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
+      'Metal이 주력 대상입니다. CUDA는 지금 튜닝을 진행하고 있으며, ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -262,7 +261,7 @@ const butterKo: (typeof butter)['en'] = {
   stack: {
     heading: '나머지 *스택*과 함께 쓰기.',
     intro:
-      'Butter는 Iron이 컴파일한 커널 위에서 모델을 실행합니다. Waffle은 vLLM, SGLang, llama.cpp와 나란히 Butter도 지켜볼 수 있고, Syrup은 AI가 하던 일을 기억하게 합니다.',
+      'Butter는 Iron이 컴파일한 커널 위에서 모델을 실행합니다. Syrup은 vLLM, SGLang, llama.cpp와 나란히 Butter도 지켜볼 수 있고, Whisk는 AI가 하던 일을 기억하게 합니다.',
   },
   faq: [
     {
@@ -273,7 +272,7 @@ const butterKo: (typeof butter)['en'] = {
     {
       question: '어떤 하드웨어에서 돌아가나요?',
       answer:
-        'Apple 실리콘의 Metal 위 Swift가 주력 대상이며, macOS 14 이상의 MacBook부터 Mac Studio까지 지원합니다. CUDA는 그다음으로, RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
+        'Apple 실리콘의 Metal 위 Swift가 주력 대상이며, macOS 14 이상의 MacBook부터 Mac Studio까지 지원합니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이며 튜닝을 진행하고 있습니다. ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다.',
     },
     {
       question: '어떤 모델을 돌릴 수 있나요?',
@@ -281,9 +280,9 @@ const butterKo: (typeof butter)['en'] = {
         '현재 Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite, Phi를 비롯해 위에 나열한 여러 모델을 텍스트, 비전, 음성, 옴니 변형까지 지원합니다.',
     },
     {
-      question: 'Python이 필요한가요?',
+      question: 'Butter는 어떤 언어로 만들었나요?',
       answer:
-        '아니요. Butter는 Apple 실리콘에는 Metal 위의 Swift, CUDA를 비롯한 나머지에는 Rust로 만들어져 서빙 경로 어디에도 Python이 없습니다.',
+        'macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 써서 속도와 메모리 안전성을 갖췄습니다. Butter는 의존성을 최소한으로 유지해 공급망 공격의 여지를 줄이며, 백엔드별로 튜닝한 커널 위에서 돌아갑니다.',
     },
     {
       question: '기존에 쓰던 도구와 에이전트 하니스도 연결할 수 있나요?',
@@ -293,7 +292,7 @@ const butterKo: (typeof butter)['en'] = {
     {
       question: '얼마나 빠른가요?',
       answer:
-        '128 GB M5 Max에서 Butter는 4-bit Qwen3.8-27B를 단일 요청 기준 초당 103 토큰(약 937 토큰 프롬프트, 그리디)으로, 동시 요청 8개 기준 합계 초당 146 토큰(요청당 약 26)으로 서빙했습니다. 결과는 모델, 프롬프트 길이, 하드웨어에 따라 달라지며, 시험 조건은 홈페이지에 적혀 있습니다.',
+        '128 GB M5 Max에서 Butter는 4-bit Qwen3.8-27B를 단일 요청 기준 초당 103 토큰(약 937 토큰 프롬프트, 그리디)으로, 동시 요청 8개 기준 합계 초당 146 토큰(요청당 약 26)으로 서빙했습니다. 결과는 모델, 프롬프트 길이, 하드웨어에 따라 달라지며, 시험 조건은 이 페이지의 측정 결과와 함께 적혀 있습니다.',
     },
   ],
   cta: {

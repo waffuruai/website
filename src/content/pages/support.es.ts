@@ -43,7 +43,7 @@ const supportEs: (typeof support)['en'] = {
     {
       question: '¿Qué puedo usar hoy?',
       answer:
-        'Nuestros productos (Iron, Butter, Waffle y Syrup) son privados y de código cerrado por ahora, y todavía no hay nada disponible para el público general. El acceso anticipado es la forma de entrar primero.',
+        'Nuestros productos (Iron, Butter, Syrup y Whisk) son privados y de código cerrado por ahora, y todavía no hay nada disponible para el público general. El acceso anticipado es la forma de entrar primero.',
     },
     {
       question: '¿Cómo funciona el acceso anticipado?',
@@ -53,7 +53,7 @@ const supportEs: (typeof support)['en'] = {
     {
       question: '¿En qué hardware funciona?',
       answer:
-        'Apple silicon es el objetivo principal: cada kernel se escribe y se afina primero para Metal. NVIDIA CUDA es secundario, en producción en RTX y DGX Spark. AMD a través de ROCm y Vulkan avanza rápido. Piensa en MacBook y Mac Studio, estaciones de trabajo RTX, DGX Spark, Strix Halo y flotas de neoclouds.',
+        'Apple silicon es el objetivo principal: cada kernel se escribe y se afina primero para Metal. NVIDIA CUDA está en producción en RTX y DGX Spark y se está afinando, con primeras ejecuciones en H100, H200, B100 y B200. AMD a través de ROCm y Vulkan avanza rápido. Piensa en MacBook y Mac Studio, estaciones de trabajo RTX, DGX Spark, Strix Halo y flotas de neoclouds.',
     },
     {
       question: '¿Cómo reporto un error?',

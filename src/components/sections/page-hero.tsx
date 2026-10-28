@@ -21,7 +21,8 @@ export function PageHero({
   label?: string;
   /** Use `*word*` for the gold italic accent. */
   title: string;
-  lede?: string;
+  /** Usually a string; a node when part of it is a link. */
+  lede?: React.ReactNode;
   actions?: Cta[];
   className?: string;
   children?: React.ReactNode;

@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterFr: (typeof butter)['en'] = {
   layer: 'Serving',
-  tagline: 'Servir des modèles sans Python.',
+  tagline: 'Inférence multimodale, sans compromis.',
   summary:
     'Swift sur Metal pour le silicium Apple, Rust pour CUDA et le reste. Charge des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et MoE, et les sert via des API compatibles OpenAI et Anthropic Messages.',
   seo: {
-    title: 'Butter : inférence LLM sans Python',
+    title: 'Butter : inférence multimodale avec un minimum de dépendances',
     description:
-      'Moteur d’inférence LLM : Swift sur Metal pour le silicium Apple, Rust pour CUDA et le reste. Sert les modèles Hugging Face via des API compatibles OpenAI et Anthropic Messages, pensé pour les harnais d’agents.',
+      'Moteur d’inférence LLM avec un minimum de dépendances : Swift pour macOS et iOS, Rust pour tout le reste. Sert les modèles Hugging Face via des API compatibles OpenAI et Anthropic Messages, pensé pour les harnais d’agents.',
     keywords: [
       'moteur d’inférence LLM',
       'serving LLM local',
@@ -20,8 +20,8 @@ const butterFr: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: 'Servir des modèles *sans* Python.',
-    lede: 'Butter est un moteur d’inférence écrit en Swift sur Metal pour le silicium Apple et en Rust pour CUDA et le reste. Pas de Python, des kernels Metal livrés précompilés, et les modèles se chargent directement depuis Hugging Face.',
+    title: 'Servir des modèles sans *compromis*.',
+    lede: 'Butter sert des modèles avec un minimum de dépendances, en Swift pour macOS et iOS et en Rust pour tout le reste, sur des kernels optimisés pour chaque backend. Vous obtenez la sécurité et des performances maximales, sans compromis. Les kernels Metal sont livrés précompilés, et les modèles se chargent directement depuis Hugging Face.',
     highlights: [
       {
         value: '4',
@@ -49,7 +49,7 @@ const butterFr: (typeof butter)['en'] = {
   capabilities: {
     heading: 'Ce que fait *Butter*.',
     intro:
-      'Du chargement d’un checkpoint au streaming des tokens, sans Python entre les deux.',
+      'Du chargement d’un checkpoint au streaming des tokens, avec un minimum de dépendances tout du long.',
     items: [
       {
         title: 'Charge les modèles tels quels',
@@ -150,12 +150,11 @@ const butterFr: (typeof butter)['en'] = {
   ],
   specs: {
     heading: 'Les *détails* techniques.',
-    intro: 'Les détails, pour celles et ceux qui les liront.',
     rows: [
       {
         term: 'Runtime',
         detail:
-          'Swift sur Metal pour le silicium Apple, macOS 14 ou plus récent. Rust pour CUDA et le reste. Pas de Python.',
+          'Swift sur Metal pour macOS et iOS, avec macOS 14 ou plus récent. Rust pour CUDA et tout le reste. Un minimum de dépendances, pour moins de risques sur la chaîne d’approvisionnement.',
       },
       {
         term: 'Formats de modèles',
@@ -241,7 +240,7 @@ const butterFr: (typeof butter)['en'] = {
   platforms: {
     heading: 'Où ça *tourne*.',
     intro:
-      'Metal est la cible principale. CUDA est secondaire, et AMD via ROCm et Vulkan avance vite.',
+      'Metal est la cible principale. CUDA est en cours d’optimisation, et AMD via ROCm et Vulkan avance vite.',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -263,7 +262,7 @@ const butterFr: (typeof butter)['en'] = {
   stack: {
     heading: 'Compatible avec le reste de la *stack*.',
     intro:
-      'Butter exécute les modèles sur les kernels qu’Iron compile. Waffle peut le surveiller aux côtés de vLLM, SGLang et llama.cpp, et Syrup donne à votre IA la mémoire de ce sur quoi vous travailliez.',
+      'Butter exécute les modèles sur les kernels qu’Iron compile. Syrup peut le surveiller aux côtés de vLLM, SGLang et llama.cpp, et Whisk donne à votre IA la mémoire de ce sur quoi vous travailliez.',
   },
   faq: [
     {
@@ -274,7 +273,7 @@ const butterFr: (typeof butter)['en'] = {
     {
       question: 'Sur quel matériel cela tourne-t-il ?',
       answer:
-        'Swift sur Metal pour le silicium Apple est la cible principale, du MacBook au Mac Studio sous macOS 14 ou plus récent. CUDA est secondaire, en production sur RTX et DGX Spark. AMD via ROCm et Vulkan avance vite.',
+        'Swift sur Metal pour le silicium Apple est la cible principale, du MacBook au Mac Studio sous macOS 14 ou plus récent. CUDA est en production sur RTX et DGX Spark et en cours d’optimisation. AMD via ROCm et Vulkan avance vite.',
     },
     {
       question: 'Quels modèles fait-il tourner ?',
@@ -282,9 +281,9 @@ const butterFr: (typeof butter)['en'] = {
         'La couverture actuelle comprend Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite et Phi, entre autres listés plus haut, en variantes texte, vision, voix et omni.',
     },
     {
-      question: 'Ai-je besoin de Python ?',
+      question: 'En quoi Butter est-il écrit ?',
       answer:
-        'Non. Butter, c’est du Swift sur Metal pour le silicium Apple et du Rust pour CUDA et le reste, sans Python nulle part dans le chemin de serving.',
+        'En Swift pour macOS et iOS, et en Rust pour tout le reste, pour la vitesse et la sûreté mémoire. Butter réduit ses dépendances au minimum, ce qui laisse moins de prise à une attaque de la chaîne d’approvisionnement, et tourne sur des kernels optimisés pour chaque backend.',
     },
     {
       question:
@@ -295,7 +294,7 @@ const butterFr: (typeof butter)['en'] = {
     {
       question: 'À quelle vitesse tourne-t-il ?',
       answer:
-        'Sur un M5 Max avec 128 Go, Butter a servi Qwen3.8-27B en 4 bits à 103 tokens par seconde pour une seule requête (prompts d’environ 937 tokens, glouton) et 146 tokens par seconde au total sur 8 requêtes simultanées, soit environ 26 par requête. Les résultats dépendent du modèle, de la longueur du prompt et du matériel ; la page d’accueil donne les conditions de test.',
+        'Sur un M5 Max avec 128 Go, Butter a servi Qwen3.8-27B en 4 bits à 103 tokens par seconde pour une seule requête (prompts d’environ 937 tokens, glouton) et 146 tokens par seconde au total sur 8 requêtes simultanées, soit environ 26 par requête. Les résultats dépendent du modèle, de la longueur du prompt et du matériel ; les conditions de test figurent avec les mesures sur cette page.',
     },
   ],
   cta: {

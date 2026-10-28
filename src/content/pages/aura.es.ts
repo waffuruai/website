@@ -5,7 +5,7 @@ const copy: AuraCopy = {
   starsLabel: 'estrellas en GitHub',
   title: 'Más contexto por *gigabyte*.',
   intro:
-    'AURA comprime la caché KV, de modo que contextos más largos y más sesiones concurrentes caben en la misma memoria. Empezó como nuestra investigación abierta TurboQuant+ y hoy se ejecuta de forma nativa en Iron y Butter.',
+    'AURA es nuestra compresión para la caché KV, los embeddings y los pesos de los modelos. Aquí comprime la caché KV, de modo que contextos más largos y más sesiones concurrentes caben en la misma memoria. Empezó como nuestra investigación abierta TurboQuant+ y hoy se ejecuta de forma nativa en Iron y Butter.',
   lineage: {
     heading: 'De dónde viene',
     steps: [

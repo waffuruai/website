@@ -10,8 +10,9 @@ import solutionsSharedKo from './shared.ko';
 /**
  * Strings every audience page shares: section labels, the four products as
  * they appear in "How the stack fits", and the hardware tiers for "Where we
- * are". Tiers and chips are the exact public wording from the home page;
- * never overclaim (Metal primary, CUDA secondary, ROCm and Vulkan run).
+ * are". Tiers and chips follow the public wording on the product pages;
+ * never overclaim (Metal primary, CUDA in production and being tuned, ROCm
+ * and Vulkan run but are not tuned yet).
  */
 export const solutionsShared: Localized<SolutionsShared> = {
   en: {
@@ -46,19 +47,19 @@ export const solutionsShared: Localized<SolutionsShared> = {
         linkLabel: 'Explore Butter',
         href: '/products/butter',
       },
-      waffle: {
+      syrup: {
         index: '03',
         role: 'Control plane',
-        name: 'Waffle',
-        linkLabel: 'Explore Waffle',
-        href: '/products/waffle',
-      },
-      syrup: {
-        index: '04',
-        role: 'Memory',
         name: 'Syrup',
         linkLabel: 'Explore Syrup',
         href: '/products/syrup',
+      },
+      whisk: {
+        index: '04',
+        role: 'Memory',
+        name: 'Whisk',
+        linkLabel: 'Explore Whisk',
+        href: '/products/whisk',
       },
     },
     hardware: {
@@ -75,14 +76,14 @@ export const solutionsShared: Localized<SolutionsShared> = {
         {
           name: 'NVIDIA · CUDA',
           status: 'secondary',
-          statusLabel: 'Secondary',
-          note: 'In production on RTX and DGX Spark. Datacenter GPUs are in progress. CUDA → PTX.',
+          statusLabel: 'Tuning',
+          note: 'In production on RTX and DGX Spark, with first runs on H100, H200, B100 and B200. CUDA → PTX.',
         },
         {
           name: 'AMD ROCm · Vulkan',
           status: 'runs',
-          statusLabel: 'Runs',
-          note: 'Works today, not tuned yet. HIP → AMDGPU, Vulkan → SPIR-V.',
+          statusLabel: 'Coming soon',
+          note: 'Works today, not tuned yet, with first runs on MI300. HIP → AMDGPU, Vulkan → SPIR-V.',
         },
       ],
       runsOn: [
@@ -91,7 +92,8 @@ export const solutionsShared: Localized<SolutionsShared> = {
         { label: 'DGX Spark' },
         { label: 'Strix Halo' },
         { label: 'Neocloud fleets' },
-        { label: 'Enterprise datacenter GPUs · in progress', inProgress: true },
+        { label: 'H100 · H200 · B100 · B200 · first runs', inProgress: true },
+        { label: 'MI300 · first runs', inProgress: true },
       ],
     },
   },

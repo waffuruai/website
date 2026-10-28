@@ -7,158 +7,123 @@ import waffleJa from './waffle.ja';
 import waffleKo from './waffle.ko';
 
 /*
- * Waffle, 03 · Control plane. Facts come from the content brief only.
- * TODO(founder): publish a hardware and engine support matrix for Waffle and
- * link it from the FAQ; until then the page says plainly that there isn't one.
+ * Waffle, 05 · Agents: the agent harness, with W (the assistant and its
+ * personality) inside. Facts come from the founder and the waffuruai/
+ * assistant README: a personal assistant for work and life, local models
+ * first and the cloud only when a task needs more, coming soon. Everything it
+ * will do is described as what it is being built to do.
  */
 export const waffle: Localized<ProductCopy> = {
   en: {
-    layer: 'Control plane',
-    tagline: 'See every GPU and every engine running on it.',
+    layer: 'Agents',
+    tagline: 'The agent harness, with W, your assistant, inside.',
     summary:
-      'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+      'Waffle is the harness your agents run in, with W, our assistant, inside. It runs local models first and reaches for the cloud only when a task needs more. Coming soon.',
     seo: {
-      title: 'Waffle: a control plane for LLMs on GPUs',
+      title: 'Waffle: the agent harness, with W inside',
       description:
-        'See every GPU and inference engine, from one box to a neocloud. A Rust sidecar reports signed telemetry. Works with Butter, vLLM, SGLang and llama.cpp.',
+        'Waffle is Waffuru’s agent harness, with W, a personal assistant for work and life, inside. Local models first, the cloud only when a task needs it. Coming soon.',
       keywords: [
-        'GPU fleet management',
-        'LLM control plane',
-        'GPU observability',
-        'vLLM SGLang llama.cpp monitoring',
+        'agent harness',
+        'AI assistant',
+        'private AI assistant',
+        'local AI agents',
       ],
     },
     hero: {
-      title: 'See every GPU and every *engine* running on it.',
-      lede: 'Waffle is a control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry.',
+      title: 'Agents that work for *you*.',
+      lede: 'Waffle is the harness your agents run in, with W, our assistant, inside: a trusted extension of you, for work and life. It runs local models first and reaches for the cloud only when a task needs more.',
       highlights: [
-        { value: 'One box', label: 'under a desk, up to a neocloud fleet' },
-        {
-          value: 'Signed',
-          label: 'telemetry from a small Rust sidecar on each host',
-        },
-        {
-          value: 'No lock-in',
-          label:
-            'Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers',
-        },
+        { value: 'W', label: 'the assistant inside' },
+        { value: 'Local first', label: 'the cloud only when a task needs it' },
+        { value: 'Soon', label: 'built on Butter, Iron and Whisk' },
       ],
     },
     story: {
-      heading: 'Know what’s running on every *GPU*.',
+      heading: 'An assistant that is *yours*.',
       problem:
-        'A GPU box runs whatever engine somebody started on it: llama.cpp on one machine, vLLM on the next, SGLang on the new one. Finding out what is running, and where, means logging in to each host.',
+        'Most assistants live on someone else’s servers, see everything you share and charge for every token. Handing one your email, calendar and files means trusting a stranger with your work and your life.',
       outcome:
-        'Put a small Rust sidecar on each host. It reports signed telemetry, and Waffle shows you every GPU and every engine on it, whether you run one machine or a whole fleet.',
+        'Waffle runs your assistant on hardware you own or rent. W gets its memory and context from Whisk and its models from Butter, and your data stays with you unless you choose to use a hosted AI inference provider.',
       outcomes: [
-        'Watch one box under your desk, or a fleet you rent out, with the same tool.',
-        'Keep the engines you already run. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
-        'Rely on what you see: every host reports signed telemetry.',
+        'Hand off everyday work, from email and calendar to bookings, projects and documents.',
+        'Keep what your assistant learns about you on hardware you control.',
+        'Spend on the compute you choose, not on every token.',
       ],
     },
     capabilities: {
-      heading: 'What Waffle *does*.',
-      intro:
-        'A control plane that sits beside your engines instead of replacing them.',
+      heading: 'What Waffle is *for*.',
+      intro: 'Waffle is coming soon. This is what it is being built to do.',
       items: [
         {
-          title: 'Every GPU',
-          body: 'See each GPU on each host in one place.',
+          title: 'A harness for agents',
+          body: 'The place your agents run: the models they call, the memory they draw on and the tools they use, together.',
         },
         {
-          title: 'Every engine',
-          body: 'See which engine is running on it: Butter, vLLM, SGLang, llama.cpp or another OpenAI-compatible server.',
+          title: 'W, the assistant',
+          body: 'A personal assistant for work and life, built to be a trusted extension of you: helpful, approachable and never scary.',
         },
         {
-          title: 'A small Rust sidecar',
-          body: 'Each host runs a small sidecar written in Rust, so adding a machine means adding the sidecar.',
+          title: 'Local models first',
+          body: 'W runs on local models through Butter and Iron, and reaches for the cloud only when a task needs more.',
         },
         {
-          title: 'Signed telemetry',
-          body: 'Each sidecar signs the telemetry it reports.',
-        },
-        {
-          title: 'One box to a fleet',
-          body: 'Start with a single machine under a desk. The same setup reaches a neocloud renting out a fleet.',
-        },
-        {
-          title: 'No lock-in',
-          body: 'Waffle doesn’t need Butter. It works with vLLM, SGLang, llama.cpp and other OpenAI-compatible servers too.',
+          title: 'Memory that stays yours',
+          body: 'Context and memory come from Whisk, on hardware you control.',
         },
       ],
     },
     specs: {
       heading: 'Technical *specifics*.',
-      intro: 'The details, for the people who will read them.',
+      intro: 'Where Waffle sits, for the people who will read it.',
       rows: [
-        { term: 'Role', detail: 'A control plane for LLMs on GPUs.' },
+        { term: 'Assistant', detail: 'W.' },
         {
-          term: 'On each host',
-          detail: 'A small sidecar written in Rust.',
+          term: 'Models',
+          detail: 'Local first; the cloud when a task needs more.',
         },
         {
-          term: 'Telemetry',
-          detail: 'Signed by the sidecar that reports it.',
+          term: 'Runs on',
+          detail: 'Butter and Iron, on hardware you own or rent.',
         },
-        {
-          term: 'Engines',
-          chips: [
-            { label: 'Butter' },
-            { label: 'vLLM' },
-            { label: 'SGLang' },
-            { label: 'llama.cpp' },
-            { label: 'Other OpenAI-compatible servers' },
-          ],
-        },
-        {
-          term: 'Scale',
-          detail: 'One box under a desk to a neocloud fleet.',
-        },
-        {
-          term: 'Lock-in',
-          detail: 'None. Waffle works with engines other than Butter.',
-        },
-        {
-          term: 'Availability',
-          detail: 'Private and closed source during early access.',
-        },
+        { term: 'Memory and context', detail: 'Whisk.' },
+        { term: 'Availability', detail: 'Coming soon.' },
       ],
     },
     stack: {
-      heading: 'Works with the rest of the *stack*.',
+      heading: 'The top of the *stack*.',
       intro:
-        'Waffle watches the GPUs, with Butter or without it. Butter runs models on the kernels Iron compiles, and Syrup remembers what you were working on.',
+        'Waffle sits on everything below it: Whisk for memory and context, Syrup for control, Butter to run the models and Iron for the kernels.',
     },
     faq: [
       {
+        question: 'When can I use Waffle?',
+        answer:
+          'It is coming soon. Request early access and we will write when it is ready to try.',
+      },
+      {
         question: 'Is Waffle open source?',
         answer:
-          'Not today. Waffle is private and closed source during early access. Request access and we’ll write when there is more to share.',
+          'Not today. Waffle is coming soon, and it will be closed source during early access.',
       },
       {
-        question: 'Do I have to use Butter?',
+        question: 'What is W?',
         answer:
-          'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so you keep the engines you already run.',
+          'W is the assistant inside Waffle: a personal assistant for work and life, built to be a trusted extension of you.',
       },
       {
-        question: 'Who is it for?',
+        question: 'Does it need the cloud?',
         answer:
-          'Anyone who runs LLMs on GPUs and wants to see them, from a single box under a desk to a neocloud renting out a fleet.',
+          'No. Waffle runs local models first and reaches for the cloud only when a task needs more.',
       },
       {
-        question: 'What does the sidecar do?',
-        answer:
-          'Each host runs a small sidecar written in Rust. It reports signed telemetry about the host’s GPUs and the engines running on them.',
-      },
-      {
-        question: 'Which GPUs does it support?',
-        answer:
-          'We haven’t published a hardware matrix for Waffle yet. Tell us what you run and we’ll say plainly whether it fits.',
+        question: 'Does my data leave my hardware?',
+        answer: 'Not unless you choose to use a hosted AI inference provider.',
       },
     ],
     cta: {
-      title: 'See your *fleet*.',
-      body: 'Waffle is in early access and closed source for now. Request access, or tell us what you run.',
+      title: 'Meet *W* soon.',
+      body: 'Waffle is coming soon. Request early access, and we will write when it is ready to try.',
     },
   },
   es: waffleEs,

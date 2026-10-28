@@ -45,7 +45,7 @@ const supportJa: (typeof support)['en'] = {
     {
       question: '今日使えるものは何ですか？',
       answer:
-        '製品（Iron、Butter、Waffle、Syrup）は現時点では非公開でクローズドソースであり、一般提供されているものはまだありません。まず利用できるのは、早期アクセスの方々です。',
+        '製品（Iron、Butter、Syrup、Whisk）は現時点では非公開でクローズドソースであり、一般提供されているものはまだありません。まず利用できるのは、早期アクセスの方々です。',
     },
     {
       question: '早期アクセスはどのような仕組みですか？',
@@ -55,7 +55,7 @@ const supportJa: (typeof support)['en'] = {
     {
       question: 'どのハードウェアで動きますか？',
       answer:
-        'Apple シリコンが第一の対象で、すべてのカーネルをまず Metal 向けに書き、チューニングしています。NVIDIA CUDA は第二の対象で、RTX と DGX Spark では本番稼働中です。ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。想定しているのは、MacBook と Mac Studio、RTX ワークステーション、DGX Spark、Strix Halo、そしてネオクラウドのフリートです。',
+        'Apple シリコンが第一の対象で、すべてのカーネルをまず Metal 向けに書き、チューニングしています。NVIDIA CUDA は RTX と DGX Spark で本番稼働中で、チューニングを進めています。H100、H200、B100、B200 でも初回実行を終えています。ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。想定しているのは、MacBook と Mac Studio、RTX ワークステーション、DGX Spark、Strix Halo、そしてネオクラウドのフリートです。',
     },
     {
       question: '不具合はどう報告すればよいですか？',

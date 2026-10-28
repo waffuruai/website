@@ -7,7 +7,7 @@ import type { ProductsOverviewCopy } from '@/content/pages/products/types';
 
 /**
  * "Use one, or all four": what each product does by itself, then what the
- * four do together. Products run from the metal up (Iron to Syrup), the order
+ * four do together. Products run from the metal up (Iron to Whisk), the order
  * you would adopt them in.
  */
 export function UseOneOrAll({

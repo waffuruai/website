@@ -1,150 +1,102 @@
 import type { waffle } from './waffle';
 
 const waffleZh: (typeof waffle)['en'] = {
-  layer: '控制平面',
-  tagline: '看清每一块 GPU 和其上运行的每个引擎。',
+  layer: '智能体',
+  tagline: '智能体框架，内置你的助手 W。',
   summary:
-    '面向 GPU 上大模型的控制平面，从桌下的一台机器，到出租集群的新型云服务商。每台主机运行一个小型 Rust sidecar，上报带签名的遥测数据。支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
+    'Waffle 是运行你的智能体的框架，内置我们的助手 W。它优先使用本地模型，只有任务需要更强能力时才转向云端。即将推出。',
   seo: {
-    title: 'Waffle：GPU 上大模型的控制平面',
+    title: 'Waffle：智能体框架，内置 W',
     description:
-      '看清每块 GPU 和其上的每个推理引擎，从桌下一台机器到新型云服务商的集群。Rust sidecar 上报签名遥测，支持 Butter、vLLM、SGLang、llama.cpp。',
-    keywords: [
-      'GPU 集群管理',
-      '大模型控制平面',
-      'GPU 可观测性',
-      'vLLM SGLang llama.cpp 监控',
-    ],
+      'Waffle 是 Waffuru 的智能体框架，内置 W：一个为工作与生活打造的个人助手。优先使用本地模型，只有任务需要时才用云端。即将推出。',
+    keywords: ['智能体框架', 'AI 助手', '私有 AI 助手', '本地 AI 智能体'],
   },
   hero: {
-    title: '看清每一块 GPU，和其上运行的每个*引擎*。',
-    lede: 'Waffle 是 GPU 上大模型的控制平面，从桌下的一台机器，到出租集群的新型云服务商。每台主机运行一个小型 Rust sidecar，上报带签名的遥测数据。',
+    title: '为*你*工作的智能体。',
+    lede: 'Waffle 是运行你的智能体的框架，内置我们的助手 W：你值得信赖的延伸，兼顾工作与生活。它优先使用本地模型，只有任务需要更强能力时才转向云端。',
     highlights: [
-      { value: '一台机器', label: '桌下一台，直至新型云服务商的集群' },
-      {
-        value: '已签名',
-        label: '每台主机上的小型 Rust sidecar 上报的遥测数据',
-      },
-      {
-        value: '无锁定',
-        label: 'Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器',
-      },
+      { value: 'W', label: '内置的助手' },
+      { value: '本地优先', label: '只有任务需要时才用云端' },
+      { value: '即将推出', label: '基于 Butter、Iron 和 Whisk 打造' },
     ],
   },
   story: {
-    heading: '每块 GPU 上*跑着什么*，一目了然。',
+    heading: '真正属于*你*的助手。',
     problem:
-      'GPU 机器上跑的，是某个人在上面启动的任何引擎：这台是 llama.cpp，下一台是 vLLM，新的那台是 SGLang。想知道什么在哪里运行，就得逐台登录主机。',
+      '大多数助手都住在别人的服务器上，看得到你分享的一切，还按 token 收费。把邮件、日历和文件交给它，就等于把你的工作和生活托付给一个陌生人。',
     outcome:
-      '在每台主机上放一个小型 Rust sidecar。它上报带签名的遥测数据，Waffle 则呈现每一块 GPU 和其上的每个引擎，不论你管的是一台机器还是一整个集群。',
+      'Waffle 在你自有或租用的硬件上运行你的助手。W 的记忆与上下文来自 Whisk，模型来自 Butter；除非你选择使用托管的 AI 推理服务商，否则数据始终留在你手中。',
     outcomes: [
-      '用同一个工具，看管桌下的一台机器，或你出租的整个集群。',
-      '保留你已在运行的引擎。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
-      '放心依赖你所看到的：每台主机都上报带签名的遥测数据。',
+      '把日常事务交出去，从邮件、日历到预订、项目和文档。',
+      '助手对你的了解，留在你掌控的硬件上。',
+      '把钱花在你选择的算力上，而不是花在每个 token 上。',
     ],
   },
   capabilities: {
-    heading: 'Waffle 能*做什么*。',
-    intro: '控制平面守在你的引擎旁边，而不是取代它们。',
+    heading: 'Waffle *用来*做什么。',
+    intro: 'Waffle 即将推出。下面是它被设计来做的事。',
     items: [
       {
-        title: '每一块 GPU',
-        body: '在一处看到每台主机上的每块 GPU。',
+        title: '智能体的运行框架',
+        body: '你的智能体运行的地方：它们调用的模型、借助的记忆和使用的工具，都在一处。',
       },
       {
-        title: '每一个引擎',
-        body: '看到其上运行的是哪个引擎：Butter、vLLM、SGLang、llama.cpp，或其他兼容 OpenAI 的服务器。',
+        title: '助手 W',
+        body: '为工作与生活打造的个人助手，力求成为你值得信赖的延伸：乐于助人、平易近人，从不令人生畏。',
       },
       {
-        title: '小型 Rust sidecar',
-        body: '每台主机运行一个用 Rust 编写的小型 sidecar，所以加一台机器，就是加一个 sidecar。',
+        title: '本地模型优先',
+        body: 'W 通过 Butter 和 Iron 运行本地模型，只有任务需要更强能力时才转向云端。',
       },
       {
-        title: '带签名的遥测',
-        body: '每个 sidecar 都会为它上报的遥测数据签名。',
-      },
-      {
-        title: '从一台机器到整个集群',
-        body: '从桌下的一台机器开始。同样的部署也能覆盖出租集群的新型云服务商。',
-      },
-      {
-        title: '无锁定',
-        body: 'Waffle 不要求使用 Butter。它同样支持 vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
+        title: '记忆始终属于你',
+        body: '上下文与记忆来自 Whisk，存放在你掌控的硬件上。',
       },
     ],
   },
   specs: {
     heading: '技术*细节*。',
-    intro: '给会细读的人看的细节。',
+    intro: 'Waffle 在技术栈中的位置，给会细读的人看。',
     rows: [
-      { term: '角色', detail: '面向 GPU 上大模型的控制平面。' },
-      {
-        term: '每台主机上',
-        detail: '一个用 Rust 编写的小型 sidecar。',
-      },
-      {
-        term: '遥测',
-        detail: '由上报它的 sidecar 签名。',
-      },
-      {
-        term: '引擎',
-        chips: [
-          { label: 'Butter' },
-          { label: 'vLLM' },
-          { label: 'SGLang' },
-          { label: 'llama.cpp' },
-          { label: '其他兼容 OpenAI 的服务器' },
-        ],
-      },
-      {
-        term: '规模',
-        detail: '从桌下的一台机器，到新型云服务商的集群。',
-      },
-      {
-        term: '锁定',
-        detail: '没有。Waffle 也支持 Butter 以外的引擎。',
-      },
-      {
-        term: '可用性',
-        detail: '抢先体验期间为私有闭源。',
-      },
+      { term: '助手', detail: 'W。' },
+      { term: '模型', detail: '本地优先；任务需要更多时使用云端。' },
+      { term: '运行于', detail: 'Butter 和 Iron，在你自有或租用的硬件上。' },
+      { term: '记忆与上下文', detail: 'Whisk。' },
+      { term: '可用性', detail: '即将推出。' },
     ],
   },
   stack: {
-    heading: '与其余*技术栈*协同工作。',
+    heading: '技术栈的*顶层*。',
     intro:
-      '无论是否使用 Butter，Waffle 都盯着 GPU。Butter 在 Iron 编译的内核上运行模型，Syrup 记得你在做什么。',
+      'Waffle 建立在它下面的每一层之上：Whisk 提供记忆与上下文，Syrup 负责管控，Butter 运行模型，Iron 提供内核。',
   },
   faq: [
     {
+      question: '什么时候能用上 Waffle？',
+      answer: '即将推出。申请抢先体验，准备好试用时我们会写信给你。',
+    },
+    {
       question: 'Waffle 开源吗？',
-      answer:
-        '目前不开源。抢先体验期间，Waffle 为私有闭源。申请访问，有更多内容可以分享时，我们会写信给你。',
+      answer: '目前不开源。Waffle 即将推出，抢先体验期间将保持闭源。',
     },
     {
-      question: '我必须用 Butter 吗？',
+      question: 'W 是什么？',
       answer:
-        '不必。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，你可以继续用已经在跑的引擎。',
+        'W 是 Waffle 内置的助手：一个为工作与生活打造的个人助手，力求成为你值得信赖的延伸。',
     },
     {
-      question: '适合谁？',
+      question: '它需要云端吗？',
       answer:
-        '任何在 GPU 上运行大模型、并希望看清它们的人，从桌下的一台机器，到出租集群的新型云服务商。',
+        '不需要。Waffle 优先使用本地模型，只有任务需要更强能力时才转向云端。',
     },
     {
-      question: 'sidecar 是做什么的？',
-      answer:
-        '每台主机运行一个用 Rust 编写的小型 sidecar。它上报该主机上的 GPU，以及其上所运行引擎的带签名遥测数据。',
-    },
-    {
-      question: '支持哪些 GPU？',
-      answer:
-        '我们还没有发布 Waffle 的硬件支持矩阵。告诉我们你在用什么，我们会直接告诉你是否合适。',
+      question: '我的数据会离开我的硬件吗？',
+      answer: '除非你选择使用托管的 AI 推理服务商，否则不会。',
     },
   ],
   cta: {
-    title: '看看你的*集群*。',
-    body: 'Waffle 目前处于抢先体验阶段，暂未开源。申请访问，或者告诉我们你在运行什么。',
+    title: '很快就能见到 *W*。',
+    body: 'Waffle 即将推出。申请抢先体验，准备好试用时我们会写信给你。',
   },
 };
 

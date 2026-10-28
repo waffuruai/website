@@ -1,7 +1,13 @@
 import type { FaqItem, Seo } from '@/content/types';
 
 /** The four layers of the stack, in the order they sit from the metal up. */
-export const productSlugs = ['iron', 'butter', 'waffle', 'syrup'] as const;
+export const productSlugs = [
+  'iron',
+  'butter',
+  'syrup',
+  'whisk',
+  'waffle',
+] as const;
 
 export type ProductSlug = (typeof productSlugs)[number];
 
@@ -20,21 +26,21 @@ export type AudienceKey = (typeof audienceKeys)[number];
 export type CodeSample = {
   /** Shown left in the panel's header bar. */
   filename: string;
-  /** Shown right in the header bar ("iron · rust dsl"). */
+  /** Shown right in the header bar ("butter · illustrative"). */
   label: string;
-  language: 'rust' | 'shell';
+  language: 'shell';
   source: string;
 };
 
 export type ProductFacts = {
   slug: ProductSlug;
   /** Position in the stack, counted from the metal up. */
-  index: '01' | '02' | '03' | '04';
+  index: '01' | '02' | '03' | '04' | '05';
   /** Product name; never translated. */
   name: string;
   /** Route path without a locale prefix. */
   path: `/products/${ProductSlug}`;
-  /** Iron and Butter have public docs; Waffle and Syrup go to sales. */
+  /** Iron and Butter have public docs; Syrup and Whisk go to sales. */
   secondaryCta: 'docs' | 'sales';
   code?: CodeSample;
 };
@@ -108,7 +114,10 @@ export type ProductCopy = {
   /** Optional product-specific sections, in order, after the code sample. */
   extras?: ExtraSection[];
   specs: { heading: string; intro?: string; rows: SpecRow[] };
-  /** Only where hardware tiers matter (Iron, Butter). */
+  /**
+   * Only where hardware tiers matter: Butter. Iron's tiers are part of its
+   * kernel section (`kernel-code.ts`), so it leaves this out.
+   */
   platforms?: { heading: string; intro?: string; tiers: PlatformTier[] };
   stack: { heading: string; intro: string };
   faq: FaqItem[];

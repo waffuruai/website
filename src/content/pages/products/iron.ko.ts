@@ -4,7 +4,7 @@ const ironKo: (typeof iron)['en'] = {
   layer: '커널',
   tagline: '하나의 커널 정의, 네 가지 백엔드.',
   summary:
-    'Rust에 내장된 DSL입니다. 커널은 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다. 버전이 관리되는 C·Rust ABI로 기존 호스트에서도 호출할 수 있습니다.',
+    'Rust로 한 번 작성하면, 어디서나 최적화된 커널을 얻습니다. Rust에 내장된 DSL입니다. 커널은 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다. 버전이 관리되는 C·Rust ABI로 기존 호스트에서도 호출할 수 있습니다.',
   seo: {
     title: 'Iron: GPU 커널 하나로 네 가지 백엔드',
     description:
@@ -20,7 +20,7 @@ const ironKo: (typeof iron)['en'] = {
   },
   hero: {
     title: '하나의 커널 정의, *네 가지* 백엔드.',
-    lede: '순수한 수학을 고성능 실리콘에 곧바로 새깁니다. Iron은 Rust에 내장된 DSL입니다. 커널을 한 번 작성하면 공통 IR을 거쳐 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환됩니다.',
+    lede: '추론 엔진이 brrrr 하고 질주하게 하세요. Iron은 Rust에 내장된 DSL입니다. 커널을 한 번 작성하면 특정 하드웨어에 최적화된 커널로 컴파일되고, 주요 모델과 일반적인 워크로드에 맞게 튜닝됩니다.',
     highlights: [
       { value: '4', label: '하나의 커널 정의에서 나오는 GPU 백엔드' },
       { value: '~1,139', label: '커널 선언' },
@@ -52,15 +52,15 @@ const ironKo: (typeof iron)['en'] = {
       },
       {
         title: 'Rust로 작성',
-        body: 'Rust에 내장된 DSL입니다. 커널은 #[kernel]이 붙은 Rust 함수이며, program_id, load, store 같은 기본 연산으로 구성됩니다.',
+        body: 'Rust에 내장된 DSL입니다. 커널은 #[kernel]이 붙은 Rust 함수이며, program_id, load, store 같은 기본 연산으로 구성됩니다. Iron 자체도 Rust로 만들어 속도와 메모리 안전성을 갖췄고, 의존성이 최소한이어서 공급망 공격의 여지가 줄어듭니다.',
       },
       {
         title: '호스트에서 바로 호출',
         body: '버전이 관리되는 C·Rust ABI 덕분에, 기존 호스트를 Iron에 맞춰 다시 쓰지 않고도 Iron 커널을 호출할 수 있습니다.',
       },
       {
-        title: '테스트로 보증하는 비트 정확도',
-        body: 'HIP·Vulkan 테스트 코퍼스는 4,164개 케이스로 이루어져 있으며, 4,164개 모두 비트 단위로 정확합니다.',
+        title: '테스트로 보증하는 비트 정확도, 벤치로 측정하는 성능',
+        body: 'HIP·Vulkan 테스트 코퍼스는 4,164개 케이스로 이루어져 있으며, 4,164개 모두 비트 단위로 정확합니다. 벤치마크와 성능 측정 도구가 함께 제공되므로, 모든 커널을 검증할 뿐 아니라 측정도 합니다.',
       },
       {
         title: '천 개가 넘는 커널',
@@ -68,20 +68,12 @@ const ironKo: (typeof iron)['en'] = {
       },
       {
         title: '중요한 곳을 먼저 튜닝',
-        body: '모든 커널은 Metal에서 가장 먼저 작성하고 튜닝합니다. CUDA는 그다음이며, ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
+        body: '모든 커널은 Metal에서 가장 먼저 작성하고 튜닝합니다. CUDA는 지금 튜닝을 진행하고 있으며, ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
       },
     ],
   },
-  code: {
-    heading: '커널 하나를 *처음부터 끝까지*.',
-    intro:
-      '텐서에 exp를 적용하는 커널입니다. 각 인스턴스가 원소 하나를 읽어 exp를 적용하고 결과를 저장합니다. #[kernel] 속성에는 연산과 허용 오차가 표시됩니다.',
-    caption:
-      'Iron DSL 소스입니다. Iron이 이를 Metal, CUDA, HIP/ROCm 또는 Vulkan SPIR-V로 변환합니다.',
-  },
   specs: {
     heading: '기술 *세부 사항*.',
-    intro: '꼼꼼히 읽어 보실 분들을 위한 상세 정보.',
     rows: [
       {
         term: '언어',
@@ -116,32 +108,10 @@ const ironKo: (typeof iron)['en'] = {
       },
     ],
   },
-  platforms: {
-    heading: '*튜닝*된 곳.',
-    intro:
-      'Metal이 먼저입니다. 모든 커널을 그곳에서 작성하고 튜닝하기 때문입니다.',
-    tiers: [
-      {
-        platform: 'Apple · Metal',
-        level: 'primary',
-        note: '모든 커널을 이곳에서 가장 먼저 작성하고 튜닝합니다. MSL → .metallib.',
-      },
-      {
-        platform: 'NVIDIA · CUDA',
-        level: 'secondary',
-        note: 'RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. 데이터센터 GPU는 진행 중입니다. CUDA → PTX.',
-      },
-      {
-        platform: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        note: '지금도 동작하지만 아직 튜닝하지 않았습니다. HIP → AMDGPU, Vulkan → SPIR-V.',
-      },
-    ],
-  },
   stack: {
     heading: '나머지 *스택*과 함께 쓰기.',
     intro:
-      'Iron은 단독으로도 쓸 수 있습니다. 커널 위에서 모델을 돌리려면 Butter를, 그 GPU를 지켜보려면 Waffle을, AI가 하던 일을 기억하게 하려면 Syrup을 더하세요.',
+      'Iron은 단독으로도 쓸 수 있습니다. 커널 위에서 모델을 돌리려면 Butter를, 그 GPU를 지켜보려면 Syrup을, AI가 하던 일을 기억하게 하려면 Whisk를 더하세요.',
   },
   faq: [
     {
@@ -152,7 +122,7 @@ const ironKo: (typeof iron)['en'] = {
     {
       question: '어떤 하드웨어에서 돌아가나요?',
       answer:
-        'Apple 실리콘의 Metal이 주력 대상이며, 모든 커널을 그곳에서 가장 먼저 작성하고 튜닝합니다. CUDA는 그다음으로, RTX와 DGX Spark에서 프로덕션으로 운영 중이며 데이터센터 GPU는 진행 중입니다. ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
+        'Apple 실리콘의 Metal이 주력 대상이며, 모든 커널을 그곳에서 가장 먼저 작성하고 튜닝합니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이며 튜닝을 진행하고 있고, H100, H200, B100, B200에서는 첫 실행을 마쳤습니다. AMD에서는 MI300에서 첫 실행을 마쳤고, ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
     },
     {
       question: '호스트 코드를 다시 작성해야 하나요?',

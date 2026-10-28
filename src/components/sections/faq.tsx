@@ -1,3 +1,4 @@
+import { RichText } from '@/components/sections/rich-text';
 import { JsonLd } from '@/components/seo/json-ld';
 import type { FaqItem } from '@/content/types';
 import { faqPage } from '@/lib/json-ld';
@@ -42,7 +43,7 @@ export function Faq({
                 </span>
               </summary>
               <p className="max-w-[680px] pb-6 text-base leading-[1.6] text-soft">
-                {item.answer}
+                <RichText text={item.answer} />
               </p>
             </details>
           ))}

@@ -43,7 +43,7 @@ const supportKo: (typeof support)['en'] = {
     {
       question: '지금 무엇을 쓸 수 있나요?',
       answer:
-        '우리 제품(Iron, Butter, Waffle, Syrup)은 당분간 비공개 소스이며 아직 일반에 공개되지 않았습니다. 얼리 액세스가 가장 먼저 써 볼 수 있는 방법입니다.',
+        '우리 제품(Iron, Butter, Syrup, Whisk)은 당분간 비공개 소스이며 아직 일반에 공개되지 않았습니다. 얼리 액세스가 가장 먼저 써 볼 수 있는 방법입니다.',
     },
     {
       question: '얼리 액세스는 어떻게 진행되나요?',
@@ -53,7 +53,7 @@ const supportKo: (typeof support)['en'] = {
     {
       question: '어떤 하드웨어에서 돌아가나요?',
       answer:
-        'Apple 실리콘이 주력 대상으로, 모든 커널을 Metal용으로 가장 먼저 작성하고 튜닝합니다. NVIDIA CUDA는 그다음으로 RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다. MacBook과 Mac Studio, RTX 워크스테이션, DGX Spark, Strix Halo, 네오클라우드 플릿을 떠올리시면 됩니다.',
+        'Apple 실리콘이 주력 대상으로, 모든 커널을 Metal용으로 가장 먼저 작성하고 튜닝합니다. NVIDIA CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이며 튜닝을 진행하고 있고, H100, H200, B100, B200에서 첫 실행을 마쳤습니다. ROCm과 Vulkan을 통한 AMD 지원은 빠르게 나아가고 있습니다. MacBook과 Mac Studio, RTX 워크스테이션, DGX Spark, Strix Halo, 네오클라우드 플릿을 떠올리시면 됩니다.',
     },
     {
       question: '버그는 어떻게 신고하나요?',

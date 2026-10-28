@@ -37,7 +37,7 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
       {
         tag: 'cost',
         title: 'Sabe qué corre en cada GPU.',
-        body: 'Waffle ofrece una sola vista de hosts, GPU, motores e inquilinos, ya sea vLLM, SGLang, llama.cpp o Butter. La capacidad ociosa o desajustada aparece primero en tu pantalla.',
+        body: 'Syrup ofrece una sola vista de hosts, GPU, motores e inquilinos, ya sea vLLM, SGLang, llama.cpp o Butter. La capacidad ociosa o desajustada aparece primero en tu pantalla.',
       },
       {
         tag: 'control',
@@ -52,24 +52,24 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
       {
         tag: 'control',
         title: 'Ofrece opciones sin apostar por un solo motor.',
-        body: 'Butter sirve una API compatible con OpenAI, y Waffle funciona con vLLM, SGLang y llama.cpp. Puedes dar más opciones a tus clientes sin reconstruir todo en torno a un único motor.',
+        body: 'Butter sirve una API compatible con OpenAI, y Syrup funciona con vLLM, SGLang y llama.cpp. Puedes dar más opciones a tus clientes sin reconstruir todo en torno a un único motor.',
       },
     ],
   },
   stackFit: {
     title: 'Cómo *encaja* el stack.',
     intro:
-      'Waffle es la parte pensada para ti. Butter e Iron trabajan en la eficiencia que hay debajo.',
+      'Syrup es la parte pensada para ti. Butter e Iron trabajan en la eficiencia que hay debajo.',
     items: [
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Ve toda la flota.',
-        body: 'De un equipo bajo el escritorio a un neocloud que alquila una flota. Un pequeño sidecar en Rust en cada host reporta telemetría firmada, y Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
+        body: 'De un equipo bajo el escritorio a un neocloud que alquila una flota. Un pequeño sidecar en Rust en cada host reporta telemetría firmada, y Syrup funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
       },
       {
         product: 'butter',
-        need: 'Un motor que controlas, sin Python.',
-        body: 'Swift sobre Metal, Rust para CUDA y el resto. Checkpoints y caché KV cuantizados, decodificación especulativa y LoRA tras una API compatible con OpenAI, sin Python y sin JIT.',
+        need: 'Un motor que controlas, con dependencias mínimas.',
+        body: 'Swift para macOS e iOS, Rust para todo lo demás. Checkpoints y caché KV cuantizados, decodificación especulativa y LoRA tras una API compatible con OpenAI.',
       },
       {
         product: 'iron',
@@ -80,23 +80,23 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: 'Dónde *estamos*.',
-    lede: 'Waffle y Butter están en acceso anticipado y son de código cerrado por ahora. CUDA está en producción en RTX y DGX Spark, y las GPU de centros de datos están en desarrollo.',
+    lede: 'Syrup y Butter están en acceso anticipado y son de código cerrado por ahora. CUDA está en producción en RTX y DGX Spark. Las primeras ejecuciones ya están hechas en H100, H200, B100, B200 y MI300.',
     notes: [
-      'Cuéntanos tus generaciones de GPU. CUDA para centros de datos está en desarrollo, así que las flotas que conocemos marcan qué hacemos primero.',
+      'Cuéntanos tus generaciones de GPU. Las flotas que conocemos deciden cuáles afinamos primero.',
       'ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
       'No afirmamos que Butter supere a otros motores en CUDA o ROCm. Cuando publiquemos mediciones, irán acompañadas del método.',
     ],
   },
   faq: [
     {
-      question: '¿Waffle reemplaza a nuestros motores actuales?',
+      question: '¿Syrup reemplaza a nuestros motores actuales?',
       answer:
-        'No. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI. Gana visibilidad primero y cambia de motor solo si y cuando quieras.',
+        'No. Syrup funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI. Gana visibilidad primero y cambia de motor solo si y cuando quieras.',
     },
     {
       question: '¿En qué GPU funciona?',
       answer:
-        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA es secundario, en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo. AMD ROCm y Vulkan funcionan, pero aún sin afinar.',
+        'Apple silicon mediante Metal es el principal. NVIDIA mediante CUDA está en producción en RTX y DGX Spark y se está afinando, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200. En AMD, las primeras ejecuciones en MI300 ya están hechas, y ROCm y Vulkan funcionan, pero aún sin afinar.',
     },
     {
       question: '¿Por qué deberíamos confiar en la telemetría?',

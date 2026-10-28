@@ -24,8 +24,8 @@ describe('WhereWeAre', () => {
     renderSection();
     expect(screen.getByText('Apple · Metal')).toBeTruthy();
     expect(screen.getByText('Primary')).toBeTruthy();
-    expect(screen.getByText('Secondary')).toBeTruthy();
-    expect(screen.getByText('Runs')).toBeTruthy();
+    expect(screen.getByText('Tuning')).toBeTruthy();
+    expect(screen.getByText('Coming soon')).toBeTruthy();
     expect(screen.getByText(/In production on RTX and DGX Spark/)).toBeTruthy();
     expect(screen.getByText(/Works today, not tuned yet/)).toBeTruthy();
   });
@@ -35,8 +35,9 @@ describe('WhereWeAre', () => {
     expect(screen.getByText('Apple silicon is tuned first.')).toBeTruthy();
     expect(screen.getByText('DGX Spark')).toBeTruthy();
     expect(
-      screen.getByText('Enterprise datacenter GPUs · in progress'),
+      screen.getByText('H100 · H200 · B100 · B200 · first runs'),
     ).toBeTruthy();
+    expect(screen.getByText('MI300 · first runs')).toBeTruthy();
   });
 
   it('is a labelled section with an accented heading', () => {

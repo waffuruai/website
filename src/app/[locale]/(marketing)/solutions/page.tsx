@@ -2,7 +2,11 @@ import type { Metadata } from 'next';
 
 import { SolutionsOverview } from '@/components/solutions/solutions-overview';
 import { solutionsOverview } from '@/content/pages/solutions/overview';
-import { getSolution, solutionSlugs } from '@/content/pages/solutions/registry';
+import {
+  getSolution,
+  solutionPath,
+  solutionSlugs,
+} from '@/content/pages/solutions/registry';
 import { solutionsShared } from '@/content/pages/solutions/shared';
 import { getDictionary, resolveLocale, type LocaleParams } from '@/i18n/server';
 import { localize } from '@/lib/content';
@@ -32,16 +36,18 @@ export default async function SolutionsPage({
 }) {
   const locale = await resolveLocale(params);
   const { common } = await getDictionary(locale);
+  const shared = localize(solutionsShared, locale);
   const entries = solutionSlugs.flatMap((slug) => {
     const page = getSolution(slug, locale);
-    return page ? [{ slug, page }] : [];
+    return page ? [{ href: solutionPath(slug), page }] : [];
   });
 
   return (
     <SolutionsOverview
       overview={localize(solutionsOverview, locale)}
+      section={{ label: shared.breadcrumb.solutions, href: '/solutions' }}
       entries={entries}
-      shared={localize(solutionsShared, locale)}
+      shared={shared}
       locale={locale}
       common={common}
     />

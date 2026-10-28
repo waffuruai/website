@@ -18,7 +18,7 @@ import { localize } from '@/lib/content';
 import { breadcrumbs, webPage } from '@/lib/json-ld';
 
 /**
- * /products: the Waffuru stack. The four layers as a stack from Syrup (04)
+ * /products: the Waffuru stack. The four layers as a stack from Whisk (04)
  * down to Iron (01), what each does alone and together, who it is for.
  */
 export function ProductsOverview({
@@ -55,7 +55,11 @@ export function ProductsOverview({
         privateLabel={common.private}
       />
       <UseOneOrAll together={copy.together} products={bottomUp} />
-      <AudienceCards audience={copy.audience} nav={nav} />
+      <AudienceCards
+        audience={copy.audience}
+        nav={nav}
+        learnMore={common.learnMore}
+      />
       <CtaCard
         title={copy.cta.title}
         body={copy.cta.body}

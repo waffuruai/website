@@ -54,7 +54,7 @@ describe('Brand page', () => {
     const { container } = await renderPage();
     expect(screen.getAllByText('waffuru')).toHaveLength(2);
     expect(container.querySelectorAll('[lang="ja"]').length).toBeGreaterThan(0);
-    expect(screen.getByText('Iron, Butter, Waffle, Syrup')).toBeTruthy();
+    expect(screen.getByText('Iron, Butter, Syrup, Whisk')).toBeTruthy();
   });
 
   it('gives every swatch a copy button', async () => {
@@ -74,15 +74,29 @@ describe('Brand page', () => {
     ).toBeTruthy();
   });
 
-  it('runs all five motifs live in CSS', async () => {
+  it('runs every motif live in CSS, top of the stack down', async () => {
     const { container } = await renderPage();
     const motifs = container.querySelector('#motifs');
+    expect(motifs?.querySelector('.wf-seal')).not.toBeNull();
+    expect(motifs?.querySelectorAll('.wf-can')).toHaveLength(12);
     expect(motifs?.querySelectorAll('.wf-cell')).toHaveLength(16);
-    expect(motifs?.querySelectorAll('.wf-stamp')).toHaveLength(16);
+    expect(motifs?.querySelectorAll('.wf-loop')).toHaveLength(4);
+    expect(motifs?.querySelectorAll('.wf-strand')).toHaveLength(7);
     expect(motifs?.querySelector('.wf-pat')).not.toBeNull();
+    expect(motifs?.querySelectorAll('.wf-stamp')).toHaveLength(16);
     expect(motifs?.querySelectorAll('.wf-led')).toHaveLength(12);
-    expect(motifs?.querySelector('.wf-drop')).not.toBeNull();
-    expect(motifs?.querySelectorAll('h3')).toHaveLength(5);
+    expect(
+      [...(motifs?.querySelectorAll('h3') ?? [])].map((h) => h.textContent),
+    ).toEqual([
+      'Sealed jar',
+      'Shelf check',
+      'Waffle tiles',
+      'Whisk',
+      'Drips',
+      'Melting butter',
+      'Press',
+      'LEDs',
+    ]);
   });
 
   it('puts press contact one click away', async () => {

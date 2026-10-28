@@ -24,6 +24,18 @@ describe('postbuild steps', () => {
     );
   });
 
+  it('prunes unlaunched pages before anything mirrors, lists or draws them', () => {
+    const prune = steps.indexOf('unlaunched pages');
+    expect(prune).toBeGreaterThan(steps.indexOf('reserved installer paths'));
+    for (const later of ['markdown mirrors', 'llms.txt', 'share images']) {
+      expect(prune).toBeLessThan(steps.indexOf(later));
+    }
+  });
+
+  it('checks internal links last', () => {
+    expect(steps.at(-1)).toBe('internal links');
+  });
+
   it('keeps the steps that were there before', () => {
     expect(steps).toEqual(
       expect.arrayContaining(['404 page', 'reserved installer paths']),

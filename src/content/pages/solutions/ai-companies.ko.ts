@@ -4,7 +4,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
   seo: {
     title: 'AI 기업을 위한 GPU 커널과 LLM 서빙',
     description:
-      'Metal, CUDA, ROCm, Vulkan용 커널을 한 번만 작성하세요. Python 없이 모델을 서빙하고, 양자화 KV 캐시와 추측 디코딩을 쓰세요. 얼리 액세스.',
+      'Metal, CUDA, ROCm, Vulkan용 커널을 한 번만 작성하세요. 의존성을 최소화해 모델을 서빙하고, 양자화 KV 캐시와 추측 디코딩을 쓰세요. 얼리 액세스.',
     keywords: [
       '추론 최적화',
       'GPU 커널 이식성',
@@ -17,17 +17,17 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
   card: {
     title: 'AI 모델·추론 *기업*',
     summary:
-      '모든 GPU 백엔드를 위한 하나의 커널 정의, 그리고 Python이 필요 없는 서빙.',
+      '모든 GPU 백엔드를 위한 하나의 커널 정의, 그리고 의존성을 최소화한 서빙.',
   },
   hero: {
     title: '커널은 한 번만 쓰세요. 네 *백엔드*로 내보내세요.',
-    lede: 'Iron이 하나의 커널 정의를 Metal, CUDA, ROCm, Vulkan으로 컴파일합니다. 그 위에서 Butter가 Python 없이 모델을 서빙하고, Syrup이 에이전트에 메모리를 줍니다.',
+    lede: 'Iron이 하나의 커널 정의를 Metal, CUDA, ROCm, Vulkan으로 컴파일합니다. 그 위에서 Butter가 최소한의 의존성으로 모델을 서빙하고, Whisk가 에이전트에 메모리를 줍니다.',
   },
   problem: {
     title: '백엔드마다 *재작성*입니다.',
     statement:
       '모델은 커널만큼만 이식할 수 있고, 커널은 보통 벤더마다 따로 작성합니다.',
-    body: 'Apple 실리콘, NVIDIA, AMD, Vulkan을 모두 지원하려면 코드베이스도 버그도 따로 생기기 쉽고, 서빙 스택의 핫 패스에는 Python이 놓입니다. 추론 비용은 마진에 그대로 얹히고, 에이전트는 세션이 끝나는 순간 맥락을 잃습니다.',
+    body: 'Apple 실리콘, NVIDIA, AMD, Vulkan을 모두 지원하려면 코드베이스도 버그도 따로 생기기 쉽고, 서빙 스택은 의존성으로 무거워집니다. 추론 비용은 마진에 그대로 얹히고, 에이전트는 세션이 끝나는 순간 맥락을 잃습니다.',
   },
   useCases: {
     title: '무엇을 *출시*할 수 있나.',
@@ -40,8 +40,8 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
       },
       {
         tag: 'inference',
-        title: 'Python도 JIT도 없이 서빙하세요.',
-        body: 'Butter는 Apple 실리콘에는 Metal 위의 Swift, CUDA를 비롯한 나머지에는 Rust로 만들었고, 스트리밍과 도구 호출을 지원하는 OpenAI 호환 API를 제공합니다. 하이브리드·MoE 모델, 추측 디코딩, LoRA도 기본으로 갖추고 있습니다.',
+        title: '타협 없이 서빙하세요.',
+        body: 'Butter는 macOS와 iOS에는 Swift, 그 밖의 모든 곳에는 Rust로 만들어 의존성을 최소화했고, 스트리밍과 도구 호출을 지원하는 OpenAI 호환 API를 제공합니다. 하이브리드·MoE 모델, 추측 디코딩, LoRA도 기본으로 갖추고 있습니다.',
       },
       {
         tag: 'cost',
@@ -51,7 +51,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: '로컬에 머무는 메모리를 에이전트에 주세요.',
-        body: 'Syrup은 TurboQuant+로 임베딩을 압축하고, 머신에서 어휘 검색과 벡터 검색을 함께 실행합니다. 결과는 MCP로 출처 인용과 함께 돌아오므로, 에이전트가 중단한 지점에서 이어갈 수 있습니다.',
+        body: 'Whisk는 자체 개발한 AURA 알고리즘으로 임베딩을 압축하고, 머신에서 어휘 검색과 벡터 검색을 함께 실행합니다. 결과는 MCP로 출처 인용과 함께 돌아오므로, 에이전트가 중단한 지점에서 이어갈 수 있습니다.',
       },
     ],
   },
@@ -73,7 +73,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
   },
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
-    intro: 'Iron과 Butter가 핵심입니다. Syrup과 Waffle이 이를 완성합니다.',
+    intro: 'Iron과 Butter가 핵심입니다. Whisk와 Syrup이 이를 완성합니다.',
     items: [
       {
         product: 'iron',
@@ -82,16 +82,16 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
       },
       {
         product: 'butter',
-        need: 'Python 없는 모델 서빙.',
+        need: '의존성을 최소화한 모델 서빙.',
         body: 'safetensors, MLX, JANG, GGUF를 변환 없이 불러오고, 2~8비트 양자화 체크포인트, 하이브리드·MoE 모델, 양자화된 KV 캐시, 추측 디코딩, LoRA를 지원합니다. 텍스트, 비전, 음성 인식, 음성 합성, 옴니 모델을 OpenAI 호환 API 뒤에서 제공합니다.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '에이전트를 위한 메모리.',
-        body: '노트와 코드에 대한 로컬 검색: TurboQuant+로 압축한 임베딩, 어휘 검색과 벡터 검색, MCP를 통한 출처 표기 결과.',
+        body: '노트와 코드에 대한 로컬 검색: 우리 AURA 알고리즘으로 압축한 임베딩, 어휘 검색과 벡터 검색, MCP를 통한 출처 표기 결과.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '모든 GPU의 모든 엔진을 하나의 뷰로.',
         body: 'Butter를 vLLM, SGLang, llama.cpp 옆에서 돌리고 나란히 비교해 보세요. 호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다.',
       },
@@ -103,7 +103,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
     notes: [
       'Iron에는 현재 약 1,139개의 커널 선언이 있습니다.',
       'HIP와 Vulkan은 4,164개 중 4,164개 테스트 케이스를 비트 단위로 정확하게 통과하지만, 아직 튜닝하지는 않았습니다.',
-      'CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이며, 데이터센터 GPU는 진행 중입니다.',
+      'CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이며, H100, H200, B100, B200에서는 첫 실행을 마쳤습니다.',
     ],
   },
   faq: [
@@ -135,7 +135,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
   ],
   cta: {
     title: '수학을 *실리콘*에 새기세요.',
-    body: '얼리 액세스, 당분간 비공개 소스. 무엇을 만드는지, 어떤 백엔드가 중요한지, Python이 어디서 발목을 잡는지 알려 주시면 답장드리겠습니다.',
+    body: '얼리 액세스, 당분간 비공개 소스. 무엇을 만드는지, 어떤 백엔드가 중요한지, 지금의 스택이 어디서 발목을 잡는지 알려 주시면 답장드리겠습니다.',
   },
 };
 

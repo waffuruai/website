@@ -20,7 +20,7 @@ export function ProductLinkCard({
       {/*
        * Fixed-height header with the motif out of flow, so every card's name
        * starts at the same height whatever its motif's size (the tallest,
-       * Syrup's drip, renders 90px at scale-75).
+       * Whisk's drip, renders 90px at scale-75).
        */}
       <div className="relative h-24">
         <MonoLabel>

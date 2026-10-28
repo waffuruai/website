@@ -4,7 +4,7 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
   seo: {
     title: 'Kernels de GPU y serving de LLM para empresas de IA',
     description:
-      'Escribe un kernel una vez y llévalo a Metal, CUDA, ROCm y Vulkan. Sirve modelos sin Python, con caché KV cuantizada y decodificación especulativa.',
+      'Escribe un kernel una vez y llévalo a Metal, CUDA, ROCm y Vulkan. Sirve modelos con dependencias mínimas, caché KV cuantizada y decodificación especulativa.',
     keywords: [
       'optimización de inferencia',
       'portabilidad de kernels de GPU',
@@ -17,17 +17,17 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
   card: {
     title: 'Empresas de modelos e inferencia de *IA*',
     summary:
-      'Una definición de kernel para cada backend de GPU, y serving que no necesita Python.',
+      'Una definición de kernel para cada backend de GPU, y serving con dependencias mínimas.',
   },
   hero: {
     title: 'Escribe el kernel una vez. Llévalo a cuatro *backends*.',
-    lede: 'Iron compila una definición de kernel a Metal, CUDA, ROCm y Vulkan. Butter sirve modelos encima sin Python, y Syrup da memoria a tus agentes.',
+    lede: 'Iron compila una definición de kernel a Metal, CUDA, ROCm y Vulkan. Butter sirve modelos encima con dependencias mínimas, y Whisk da memoria a tus agentes.',
   },
   problem: {
     title: 'Cada backend es una *reescritura*.',
     statement:
       'Tu modelo es tan portable como tus kernels, y los kernels suelen escribirse una vez por fabricante.',
-    body: 'Dar soporte a Apple silicon, NVIDIA, AMD y Vulkan suele significar bases de código separadas y errores separados, con Python en la ruta crítica del stack de serving. El costo de inferencia cae directo sobre tu margen, y los agentes pierden su contexto en cuanto termina una sesión.',
+    body: 'Dar soporte a Apple silicon, NVIDIA, AMD y Vulkan suele significar bases de código separadas y errores separados, y un stack de serving cargado de dependencias. El costo de inferencia cae directo sobre tu margen, y los agentes pierden su contexto en cuanto termina una sesión.',
   },
   useCases: {
     title: 'Lo que puedes *lanzar*.',
@@ -41,8 +41,8 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
       },
       {
         tag: 'inference',
-        title: 'Sirve sin Python ni JIT.',
-        body: 'Butter es Swift sobre Metal para Apple silicon y Rust para CUDA y el resto, con una API compatible con OpenAI, streaming y llamada a herramientas. Los modelos híbridos y MoE, la decodificación especulativa y LoRA vienen incluidos.',
+        title: 'Sirve sin concesiones.',
+        body: 'Butter es Swift para macOS e iOS y Rust para todo lo demás, con dependencias mínimas, una API compatible con OpenAI, streaming y llamada a herramientas. Los modelos híbridos y MoE, la decodificación especulativa y LoRA vienen incluidos.',
       },
       {
         tag: 'cost',
@@ -52,7 +52,7 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: 'Dale a tus agentes una memoria que se queda en local.',
-        body: 'Syrup comprime los embeddings con TurboQuant+ y ejecuta la búsqueda léxica más vectorial en la propia máquina. Los resultados llegan con citas a través de MCP, para que los agentes retomen donde lo dejaron.',
+        body: 'Whisk comprime los embeddings con nuestro algoritmo propietario AURA y ejecuta la búsqueda léxica más vectorial en la propia máquina. Los resultados llegan con citas a través de MCP, para que los agentes retomen donde lo dejaron.',
       },
     ],
   },
@@ -74,7 +74,7 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
   },
   stackFit: {
     title: 'Cómo *encaja* el stack.',
-    intro: 'Iron y Butter son el núcleo. Syrup y Waffle lo completan.',
+    intro: 'Iron y Butter son el núcleo. Whisk y Syrup lo completan.',
     items: [
       {
         product: 'iron',
@@ -83,16 +83,16 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
       },
       {
         product: 'butter',
-        need: 'Servir modelos sin Python.',
+        need: 'Servir modelos con dependencias mínimas.',
         body: 'Carga safetensors, MLX, JANG y GGUF sin conversión, además de checkpoints cuantizados de 2 a 8 bits, modelos híbridos y MoE, una caché KV cuantizada, decodificación especulativa y LoRA. Los modelos de texto, visión, voz a texto, texto a voz y omni quedan tras una API compatible con OpenAI.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'Memoria para agentes.',
-        body: 'Recuperación local sobre notas y código: embeddings comprimidos con TurboQuant+, búsqueda léxica más vectorial y resultados con citas a través de MCP.',
+        body: 'Recuperación local sobre notas y código: embeddings comprimidos con nuestro algoritmo AURA, búsqueda léxica más vectorial y resultados con citas a través de MCP.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Cada motor en cada GPU, en una sola vista.',
         body: 'Ejecuta Butter junto a vLLM, SGLang o llama.cpp y míralos lado a lado. Un pequeño sidecar en Rust en cada host reporta telemetría firmada.',
       },
@@ -104,7 +104,7 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
     notes: [
       'Hoy hay aproximadamente 1.139 declaraciones de kernel en Iron.',
       'HIP y Vulkan pasan un corpus de pruebas de 4.164 de 4.164 casos con exactitud bit a bit, pero aún no están afinados.',
-      'CUDA está en producción en RTX y DGX Spark, con las GPU de centros de datos en desarrollo.',
+      'CUDA está en producción en RTX y DGX Spark, con las primeras ejecuciones ya hechas en H100, H200, B100 y B200.',
     ],
   },
   faq: [
@@ -136,7 +136,7 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
   ],
   cta: {
     title: 'Prensa tu matemática en *silicio*.',
-    body: 'Acceso anticipado, código cerrado por ahora. Cuéntanos qué construyes, qué backends te importan y dónde te estorba Python, y te responderemos.',
+    body: 'Acceso anticipado, código cerrado por ahora. Cuéntanos qué construyes, qué backends te importan y dónde te estorba tu stack actual, y te responderemos.',
   },
 };
 

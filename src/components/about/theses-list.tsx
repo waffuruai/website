@@ -1,3 +1,4 @@
+import { RichText } from '@/components/sections/rich-text';
 import { SectionHeading } from '@/components/sections/section-heading';
 import type { AboutContent } from '@/content/pages/about';
 
@@ -34,7 +35,7 @@ export function ThesesList({ content }: { content: AboutContent['beliefs'] }) {
               {thesis.statement}
             </p>
             <p className="text-base leading-[1.6] text-pretty text-muted-foreground md:pt-2">
-              {thesis.body}
+              <RichText text={thesis.body} />
             </p>
           </li>
         ))}

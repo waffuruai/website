@@ -6,15 +6,16 @@ import { aiCompanies } from './ai-companies';
 import { enterprise } from './enterprise';
 import { neoclouds } from './neoclouds';
 import { smallBusiness } from './small-business';
-import type { SolutionPage, SolutionSlug } from './types';
+import {
+  solutionPath,
+  solutionSlugs,
+  type SolutionPage,
+  type SolutionSlug,
+} from './types';
 
-/** Route slugs, in the order the overview and navigation list them. */
-export const solutionSlugs = [
-  'small-business',
-  'enterprise',
-  'neoclouds',
-  'ai-companies',
-] as const satisfies readonly SolutionSlug[];
+// The slugs live in `types.ts` so client code (the nav) can import them
+// without pulling every audience's copy into the bundle.
+export { solutionPath, solutionSlugs };
 
 export const solutions: Record<SolutionSlug, Localized<SolutionPage>> = {
   'small-business': smallBusiness,
@@ -33,5 +34,3 @@ export function getSolution(
 ): SolutionPage | undefined {
   return isSolutionSlug(slug) ? localize(solutions[slug], locale) : undefined;
 }
-
-export const solutionPath = (slug: SolutionSlug) => `/solutions/${slug}`;

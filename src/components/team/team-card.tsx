@@ -1,5 +1,11 @@
 import { Picture } from '@/components/picture';
-import { visibleLinks, type TeamCopy, type TeamMember } from '@/content/team';
+import { CountryFlag } from '@/components/team/country-flag';
+import {
+  visibleLinks,
+  type Country,
+  type TeamCopy,
+  type TeamMember,
+} from '@/content/team';
 import { interpolate } from '@/i18n/config';
 import { cn } from '@/lib/utils';
 
@@ -10,6 +16,8 @@ export type TeamCardLabels = {
   linkAria: string;
   /** Visible link text per network. */
   linkNames: Record<keyof TeamMember['links'], string>;
+  /** Country names for the flag beside each name. */
+  countries: Record<Country, string>;
 };
 
 /**
@@ -59,9 +67,15 @@ export function TeamCard({
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <Heading className="font-serif text-[30px] leading-[1.05] font-normal">
-          {member.name}
-        </Heading>
+        <div className="flex items-center gap-3">
+          <Heading className="font-serif text-[30px] leading-[1.05] font-normal">
+            {member.name}
+          </Heading>
+          <CountryFlag
+            country={member.country}
+            label={labels.countries[member.country]}
+          />
+        </div>
         <p className="text-[15px] leading-[1.55] text-pretty text-muted-foreground">
           {copy.bio}
         </p>

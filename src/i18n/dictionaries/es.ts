@@ -16,9 +16,9 @@ const es: Dictionary = {
     faqHeading: 'Preguntas frecuentes',
   },
   meta: {
-    defaultTitle: 'Waffuru: matemática pura, prensada en silicio',
+    defaultTitle: 'Waffuru: más inteligencia en el hardware que ya tienes',
     defaultDescription:
-      'Kernels de GPU, inferencia, control de flotas y memoria para el hardware que ya tienes. Waffuru crea Iron, Butter, Waffle y Syrup.',
+      'Waffuru crea el stack de IA que ejecuta modelos rápido y a bajo costo en hardware propio o alquilado, privado por defecto. Empieza con Pantry, nuestro escáner de vulnerabilidades gratuito para macOS y Linux.',
   },
   header: {
     mainNav: 'Principal',
@@ -46,10 +46,14 @@ const es: Dictionary = {
     help: 'Ayuda',
     allProducts: 'Ver el stack completo',
     allSolutions: 'Todas las soluciones',
+    industries: 'Industrias',
+    byIndustry: 'Por industria',
+    allIndustries: 'Todas las industrias',
+    openSource: 'Libre y de código abierto',
     items: {
       stack: {
         label: 'El stack de Waffuru',
-        description: 'Cuatro productos que funcionan solos o juntos.',
+        description: 'Cinco productos que funcionan solos o juntos.',
       },
       iron: {
         label: 'Iron',
@@ -57,15 +61,25 @@ const es: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Servir modelos sin Python.',
-      },
-      waffle: {
-        label: 'Waffle',
-        description: 'Ve cada GPU y cada motor que corre en ella.',
+        description: 'Inferencia multimodal, sin concesiones.',
       },
       syrup: {
         label: 'Syrup',
-        description: 'Tu IA recuerda en qué estabas trabajando.',
+        description:
+          'Monitoreo, telemetría, control de acceso y costos para cada GPU.',
+      },
+      whisk: {
+        label: 'Whisk',
+        description:
+          'Incorpora los documentos y el contexto adecuados en cada solicitud.',
+      },
+      waffle: {
+        label: 'Waffle',
+        description: 'Ejecuta tus agentes, con W, tu asistente, dentro.',
+      },
+      pantry: {
+        label: 'Pantry',
+        description: 'Escáner de vulnerabilidades gratuito para macOS y Linux.',
       },
       smallBusiness: {
         label: 'Pequeñas empresas',
@@ -82,6 +96,27 @@ const es: Dictionary = {
       aiCompanies: {
         label: 'Empresas de modelos e inferencia',
         description: 'Kernels y serving más rápidos en cada backend.',
+      },
+      cloudInfrastructure: {
+        label: 'Infraestructura cloud',
+        description: 'Más rendimiento y márgenes claros en cada GPU.',
+      },
+      financialServices: {
+        label: 'Servicios financieros',
+        description: 'IA privada que mantiene los datos de clientes en casa.',
+      },
+      lifeSciences: {
+        label: 'Ciencias de la vida',
+        description:
+          'Ejecuta modelos junto a datos de investigación sensibles.',
+      },
+      government: {
+        label: 'Gobierno',
+        description: 'IA soberana en hardware que tú controlas.',
+      },
+      military: {
+        label: 'Defensa',
+        description: 'IA capaz en hardware propio y seguro.',
       },
       about: {
         label: 'Quiénes somos',
@@ -117,10 +152,15 @@ const es: Dictionary = {
       },
     },
   },
+  countries: {
+    us: 'Estados Unidos',
+    ca: 'Canadá',
+  },
   footer: {
     heading: 'Pie de página',
     products: 'Productos',
     solutions: 'Soluciones',
+    industries: 'Industrias',
     company: 'Empresa',
     help: 'Ayuda',
     terms: 'Términos de uso',
@@ -129,7 +169,8 @@ const es: Dictionary = {
     madeIn: 'Hecho con 🤖 en Norteamérica',
     flagsLabel: 'Estados Unidos y Canadá',
     social: 'Waffuru en {network}',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
+    versionLabel: 'Versión del sitio, commit y fecha',
   },
   newsletter: {
     heading: 'Mantente al día',

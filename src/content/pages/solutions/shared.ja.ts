@@ -32,19 +32,19 @@ const solutionsSharedJa: (typeof solutionsShared)['en'] = {
       linkLabel: 'Butter を見る',
       href: '/products/butter',
     },
-    waffle: {
+    syrup: {
       index: '03',
       role: 'コントロールプレーン',
-      name: 'Waffle',
-      linkLabel: 'Waffle を見る',
-      href: '/products/waffle',
-    },
-    syrup: {
-      index: '04',
-      role: '記憶',
       name: 'Syrup',
       linkLabel: 'Syrup を見る',
       href: '/products/syrup',
+    },
+    whisk: {
+      index: '04',
+      role: '記憶',
+      name: 'Whisk',
+      linkLabel: 'Whisk を見る',
+      href: '/products/whisk',
     },
   },
   hardware: {
@@ -61,14 +61,14 @@ const solutionsSharedJa: (typeof solutionsShared)['en'] = {
       {
         name: 'NVIDIA · CUDA',
         status: 'secondary',
-        statusLabel: 'セカンダリ',
-        note: 'RTX と DGX Spark では本番稼働中。データセンター GPU は対応中です。CUDA → PTX。',
+        statusLabel: 'チューニング中',
+        note: 'RTX と DGX Spark では本番稼働中。H100、H200、B100、B200 では初回の実行を終えています。CUDA → PTX。',
       },
       {
         name: 'AMD ROCm · Vulkan',
         status: 'runs',
-        statusLabel: '動作',
-        note: '現時点で動作しますが、チューニングはこれからです。HIP → AMDGPU、Vulkan → SPIR-V。',
+        statusLabel: '近日対応',
+        note: '現時点で動作しますが、チューニングはこれからです。MI300 では初回の実行を終えています。HIP → AMDGPU、Vulkan → SPIR-V。',
       },
     ],
     runsOn: [
@@ -78,9 +78,10 @@ const solutionsSharedJa: (typeof solutionsShared)['en'] = {
       { label: 'Strix Halo' },
       { label: 'ネオクラウドのフリート' },
       {
-        label: 'エンタープライズ向けデータセンター GPU · 対応中',
+        label: 'H100 · H200 · B100 · B200 · 初回実行',
         inProgress: true,
       },
+      { label: 'MI300 · 初回実行', inProgress: true },
     ],
   },
 };

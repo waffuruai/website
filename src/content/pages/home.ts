@@ -1,4 +1,4 @@
-import type { Localized } from '@/content/types';
+import type { Localized, StackFlowCopy } from '@/content/types';
 import homeEs from './home.es';
 import homeFr from './home.fr';
 import homeZh from './home.zh';
@@ -8,42 +8,13 @@ import homeKo from './home.ko';
 /*
  * Home page copy. English is the source of truth; translators add `home.es.ts`
  * and friends typed against `HomeContent`. Product, platform and lab names
- * (Waffuru, Iron, Butter, Waffle, Syrup, Metal, CUDA, ROCm, Vulkan, …) never
+ * (Waffuru, Iron, Butter, Syrup, Whisk, Metal, CUDA, ROCm, Vulkan, …) never
  * translate. `*word*` is the gold italic accent in a heading.
  *
- * The primary calls to action ("Request early access", "Talk to us") and the
- * "Private" chip come from the UI dictionary (`common.*`), not from here.
+ * The primary calls to action ("Request early access", "Talk to us") come
+ * from the UI dictionary (`common.*`), not from here. Pantry's commands and
+ * example output come from `pantry/facts.ts`.
  */
-
-export type StackProduct = {
-  /** Product page: `/products/<slug>`. */
-  slug: 'syrup' | 'waffle' | 'butter' | 'iron';
-  /** Position in the stack, numbered from the metal up. */
-  index: string;
-  kicker: string;
-  name: string;
-  tagline: string;
-  body: string;
-};
-
-export type ModelLab = {
-  /** Lab name, shown on the card. */
-  lab: string;
-  /** Logo file in `/public/logos/<logo>.svg`. */
-  logo: string;
-  /** Model families Butter loads today. */
-  models: string;
-  /** Anything not listed as in progress is supported. */
-  status?: 'in-progress';
-};
-
-export type CodeToken = {
-  text: string;
-  kind?: 'comment' | 'keyword' | 'function';
-};
-
-/** How well a backend is tuned today; drives the bars and the pulse speed. */
-export type TuneLevel = 'primary' | 'secondary' | 'runs';
 
 export type HomeContent = {
   seo: { keywords: string[] };
@@ -51,28 +22,43 @@ export type HomeContent = {
     eyebrow: string;
     title: string;
     lede: string;
+    /** The launch pill above the title, linking to Pantry. */
+    launch: { label: string; text: string };
     secondary: { label: string; href: string };
-    emits: { label: string; targets: string[] };
   };
+  /** Our first public product, right under the hero. */
+  pantry: {
+    label: string;
+    title: string;
+    body: string;
+    points: string[];
+    primary: string;
+    secondary: string;
+    caption: string;
+  };
+  /** The stack as a working path (`StackFlow`). */
   stack: {
     title: string;
     intro: string;
-    /** In display order: top of the stack first. */
-    products: StackProduct[];
+    /** One line under the flow: where the stack is today. */
+    note: string;
+    flow: StackFlowCopy;
   };
-  models: {
+  /** Who it is for. A card links on once its solutions page launches. */
+  audiences: {
     title: string;
     intro: string;
-    legend: { supported: string; inProgress: string };
-    /** Two lanes; the second scrolls the other way. */
-    lanes: [ModelLab[], ModelLab[]];
+    /** `soon` marks an audience whose product isn't out yet. */
+    items: { title: string; body: string; href?: string; soon?: boolean }[];
+    linkLabel: string;
+    /** The badge on a `soon` item. */
+    soonLabel: string;
   };
-  kernel: {
+  beliefs: {
     title: string;
-    code: { file: string; label: string; tokens: CodeToken[] };
-    tuned: { title: string; note: string };
-    tiers: { name: string; level: TuneLevel; label: string; note: string }[];
-    runsOn: { label: string; items: string[]; pending: string };
+    intro: string;
+    items: { title: string; body: string }[];
+    links: { label: string; href: string }[];
   };
   team: {
     title: string;
@@ -88,248 +74,168 @@ export const home: Localized<HomeContent> = {
   en: {
     seo: {
       keywords: [
-        'local LLM inference',
-        'GPU kernels',
-        'inference engine',
-        'Apple silicon',
-        'Metal',
-        'CUDA',
-        'ROCm',
-        'Vulkan',
-        'GPU fleet management',
-        'neocloud',
-        'on-device AI',
         'private AI',
+        'local AI',
+        'on-device AI',
+        'AI on your own hardware',
+        'local LLM inference',
+        'inference engine',
+        'GPU kernels',
+        'Apple silicon',
+        'vulnerability scanner',
+        'Pantry',
       ],
     },
 
     hero: {
-      eyebrow: 'Four products · closed source for now',
-      title: 'Raw math, *pressed* into silicon.',
-      lede: 'We write GPU kernels, an inference engine, a control plane and a retrieval layer, so your team can run models on its own hardware. They run on a laptop, a home lab or a neocloud fleet, and we publish what we measure.',
-      secondary: { label: 'See the stack', href: '#stack' },
-      emits: {
-        label: 'Emits',
-        targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
+      eyebrow: 'Your hardware · your data · your AI',
+      title: 'More intelligence on hardware you already *own*.',
+      lede: 'Waffuru builds the AI stack that runs on hardware you own or rent, from a laptop to a GPU fleet in the data centre. You get more from every GPU, spend less per token, and your data stays with you.',
+      launch: {
+        label: 'New',
+        text: 'Pantry, our free vulnerability scanner for macOS and Linux',
       },
+      secondary: { label: 'See how it works', href: '#stack' },
+    },
+
+    pantry: {
+      label: 'Free · Open source · Out today',
+      title: 'Know what’s *exposed*. Patch it fast.',
+      body: 'Before AI runs on your machines, they have to be safe. Pantry checks everything installed, and every repo, against open vulnerability data, reports only what applies, and fixes what it safely can.',
+      points: [
+        'Only what applies to your exact versions',
+        'Safe fixes, run for you; sudo steps printed',
+        'No telemetry, no AI, written in Rust',
+      ],
+      primary: 'Secure your system',
+      secondary: 'How Pantry works',
+      caption: 'Example output from one machine.',
     },
 
     stack: {
-      title: 'The stack.',
+      title: 'From silicon to *answer*.',
       intro:
-        'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on.',
-      products: [
-        {
-          slug: 'syrup',
-          index: '04',
-          kicker: 'Memory',
-          name: 'Syrup',
-          tagline: 'Your AI remembers what you were working on.',
-          body: 'Local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+        'Six products that work alone or together. Your request goes down, the answer comes back, and none of it has to leave hardware you control.',
+      note: 'Pantry is free and open source today; the rest of the stack is in private early access, and Waffle is coming soon. Metal first, CUDA being tuned, ROCm and Vulkan coming soon.',
+      flow: {
+        you: 'You, your team, your agents',
+        boundary: 'Hardware you own or rent',
+        layers: [
+          {
+            role: 'Security',
+            name: 'Pantry',
+            icon: 'pantry',
+            line: 'Finds what is exposed on every machine, and patches it.',
+          },
+          {
+            role: 'Agents',
+            name: 'Waffle',
+            icon: 'waffle',
+            line: 'The agent harness, with W, your assistant, inside.',
+          },
+          {
+            role: 'Memory',
+            name: 'Whisk',
+            icon: 'whisk',
+            line: 'Mixes the right documents and context into every request.',
+          },
+          {
+            role: 'Control',
+            name: 'Syrup',
+            icon: 'syrup',
+            line: 'Monitoring, telemetry, access control and cost, for every GPU.',
+          },
+          {
+            role: 'Engine',
+            name: 'Butter',
+            icon: 'butter',
+            line: 'Multi-modal inference for text, vision and audio, streamed.',
+          },
+          {
+            role: 'Kernels',
+            name: 'Iron',
+            icon: 'iron',
+            line: 'Write once in Rust, get optimized kernels everywhere.',
+          },
+        ],
+        hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
+        outside: {
+          title: 'Someone else’s API',
+          note: 'Not needed. Your data stays on your hardware unless you choose to use a hosted AI inference provider.',
         },
-        {
-          slug: 'waffle',
-          index: '03',
-          kicker: 'Control plane',
-          name: 'Waffle',
-          tagline: 'See every GPU and every engine running on it.',
-          body: 'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
-        },
-        {
-          slug: 'butter',
-          index: '02',
-          kicker: 'Serving',
-          name: 'Butter',
-          tagline: 'Model serving without Python.',
-          body: 'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 2- to 8-bit quantized checkpoints, hybrid and MoE models, with a quantized KV cache.',
-        },
-        {
-          slug: 'iron',
-          index: '01',
-          kicker: 'Kernels',
-          name: 'Iron',
-          tagline: 'One kernel definition, four backends.',
-          body: 'A Rust-embedded DSL. Kernels lower to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V. A versioned C and Rust ABI lets existing hosts call them.',
-        },
-      ],
+        outcomes: [
+          'Built for a lower cost per token',
+          'Private by default',
+          'Patched and in view',
+        ],
+        caption:
+          'A request from you, your team or your agents passes through Pantry (security), Waffle (agents), Whisk (memory), Syrup (control), Butter (the engine) and Iron (kernels) to hardware you own or rent, and the answer comes back the same way. Built for a lower cost per token, private by default, patched and in view.',
+      },
     },
 
-    models: {
-      title: 'Models on the menu.',
-      intro:
-        'Loaded straight from Hugging Face. Coverage is widest on Metal; CUDA support is added model by model.',
-      legend: { supported: 'Supported', inProgress: 'Coming soon' },
-      lanes: [
-        [
-          {
-            lab: 'Meta',
-            logo: 'meta',
-            models: 'Llama 3 · 3.1 · 3.2 · 3.3, Muse Glimmer',
-          },
-          {
-            lab: 'Google',
-            logo: 'google',
-            models: 'Gemma 2 · 3 · 4, PaliGemma',
-          },
-          {
-            lab: 'Qwen',
-            logo: 'qwen',
-            models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni, ASR',
-          },
-          {
-            lab: 'OpenAI',
-            logo: 'openai',
-            models: 'GPT-OSS 20B · 120B, Whisper',
-          },
-          {
-            lab: 'Mistral AI',
-            logo: 'mistral',
-            models: 'Mistral, Mistral 3 VL, Pixtral, Voxtral',
-          },
-          {
-            lab: 'NVIDIA',
-            logo: 'nvidia',
-            models: 'Nemotron H · 3.5, VLM, Diffusion, Parakeet',
-          },
-          {
-            lab: 'DeepSeek',
-            logo: 'deepseek',
-            models: 'DeepSeek V4 · V4.1',
-            status: 'in-progress',
-          },
-          { lab: 'Z.ai', logo: 'zai', models: 'GLM-5.3, GLM-OCR, GLM-ASR' },
-          { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4, Granite Speech' },
-          {
-            lab: 'OpenBMB',
-            logo: 'openbmb',
-            models: 'MiniCPM 5, MiniCPM-V 4.6, MiniCPM-o',
-          },
-          { lab: 'Tencent', logo: 'tencent', models: 'Hy3' },
-          { lab: 'inclusionAI', logo: 'inclusionai', models: 'Ling 3.0' },
-          {
-            lab: 'StepFun',
-            logo: 'stepfun',
-            models: 'Step 3',
-            status: 'in-progress',
-          },
-          { lab: 'BigCode', logo: 'bigcode', models: 'StarCoder2' },
-        ],
-        [
-          { lab: 'Microsoft', logo: 'microsoft', models: 'Phi 3' },
-          { lab: 'Liquid AI', logo: 'liquid', models: 'LFM2 · LFM2.5' },
-          { lab: 'Ai2', logo: 'ai2', models: 'OLMo 1 · 2' },
-          {
-            lab: 'Hugging Face',
-            logo: 'huggingface',
-            models: 'SmolLM, SmolVLM',
-          },
-          { lab: 'TII', logo: 'tii', models: 'Falcon H1' },
-          { lab: 'AI21', logo: 'ai21', models: 'Jamba' },
-          { lab: 'Apple', logo: 'apple', models: 'FastVLM' },
-          {
-            lab: 'Shanghai AI Lab',
-            logo: 'internlm',
-            models: 'InternLM 2',
-          },
-          { lab: 'hexgrad', logo: 'hexgrad', models: 'Kokoro' },
-          { lab: '01.AI', logo: '01ai', models: 'Yi 1.5' },
-          { lab: 'Recursive', logo: 'recursive', models: 'Flint' },
-          {
-            lab: 'Poolside',
-            logo: 'poolside',
-            models: 'Laguna S 2.1 · XS 2.1',
-          },
-          {
-            lab: 'Nanbeige',
-            logo: 'nanbeige',
-            models: 'Nanbeige 4.3',
-            status: 'in-progress',
-          },
-          {
-            lab: 'Fish Audio',
-            logo: 'fishaudio',
-            models: 'Drama-3',
-            status: 'in-progress',
-          },
-          {
-            lab: 'Cohere',
-            logo: 'cohere',
-            models: 'Cohere Transcribe',
-            status: 'in-progress',
-          },
-        ],
+    audiences: {
+      title: 'We’ve reserved a seat at the table for *you*.',
+      intro: 'Whoever you are, the same stack works for you.',
+      items: [
+        {
+          title: 'For you',
+          body: 'A private assistant on your own laptop. Your notes, your code and your questions stay on your machine.',
+          soon: true,
+        },
+        {
+          title: 'For companies',
+          body: 'Bring AI in-house, on GPUs you own or rent. Keep sensitive data where it belongs and spend less per token.',
+          href: '/solutions/enterprise',
+        },
+        {
+          title: 'For GPU clouds',
+          body: 'Serve more from every GPU you rent out, and see the whole fleet in one place.',
+          href: '/solutions/neoclouds',
+        },
+        {
+          title: 'For AI builders',
+          body: 'Write a kernel once and ship it to Metal, CUDA, ROCm and Vulkan.',
+          href: '/solutions/ai-companies',
+        },
       ],
+      linkLabel: 'See how',
+      soonLabel: 'Coming soon',
     },
 
-    kernel: {
-      title: 'You write this.\n*Iron writes the rest.*',
-      code: {
-        file: 'unary.rs',
-        label: 'iron · rust dsl',
-        tokens: [
-          {
-            text: '#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]',
-            kind: 'comment',
-          },
-          { text: '\n' },
-          { text: 'pub fn', kind: 'keyword' },
-          { text: ' ' },
-          { text: 'iron_exp', kind: 'function' },
-          { text: '<T>(a: Tensor<T>, out: Tensor<T>) {\n    ' },
-          { text: 'let', kind: 'keyword' },
-          {
-            text: ' idx = program_id(0);\n    store(out[idx], exp(load(a[idx])));\n}',
-          },
-        ],
-      },
-      tuned: {
-        title: 'Where it’s tuned',
-        note: 'Pulse = how far tuning has gone',
-      },
-      tiers: [
+    beliefs: {
+      title: 'Why we’re *cooking*.',
+      intro: 'Three beliefs behind everything we build.',
+      items: [
         {
-          name: 'Apple · Metal',
-          level: 'primary',
-          label: 'Primary',
-          note: 'Every kernel is written and tuned here first. MSL → .metallib.',
+          title: 'Intelligence for everyone',
+          body: 'Access to AI should not depend on where you live, what you earn or which credentials you hold.',
         },
         {
-          name: 'NVIDIA · CUDA',
-          level: 'secondary',
-          label: 'Secondary',
-          note: 'In production on RTX and DGX Spark. CUDA → PTX.',
+          title: 'More from every watt',
+          body: 'Demand for intelligence is limitless; power and chips are not. The win is more useful work from every unit of compute.',
         },
         {
-          name: 'AMD ROCm · Vulkan',
-          level: 'runs',
-          label: 'Runs',
-          note: 'Moving fast on AMD. HIP → AMDGPU, Vulkan → SPIR-V.',
+          title: 'Run on hardware you own',
+          body: 'Models on the machines people already have are good enough for meaningful work. We’ve been building for that.',
         },
       ],
-      runsOn: {
-        label: 'Runs on',
-        items: [
-          'MacBook & Mac Studio',
-          'RTX workstations',
-          'DGX Spark',
-          'Strix Halo',
-          'Neocloud fleets',
-        ],
-        pending: 'Enterprise datacenter GPUs · next',
-      },
+      links: [
+        { label: 'Read the announcement', href: '/blog/introducing-waffuru' },
+        { label: 'What we believe', href: '/about#beliefs' },
+      ],
     },
 
     team: {
       title: 'Who’s in the *kitchen*.',
       intro:
-        'Research, security, revenue and a couple of founders who have shipped before.',
+        'Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
       portraitAlt: 'Portrait of {name}',
       link: { label: 'Meet the team', href: '/about/team' },
     },
 
     cta: {
-      title: 'Pull up a seat.',
-      body: 'Nothing’s public yet. Request early access, or leave your email below and we’ll write when something is.',
+      title: 'Reserve your seat.',
+      body: 'Try Pantry today, free. The rest of the stack is in early access: reserve a seat, or leave your email and we will write when there is news.',
     },
   },
   es: homeEs,

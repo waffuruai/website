@@ -60,7 +60,7 @@ const brandFr: (typeof brand)['en'] = {
         body: 'Avec une majuscule dans le texte courant et les titres. Le « waffuru » en minuscules appartient au seul logotype.',
       },
       {
-        term: 'Iron, Butter, Waffle, Syrup',
+        term: 'Iron, Butter, Syrup, Whisk',
         body: 'Les quatre produits, toujours avec une majuscule et jamais traduits, dans toutes les langues.',
       },
       {
@@ -69,11 +69,11 @@ const brandFr: (typeof brand)['en'] = {
       },
       {
         term: 'Le logo gaufre',
-        body: 'Appelez l’image « le logo gaufre ». Waffle, avec un W majuscule, est notre produit de plan de contrôle GPU.',
+        body: 'Appelez l’image « le logo gaufre ».',
       },
     ],
     origin:
-      '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil à l’amour du manga, à un amour partagé des gaufres et à une mission mondiale.',
+      '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil à notre respect pour la culture japonaise et sa longue histoire, à un amour partagé des gaufres et à une mission mondiale.',
   },
   colour: {
     title: 'La *palette*.',
@@ -206,7 +206,7 @@ const brandFr: (typeof brand)['en'] = {
         role: 'Texte',
         use: 'Texte courant, boutons et interface.',
         sample:
-          'Kernels GPU, inférence, pilotage de flotte et mémoire pour le matériel que vous possédez déjà.',
+          'Kernels, inférence, un plan de contrôle, une mémoire et un harnais d’agents, pour du matériel que vous possédez ou louez.',
         glyphs:
           'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
         source: {
@@ -238,8 +238,20 @@ const brandFr: (typeof brand)['en'] = {
   motifs: {
     title: 'Des motifs en *mouvement*.',
     intro:
-      'Du CSS pur, tiré des produits : des alvéoles qui s’illuminent, un tampon, une noix de beurre qui fond, des voyants d’état et une goutte de sirop. Tout s’immobilise quand l’appareil du visiteur demande de réduire les animations.',
+      'Du CSS pur, tiré des produits, du haut de la pile vers le bas : deux options pour Pantry, des alvéoles qui s’illuminent, un fouet, des gouttes de sirop, du beurre qui fond, une presse et des voyants d’état. Tout s’immobilise quand l’appareil du visiteur demande de réduire les animations.',
     items: [
+      {
+        key: 'jar',
+        name: 'Bocal scellé',
+        description:
+          'Un couvercle qui se visse et un sceau doré : vérifié avant de s’exécuter. Une option pour Pantry.',
+      },
+      {
+        key: 'shelf',
+        name: 'Inventaire des étagères',
+        description:
+          'Un balayage des étagères, et le seul bocal périmé remplacé par un neuf. Une option pour Pantry.',
+      },
       {
         key: 'tiles',
         name: 'Alvéoles de gaufre',
@@ -247,25 +259,34 @@ const brandFr: (typeof brand)['en'] = {
           'Une grille d’alvéoles, dont quelques-unes brillent en or.',
       },
       {
-        key: 'stamps',
-        name: 'Tampons',
-        description: 'Une grille pressée case par case. Le motif d’Iron.',
+        key: 'whisk',
+        name: 'Fouet',
+        description:
+          'Des fils qui tournent dans un bol et incorporent de l’or au mélange. Le motif de Whisk.',
+      },
+      {
+        key: 'drips',
+        name: 'Gouttes',
+        description:
+          'Du sirop qui s’accumule et goutte ; chaque goutte, une donnée. Le motif de Syrup.',
       },
       {
         key: 'pat',
-        name: 'Noix de beurre',
-        description: 'Une noix qui fond puis se reforme. Le motif de Butter.',
+        name: 'Beurre fondu',
+        description:
+          'Une noix qui fond en une flaque luisante et graisse les rouages. Le motif de Butter.',
+      },
+      {
+        key: 'stamps',
+        name: 'Presse',
+        description:
+          'Une presse qui descend rangée par rangée. Le motif d’Iron.',
       },
       {
         key: 'leds',
         name: 'LED',
-        description: 'Une baie de voyants d’état. Le motif de Waffle.',
-      },
-      {
-        key: 'drip',
-        name: 'Goutte',
         description:
-          'Une goutte qui coule le long d’une ligne. Le motif de Syrup.',
+          'Une baie de voyants d’état, réservée à un produit encore en préparation.',
       },
     ],
   },
@@ -276,10 +297,10 @@ const brandFr: (typeof brand)['en'] = {
     dontLabel: 'À ne pas faire',
     dos: [
       'Écrivez Waffuru avec un W majuscule. N’utilisez « waffuru » en minuscules que dans le logotype.',
-      'Écrivez Iron, Butter, Waffle et Syrup tels quels, dans toutes les langues.',
+      'Écrivez Iron, Butter, Syrup et Whisk tels quels, dans toutes les langues.',
       'Laissez de l’espace autour du logo gaufre, sur un fond sombre ou clair avec assez de contraste.',
       'Décrivez nos produits tels qu’ils sont : privés pour l’instant, avec un accès anticipé sur demande.',
-      'Décrivez la prise en charge matérielle telle qu’elle est : Metal en premier, CUDA en second, ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+      'Décrivez la prise en charge matérielle telle qu’elle est : Metal en premier, CUDA en cours d’optimisation, ROCm et Vulkan bientôt (ils fonctionnent, mais ne sont pas encore optimisés).',
     ],
     donts: [
       'Recolorer, détourer, pivoter ou rogner le logo, ou y ajouter des effets.',

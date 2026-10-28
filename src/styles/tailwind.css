@@ -20,6 +20,8 @@
   --roast-raised: #12100e;
   --cream: #ede8df;
   --gold: #e8a33d;
+  /* Gold's dark partner (DESIGN.md's brand ink); never changes with theme. */
+  --bronze: #8a5514;
 
   /* Semantic tokens: dark (default). */
   --radius: 1rem;
@@ -50,6 +52,8 @@
   --destructive: #ff6b5b;
   --destructive-foreground: var(--roast);
   --success: #7fc77a;
+  /* Diagrams only: a system we do not own (DESIGN.md's blue). */
+  --external: #6cb4ee;
   --border: rgb(237 232 223 / 0.1);
   --input: rgb(237 232 223 / 0.16);
   --ring: var(--gold);
@@ -81,6 +85,7 @@
   --destructive: #b42318;
   --destructive-foreground: #ffffff;
   --success: #2f7d32;
+  --external: #1f6aa5;
   --border: rgb(10 9 8 / 0.12);
   --input: rgb(10 9 8 / 0.2);
   --ring: #8a5514;
@@ -121,6 +126,7 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-success: var(--success);
+  --color-external: var(--external);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);

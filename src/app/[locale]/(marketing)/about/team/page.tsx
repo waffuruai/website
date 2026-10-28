@@ -69,6 +69,7 @@ export default async function TeamPage({ params }: { params: LocaleParams }) {
             portraitAlt: content.portraitAlt,
             linkAria: content.linkAria,
             linkNames: content.linkNames,
+            countries: dictionary.countries,
           }}
         />
       </div>

@@ -53,7 +53,7 @@ export const smallBusiness: Localized<SolutionPage> = {
         {
           tag: 'control',
           title: 'Work on client files without sending them anywhere.',
-          body: 'Models, prompts and documents stay on your machine unless you opt in. Summarize contracts, draft replies and check invoices without a third party in the loop.',
+          body: 'Models, prompts and documents stay on your machine unless you choose to use a hosted AI inference provider. Summarize contracts, draft replies and check invoices without a third party in the loop.',
         },
         {
           tag: 'inference',
@@ -63,14 +63,14 @@ export const smallBusiness: Localized<SolutionPage> = {
         {
           tag: 'control',
           title: 'Ask questions of your own notes and code.',
-          body: 'Syrup runs retrieval locally over your notes and code, so an answer comes back with a citation to where it came from. Search is lexical plus vector, so exact names and fuzzy questions both land.',
+          body: 'Whisk runs retrieval locally over your notes and code, so an answer comes back with a citation to where it came from. Search is lexical plus vector, so exact names and fuzzy questions both land.',
         },
       ],
     },
     stackFit: {
       title: 'How the stack *fits*.',
       intro:
-        'Butter does the heavy lifting. Syrup and Waffle are there when you want them.',
+        'Butter does the heavy lifting. Whisk and Syrup are there when you want them.',
       items: [
         {
           product: 'butter',
@@ -78,12 +78,12 @@ export const smallBusiness: Localized<SolutionPage> = {
           body: 'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Llama, Gemma, Qwen, GPT-OSS and more run alongside speech-to-text, text-to-speech and vision models, and butter serve gives your apps an OpenAI-compatible endpoint.',
         },
         {
-          product: 'syrup',
+          product: 'whisk',
           need: 'Ask your own files, and get sources.',
           body: 'Local retrieval over your notes and code. Results come back with citations over MCP, so assistants can show their work.',
         },
         {
-          product: 'waffle',
+          product: 'syrup',
           need: 'Keep an eye on the box under your desk.',
           body: 'From one machine to a small rack, see every GPU and every engine running on it, whether that is Butter, llama.cpp, vLLM or SGLang.',
         },
@@ -112,7 +112,7 @@ export const smallBusiness: Localized<SolutionPage> = {
       {
         question: 'Does my data leave my machine?',
         answer:
-          'Not unless you opt in. Models run locally, and your prompts, files and notes stay on your machine by default.',
+          'Not unless you choose to use a hosted AI inference provider. Models run locally, and your prompts, files and notes stay on your machine by default.',
       },
       {
         question: 'Can I keep using the apps I already have?',

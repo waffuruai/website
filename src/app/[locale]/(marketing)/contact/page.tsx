@@ -29,6 +29,25 @@ export async function generateMetadata({
   });
 }
 
+/** The lede with our address, wherever it falls, as a gold mailto link. */
+function linkEmail(lede: string) {
+  const email = site.emails.hello;
+  const [before, ...after] = lede.split(email);
+  if (after.length === 0) return lede;
+  return (
+    <>
+      {before}
+      <a
+        href={`mailto:${email}`}
+        className="text-brand-ink underline decoration-brand-ink/40 underline-offset-4 transition-colors hover:decoration-brand-ink"
+      >
+        {email}
+      </a>
+      {after.join(email)}
+    </>
+  );
+}
+
 export default async function ContactPage({
   params,
 }: {
@@ -41,7 +60,11 @@ export default async function ContactPage({
 
   return (
     <>
-      <PageHero label={hero.label} title={hero.title} lede={hero.lede} />
+      <PageHero
+        label={hero.label}
+        title={hero.title}
+        lede={linkEmail(hero.lede)}
+      />
       <Callouts {...callouts} />
       <section className="mx-auto max-w-site px-site pb-16 md:pb-24">
         <div className="border-t border-foreground/12 pt-12 md:pt-16">

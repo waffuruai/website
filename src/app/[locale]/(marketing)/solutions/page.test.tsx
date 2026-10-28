@@ -42,8 +42,8 @@ describe('/solutions', () => {
 
   it('names the products each audience uses', async () => {
     await renderIndex();
-    expect(screen.getByText('Iron · Butter · Syrup · Waffle')).toBeTruthy();
-    expect(screen.getByText('Butter · Syrup · Waffle')).toBeTruthy();
+    expect(screen.getByText('Iron · Butter · Whisk · Syrup')).toBeTruthy();
+    expect(screen.getByText('Butter · Whisk · Syrup')).toBeTruthy();
   });
 
   it('shows the three shared value props', async () => {

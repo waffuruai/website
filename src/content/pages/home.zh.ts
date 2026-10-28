@@ -3,244 +3,164 @@ import type { home } from './home';
 const homeZh: (typeof home)['en'] = {
   seo: {
     keywords: [
-      '本地大模型推理',
-      'GPU 内核',
-      '推理引擎',
-      'Apple 芯片',
-      'Metal',
-      'CUDA',
-      'ROCm',
-      'Vulkan',
-      'GPU 集群管理',
-      '新型云服务商',
+      '私有化 AI',
+      '本地 AI',
       '端侧 AI',
-      '私有化部署 AI',
+      '在自有硬件上运行 AI',
+      '本地大模型推理',
+      '推理引擎',
+      'GPU 内核',
+      'Apple silicon',
+      '漏洞扫描器',
+      'Pantry',
     ],
   },
 
   hero: {
-    eyebrow: '四款产品 · 暂未开源',
-    title: '原始数学，*压*进芯片。',
-    lede: '我们编写 GPU 内核、推理引擎、控制平面和检索层，让你的团队在自己的硬件上运行模型。它们可以跑在一台笔记本、一个家庭实验室或一支 neocloud 集群上，而且我们公开自己测到的结果。',
-    secondary: { label: '查看技术栈', href: '#stack' },
-    emits: {
-      label: '生成',
-      targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
+    eyebrow: '你的硬件 · 你的数据 · 你的 AI',
+    title: '在你*已有*的硬件上，获得更多智能。',
+    lede: 'Waffuru 打造在你自有或租用的硬件上运行的 AI 技术栈，从一台笔记本到数据中心里的一整支 GPU 集群。你能从每块 GPU 中获得更多，每个 token 花得更少，数据也留在你手里。',
+    launch: {
+      label: '新品',
+      text: 'Pantry，我们面向 macOS 和 Linux 的免费漏洞扫描器',
     },
+    secondary: { label: '了解工作原理', href: '#stack' },
+  },
+
+  pantry: {
+    label: '免费 · 开源 · 今日发布',
+    title: '看清哪里*暴露*，快速修补。',
+    body: 'AI 要在你的机器上运行，这些机器得先安全。Pantry 会对照公开的漏洞数据，检查已安装的一切和每个代码仓库，只报告真正影响你的问题，并修复能安全修复的部分。',
+    points: [
+      '只报与你确切版本相关的问题',
+      '安全的修复替你执行；需要 sudo 的步骤会打印出来',
+      '无遥测，不用 AI，用 Rust 编写',
+    ],
+    primary: '保护你的系统',
+    secondary: 'Pantry 的工作方式',
+    caption: '某台机器的示例输出。',
   },
 
   stack: {
-    title: '技术栈。',
+    title: '从芯片到*答案*。',
     intro:
-      'Iron 编译内核，Butter 在内核上运行模型，Waffle 盯着 GPU，Syrup 记得你在做什么。',
-    products: [
-      {
-        slug: 'syrup',
-        index: '04',
-        kicker: '记忆',
-        name: 'Syrup',
-        tagline: '让你的 AI 记得你在做什么。',
-        body: '对你的笔记和代码做本地检索。嵌入向量用 TurboQuant+ 压缩，搜索结合关键词与向量，结果通过 MCP 返回，并附带引用。',
+      '六款产品，可单独使用，也可组合使用。请求向下传递，答案原路返回，全程都不必离开你掌控的硬件。',
+    note: 'Pantry 今天已免费开源；技术栈的其余部分处于非公开抢先体验阶段，Waffle 即将推出。Metal 优先，CUDA 调优中，ROCm 和 Vulkan 即将推出。',
+    flow: {
+      you: '你、你的团队、你的智能体',
+      boundary: '你自有或租用的硬件',
+      layers: [
+        {
+          role: '安全',
+          name: 'Pantry',
+          icon: 'pantry',
+          line: '找出每台机器上暴露的问题，并加以修补。',
+        },
+        {
+          role: '智能体',
+          name: 'Waffle',
+          icon: 'waffle',
+          line: '智能体框架，你的助理 W 就在其中。',
+        },
+        {
+          role: '记忆',
+          name: 'Whisk',
+          icon: 'whisk',
+          line: '把合适的文档和上下文调入每一次请求。',
+        },
+        {
+          role: '控制',
+          name: 'Syrup',
+          icon: 'syrup',
+          line: '监控、遥测、访问控制与成本，覆盖每一块 GPU。',
+        },
+        {
+          role: '引擎',
+          name: 'Butter',
+          icon: 'butter',
+          line: '面向文本、视觉和音频的多模态推理，流式输出。',
+        },
+        {
+          role: '内核',
+          name: 'Iron',
+          icon: 'iron',
+          line: '用 Rust 写一次，到处都能得到优化的内核。',
+        },
+      ],
+      hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
+      outside: {
+        title: '别人的 API',
+        note: '不需要。除非你选择使用托管的 AI 推理服务商，数据始终留在你的硬件上。',
       },
-      {
-        slug: 'waffle',
-        index: '03',
-        kicker: '控制平面',
-        name: 'Waffle',
-        tagline: '看清每一块 GPU 和其上运行的每个引擎。',
-        body: '面向 GPU 上大模型的控制平面，从桌下的一台机器，到出租集群的新型云服务商。每台主机运行一个小型 Rust sidecar，上报带签名的遥测数据。支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
-      },
-      {
-        slug: 'butter',
-        index: '02',
-        kicker: '模型服务',
-        name: 'Butter',
-        tagline: '无需 Python 的模型服务。',
-        body: 'Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。可加载 2 至 8 位量化检查点、混合模型和 MoE 模型，并支持量化 KV 缓存。',
-      },
-      {
-        slug: 'iron',
-        index: '01',
-        kicker: '内核',
-        name: 'Iron',
-        tagline: '一次定义内核，生成四种后端。',
-        body: '嵌入 Rust 的 DSL。内核先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。版本化的 C 与 Rust ABI 让现有宿主可以直接调用。',
-      },
-    ],
+      outcomes: ['为降低每 token 成本而打造', '默认私密', '补丁到位，一目了然'],
+      caption:
+        '来自你、你的团队或你的智能体的请求，依次经过 Pantry（安全）、Waffle（智能体）、Whisk（记忆）、Syrup（控制）、Butter（引擎）和 Iron（内核），抵达你自有或租用的硬件，答案再沿原路返回。为降低每 token 成本而打造，默认私密，补丁到位，一目了然。',
+    },
   },
 
-  models: {
-    title: '菜单上的模型。',
-    intro:
-      '直接从 Hugging Face 加载。Metal 上覆盖最广；CUDA 的支持逐个模型添加。',
-    legend: { supported: '已支持', inProgress: '即将推出' },
-    lanes: [
-      [
-        {
-          lab: 'Meta',
-          logo: 'meta',
-          models: 'Llama 3 · 3.1 · 3.2 · 3.3, Muse Glimmer',
-        },
-        {
-          lab: 'Google',
-          logo: 'google',
-          models: 'Gemma 2 · 3 · 4, PaliGemma',
-        },
-        {
-          lab: 'Qwen',
-          logo: 'qwen',
-          models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni, ASR',
-        },
-        {
-          lab: 'OpenAI',
-          logo: 'openai',
-          models: 'GPT-OSS 20B · 120B, Whisper',
-        },
-        {
-          lab: 'Mistral AI',
-          logo: 'mistral',
-          models: 'Mistral, Mistral 3 VL, Pixtral, Voxtral',
-        },
-        {
-          lab: 'NVIDIA',
-          logo: 'nvidia',
-          models: 'Nemotron H · 3.5, VLM, Diffusion, Parakeet',
-        },
-        {
-          lab: 'DeepSeek',
-          logo: 'deepseek',
-          models: 'DeepSeek V4 · V4.1',
-          status: 'in-progress',
-        },
-        { lab: 'Z.ai', logo: 'zai', models: 'GLM-5.3, GLM-OCR, GLM-ASR' },
-        { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4, Granite Speech' },
-        {
-          lab: 'OpenBMB',
-          logo: 'openbmb',
-          models: 'MiniCPM 5, MiniCPM-V 4.6, MiniCPM-o',
-        },
-        { lab: 'Tencent', logo: 'tencent', models: 'Hy3' },
-        { lab: 'inclusionAI', logo: 'inclusionai', models: 'Ling 3.0' },
-        {
-          lab: 'StepFun',
-          logo: 'stepfun',
-          models: 'Step 3',
-          status: 'in-progress',
-        },
-        { lab: 'BigCode', logo: 'bigcode', models: 'StarCoder2' },
-      ],
-      [
-        { lab: 'Microsoft', logo: 'microsoft', models: 'Phi 3' },
-        { lab: 'Liquid AI', logo: 'liquid', models: 'LFM2 · LFM2.5' },
-        { lab: 'Ai2', logo: 'ai2', models: 'OLMo 1 · 2' },
-        {
-          lab: 'Hugging Face',
-          logo: 'huggingface',
-          models: 'SmolLM, SmolVLM',
-        },
-        { lab: 'TII', logo: 'tii', models: 'Falcon H1' },
-        { lab: 'AI21', logo: 'ai21', models: 'Jamba' },
-        { lab: 'Apple', logo: 'apple', models: 'FastVLM' },
-        {
-          lab: 'Shanghai AI Lab',
-          logo: 'internlm',
-          models: 'InternLM 2',
-        },
-        { lab: 'hexgrad', logo: 'hexgrad', models: 'Kokoro' },
-        { lab: '01.AI', logo: '01ai', models: 'Yi 1.5' },
-        { lab: 'Recursive', logo: 'recursive', models: 'Flint' },
-        {
-          lab: 'Poolside',
-          logo: 'poolside',
-          models: 'Laguna S 2.1 · XS 2.1',
-        },
-        {
-          lab: 'Nanbeige',
-          logo: 'nanbeige',
-          models: 'Nanbeige 4.3',
-          status: 'in-progress',
-        },
-        {
-          lab: 'Fish Audio',
-          logo: 'fishaudio',
-          models: 'Drama-3',
-          status: 'in-progress',
-        },
-        {
-          lab: 'Cohere',
-          logo: 'cohere',
-          models: 'Cohere Transcribe',
-          status: 'in-progress',
-        },
-      ],
+  audiences: {
+    title: '我们已在餐桌旁为*你*留好了座位。',
+    intro: '无论你是谁，同一套技术栈都适用。',
+    items: [
+      {
+        title: '为你自己',
+        body: '在你自己的笔记本上运行私人助理。你的笔记、代码和问题都留在你的机器上。',
+        soon: true,
+      },
+      {
+        title: '为企业',
+        body: '把 AI 搬进公司内部，跑在你自有或租用的 GPU 上。让敏感数据待在该待的地方，每个 token 花得更少。',
+        href: '/solutions/enterprise',
+      },
+      {
+        title: '为 GPU 云',
+        body: '让你出租的每一块 GPU 提供更多服务，并在一处看清整个集群。',
+        href: '/solutions/neoclouds',
+      },
+      {
+        title: '为 AI 开发者',
+        body: '内核只写一次，即可交付到 Metal、CUDA、ROCm 和 Vulkan。',
+        href: '/solutions/ai-companies',
+      },
     ],
+    linkLabel: '看看怎么做',
+    soonLabel: '即将推出',
   },
 
-  kernel: {
-    title: '你写这些。\n*其余交给 Iron。*',
-    code: {
-      file: 'unary.rs',
-      label: 'iron · rust dsl',
-      tokens: [
-        {
-          text: '#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]',
-          kind: 'comment',
-        },
-        { text: '\n' },
-        { text: 'pub fn', kind: 'keyword' },
-        { text: ' ' },
-        { text: 'iron_exp', kind: 'function' },
-        { text: '<T>(a: Tensor<T>, out: Tensor<T>) {\n    ' },
-        { text: 'let', kind: 'keyword' },
-        {
-          text: ' idx = program_id(0);\n    store(out[idx], exp(load(a[idx])));\n}',
-        },
-      ],
-    },
-    tuned: { title: '调优在哪里', note: '脉冲 = 调优进展' },
-    tiers: [
+  beliefs: {
+    title: '我们为何*下厨*。',
+    intro: '三条信念，贯穿我们打造的一切。',
+    items: [
       {
-        name: 'Apple · Metal',
-        level: 'primary',
-        label: '首要',
-        note: '每个内核都先在这里编写并调优。MSL → .metallib。',
+        title: '人人可及的智能',
+        body: '能否用上 AI，不应取决于你住在哪里、收入多少或持有什么资历。',
       },
       {
-        name: 'NVIDIA · CUDA',
-        level: 'secondary',
-        label: '其次',
-        note: '已在 RTX 和 DGX Spark 上投入生产。CUDA → PTX。',
+        title: '让每一瓦做更多',
+        body: '对智能的需求没有上限，电力和芯片却有。关键在于让每一单位算力做更多有用的功。',
       },
       {
-        name: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        label: '可运行',
-        note: 'AMD 上进展迅速。HIP → AMDGPU，Vulkan → SPIR-V。',
+        title: '跑在你自己的硬件上',
+        body: '人们已有机器上的模型，已经好到足以胜任有意义的工作。我们一直在为此而建。',
       },
     ],
-    runsOn: {
-      label: '运行于',
-      items: [
-        'MacBook & Mac Studio',
-        'RTX 工作站',
-        'DGX Spark',
-        'Strix Halo',
-        '新型云服务商集群',
-      ],
-      pending: '企业级数据中心 GPU · 下一步',
-    },
+    links: [
+      { label: '阅读发布公告', href: '/blog/introducing-waffuru' },
+      { label: '我们相信什么', href: '/about#beliefs' },
+    ],
   },
 
   team: {
     title: '谁在*厨房*里。',
-    intro: '研究、安全、营收，还有几位曾把产品做出来的创始人。',
+    intro:
+      '我们是一群经验丰富的构建者，背景横跨网络安全、军队、消费和企业领域。创办并做大过创业公司，合作对象从小企业到大型企业都有。',
     portraitAlt: '{name} 的肖像',
     link: { label: '认识团队', href: '/about/team' },
   },
 
   cta: {
-    title: '请入座。',
-    body: '目前一切尚未公开。申请抢先体验，或者在下方留下邮箱，等有消息时我们会写信给你。',
+    title: '预订你的座位。',
+    body: '今天就免费试用 Pantry。技术栈的其余部分处于抢先体验阶段：预订一个座位，或者留下邮箱，有消息时我们会写信给你。',
   },
 };
 

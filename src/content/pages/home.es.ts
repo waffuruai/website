@@ -3,248 +3,168 @@ import type { home } from './home';
 const homeEs: (typeof home)['en'] = {
   seo: {
     keywords: [
-      'inferencia de LLM local',
-      'kernels de GPU',
-      'motor de inferencia',
-      'Apple silicon',
-      'Metal',
-      'CUDA',
-      'ROCm',
-      'Vulkan',
-      'gestión de flotas de GPU',
-      'neocloud',
-      'IA en el dispositivo',
       'IA privada',
+      'IA local',
+      'IA en el dispositivo',
+      'IA en tu propio hardware',
+      'inferencia de LLM local',
+      'motor de inferencia',
+      'kernels de GPU',
+      'Apple silicon',
+      'escáner de vulnerabilidades',
+      'Pantry',
     ],
   },
 
   hero: {
-    eyebrow: 'Cuatro productos · código cerrado por ahora',
-    title: 'Matemática pura, *prensada* en silicio.',
-    lede: 'Escribimos kernels de GPU, un motor de inferencia, un plano de control y una capa de recuperación para que tu equipo ejecute modelos en su propio hardware. Funcionan en un portátil, un laboratorio casero o una flota de neocloud, y publicamos lo que medimos.',
-    secondary: { label: 'Ver el stack', href: '#stack' },
-    emits: {
-      label: 'Emite',
-      targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
+    eyebrow: 'Tu hardware · tus datos · tu IA',
+    title: 'Más inteligencia en el hardware que ya *tienes*.',
+    lede: 'Waffuru construye el stack de IA que funciona en el hardware que tienes o alquilas, desde un portátil hasta una flota de GPU en el centro de datos. Sacas más de cada GPU, gastas menos por token y tus datos se quedan contigo.',
+    launch: {
+      label: 'Nuevo',
+      text: 'Pantry, nuestro escáner de vulnerabilidades gratuito para macOS y Linux',
     },
+    secondary: { label: 'Ver cómo funciona', href: '#stack' },
+  },
+
+  pantry: {
+    label: 'Gratis · Código abierto · Ya disponible',
+    title: 'Descubre qué está *expuesto*. Parchéalo rápido.',
+    body: 'Antes de que la IA funcione en tus equipos, tienen que ser seguros. Pantry contrasta todo lo instalado, y cada repositorio, con datos abiertos de vulnerabilidades, informa solo de lo que te afecta y corrige lo que puede sin riesgo.',
+    points: [
+      'Solo lo que afecta a tus versiones exactas',
+      'Aplica por ti las correcciones seguras; muestra los pasos con sudo',
+      'Sin telemetría, sin IA, escrito en Rust',
+    ],
+    primary: 'Protege tu sistema',
+    secondary: 'Cómo funciona Pantry',
+    caption: 'Salida de ejemplo de un equipo.',
   },
 
   stack: {
-    title: 'El stack.',
+    title: 'Del silicio a la *respuesta*.',
     intro:
-      'Iron compila los kernels. Butter ejecuta modelos sobre ellos. Waffle vigila las GPU. Syrup recuerda en qué estabas trabajando.',
-    products: [
-      {
-        slug: 'syrup',
-        index: '04',
-        kicker: 'Memoria',
-        name: 'Syrup',
-        tagline: 'Tu IA recuerda en qué estabas trabajando.',
-        body: 'Recuperación local sobre tus notas y tu código. Los embeddings se comprimen con TurboQuant+, la búsqueda combina léxico y vectores, y los resultados llegan con citas a través de MCP.',
+      'Seis productos que funcionan solos o juntos. Tu petición baja, la respuesta sube, y nada de eso tiene que salir del hardware que controlas.',
+    note: 'Pantry ya es gratuito y de código abierto; el resto del stack está en acceso anticipado privado, y Waffle llegará pronto. Primero Metal, CUDA en afinación, ROCm y Vulkan próximamente.',
+    flow: {
+      you: 'Tú, tu equipo, tus agentes',
+      boundary: 'Hardware que tienes o alquilas',
+      layers: [
+        {
+          role: 'Seguridad',
+          name: 'Pantry',
+          icon: 'pantry',
+          line: 'Encuentra lo que está expuesto en cada equipo y lo parchea.',
+        },
+        {
+          role: 'Agentes',
+          name: 'Waffle',
+          icon: 'waffle',
+          line: 'El harness de agentes, con W, tu asistente, dentro.',
+        },
+        {
+          role: 'Memoria',
+          name: 'Whisk',
+          icon: 'whisk',
+          line: 'Mezcla los documentos y el contexto adecuados en cada petición.',
+        },
+        {
+          role: 'Control',
+          name: 'Syrup',
+          icon: 'syrup',
+          line: 'Monitoreo, telemetría, control de acceso y costos, para cada GPU.',
+        },
+        {
+          role: 'Motor',
+          name: 'Butter',
+          icon: 'butter',
+          line: 'Inferencia multimodal para texto, visión y audio, en streaming.',
+        },
+        {
+          role: 'Kernels',
+          name: 'Iron',
+          icon: 'iron',
+          line: 'Escribe una vez en Rust y obtén kernels optimizados en todas partes.',
+        },
+      ],
+      hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
+      outside: {
+        title: 'La API de otros',
+        note: 'No hace falta. Tus datos se quedan en tu hardware a menos que elijas usar un proveedor de inferencia de IA alojado.',
       },
-      {
-        slug: 'waffle',
-        index: '03',
-        kicker: 'Plano de control',
-        name: 'Waffle',
-        tagline: 'Ve cada GPU y cada motor que corre en ella.',
-        body: 'Un plano de control para LLM en GPU, desde un equipo bajo el escritorio hasta un neocloud que alquila una flota. Cada host ejecuta un pequeño sidecar en Rust que reporta telemetría firmada. Funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
-      },
-      {
-        slug: 'butter',
-        index: '02',
-        kicker: 'Serving',
-        name: 'Butter',
-        tagline: 'Servir modelos sin Python.',
-        body: 'Swift sobre Metal para Apple silicon, Rust para CUDA y el resto. Carga checkpoints cuantizados de 2 a 8 bits, modelos híbridos y MoE, con una caché KV cuantizada.',
-      },
-      {
-        slug: 'iron',
-        index: '01',
-        kicker: 'Kernels',
-        name: 'Iron',
-        tagline: 'Una definición de kernel, cuatro backends.',
-        body: 'Un DSL embebido en Rust. Los kernels se traducen a una representación intermedia (IR) compartida y de ahí a Metal, CUDA, HIP/ROCm o Vulkan SPIR-V. Una ABI versionada de C y Rust permite que los hosts existentes los invoquen.',
-      },
-    ],
+      outcomes: [
+        'Pensado para un menor costo por token',
+        'Privado por defecto',
+        'Parcheado y a la vista',
+      ],
+      caption:
+        'Una petición tuya, de tu equipo o de tus agentes pasa por Pantry (seguridad), Waffle (agentes), Whisk (memoria), Syrup (control), Butter (el motor) e Iron (kernels) hasta el hardware que tienes o alquilas, y la respuesta vuelve por el mismo camino. Pensado para un menor costo por token, privado por defecto, parcheado y a la vista.',
+    },
   },
 
-  models: {
-    title: 'Modelos a la carta.',
-    intro:
-      'Se cargan directo desde Hugging Face. La cobertura es más amplia en Metal; el soporte de CUDA se añade modelo por modelo.',
-    legend: { supported: 'Compatible', inProgress: 'Próximamente' },
-    lanes: [
-      [
-        {
-          lab: 'Meta',
-          logo: 'meta',
-          models: 'Llama 3 · 3.1 · 3.2 · 3.3, Muse Glimmer',
-        },
-        {
-          lab: 'Google',
-          logo: 'google',
-          models: 'Gemma 2 · 3 · 4, PaliGemma',
-        },
-        {
-          lab: 'Qwen',
-          logo: 'qwen',
-          models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni, ASR',
-        },
-        {
-          lab: 'OpenAI',
-          logo: 'openai',
-          models: 'GPT-OSS 20B · 120B, Whisper',
-        },
-        {
-          lab: 'Mistral AI',
-          logo: 'mistral',
-          models: 'Mistral, Mistral 3 VL, Pixtral, Voxtral',
-        },
-        {
-          lab: 'NVIDIA',
-          logo: 'nvidia',
-          models: 'Nemotron H · 3.5, VLM, Diffusion, Parakeet',
-        },
-        {
-          lab: 'DeepSeek',
-          logo: 'deepseek',
-          models: 'DeepSeek V4 · V4.1',
-          status: 'in-progress',
-        },
-        { lab: 'Z.ai', logo: 'zai', models: 'GLM-5.3, GLM-OCR, GLM-ASR' },
-        { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4, Granite Speech' },
-        {
-          lab: 'OpenBMB',
-          logo: 'openbmb',
-          models: 'MiniCPM 5, MiniCPM-V 4.6, MiniCPM-o',
-        },
-        { lab: 'Tencent', logo: 'tencent', models: 'Hy3' },
-        { lab: 'inclusionAI', logo: 'inclusionai', models: 'Ling 3.0' },
-        {
-          lab: 'StepFun',
-          logo: 'stepfun',
-          models: 'Step 3',
-          status: 'in-progress',
-        },
-        { lab: 'BigCode', logo: 'bigcode', models: 'StarCoder2' },
-      ],
-      [
-        { lab: 'Microsoft', logo: 'microsoft', models: 'Phi 3' },
-        { lab: 'Liquid AI', logo: 'liquid', models: 'LFM2 · LFM2.5' },
-        { lab: 'Ai2', logo: 'ai2', models: 'OLMo 1 · 2' },
-        {
-          lab: 'Hugging Face',
-          logo: 'huggingface',
-          models: 'SmolLM, SmolVLM',
-        },
-        { lab: 'TII', logo: 'tii', models: 'Falcon H1' },
-        { lab: 'AI21', logo: 'ai21', models: 'Jamba' },
-        { lab: 'Apple', logo: 'apple', models: 'FastVLM' },
-        {
-          lab: 'Shanghai AI Lab',
-          logo: 'internlm',
-          models: 'InternLM 2',
-        },
-        { lab: 'hexgrad', logo: 'hexgrad', models: 'Kokoro' },
-        { lab: '01.AI', logo: '01ai', models: 'Yi 1.5' },
-        { lab: 'Recursive', logo: 'recursive', models: 'Flint' },
-        {
-          lab: 'Poolside',
-          logo: 'poolside',
-          models: 'Laguna S 2.1 · XS 2.1',
-        },
-        {
-          lab: 'Nanbeige',
-          logo: 'nanbeige',
-          models: 'Nanbeige 4.3',
-          status: 'in-progress',
-        },
-        {
-          lab: 'Fish Audio',
-          logo: 'fishaudio',
-          models: 'Drama-3',
-          status: 'in-progress',
-        },
-        {
-          lab: 'Cohere',
-          logo: 'cohere',
-          models: 'Cohere Transcribe',
-          status: 'in-progress',
-        },
-      ],
+  audiences: {
+    title: 'Te hemos reservado un lugar en la mesa a *ti*.',
+    intro: 'Seas quien seas, el mismo stack te sirve.',
+    items: [
+      {
+        title: 'Para ti',
+        body: 'Un asistente privado en tu propio portátil. Tus notas, tu código y tus preguntas se quedan en tu equipo.',
+        soon: true,
+      },
+      {
+        title: 'Para empresas',
+        body: 'Lleva la IA a tu propia infraestructura, en GPU propias o alquiladas. Mantén los datos sensibles donde deben estar y gasta menos por token.',
+        href: '/solutions/enterprise',
+      },
+      {
+        title: 'Para nubes de GPU',
+        body: 'Sirve más con cada GPU que alquilas y ve toda la flota en un solo lugar.',
+        href: '/solutions/neoclouds',
+      },
+      {
+        title: 'Para quienes crean IA',
+        body: 'Escribe un kernel una vez y llévalo a Metal, CUDA, ROCm y Vulkan.',
+        href: '/solutions/ai-companies',
+      },
     ],
+    linkLabel: 'Ver cómo',
+    soonLabel: 'Próximamente',
   },
 
-  kernel: {
-    title: 'Tú escribes esto.\n*Iron escribe el resto.*',
-    code: {
-      file: 'unary.rs',
-      label: 'iron · rust dsl',
-      tokens: [
-        {
-          text: '#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]',
-          kind: 'comment',
-        },
-        { text: '\n' },
-        { text: 'pub fn', kind: 'keyword' },
-        { text: ' ' },
-        { text: 'iron_exp', kind: 'function' },
-        { text: '<T>(a: Tensor<T>, out: Tensor<T>) {\n    ' },
-        { text: 'let', kind: 'keyword' },
-        {
-          text: ' idx = program_id(0);\n    store(out[idx], exp(load(a[idx])));\n}',
-        },
-      ],
-    },
-    tuned: {
-      title: 'Dónde está afinado',
-      note: 'Pulso = hasta dónde llega el ajuste',
-    },
-    tiers: [
+  beliefs: {
+    title: 'Por qué *cocinamos*.',
+    intro: 'Tres convicciones detrás de todo lo que construimos.',
+    items: [
       {
-        name: 'Apple · Metal',
-        level: 'primary',
-        label: 'Principal',
-        note: 'Cada kernel se escribe y se afina aquí primero. MSL → .metallib.',
+        title: 'Inteligencia para todos',
+        body: 'El acceso a la IA no debería depender de dónde vives, cuánto ganas ni qué credenciales tienes.',
       },
       {
-        name: 'NVIDIA · CUDA',
-        level: 'secondary',
-        label: 'Secundario',
-        note: 'En producción en RTX y DGX Spark. CUDA → PTX.',
+        title: 'Más de cada vatio',
+        body: 'La demanda de inteligencia es ilimitada; la energía y los chips, no. La clave es sacar más trabajo útil de cada unidad de cómputo.',
       },
       {
-        name: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        label: 'Funciona',
-        note: 'Avanzando rápido en AMD. HIP → AMDGPU, Vulkan → SPIR-V.',
+        title: 'Corre en tu propio hardware',
+        body: 'Los modelos en las máquinas que la gente ya tiene son lo bastante buenos para un trabajo con sentido. Llevamos tiempo construyendo para eso.',
       },
     ],
-    runsOn: {
-      label: 'Funciona en',
-      items: [
-        'MacBook y Mac Studio',
-        'Estaciones de trabajo RTX',
-        'DGX Spark',
-        'Strix Halo',
-        'Flotas de neoclouds',
-      ],
-      pending: 'GPU de centros de datos empresariales · próximas',
-    },
+    links: [
+      { label: 'Lee el anuncio', href: '/blog/introducing-waffuru' },
+      { label: 'En qué creemos', href: '/about#beliefs' },
+    ],
   },
 
   team: {
     title: 'Quién está en la *cocina*.',
     intro:
-      'Investigación, seguridad, ingresos y un par de fundadores que ya han llevado productos al mercado.',
+      'Constructores experimentados con trayectoria en ciberseguridad, sector militar, consumo y empresa. Hemos creado y escalado startups, y hemos trabajado con todos, desde pequeños negocios hasta grandes empresas.',
     portraitAlt: 'Retrato de {name}',
     link: { label: 'Conoce al equipo', href: '/about/team' },
   },
 
   cta: {
-    title: 'Siéntate a la mesa.',
-    body: 'Todavía no hay nada público. Solicita acceso anticipado o deja tu correo abajo y te escribiremos cuando lo haya.',
+    title: 'Reserva tu sitio.',
+    body: 'Prueba Pantry hoy, gratis. El resto del stack está en acceso anticipado: reserva un sitio o deja tu correo y te escribiremos cuando haya novedades.',
   },
 };
 

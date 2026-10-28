@@ -1,0 +1,103 @@
+import { ArticleLayout } from '@/components/blog/article-layout';
+
+export const article = {
+  title: 'Why we cook with Rust and Swift',
+  description:
+    'Why Waffuru builds in Rust and Swift rather than Python, Go, Java or TypeScript: native speed, memory safety and fewer dependencies to trust. And what we are exploring next: proof that the code that ran is the code you approved.',
+  author: 'tom-turney',
+  date: '2026-10-28',
+  published: true,
+  image: 'blog/why-rust-and-swift',
+  category: 'Engineering',
+  tags: ['rust', 'swift', 'security', 'supply chain', 'stack'],
+  keywords: [
+    'Rust',
+    'Swift',
+    'memory safety',
+    'software supply chain security',
+    'supply-chain attack',
+    'reproducible builds',
+    'LLM inference engine',
+    'GPU kernels',
+  ],
+};
+
+export default (props) => (
+  <ArticleLayout article={article} slug="why-rust-and-swift" {...props} />
+);
+
+An inference stack sees everything you give it: your prompts, your documents, your code, the keys your agents use. It runs on your GPUs, next to your files. That makes it a target, and every line inside it is something you trust, including the lines nobody on your team wrote.
+
+Much of that code is dependencies. Each one is a stranger in your kitchen: you did not hire it, and it can touch anything you can. The language you build in decides a lot of what comes in with it: the runtime, the registry and the habits of the ecosystem.
+
+So we chose carefully. [Butter](/products/butter), our inference engine, is written in Swift for macOS and iOS and in Rust for everything else. [Iron](/products/iron), our kernels, is a Rust-embedded DSL. [Pantry](/products/pantry), our vulnerability scanner, is Rust. Here is why, and what it buys you.
+
+## Native, ahead of _time_
+
+Rust and Swift compile ahead of time to native machine code. What ships is the program itself: no interpreter, no virtual machine, no runtime to install beside it.
+
+- **Less between your request and the silicon.** Every layer in the way adds overhead, and every layer is one more thing that can break or be attacked.
+- **Predictable latency.** Neither language runs a tracing garbage collector. Rust frees memory when its owner goes out of scope, decided at compile time. Swift's automatic reference counting (ARC) frees an object when its last reference goes. That has a cost, but it is paid in small steps you can see in the code, not in pauses the runtime schedules, so a long answer does not stall mid-stream.
+- **Direct access to the GPU.** Swift talks to Metal natively, and Butter's Metal kernels ship precompiled. Rust calls C APIs like CUDA, HIP and Vulkan directly, with no bridge layer in between. Iron builds on that: you write a kernel once, in Rust, and it lowers to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V.
+
+## Safe without a _collector_
+
+Many of the worst security bugs in systems software are memory bugs: reading past the end of a buffer, or using memory after it was freed. Python, Go, Java and TypeScript prevent them too, with a runtime that manages memory and a garbage collector that cleans up. Rust and Swift do it without one.
+
+- **Rust** checks ownership and borrowing at compile time. A program that could use freed memory, or let two threads race on the same data, does not compile. Code that must step outside those rules, to call a driver for example, is marked `unsafe`, so a reviewer knows exactly where to look. Pantry forbids it outright.
+- **Swift** is memory safe by default, with ARC managing object lifetimes and bounds checks on array access. It is the native language of Apple's platforms, and Metal on Apple silicon is our primary target.
+
+## What the others do _well_
+
+None of this makes other languages bad. Each is excellent at something. They are just not what we ship on the hot path, where every token passes through.
+
+- **Python** is the language of machine learning research: nothing gets you from idea to experiment faster. But CPython interprets bytecode, the heavy lifting in ML libraries already happens in C++ and CUDA underneath, and ML projects tend to pull in deep trees of packages from PyPI.
+- **Go** is superb for network services: simple, quick to compile, and it builds static binaries too. But it is garbage collected, and calling C APIs like CUDA goes through cgo, which costs more than a plain function call.
+- **Java** has decades of tooling and a JIT that is very fast once warm. But it runs on a virtual machine that has to warm up, and its collectors, however good, still decide when to run.
+- **TypeScript** is the language of the web; this page is built with it. But it runs on a JavaScript engine with a garbage collector, and npm's culture of small packages means even a modest app can pull in a deep tree of code nobody on the team chose.
+
+The common thread is not the syntax. It is what runs beside your code (an interpreter, a VM, a collector) and what comes in with it (the dependency tree).
+
+## Fewer strangers in the _kitchen_
+
+A package you install can run code with your permissions, sometimes the moment it is installed, and compromising a popular one reaches everyone downstream. It has happened in every ecosystem:
+
+- [event-stream](https://blog.npmjs.org/post/180565383195/details-about-the-event-stream-incident) (npm, 2018): an attacker took over maintenance of a popular package, then added a dependency built to steal keys from the Copay Bitcoin wallet.
+- [torchtriton](https://pytorch.org/blog/compromised-nightly-dependency/) (PyPI, 2022): between December 25 and 30, Linux users installing PyTorch nightly builds with pip got a malicious `torchtriton` from PyPI instead of PyTorch's own index. Once imported, it sent SSH keys and other files off the machine.
+- [xz-utils](https://www.openwall.com/lists/oss-security/2024/03/29/4) (2024): a backdoor in a C compression library, hidden in its release tarballs' build scripts and test files, reached pre-release Linux distributions and could compromise SSH servers. Any dependency can be the door.
+- [rustdecimal](https://blog.rust-lang.org/2022/05/10/malicious-crate-rustdecimal/) (crates.io, 2022): a typosquat of the popular `rust_decimal` crate that downloaded and ran a payload when it found itself in GitLab CI.
+
+Rust is not immune, as the last one shows. The [OpenSSF malicious packages](https://github.com/ossf/malicious-packages) dataset collects reports like these from open-source registries, and Pantry checks every package name on your machine against it.
+
+So the language is half of it. The other half is discipline:
+
+- **Small trees.** Butter keeps its dependencies minimal. Pantry uses a handful of crates.
+- **Pinned and vetted.** Pantry's crates are pinned, and each one is vetted with `cargo deny` and `cargo vet`.
+- **One binary, no runtime.** Pantry compiles to one static binary, with no interpreter, VM or package tree to install and patch beside it.
+
+Fewer dependencies means less to vet, less to patch and less to attack.
+
+## Builds you can _check_
+
+A small tree only helps if what you download is what we built. Pantry is the part of our stack you can inspect today, so it is where you can check us:
+
+- **Reproducible.** Every release is tagged, built twice, and published only if both builds match byte for byte. The hashes are listed in `SHA256SUMS`.
+- **Signed.** Every binary ships with a signed [packslip](https://packslip.dev), a GitHub build attestation and a cosign bundle, so you can verify it before it runs.
+- **Open.** It is MIT licensed, and [every line is on GitHub](https://github.com/waffuruai/pantry).
+
+Reproducible means anyone can rebuild a release and get the same bytes. Signed means you know who built it. Together, they mean you do not have to take our word for it. Butter and Iron are in early access and closed source for now.
+
+## What is _next_
+
+A signature tells you who built a binary. A reproducible build tells you it matches the source. Neither proves that the code that ran is the code you approved, or that it does what its author says it does.
+
+That gap is what we are exploring now: mathematically verifiable, provable execution. Two directions interest us.
+
+- **Proofs about the code.** Formal methods show that a property holds for every input, not just the ones a test thought of. Iron already checks its HIP and Vulkan backends against a test corpus, and every case is bit-accurate. A test covers the cases you wrote down. A proof covers the rest.
+- **Proofs about the run.** Verifiable computation produces, alongside an output, a proof that a specific program produced it, which anyone can check without running it again.
+
+Rust gives us a head start: its compiler already proves that, outside code marked `unsafe`, a program has no use-after-free bugs and no data races. Small, typed, deterministic code is a far better place to build proofs than a large, dynamic one.
+
+This is research, not a roadmap, and we will not say more until we can show it.
+
+Until then, judge our choices by reading them. [Pantry's source](https://github.com/waffuruai/pantry) is open, and the [Pantry page](/products/pantry) has the rest. To run Butter and Iron on your own hardware, [reserve your seat](https://forms.gle/SHaVSRRWmZKy8UJy7).

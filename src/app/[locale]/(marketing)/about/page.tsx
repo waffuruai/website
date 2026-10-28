@@ -46,7 +46,17 @@ export default async function AboutPage({ params }: { params: LocaleParams }) {
         title={content.hero.title}
         lede={content.hero.lede}
         actions={content.hero.actions}
-      />
+      >
+        <p className="wf-rise flex max-w-[640px] items-baseline gap-3 text-[15px] leading-[1.6] text-pretty text-muted-foreground">
+          <span
+            lang="ja"
+            className="shrink-0 font-serif text-lg text-brand-ink"
+          >
+            ワッフル
+          </span>
+          {content.hero.name}
+        </p>
+      </PageHero>
       <WhyWeBuild content={content.why} />
       <ThesesList content={content.beliefs} />
       <ValuesGrid content={content.values} />

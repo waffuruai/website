@@ -3,248 +3,168 @@ import type { home } from './home';
 const homeJa: (typeof home)['en'] = {
   seo: {
     keywords: [
-      'ローカル LLM 推論',
-      'GPU カーネル',
-      '推論エンジン',
-      'Apple シリコン',
-      'Metal',
-      'CUDA',
-      'ROCm',
-      'Vulkan',
-      'GPU フリート管理',
-      'ネオクラウド',
-      'オンデバイス AI',
       'プライベート AI',
+      'ローカル AI',
+      'オンデバイス AI',
+      '自分のハードウェアで動く AI',
+      'ローカル LLM 推論',
+      '推論エンジン',
+      'GPU カーネル',
+      'Apple silicon',
+      '脆弱性スキャナー',
+      'Pantry',
     ],
   },
 
   hero: {
-    eyebrow: '4 つの製品 · 現時点ではクローズドソース',
-    title: '生の数式を、シリコンに*焼き付ける*。',
-    lede: 'GPUカーネル、推論エンジン、コントロールプレーン、検索レイヤーを私たちが書き、チームが自分のハードウェアでモデルを動かせるようにします。ノートPCでも、自宅のラボでも、neocloud のフリートでも動き、計測した結果は公開します。',
-    secondary: { label: 'スタックを見る', href: '#stack' },
-    emits: {
-      label: '出力先',
-      targets: ['Metal', 'CUDA', 'ROCm / HIP', 'Vulkan', 'SPIR-V'],
+    eyebrow: 'あなたのハードウェア · あなたのデータ · あなたの AI',
+    title: '*手元*のハードウェアで、もっとインテリジェンスを。',
+    lede: 'Waffuru は、ノート PC からデータセンターの GPU フリートまで、所有またはレンタルしているハードウェアで動く AI スタックをつくっています。すべての GPU からより多くを引き出し、トークンあたりの支出を抑えられて、データは手元にとどまります。',
+    launch: {
+      label: '新登場',
+      text: 'macOS と Linux 向けの無料脆弱性スキャナー、Pantry',
     },
+    secondary: { label: '仕組みを見る', href: '#stack' },
+  },
+
+  pantry: {
+    label: '無料 · オープンソース · 本日公開',
+    title: '何が*無防備*かを知り、すばやく修正。',
+    body: 'AI をマシンで動かす前に、まずそのマシンが安全でなければなりません。Pantry は、インストールされたすべてのもの、そしてすべてのリポジトリを、オープンな脆弱性データと照合します。該当するものだけを報告し、安全に直せるものは修正します。',
+    points: [
+      'お使いのバージョンに該当するものだけ',
+      '安全な修正は代わりに実行、sudo が必要な手順は表示',
+      'テレメトリなし、AI なし、Rust 製',
+    ],
+    primary: 'システムを守る',
+    secondary: 'Pantry の仕組み',
+    caption: 'あるマシンでの出力例です。',
   },
 
   stack: {
-    title: 'スタック',
+    title: 'シリコンから*答え*まで',
     intro:
-      'Iron がカーネルをコンパイルし、Butter がその上でモデルを動かします。Waffle が GPU を見守り、Syrup が取り組んでいたことを覚えています。',
-    products: [
-      {
-        slug: 'syrup',
-        index: '04',
-        kicker: '記憶',
-        name: 'Syrup',
-        tagline: 'あなたの AI が、取り組んでいたことを覚えています。',
-        body: 'ノートとコードをローカルで検索します。埋め込みは TurboQuant+ で圧縮し、検索はキーワード検索とベクトル検索の併用。結果は出典付きで、MCP 経由で返ります。',
+      '単独でも、組み合わせても動く 6 つのプロダクト。リクエストは下へ進み、答えが戻ってきます。そのどれも、あなたが管理するハードウェアの外に出る必要はありません。',
+    note: 'Pantry は現在、無料のオープンソースとして公開中です。スタックのほかの部分は非公開の早期アクセス中で、Waffle はまもなく登場します。Metal が第一、CUDA はチューニング中、ROCm と Vulkan は近日対応です。',
+    flow: {
+      you: 'あなた、あなたのチーム、あなたのエージェント',
+      boundary: '所有またはレンタルしているハードウェア',
+      layers: [
+        {
+          role: 'セキュリティ',
+          name: 'Pantry',
+          icon: 'pantry',
+          line: 'すべてのマシンで無防備な箇所を見つけて、修正。',
+        },
+        {
+          role: 'エージェント',
+          name: 'Waffle',
+          icon: 'waffle',
+          line: 'エージェントハーネス。あなたのアシスタント、W が中にいます。',
+        },
+        {
+          role: '記憶',
+          name: 'Whisk',
+          icon: 'whisk',
+          line: '適切なドキュメントとコンテキストを、すべてのリクエストに混ぜ込む。',
+        },
+        {
+          role: 'コントロール',
+          name: 'Syrup',
+          icon: 'syrup',
+          line: 'すべての GPU の監視、テレメトリ、アクセス制御、コスト。',
+        },
+        {
+          role: 'エンジン',
+          name: 'Butter',
+          icon: 'butter',
+          line: 'テキスト、画像、音声のマルチモーダル推論を、ストリーミングで。',
+        },
+        {
+          role: 'カーネル',
+          name: 'Iron',
+          icon: 'iron',
+          line: 'Rust で一度書けば、どこでも最適化されたカーネルに。',
+        },
+      ],
+      hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
+      outside: {
+        title: '他人の API',
+        note: '必要ありません。データは、ホスト型の AI 推論プロバイダーを使うと選ばない限り、あなたのハードウェアにとどまります。',
       },
-      {
-        slug: 'waffle',
-        index: '03',
-        kicker: 'コントロールプレーン',
-        name: 'Waffle',
-        tagline: 'すべての GPU と、その上で動くすべてのエンジンを可視化。',
-        body: 'GPU 上の LLM のためのコントロールプレーン。デスクの下の 1 台から、フリートを貸し出すネオクラウドまで対応します。各ホストでは小さな Rust 製サイドカーが動き、署名付きテレメトリを報告します。Butter、vLLM、SGLang、llama.cpp など、OpenAI 互換のサーバーと連携できます。',
-      },
-      {
-        slug: 'butter',
-        index: '02',
-        kicker: 'サービング',
-        name: 'Butter',
-        tagline: 'Python 不要のモデルサービング。',
-        body: 'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。2〜8 ビットの量子化チェックポイント、ハイブリッドモデルや MoE モデルを読み込み、KV キャッシュの量子化にも対応します。',
-      },
-      {
-        slug: 'iron',
-        index: '01',
-        kicker: 'カーネル',
-        name: 'Iron',
-        tagline: 'ひとつのカーネル定義から、4 つのバックエンドへ。',
-        body: 'Rust に埋め込む DSL。カーネルは共通の IR に落とされ、そこから Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ。バージョン管理された C と Rust の ABI で、既存のホストから呼び出せます。',
-      },
-    ],
+      outcomes: [
+        'トークンあたりのコストを下げる設計',
+        '標準でプライベート',
+        'パッチ済みで、すべてを把握',
+      ],
+      caption:
+        'あなた、チーム、エージェントからのリクエストは、Pantry（セキュリティ）、Waffle（エージェント）、Whisk（記憶）、Syrup（コントロール）、Butter（エンジン）、Iron（カーネル）を通って、所有またはレンタルしているハードウェアへ届き、答えは同じ道をたどって戻ってきます。トークンあたりのコストを下げる設計で、標準でプライベート、パッチ済みで、すべてを把握できます。',
+    },
   },
 
-  models: {
-    title: 'メニューに並ぶモデル',
-    intro:
-      'Hugging Face からそのまま読み込めます。対応がもっとも広いのは Metal で、CUDA はモデルごとに順次広げています。',
-    legend: { supported: '対応済み', inProgress: '近日対応' },
-    lanes: [
-      [
-        {
-          lab: 'Meta',
-          logo: 'meta',
-          models: 'Llama 3 · 3.1 · 3.2 · 3.3, Muse Glimmer',
-        },
-        {
-          lab: 'Google',
-          logo: 'google',
-          models: 'Gemma 2 · 3 · 4, PaliGemma',
-        },
-        {
-          lab: 'Qwen',
-          logo: 'qwen',
-          models: 'Qwen 2 · 3 · 3.5 · 3.6 · 3.8, VL, Omni, ASR',
-        },
-        {
-          lab: 'OpenAI',
-          logo: 'openai',
-          models: 'GPT-OSS 20B · 120B, Whisper',
-        },
-        {
-          lab: 'Mistral AI',
-          logo: 'mistral',
-          models: 'Mistral, Mistral 3 VL, Pixtral, Voxtral',
-        },
-        {
-          lab: 'NVIDIA',
-          logo: 'nvidia',
-          models: 'Nemotron H · 3.5, VLM, Diffusion, Parakeet',
-        },
-        {
-          lab: 'DeepSeek',
-          logo: 'deepseek',
-          models: 'DeepSeek V4 · V4.1',
-          status: 'in-progress',
-        },
-        { lab: 'Z.ai', logo: 'zai', models: 'GLM-5.3, GLM-OCR, GLM-ASR' },
-        { lab: 'IBM', logo: 'ibm', models: 'Granite 3 · 4, Granite Speech' },
-        {
-          lab: 'OpenBMB',
-          logo: 'openbmb',
-          models: 'MiniCPM 5, MiniCPM-V 4.6, MiniCPM-o',
-        },
-        { lab: 'Tencent', logo: 'tencent', models: 'Hy3' },
-        { lab: 'inclusionAI', logo: 'inclusionai', models: 'Ling 3.0' },
-        {
-          lab: 'StepFun',
-          logo: 'stepfun',
-          models: 'Step 3',
-          status: 'in-progress',
-        },
-        { lab: 'BigCode', logo: 'bigcode', models: 'StarCoder2' },
-      ],
-      [
-        { lab: 'Microsoft', logo: 'microsoft', models: 'Phi 3' },
-        { lab: 'Liquid AI', logo: 'liquid', models: 'LFM2 · LFM2.5' },
-        { lab: 'Ai2', logo: 'ai2', models: 'OLMo 1 · 2' },
-        {
-          lab: 'Hugging Face',
-          logo: 'huggingface',
-          models: 'SmolLM, SmolVLM',
-        },
-        { lab: 'TII', logo: 'tii', models: 'Falcon H1' },
-        { lab: 'AI21', logo: 'ai21', models: 'Jamba' },
-        { lab: 'Apple', logo: 'apple', models: 'FastVLM' },
-        {
-          lab: 'Shanghai AI Lab',
-          logo: 'internlm',
-          models: 'InternLM 2',
-        },
-        { lab: 'hexgrad', logo: 'hexgrad', models: 'Kokoro' },
-        { lab: '01.AI', logo: '01ai', models: 'Yi 1.5' },
-        { lab: 'Recursive', logo: 'recursive', models: 'Flint' },
-        {
-          lab: 'Poolside',
-          logo: 'poolside',
-          models: 'Laguna S 2.1 · XS 2.1',
-        },
-        {
-          lab: 'Nanbeige',
-          logo: 'nanbeige',
-          models: 'Nanbeige 4.3',
-          status: 'in-progress',
-        },
-        {
-          lab: 'Fish Audio',
-          logo: 'fishaudio',
-          models: 'Drama-3',
-          status: 'in-progress',
-        },
-        {
-          lab: 'Cohere',
-          logo: 'cohere',
-          models: 'Cohere Transcribe',
-          status: 'in-progress',
-        },
-      ],
+  audiences: {
+    title: 'テーブルに、*あなた*の席をご用意しました。',
+    intro: 'どなたであっても、同じスタックが役に立ちます。',
+    items: [
+      {
+        title: 'あなたへ',
+        body: 'あなた自身のノート PC で動く、プライベートなアシスタント。ノート、コード、質問は、あなたのマシンにとどまります。',
+        soon: true,
+      },
+      {
+        title: '企業へ',
+        body: 'AI を社内に、所有またはレンタルしている GPU で。機密データをあるべき場所に保ち、トークンあたりの支出を抑えましょう。',
+        href: '/solutions/enterprise',
+      },
+      {
+        title: 'GPU クラウドへ',
+        body: '貸し出すすべての GPU からより多くを提供し、フリート全体を一か所で見渡せます。',
+        href: '/solutions/neoclouds',
+      },
+      {
+        title: 'AI をつくる人へ',
+        body: 'カーネルは一度書くだけ。Metal、CUDA、ROCm、Vulkan に届けられます。',
+        href: '/solutions/ai-companies',
+      },
     ],
+    linkLabel: '詳しく見る',
+    soonLabel: '近日公開',
   },
 
-  kernel: {
-    title: 'あなたが書くのは、ここまで。\n*残りは Iron が書く。*',
-    code: {
-      file: 'unary.rs',
-      label: 'iron · rust dsl',
-      tokens: [
-        {
-          text: '#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]',
-          kind: 'comment',
-        },
-        { text: '\n' },
-        { text: 'pub fn', kind: 'keyword' },
-        { text: ' ' },
-        { text: 'iron_exp', kind: 'function' },
-        { text: '<T>(a: Tensor<T>, out: Tensor<T>) {\n    ' },
-        { text: 'let', kind: 'keyword' },
-        {
-          text: ' idx = program_id(0);\n    store(out[idx], exp(load(a[idx])));\n}',
-        },
-      ],
-    },
-    tuned: {
-      title: 'チューニングの状況',
-      note: 'パルスの速さ = チューニングの進み具合',
-    },
-    tiers: [
+  beliefs: {
+    title: 'なぜ*料理*をするのか',
+    intro: 'つくるものすべての背景にある、3 つの信念。',
+    items: [
       {
-        name: 'Apple · Metal',
-        level: 'primary',
-        label: 'プライマリ',
-        note: 'すべてのカーネルを、まずここで書き、チューニングします。MSL → .metallib。',
+        title: 'すべての人にインテリジェンスを',
+        body: 'AI へのアクセスが、住む場所、収入、資格や肩書きに左右されるべきではありません。',
       },
       {
-        name: 'NVIDIA · CUDA',
-        level: 'secondary',
-        label: 'セカンダリ',
-        note: 'RTX と DGX Spark では本番稼働中。CUDA → PTX。',
+        title: '1 ワットから、より多くを',
+        body: 'インテリジェンスへの需要に限りはありませんが、電力とチップには限りがあります。鍵は、計算の 1 単位ごとから、より多くの有用な仕事を引き出すことです。',
       },
       {
-        name: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        label: '動作',
-        note: 'AMD では急速に前進中。HIP → AMDGPU、Vulkan → SPIR-V。',
+        title: '手持ちのハードウェアで動かす',
+        body: '人々がすでに持っているマシンで動くモデルは、意味のある仕事をこなせるほど十分に良くなっています。私たちは、そのためにずっとつくってきました。',
       },
     ],
-    runsOn: {
-      label: '動作環境',
-      items: [
-        'MacBook & Mac Studio',
-        'RTX ワークステーション',
-        'DGX Spark',
-        'Strix Halo',
-        'ネオクラウドのフリート',
-      ],
-      pending: 'エンタープライズ向けデータセンター GPU · 次の対象',
-    },
+    links: [
+      { label: '発表を読む', href: '/blog/introducing-waffuru' },
+      { label: '私たちが信じること', href: '/about#beliefs' },
+    ],
   },
 
   team: {
     title: '*キッチン*に立つ人たち',
     intro:
-      'リサーチ、セキュリティ、収益、そして製品を世に送り出した経験のある創業者が数人。',
+      'サイバーセキュリティ、軍事、コンシューマー、エンタープライズの各分野で経験を積んだつくり手たちです。スタートアップを立ち上げて大きく育て、中小企業から大企業まで、あらゆる規模の組織と仕事をしてきました。',
     portraitAlt: '{name} のポートレート',
     link: { label: 'チームを見る', href: '/about/team' },
   },
 
   cta: {
-    title: 'どうぞ、お席へ。',
-    body: 'まだ公開しているものはありません。早期アクセスをお申し込みいただくか、下にメールアドレスを残してください。公開できるものができ次第、お知らせします。',
+    title: 'お席をご予約ください。',
+    body: 'Pantry は今日から無料でお使いいただけます。スタックのほかの部分は早期アクセス中です。席をご予約いただくか、メールアドレスを残していただければ、ニュースがあり次第お知らせします。',
   },
 };
 

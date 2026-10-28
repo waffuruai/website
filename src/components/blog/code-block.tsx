@@ -48,7 +48,7 @@ export function Pre({
 }
 
 /**
- * Header bar and frame for a highlighted block, as on the home page's code
+ * Header bar and frame for a highlighted block, as on Iron's kernel code
  * panel: file name on the left (the language when there is none), language
  * and a Copy button on the right.
  */

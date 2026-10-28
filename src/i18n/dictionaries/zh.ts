@@ -16,9 +16,9 @@ const zh: Dictionary = {
     faqHeading: '常见问题',
   },
   meta: {
-    defaultTitle: 'Waffuru：把纯粹的数学压进硅片',
+    defaultTitle: 'Waffuru：在你已有的硬件上获得更多智能',
     defaultDescription:
-      '为你已有的硬件提供 GPU 内核、推理、集群管理与记忆。Waffuru 打造 Iron、Butter、Waffle 和 Syrup。',
+      'Waffuru 打造 AI 技术栈，在你自有或租用的硬件上又快又省地运行模型，默认私密。从 Pantry 开始：适用于 macOS 和 Linux 的免费漏洞扫描器。',
   },
   header: {
     mainNav: '主导航',
@@ -46,10 +46,14 @@ const zh: Dictionary = {
     help: '帮助',
     allProducts: '查看完整技术栈',
     allSolutions: '全部解决方案',
+    industries: '行业',
+    byIndustry: '按行业',
+    allIndustries: '全部行业',
+    openSource: '免费开源',
     items: {
       stack: {
         label: 'Waffuru 技术栈',
-        description: '四款产品，可单独使用，也可组合使用。',
+        description: '五款产品，可单独使用，也可组合使用。',
       },
       iron: {
         label: 'Iron',
@@ -57,15 +61,23 @@ const zh: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: '无需 Python 的模型服务。',
-      },
-      waffle: {
-        label: 'Waffle',
-        description: '看清每一块 GPU 和其上运行的每个引擎。',
+        description: '多模态推理，绝不妥协。',
       },
       syrup: {
         label: 'Syrup',
-        description: '让你的 AI 记得你在做什么。',
+        description: '监控、遥测、访问控制与成本，覆盖每一块 GPU。',
+      },
+      whisk: {
+        label: 'Whisk',
+        description: '把合适的文档和上下文融入每一次请求。',
+      },
+      waffle: {
+        label: 'Waffle',
+        description: '运行你的智能体，内置你的助手 W。',
+      },
+      pantry: {
+        label: 'Pantry',
+        description: '适用于 macOS 和 Linux 的免费漏洞扫描器。',
       },
       smallBusiness: {
         label: '小型企业',
@@ -82,6 +94,26 @@ const zh: Dictionary = {
       aiCompanies: {
         label: 'AI 模型与推理公司',
         description: '在每种后端上获得更快的内核与模型服务。',
+      },
+      cloudInfrastructure: {
+        label: '云基础设施',
+        description: '让每块 GPU 产出更多，利润清晰可见。',
+      },
+      financialServices: {
+        label: '金融服务',
+        description: '让客户数据留在内部的私有 AI。',
+      },
+      lifeSciences: {
+        label: '生命科学',
+        description: '在敏感研究数据旁运行模型。',
+      },
+      government: {
+        label: '政府',
+        description: '运行在自主可控硬件上的主权 AI。',
+      },
+      military: {
+        label: '国防',
+        description: '在自有且安全的硬件上运行强大的 AI。',
       },
       about: {
         label: '关于我们',
@@ -117,10 +149,15 @@ const zh: Dictionary = {
       },
     },
   },
+  countries: {
+    us: '美国',
+    ca: '加拿大',
+  },
   footer: {
     heading: '页脚',
     products: '产品',
     solutions: '解决方案',
+    industries: '行业',
     company: '公司',
     help: '帮助',
     terms: '使用条款',
@@ -129,7 +166,8 @@ const zh: Dictionary = {
     madeIn: '在北美用 🤖 打造',
     flagsLabel: '美国和加拿大',
     social: 'Waffuru 的 {network}',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
+    versionLabel: '网站版本、提交和日期',
   },
   newsletter: {
     heading: '获取最新动态',

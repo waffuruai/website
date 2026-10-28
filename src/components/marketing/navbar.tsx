@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 
 import { isExternalHref, LocalizedLink } from '@/components/localized-link';
 import { LanguageSwitcher } from '@/components/marketing/language-switcher';
+import { ProductIcon } from '@/components/products/product-icon';
 import { ThemeToggle } from '@/components/theme-toggle';
 import {
   Accordion,
@@ -30,7 +31,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Wordmark } from '@/components/wordmark';
-import { navigation } from '@/content/navigation';
+import { navigation, publishedNavigation } from '@/content/navigation';
 import { site } from '@/content/site';
 import type { NavColumn, NavLink, NavMenu } from '@/content/types';
 import { splitLocale } from '@/i18n/config';
@@ -81,10 +82,17 @@ function MenuLink({
           aria-current={active ? 'page' : undefined}
           className="group/item flex items-start gap-4 rounded-xl p-3 hover:bg-accent focus-visible:bg-accent"
         >
-          {link.index && (
-            <span className="mt-1.5 font-mono text-[11px] tracking-[0.08em] text-muted-foreground">
-              {link.index}
-            </span>
+          {link.icon ? (
+            <ProductIcon
+              name={link.icon}
+              className="mt-0.5 text-soft transition-colors group-hover/item:text-foreground"
+            />
+          ) : (
+            link.index && (
+              <span className="mt-1.5 font-mono text-[11px] tracking-[0.08em] text-muted-foreground">
+                {link.index}
+              </span>
+            )
           )}
           <span className="flex flex-col gap-1">
             <span
@@ -149,13 +157,16 @@ function Column({
   );
 }
 
+/** The menus this build shows (unlaunched sections left out). */
+const menus = () => publishedNavigation().main;
+
 function DesktopNav({ nav, path }: { nav: Nav; path: string }) {
   const { header } = useDictionary();
 
   return (
     <NavigationMenu className="hidden lg:flex" aria-label={header.mainNav}>
       <NavigationMenuList className="gap-1">
-        {navigation.main.map((menu) => {
+        {menus().map((menu) => {
           const active = menuIsActive(menu, path);
           if (menu.type === 'link') {
             return (
@@ -268,7 +279,7 @@ function MobileNav({ nav, path }: { nav: Nav; path: string }) {
         </SheetHeader>
         <nav aria-label={header.mainNav} className="px-4 pb-8">
           <Accordion type="multiple">
-            {navigation.main.map((menu) =>
+            {menus().map((menu) =>
               menu.type === 'link' ? (
                 <ul key={menu.labelKey} className="border-b py-2">
                   {link(menu.href, nav[menu.labelKey], menu.labelKey)}

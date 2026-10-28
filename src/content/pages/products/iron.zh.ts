@@ -4,7 +4,7 @@ const ironZh: (typeof iron)['en'] = {
   layer: '内核',
   tagline: '一次定义内核，生成四种后端。',
   summary:
-    '嵌入 Rust 的 DSL。内核先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。版本化的 C 与 Rust ABI 让现有宿主可以直接调用。',
+    '用 Rust 写一次，就能在各处得到优化过的内核。嵌入 Rust 的 DSL。内核先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。版本化的 C 与 Rust ABI 让现有宿主可以直接调用。',
   seo: {
     title: 'Iron：一次定义 GPU 内核，生成四种后端',
     description:
@@ -20,7 +20,7 @@ const ironZh: (typeof iron)['en'] = {
   },
   hero: {
     title: '一次定义内核，生成*四种*后端。',
-    lede: '把纯粹的数学直接压进高性能硅片。Iron 是嵌入 Rust 的 DSL：内核只写一次，先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。',
+    lede: '让你的推理引擎 brrrr 地飞转起来。Iron 是嵌入 Rust 的 DSL：内核只写一次，就能编译成针对特定硬件优化的内核，并为主流模型和常见工作负载做了调优。',
     highlights: [
       { value: '4', label: '一份内核定义对应的 GPU 后端数' },
       { value: '~1,139', label: '内核声明' },
@@ -52,15 +52,15 @@ const ironZh: (typeof iron)['en'] = {
       },
       {
         title: '用 Rust 编写',
-        body: '嵌入 Rust 的 DSL。内核是标注了 #[kernel] 的 Rust 函数，由 program_id、load、store 等基本操作构成。',
+        body: '嵌入 Rust 的 DSL。内核是标注了 #[kernel] 的 Rust 函数，由 program_id、load、store 等基本操作构成。Iron 本身用 Rust 编写，兼顾速度与内存安全；它把依赖降到最少，供应链攻击的可乘之机更少。',
       },
       {
         title: '可从你的宿主代码调用',
         body: '版本化的 C 与 Rust ABI 让现有宿主无需围绕 Iron 重写，就能调用 Iron 内核。',
       },
       {
-        title: '测试保证逐位精确',
-        body: 'HIP 与 Vulkan 测试集共有 4,164 个用例，全部 4,164 个逐位精确。',
+        title: '测试保证逐位精确，基准测试衡量性能',
+        body: 'HIP 与 Vulkan 测试集共有 4,164 个用例，全部 4,164 个逐位精确。随附基准测试与性能分析工具，每个内核不仅经过检验，也经过测量。',
       },
       {
         title: '上千个内核',
@@ -68,20 +68,12 @@ const ironZh: (typeof iron)['en'] = {
       },
       {
         title: '调优用在刀刃上',
-        body: '每个内核都先在 Metal 上编写并调优。CUDA 其次，ROCm 和 Vulkan 目前可以运行，但尚未调优。',
+        body: '每个内核都先在 Metal 上编写并调优。CUDA 正在调优，ROCm 和 Vulkan 目前可以运行，但尚未调优。',
       },
     ],
   },
-  code: {
-    heading: '一个完整的内核，*从头到尾*。',
-    intro:
-      '这是对张量逐元素求 exp。每个实例加载一个元素，应用 exp，再存回结果。#[kernel] 属性标注了运算类型及其容差。',
-    caption:
-      'Iron DSL 源码。Iron 会把它转换为 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。',
-  },
   specs: {
     heading: '技术*细节*。',
-    intro: '给会细读的人看的细节。',
     rows: [
       {
         term: '语言',
@@ -115,31 +107,10 @@ const ironZh: (typeof iron)['en'] = {
       },
     ],
   },
-  platforms: {
-    heading: '调优在*哪里*。',
-    intro: 'Metal 排在第一位，因为每个内核都在这里编写和调优。',
-    tiers: [
-      {
-        platform: 'Apple · Metal',
-        level: 'primary',
-        note: '每个内核都先在这里编写并调优。MSL → .metallib。',
-      },
-      {
-        platform: 'NVIDIA · CUDA',
-        level: 'secondary',
-        note: '已在 RTX 和 DGX Spark 上投入生产。数据中心 GPU 正在进行中。CUDA → PTX。',
-      },
-      {
-        platform: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        note: '目前可以运行，尚未调优。HIP → AMDGPU，Vulkan → SPIR-V。',
-      },
-    ],
-  },
   stack: {
     heading: '与其余*技术栈*协同工作。',
     intro:
-      'Iron 可以独立使用。加上 Butter，在这些内核上运行模型；加上 Waffle，盯着它们所跑的 GPU；加上 Syrup，让你的 AI 记得你在做什么。',
+      'Iron 可以独立使用。加上 Butter，在这些内核上运行模型；加上 Syrup，盯着它们所跑的 GPU；加上 Whisk，让你的 AI 记得你在做什么。',
   },
   faq: [
     {
@@ -150,7 +121,7 @@ const ironZh: (typeof iron)['en'] = {
     {
       question: '它能在哪些硬件上运行？',
       answer:
-        'Apple 芯片上的 Metal 是首要目标：每个内核都先在那里编写并调优。CUDA 其次，已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。ROCm 和 Vulkan 目前可以运行，但尚未调优。',
+        'Apple 芯片上的 Metal 是首要目标：每个内核都先在那里编写并调优。CUDA 已在 RTX 和 DGX Spark 上投入生产，正在调优，并已在 H100、H200、B100 和 B200 上完成首次运行。AMD 方面，已在 MI300 上完成首次运行，ROCm 和 Vulkan 目前可以运行，但尚未调优。',
     },
     {
       question: '我需要重写宿主代码吗？',

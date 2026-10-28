@@ -4,10 +4,12 @@
  */
 export const site = {
   name: 'Waffuru',
+  /** The company: a Delaware corporation. Terms, privacy and the footer. */
+  legalName: 'Waffuru AI Inc.',
   /** Katakana for "waffle"; shown beside the wordmark. */
   kana: 'ワッフル',
   description:
-    'Waffuru builds GPU kernels (Iron), an inference engine (Butter), a GPU control plane (Waffle) and a memory layer (Syrup) that run models fast on the hardware you already own.',
+    'Waffuru builds the AI stack that runs models fast and at the lowest cost per token, on hardware you own or rent: GPU kernels (Iron), an inference engine (Butter), a control plane (Syrup), memory (Whisk) and an agent harness (Waffle). Its first public product is Pantry, a free, open-source vulnerability scanner.',
   mission: 'Democratize access to intelligence.',
   url: 'https://waffuru.ai',
   emails: {
@@ -24,6 +26,19 @@ export const site = {
    * the nav, product pages and support page leave the docs out.
    */
   docsPublished: false,
+  /**
+   * Sections live in production. An unlaunched section still builds and
+   * shows in dev and tests, like a blog draft, so it can be reviewed;
+   * production leaves it out of the nav, sitemap and llms.txt and prunes its
+   * pages after the build (`scripts/postbuild/unreleased.mjs`). Routes per
+   * section are in `src/lib/launch.ts`. Flip one to true to launch it.
+   */
+  launched: {
+    pantry: true,
+    stack: true,
+    solutions: true,
+    industries: true,
+  },
   urls: {
     docs: 'https://docs.waffuru.ai',
     /** Early-access sign-up (Google Form), the primary call to action. */
@@ -35,7 +50,13 @@ export type Site = typeof site;
 
 /** Topics for `mailto:` callouts; each becomes the email's subject line. */
 export type MailSubject =
-  'Sales' | 'Partnerships' | 'Press' | 'Support' | 'Hiring' | 'Security';
+  | 'Sales'
+  | 'Partnerships'
+  | 'Press'
+  | 'Support'
+  | 'Hiring'
+  | 'Security'
+  | 'Pantry on Windows';
 
 /** `mailto:hello@waffuru.ai?subject=…`, the destination for formless CTAs. */
 export const mailto = (

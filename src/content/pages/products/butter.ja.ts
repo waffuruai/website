@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterJa: (typeof butter)['en'] = {
   layer: 'サービング',
-  tagline: 'Python 不要のモデルサービング。',
+  tagline: '妥協のないマルチモーダル推論。',
   summary:
     'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。2〜8 ビットの量子化チェックポイント、ハイブリッドモデルや MoE モデルを読み込み、OpenAI 互換と Anthropic Messages の API で提供します。',
   seo: {
-    title: 'Butter：Python 不要の LLM 推論エンジン',
+    title: 'Butter：依存関係を最小限にしたマルチモーダル推論',
     description:
-      'Hugging Face のモデルを OpenAI 互換と Anthropic Messages の API で提供する LLM 推論エンジン。Swift と Rust で書かれ、Python は不要。エージェントハーネス向けに作られています。',
+      'Hugging Face のモデルを OpenAI 互換と Anthropic Messages の API で提供する LLM 推論エンジン。macOS と iOS では Swift、それ以外では Rust で書かれ、依存関係は最小限。エージェントハーネス向けに作られています。',
     keywords: [
       'LLM 推論エンジン',
       'ローカル LLM サービング',
@@ -20,8 +20,8 @@ const butterJa: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: 'モデルサービングを、Python *なし*で。',
-    lede: 'Butter は、Apple シリコンでは Metal 上の Swift、CUDA などでは Rust で書かれた推論エンジンです。Python は使わず、Metal カーネルは事前コンパイル済みで出荷され、モデルは Hugging Face から直接読み込みます。',
+    title: 'モデルサービングを、*妥協*なしで。',
+    lede: 'Butter は最小限の依存関係でモデルを提供します。macOS と iOS では Swift、それ以外ではすべて Rust を使い、バックエンドごとにチューニングしたカーネルの上で動きます。安全性と最大限の性能を、妥協なく両立します。Metal カーネルは事前コンパイル済みで出荷され、モデルは Hugging Face から直接読み込みます。',
     highlights: [
       {
         value: '4',
@@ -49,7 +49,7 @@ const butterJa: (typeof butter)['en'] = {
   capabilities: {
     heading: 'Butter が*できる*こと',
     intro:
-      'チェックポイントの読み込みから、トークンのストリーミングまで。間に Python は入りません。',
+      'チェックポイントの読み込みから、トークンのストリーミングまで。依存関係は最小限です。',
     items: [
       {
         title: 'モデルをそのまま読み込む',
@@ -149,12 +149,11 @@ const butterJa: (typeof butter)['en'] = {
   ],
   specs: {
     heading: '技術的な*詳細*',
-    intro: '細部まで読みたい人のための、詳細です。',
     rows: [
       {
         term: 'ランタイム',
         detail:
-          'Apple シリコンでは Metal 上の Swift（macOS 14 以降）、CUDA などでは Rust。Python は不要。',
+          'macOS と iOS では Metal 上の Swift（macOS は 14 以降）、CUDA などそれ以外では Rust。依存関係は最小限で、サプライチェーンのリスクを抑えます。',
       },
       {
         term: 'モデル形式',
@@ -240,7 +239,7 @@ const butterJa: (typeof butter)['en'] = {
   platforms: {
     heading: '*動作*する環境',
     intro:
-      'Metal が第一の対象です。CUDA は第二で、ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。',
+      'Metal が第一の対象です。CUDA はチューニングを進めているところで、ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -262,7 +261,7 @@ const butterJa: (typeof butter)['en'] = {
   stack: {
     heading: '*スタック*のほかの部分とも連携する。',
     intro:
-      'Butter は、Iron がコンパイルしたカーネルの上でモデルを動かします。Waffle は vLLM、SGLang、llama.cpp と並べて Butter を見守ることができ、Syrup は、取り組んでいたことを AI に覚えさせます。',
+      'Butter は、Iron がコンパイルしたカーネルの上でモデルを動かします。Syrup は vLLM、SGLang、llama.cpp と並べて Butter を見守ることができ、Whisk は、取り組んでいたことを AI に覚えさせます。',
   },
   faq: [
     {
@@ -273,7 +272,7 @@ const butterJa: (typeof butter)['en'] = {
     {
       question: 'どのハードウェアで動きますか？',
       answer:
-        'Apple シリコン向けの Metal 上の Swift が第一の対象で、macOS 14 以降の MacBook から Mac Studio まで対応します。CUDA は第二の対象で、RTX と DGX Spark では本番稼働中です。ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。',
+        'Apple シリコン向けの Metal 上の Swift が第一の対象で、macOS 14 以降の MacBook から Mac Studio まで対応します。CUDA は RTX と DGX Spark では本番稼働中で、チューニングを進めています。ROCm と Vulkan を通じた AMD 対応は急速に進んでいます。',
     },
     {
       question: 'どのモデルが動きますか？',
@@ -281,9 +280,9 @@ const butterJa: (typeof butter)['en'] = {
         '現時点では、Llama、Gemma、Qwen、GPT-OSS、Mistral、Nemotron、Granite、Phi のほか、上に挙げたモデルに対応しています。テキスト、ビジョン、音声、オムニの各バリエーションがあります。',
     },
     {
-      question: 'Python は必要ですか？',
+      question: 'Butter は何で書かれていますか？',
       answer:
-        '必要ありません。Butter は、Apple シリコンでは Metal 上の Swift、CUDA などでは Rust で書かれており、サービングの経路に Python は一切ありません。',
+        'macOS と iOS では Swift、それ以外ではすべて Rust で、速さとメモリ安全性を備えています。Butter は依存関係を最小限に抑えているので、サプライチェーン攻撃の入り込む余地が少なく、バックエンドごとにチューニングしたカーネルの上で動きます。',
     },
     {
       question: 'いま使っているツールやエージェントハーネスは使えますか？',
@@ -293,7 +292,7 @@ const butterJa: (typeof butter)['en'] = {
     {
       question: 'どのくらい速いですか？',
       answer:
-        '128 GB の M5 Max で、Butter は 4-bit の Qwen3.8-27B を単一リクエストで毎秒 103 トークン（約 937 トークンのプロンプト、グリーディ）、同時 8 リクエストの合計で毎秒 146 トークン（1 リクエストあたり約 26）で提供しました。結果はモデル、プロンプトの長さ、ハードウェアによって変わります。試験条件はホームページに記載しています。',
+        '128 GB の M5 Max で、Butter は 4-bit の Qwen3.8-27B を単一リクエストで毎秒 103 トークン（約 937 トークンのプロンプト、グリーディ）、同時 8 リクエストの合計で毎秒 146 トークン（1 リクエストあたり約 26）で提供しました。結果はモデル、プロンプトの長さ、ハードウェアによって変わります。試験条件は、このページの測定結果と一緒に記載しています。',
     },
   ],
   cta: {

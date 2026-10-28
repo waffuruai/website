@@ -4,35 +4,37 @@ const aboutFr: (typeof about)['en'] = {
   seo: {
     title: 'Mission : démocratiser l’accès à l’intelligence',
     description:
-      'Waffuru veut démocratiser l’accès à l’intelligence. Nos convictions, nos valeurs et pourquoi nous construisons une infrastructure d’IA locale.',
+      'Waffuru veut démocratiser l’accès à l’intelligence. Nos convictions, nos valeurs et pourquoi nous construisons une infrastructure d’IA qui tourne sur le matériel que vous possédez ou louez.',
     keywords: [
       'mission Waffuru',
       'démocratiser l’IA',
-      'entreprise d’IA locale',
+      'entreprise d’infrastructure IA',
       'startup d’infrastructure IA',
     ],
   },
   hero: {
     label: 'À propos de Waffuru',
     title: 'Démocratiser l’accès à l’*intelligence*.',
-    lede: 'Waffuru construit la stack qui fait tourner l’IA en local : kernels, inférence, pilotage de flotte et mémoire, pour exécuter vite des modèles sur le matériel que chacun possède déjà.',
+    lede: 'Waffuru construit la stack d’IA qui exécute les modèles vite et au coût par token le plus bas, sur le matériel que vous possédez ou louez, des portables de vos équipes aux flottes de GPU en datacenter : kernels, inférence, plan de contrôle, mémoire et harnais d’agents.',
     actions: [
       { label: 'Rencontrer l’équipe', href: '/about/team' },
       { label: 'Travailler avec nous', href: '#hiring', variant: 'outline' },
     ],
+    name: '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil à notre respect pour la culture japonaise et sa longue histoire, à un amour partagé des gaufres et à une mission mondiale.',
   },
   why: {
     title: 'Pourquoi nous *construisons*.',
-    intro: 'L’intelligence doit tourner là où les gens se trouvent déjà.',
+    intro:
+      'L’intelligence doit tourner là où les gens utilisent déjà la technologie.',
     paragraphs: [
-      'Les modèles deviennent assez bons pour tourner sur le matériel que les gens possèdent déjà.',
-      'Encore faut-il que la stack en dessous soit prête. Elle doit être plus rapide, moins chère et à vous : des kernels qui tirent plus de chaque watt, un serving sans Python dans le chemin, et une mémoire qui reste sur votre machine. C’est aussi la fondation des assistants personnels local-first.',
-      'L’accès à l’intelligence ne doit dépendre ni de la géographie, ni de la fortune, ni des diplômes. Un modèle qui exige un datacenter, un budget ou un badge n’est pas un accès. Celui qui tourne sur un ordinateur que vous possédez déjà, si.',
+      'Les modèles sont désormais assez bons pour tourner sur le matériel que les gens possèdent déjà.',
+      'Encore faut-il que la stack qui les exécute soit prête. Elle doit être plus rapide, moins chère, simple à utiliser et **à vous** : des kernels qui tirent plus de chaque watt, des résultats corrects plus vite, des modèles de vision, d’audio et de texte qui tournent sans une montagne de dépendances et de complexité, et une mémoire et un contexte qui restent sur votre machine.',
+      'L’accès à l’intelligence ne doit dépendre ni de la géographie, ni de la fortune, ni des diplômes. Cela suppose un coût par token plus bas partout : sur le portable que l’on possède déjà, et sur les GPU qu’une entreprise possède ou loue.',
     ],
     constraintsLabel: 'Deux contraintes que nous nous imposons',
     constraints: [
-      'Cela tourne sur du matériel grand public.',
-      'Vos données restent sur votre machine, sauf si vous choisissez de les partager.',
+      'Réduire au minimum la consommation de tokens et le coût par token.',
+      'Vos données restent sur votre matériel, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
     ],
   },
   beliefs: {
@@ -51,12 +53,12 @@ const aboutFr: (typeof about)['en'] = {
       },
       {
         statement: 'La demande de calcul est insatiable.',
-        body: 'Chaque gain d’efficacité est dépensé en intelligence supplémentaire : le paradoxe de Jevons à l’œuvre. C’est pourquoi le travail sur l’efficacité n’est jamais terminé.',
+        body: 'Chaque gain d’efficacité est dépensé en intelligence supplémentaire : le [paradoxe de Jevons](https://fr.wikipedia.org/wiki/Paradoxe_de_Jevons) à l’œuvre. C’est pourquoi le travail sur l’efficacité n’est jamais terminé.',
       },
       {
         statement:
-          'Des modèles assez bons sur du matériel courant, c’est pour bientôt.',
-        body: 'D’ici environ deux ans, les modèles exécutés sur le matériel que les gens possèdent déjà seront assez bons pour un vrai travail. La loi de Moore et les progrès rapides de l’IA continuent de se cumuler.',
+          'Des modèles assez bons sur du matériel courant, c’est maintenant.',
+        body: 'Les modèles exécutés sur le matériel que les gens possèdent déjà sont aujourd’hui assez bons pour un vrai travail, tandis que la loi de Moore et les progrès rapides de l’IA continuent de se cumuler.',
       },
       {
         statement:
@@ -125,7 +127,7 @@ const aboutFr: (typeof about)['en'] = {
       },
       {
         name: 'Rigueur budgétaire',
-        line: 'Nous dépensons le temps et l’argent comme des ressources rares.',
+        line: 'Nous dépensons le temps et l’argent de façon réfléchie, comme s’ils étaient rares.',
       },
       {
         name: 'Prendre du plaisir',
@@ -135,15 +137,15 @@ const aboutFr: (typeof about)['en'] = {
   },
   teamTeaser: {
     title: 'Les personnes *derrière* le projet.',
-    body: 'De la recherche, de la sécurité, des ventes, et quelques fondateurs qui ont déjà livré des produits.',
+    body: 'Des bâtisseurs expérimentés, issus de la cybersécurité, de l’armée, du grand public et de l’entreprise. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
     cta: 'Rencontrer l’équipe',
     portraitAlt: 'Portrait de {name}',
   },
   hiring: {
     label: 'Recrutement',
-    title: 'Tirez une *chaise*.',
+    title: 'Enfilez le *tablier*.',
     lines: [
-      'Nous cherchons des personnes qui aiment le travail bas niveau : kernels GPU, moteurs d’inférence, Rust, Swift et Metal, et le produit qui repose dessus.',
+      'Nous cherchons des personnes qui aiment le travail bas niveau : kernels GPU, moteurs d’inférence, Rust, Swift, Metal, CUDA et HIP/ROCm, et le produit qui repose dessus.',
       'Nous travaillons de façon asynchrone, sur plusieurs fuseaux horaires. Nous sommes aussi une entreprise agentique, où humains et agents construisent ensemble.',
       'Si c’est votre genre de cuisine, dites-nous ce que vous aimeriez construire.',
     ],
@@ -154,13 +156,14 @@ const aboutFr: (typeof about)['en'] = {
       'Inférence',
       'Rust',
       'Swift et Metal',
+      'CUDA et HIP/ROCm',
       'Produit',
     ],
     cta: 'Prendre contact',
   },
   cta: {
     title: 'Essayez-le en *avant-première*.',
-    body: 'Nos produits sont privés pour l’instant. Demandez un accès anticipé, ou parlez-nous de ce que vous voulez faire tourner sur le matériel que vous possédez déjà.',
+    body: 'Pantry est gratuit et open source dès aujourd’hui. Notre stack d’inférence IA est en accès anticipé privé : demandez un accès, ou parlez-nous de ce que vous voulez faire tourner sur le matériel que vous possédez ou louez.',
   },
 };
 

@@ -1,11 +1,17 @@
+import {
+  ButterMelt,
+  IronPress,
+  SyrupDrips,
+  WhiskSpin,
+} from '@/components/sections/motifs';
 import type { ProductSlug } from '@/content/pages/products/types';
 import { cn } from '@/lib/utils';
 
 /*
- * The four After Hours motifs, one per product, built from the classes in
- * motifs.css: stamps (Iron), a melting pat (Butter), LEDs (Waffle) and a
- * drip (Syrup). `sm` matches the stack rows on the home page; `lg` is the
- * larger version for a product page's hero. Decorative and CSS-only.
+ * One motif per product: a press (Iron), a melting pat (Butter), drips
+ * (Syrup), a whisk (Whisk) and waffle tiles with W lit in the middle
+ * (Waffle). `sm` matches the stack rows and cards; `lg` is the larger version
+ * for a product page's hero. Decorative and CSS-only.
  */
 export type MotifSize = 'sm' | 'lg';
 
@@ -14,31 +20,7 @@ type MotifProps = { size: MotifSize; className?: string };
 /** Seconds between neighbouring items in a ripple. */
 const RIPPLE = 0.12;
 
-function IronMotif({ size, className }: MotifProps) {
-  const side = size === 'lg' ? 6 : 4;
-  return (
-    <div
-      className={cn(
-        'grid',
-        size === 'lg' ? 'w-[220px] gap-2' : 'w-24 gap-1.5',
-        className,
-      )}
-      style={{ gridTemplateColumns: `repeat(${side}, minmax(0, 1fr))` }}
-    >
-      {Array.from({ length: side * side }, (_, i) => (
-        <div
-          key={i}
-          className="wf-stamp"
-          style={{
-            animationDelay: `${(((i % side) + Math.floor(i / side)) * RIPPLE).toFixed(2)}s`,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-/** Delays for the plate's tiles, with a couple of hot ones. */
+/** Butter's plate under the pat, with a couple of hot tiles. */
 const PLATE_HOT = new Set([2, 5, 9, 12]);
 
 function ButterMotif({ size, className }: MotifProps) {
@@ -50,19 +32,19 @@ function ButterMotif({ size, className }: MotifProps) {
           className,
         )}
       >
-        <div className="wf-pat" />
+        <ButterMelt size="sm" />
       </div>
     );
   }
   return (
     <div
       className={cn(
-        'flex h-[200px] w-[240px] flex-col items-center justify-end gap-3',
+        'flex h-[200px] w-[252px] flex-col items-center justify-end',
         className,
       )}
     >
-      <div className="wf-pat size-24" />
-      <div className="grid w-full grid-cols-8 gap-1.5">
+      <ButterMelt size="lg" />
+      <div className="grid w-[240px] grid-cols-8 gap-1.5">
         {Array.from({ length: 16 }, (_, i) => (
           <div
             key={i}
@@ -78,75 +60,38 @@ function ButterMotif({ size, className }: MotifProps) {
   );
 }
 
-/** The home page's LED stagger: a prime-ish walk through the 4s cycle. */
-const ledDelay = (i: number) => `${(((i * 14) % 23) * 0.17).toFixed(2)}s`;
-
 function WaffleMotif({ size, className }: MotifProps) {
-  if (size === 'sm') {
-    return (
-      <div className={cn('grid grid-cols-8 gap-2', className)}>
-        {Array.from({ length: 32 }, (_, i) => (
-          <div
-            key={i}
-            className="wf-led"
-            style={{ animationDelay: ledDelay(i) }}
-          />
-        ))}
-      </div>
-    );
-  }
+  const side = size === 'lg' ? 5 : 3;
+  const centre = Math.floor((side * side) / 2);
   return (
-    <div className={cn('flex w-[240px] flex-col gap-2', className)}>
-      {Array.from({ length: 5 }, (_, unit) => (
+    <div
+      className={cn(
+        'grid',
+        size === 'lg' ? 'w-[200px] gap-2' : 'w-20 gap-1.5',
+        className,
+      )}
+      style={{ gridTemplateColumns: `repeat(${side}, minmax(0, 1fr))` }}
+    >
+      {Array.from({ length: side * side }, (_, i) => (
         <div
-          key={unit}
-          className="flex items-center justify-between gap-6 rounded-lg border border-foreground/12 bg-background/50 px-4 py-3"
-        >
-          <span className="flex flex-col gap-1.5">
-            <span className="block h-1.5 w-12 rounded-full bg-off" />
-            <span className="block h-1.5 w-7 rounded-full bg-off" />
-          </span>
-          <span className="grid grid-cols-6 gap-2">
-            {Array.from({ length: 6 }, (_, led) => (
-              <span
-                key={led}
-                className="wf-led"
-                style={{ animationDelay: ledDelay(unit * 6 + led) }}
-              />
-            ))}
-          </span>
-        </div>
+          key={i}
+          className="wf-cell aspect-square rounded-[4px]"
+          data-hot={i === centre ? '' : undefined}
+          style={{
+            animationDelay: `${(((i % side) + Math.floor(i / side)) * RIPPLE).toFixed(2)}s`,
+          }}
+        />
       ))}
     </div>
   );
 }
 
-function SyrupMotif({ size, className }: MotifProps) {
-  if (size === 'sm') {
-    return (
-      <div className={cn('relative h-[120px] w-6', className)}>
-        <div className="wf-drip" />
-        <div className="wf-drop" />
-      </div>
-    );
-  }
-  return (
-    <div className={cn('relative h-[220px] w-[240px]', className)}>
-      <div className="wf-drip" />
-      {/* Notes the drop runs past, alternating sides of the line. */}
-      <span className="absolute top-[24%] left-1/2 ml-4 h-1.5 w-20 rounded-full bg-off" />
-      <span className="absolute top-[50%] right-1/2 mr-4 h-1.5 w-24 rounded-full bg-off" />
-      <span className="absolute top-[74%] left-1/2 ml-4 h-1.5 w-14 rounded-full bg-off" />
-      <div className="wf-drop" />
-    </div>
-  );
-}
-
 const MOTIFS: Record<ProductSlug, (props: MotifProps) => React.ReactElement> = {
-  iron: IronMotif,
+  iron: IronPress,
   butter: ButterMotif,
+  syrup: SyrupDrips,
+  whisk: WhiskSpin,
   waffle: WaffleMotif,
-  syrup: SyrupMotif,
 };
 
 /** The motif for a product. Always `aria-hidden`: it carries no information. */

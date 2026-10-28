@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterEs: (typeof butter)['en'] = {
   layer: 'Serving',
-  tagline: 'Servir modelos sin Python.',
+  tagline: 'Inferencia multimodal, sin concesiones.',
   summary:
     'Swift sobre Metal para Apple silicon, Rust para CUDA y el resto. Carga checkpoints cuantizados de 2 a 8 bits, modelos híbridos y MoE, y los sirve con APIs compatibles con OpenAI y con Anthropic Messages.',
   seo: {
-    title: 'Butter: inferencia de LLM sin Python',
+    title: 'Butter: inferencia multimodal con dependencias mínimas',
     description:
-      'Motor de inferencia de LLM: Swift sobre Metal en Apple silicon, Rust para CUDA. Sirve modelos de Hugging Face con APIs compatibles con OpenAI y con Anthropic Messages, pensado para harnesses de agentes.',
+      'Motor de inferencia de LLM con dependencias mínimas: Swift para macOS e iOS, Rust para todo lo demás. Sirve modelos de Hugging Face con APIs compatibles con OpenAI y con Anthropic Messages, pensado para harnesses de agentes.',
     keywords: [
       'motor de inferencia de LLM',
       'servidor de LLM local',
@@ -20,8 +20,8 @@ const butterEs: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: 'Servir modelos *sin* Python.',
-    lede: 'Butter es un motor de inferencia escrito en Swift sobre Metal para Apple silicon y en Rust para CUDA y el resto. Sin Python, con kernels Metal precompilados, y los modelos se cargan directo desde Hugging Face.',
+    title: 'Servir modelos sin *concesiones*.',
+    lede: 'Butter sirve modelos con dependencias mínimas, usando Swift para macOS e iOS y Rust para todo lo demás, sobre kernels afinados para cada backend. Obtienes seguridad y el máximo rendimiento, sin concesiones. Los kernels Metal vienen precompilados y los modelos se cargan directo desde Hugging Face.',
     highlights: [
       {
         value: '4',
@@ -49,7 +49,7 @@ const butterEs: (typeof butter)['en'] = {
   capabilities: {
     heading: 'Lo que *hace* Butter.',
     intro:
-      'Desde cargar un checkpoint hasta transmitir tokens, sin Python en medio.',
+      'Desde cargar un checkpoint hasta transmitir tokens, con dependencias mínimas en todo el camino.',
     items: [
       {
         title: 'Carga los modelos tal cual',
@@ -151,12 +151,11 @@ const butterEs: (typeof butter)['en'] = {
   ],
   specs: {
     heading: 'Detalles *técnicos*.',
-    intro: 'Los detalles, para quienes los van a leer.',
     rows: [
       {
         term: 'Runtime',
         detail:
-          'Swift sobre Metal para Apple silicon, macOS 14 o posterior. Rust para CUDA y el resto. Sin Python.',
+          'Swift sobre Metal para macOS e iOS, con macOS 14 o posterior. Rust para CUDA y todo lo demás. Dependencias mínimas, con menos riesgo en la cadena de suministro.',
       },
       {
         term: 'Formatos de modelo',
@@ -242,7 +241,7 @@ const butterEs: (typeof butter)['en'] = {
   platforms: {
     heading: 'Dónde *funciona*.',
     intro:
-      'Metal es el objetivo principal. CUDA es secundario, y AMD a través de ROCm y Vulkan avanza rápido.',
+      'Metal es el objetivo principal. CUDA se está afinando ahora, y AMD a través de ROCm y Vulkan avanza rápido.',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -264,7 +263,7 @@ const butterEs: (typeof butter)['en'] = {
   stack: {
     heading: 'Funciona con el resto del *stack*.',
     intro:
-      'Butter ejecuta modelos sobre los kernels que compila Iron. Waffle puede vigilarlo junto con vLLM, SGLang y llama.cpp, y Syrup hace que tu IA recuerde en qué estabas trabajando.',
+      'Butter ejecuta modelos sobre los kernels que compila Iron. Syrup puede vigilarlo junto con vLLM, SGLang y llama.cpp, y Whisk hace que tu IA recuerde en qué estabas trabajando.',
   },
   faq: [
     {
@@ -275,7 +274,7 @@ const butterEs: (typeof butter)['en'] = {
     {
       question: '¿En qué hardware funciona?',
       answer:
-        'Swift sobre Metal para Apple silicon es el objetivo principal, desde un MacBook hasta un Mac Studio con macOS 14 o posterior. CUDA es secundario, en producción en RTX y DGX Spark. AMD a través de ROCm y Vulkan avanza rápido.',
+        'Swift sobre Metal para Apple silicon es el objetivo principal, desde un MacBook hasta un Mac Studio con macOS 14 o posterior. CUDA está en producción en RTX y DGX Spark y se está afinando. AMD a través de ROCm y Vulkan avanza rápido.',
     },
     {
       question: '¿Qué modelos ejecuta?',
@@ -283,9 +282,9 @@ const butterEs: (typeof butter)['en'] = {
         'La cobertura actual incluye Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite y Phi, entre otros de los listados arriba, en variantes de texto, visión, voz y omni.',
     },
     {
-      question: '¿Necesito Python?',
+      question: '¿En qué está escrito Butter?',
       answer:
-        'No. Butter es Swift sobre Metal para Apple silicon y Rust para CUDA y el resto, sin Python en ningún punto de la ruta de serving.',
+        'En Swift para macOS e iOS, y en Rust para todo lo demás, por velocidad y seguridad de memoria. Butter mantiene sus dependencias al mínimo, lo que deja menos margen a un ataque a la cadena de suministro, y corre sobre kernels afinados para cada backend.',
     },
     {
       question:
@@ -296,7 +295,7 @@ const butterEs: (typeof butter)['en'] = {
     {
       question: '¿Cuál es su velocidad?',
       answer:
-        'En un M5 Max con 128 GB, Butter sirvió Qwen3.8-27B en 4 bits a 103 tokens por segundo para una sola solicitud (prompts de unos 937 tokens, greedy) y 146 tokens por segundo en total con 8 solicitudes concurrentes, unos 26 por solicitud. Los resultados dependen del modelo, la longitud del prompt y el hardware; la página de inicio detalla las condiciones de prueba.',
+        'En un M5 Max con 128 GB, Butter sirvió Qwen3.8-27B en 4 bits a 103 tokens por segundo para una sola solicitud (prompts de unos 937 tokens, greedy) y 146 tokens por segundo en total con 8 solicitudes concurrentes, unos 26 por solicitud. Los resultados dependen del modelo, la longitud del prompt y el hardware; las condiciones de prueba aparecen junto a las mediciones en esta página.',
     },
   ],
   cta: {

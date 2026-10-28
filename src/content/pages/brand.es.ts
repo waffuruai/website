@@ -64,7 +64,7 @@ const brandEs: (typeof brand)['en'] = {
         body: 'Con mayúscula inicial en el texto corrido y en los titulares. La forma en minúsculas “waffuru” pertenece solo al wordmark.',
       },
       {
-        term: 'Iron, Butter, Waffle, Syrup',
+        term: 'Iron, Butter, Syrup, Whisk',
         body: 'Los cuatro productos, siempre con mayúscula inicial y nunca traducidos, en todos los idiomas.',
       },
       {
@@ -73,11 +73,11 @@ const brandEs: (typeof brand)['en'] = {
       },
       {
         term: 'La marca del waffle',
-        body: 'Llama a la imagen “la marca del waffle”. Waffle, con W mayúscula, es nuestro producto de plano de control de GPU.',
+        body: 'Llama a la imagen “la marca del waffle”.',
       },
     ],
     origin:
-      '“Waffuru” es como se dice waffles en japonés. El nombre es un guiño al amor por el manga, a un cariño compartido por los waffles y a una misión global.',
+      '“Waffuru” es como se dice waffles en japonés. El nombre es un guiño a nuestro respeto por la cultura japonesa y su larga historia, a un cariño compartido por los waffles y a una misión global.',
   },
   colour: {
     title: 'La *paleta*.',
@@ -210,7 +210,7 @@ const brandEs: (typeof brand)['en'] = {
         role: 'Texto',
         use: 'Texto corrido, botones e interfaz.',
         sample:
-          'Kernels de GPU, inferencia, control de flotas y memoria para el hardware que ya tienes.',
+          'Kernels, inferencia, un plano de control, memoria y un harness de agentes, para hardware propio o alquilado.',
         glyphs:
           'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
         source: {
@@ -242,34 +242,53 @@ const brandEs: (typeof brand)['en'] = {
   motifs: {
     title: 'Motivos, en *movimiento*.',
     intro:
-      'CSS puro, tomado de los productos: casillas que brillan, un sello, una porción que se derrite, luces de estado y una gota de jarabe. Dejan de moverse cuando el dispositivo del visitante pide reducir el movimiento.',
+      'CSS puro, tomado de los productos, de arriba abajo del stack: dos opciones para Pantry, casillas que brillan, un batidor, gotas de jarabe, mantequilla que se derrite, una prensa y luces de estado. Dejan de moverse cuando el dispositivo del visitante pide reducir el movimiento.',
     items: [
+      {
+        key: 'jar',
+        name: 'Tarro sellado',
+        description:
+          'Una tapa que se enrosca y un sello dorado: verificado antes de ejecutarse. Una opción para Pantry.',
+      },
+      {
+        key: 'shelf',
+        name: 'Revisión de estantes',
+        description:
+          'Un escaneo por los estantes, y el único tarro caducado cambiado por uno nuevo. Una opción para Pantry.',
+      },
       {
         key: 'tiles',
         name: 'Casillas de waffle',
         description: 'Una cuadrícula de casillas, algunas brillando en dorado.',
       },
       {
-        key: 'stamps',
-        name: 'Sellos',
+        key: 'whisk',
+        name: 'Batidor',
         description:
-          'Una cuadrícula que se presiona casilla a casilla. El motivo de Iron.',
+          'Varillas que giran en un bol e incorporan oro a la mezcla. El motivo de Whisk.',
+      },
+      {
+        key: 'drips',
+        name: 'Goteo',
+        description:
+          'Jarabe que se acumula y gotea; cada gota, un dato. El motivo de Syrup.',
       },
       {
         key: 'pat',
-        name: 'Porción de mantequilla',
+        name: 'Mantequilla derretida',
         description:
-          'Una porción que se derrite y vuelve a empezar. El motivo de Butter.',
+          'Una porción que se derrite en un charco brillante y lo engrasa todo. El motivo de Butter.',
+      },
+      {
+        key: 'stamps',
+        name: 'Prensa',
+        description: 'Una prensa que baja fila por fila. El motivo de Iron.',
       },
       {
         key: 'leds',
         name: 'LED',
-        description: 'Un rack de luces de estado. El motivo de Waffle.',
-      },
-      {
-        key: 'drip',
-        name: 'Goteo',
-        description: 'Una gota que baja por una línea. El motivo de Syrup.',
+        description:
+          'Un rack de luces de estado, reservado para un producto que aún está en camino.',
       },
     ],
   },
@@ -280,10 +299,10 @@ const brandEs: (typeof brand)['en'] = {
     dontLabel: 'No',
     dos: [
       'Escribir Waffuru con W mayúscula. Usar “waffuru” en minúsculas solo en el wordmark.',
-      'Escribir Iron, Butter, Waffle y Syrup tal como aparecen, en todos los idiomas.',
+      'Escribir Iron, Butter, Syrup y Whisk tal como aparecen, en todos los idiomas.',
       'Dar espacio a la marca del waffle, sobre un fondo oscuro o claro con contraste suficiente.',
       'Describir nuestros productos como son: privados por ahora, con acceso anticipado bajo solicitud.',
-      'Describir el soporte de hardware como es: primero Metal, después CUDA; ROCm y Vulkan funcionan, pero aún sin afinar.',
+      'Describir el soporte de hardware como es: Metal principal, CUDA en afinación, ROCm y Vulkan próximamente (funcionan, pero aún sin afinar).',
     ],
     donts: [
       'Cambiar el color, perfilar, girar, recortar o añadir efectos a la marca.',

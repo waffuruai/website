@@ -8,20 +8,38 @@ import type { FaqItem, Seo } from '@/content/types';
  * against the same `T`.
  */
 
-export type SolutionSlug =
-  'small-business' | 'enterprise' | 'neoclouds' | 'ai-companies';
+/** Route slugs, in the order the overview and navigation list them. */
+export const solutionSlugs = [
+  'small-business',
+  'enterprise',
+  'neoclouds',
+  'ai-companies',
+] as const;
+
+export type SolutionSlug = (typeof solutionSlugs)[number];
+
+export const solutionPath = (slug: SolutionSlug) => `/solutions/${slug}`;
 
 /** The three value props every audience hears, each in its own words. */
 export type SolutionTag = 'cost' | 'inference' | 'control';
 
 /** The Waffuru stack, numbered from the metal up. */
-export type ProductKey = 'iron' | 'butter' | 'waffle' | 'syrup';
+export type ProductKey = 'iron' | 'butter' | 'syrup' | 'whisk';
 
 /** How well a hardware tier is supported: drives the bars, never the copy. */
 export type HardwareStatus = 'primary' | 'secondary' | 'runs';
 
 /** A job to be done: a title and two sentences. */
-export type UseCase = { tag: SolutionTag; title: string; body: string };
+export type UseCase = {
+  tag: SolutionTag;
+  title: string;
+  body: string;
+  /**
+   * A page that goes further, such as Pantry. Shown only once that page's
+   * section has launched (`site.launched`); the body must stand without it.
+   */
+  link?: { label: string; href: string };
+};
 
 /** One product mapped to the need it answers for this audience. */
 export type StackFitItem = { product: ProductKey; need: string; body: string };

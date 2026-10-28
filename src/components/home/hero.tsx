@@ -1,15 +1,18 @@
+import { LocalizedLink } from '@/components/localized-link';
 import { Accent } from '@/components/sections/accent';
 import { MonoLabel } from '@/components/sections/mono-label';
 import { PillLink } from '@/components/sections/pill-link';
 import type { HomeContent } from '@/content/pages/home';
+import { pantryFacts } from '@/content/pages/pantry/facts';
 import type { Cta } from '@/content/types';
+import { isPublishedPath } from '@/lib/launch';
 
 import { HeroTiles } from './hero-tiles';
 
 /**
- * The home hero: the tile floor, the eyebrow, the H1 (the page's LCP, so
- * nothing heavy sits above it), the lede, the two actions and the backends
- * Iron emits. Everything animates with CSS only.
+ * The home hero: the tile floor, the launch pill (Pantry), the eyebrow, the
+ * H1 (the page's LCP, so nothing heavy sits above it), the lede and the two
+ * actions. Everything animates with CSS only.
  */
 export function Hero({
   content,
@@ -19,13 +22,31 @@ export function Hero({
   /** "Request early access": label from the dictionary, href from `site`. */
   primary: Cta;
 }) {
-  const { eyebrow, title, lede, secondary, emits } = content;
+  const { eyebrow, title, lede, launch, secondary } = content;
 
   return (
-    <section className="relative flex min-h-[min(900px,100svh)] flex-col justify-end pt-32 max-[720px]:min-h-0 max-[720px]:pt-28">
+    <section className="relative flex min-h-[min(860px,100svh)] flex-col justify-end pt-21 max-[720px]:min-h-0 max-[720px]:pt-19">
       <HeroTiles />
 
       <div className="relative z-[6] mx-auto flex w-full max-w-site flex-col gap-9 px-site pb-18 max-[720px]:gap-7 max-[720px]:pb-12">
+        {isPublishedPath(pantryFacts.path) && (
+          <LocalizedLink
+            href={pantryFacts.path}
+            className="wf-rise group inline-flex w-fit max-w-full items-center gap-3 rounded-full border border-brand/70 bg-brand/20 py-1.5 pr-4 pl-1.5 text-[14px] text-foreground backdrop-blur-sm transition-colors hover:border-brand hover:bg-brand/30"
+          >
+            <span className="rounded-full bg-foreground px-2.5 py-0.5 label-mono text-[11px] text-background">
+              {launch.label}
+            </span>
+            <span className="truncate">{launch.text}</span>
+            <span
+              aria-hidden
+              className="transition-transform group-hover:translate-x-0.5"
+            >
+              →
+            </span>
+          </LocalizedLink>
+        )}
+
         <MonoLabel dot className="wf-rise gap-3">
           {eyebrow}
         </MonoLabel>
@@ -48,20 +69,6 @@ export function Hero({
             </a>
           </div>
         </div>
-
-        <p className="flex flex-wrap gap-7 border-t border-foreground/12 pt-7 label-mono text-muted-foreground">
-          <span>
-            {emits.label} <span aria-hidden>→</span>
-          </span>
-          {emits.targets.map((target) => (
-            <span key={target} className="text-foreground">
-              {target}
-            </span>
-          ))}
-          <span aria-hidden className="wf-blink text-brand-ink">
-            ▍
-          </span>
-        </p>
       </div>
     </section>
   );

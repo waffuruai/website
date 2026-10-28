@@ -32,19 +32,19 @@ const solutionsSharedKo: (typeof solutionsShared)['en'] = {
       linkLabel: 'Butter 살펴보기',
       href: '/products/butter',
     },
-    waffle: {
+    syrup: {
       index: '03',
       role: '컨트롤 플레인',
-      name: 'Waffle',
-      linkLabel: 'Waffle 살펴보기',
-      href: '/products/waffle',
-    },
-    syrup: {
-      index: '04',
-      role: '메모리',
       name: 'Syrup',
       linkLabel: 'Syrup 살펴보기',
       href: '/products/syrup',
+    },
+    whisk: {
+      index: '04',
+      role: '메모리',
+      name: 'Whisk',
+      linkLabel: 'Whisk 살펴보기',
+      href: '/products/whisk',
     },
   },
   hardware: {
@@ -61,14 +61,14 @@ const solutionsSharedKo: (typeof solutionsShared)['en'] = {
       {
         name: 'NVIDIA · CUDA',
         status: 'secondary',
-        statusLabel: '보조',
-        note: 'RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. 데이터센터 GPU는 진행 중입니다. CUDA → PTX.',
+        statusLabel: '튜닝 중',
+        note: 'RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. H100, H200, B100, B200에서는 첫 실행을 마쳤습니다. CUDA → PTX.',
       },
       {
         name: 'AMD ROCm · Vulkan',
         status: 'runs',
-        statusLabel: '구동',
-        note: '지금도 동작하지만 아직 튜닝하지 않았습니다. HIP → AMDGPU, Vulkan → SPIR-V.',
+        statusLabel: '곧 지원',
+        note: '지금도 동작하지만 아직 튜닝하지 않았습니다. MI300에서는 첫 실행을 마쳤습니다. HIP → AMDGPU, Vulkan → SPIR-V.',
       },
     ],
     runsOn: [
@@ -77,7 +77,8 @@ const solutionsSharedKo: (typeof solutionsShared)['en'] = {
       { label: 'DGX Spark' },
       { label: 'Strix Halo' },
       { label: '네오클라우드 플릿' },
-      { label: '엔터프라이즈 데이터센터 GPU · 진행 중', inProgress: true },
+      { label: 'H100 · H200 · B100 · B200 · 첫 실행', inProgress: true },
+      { label: 'MI300 · 첫 실행', inProgress: true },
     ],
   },
 };
