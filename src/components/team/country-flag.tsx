@@ -7,11 +7,16 @@ const LEAF =
 
 const STRIPE = 10 / 7;
 
-/**
- * Seven stripes in gold and cream, and a canton of waffle cells where the
- * stars would be. Cream, not a dark tone, for the light stripes, so the
- * whole flag reads against a dark page as clearly as Canada's.
+/*
+ * Flags draw from the brand primitives (gold, cream, bronze), which do not
+ * change with the theme, so a flag looks the same on a dark page and a light
+ * one. A thin bronze frame gives the cream parts an edge on either.
  */
+const GOLD = 'fill-[var(--gold)]';
+const CREAM = 'fill-[var(--cream)]';
+const BRONZE = 'fill-[var(--bronze)]';
+
+/** Seven gold and cream stripes, and a bronze canton of waffle cells. */
 function UnitedStates() {
   return (
     <>
@@ -21,10 +26,10 @@ function UnitedStates() {
           y={i * STRIPE}
           width={20}
           height={STRIPE}
-          className={i % 2 === 0 ? 'fill-brand' : 'fill-foreground'}
+          className={i % 2 === 0 ? GOLD : CREAM}
         />
       ))}
-      <rect width={8.4} height={4 * STRIPE} className="fill-off" />
+      <rect width={8.4} height={4 * STRIPE} className={BRONZE} />
       {Array.from({ length: 12 }, (_, i) => (
         <rect
           key={i}
@@ -32,32 +37,32 @@ function UnitedStates() {
           y={0.75 + Math.floor(i / 4) * 1.6}
           width={1}
           height={1}
-          className="fill-foreground"
+          className={CREAM}
         />
       ))}
     </>
   );
 }
 
-/** Two bars and the maple leaf on the centre band. */
+/** Two gold bars and a bronze maple leaf on the cream centre band. */
 function Canada() {
   return (
     <>
-      <rect width={20} height={10} className="fill-foreground" />
-      <rect width={5} height={10} className="fill-brand" />
-      <rect x={15} width={5} height={10} className="fill-brand" />
+      <rect width={20} height={10} className={CREAM} />
+      <rect width={5} height={10} className={GOLD} />
+      <rect x={15} width={5} height={10} className={GOLD} />
       <polygon
         points={LEAF}
         transform="translate(5.8 0.8) scale(0.7)"
-        className="fill-brand"
+        className={BRONZE}
       />
     </>
   );
 }
 
 /**
- * Where someone is based, as a small flag in the brand palette: gold, roast
- * and cream instead of red, white and blue. One accessible name (the
+ * Where someone is based, as a small flag in the brand palette: gold, cream
+ * and bronze instead of red, white and blue, the same in either theme. One accessible name (the
  * country); the shapes are decoration.
  */
 export function CountryFlag({
@@ -77,12 +82,22 @@ export function CountryFlag({
       // Both flags share one 2:1 box, so they line up at the same size.
       viewBox="0 0 20 10"
       className={cn(
-        'inline-block h-3.5 w-7 shrink-0 overflow-hidden rounded-[2px] ring-1 ring-foreground/35',
+        'inline-block h-3.5 w-7 shrink-0 overflow-hidden rounded-[2px]',
         className,
       )}
     >
       <title>{label}</title>
       {country === 'us' ? <UnitedStates /> : <Canada />}
+      <rect
+        x={0.25}
+        y={0.25}
+        width={19.5}
+        height={9.5}
+        rx={0.5}
+        fill="none"
+        strokeWidth={0.5}
+        className="stroke-[var(--bronze)]"
+      />
     </svg>
   );
 }

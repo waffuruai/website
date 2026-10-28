@@ -122,7 +122,7 @@ export const team: TeamMember[] = [
 export const teamCopy: Localized<Record<string, TeamCopy>> = {
   en: {
     'kyle-croll': {
-      role: 'CEO',
+      role: 'Chief Executive Officer',
       background:
         'Ex-Navy, with an MBA from McCombs. Threat intelligence, AI strategy and security.',
       bio: 'Kyle sets Waffuru’s direction and brings a security lens to how AI gets built and deployed. He served in the Navy, with a background in threat intelligence and threat hunting, then earned an MBA from UT Austin’s McCombs School of Business.',
@@ -148,7 +148,7 @@ export const teamCopy: Localized<Record<string, TeamCopy>> = {
     'cory-smith': {
       role: 'Chief Technology Officer',
       background: 'Hands-on startup CTO. One exit, one failure. CTO of Bidali.',
-      bio: 'Cory leads technology at Waffuru. He is a seasoned, hands-on, full-stack startup CTO with one exit and one failure behind him, and co-founder and CTO of Bidali, which he helped grow to millions in stablecoin payments volume. He has built consumer and enterprise products since 2009.',
+      bio: 'Cory leads technology at Waffuru. He is a seasoned, hands-on, full-stack startup CTO with one exit and one failure behind him, and co-founder and CTO of Bidali, which he helped grow to millions in stablecoin payments volume. He has built consumer and enterprise products since 2009. He also raps, and is pretty damn good.',
     },
   },
   es: teamCopyEs,

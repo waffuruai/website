@@ -31,7 +31,7 @@ const aboutEs: (typeof about)['en'] = {
     ],
     constraintsLabel: 'Dos límites que nos imponemos',
     constraints: [
-      'Minimizar el gasto en tokens y el costo por token.',
+      'Minimizar el uso de tokens y el costo por token.',
       'Tus datos se quedan en tu hardware a menos que tú lo autorices.',
     ],
   },
@@ -141,7 +141,7 @@ const aboutEs: (typeof about)['en'] = {
   },
   hiring: {
     label: 'Estamos contratando',
-    title: 'Acerca una *silla*.',
+    title: 'Ponte el *delantal*.',
     lines: [
       'Buscamos personas a las que les guste el trabajo de bajo nivel: kernels de GPU, motores de inferencia, Rust, Swift, Metal, CUDA y HIP/ROCm, y el producto que se construye encima.',
       'Trabajamos de forma asíncrona entre husos horarios. Además, somos una empresa que trabaja con agentes: personas y agentes construyendo juntos.',

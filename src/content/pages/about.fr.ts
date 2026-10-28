@@ -31,7 +31,7 @@ const aboutFr: (typeof about)['en'] = {
     ],
     constraintsLabel: 'Deux contraintes que nous nous imposons',
     constraints: [
-      'Réduire au minimum la dépense en tokens et le coût par token.',
+      'Réduire au minimum la consommation de tokens et le coût par token.',
       'Vos données restent sur votre matériel, sauf si vous choisissez de les partager.',
     ],
   },
@@ -141,7 +141,7 @@ const aboutFr: (typeof about)['en'] = {
   },
   hiring: {
     label: 'Recrutement',
-    title: 'Tirez une *chaise*.',
+    title: 'Enfilez le *tablier*.',
     lines: [
       'Nous cherchons des personnes qui aiment le travail bas niveau : kernels GPU, moteurs d’inférence, Rust, Swift, Metal, CUDA et HIP/ROCm, et le produit qui repose dessus.',
       'Nous travaillons de façon asynchrone, sur plusieurs fuseaux horaires. Nous sommes aussi une entreprise agentique, où humains et agents construisent ensemble.',

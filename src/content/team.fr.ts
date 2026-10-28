@@ -29,7 +29,7 @@ const teamCopyFr: (typeof teamCopy)['en'] = {
     role: 'Directeur technique (CTO)',
     background:
       'CTO de startup, les mains dans le cambouis. Une sortie, un échec. CTO de Bidali.',
-    bio: 'Cory dirige la technologie chez Waffuru. CTO de startup aguerri, full-stack et les mains dans le cambouis, il a derrière lui une sortie (exit) et un échec. Il est cofondateur et CTO de Bidali, dont il a contribué à porter le volume de paiements en stablecoins à plusieurs millions. Il construit des produits grand public et d’entreprise depuis 2009.',
+    bio: 'Cory dirige la technologie chez Waffuru. CTO de startup aguerri, full-stack et les mains dans le cambouis, il a derrière lui une sortie (exit) et un échec. Il est cofondateur et CTO de Bidali, dont il a contribué à porter le volume de paiements en stablecoins à plusieurs millions. Il construit des produits grand public et d’entreprise depuis 2009. Il rappe aussi, et sacrément bien.',
   },
 };
 

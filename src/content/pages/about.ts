@@ -105,7 +105,7 @@ export const about: Localized<AboutContent> = {
       ],
       constraintsLabel: 'Two constraints we hold ourselves to',
       constraints: [
-        'Minimize token spend and cost per token.',
+        'Minimize token usage and cost per token.',
         'Your data stays on your hardware unless you opt in.',
       ],
     },
@@ -207,7 +207,7 @@ export const about: Localized<AboutContent> = {
     },
     hiring: {
       label: 'Hiring',
-      title: 'Pull up a *chair*.',
+      title: 'Put on an *apron*.',
       lines: [
         'We want people who enjoy the low-level work: GPU kernels, inference engines, Rust, Swift, Metal, CUDA and HIP/ROCm, and the product that sits on top of them.',
         'We work asynchronously across time zones. We are also an agentic company, with humans and agents building together.',

@@ -20,6 +20,8 @@
   --roast-raised: #12100e;
   --cream: #ede8df;
   --gold: #e8a33d;
+  /* Gold's dark partner (DESIGN.md's brand ink); never changes with theme. */
+  --bronze: #8a5514;
 
   /* Semantic tokens: dark (default). */
   --radius: 1rem;

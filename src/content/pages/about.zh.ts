@@ -31,7 +31,7 @@ const aboutZh: (typeof about)['en'] = {
     ],
     constraintsLabel: '我们给自己定的两条约束',
     constraints: [
-      '尽量减少 token 开销，降低每 token 成本。',
+      '尽量减少 token 用量，降低每 token 成本。',
       '除非你主动选择开启，否则数据始终留在你的硬件上。',
     ],
   },
@@ -130,7 +130,7 @@ const aboutZh: (typeof about)['en'] = {
   },
   hiring: {
     label: '招聘',
-    title: '拉把*椅子*坐下。',
+    title: '系上*围裙*。',
     lines: [
       '我们想找喜欢底层工作的人：GPU 内核、推理引擎、Rust、Swift、Metal、CUDA 与 HIP/ROCm，以及构建在它们之上的产品。',
       '我们跨时区异步协作。我们也是一家智能体驱动的公司，人和智能体一起构建。',

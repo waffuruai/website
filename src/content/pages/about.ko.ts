@@ -31,7 +31,7 @@ const aboutKo: (typeof about)['en'] = {
     ],
     constraintsLabel: '스스로에게 거는 두 가지 제약',
     constraints: [
-      '토큰 지출과 토큰당 비용을 최소화합니다.',
+      '토큰 사용량과 토큰당 비용을 최소화합니다.',
       '직접 동의하지 않는 한 데이터는 내 하드웨어를 떠나지 않습니다.',
     ],
   },
@@ -133,7 +133,7 @@ const aboutKo: (typeof about)['en'] = {
   },
   hiring: {
     label: '채용',
-    title: '*의자*를 당겨 앉으세요.',
+    title: '*앞치마*를 두르세요.',
     lines: [
       '저수준 작업을 즐기는 분을 찾습니다. GPU 커널, 추론 엔진, Rust, Swift, Metal, CUDA와 HIP/ROCm, 그리고 그 위에 올라가는 제품까지.',
       '우리는 시간대를 넘나들며 비동기로 일합니다. 사람과 에이전트가 함께 만드는 에이전틱 컴퍼니이기도 합니다.',

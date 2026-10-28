@@ -32,7 +32,7 @@ describe('Team page', () => {
       screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent),
     ).toEqual([
       ...team.map((member) => member.name),
-      'Pull up a chair.',
+      'Put on an apron.',
       'See what we’re cooking.',
     ]);
     expect(container.querySelector('#hiring')).not.toBeNull();

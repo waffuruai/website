@@ -30,7 +30,7 @@ describe('About page', () => {
       'What we believe.',
       'What we value.',
       'The people behind it.',
-      'Pull up a chair.',
+      'Put on an apron.',
       'Try it early.',
     ]);
   });
