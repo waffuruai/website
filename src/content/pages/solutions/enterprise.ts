@@ -136,7 +136,7 @@ export const enterprise: Localized<SolutionPage> = {
       {
         question: 'How do we evaluate it?',
         answer:
-          'Talk to us with your hardware and your workload. We will tell you honestly whether it fits today, and early access is open by request.',
+          'Tell us about your hardware and your workload. We will tell you honestly whether it fits today, and early access is open by request.',
       },
     ],
     cta: {

@@ -118,7 +118,7 @@ const enterpriseEs: (typeof enterprise)['en'] = {
     {
       question: '¿Cómo lo evaluamos?',
       answer:
-        'Habla con nosotros con tu hardware y tu carga de trabajo. Te diremos con honestidad si encaja hoy, y el acceso anticipado está abierto bajo solicitud.',
+        'Cuéntanos sobre tu hardware y tu carga de trabajo. Te diremos con honestidad si encaja hoy, y el acceso anticipado está abierto bajo solicitud.',
     },
   ],
   cta: {

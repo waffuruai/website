@@ -117,7 +117,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     {
       question: 'Comment l’évaluer ?',
       answer:
-        'Parlez-nous avec votre matériel et votre charge de travail. Nous vous dirons honnêtement si cela convient aujourd’hui, et l’accès anticipé est ouvert sur demande.',
+        'Parlez-nous de votre matériel et de votre charge de travail. Nous vous dirons honnêtement si cela convient aujourd’hui, et l’accès anticipé est ouvert sur demande.',
     },
   ],
   cta: {
