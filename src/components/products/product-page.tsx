@@ -27,7 +27,8 @@ import { breadcrumbs, softwareApplication } from '@/lib/json-ld';
 
 /**
  * One template for every product page, driven by typed content: hero with the
- * product's motif, problem to outcome, capabilities, an optional code sample
+ * product's motif, an optional lead section the route passes in, problem to
+ * outcome, capabilities, an optional code sample
  * and product-specific sections, any research sections the route passes in,
  * technical specifics, hardware tiers where they matter, links to the rest
  * of the stack, the FAQ and the closing call to action.
@@ -36,11 +37,14 @@ export function ProductPage({
   slug,
   locale,
   dictionary,
+  lead,
   children,
 }: {
   slug: ProductSlug;
   locale: Locale;
   dictionary: Dictionary;
+  /** A section that leads straight after the hero (Iron's model menu). */
+  lead?: React.ReactNode;
   /**
    * Full sections with their own content files (Butter's measured research,
    * Iron's kernel). They follow what the product does and how you use it, as
@@ -90,6 +94,7 @@ export function ProductPage({
         />
       </PageHero>
 
+      {lead}
       <ProductStory story={copy.story} shared={shared} />
       <CapabilityGrid capabilities={copy.capabilities} />
       {facts.code && copy.code && (
