@@ -20,6 +20,7 @@ const aboutEs: (typeof about)['en'] = {
       { label: 'Conoce al equipo', href: '/about/team' },
       { label: 'Trabaja con nosotros', href: '#hiring', variant: 'outline' },
     ],
+    name: '“Waffuru” es como se dice waffles en japonés. El nombre es un guiño al respeto por la cultura japonesa y su larga historia, a un cariño compartido por los waffles y a una misión global.',
   },
   why: {
     title: 'Por qué *construimos*.',

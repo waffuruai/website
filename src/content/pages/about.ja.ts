@@ -20,6 +20,7 @@ const aboutJa: (typeof about)['en'] = {
       { label: 'チームを見る', href: '/about/team' },
       { label: '一緒に働く', href: '#hiring', variant: 'outline' },
     ],
+    name: 'Waffuru は、日本語の「ワッフル」のローマ字表記です。日本の文化と長い歴史への敬意、共通のワッフル好き、そして世界に向けたミッションへの、ささやかな目配せでもあります。',
   },
   why: {
     title: 'なぜ*つくる*のか',

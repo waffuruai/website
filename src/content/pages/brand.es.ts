@@ -77,7 +77,7 @@ const brandEs: (typeof brand)['en'] = {
       },
     ],
     origin:
-      '“Waffuru” es como se dice waffles en japonés. El nombre es un guiño al amor por el manga, a un cariño compartido por los waffles y a una misión global.',
+      '“Waffuru” es como se dice waffles en japonés. El nombre es un guiño al respeto por la cultura japonesa y su larga historia, a un cariño compartido por los waffles y a una misión global.',
   },
   colour: {
     title: 'La *paleta*.',
@@ -302,7 +302,7 @@ const brandEs: (typeof brand)['en'] = {
       'Escribir Iron, Butter, Syrup y Whisk tal como aparecen, en todos los idiomas.',
       'Dar espacio a la marca del waffle, sobre un fondo oscuro o claro con contraste suficiente.',
       'Describir nuestros productos como son: privados por ahora, con acceso anticipado bajo solicitud.',
-      'Describir el soporte de hardware como es: primero Metal, después CUDA; ROCm y Vulkan funcionan, pero aún sin afinar.',
+      'Describir el soporte de hardware como es: Metal principal, CUDA en afinación, ROCm y Vulkan próximamente (funcionan, pero aún sin afinar).',
     ],
     donts: [
       'Cambiar el color, perfilar, girar, recortar o añadir efectos a la marca.',

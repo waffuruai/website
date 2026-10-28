@@ -171,7 +171,7 @@ export const brand: Localized<BrandContent> = {
         },
       ],
       origin:
-        '“Waffuru” is how Japanese says waffles. The name is a nod to a love of manga, a shared love of waffles and a global mission.',
+        '“Waffuru” is how Japanese says waffles. The name is a nod to respect for Japanese culture and deep history, a shared love of waffles and a global mission.',
     },
     colour: {
       title: 'The *palette*.',
@@ -396,7 +396,7 @@ export const brand: Localized<BrandContent> = {
         'Write Iron, Butter, Syrup and Whisk as shown, in every language.',
         'Give the waffle mark room, on a dark or light ground with enough contrast.',
         'Describe our products as they are: private for now, with early access on request.',
-        'Describe hardware support as it is: Metal first, CUDA second, ROCm and Vulkan running but not yet tuned.',
+        'Describe hardware support as it is: Metal primary, CUDA being tuned, ROCm and Vulkan coming soon (they run, not tuned yet).',
       ],
       donts: [
         'Recolour, outline, rotate, crop or add effects to the mark.',

@@ -40,6 +40,8 @@ export type AboutContent = {
     title: string;
     lede: string;
     actions: Cta[];
+    /** What the name means; the same line as the brand page's. */
+    name: string;
   };
   why: {
     title: string;
@@ -94,6 +96,7 @@ export const about: Localized<AboutContent> = {
         { label: 'Meet the team', href: '/about/team' },
         { label: 'Work with us', href: '#hiring', variant: 'outline' },
       ],
+      name: '“Waffuru” is how Japanese says waffles. The name is a nod to respect for Japanese culture and deep history, a shared love of waffles and a global mission.',
     },
     why: {
       title: 'Why we *build*.',

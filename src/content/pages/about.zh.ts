@@ -20,6 +20,7 @@ const aboutZh: (typeof about)['en'] = {
       { label: '认识团队', href: '/about/team' },
       { label: '与我们共事', href: '#hiring', variant: 'outline' },
     ],
+    name: '“Waffuru”是日语里“华夫饼”的说法。这个名字表达了对日本文化及其深厚历史的敬意、对华夫饼的共同喜爱，以及一个面向全球的使命。',
   },
   why: {
     title: '我们为何*而建*。',

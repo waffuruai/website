@@ -73,7 +73,7 @@ const brandFr: (typeof brand)['en'] = {
       },
     ],
     origin:
-      '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil à l’amour du manga, à un amour partagé des gaufres et à une mission mondiale.',
+      '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil au respect de la culture japonaise et de sa longue histoire, à un amour partagé des gaufres et à une mission mondiale.',
   },
   colour: {
     title: 'La *palette*.',
@@ -300,7 +300,7 @@ const brandFr: (typeof brand)['en'] = {
       'Écrivez Iron, Butter, Syrup et Whisk tels quels, dans toutes les langues.',
       'Laissez de l’espace autour du logo gaufre, sur un fond sombre ou clair avec assez de contraste.',
       'Décrivez nos produits tels qu’ils sont : privés pour l’instant, avec un accès anticipé sur demande.',
-      'Décrivez la prise en charge matérielle telle qu’elle est : Metal en premier, CUDA en second, ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
+      'Décrivez la prise en charge matérielle telle qu’elle est : Metal en premier, CUDA en cours d’optimisation, ROCm et Vulkan bientôt (ils fonctionnent, mais ne sont pas encore optimisés).',
     ],
     donts: [
       'Recolorer, détourer, pivoter ou rogner le logo, ou y ajouter des effets.',

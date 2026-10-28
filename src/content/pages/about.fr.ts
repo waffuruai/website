@@ -20,6 +20,7 @@ const aboutFr: (typeof about)['en'] = {
       { label: 'Rencontrer l’équipe', href: '/about/team' },
       { label: 'Travailler avec nous', href: '#hiring', variant: 'outline' },
     ],
+    name: '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil au respect de la culture japonaise et de sa longue histoire, à un amour partagé des gaufres et à une mission mondiale.',
   },
   why: {
     title: 'Pourquoi nous *construisons*.',

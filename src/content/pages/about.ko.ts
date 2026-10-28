@@ -20,6 +20,7 @@ const aboutKo: (typeof about)['en'] = {
       { label: '팀 소개', href: '/about/team' },
       { label: '함께 일하기', href: '#hiring', variant: 'outline' },
     ],
+    name: '“Waffuru”는 일본어로 와플을 부르는 말입니다. 일본 문화와 깊은 역사에 대한 존중, 와플을 함께 좋아하는 마음, 그리고 전 세계를 향한 미션에 보내는 인사입니다.',
   },
   why: {
     title: '우리가 *만드는* 이유.',
