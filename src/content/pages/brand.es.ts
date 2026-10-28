@@ -242,7 +242,7 @@ const brandEs: (typeof brand)['en'] = {
   motifs: {
     title: 'Motivos, en *movimiento*.',
     intro:
-      'CSS puro, tomado de los productos: casillas que brillan, un sello, una porción que se derrite, luces de estado y una gota de jarabe. Dejan de moverse cuando el dispositivo del visitante pide reducir el movimiento.',
+      'CSS puro, tomado de los productos, de arriba abajo del stack: casillas que brillan, un batidor, gotas de jarabe, mantequilla que se derrite, una prensa y luces de estado. Dejan de moverse cuando el dispositivo del visitante pide reducir el movimiento.',
     items: [
       {
         key: 'tiles',
@@ -250,26 +250,33 @@ const brandEs: (typeof brand)['en'] = {
         description: 'Una cuadrícula de casillas, algunas brillando en dorado.',
       },
       {
-        key: 'stamps',
-        name: 'Sellos',
+        key: 'whisk',
+        name: 'Batidor',
         description:
-          'Una cuadrícula que se presiona casilla a casilla. El motivo de Iron.',
+          'Varillas que giran en un bol e incorporan oro a la mezcla. El motivo de Whisk.',
+      },
+      {
+        key: 'drips',
+        name: 'Goteo',
+        description:
+          'Jarabe que se acumula y gotea; cada gota, un dato. El motivo de Syrup.',
       },
       {
         key: 'pat',
-        name: 'Porción de mantequilla',
+        name: 'Mantequilla derretida',
         description:
-          'Una porción que se derrite y vuelve a empezar. El motivo de Butter.',
+          'Una porción que se derrite en un charco brillante y lo engrasa todo. El motivo de Butter.',
+      },
+      {
+        key: 'stamps',
+        name: 'Prensa',
+        description: 'Una prensa que baja fila por fila. El motivo de Iron.',
       },
       {
         key: 'leds',
         name: 'LED',
-        description: 'Un rack de luces de estado. El motivo de Syrup.',
-      },
-      {
-        key: 'drip',
-        name: 'Goteo',
-        description: 'Una gota que baja por una línea. El motivo de Whisk.',
+        description:
+          'Un rack de luces de estado, reservado para un producto que aún está en camino.',
       },
     ],
   },

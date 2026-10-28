@@ -1,9 +1,12 @@
 import { BrandSection } from '@/components/brand/brand-section';
+import {
+  ButterMelt,
+  IronPress,
+  SyrupDrips,
+  WhiskSpin,
+} from '@/components/sections/motifs';
 import { TileDeco } from '@/components/sections/tile-deco';
 import type { BrandContent, MotifKey } from '@/content/pages/brand';
-
-/** A 4x4 grid index as [row, column]. */
-const GRID = Array.from({ length: 16 }, (_, i) => [Math.floor(i / 4), i % 4]);
 
 /** Live CSS from `motifs.css`: nothing is an image, nothing needs script. */
 function Motif({ kind }: { kind: MotifKey }) {
@@ -21,26 +24,14 @@ function Motif({ kind }: { kind: MotifKey }) {
           className="w-[132px]"
         />
       );
-    case 'stamps':
-      return (
-        <div className="grid w-[116px] grid-cols-4 gap-1.5">
-          {GRID.map(([row, column]) => (
-            <div
-              key={`${row}-${column}`}
-              className="wf-stamp"
-              style={{
-                animationDelay: `${((row + column) * 0.12).toFixed(2)}s`,
-              }}
-            />
-          ))}
-        </div>
-      );
+    case 'whisk':
+      return <WhiskSpin size="md" className="mt-4" />;
+    case 'drips':
+      return <SyrupDrips size="md" />;
     case 'pat':
-      return (
-        <div className="flex h-full items-end pb-8">
-          <div className="wf-pat" />
-        </div>
-      );
+      return <ButterMelt size="md" className="mt-10" />;
+    case 'stamps':
+      return <IronPress size="md" />;
     case 'leds':
       return (
         <div className="grid grid-cols-6 gap-4">
@@ -53,13 +44,6 @@ function Motif({ kind }: { kind: MotifKey }) {
               }}
             />
           ))}
-        </div>
-      );
-    case 'drip':
-      return (
-        <div className="relative h-32 w-6">
-          <div className="wf-drip" />
-          <div className="wf-drop" />
         </div>
       );
   }

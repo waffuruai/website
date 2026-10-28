@@ -243,7 +243,7 @@ const brandKo: (typeof brand)['en'] = {
   motifs: {
     title: '*움직이는* 모티프.',
     intro:
-      '제품에서 가져온 순수 CSS 모티프입니다. 빛나는 타일, 스탬프, 녹는 버터, 상태 표시등, 흘러내리는 시럽 한 방울. 방문자의 기기가 동작 줄이기를 요청하면 움직임을 멈춥니다.',
+      '제품에서 가져온 순수 CSS 모티프입니다. 스택 위에서부터 빛나는 타일, 거품기, 떨어지는 시럽, 녹는 버터, 프레스, 상태 표시등. 방문자의 기기가 동작 줄이기를 요청하면 움직임을 멈춥니다.',
     items: [
       {
         key: 'tiles',
@@ -251,24 +251,33 @@ const brandKo: (typeof brand)['en'] = {
         description: '타일 격자 가운데 몇 칸이 골드로 빛납니다.',
       },
       {
-        key: 'stamps',
-        name: '스탬프',
-        description: '한 칸씩 눌러 찍는 격자. Iron의 모티프입니다.',
+        key: 'whisk',
+        name: '거품기',
+        description:
+          '볼 안에서 도는 와이어가 골드를 섞어 넣습니다. Whisk의 모티프입니다.',
+      },
+      {
+        key: 'drips',
+        name: '시럽 방울',
+        description:
+          '모였다가 떨어지는 시럽, 한 방울이 데이터 하나. Syrup의 모티프입니다.',
       },
       {
         key: 'pat',
-        name: '버터 조각',
-        description: '녹았다가 다시 돌아오는 버터 조각. Butter의 모티프입니다.',
+        name: '녹는 버터',
+        description:
+          '버터 조각이 녹아 번지며 모든 것을 매끄럽게 합니다. Butter의 모티프입니다.',
+      },
+      {
+        key: 'stamps',
+        name: '프레스',
+        description: '한 줄씩 내려찍는 프레스. Iron의 모티프입니다.',
       },
       {
         key: 'leds',
         name: 'LED',
-        description: '상태 표시등이 늘어선 랙. Syrup의 모티프입니다.',
-      },
-      {
-        key: 'drip',
-        name: '드립',
-        description: '선을 따라 흘러내리는 한 방울. Whisk의 모티프입니다.',
+        description:
+          '상태 표시등이 늘어선 랙. 아직 준비 중인 제품을 위해 남겨 두었습니다.',
       },
     ],
   },

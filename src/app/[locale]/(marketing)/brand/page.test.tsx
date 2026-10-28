@@ -74,15 +74,25 @@ describe('Brand page', () => {
     ).toBeTruthy();
   });
 
-  it('runs all five motifs live in CSS', async () => {
+  it('runs all six motifs live in CSS, top of the stack down', async () => {
     const { container } = await renderPage();
     const motifs = container.querySelector('#motifs');
     expect(motifs?.querySelectorAll('.wf-cell')).toHaveLength(16);
-    expect(motifs?.querySelectorAll('.wf-stamp')).toHaveLength(16);
+    expect(motifs?.querySelectorAll('.wf-loop')).toHaveLength(4);
+    expect(motifs?.querySelectorAll('.wf-strand')).toHaveLength(7);
     expect(motifs?.querySelector('.wf-pat')).not.toBeNull();
+    expect(motifs?.querySelectorAll('.wf-stamp')).toHaveLength(16);
     expect(motifs?.querySelectorAll('.wf-led')).toHaveLength(12);
-    expect(motifs?.querySelector('.wf-drop')).not.toBeNull();
-    expect(motifs?.querySelectorAll('h3')).toHaveLength(5);
+    expect(
+      [...(motifs?.querySelectorAll('h3') ?? [])].map((h) => h.textContent),
+    ).toEqual([
+      'Waffle tiles',
+      'Whisk',
+      'Drips',
+      'Melting butter',
+      'Press',
+      'LEDs',
+    ]);
   });
 
   it('puts press contact one click away', async () => {

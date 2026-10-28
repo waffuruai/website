@@ -42,7 +42,7 @@ export type TypeFace = {
   source: { label: string; href: string };
 };
 
-export type MotifKey = 'tiles' | 'stamps' | 'pat' | 'leds' | 'drip';
+export type MotifKey = 'tiles' | 'whisk' | 'drips' | 'pat' | 'stamps' | 'leds';
 
 export type BrandContent = {
   seo: Seo;
@@ -335,7 +335,7 @@ export const brand: Localized<BrandContent> = {
     motifs: {
       title: 'Motifs, in *motion*.',
       intro:
-        'Pure CSS, drawn from the products: tiles that glow, a stamp, a melting pat, status lights and a drop of syrup. They stop moving when a visitor’s device asks for reduced motion.',
+        'Pure CSS, drawn from the products, top of the stack down: tiles that glow, a whisk, syrup drips, melting butter, a press, and status lights. They stop moving when a visitor’s device asks for reduced motion.',
       items: [
         {
           key: 'tiles',
@@ -343,24 +343,33 @@ export const brand: Localized<BrandContent> = {
           description: 'A grid of tiles, a few of them glowing gold.',
         },
         {
-          key: 'stamps',
-          name: 'Stamps',
-          description: 'A grid pressed one square at a time. Iron’s motif.',
+          key: 'whisk',
+          name: 'Whisk',
+          description:
+            'Wire loops spinning in a bowl, folding gold into the mix. Whisk’s motif.',
+        },
+        {
+          key: 'drips',
+          name: 'Drips',
+          description:
+            'Syrup gathering and dripping, every drop a data point. Syrup’s motif.',
         },
         {
           key: 'pat',
-          name: 'Butter pat',
-          description: 'A pat that melts and resets. Butter’s motif.',
+          name: 'Melting butter',
+          description:
+            'A pat melting into a slick pool that greases the works. Butter’s motif.',
+        },
+        {
+          key: 'stamps',
+          name: 'Press',
+          description: 'A press coming down one row at a time. Iron’s motif.',
         },
         {
           key: 'leds',
           name: 'LEDs',
-          description: 'A rack of status lights. Syrup’s motif.',
-        },
-        {
-          key: 'drip',
-          name: 'Drip',
-          description: 'A drop running down a line. Whisk’s motif.',
+          description:
+            'A rack of status lights, held for a product still in the works.',
         },
       ],
     },

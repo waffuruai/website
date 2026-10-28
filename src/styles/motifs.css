@@ -1,6 +1,7 @@
 /*
- * The After Hours motifs: tile grid, stamps, melting butter, LEDs, syrup drip,
- * pulses, cursor and the hero rise. Pure CSS, so they cost no JavaScript.
+ * The After Hours motifs: tile grid, Iron's press, Butter's melting pat,
+ * Syrup's drips, Whisk's whisk, LEDs, the overview's syrup rail, pulses,
+ * cursor and the hero rise. Pure CSS, so they cost no JavaScript.
  * Every animation stops under prefers-reduced-motion (see tailwind.css).
  * Colours come from tokens so the motifs follow light and dark.
  */
@@ -27,25 +28,195 @@
     animation-name: wfa-pool;
   }
 
-  /* Iron: a 4x4 grid of tiles being pressed. */
+  /* Iron: a press coming down on a grid one row at a time, top to bottom.
+     The grid sets --rows and each tile its --row, so the press visits every
+     row once a cycle. */
   .wf-stamp {
     aspect-ratio: 1;
     background: var(--off);
     border-radius: 2px;
-    animation: wfa-stamp 3.2s cubic-bezier(0.7, 0, 0.2, 1) infinite;
+    animation: wfa-stamp calc(var(--rows, 4) * 0.7s)
+      cubic-bezier(0.7, 0, 0.2, 1) infinite;
+    animation-delay: calc(var(--row, 0) * 0.7s);
   }
 
-  /* Butter: a pat that melts and resets. */
+  /* Butter: a pat melting into a slick pool, and a glint running across it.
+     --pat sets the pat's width; everything else scales from it. */
+  .wf-butter {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: calc(var(--pat, 60px) * 3);
+    height: calc(var(--pat, 60px) * 1.1);
+  }
   .wf-pat {
-    width: 64px;
-    height: 64px;
+    position: relative;
+    z-index: 1;
+    width: var(--pat, 60px);
+    height: calc(var(--pat, 60px) * 0.62);
     background: var(--brand);
-    border-radius: 10px;
+    border-radius: 6px;
+    box-shadow: inset 0 calc(var(--pat, 60px) * 0.12) 0
+      color-mix(in oklab, var(--cream) 30%, transparent);
     transform-origin: 50% 100%;
-    animation: wfa-melt 6s ease-in-out infinite alternate;
+    animation: wfa-melt 7s ease-in-out infinite;
+  }
+  .wf-pool {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: var(--pat, 60px);
+    height: calc(var(--pat, 60px) * 0.16);
+    margin-left: calc(var(--pat, 60px) / -2);
+    border-radius: 50%;
+    background: color-mix(in oklab, var(--brand) 55%, transparent);
+    opacity: 0.45;
+    transform: scaleX(1.4);
+    animation: wfa-pool 7s ease-in-out infinite;
+  }
+  .wf-glint {
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    z-index: 2;
+    width: calc(var(--pat, 60px) * 0.36);
+    height: 2px;
+    border-radius: 1px;
+    background: var(--cream);
+    opacity: 0;
+    animation: wfa-glint 7s ease-in infinite;
   }
 
-  /* Syrup: a rack of status LEDs. */
+  /* Syrup: a rail of syrup whose strands gather and let go, each drop
+     landing on a bar that lights up, like telemetry from a fleet. Each
+     .wf-stream sets --len (strand), --h (bar), --d (cycle) and --delay. */
+  .wf-syrup {
+    position: relative;
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+  }
+  .wf-syrup::before,
+  .wf-syrup::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+  .wf-syrup::before {
+    top: 0;
+    z-index: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--brand);
+  }
+  .wf-syrup::after {
+    bottom: 0;
+    height: 1px;
+    background: color-mix(in oklab, var(--foreground) 14%, transparent);
+  }
+  .wf-stream {
+    position: relative;
+  }
+  .wf-strand {
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    width: 3px;
+    height: var(--len, 14px);
+    margin-left: -1.5px;
+    border-radius: 0 0 2px 2px;
+    background: var(--brand);
+    transform-origin: 50% 0;
+    animation: wfa-strand var(--d, 3.6s) ease-in var(--delay, 0s) infinite;
+  }
+  .wf-fall {
+    position: absolute;
+    top: var(--len, 14px);
+    left: 50%;
+    width: 6px;
+    height: 8px;
+    margin-left: -3px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: var(--brand);
+    opacity: 0;
+    animation: wfa-fall var(--d, 3.6s) cubic-bezier(0.55, 0, 0.8, 0.4)
+      var(--delay, 0s) infinite;
+  }
+  .wf-bar {
+    position: absolute;
+    right: 24%;
+    bottom: 0;
+    left: 24%;
+    height: var(--h, 40%);
+    border-radius: 2px 2px 0 0;
+    background: var(--off);
+    transform-origin: 50% 100%;
+    animation: wfa-tick var(--d, 3.6s) ease-out var(--delay, 0s) infinite;
+  }
+
+  /* Whisk: wire loops spinning on one axis in a bowl, gold mix-ins circling
+     through it. Each .wf-mix sets --r (orbit), --t (half a lap), --delay,
+     --s (where it rests without motion) and --dot (its size). */
+  .wf-whisk {
+    position: relative;
+    perspective: 600px;
+  }
+  .wf-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--foreground) 30%, transparent);
+  }
+  .wf-whisk-head {
+    position: absolute;
+    left: 50%;
+    transform-style: preserve-3d;
+    animation: wfa-spin 2.4s linear infinite;
+  }
+  .wf-loop {
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid color-mix(in oklab, var(--foreground) 50%, transparent);
+    border-radius: 50%;
+    transform: rotateY(calc(var(--i, 0) * 45deg));
+  }
+  .wf-loop:first-child {
+    border-color: var(--brand);
+  }
+  .wf-bowl {
+    position: absolute;
+    right: 4%;
+    bottom: 0;
+    left: 4%;
+    border: 1.5px solid color-mix(in oklab, var(--foreground) 22%, transparent);
+    border-top: 0;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  }
+  .wf-mix {
+    position: absolute;
+    left: 50%;
+    width: var(--dot, 8px);
+    height: var(--dot, 8px);
+    margin-left: calc(var(--dot, 8px) / -2);
+    transform: translateX(calc(var(--r, 40px) * var(--s, 0)));
+    animation: wfa-sway-x var(--t, 1.4s) ease-in-out var(--delay, 0s) infinite
+      alternate;
+  }
+  .wf-mix::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--brand);
+    animation: wfa-sway-y var(--t, 1.4s) ease-in-out
+      calc(var(--delay, 0s) - var(--t, 1.4s) / 2) infinite alternate;
+  }
+
+  /* Status LEDs, held for a product still in the works. */
   .wf-led {
     width: 8px;
     height: 8px;
@@ -54,7 +225,7 @@
     animation: wfa-led 4s steps(1) infinite;
   }
 
-  /* Whisk: a drop running down a line. */
+  /* The products overview's rail: a drop of syrup running down the stack. */
   .wf-drip {
     position: absolute;
     top: 0;
@@ -182,35 +353,170 @@
   }
 }
 
+/* The press slams, holds, then lifts off, leaving a faint mark. Fractions
+   stay inside one row's share of the cycle for up to six rows. */
 @keyframes wfa-stamp {
   0%,
-  70%,
+  16%,
   100% {
     background: var(--off);
-    transform: scale(1);
+    transform: none;
   }
-  78% {
+  3%,
+  8% {
     background: var(--foreground);
-    transform: scale(0.82);
+    transform: translateY(1px) scale(0.84);
   }
-  86% {
+  12% {
     background: var(--faint);
-    transform: scale(1);
+    transform: scale(1.04);
   }
 }
 
 @keyframes wfa-melt {
   0% {
-    border-radius: 10px;
-    transform: scale(1, 1);
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(-30%);
   }
+  6%,
+  22% {
+    border-radius: 6px;
+    opacity: 1;
+    transform: none;
+  }
+  50% {
+    border-radius: 40% 40% 8px 8px / 60% 60% 8px 8px;
+    transform: scale(1.18, 0.62);
+  }
+  72% {
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(1.6, 0.2);
+  }
+  86%,
+  100% {
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.8, 0.1);
+  }
+}
+
+@keyframes wfa-pool {
+  0%,
+  22% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scaleX(1.8);
+  }
+  76% {
+    opacity: 0.8;
+    transform: scaleX(3);
+  }
+  94%,
+  100% {
+    opacity: 0;
+    transform: scaleX(3.3);
+  }
+}
+
+/* Runs across the pool, left to right, once it has spread. */
+@keyframes wfa-glint {
+  0%,
   60% {
-    border-radius: 40% 40% 12px 12px;
-    transform: scale(1.25, 0.7);
+    left: calc(50% - var(--pat, 60px) * 1.3);
+    opacity: 0;
+  }
+  62%,
+  71% {
+    opacity: 0.9;
+  }
+  72%,
+  100% {
+    left: calc(50% + var(--pat, 60px) * 1.1);
+    opacity: 0;
+  }
+}
+
+/* A strand gathers, lets its drop go and springs back. */
+@keyframes wfa-strand {
+  0%,
+  100% {
+    transform: scaleY(0.55);
+  }
+  68% {
+    transform: scaleY(1.15);
+  }
+  72% {
+    transform: scaleY(0.5);
+  }
+}
+
+@keyframes wfa-fall {
+  0%,
+  68% {
+    top: var(--len, 14px);
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  88% {
+    top: calc(100% - var(--h, 40%) - 8px);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    top: calc(100% - var(--h, 40%) - 8px);
+    opacity: 0;
+  }
+}
+
+/* The bar lights up as its drop lands. */
+@keyframes wfa-tick {
+  0%,
+  87% {
+    background: var(--off);
+    transform: none;
+  }
+  90% {
+    background: var(--brand);
+    transform: scaleY(1.1);
   }
   100% {
-    border-radius: 50% 50% 8px 8px / 70% 70% 8px 8px;
-    transform: scale(1.6, 0.32);
+    background: var(--off);
+    transform: none;
+  }
+}
+
+@keyframes wfa-spin {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Two eased sways a quarter lap apart trace an ellipse; the dot shrinks and
+   dims on the far side. */
+@keyframes wfa-sway-x {
+  from {
+    transform: translateX(calc(var(--r, 40px) * -1));
+  }
+  to {
+    transform: translateX(var(--r, 40px));
+  }
+}
+
+@keyframes wfa-sway-y {
+  from {
+    opacity: 0.5;
+    transform: translateY(calc(var(--r, 40px) * -0.22)) scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(calc(var(--r, 40px) * 0.22)) scale(1);
   }
 }
 

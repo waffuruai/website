@@ -57,7 +57,7 @@ describe('StackFit', () => {
     expect(section?.getAttribute('aria-labelledby')).toBe('stack');
     expect(container.querySelector('#stack')?.tagName).toBe('H2');
     expect(
-      container.querySelectorAll('[aria-hidden="true"] .wf-led').length,
-    ).toBe(32);
+      container.querySelectorAll('[aria-hidden="true"] .wf-strand').length,
+    ).toBe(6);
   });
 });

@@ -238,7 +238,7 @@ const brandZh: (typeof brand)['en'] = {
   motifs: {
     title: '图案，让它*动起来*。',
     intro:
-      '纯 CSS 绘制，取材自各款产品：会发光的方块、一枚印章、融化的黄油块、状态灯和一滴糖浆。当访客的设备要求减少动态效果时，它们会停止运动。',
+      '纯 CSS 绘制，取材自各款产品，按技术栈从上到下：会发光的方块、打蛋器、滴落的糖浆、融化的黄油、压机和状态灯。当访客的设备要求减少动态效果时，它们会停止运动。',
     items: [
       {
         key: 'tiles',
@@ -246,24 +246,30 @@ const brandZh: (typeof brand)['en'] = {
         description: '一格格方块，其中几块泛着金色的光。',
       },
       {
-        key: 'stamps',
-        name: '印章',
-        description: '一次压下一个方格的网格。Iron 的图案。',
+        key: 'whisk',
+        name: '打蛋器',
+        description: '钢丝圈在碗里旋转，把金色拌进去。Whisk 的图案。',
+      },
+      {
+        key: 'drips',
+        name: '糖浆滴',
+        description: '糖浆聚起又滴落，每一滴都是一个数据点。Syrup 的图案。',
       },
       {
         key: 'pat',
-        name: '黄油块',
-        description: '融化后再重置的黄油块。Butter 的图案。',
+        name: '融化的黄油',
+        description:
+          '黄油块化成一摊油亮的黄油，让一切运转更顺滑。Butter 的图案。',
+      },
+      {
+        key: 'stamps',
+        name: '压机',
+        description: '一次压下一整行的压机。Iron 的图案。',
       },
       {
         key: 'leds',
         name: 'LED 灯',
-        description: '一排状态灯。Syrup 的图案。',
-      },
-      {
-        key: 'drip',
-        name: '滴落',
-        description: '沿着线条流下的一滴。Whisk 的图案。',
+        description: '一排状态灯，留给一款还在打磨中的产品。',
       },
     ],
   },

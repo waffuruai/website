@@ -238,7 +238,7 @@ const brandJa: (typeof brand)['en'] = {
   motifs: {
     title: '動く*モチーフ*',
     intro:
-      'すべて CSS だけで描いた、製品由来のモチーフ。光るタイル、スタンプ、溶けていくバター、ステータスライト、そしてシロップのしずく。閲覧する人の端末が「動きを減らす」設定になっている場合は、動きを止めます。',
+      'すべて CSS だけで描いた、製品由来のモチーフ。スタックの上から順に、光るタイル、泡立て器、シロップのしずく、溶けていくバター、プレス、ステータスライト。閲覧する人の端末が「動きを減らす」設定になっている場合は、動きを止めます。',
     items: [
       {
         key: 'tiles',
@@ -247,24 +247,33 @@ const brandJa: (typeof brand)['en'] = {
           'タイルを敷き詰めたグリッド。いくつかがゴールドに光ります。',
       },
       {
-        key: 'stamps',
-        name: 'スタンプ',
-        description: '1 マスずつ押されていくグリッド。Iron のモチーフ。',
+        key: 'whisk',
+        name: '泡立て器',
+        description:
+          'ボウルの中で回るワイヤーが、ゴールドを混ぜ込みます。Whisk のモチーフ。',
+      },
+      {
+        key: 'drips',
+        name: 'しずく',
+        description:
+          'たまっては落ちるシロップ。ひとしずくがひとつのデータ。Syrup のモチーフ。',
       },
       {
         key: 'pat',
-        name: 'バターのひとかけ',
-        description: '溶けては元に戻るひとかけ。Butter のモチーフ。',
+        name: '溶けるバター',
+        description:
+          'ひとかけが溶けて広がり、すべてをなめらかに。Butter のモチーフ。',
+      },
+      {
+        key: 'stamps',
+        name: 'プレス',
+        description: '1 行ずつ下りてくるプレス。Iron のモチーフ。',
       },
       {
         key: 'leds',
         name: 'LED',
-        description: 'ラックに並ぶステータスライト。Syrup のモチーフ。',
-      },
-      {
-        key: 'drip',
-        name: 'しずく',
-        description: '線を伝って落ちるしずく。Whisk のモチーフ。',
+        description:
+          'ラックに並ぶステータスライト。開発中の製品のためにとってあります。',
       },
     ],
   },

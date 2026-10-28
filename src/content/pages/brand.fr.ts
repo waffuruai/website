@@ -238,7 +238,7 @@ const brandFr: (typeof brand)['en'] = {
   motifs: {
     title: 'Des motifs en *mouvement*.',
     intro:
-      'Du CSS pur, tiré des produits : des alvéoles qui s’illuminent, un tampon, une noix de beurre qui fond, des voyants d’état et une goutte de sirop. Tout s’immobilise quand l’appareil du visiteur demande de réduire les animations.',
+      'Du CSS pur, tiré des produits, du haut de la pile vers le bas : des alvéoles qui s’illuminent, un fouet, des gouttes de sirop, du beurre qui fond, une presse et des voyants d’état. Tout s’immobilise quand l’appareil du visiteur demande de réduire les animations.',
     items: [
       {
         key: 'tiles',
@@ -247,25 +247,34 @@ const brandFr: (typeof brand)['en'] = {
           'Une grille d’alvéoles, dont quelques-unes brillent en or.',
       },
       {
-        key: 'stamps',
-        name: 'Tampons',
-        description: 'Une grille pressée case par case. Le motif d’Iron.',
+        key: 'whisk',
+        name: 'Fouet',
+        description:
+          'Des fils qui tournent dans un bol et incorporent de l’or au mélange. Le motif de Whisk.',
+      },
+      {
+        key: 'drips',
+        name: 'Gouttes',
+        description:
+          'Du sirop qui s’accumule et goutte ; chaque goutte, une donnée. Le motif de Syrup.',
       },
       {
         key: 'pat',
-        name: 'Noix de beurre',
-        description: 'Une noix qui fond puis se reforme. Le motif de Butter.',
+        name: 'Beurre fondu',
+        description:
+          'Une noix qui fond en une flaque luisante et graisse les rouages. Le motif de Butter.',
+      },
+      {
+        key: 'stamps',
+        name: 'Presse',
+        description:
+          'Une presse qui descend rangée par rangée. Le motif d’Iron.',
       },
       {
         key: 'leds',
         name: 'LED',
-        description: 'Une baie de voyants d’état. Le motif de Syrup.',
-      },
-      {
-        key: 'drip',
-        name: 'Goutte',
         description:
-          'Une goutte qui coule le long d’une ligne. Le motif de Whisk.',
+          'Une baie de voyants d’état, réservée à un produit encore en préparation.',
       },
     ],
   },

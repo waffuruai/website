@@ -1,6 +1,6 @@
 import { LocalizedLink } from '@/components/localized-link';
 import { MonoLabel } from '@/components/sections/mono-label';
-import { ProductMotif } from '@/components/solutions/product-motif';
+import { ProductMotif } from '@/components/products/product-motif';
 import { SectionOpener } from '@/components/solutions/section-opener';
 import type {
   ProductInfo,
@@ -52,7 +52,7 @@ export function StackFit({
                 </h3>
               </div>
               <div className="col-start-2 row-start-1 hidden justify-end min-[390px]:flex lg:col-start-3">
-                <ProductMotif product={item.product} />
+                <ProductMotif slug={item.product} size="sm" />
               </div>
               <div className="col-span-2 flex flex-col gap-3.5 lg:col-span-1 lg:col-start-2 lg:row-start-1">
                 <p className="text-2xl leading-[1.3] text-balance text-foreground">
