@@ -48,8 +48,11 @@ export type HomeContent = {
   audiences: {
     title: string;
     intro: string;
-    items: { title: string; body: string; href?: string }[];
+    /** `soon` marks an audience whose product isn't out yet. */
+    items: { title: string; body: string; href?: string; soon?: boolean }[];
     linkLabel: string;
+    /** The badge on a `soon` item. */
+    soonLabel: string;
   };
   beliefs: {
     title: string;
@@ -158,7 +161,7 @@ export const home: Localized<HomeContent> = {
         hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
         outside: {
           title: 'Someone else’s API',
-          note: 'Not needed. Your data stays on your hardware unless you opt in.',
+          note: 'Not needed. Your data stays on your hardware unless you choose to use a hosted AI inference provider.',
         },
         outcomes: [
           'Built for a lower cost per token',
@@ -171,12 +174,13 @@ export const home: Localized<HomeContent> = {
     },
 
     audiences: {
-      title: 'A seat at the *table*.',
+      title: 'We’ve reserved a seat at the table for *you*.',
       intro: 'Whoever you are, the same stack works for you.',
       items: [
         {
           title: 'For you',
           body: 'A private assistant on your own laptop. Your notes, your code and your questions stay on your machine.',
+          soon: true,
         },
         {
           title: 'For companies',
@@ -195,6 +199,7 @@ export const home: Localized<HomeContent> = {
         },
       ],
       linkLabel: 'See how',
+      soonLabel: 'Coming soon',
     },
 
     beliefs: {
@@ -210,8 +215,8 @@ export const home: Localized<HomeContent> = {
           body: 'Demand for intelligence is limitless; power and chips are not. The win is more useful work from every unit of compute.',
         },
         {
-          title: 'Good enough, on hardware you own',
-          body: 'Within about two years, models on the machines people already have will be good enough for meaningful work. We are building for that.',
+          title: 'Run on hardware you own',
+          body: 'Models on the machines people already have are good enough for meaningful work. We’ve been building for that.',
         },
       ],
       links: [

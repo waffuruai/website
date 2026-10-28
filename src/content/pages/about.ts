@@ -103,14 +103,14 @@ export const about: Localized<AboutContent> = {
       intro:
         'Intelligence should run where people already are using technology.',
       paragraphs: [
-        'Models are getting good enough to run on hardware people already own.',
+        'Models are now good enough to run on hardware people already own.',
         'That only matters if the stack that runs them is ready for it. It has to be faster, cheaper, easy to use and **yours**: kernels that get more from every watt, correct results faster, running vision, audio and text models without a pile of dependencies and complexity, and memory and context that stays on your machine.',
         'Access to intelligence must not depend on geography, wealth or credentials. That means a lower cost per token everywhere: on the laptop someone already owns, and on the GPUs a business owns or rents.',
       ],
       constraintsLabel: 'Two constraints we hold ourselves to',
       constraints: [
         'Minimize token usage and cost per token.',
-        'Your data stays on your hardware unless you opt in.',
+        'Your data stays on your hardware unless you choose to use a hosted AI inference provider.',
       ],
     },
     beliefs: {
@@ -131,8 +131,8 @@ export const about: Localized<AboutContent> = {
           body: 'Every efficiency gain gets spent on more intelligence, the [Jevons paradox](https://en.wikipedia.org/wiki/Jevons_paradox) at work. That is why efficiency work never finishes.',
         },
         {
-          statement: 'Good-enough models on commodity hardware are close.',
-          body: 'Within about two years, models running on hardware people already own will be good enough for meaningful work. Moore’s law and fast AI progress keep compounding.',
+          statement: 'Good-enough models on commodity hardware are here.',
+          body: 'Models running on hardware people already own are good enough for meaningful work today, and Moore’s law and fast AI progress keep compounding.',
         },
         {
           statement:

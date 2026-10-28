@@ -39,7 +39,7 @@ const militaryEs: (typeof military)['en'] = {
       {
         tag: 'control',
         title: 'Ejecuta modelos en hardware que posees y aseguras.',
-        body: 'Butter sirve modelos en máquinas que custodias, de un Mac Studio a estaciones de trabajo RTX y DGX Spark. Los prompts, los documentos y los resultados se quedan en ese hardware a menos que tú lo autorices.',
+        body: 'Butter sirve modelos en máquinas que custodias, de un Mac Studio a estaciones de trabajo RTX y DGX Spark. Los prompts, los documentos y los resultados se quedan en ese hardware a menos que elijas usar un proveedor de inferencia de IA alojado.',
       },
       {
         tag: 'inference',
@@ -95,7 +95,7 @@ const militaryEs: (typeof military)['en'] = {
     {
       question: '¿Sale algo de nuestras máquinas?',
       answer:
-        'Los datos de inferencia no salen por defecto: los modelos se ejecutan en hardware que tú operas, y los datos se quedan ahí a menos que tú lo autorices. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene.',
+        'Los datos de inferencia no salen por defecto: los modelos se ejecutan en hardware que tú operas, y los datos se quedan ahí a menos que elijas usar un proveedor de inferencia de IA alojado. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene.',
     },
     {
       question: '¿En qué hardware funciona?',

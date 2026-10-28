@@ -52,7 +52,7 @@ const industriesOverviewKo: (typeof industriesOverview)['en'] = {
       {
         tag: 'control',
         title: '직접 *고르는* 하드웨어.',
-        body: '하나의 Iron 커널 정의가 Metal, CUDA, HIP, Vulkan으로 변환되며, 직접 동의하지 않는 한 데이터는 있는 곳에 그대로 있습니다. 벤더를 바꾸는 일은 재작성이 아니라 결정입니다.',
+        body: '하나의 Iron 커널 정의가 Metal, CUDA, HIP, Vulkan으로 변환되며, 호스팅된 AI 추론 제공업체를 쓰기로 선택하지 않는 한 데이터는 있는 곳에 그대로 있습니다. 벤더를 바꾸는 일은 재작성이 아니라 결정입니다.',
         points: [
           '온프레미스든 자체 클라우드든 워크스테이션 한 대든',
           'Syrup은 vLLM, SGLang, llama.cpp와도 동작',

@@ -117,7 +117,7 @@ export const aura: Localized<AuraCopy> = {
     starsLabel: 'GitHub stars',
     title: 'More context per *gigabyte*.',
     intro:
-      'AURA compresses the KV cache, so longer contexts and more concurrent sessions fit in the same memory. It began as our open TurboQuant+ research and now runs natively in Iron and Butter.',
+      'AURA is our compression for the KV cache, embeddings and model weights. Here it compresses the KV cache, so longer contexts and more concurrent sessions fit in the same memory. It began as our open TurboQuant+ research and now runs natively in Iron and Butter.',
     lineage: {
       heading: 'Where it comes from',
       steps: [

@@ -66,7 +66,7 @@ export const aiCompanies: Localized<SolutionPage> = {
         {
           tag: 'control',
           title: 'Give your agents a memory that stays local.',
-          body: 'Whisk compresses embeddings with TurboQuant+ and runs lexical plus vector search on the machine. Results come back with citations over MCP, so agents can pick up where they left off.',
+          body: 'Whisk compresses embeddings with our proprietary AURA algorithm and runs lexical plus vector search on the machine. Results come back with citations over MCP, so agents can pick up where they left off.',
         },
       ],
     },
@@ -103,7 +103,7 @@ export const aiCompanies: Localized<SolutionPage> = {
         {
           product: 'whisk',
           need: 'Memory for agents.',
-          body: 'Local retrieval over notes and code: embeddings compressed with TurboQuant+, lexical plus vector search, and cited results over MCP.',
+          body: 'Local retrieval over notes and code: embeddings compressed with our AURA algorithm, lexical plus vector search, and cited results over MCP.',
         },
         {
           product: 'syrup',

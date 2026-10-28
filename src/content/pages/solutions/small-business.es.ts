@@ -42,7 +42,7 @@ const smallBusinessEs: (typeof smallBusiness)['en'] = {
       {
         tag: 'control',
         title: 'Trabaja con archivos de clientes sin enviarlos a ningún lado.',
-        body: 'Los modelos, los prompts y los documentos se quedan en tu equipo a menos que tú lo autorices. Resume contratos, redacta respuestas y revisa facturas sin un tercero de por medio.',
+        body: 'Los modelos, los prompts y los documentos se quedan en tu equipo a menos que elijas usar un proveedor de inferencia de IA alojado. Resume contratos, redacta respuestas y revisa facturas sin un tercero de por medio.',
       },
       {
         tag: 'inference',
@@ -102,7 +102,7 @@ const smallBusinessEs: (typeof smallBusiness)['en'] = {
     {
       question: '¿Mis datos salen de mi equipo?',
       answer:
-        'No, salvo que tú lo autorices. Los modelos se ejecutan en local, y tus prompts, archivos y notas se quedan en tu equipo por defecto.',
+        'No, salvo que elijas usar un proveedor de inferencia de IA alojado. Los modelos se ejecutan en local, y tus prompts, archivos y notas se quedan en tu equipo por defecto.',
     },
     {
       question: '¿Puedo seguir usando las apps que ya tengo?',

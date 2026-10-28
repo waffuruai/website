@@ -46,7 +46,7 @@ const solutionsOverviewZh: (typeof solutionsOverview)['en'] = {
       {
         tag: 'control',
         title: '更多*掌控*。',
-        body: '本地优先：除非你主动选择开启，数据始终留在原处，无论是在笔记本、本地机房还是你自己的云上。',
+        body: '本地优先：无论是在笔记本、本地机房还是你自己的云上，除非你选择使用托管的 AI 推理服务商，否则数据始终留在原处。',
         points: [
           '兼容 OpenAI 的服务，应用照常工作',
           'Syrup 支持 vLLM、SGLang 和 llama.cpp',

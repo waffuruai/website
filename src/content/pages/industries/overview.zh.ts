@@ -52,7 +52,7 @@ const industriesOverviewZh: (typeof industriesOverview)['en'] = {
       {
         tag: 'control',
         title: '硬件由你*选择*。',
-        body: '一份 Iron 内核定义，可转换为 Metal、CUDA、HIP 和 Vulkan；除非你主动选择开启，数据始终留在原处。更换厂商是一个决定，而不是一次重写。',
+        body: '一份 Iron 内核定义，可转换为 Metal、CUDA、HIP 和 Vulkan；除非你选择使用托管的 AI 推理服务商，数据始终留在原处。更换厂商是一个决定，而不是一次重写。',
         points: [
           '本地机房、你自己的云，或一台工作站',
           'Syrup 支持 vLLM、SGLang 和 llama.cpp',

@@ -33,7 +33,7 @@ const waffleEs: (typeof waffle)['en'] = {
     problem:
       'La mayoría de los asistentes viven en los servidores de otro, ven todo lo que compartes y cobran por cada token. Darle a uno tu correo, tu calendario y tus archivos es confiarle tu trabajo y tu vida a un desconocido.',
     outcome:
-      'Waffle ejecuta tu asistente en hardware propio o alquilado. W obtiene su memoria y su contexto de Whisk y sus modelos de Butter, y tus datos se quedan contigo a menos que tú lo autorices.',
+      'Waffle ejecuta tu asistente en hardware propio o alquilado. W obtiene su memoria y su contexto de Whisk y sus modelos de Butter, y tus datos se quedan contigo a menos que elijas usar un proveedor de inferencia de IA alojado.',
     outcomes: [
       'Delega el trabajo de cada día, del correo y el calendario a reservas, proyectos y documentos.',
       'Guarda lo que tu asistente aprende de ti en hardware que tú controlas.',
@@ -108,7 +108,8 @@ const waffleEs: (typeof waffle)['en'] = {
     },
     {
       question: '¿Mis datos salen de mi hardware?',
-      answer: 'No, a menos que tú lo autorices.',
+      answer:
+        'No, a menos que elijas usar un proveedor de inferencia de IA alojado.',
     },
   ],
   cta: {

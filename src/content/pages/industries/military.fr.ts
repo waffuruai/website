@@ -39,7 +39,7 @@ const militaryFr: (typeof military)['en'] = {
         tag: 'control',
         title:
           'Faites tourner des modèles sur du matériel que vous possédez et sécurisez.',
-        body: 'Butter sert des modèles sur des machines que vous détenez, d’un Mac Studio aux stations RTX et à DGX Spark. Prompts, documents et sorties restent sur ce matériel, sauf si vous choisissez de les partager.',
+        body: 'Butter sert des modèles sur des machines que vous détenez, d’un Mac Studio aux stations RTX et à DGX Spark. Prompts, documents et sorties restent sur ce matériel, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       {
         tag: 'inference',
@@ -95,7 +95,7 @@ const militaryFr: (typeof military)['en'] = {
     {
       question: 'Quelque chose quitte-t-il nos machines ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut : les modèles tournent sur du matériel que vous exploitez, et les données y restent, sauf si vous choisissez de les partager. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient.',
+        'Les données d’inférence ne sortent pas par défaut : les modèles tournent sur du matériel que vous exploitez, et les données y restent, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient.',
     },
     {
       question: 'Sur quel matériel cela tourne-t-il ?',

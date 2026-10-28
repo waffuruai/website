@@ -5,7 +5,7 @@ const copy: AuraCopy = {
   starsLabel: 'GitHub 星标',
   title: '每 GB 装下更多*上下文*。',
   intro:
-    'AURA 压缩 KV 缓存，让更长的上下文和更多并发会话装进同样的内存。它始于我们的开放研究 TurboQuant+，如今原生运行在 Iron 和 Butter 中。',
+    'AURA 是我们用于 KV 缓存、嵌入向量和模型权重的压缩技术。在这里，它压缩 KV 缓存，让更长的上下文和更多并发会话装进同样的内存。它始于我们的开放研究 TurboQuant+，如今原生运行在 Iron 和 Butter 中。',
   lineage: {
     heading: '它从哪里来',
     steps: [

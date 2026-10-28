@@ -90,7 +90,7 @@ const homeEs: (typeof home)['en'] = {
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
         title: 'La API de otros',
-        note: 'No hace falta. Tus datos se quedan en tu hardware a menos que lo autorices.',
+        note: 'No hace falta. Tus datos se quedan en tu hardware a menos que elijas usar un proveedor de inferencia de IA alojado.',
       },
       outcomes: [
         'Pensado para un menor costo por token',
@@ -103,12 +103,13 @@ const homeEs: (typeof home)['en'] = {
   },
 
   audiences: {
-    title: 'Un lugar en la *mesa*.',
+    title: 'Te hemos reservado un lugar en la mesa a *ti*.',
     intro: 'Seas quien seas, el mismo stack te sirve.',
     items: [
       {
         title: 'Para ti',
         body: 'Un asistente privado en tu propio portátil. Tus notas, tu código y tus preguntas se quedan en tu equipo.',
+        soon: true,
       },
       {
         title: 'Para empresas',
@@ -127,6 +128,7 @@ const homeEs: (typeof home)['en'] = {
       },
     ],
     linkLabel: 'Ver cómo',
+    soonLabel: 'Próximamente',
   },
 
   beliefs: {
@@ -142,8 +144,8 @@ const homeEs: (typeof home)['en'] = {
         body: 'La demanda de inteligencia es ilimitada; la energía y los chips, no. La clave es sacar más trabajo útil de cada unidad de cómputo.',
       },
       {
-        title: 'Suficientemente bueno, en tu propio hardware',
-        body: 'En unos dos años, los modelos en las máquinas que la gente ya tiene serán lo bastante buenos para un trabajo con sentido. Construimos para ese momento.',
+        title: 'Corre en tu propio hardware',
+        body: 'Los modelos en las máquinas que la gente ya tiene son lo bastante buenos para un trabajo con sentido. Llevamos tiempo construyendo para eso.',
       },
     ],
     links: [

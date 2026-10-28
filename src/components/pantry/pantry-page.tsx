@@ -1,3 +1,5 @@
+import { ProductHeroPanel } from '@/components/products/product-hero-panel';
+import { PantryShelf } from '@/components/sections/motifs';
 import { CommandBlock } from '@/components/pantry/command-block';
 import { PantryFlow } from '@/components/pantry/pantry-flow';
 import { LocalizedLink } from '@/components/localized-link';
@@ -110,6 +112,15 @@ export function PantryPage({
             </a>
           </p>
         </div>
+        <ProductHeroPanel
+          motif={
+            <div aria-hidden className="pointer-events-none flex">
+              <PantryShelf size="lg" />
+            </div>
+          }
+          highlights={copy.hero.highlights}
+          statusLabel={copy.hero.panelLabel}
+        />
       </PageHero>
 
       <ProductSection id="how-it-works">

@@ -1,17 +1,18 @@
-import { ProductMotif } from '@/components/products/product-motif';
-import type { Highlight, ProductSlug } from '@/content/pages/products/types';
+import type { Highlight } from '@/content/pages/products/types';
 
 /**
  * Sits under a product's hero text: the product's motif on the left, with a
- * "Private · early access" chip, and its headline facts on the right as a
- * definition list (a short serif value over a plain-language label).
+ * status chip ("Private · early access", or Pantry's "Free · open source"),
+ * and its headline facts on the right as a definition list (a short serif
+ * value over a plain-language label).
  */
 export function ProductHeroPanel({
-  slug,
+  motif,
   highlights,
   statusLabel,
 }: {
-  slug: ProductSlug;
+  /** The product's motif at its large size, decorative. */
+  motif: React.ReactNode;
   highlights: Highlight[];
   statusLabel: string;
 }) {
@@ -21,7 +22,7 @@ export function ProductHeroPanel({
         <span className="absolute top-5 left-5 rounded-full border border-foreground/16 px-3 py-2 label-mono text-muted-foreground">
           {statusLabel}
         </span>
-        <ProductMotif slug={slug} size="lg" />
+        {motif}
       </div>
       <dl className="flex flex-col justify-center">
         {highlights.map((item) => (

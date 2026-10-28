@@ -51,7 +51,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: '로컬에 머무는 메모리를 에이전트에 주세요.',
-        body: 'Whisk는 TurboQuant+로 임베딩을 압축하고, 머신에서 어휘 검색과 벡터 검색을 함께 실행합니다. 결과는 MCP로 출처 인용과 함께 돌아오므로, 에이전트가 중단한 지점에서 이어갈 수 있습니다.',
+        body: 'Whisk는 자체 개발한 AURA 알고리즘으로 임베딩을 압축하고, 머신에서 어휘 검색과 벡터 검색을 함께 실행합니다. 결과는 MCP로 출처 인용과 함께 돌아오므로, 에이전트가 중단한 지점에서 이어갈 수 있습니다.',
       },
     ],
   },
@@ -88,7 +88,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
       {
         product: 'whisk',
         need: '에이전트를 위한 메모리.',
-        body: '노트와 코드에 대한 로컬 검색: TurboQuant+로 압축한 임베딩, 어휘 검색과 벡터 검색, MCP를 통한 출처 표기 결과.',
+        body: '노트와 코드에 대한 로컬 검색: 우리 AURA 알고리즘으로 압축한 임베딩, 어휘 검색과 벡터 검색, MCP를 통한 출처 표기 결과.',
       },
       {
         product: 'syrup',

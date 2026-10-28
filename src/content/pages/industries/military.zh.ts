@@ -37,7 +37,7 @@ const militaryZh: (typeof military)['en'] = {
       {
         tag: 'control',
         title: '在自有并由你保障安全的硬件上运行模型。',
-        body: 'Butter 在你持有的机器上提供模型服务，从 Mac Studio 到 RTX 工作站和 DGX Spark。除非你主动选择开启，提示词、文档和输出都留在这些硬件上。',
+        body: 'Butter 在你持有的机器上提供模型服务，从 Mac Studio 到 RTX 工作站和 DGX Spark。除非你选择使用托管的 AI 推理服务商，提示词、文档和输出都留在这些硬件上。',
       },
       {
         tag: 'inference',
@@ -92,7 +92,7 @@ const militaryZh: (typeof military)['en'] = {
     {
       question: '会有任何东西离开我们的机器吗？',
       answer:
-        '推理数据默认不会离开：模型在你运营的硬件上运行，除非你主动选择开启，数据始终留在那里。每台 Syrup 主机运行一个 sidecar，上报带签名的遥测数据，我们会逐项讲清楚其中包含什么。',
+        '推理数据默认不会离开：模型在你运营的硬件上运行，除非你选择使用托管的 AI 推理服务商，数据始终留在那里。每台 Syrup 主机运行一个 sidecar，上报带签名的遥测数据，我们会逐项讲清楚其中包含什么。',
     },
     {
       question: '它能在哪些硬件上运行？',

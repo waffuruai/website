@@ -38,7 +38,7 @@ const governmentFr: (typeof government)['en'] = {
       {
         tag: 'control',
         title: 'Gardez les données dans votre juridiction.',
-        body: 'Butter sert des modèles sur des serveurs que vous exploitez, sur site ou dans un cloud de votre choix : prompts et documents restent sur une infrastructure que vous maîtrisez. Les données restent où elles sont, sauf si vous choisissez de les partager.',
+        body: 'Butter sert des modèles sur des serveurs que vous exploitez, sur site ou dans un cloud de votre choix : prompts et documents restent sur une infrastructure que vous maîtrisez. Les données restent où elles sont, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       {
         tag: 'cost',
@@ -98,7 +98,7 @@ const governmentFr: (typeof government)['en'] = {
     {
       question: 'Des données quittent-elles notre infrastructure ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut, car les données restent sur la machine, sauf si vous choisissez de les partager. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
+        'Les données d’inférence ne sortent pas par défaut, car les données restent sur la machine, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
     },
     {
       question: 'Cela peut-il fonctionner hors ligne ?',

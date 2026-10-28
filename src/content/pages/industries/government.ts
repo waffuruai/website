@@ -59,7 +59,7 @@ export const government: Localized<IndustryPage> = {
         {
           tag: 'control',
           title: 'Keep data in your jurisdiction.',
-          body: 'Butter serves models on servers you operate, on-prem or in a cloud you choose, so prompts and documents stay on infrastructure you control. Data stays put unless you opt in.',
+          body: 'Butter serves models on servers you operate, on-prem or in a cloud you choose, so prompts and documents stay on infrastructure you control. Data stays put unless you choose to use a hosted AI inference provider.',
         },
         {
           tag: 'cost',
@@ -119,7 +119,7 @@ export const government: Localized<IndustryPage> = {
       {
         question: 'Does any data leave our infrastructure?',
         answer:
-          'Inference data does not leave by default, because data stays on the machine unless you opt in. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
+          'Inference data does not leave by default, because data stays on the machine unless you choose to use a hosted AI inference provider. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
       },
       {
         question: 'Can it run offline?',

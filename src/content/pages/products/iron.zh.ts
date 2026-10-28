@@ -20,7 +20,7 @@ const ironZh: (typeof iron)['en'] = {
   },
   hero: {
     title: '一次定义内核，生成*四种*后端。',
-    lede: '把纯粹的数学直接压进高性能硅片。Iron 是嵌入 Rust 的 DSL：内核只写一次，先转换为共享 IR，再生成 Metal、CUDA、HIP/ROCm 或 Vulkan SPIR-V。',
+    lede: '让你的推理引擎 brrrr 地飞转起来。Iron 是嵌入 Rust 的 DSL：内核只写一次，就能编译成针对特定硬件优化的内核，并为主流模型和常见工作负载做了调优。',
     highlights: [
       { value: '4', label: '一份内核定义对应的 GPU 后端数' },
       { value: '~1,139', label: '内核声明' },
@@ -74,7 +74,6 @@ const ironZh: (typeof iron)['en'] = {
   },
   specs: {
     heading: '技术*细节*。',
-    intro: '给会细读的人看的细节。',
     rows: [
       {
         term: '语言',

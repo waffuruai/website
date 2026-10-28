@@ -118,6 +118,10 @@ describe('/products/[slug] route', () => {
       ),
     ).toContain('You write this.Iron writes the rest.');
     expect(container.querySelector('#platforms')).toBeNull();
+    // It opens on the labs whose models run on it, before the story.
+    const ids = sectionIds(container);
+    expect(ids.indexOf('models')).toBeGreaterThan(-1);
+    expect(ids.indexOf('models')).toBeLessThan(ids.indexOf('story'));
     const tiers = [...container.querySelectorAll('h4')].map(
       (heading) => heading.textContent,
     );

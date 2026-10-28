@@ -149,7 +149,6 @@ const butterKo: (typeof butter)['en'] = {
   ],
   specs: {
     heading: '기술 *세부 사항*.',
-    intro: '꼼꼼히 읽어 보실 분들을 위한 상세 정보.',
     rows: [
       {
         term: '런타임',

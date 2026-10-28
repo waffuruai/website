@@ -59,7 +59,7 @@ export const financialServices: Localized<IndustryPage> = {
         {
           tag: 'control',
           title: 'Use AI on client data without sending it out.',
-          body: 'Butter serves models on servers you operate, on-prem or in your private cloud, so prompts, documents and outputs stay on infrastructure you control. Our default is that data stays put unless you opt in.',
+          body: 'Butter serves models on servers you operate, on-prem or in your private cloud, so prompts, documents and outputs stay on infrastructure you control. Our default is that data stays put unless you choose to use a hosted AI inference provider.',
         },
         {
           tag: 'cost',
@@ -118,7 +118,7 @@ export const financialServices: Localized<IndustryPage> = {
       {
         question: 'Does client data leave our network?',
         answer:
-          'Inference data does not leave by default, because data stays on the machine unless you opt in. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains.',
+          'Inference data does not leave by default, because data stays on the machine unless you choose to use a hosted AI inference provider. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains.',
       },
       {
         question: 'Can we see what each workload costs?',

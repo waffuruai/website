@@ -52,7 +52,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: 'Donnez à vos agents une mémoire qui reste locale.',
-        body: 'Whisk compresse les embeddings avec TurboQuant+ et exécute une recherche lexicale plus vectorielle sur la machine. Les résultats reviennent avec leurs citations via MCP, et les agents peuvent reprendre là où ils s’étaient arrêtés.',
+        body: 'Whisk compresse les embeddings avec notre algorithme propriétaire AURA et exécute une recherche lexicale plus vectorielle sur la machine. Les résultats reviennent avec leurs citations via MCP, et les agents peuvent reprendre là où ils s’étaient arrêtés.',
       },
     ],
   },
@@ -90,7 +90,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
       {
         product: 'whisk',
         need: 'De la mémoire pour les agents.',
-        body: 'Recherche locale sur les notes et le code : embeddings compressés avec TurboQuant+, recherche lexicale plus vectorielle et résultats cités via MCP.',
+        body: 'Recherche locale sur les notes et le code : embeddings compressés avec notre algorithme AURA, recherche lexicale plus vectorielle et résultats cités via MCP.',
       },
       {
         product: 'syrup',

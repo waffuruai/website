@@ -167,6 +167,7 @@ const zh: Dictionary = {
     flagsLabel: '美国和加拿大',
     social: 'Waffuru 的 {network}',
     rights: '© {year} Waffuru AI Inc.',
+    versionLabel: '网站版本、提交和日期',
   },
   newsletter: {
     heading: '获取最新动态',

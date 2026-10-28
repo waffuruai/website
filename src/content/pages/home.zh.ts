@@ -90,7 +90,7 @@ const homeZh: (typeof home)['en'] = {
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
         title: '别人的 API',
-        note: '不需要。除非你主动选择开启，数据始终留在你的硬件上。',
+        note: '不需要。除非你选择使用托管的 AI 推理服务商，数据始终留在你的硬件上。',
       },
       outcomes: ['为降低每 token 成本而打造', '默认私密', '补丁到位，一目了然'],
       caption:
@@ -99,12 +99,13 @@ const homeZh: (typeof home)['en'] = {
   },
 
   audiences: {
-    title: '为你留一个*座位*。',
+    title: '我们已在餐桌旁为*你*留好了座位。',
     intro: '无论你是谁，同一套技术栈都适用。',
     items: [
       {
         title: '为你自己',
         body: '在你自己的笔记本上运行私人助理。你的笔记、代码和问题都留在你的机器上。',
+        soon: true,
       },
       {
         title: '为企业',
@@ -123,6 +124,7 @@ const homeZh: (typeof home)['en'] = {
       },
     ],
     linkLabel: '看看怎么做',
+    soonLabel: '即将推出',
   },
 
   beliefs: {
@@ -138,8 +140,8 @@ const homeZh: (typeof home)['en'] = {
         body: '对智能的需求没有上限，电力和芯片却有。关键在于让每一单位算力做更多有用的功。',
       },
       {
-        title: '足够好，就在你自己的硬件上',
-        body: '大约两年内，人们已有机器上的模型就能好到足以胜任有意义的工作。我们正为此而建。',
+        title: '跑在你自己的硬件上',
+        body: '人们已有机器上的模型，已经好到足以胜任有意义的工作。我们一直在为此而建。',
       },
     ],
     links: [

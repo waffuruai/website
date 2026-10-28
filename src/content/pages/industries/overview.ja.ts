@@ -52,7 +52,7 @@ const industriesOverviewJa: (typeof industriesOverview)['en'] = {
       {
         tag: 'control',
         title: 'ハードウェアは、*自分で*選ぶ。',
-        body: 'Iron のひとつのカーネル定義が Metal、CUDA、HIP、Vulkan に変換され、データは、オプトインしない限りその場所にとどまります。ベンダーを変えるのは判断の問題であり、書き直しではありません。',
+        body: 'Iron のひとつのカーネル定義が Metal、CUDA、HIP、Vulkan に変換され、データは、ホスト型の AI 推論プロバイダーを使うと選ばない限り、その場所にとどまります。ベンダーを変えるのは判断の問題であり、書き直しではありません。',
         points: [
           'オンプレミスでも、自社クラウドでも、1 台のワークステーションでも',
           'Syrup は vLLM、SGLang、llama.cpp と連携',

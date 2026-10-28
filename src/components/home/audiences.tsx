@@ -5,7 +5,8 @@ import { isPublishedPath } from '@/lib/launch';
 
 /**
  * Who the stack is for, in four cards, each one outcome. A card links to its
- * solutions page once that section launches; until then it stands alone.
+ * solutions page once that section launches; until then it stands alone. A
+ * card whose product isn't out yet carries a "Coming soon" badge.
  */
 export function Audiences({ content }: { content: HomeContent['audiences'] }) {
   return (
@@ -31,6 +32,11 @@ export function Audiences({ content }: { content: HomeContent['audiences'] }) {
             <p className="text-[15px] leading-[1.6] text-muted-foreground">
               {item.body}
             </p>
+            {item.soon && (
+              <span className="mt-1 w-fit rounded-full border border-brand/50 bg-brand/10 px-2.5 py-0.5 label-mono text-[11px] text-brand-ink">
+                {content.soonLabel}
+              </span>
+            )}
             {item.href && isPublishedPath(item.href) && (
               <LocalizedLink
                 href={item.href}

@@ -26,14 +26,14 @@ const aboutEs: (typeof about)['en'] = {
     title: 'Por qué *construimos*.',
     intro: 'La inteligencia debe correr donde la gente ya usa la tecnología.',
     paragraphs: [
-      'Los modelos se están volviendo lo bastante buenos para correr en el hardware que la gente ya tiene.',
+      'Los modelos ya son lo bastante buenos para correr en el hardware que la gente ya tiene.',
       'Eso solo importa si el stack que los ejecuta está listo. Tiene que ser más rápido, más barato, fácil de usar y **tuyo**: kernels que sacan más de cada vatio, resultados correctos más rápido, modelos de visión, audio y texto que funcionan sin una montaña de dependencias y complejidad, y una memoria y un contexto que se quedan en tu equipo.',
       'El acceso a la inteligencia no debe depender de la geografía, la riqueza ni las credenciales. Eso significa un menor costo por token en todas partes: en el portátil que alguien ya tiene y en las GPU que una empresa tiene o alquila.',
     ],
     constraintsLabel: 'Dos límites que nos imponemos',
     constraints: [
       'Minimizar el uso de tokens y el costo por token.',
-      'Tus datos se quedan en tu hardware a menos que tú lo autorices.',
+      'Tus datos se quedan en tu hardware a menos que elijas usar un proveedor de inferencia de IA alojado.',
     ],
   },
   beliefs: {
@@ -56,8 +56,8 @@ const aboutEs: (typeof about)['en'] = {
       },
       {
         statement:
-          'Los modelos suficientemente buenos en hardware convencional están cerca.',
-        body: 'En unos dos años, los modelos que corran en el hardware que la gente ya tiene serán lo bastante buenos para un trabajo con sentido. La ley de Moore y el rápido avance de la IA siguen acumulando efecto.',
+          'Los modelos suficientemente buenos en hardware convencional ya están aquí.',
+        body: 'Los modelos que corren en el hardware que la gente ya tiene son hoy lo bastante buenos para un trabajo con sentido, y la ley de Moore y el rápido avance de la IA siguen acumulando efecto.',
       },
       {
         statement:

@@ -90,7 +90,7 @@ const homeFr: (typeof home)['en'] = {
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
         title: 'L’API de quelqu’un d’autre',
-        note: 'Inutile. Vos données restent sur votre matériel, sauf si vous choisissez de les partager.',
+        note: 'Inutile. Vos données restent sur votre matériel, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       outcomes: [
         'Conçu pour un coût par token plus bas',
@@ -103,12 +103,13 @@ const homeFr: (typeof home)['en'] = {
   },
 
   audiences: {
-    title: 'Une place à *table*.',
+    title: 'Nous avons réservé une place à table pour *vous*.',
     intro: 'Qui que vous soyez, la même stack fonctionne pour vous.',
     items: [
       {
         title: 'Pour vous',
         body: 'Un assistant privé sur votre propre portable. Vos notes, votre code et vos questions restent sur votre machine.',
+        soon: true,
       },
       {
         title: 'Pour les entreprises',
@@ -127,6 +128,7 @@ const homeFr: (typeof home)['en'] = {
       },
     ],
     linkLabel: 'Voir comment',
+    soonLabel: 'Bientôt',
   },
 
   beliefs: {
@@ -142,8 +144,8 @@ const homeFr: (typeof home)['en'] = {
         body: 'La demande d’intelligence est sans limite ; l’énergie et les puces, non. L’enjeu, c’est plus de travail utile pour chaque unité de calcul.',
       },
       {
-        title: 'Assez bon, sur votre propre matériel',
-        body: 'D’ici environ deux ans, les modèles qui tournent sur les machines que les gens possèdent déjà seront assez bons pour un vrai travail. C’est pour ce moment que nous construisons.',
+        title: 'Tourner sur votre propre matériel',
+        body: 'Les modèles qui tournent sur les machines que les gens possèdent déjà sont assez bons pour un vrai travail. Nous construisons pour cela depuis un moment déjà.',
       },
     ],
     links: [

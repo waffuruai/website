@@ -25,6 +25,21 @@ const pantryJa: (typeof pantry)['en'] = {
     source: 'ソースコードを見る',
     windows: 'Windows 対応も予定しています。',
     windowsLink: '必要ならお知らせください',
+    panelLabel: '無料 · オープンソース',
+    highlights: [
+      {
+        value: '無料',
+        label: 'オープンソース（MIT ライセンス）で、誰でも使えます',
+      },
+      {
+        value: 'ローカル',
+        label: 'スキャン：マシンの外に出るのはパッケージ名とバージョンだけ',
+      },
+      {
+        value: '数秒',
+        label: '同じ日の 2 回目のスキャンは、ディスク上のキャッシュから',
+      },
+    ],
   },
   how: {
     title: 'インストール。スキャン。キャッシュ。*修正*。',

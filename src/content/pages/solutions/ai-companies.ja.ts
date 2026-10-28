@@ -51,7 +51,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: 'エージェントに、ローカルにとどまる記憶を与える。',
-        body: 'Whisk は TurboQuant+ で埋め込みを圧縮し、マシン上でキーワード検索とベクトル検索を併用します。結果は MCP 経由で出典付きで返るので、エージェントは前回の続きから再開できます。',
+        body: 'Whisk は独自の AURA アルゴリズムで埋め込みを圧縮し、マシン上でキーワード検索とベクトル検索を併用します。結果は MCP 経由で出典付きで返るので、エージェントは前回の続きから再開できます。',
       },
     ],
   },
@@ -88,7 +88,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
       {
         product: 'whisk',
         need: 'エージェントのための記憶。',
-        body: 'ノートとコードに対するローカル検索。TurboQuant+ で圧縮した埋め込み、キーワード検索とベクトル検索の併用、MCP 経由の出典付きの結果。',
+        body: 'ノートとコードに対するローカル検索。私たちの AURA アルゴリズムで圧縮した埋め込み、キーワード検索とベクトル検索の併用、MCP 経由の出典付きの結果。',
       },
       {
         product: 'syrup',

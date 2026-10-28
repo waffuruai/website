@@ -39,7 +39,7 @@ const lifeSciencesFr: (typeof lifeSciences)['en'] = {
       {
         tag: 'control',
         title: 'Faites tourner des modèles à côté de données sensibles.',
-        body: 'Butter sert des modèles sur du matériel que vous exploitez, d’un Mac Studio au labo jusqu’aux stations RTX et aux serveurs sur site, pour que les données patients et les résultats non publiés ne bougent pas. Les données restent où elles sont, sauf si vous choisissez de les partager.',
+        body: 'Butter sert des modèles sur du matériel que vous exploitez, d’un Mac Studio au labo jusqu’aux stations RTX et aux serveurs sur site, pour que les données patients et les résultats non publiés ne bougent pas. Les données restent où elles sont, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       {
         tag: 'inference',
@@ -94,7 +94,7 @@ const lifeSciencesFr: (typeof lifeSciences)['en'] = {
       question:
         'Les données patients ou de recherche quittent-elles nos machines ?',
       answer:
-        'Pas par défaut. Les modèles tournent sur du matériel que vous exploitez, et les données restent où elles sont, sauf si vous choisissez de les partager.',
+        'Pas par défaut. Les modèles tournent sur du matériel que vous exploitez, et les données restent où elles sont, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
     },
     {
       question: 'Peut-on l’interroger sur nos propres documents ?',

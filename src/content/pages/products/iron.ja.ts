@@ -20,7 +20,7 @@ const ironJa: (typeof iron)['en'] = {
   },
   hero: {
     title: 'ひとつのカーネル定義から、*4 つ*のバックエンドへ。',
-    lede: '純粋な数学を、高性能なシリコンに直接焼き込む。Iron は Rust に埋め込む DSL です。カーネルを一度書けば、共通の IR に落とされ、そこから Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ向かいます。',
+    lede: '推論エンジンを、ブルルッと全開に。Iron は Rust に埋め込む DSL です。カーネルを一度書けば、特定のハードウェア向けに最適化されたカーネルへコンパイルされ、主要なモデルと一般的なワークロードに合わせてチューニングされます。',
     highlights: [
       {
         value: '4',
@@ -78,7 +78,6 @@ const ironJa: (typeof iron)['en'] = {
   },
   specs: {
     heading: '技術的な*詳細*',
-    intro: '細部まで読みたい人のための、詳細です。',
     rows: [
       {
         term: '言語',

@@ -21,8 +21,8 @@ const syrupKo: (typeof syrup)['en'] = {
     lede: 'Syrup은 GPU 위에서 도는 LLM을 위한 컨트롤 플레인입니다. 책상 아래 서버 한 대부터 플릿을 임대하는 네오클라우드까지 다룹니다. 각 호스트에서 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다.',
     highlights: [
       {
-        value: '서버 한 대',
-        label: '책상 아래 한 대부터 네오클라우드 플릿까지',
+        value: '완전한 가시성',
+        label: '책상 아래 서버 한 대부터 네오클라우드 플릿까지',
       },
       {
         value: '서명됨',
@@ -78,7 +78,6 @@ const syrupKo: (typeof syrup)['en'] = {
   },
   specs: {
     heading: '기술 *세부 사항*.',
-    intro: '꼼꼼히 읽어 보실 분들을 위한 상세 정보.',
     rows: [
       { term: '역할', detail: 'GPU 위에서 도는 LLM을 위한 컨트롤 플레인.' },
       {

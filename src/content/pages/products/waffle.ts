@@ -44,7 +44,7 @@ export const waffle: Localized<ProductCopy> = {
       problem:
         'Most assistants live on someone else’s servers, see everything you share and charge for every token. Handing one your email, calendar and files means trusting a stranger with your work and your life.',
       outcome:
-        'Waffle runs your assistant on hardware you own or rent. W gets its memory and context from Whisk and its models from Butter, and your data stays with you unless you opt in.',
+        'Waffle runs your assistant on hardware you own or rent. W gets its memory and context from Whisk and its models from Butter, and your data stays with you unless you choose to use a hosted AI inference provider.',
       outcomes: [
         'Hand off everyday work, from email and calendar to bookings, projects and documents.',
         'Keep what your assistant learns about you on hardware you control.',
@@ -118,7 +118,7 @@ export const waffle: Localized<ProductCopy> = {
       },
       {
         question: 'Does my data leave my hardware?',
-        answer: 'Not unless you opt in.',
+        answer: 'Not unless you choose to use a hosted AI inference provider.',
       },
     ],
     cta: {

@@ -25,6 +25,23 @@ const pantryEs: (typeof pantry)['en'] = {
     source: 'Ver el código fuente',
     windows: 'La compatibilidad con Windows está prevista.',
     windowsLink: 'Dinos si la necesitas',
+    panelLabel: 'Gratis · código abierto',
+    highlights: [
+      {
+        value: 'Gratis',
+        label: 'y de código abierto, con licencia MIT, para todos',
+      },
+      {
+        value: 'Local',
+        label:
+          'escaneo: solo los nombres y las versiones de los paquetes salen de tu equipo',
+      },
+      {
+        value: 'Segundos',
+        label:
+          'para un segundo escaneo el mismo día, desde la caché en tu disco',
+      },
+    ],
   },
   how: {
     title: 'Instala. Escanea. Guarda en caché. *Corrige.*',

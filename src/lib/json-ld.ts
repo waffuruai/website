@@ -1,3 +1,4 @@
+import { plainText } from '@/lib/markup';
 import type { FaqItem } from '@/content/types';
 import { site } from '@/content/site';
 import { absoluteUrl } from '@/lib/seo';
@@ -91,7 +92,7 @@ export function faqPage(items: FaqItem[]): JsonLdObject {
     mainEntity: items.map((item) => ({
       '@type': 'Question',
       name: item.question,
-      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      acceptedAnswer: { '@type': 'Answer', text: plainText(item.answer) },
     })),
   };
 }

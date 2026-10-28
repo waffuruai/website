@@ -25,6 +25,23 @@ const pantryFr: (typeof pantry)['en'] = {
     source: 'Voir le code source',
     windows: 'La prise en charge de Windows est prévue.',
     windowsLink: 'Dites-nous si vous en avez besoin',
+    panelLabel: 'Gratuit · open source',
+    highlights: [
+      {
+        value: 'Gratuit',
+        label: 'et open source, sous licence MIT, pour tout le monde',
+      },
+      {
+        value: 'Local',
+        label:
+          'scan : seuls les noms et les versions des paquets quittent votre machine',
+      },
+      {
+        value: 'Secondes',
+        label:
+          'pour un deuxième scan le même jour, grâce au cache sur votre disque',
+      },
+    ],
   },
   how: {
     title: 'Installez. Analysez. Mettez en cache. *Corrigez.*',

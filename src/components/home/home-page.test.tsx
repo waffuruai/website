@@ -33,7 +33,7 @@ describe('HomePage', () => {
       'More intelligence on hardware you already own.',
       'Know what’s exposed. Patch it fast.',
       'From silicon to answer.',
-      'A seat at the table.',
+      'We’ve reserved a seat at the table for you.',
       'Why we’re cooking.',
       'Who’s in the kitchen.',
       'Reserve your seat.',
@@ -103,6 +103,15 @@ describe('HomePage', () => {
     for (const link of access) {
       expect(link.getAttribute('href')).toBe(site.urls.earlyAccess);
     }
+  });
+
+  it('marks the audience whose product is not out yet as coming soon', async () => {
+    await renderPage();
+    const card = screen
+      .getByRole('heading', { level: 3, name: 'For you' })
+      .closest('li');
+    expect(card?.textContent).toContain('Coming soon');
+    expect(screen.getAllByText('Coming soon')).toHaveLength(1);
   });
 
   it('links each audience on once its page is live, and the team', async () => {

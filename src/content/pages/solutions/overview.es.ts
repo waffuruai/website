@@ -46,7 +46,7 @@ const solutionsOverviewEs: (typeof solutionsOverview)['en'] = {
       {
         tag: 'control',
         title: 'Más *control*.',
-        body: 'Local-first: tus datos se quedan donde están a menos que tú lo autorices, ya sea en una laptop, en tus instalaciones o en tu propia nube.',
+        body: 'Local-first: ya sea en una laptop, en tus instalaciones o en tu propia nube, tus datos se quedan donde están a menos que elijas usar un proveedor de inferencia de IA alojado.',
         points: [
           'Serving compatible con OpenAI, para que tus apps sigan funcionando',
           'Syrup funciona con vLLM, SGLang y llama.cpp',

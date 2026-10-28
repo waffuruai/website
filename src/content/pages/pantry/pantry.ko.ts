@@ -25,6 +25,15 @@ const pantryKo: (typeof pantry)['en'] = {
     source: '소스 코드 보기',
     windows: 'Windows 지원은 계획 중입니다.',
     windowsLink: '필요하다면 알려 주세요',
+    panelLabel: '무료 · 오픈소스',
+    highlights: [
+      { value: '무료', label: '오픈소스, MIT 라이선스, 누구나 사용' },
+      {
+        value: '로컬',
+        label: '스캔: 컴퓨터 밖으로 나가는 것은 패키지 이름과 버전뿐',
+      },
+      { value: '몇 초', label: '같은 날 두 번째 스캔은 디스크의 캐시에서' },
+    ],
   },
   how: {
     title: '설치. 스캔. 캐시. *수정*.',

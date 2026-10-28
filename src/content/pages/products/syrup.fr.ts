@@ -22,8 +22,8 @@ const syrupFr: (typeof syrup)['en'] = {
     lede: 'Syrup est un plan de contrôle pour les LLM sur GPU, d’une machine sous un bureau à un neocloud qui loue une flotte. Chaque hôte exécute un petit sidecar en Rust qui remonte une télémétrie signée.',
     highlights: [
       {
-        value: 'Une machine',
-        label: 'sous un bureau, jusqu’à une flotte de neocloud',
+        value: 'Visibilité totale',
+        label: 'd’une machine sous un bureau à une flotte de neocloud',
       },
       {
         value: 'Signée',
@@ -82,7 +82,6 @@ const syrupFr: (typeof syrup)['en'] = {
   },
   specs: {
     heading: 'Les *détails* techniques.',
-    intro: 'Les détails, pour celles et ceux qui les liront.',
     rows: [
       { term: 'Rôle', detail: 'Un plan de contrôle pour les LLM sur GPU.' },
       {

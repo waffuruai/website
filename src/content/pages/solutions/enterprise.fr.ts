@@ -27,7 +27,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     title: 'Certaines données ne peuvent pas *sortir*.',
     statement:
       'Les charges de travail qui valent la peine d’être automatisées touchent aux dossiers clients, aux contrats, au code source et aux données réglementées : justement celles que vous ne pouvez pas envoyer à la légère à l’API de quelqu’un d’autre.',
-    body: 'Alors une politique dit non pendant que les équipes disent oui en silence, et les GPU sont éparpillés sur des clusters et des clouds que personne ne voit au même endroit. La sécurité veut un périmètre, la finance veut un chiffre par charge de travail, et l’ingénierie veut un modèle qui répond simplement aux requêtes.',
+    body: 'Alors une politique dit non pendant que les équipes disent oui en silence, et les GPU sont éparpillés sur des clusters et des clouds que personne ne voit au même endroit. La sécurité veut un périmètre, la finance veut un chiffre par charge de travail, et vos équipes veulent un modèle qui fonctionne, tout simplement.',
   },
   useCases: {
     title: 'Un travail qui reste *à l’intérieur*.',
@@ -37,7 +37,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: 'Servez des modèles à l’intérieur de votre propre périmètre.',
-        body: 'Faites tourner Butter sur des serveurs que vous exploitez, sur site ou dans un cloud privé : prompts, documents et sorties restent sur une infrastructure que vous maîtrisez. Notre règle par défaut : les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager.',
+        body: 'Faites tourner Butter sur des serveurs que vous exploitez, sur site ou dans un cloud privé : prompts, documents et sorties restent sur une infrastructure que vous maîtrisez. Notre règle par défaut : les données d’un utilisateur restent sur sa machine, sauf s’il choisit d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       {
         tag: 'cost',
@@ -96,7 +96,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     {
       question: 'Pouvons-nous l’exécuter sur site ou dans un cloud privé ?',
       answer:
-        'C’est ainsi qu’il est conçu. Butter sert des modèles sur du matériel que vous exploitez, et les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. Les premières exécutions sur GPU de datacenter sont faites : dites-nous sur lesquels vous comptez le déployer.',
+        'C’est ainsi qu’il est conçu. Butter sert des modèles sur du matériel que vous exploitez, et les données d’un utilisateur restent sur sa machine, sauf s’il choisit d’utiliser un fournisseur d’inférence d’IA hébergé. Les premières exécutions sur GPU de datacenter sont faites : dites-nous sur lesquels vous comptez le déployer.',
     },
     {
       question: 'Quels GPU sont pris en charge aujourd’hui ?',
@@ -112,12 +112,12 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     {
       question: 'Qu’est-ce qui quitte notre réseau ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut, car les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
+        'Les données d’inférence ne sortent pas par défaut, car les données d’un utilisateur restent sur sa machine, sauf s’il choisit d’utiliser un fournisseur d’inférence d’IA hébergé. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
     },
     {
       question: 'Comment l’évaluer ?',
       answer:
-        'Parlez-nous avec votre matériel et votre charge de travail. Nous vous dirons honnêtement si cela convient aujourd’hui, et l’accès anticipé est ouvert sur demande.',
+        'Parlez-nous de votre matériel et de votre charge de travail. Nous vous dirons honnêtement si cela convient aujourd’hui, et l’accès anticipé est ouvert sur demande.',
     },
   ],
   cta: {

@@ -47,7 +47,7 @@ export const enterprise: Localized<SolutionPage> = {
       title: 'Some data can’t *leave*.',
       statement:
         'The workloads worth automating touch customer records, contracts, source code and regulated data, which are the ones you cannot casually send to someone else’s API.',
-      body: 'So a policy says no while teams quietly say yes, and GPUs sit scattered across clusters and clouds that nobody can see in one place. Security wants a boundary, finance wants a number for each workload, and engineering wants a model that simply serves requests.',
+      body: 'So a policy says no while teams quietly say yes, and GPUs sit scattered across clusters and clouds that nobody can see in one place. Security wants a boundary, finance wants a number for each workload, and your workforce wants a model that just works.',
     },
     useCases: {
       title: 'Work that stays *inside*.',
@@ -57,7 +57,7 @@ export const enterprise: Localized<SolutionPage> = {
         {
           tag: 'control',
           title: 'Serve models inside your own boundary.',
-          body: 'Run Butter on servers you operate, on-prem or in a private cloud, so prompts, documents and outputs stay on infrastructure you control. Our default is that a user’s data stays on their machine unless they opt in.',
+          body: 'Run Butter on servers you operate, on-prem or in a private cloud, so prompts, documents and outputs stay on infrastructure you control. Our default is that a user’s data stays on their machine unless they choose to use a hosted AI inference provider.',
         },
         {
           tag: 'cost',
@@ -116,7 +116,7 @@ export const enterprise: Localized<SolutionPage> = {
       {
         question: 'Can we run it on-prem or in a private cloud?',
         answer:
-          'That is how it is built. Butter serves models on hardware you operate, and a user’s data stays on their machine unless they opt in. First runs are done on datacenter GPUs, so tell us which ones you plan to deploy on.',
+          'That is how it is built. Butter serves models on hardware you operate, and a user’s data stays on their machine unless they choose to use a hosted AI inference provider. First runs are done on datacenter GPUs, so tell us which ones you plan to deploy on.',
       },
       {
         question: 'Which GPUs does it support today?',
@@ -131,12 +131,12 @@ export const enterprise: Localized<SolutionPage> = {
       {
         question: 'What leaves our network?',
         answer:
-          'Inference data does not leave by default, because a user’s data stays on their machine unless they opt in. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
+          'Inference data does not leave by default, because a user’s data stays on their machine unless they choose to use a hosted AI inference provider. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
       },
       {
         question: 'How do we evaluate it?',
         answer:
-          'Talk to us with your hardware and your workload. We will tell you honestly whether it fits today, and early access is open by request.',
+          'Tell us about your hardware and your workload. We will tell you honestly whether it fits today, and early access is open by request.',
       },
     ],
     cta: {

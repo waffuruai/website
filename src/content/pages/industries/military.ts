@@ -66,7 +66,7 @@ export const military: Localized<IndustryPage> = {
         {
           tag: 'control',
           title: 'Run models on hardware you own and secure.',
-          body: 'Butter serves models on machines you hold, from a Mac Studio to RTX workstations and DGX Spark. Prompts, documents and outputs stay on that hardware unless you opt in.',
+          body: 'Butter serves models on machines you hold, from a Mac Studio to RTX workstations and DGX Spark. Prompts, documents and outputs stay on that hardware unless you choose to use a hosted AI inference provider.',
         },
         {
           tag: 'inference',
@@ -122,7 +122,7 @@ export const military: Localized<IndustryPage> = {
       {
         question: 'Does anything leave our machines?',
         answer:
-          'Inference data does not leave by default: models run on hardware you operate, and data stays there unless you opt in. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains.',
+          'Inference data does not leave by default: models run on hardware you operate, and data stays there unless you choose to use a hosted AI inference provider. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains.',
       },
       {
         question: 'Which hardware does it run on?',

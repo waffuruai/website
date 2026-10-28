@@ -32,7 +32,10 @@ export const syrup: Localized<ProductCopy> = {
       title: 'See every GPU and every *engine* running on it.',
       lede: 'Syrup is a control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry.',
       highlights: [
-        { value: 'One box', label: 'under a desk, up to a neocloud fleet' },
+        {
+          value: 'Full visibility',
+          label: 'from one box under a desk to a neocloud fleet',
+        },
         {
           value: 'Signed',
           label: 'telemetry from a small Rust sidecar on each host',
@@ -89,7 +92,6 @@ export const syrup: Localized<ProductCopy> = {
     },
     specs: {
       heading: 'Technical *specifics*.',
-      intro: 'The details, for the people who will read them.',
       rows: [
         { term: 'Role', detail: 'A control plane for LLMs on GPUs.' },
         {

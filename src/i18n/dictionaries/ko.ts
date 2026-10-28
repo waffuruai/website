@@ -167,6 +167,7 @@ const ko: Dictionary = {
     flagsLabel: '미국과 캐나다',
     social: '{network}의 Waffuru',
     rights: '© {year} Waffuru AI Inc.',
+    versionLabel: '웹사이트 버전, 커밋, 날짜',
   },
   newsletter: {
     heading: '소식 받기',

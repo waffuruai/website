@@ -36,7 +36,7 @@ const lifeSciencesZh: (typeof lifeSciences)['en'] = {
       {
         tag: 'control',
         title: '在敏感数据旁运行模型。',
-        body: 'Butter 在你运营的硬件上提供模型服务，从实验室里的 Mac Studio，到本地机房的 RTX 工作站和服务器，让患者数据和未发表的结果待在它们本来的地方。除非你主动选择开启，数据始终留在原处。',
+        body: 'Butter 在你运营的硬件上提供模型服务，从实验室里的 Mac Studio，到本地机房的 RTX 工作站和服务器，让患者数据和未发表的结果待在它们本来的地方。除非你选择使用托管的 AI 推理服务商，数据始终留在原处。',
       },
       {
         tag: 'inference',
@@ -89,7 +89,7 @@ const lifeSciencesZh: (typeof lifeSciences)['en'] = {
     {
       question: '患者数据或研究数据会离开我们的机器吗？',
       answer:
-        '默认不会。模型在你运营的硬件上运行，除非你主动选择开启，数据始终留在原处。',
+        '默认不会。模型在你运营的硬件上运行，除非你选择使用托管的 AI 推理服务商，数据始终留在原处。',
     },
     {
       question: '它能根据我们自己的文档作答吗？',

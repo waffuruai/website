@@ -39,7 +39,7 @@ const financialServicesFr: (typeof financialServices)['en'] = {
         tag: 'control',
         title:
           'Utilisez l’IA sur les données clients sans les envoyer à l’extérieur.',
-        body: 'Butter sert des modèles sur des serveurs que vous exploitez, sur site ou dans votre cloud privé : prompts, documents et sorties restent sur une infrastructure que vous maîtrisez. Notre règle par défaut : les données restent où elles sont, sauf si vous choisissez de les partager.',
+        body: 'Butter sert des modèles sur des serveurs que vous exploitez, sur site ou dans votre cloud privé : prompts, documents et sorties restent sur une infrastructure que vous maîtrisez. Notre règle par défaut : les données restent où elles sont, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       {
         tag: 'cost',
@@ -98,7 +98,7 @@ const financialServicesFr: (typeof financialServices)['en'] = {
     {
       question: 'Les données clients quittent-elles notre réseau ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut, car les données restent sur la machine, sauf si vous choisissez de les partager. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient.',
+        'Les données d’inférence ne sortent pas par défaut, car les données restent sur la machine, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient.',
     },
     {
       question: 'Pouvons-nous voir ce que coûte chaque charge de travail ?',

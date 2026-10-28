@@ -39,6 +39,18 @@ export const pantry: Localized<PantryContent> = {
       source: 'View the source',
       windows: 'Windows support is planned.',
       windowsLink: 'Tell us you need it',
+      panelLabel: 'Free · open source',
+      highlights: [
+        { value: 'Free', label: 'and open source, MIT licensed, for everyone' },
+        {
+          value: 'Local',
+          label: 'scan: only package names and versions leave your machine',
+        },
+        {
+          value: 'Seconds',
+          label: 'for a second scan the same day, from the cache on your disk',
+        },
+      ],
     },
     how: {
       title: 'Install. Scan. Cache. *Fix.*',

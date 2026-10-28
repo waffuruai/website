@@ -1,3 +1,4 @@
+import { buildInfo } from '@/generated/build-info';
 import { CookieSettingsButton } from '@/components/consent/cookie-settings-button';
 import { LocalizedLink } from '@/components/localized-link';
 import { NewsletterSignup } from '@/components/newsletter/newsletter-signup';
@@ -28,7 +29,8 @@ const SOCIALS = [
 
 /**
  * Site footer: mailing list, link columns, then the After Hours footer bar
- * (copyright, "Made with 🤖 in North America", contact and socials).
+ * (copyright, the site's version as `v1.0.0 (commit date)`, "Made with 🤖 in
+ * North America", contact and socials).
  */
 export function Footer({ dictionary }: { dictionary: Dictionary }) {
   const { footer, nav, common } = dictionary;
@@ -78,7 +80,11 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
 
       <div className="mx-auto flex max-w-site flex-col gap-4 border-t border-foreground/10 px-site pt-6 pb-12 font-mono text-xs tracking-[0.06em] text-muted-foreground md:flex-row md:flex-wrap md:items-center md:justify-between">
         <p>
-          {interpolate(footer.rights, { year: YEAR })} · {footer.madeIn}{' '}
+          {interpolate(footer.rights, { year: YEAR })} ·{' '}
+          <span title={footer.versionLabel}>
+            v{buildInfo.version} ({buildInfo.commit} {buildInfo.date})
+          </span>{' '}
+          · {footer.madeIn}{' '}
           <span role="img" aria-label={footer.flagsLabel}>
             🇺🇸 🤝 🇨🇦
           </span>

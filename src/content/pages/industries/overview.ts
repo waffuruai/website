@@ -70,7 +70,7 @@ export const industriesOverview: Localized<IndustriesOverview> = {
         {
           tag: 'control',
           title: 'Hardware you *choose*.',
-          body: 'One Iron kernel definition lowers to Metal, CUDA, HIP and Vulkan, and your data stays where it is unless you opt in. Changing vendors is a decision, not a rewrite.',
+          body: 'One Iron kernel definition lowers to Metal, CUDA, HIP and Vulkan, and your data stays where it is unless you choose to use a hosted AI inference provider. Changing vendors is a decision, not a rewrite.',
           points: [
             'On-prem, in your own cloud or on one workstation',
             'Syrup works with vLLM, SGLang and llama.cpp',

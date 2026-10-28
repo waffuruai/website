@@ -132,7 +132,12 @@ export function StackDiagram({
                   key={i}
                   className="wf-cell h-4"
                   data-hot={i % 5 === 2 ? '' : undefined}
-                  style={{ animationDelay: `${(i * 0.18).toFixed(2)}s` }}
+                  style={
+                    {
+                      animationDelay: `${(i * 0.18).toFixed(2)}s`,
+                      '--twinkle': '3.2s',
+                    } as React.CSSProperties
+                  }
                 />
               ))}
             </div>

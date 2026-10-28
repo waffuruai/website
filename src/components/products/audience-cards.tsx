@@ -8,14 +8,21 @@ import {
 } from '@/content/pages/products/types';
 import type { Dictionary } from '@/i18n/dictionaries/en';
 
-/** "Who it's for": one card per solutions page, with the reader's job. */
+/**
+ * "Who it's for": one card per solutions page, with the reader's job and a
+ * "Learn more →" cue. The whole card is the link (the heading's link covers
+ * it), so the cue is decorative.
+ */
 export function AudienceCards({
   audience,
   nav,
+  learnMore,
 }: {
   audience: ProductsOverviewCopy['audience'];
   /** Dictionary `nav`; supplies each solution's name. */
   nav: Dictionary['nav'];
+  /** Dictionary `common.learnMore`. */
+  learnMore: string;
 }) {
   return (
     <ProductSection id="audience">
@@ -41,9 +48,9 @@ export function AudienceCards({
               </p>
               <span
                 aria-hidden
-                className="mt-auto pt-2 font-mono text-soft transition-colors group-hover:text-foreground"
+                className="mt-auto inline-flex items-center gap-2 pt-2 label-mono text-[12px] text-brand-ink transition-colors group-hover:text-foreground"
               >
-                →
+                {learnMore} <span>→</span>
               </span>
             </article>
           </li>

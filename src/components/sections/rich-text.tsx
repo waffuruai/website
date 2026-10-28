@@ -1,8 +1,6 @@
 import { Fragment } from 'react';
 
-/** `**bold**` or `[label](https://…)`, kept whole when the text is split. */
-const TOKEN = /(\*\*[^*]+\*\*|\[[^\]]+\]\(https?:\/\/[^)\s]+\))/g;
-const LINK = /^\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)$/;
+import { MARKUP_LINK, MARKUP_TOKEN } from '@/lib/markup';
 
 /**
  * Body copy whose `**doubled**` words are bold and whose `[label](https://…)`
@@ -11,7 +9,7 @@ const LINK = /^\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)$/;
  * own source. For headings, use `Accent` (`*word*`, the gold italic).
  */
 export function RichText({ text }: { text: string }) {
-  return text.split(TOKEN).map((part, index) => {
+  return text.split(MARKUP_TOKEN).map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
       return (
         <strong key={index} className="font-semibold text-foreground">
@@ -19,7 +17,7 @@ export function RichText({ text }: { text: string }) {
         </strong>
       );
     }
-    const link = LINK.exec(part);
+    const link = MARKUP_LINK.exec(part);
     if (link) {
       return (
         <a
