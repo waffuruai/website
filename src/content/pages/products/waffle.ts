@@ -118,7 +118,7 @@ export const waffle: Localized<ProductCopy> = {
       },
       {
         question: 'Does my data leave my hardware?',
-        answer: 'Not unless you opt in.',
+        answer: 'Not unless you choose to use a hosted AI inference provider.',
       },
     ],
     cta: {

@@ -105,7 +105,7 @@ const waffleJa: (typeof waffle)['en'] = {
     },
     {
       question: 'データはハードウェアの外に出ますか？',
-      answer: 'あなたがオプトインしない限り、出ません。',
+      answer: 'ホスト型の AI 推論プロバイダーを使うと選ばない限り、出ません。',
     },
   ],
   cta: {

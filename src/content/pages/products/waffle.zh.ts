@@ -91,7 +91,7 @@ const waffleZh: (typeof waffle)['en'] = {
     },
     {
       question: '我的数据会离开我的硬件吗？',
-      answer: '除非你主动选择开启，否则不会。',
+      answer: '除非你选择使用托管的 AI 推理服务商，否则不会。',
     },
   ],
   cta: {

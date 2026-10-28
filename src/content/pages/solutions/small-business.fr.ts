@@ -103,7 +103,7 @@ const smallBusinessFr: (typeof smallBusiness)['en'] = {
     {
       question: 'Mes données quittent-elles ma machine ?',
       answer:
-        'Non, sauf si vous choisissez de les partager. Les modèles tournent en local, et vos prompts, fichiers et notes restent par défaut sur votre machine.',
+        'Non, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé. Les modèles tournent en local, et vos prompts, fichiers et notes restent par défaut sur votre machine.',
     },
     {
       question: 'Puis-je continuer à utiliser les applications que j’ai déjà ?',

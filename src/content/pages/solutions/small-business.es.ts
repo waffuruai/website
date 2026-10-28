@@ -102,7 +102,7 @@ const smallBusinessEs: (typeof smallBusiness)['en'] = {
     {
       question: '¿Mis datos salen de mi equipo?',
       answer:
-        'No, salvo que tú lo autorices. Los modelos se ejecutan en local, y tus prompts, archivos y notas se quedan en tu equipo por defecto.',
+        'No, salvo que elijas usar un proveedor de inferencia de IA alojado. Los modelos se ejecutan en local, y tus prompts, archivos y notas se quedan en tu equipo por defecto.',
     },
     {
       question: '¿Puedo seguir usando las apps que ya tengo?',

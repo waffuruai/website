@@ -104,7 +104,8 @@ const waffleKo: (typeof waffle)['en'] = {
     },
     {
       question: '내 데이터가 하드웨어 밖으로 나가나요?',
-      answer: '직접 동의하지 않는 한 나가지 않습니다.',
+      answer:
+        '호스팅된 AI 추론 제공업체를 쓰기로 선택하지 않는 한 나가지 않습니다.',
     },
   ],
   cta: {

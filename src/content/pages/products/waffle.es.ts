@@ -108,7 +108,8 @@ const waffleEs: (typeof waffle)['en'] = {
     },
     {
       question: '¿Mis datos salen de mi hardware?',
-      answer: 'No, a menos que tú lo autorices.',
+      answer:
+        'No, a menos que elijas usar un proveedor de inferencia de IA alojado.',
     },
   ],
   cta: {

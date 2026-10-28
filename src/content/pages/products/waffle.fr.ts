@@ -108,7 +108,8 @@ const waffleFr: (typeof waffle)['en'] = {
     },
     {
       question: 'Mes données quittent-elles mon matériel ?',
-      answer: 'Non, sauf si vous choisissez de les partager.',
+      answer:
+        'Non, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
     },
   ],
   cta: {

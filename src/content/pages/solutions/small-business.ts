@@ -112,7 +112,7 @@ export const smallBusiness: Localized<SolutionPage> = {
       {
         question: 'Does my data leave my machine?',
         answer:
-          'Not unless you opt in. Models run locally, and your prompts, files and notes stay on your machine by default.',
+          'Not unless you choose to use a hosted AI inference provider. Models run locally, and your prompts, files and notes stay on your machine by default.',
       },
       {
         question: 'Can I keep using the apps I already have?',
