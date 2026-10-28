@@ -75,6 +75,7 @@ installers bypass the Worker; pages, RSC payloads and `/api/*` run through it.
 | `https://waffuru.ai/wrunner/install.sh` | latest release of `waffuruai/wrunner` |
 | `https://waffuru.ai/iron/install.sh`    | latest release of `waffuruai/iron`    |
 | `https://waffuru.ai/butter/install.sh`  | latest release of `waffuruai/butter`  |
+| `https://waffuru.ai/pantry/install.sh`  | latest release of `waffuruai/pantry`  |
 
 Alongside each one:
 
@@ -195,7 +196,7 @@ and run `mise run preview` to see analytics after accepting cookies.
 Needed while the product repos are private. A fine-grained PAT:
 
 - Resource owner: `waffuruai`
-- Repository access: `wrunner`, `iron`, `butter`
+- Repository access: `wrunner`, `iron`, `butter`, `pantry`
 - Permissions: **Contents: read**, **Metadata: read**
 
 Stored as an Actions secret on this repo. Without it the workflow falls back to

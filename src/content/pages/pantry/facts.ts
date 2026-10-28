@@ -28,7 +28,7 @@ export const pantryFacts = {
   platforms: ['macOS', 'Linux'],
   install: {
     mise: 'mise use -g packslip:github.com/waffuruai/pantry',
-    /** Redirects to the latest release's script (`worker/routing.ts`). */
+    /** The latest release's script, verified and pinned by the release receiver (`releases/products.json`). */
     script: 'curl -fsSL https://waffuru.ai/pantry/install.sh | sh',
     verify: [
       'ASSET=wpantry-universal-apple-darwin  # Linux: wpantry-x86_64-unknown-linux-musl',

@@ -27,7 +27,8 @@ type Section = keyof typeof site.launched;
 /**
  * Shortcuts into launch sections, live only once their section launches.
  * Bare product names point at their product pages (`/wpantry` too, after
- * the command's w- prefix); `/iron/…` and `/butter/…` stay installers.
+ * the command's w- prefix); `/pantry/…`, `/iron/…` and `/butter/…` stay
+ * installers.
  */
 const SECTION_REDIRECTS: Record<Section, Record<string, string>> = {
   pantry: { '/pantry': '/products/pantry', '/wpantry': '/products/pantry' },
@@ -54,19 +55,6 @@ export function sectionRedirects(
       .map((section) => SECTION_REDIRECTS[section]),
   );
 }
-
-/**
- * Installers we point at instead of serving: `curl -fsSL
- * https://waffuru.ai/pantry/install.sh | sh` follows the redirect to the
- * script the latest release ships, which then verifies the binary itself.
- * A 302, since "latest" moves with every release. Pantry moves to
- * `releases/products.json` (served, hashed and pinned like Iron) once its
- * release publishes the `install.sh.sha256` the receiver checks.
- */
-export const INSTALLER_REDIRECTS: Record<string, string> = {
-  '/pantry/install.sh':
-    'https://github.com/waffuruai/pantry/releases/latest/download/install.sh',
-};
 
 /** Old or typed-from-memory URLs and where they live now. */
 export const REDIRECTS: Record<string, string> = {
@@ -188,13 +176,6 @@ export function route(
 
   if (path === '/robots.txt') return { kind: 'robots' };
   if (first === 'api') return { kind: 'api', name: path.slice(5) };
-  if (INSTALLER_REDIRECTS[path]) {
-    return {
-      kind: 'redirect',
-      location: INSTALLER_REDIRECTS[path],
-      status: 302,
-    };
-  }
   if (INSTALLER_PRODUCTS.includes(first) && path !== `/${first}`) {
     return { kind: 'passthrough' };
   }
