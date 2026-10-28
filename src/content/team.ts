@@ -130,8 +130,8 @@ export const teamCopy: Localized<Record<string, TeamCopy>> = {
     'eric-gonzalez': {
       role: 'Chief Revenue Officer',
       background:
-        'Scaled companies from $50M to $2B ARR. Ex-Oracle NetSuite and Anaconda.',
-      bio: 'Eric leads revenue at Waffuru. He has scaled companies from $50M to $2B in ARR, worked at Oracle NetSuite and at Anaconda, the company behind Conda, and serves as a board member.',
+        'Scaled companies from $50M to $2B ARR. Ex-Oracle NetSuite and Anaconda. McCombs MBA.',
+      bio: 'Eric leads revenue at Waffuru. He has scaled companies from $50M to $2B in ARR, worked at Oracle NetSuite and at Anaconda, the company behind Conda, and serves as a board member. He holds an MBA from UT Austin’s McCombs School of Business.',
     },
     'eric-kryski': {
       role: 'Chief Product Officer',

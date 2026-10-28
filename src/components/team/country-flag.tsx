@@ -7,7 +7,11 @@ const LEAF =
 
 const STRIPE = 10 / 7;
 
-/** Seven stripes and a canton of waffle cells where the stars would be. */
+/**
+ * Seven stripes in gold and cream, and a canton of waffle cells where the
+ * stars would be. Cream, not a dark tone, for the light stripes, so the
+ * whole flag reads against a dark page as clearly as Canada's.
+ */
 function UnitedStates() {
   return (
     <>
@@ -15,16 +19,16 @@ function UnitedStates() {
         <rect
           key={i}
           y={i * STRIPE}
-          width={19}
+          width={20}
           height={STRIPE}
-          className={i % 2 === 0 ? 'fill-brand' : 'fill-off'}
+          className={i % 2 === 0 ? 'fill-brand' : 'fill-foreground'}
         />
       ))}
-      <rect width={8} height={4 * STRIPE} className="fill-background" />
+      <rect width={8.4} height={4 * STRIPE} className="fill-off" />
       {Array.from({ length: 12 }, (_, i) => (
         <rect
           key={i}
-          x={0.8 + (i % 4) * 1.8}
+          x={0.9 + (i % 4) * 1.8}
           y={0.75 + Math.floor(i / 4) * 1.6}
           width={1}
           height={1}
@@ -70,9 +74,10 @@ export function CountryFlag({
     <svg
       role="img"
       aria-label={label}
-      viewBox={country === 'us' ? '0 0 19 10' : '0 0 20 10'}
+      // Both flags share one 2:1 box, so they line up at the same size.
+      viewBox="0 0 20 10"
       className={cn(
-        'inline-block h-3.5 w-auto shrink-0 overflow-hidden rounded-[2px] ring-1 ring-foreground/20',
+        'inline-block h-3.5 w-7 shrink-0 overflow-hidden rounded-[2px] ring-1 ring-foreground/35',
         className,
       )}
     >

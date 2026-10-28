@@ -10,8 +10,8 @@ const teamCopyJa: (typeof teamCopy)['en'] = {
   'eric-gonzalez': {
     role: '最高売上責任者（CRO）',
     background:
-      'ARR 5,000 万ドルから 20 億ドルまで企業を成長させた。元 Oracle NetSuite、Anaconda。',
-    bio: 'Eric は Waffuru で収益部門を率いています。ARR 5,000 万ドルから 20 億ドルまで企業を成長させてきたほか、Oracle NetSuite と、Conda を提供する Anaconda に在籍し、取締役会のメンバーも務めています。',
+      'ARR 5,000 万ドルから 20 億ドルまで企業を成長させた。元 Oracle NetSuite、Anaconda。McCombs で MBA 取得。',
+    bio: 'Eric は Waffuru で収益部門を率いています。ARR 5,000 万ドルから 20 億ドルまで企業を成長させてきたほか、Oracle NetSuite と、Conda を提供する Anaconda に在籍し、取締役会のメンバーも務めています。UT Austin の McCombs School of Business で MBA を取得しています。',
   },
   'eric-kryski': {
     role: '最高製品責任者（CPO）',

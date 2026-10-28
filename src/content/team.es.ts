@@ -10,8 +10,8 @@ const teamCopyEs: (typeof teamCopy)['en'] = {
   'eric-gonzalez': {
     role: 'Director de Ingresos (CRO)',
     background:
-      'Escaló empresas de $50M a $2B de ARR. Ex-Oracle NetSuite y Anaconda.',
-    bio: 'Eric dirige el área de ingresos de Waffuru. Ha escalado empresas de $50M a $2B de ARR, trabajó en Oracle NetSuite y en Anaconda, la empresa detrás de Conda, y actúa como consejero.',
+      'Escaló empresas de $50M a $2B de ARR. Ex-Oracle NetSuite y Anaconda. MBA de McCombs.',
+    bio: 'Eric dirige el área de ingresos de Waffuru. Ha escalado empresas de $50M a $2B de ARR, trabajó en Oracle NetSuite y en Anaconda, la empresa detrás de Conda, y actúa como consejero. Tiene un MBA de la McCombs School of Business de UT Austin.',
   },
   'eric-kryski': {
     role: 'Director de Producto (CPO)',

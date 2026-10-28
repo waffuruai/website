@@ -9,8 +9,8 @@ const teamCopyKo: (typeof teamCopy)['en'] = {
   'eric-gonzalez': {
     role: '최고매출책임자(CRO)',
     background:
-      '기업을 ARR $50M에서 $2B까지 성장시킴. 전 Oracle NetSuite, Anaconda.',
-    bio: 'Eric은 Waffuru에서 매출을 이끌고 있습니다. 기업을 ARR $50M에서 $2B까지 키워 냈고, Oracle NetSuite와 Conda를 만든 Anaconda에서 일했으며, 이사회 구성원으로도 활동하고 있습니다.',
+      '기업을 ARR $50M에서 $2B까지 성장시킴. 전 Oracle NetSuite, Anaconda. McCombs MBA.',
+    bio: 'Eric은 Waffuru에서 매출을 이끌고 있습니다. 기업을 ARR $50M에서 $2B까지 키워 냈고, Oracle NetSuite와 Conda를 만든 Anaconda에서 일했으며, 이사회 구성원으로도 활동하고 있습니다. UT Austin의 McCombs School of Business에서 MBA를 받았습니다.',
   },
   'eric-kryski': {
     role: '최고제품책임자(CPO)',

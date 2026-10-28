@@ -10,8 +10,8 @@ const teamCopyFr: (typeof teamCopy)['en'] = {
   'eric-gonzalez': {
     role: 'Directeur des revenus (CRO)',
     background:
-      'A fait passer des entreprises de 50 M$ à 2 Md$ d’ARR. Ancien d’Oracle NetSuite et d’Anaconda.',
-    bio: 'Eric est responsable des revenus chez Waffuru. Il a fait passer des entreprises de 50 M$ à 2 Md$ de revenus annuels récurrents (ARR), a travaillé chez Oracle NetSuite et chez Anaconda, l’entreprise derrière Conda, et siège à un conseil d’administration.',
+      'A fait passer des entreprises de 50 M$ à 2 Md$ d’ARR. Ancien d’Oracle NetSuite et d’Anaconda. MBA de McCombs.',
+    bio: 'Eric est responsable des revenus chez Waffuru. Il a fait passer des entreprises de 50 M$ à 2 Md$ de revenus annuels récurrents (ARR), a travaillé chez Oracle NetSuite et chez Anaconda, l’entreprise derrière Conda, et siège à un conseil d’administration. Il est titulaire d’un MBA de la McCombs School of Business, à UT Austin.',
   },
   'eric-kryski': {
     role: 'Directeur produit (CPO)',

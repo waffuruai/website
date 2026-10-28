@@ -9,8 +9,8 @@ const teamCopyZh: (typeof teamCopy)['en'] = {
   'eric-gonzalez': {
     role: '首席营收官',
     background:
-      '带领公司从 5000 万美元做到 20 亿美元 ARR。前 Oracle NetSuite 与 Anaconda。',
-    bio: 'Eric 负责 Waffuru 的营收。他曾带领多家公司的 ARR 从 5000 万美元增长到 20 亿美元，先后任职于 Oracle NetSuite 和 Anaconda（Conda 背后的公司），现为董事会成员。',
+      '带领公司从 5000 万美元做到 20 亿美元 ARR。前 Oracle NetSuite 与 Anaconda。McCombs MBA。',
+    bio: 'Eric 负责 Waffuru 的营收。他曾带领多家公司的 ARR 从 5000 万美元增长到 20 亿美元，先后任职于 Oracle NetSuite 和 Anaconda（Conda 背后的公司），现为董事会成员。他拥有 UT Austin 的 McCombs School of Business MBA 学位。',
   },
   'eric-kryski': {
     role: '首席产品官',
