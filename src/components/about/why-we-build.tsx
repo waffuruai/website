@@ -1,3 +1,4 @@
+import { RichText } from '@/components/sections/rich-text';
 import { SectionHeading } from '@/components/sections/section-heading';
 import { TileDeco } from '@/components/sections/tile-deco';
 import type { AboutContent } from '@/content/pages/about';
@@ -32,7 +33,7 @@ export function WhyWeBuild({ content }: { content: AboutContent['why'] }) {
                   : 'max-w-[620px] text-lg leading-[1.6] text-soft',
               )}
             >
-              {paragraph}
+              <RichText text={paragraph} />
             </p>
           ))}
         </div>

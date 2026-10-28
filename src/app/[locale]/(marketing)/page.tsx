@@ -1,29 +1,24 @@
-import { SpeculativeResearch } from '@/components/home/speculative-research';
-import { speculativeResearch } from '@/content/pages/speculative-research';
 import type { Metadata } from 'next';
 
-import { Aura } from '@/components/home/aura';
+import { Audiences } from '@/components/home/audiences';
+import { Beliefs } from '@/components/home/beliefs';
 import { FilmGrain } from '@/components/home/film-grain';
 import { Hero } from '@/components/home/hero';
-import { KernelCode } from '@/components/home/kernel-code';
-import { Models } from '@/components/home/models';
-import { QuantizedModels } from '@/components/home/quantized-models';
-import { Stack } from '@/components/home/stack';
+import { PantryTeaser } from '@/components/home/pantry-teaser';
+import { StackSection } from '@/components/home/stack-section';
 import { TeamTeaser } from '@/components/home/team-teaser';
-import { ToolResearch } from '@/components/home/tool-research';
 import { NewsletterSignup } from '@/components/newsletter/newsletter-signup';
 import { JsonLd } from '@/components/seo/json-ld';
 import { CtaCard } from '@/components/sections/cta-card';
-import { aura } from '@/content/pages/aura';
 import { home } from '@/content/pages/home';
-import { quantizedModels } from '@/content/pages/quantized-models';
-import { toolResearch } from '@/content/pages/tool-research';
-import { mailto, site } from '@/content/site';
+import { pantryFacts } from '@/content/pages/pantry/facts';
+import { site } from '@/content/site';
 import { teamCopy } from '@/content/team';
 import { localeInfo, localizePath } from '@/i18n/config';
 import { getDictionary, resolveLocale, type LocaleParams } from '@/i18n/server';
 import { localize } from '@/lib/content';
 import { webPage } from '@/lib/json-ld';
+import { isPublished } from '@/lib/launch';
 import { createMetadata } from '@/lib/seo';
 
 export async function generateMetadata({
@@ -48,13 +43,15 @@ export async function generateMetadata({
 }
 
 /**
- * Home: the After Hours page, section by section. The stack comes right after
- * the hero (the product is the point); the measured research follows it:
- * how fast (speculative), how much fits (AURA), how correct (tools).
+ * Home: who we are and what you get, for every audience, kept simple. The
+ * hero says the value in one line; Pantry, the product you can use today,
+ * comes next; then the stack as the path a request takes, who it is for, why
+ * we build it, the team and the closing card. The detail and the measured
+ * research live on the product pages, so people dig in from here.
  */
 export default async function HomePage({ params }: { params: LocaleParams }) {
   const locale = await resolveLocale(params);
-  const { common, meta } = await getDictionary(locale);
+  const { common, meta, countries } = await getDictionary(locale);
   const content = localize(home, locale);
 
   return (
@@ -72,24 +69,31 @@ export default async function HomePage({ params }: { params: LocaleParams }) {
         content={content.hero}
         primary={{ label: common.requestAccess, href: site.urls.earlyAccess }}
       />
-      <Stack content={content.stack} privateLabel={common.private} />
-      <SpeculativeResearch content={localize(speculativeResearch, locale)} />
-      <Aura content={localize(aura, locale)} />
-      {/* TODO(founder): temporary placement; move this one line to its final home. */}
-      <QuantizedModels content={localize(quantizedModels, locale)} />
-      <ToolResearch content={localize(toolResearch, locale)} locale={locale} />
-      <Models content={content.models} />
-      <KernelCode content={content.kernel} />
-      <TeamTeaser content={content.team} copy={localize(teamCopy, locale)} />
+      {isPublished('pantry') && <PantryTeaser content={content.pantry} />}
+      <StackSection content={content.stack} />
+      <Audiences content={content.audiences} />
+      <Beliefs content={content.beliefs} />
+      <TeamTeaser
+        content={content.team}
+        copy={localize(teamCopy, locale)}
+        countries={countries}
+      />
       <CtaCard
         title={content.cta.title}
         body={content.cta.body}
         actions={[
-          { label: common.requestAccess, href: site.urls.earlyAccess },
+          ...(isPublished('pantry')
+            ? [
+                {
+                  label: content.pantry.primary,
+                  href: `${pantryFacts.path}#install`,
+                },
+              ]
+            : []),
           {
-            label: common.talkToUs,
-            href: mailto('Sales'),
-            variant: 'outline',
+            label: common.requestAccess,
+            href: site.urls.earlyAccess,
+            variant: 'outline' as const,
           },
         ]}
       >

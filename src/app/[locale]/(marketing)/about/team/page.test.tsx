@@ -21,7 +21,7 @@ describe('Team page', () => {
     expect(h1[0]?.textContent).toBe('Who’s in the kitchen.');
     expect(
       screen.getByText(
-        'Research, security, revenue and a couple of founders who have shipped before.',
+        'Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
       ),
     ).toBeTruthy();
   });
@@ -32,7 +32,7 @@ describe('Team page', () => {
       screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent),
     ).toEqual([
       ...team.map((member) => member.name),
-      'Pull up a chair.',
+      'Put on an apron.',
       'See what we’re cooking.',
     ]);
     expect(container.querySelector('#hiring')).not.toBeNull();

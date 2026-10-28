@@ -3,7 +3,8 @@ import { describe, expect, it, vi } from 'vitest';
 
 import HomePage, { generateMetadata } from '@/app/[locale]/(marketing)/page';
 import { home } from '@/content/pages/home';
-import { mailto, site } from '@/content/site';
+import { pantryFacts } from '@/content/pages/pantry/facts';
+import { site } from '@/content/site';
 import en from '@/i18n/dictionaries/en';
 import { withDictionary } from '@/i18n/test-utils';
 
@@ -29,34 +30,60 @@ describe('HomePage', () => {
         heading.textContent?.replace(/\s+/g, ' ').trim(),
       ),
     ).toEqual([
-      'Raw math, pressed into silicon.',
-      'The stack.',
-      '27B.8 requests. One Mac.',
-      'More context per gigabyte.',
-      'Models quantized with care',
-      'Fewer wrong arguments.Cheaper correct ones.',
-      'Models on the menu.',
-      'You write this.Iron writes the rest.',
+      'More intelligence on hardware you already own.',
+      'Know what’s exposed. Patch it fast.',
+      'From silicon to answer.',
+      'We’ve reserved a seat at the table for you.',
+      'Why we’re cooking.',
       'Who’s in the kitchen.',
-      'Pull up a seat.',
+      'Reserve your seat.',
     ]);
   });
 
-  it('puts the stack right after the hero and the research after the stack', async () => {
+  it('leads with Pantry, then the stack, and leaves research to the product pages', async () => {
     const { container } = await renderPage();
-    const ids = [...container.querySelectorAll('section[id]')].map(
-      (section) => section.id,
-    );
-    expect(ids.indexOf('stack')).toBeLessThan(ids.indexOf('native-inference'));
-    expect(ids.indexOf('native-inference')).toBeLessThan(ids.indexOf('aura'));
-    expect(ids.indexOf('aura')).toBeLessThan(ids.indexOf('quantized-models'));
-    expect(ids.indexOf('quantized-models')).toBeLessThan(
-      ids.indexOf('tool-reliability'),
-    );
-    expect(ids.indexOf('tool-reliability')).toBeLessThan(ids.indexOf('models'));
+    const ids = [...container.querySelectorAll('section')]
+      .map((section) => section.id)
+      .filter(Boolean);
+    expect(ids.slice(0, 4)).toEqual(['pantry', 'stack', 'who', 'why']);
+    for (const research of [
+      'native-inference',
+      'aura',
+      'quantized-models',
+      'tool-reliability',
+      'models',
+    ]) {
+      expect(ids).not.toContain(research);
+    }
     expect(
-      screen.getByRole('link', { name: /see the stack/i }).getAttribute('href'),
+      screen
+        .getByRole('link', { name: /see how it works/i })
+        .getAttribute('href'),
     ).toBe('#stack');
+  });
+
+  it('points every way into Pantry at its page', async () => {
+    await renderPage();
+    expect(
+      screen
+        .getByRole('link', { name: new RegExp(home.en.hero.launch.text) })
+        .getAttribute('href'),
+    ).toBe(pantryFacts.path);
+    const secure = screen.getAllByRole('link', { name: /secure your system/i });
+    // The Pantry section and the closing card.
+    expect(secure).toHaveLength(2);
+    for (const link of secure) {
+      expect(link.getAttribute('href')).toBe(`${pantryFacts.path}#install`);
+    }
+  });
+
+  it('shows the stack as a flow, with no deep links into unlaunched pages', async () => {
+    const { container } = await renderPage();
+    const stack = container.querySelector('#stack')!;
+    for (const layer of home.en.stack.flow.layers) {
+      expect(stack.textContent).toContain(layer.role);
+    }
+    expect(stack.querySelectorAll('a')).toHaveLength(0);
   });
 
   it('paints the film grain over the top, hidden from assistive tech', async () => {
@@ -66,7 +93,7 @@ describe('HomePage', () => {
     expect(grain?.querySelector('feTurbulence')).not.toBeNull();
   });
 
-  it('sends early access to the form and sales to email', async () => {
+  it('sends early access to the form', async () => {
     await renderPage();
     const access = screen.getAllByRole('link', {
       name: /request early access/i,
@@ -76,18 +103,25 @@ describe('HomePage', () => {
     for (const link of access) {
       expect(link.getAttribute('href')).toBe(site.urls.earlyAccess);
     }
-    expect(
-      screen.getByRole('link', { name: /talk to us/i }).getAttribute('href'),
-    ).toBe(mailto('Sales'));
   });
 
-  it('links the stack to its product pages and the team to its page', async () => {
+  it('marks the audience whose product is not out yet as coming soon', async () => {
     await renderPage();
-    for (const name of ['Syrup', 'Waffle', 'Butter', 'Iron']) {
-      expect(screen.getByRole('link', { name }).getAttribute('href')).toBe(
-        `/products/${name.toLowerCase()}`,
-      );
-    }
+    const card = screen
+      .getByRole('heading', { level: 3, name: 'For you' })
+      .closest('li');
+    expect(card?.textContent).toContain('Coming soon');
+    expect(screen.getAllByText('Coming soon')).toHaveLength(1);
+  });
+
+  it('links each audience on once its page is live, and the team', async () => {
+    await renderPage();
+    const linked = home.en.audiences.items.filter((item) => item.href);
+    expect(
+      screen
+        .getAllByRole('link', { name: /^see how:/i })
+        .map((link) => link.getAttribute('href')),
+    ).toEqual(linked.map((item) => item.href));
     expect(
       screen.getByRole('link', { name: /meet the team/i }).getAttribute('href'),
     ).toBe('/about/team');
@@ -96,7 +130,7 @@ describe('HomePage', () => {
   it('ends with the closing card and the newsletter signup', async () => {
     await renderPage();
     const cta = screen.getByRole('heading', {
-      name: 'Pull up a seat.',
+      name: 'Reserve your seat.',
     }).parentElement!;
     expect(within(cta).getByText(home.en.cta.body)).toBeTruthy();
     expect(within(cta).getByText(en.newsletter.heading)).toBeTruthy();
@@ -121,18 +155,11 @@ describe('home metadata', () => {
     expect(metadata.description).toBe(en.meta.defaultDescription);
     expect(metadata.keywords).toEqual(
       expect.arrayContaining([
-        'local LLM inference',
-        'GPU kernels',
-        'inference engine',
-        'Apple silicon',
-        'Metal',
-        'CUDA',
-        'ROCm',
-        'Vulkan',
-        'GPU fleet management',
-        'neocloud',
-        'on-device AI',
         'private AI',
+        'local AI',
+        'local LLM inference',
+        'vulnerability scanner',
+        'Pantry',
       ]),
     );
     expect(metadata.alternates?.canonical).toBe('/');

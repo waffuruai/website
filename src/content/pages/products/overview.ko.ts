@@ -2,40 +2,46 @@ import type { productsOverview } from './overview';
 
 const productsOverviewKo: (typeof productsOverview)['en'] = {
   seo: {
-    title: 'Waffuru 스택: 커널, 서빙, 제어, 메모리',
+    title: 'Waffuru 스택: 커널, 서빙, 제어, 메모리, 에이전트',
     description:
-      'Iron은 커널을 컴파일하고 Butter는 모델을 실행합니다. Waffle은 GPU를 지켜보고 Syrup은 기억합니다. 하나만 써도, 넷을 함께 써도 됩니다.',
-    keywords: ['AI 추론 스택', 'GPU 커널부터 서빙까지', '로컬 우선 AI 인프라'],
+      'Iron은 커널을 컴파일하고 Butter는 모델을 실행합니다. Syrup은 GPU를 제어하고 Whisk는 메모리와 컨텍스트를 더합니다. Waffle은 에이전트를 실행합니다. 하나만 써도, 다섯을 함께 써도 됩니다.',
+    keywords: [
+      'AI 추론 스택',
+      'GPU 커널부터 서빙까지',
+      '보유하거나 임대한 하드웨어 위의 AI 인프라',
+    ],
   },
   hero: {
-    label: '제품 4종',
+    label: '제품 5종',
     title: 'Waffuru *스택*.',
-    lede: 'Iron이 커널을 컴파일하고, Butter가 그 위에서 모델을 실행합니다. Waffle은 GPU를 지켜보고, Syrup은 하던 일을 기억합니다. 넷 모두 이미 가진 하드웨어에서 돌아가도록 만들었습니다.',
+    lede: 'Iron이 커널을 컴파일하고, Butter가 그 위에서 모델을 실행합니다. Syrup은 GPU를 제어하고, Whisk는 메모리와 컨텍스트를 더합니다. Waffle은 W를 품고 에이전트를 실행합니다. 다섯 모두 보유하거나 임대한 하드웨어에서 돌아갑니다.',
   },
   layers: {
-    heading: '네 계층이 *맞물리는* 방식.',
+    heading: '다섯 계층이 *맞물리는* 방식.',
     intro:
-      '하드웨어에서부터 위로 번호를 붙였습니다. 맨 위가 Syrup, 하드웨어에 닿는 맨 아래가 Iron이며, 계층마다 전용 페이지가 있습니다.',
+      '하드웨어에서부터 위로 번호를 붙였습니다. 맨 위가 Waffle, 하드웨어에 닿는 맨 아래가 Iron이며, 계층마다 전용 페이지가 있습니다.',
     metal: {
       label: '하드웨어',
       backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
     },
-    listLabel: '스택의 네 계층',
+    listLabel: '스택의 다섯 계층',
   },
   together: {
-    heading: '하나만 써도, *넷을 모두* 써도.',
+    heading: '하나만 써도, *다섯을 모두* 써도.',
     intro:
       '오늘의 문제를 푸는 계층부터 시작하세요. 필요해지면 다음 계층을 더하면 됩니다.',
     aloneLabel: '단독으로 쓸 때',
     alone: {
       iron: 'GPU 커널을 한 번만 작성해 Metal, CUDA, ROCm, Vulkan에서 실행합니다.',
-      butter: 'Python 없이 OpenAI 호환 API 뒤에서 모델을 서빙합니다.',
-      waffle:
+      butter: '최소한의 의존성으로, OpenAI 호환 API 뒤에서 모델을 서빙합니다.',
+      syrup:
         '어떤 엔진이든, 모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에 봅니다.',
-      syrup: 'AI에 노트와 코드에 대한 로컬 메모리를 출처와 함께 제공합니다.',
+      whisk: 'AI에 노트와 코드에 대한 로컬 메모리를 출처와 함께 제공합니다.',
+      waffle:
+        '하나의 하네스에서 에이전트를 실행합니다. 그 안에 어시스턴트 W가 있습니다.',
     },
     allLabel: '함께 쓸 때',
-    all: 'Butter는 Iron이 컴파일한 커널 위에서 모델을 실행하고, Waffle은 그 아래의 GPU와 엔진을 지켜보며, Syrup은 하던 일을 기억합니다. 계층을 더할수록 아래 계층 위에 차곡차곡 쌓입니다.',
+    all: 'Butter는 Iron이 컴파일한 커널 위에서 모델을 실행하고, Syrup은 그 아래의 GPU와 엔진을 제어하며, Whisk는 메모리와 컨텍스트를 더하고, Waffle은 맨 위에서 에이전트를 실행합니다. 계층을 더할수록 아래 계층 위에 차곡차곡 쌓입니다.',
   },
   audience: {
     heading: '누구를 *위한* 것인가.',

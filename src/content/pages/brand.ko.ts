@@ -65,7 +65,7 @@ const brandKo: (typeof brand)['en'] = {
         body: '본문과 제목에서는 대문자 W로 시작해 씁니다. 소문자 “waffuru”는 워드마크에서만 씁니다.',
       },
       {
-        term: 'Iron, Butter, Waffle, Syrup',
+        term: 'Iron, Butter, Syrup, Whisk',
         body: '네 가지 제품 이름은 어떤 언어에서든 항상 대문자로 시작하며 번역하지 않습니다.',
       },
       {
@@ -74,11 +74,11 @@ const brandKo: (typeof brand)['en'] = {
       },
       {
         term: '와플 마크',
-        body: '그림은 “와플 마크”라고 부릅니다. 영문 Waffle은 우리의 GPU 컨트롤 플레인 제품 이름입니다.',
+        body: '그림은 “와플 마크”라고 부릅니다.',
       },
     ],
     origin:
-      '“Waffuru”는 일본어로 와플을 부르는 말입니다. 만화에 대한 애정, 와플을 함께 좋아하는 마음, 그리고 전 세계를 향한 미션에 보내는 인사입니다.',
+      '“Waffuru”는 일본어로 와플을 부르는 말입니다. 일본 문화와 깊은 역사에 대한 우리의 존중, 와플을 함께 좋아하는 마음, 그리고 전 세계를 향한 미션에 보내는 인사입니다.',
   },
   colour: {
     title: '*팔레트*.',
@@ -211,7 +211,7 @@ const brandKo: (typeof brand)['en'] = {
         role: '본문',
         use: '본문, 버튼, 인터페이스.',
         sample:
-          'GPU kernels, inference, fleet control and memory for the hardware you already own.',
+          'Kernels, inference, a control plane, memory and an agent harness, for hardware you own or rent.',
         glyphs:
           'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
         source: {
@@ -243,32 +243,53 @@ const brandKo: (typeof brand)['en'] = {
   motifs: {
     title: '*움직이는* 모티프.',
     intro:
-      '제품에서 가져온 순수 CSS 모티프입니다. 빛나는 타일, 스탬프, 녹는 버터, 상태 표시등, 흘러내리는 시럽 한 방울. 방문자의 기기가 동작 줄이기를 요청하면 움직임을 멈춥니다.',
+      '제품에서 가져온 순수 CSS 모티프입니다. 스택 위에서부터 Pantry 후보 두 가지, 빛나는 타일, 거품기, 떨어지는 시럽, 녹는 버터, 프레스, 상태 표시등. 방문자의 기기가 동작 줄이기를 요청하면 움직임을 멈춥니다.',
     items: [
+      {
+        key: 'jar',
+        name: '밀봉한 병',
+        description:
+          '뚜껑을 돌려 닫고 골드 봉인을 찍습니다. 실행 전에 검증합니다. Pantry 후보 중 하나입니다.',
+      },
+      {
+        key: 'shelf',
+        name: '선반 점검',
+        description:
+          '선반을 차례로 훑어 유통기한이 지난 병 하나를 새것으로 바꿉니다. Pantry 후보 중 하나입니다.',
+      },
       {
         key: 'tiles',
         name: '와플 타일',
         description: '타일 격자 가운데 몇 칸이 골드로 빛납니다.',
       },
       {
-        key: 'stamps',
-        name: '스탬프',
-        description: '한 칸씩 눌러 찍는 격자. Iron의 모티프입니다.',
+        key: 'whisk',
+        name: '거품기',
+        description:
+          '볼 안에서 도는 와이어가 골드를 섞어 넣습니다. Whisk의 모티프입니다.',
+      },
+      {
+        key: 'drips',
+        name: '시럽 방울',
+        description:
+          '모였다가 떨어지는 시럽, 한 방울이 데이터 하나. Syrup의 모티프입니다.',
       },
       {
         key: 'pat',
-        name: '버터 조각',
-        description: '녹았다가 다시 돌아오는 버터 조각. Butter의 모티프입니다.',
+        name: '녹는 버터',
+        description:
+          '버터 조각이 녹아 번지며 모든 것을 매끄럽게 합니다. Butter의 모티프입니다.',
+      },
+      {
+        key: 'stamps',
+        name: '프레스',
+        description: '한 줄씩 내려찍는 프레스. Iron의 모티프입니다.',
       },
       {
         key: 'leds',
         name: 'LED',
-        description: '상태 표시등이 늘어선 랙. Waffle의 모티프입니다.',
-      },
-      {
-        key: 'drip',
-        name: '드립',
-        description: '선을 따라 흘러내리는 한 방울. Syrup의 모티프입니다.',
+        description:
+          '상태 표시등이 늘어선 랙. 아직 준비 중인 제품을 위해 남겨 두었습니다.',
       },
     ],
   },
@@ -279,10 +300,10 @@ const brandKo: (typeof brand)['en'] = {
     dontLabel: '이렇게는 안 됩니다',
     dos: [
       'Waffuru는 대문자 W로 시작해 씁니다. 소문자 “waffuru”는 워드마크에서만 씁니다.',
-      'Iron, Butter, Waffle, Syrup은 어떤 언어에서든 표기 그대로 씁니다.',
+      'Iron, Butter, Syrup, Whisk는 어떤 언어에서든 표기 그대로 씁니다.',
       '와플 마크 주위에 여백을 두고, 대비가 충분한 어둡거나 밝은 바탕 위에 놓습니다.',
       '제품은 있는 그대로 설명합니다. 현재는 비공개이며, 요청하시면 얼리 액세스를 제공합니다.',
-      '하드웨어 지원도 있는 그대로 설명합니다. Metal이 우선, CUDA가 그다음이며, ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
+      '하드웨어 지원도 있는 그대로 설명합니다. Metal이 우선, CUDA는 튜닝 중, ROCm과 Vulkan은 곧 지원합니다(구동은 되지만 아직 튜닝하지 않았습니다).',
     ],
     donts: [
       '마크의 색을 바꾸거나, 외곽선을 두르거나, 회전·자르기·효과를 더하지 않습니다.',

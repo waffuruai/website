@@ -3,7 +3,7 @@ import type { ProductFacts, ProductSlug } from '@/content/pages/products/types';
 /*
  * What never translates about each product: name, place in the stack, route,
  * which secondary call to action it carries, and any code sample. The words
- * live in `iron.ts`, `butter.ts`, `waffle.ts` and `syrup.ts`.
+ * live in `iron.ts`, `butter.ts`, `syrup.ts`, `whisk.ts` and `waffle.ts`.
  */
 export const productFacts: Record<ProductSlug, ProductFacts> = {
   iron: {
@@ -12,17 +12,7 @@ export const productFacts: Record<ProductSlug, ProductFacts> = {
     name: 'Iron',
     path: '/products/iron',
     secondaryCta: 'docs',
-    code: {
-      filename: 'unary.rs',
-      label: 'iron · rust dsl',
-      language: 'rust',
-      // The kernel from the home page, verbatim.
-      source: `#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]
-pub fn iron_exp<T>(a: Tensor<T>, out: Tensor<T>) {
-    let idx = program_id(0);
-    store(out[idx], exp(load(a[idx])));
-}`,
-    },
+    // The kernel is in the page's KernelCode section (`../kernel-code.ts`).
   },
   butter: {
     slug: 'butter',
@@ -48,31 +38,39 @@ $ curl http://localhost:<port>/v1/chat/completions \\
     }'`,
     },
   },
-  waffle: {
-    slug: 'waffle',
-    index: '03',
-    name: 'Waffle',
-    path: '/products/waffle',
-    secondaryCta: 'sales',
-  },
   syrup: {
     slug: 'syrup',
-    index: '04',
+    index: '03',
     name: 'Syrup',
     path: '/products/syrup',
     secondaryCta: 'sales',
   },
+  whisk: {
+    slug: 'whisk',
+    index: '04',
+    name: 'Whisk',
+    path: '/products/whisk',
+    secondaryCta: 'sales',
+  },
+  waffle: {
+    slug: 'waffle',
+    index: '05',
+    name: 'Waffle',
+    path: '/products/waffle',
+    secondaryCta: 'sales',
+  },
 };
 
-/** Stack order, from the metal up: Iron (01) to Syrup (04). */
+/** Stack order, from the metal up: Iron (01) to Waffle (05). */
 export const productsBottomUp: ProductFacts[] = [
   productFacts.iron,
   productFacts.butter,
-  productFacts.waffle,
   productFacts.syrup,
+  productFacts.whisk,
+  productFacts.waffle,
 ];
 
-/** Overview order, top of the stack first: Syrup (04) down to Iron (01). */
+/** Overview order, top of the stack first: Waffle (05) down to Iron (01). */
 export const productsTopDown: ProductFacts[] = [...productsBottomUp].reverse();
 
 /** Where each audience card on the overview points. */

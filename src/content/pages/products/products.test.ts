@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
+import { kernelCode } from '@/content/pages/kernel-code';
 import {
   audienceHrefs,
   audienceKeys,
@@ -12,6 +13,7 @@ import {
   productsTopDown,
   type ProductSlug,
 } from '@/content/pages/products';
+import { speculativeEvidence } from '@/content/pages/speculative-research';
 
 /** Every string in a content tree, so copy rules apply to all of it. */
 function strings(value: unknown): string[] {
@@ -26,17 +28,25 @@ function strings(value: unknown): string[] {
 const accentCount = (text: string) => (text.match(/\*[^*]+\*/g) ?? []).length;
 
 describe('stack order', () => {
-  it('lists four products from the metal up, Iron first', () => {
-    expect(productSlugs).toEqual(['iron', 'butter', 'waffle', 'syrup']);
+  it('lists five products from the metal up, Iron first', () => {
+    expect(productSlugs).toEqual([
+      'iron',
+      'butter',
+      'syrup',
+      'whisk',
+      'waffle',
+    ]);
     expect(productsBottomUp.map((p) => p.index)).toEqual([
       '01',
       '02',
       '03',
       '04',
+      '05',
     ]);
     expect(productsTopDown.map((p) => p.slug)).toEqual([
-      'syrup',
       'waffle',
+      'whisk',
+      'syrup',
       'butter',
       'iron',
     ]);
@@ -105,18 +115,25 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
   });
 
   it('keeps the voice: no hype words, no exclamation marks, no speed claims', () => {
-    // The one measured number lives in the "How fast is it?" answer, which
-    // repeats the homepage's measurement and points at its test conditions.
+    // The one measured number in the product copy is the "How fast is it?"
+    // answer. It repeats the measurement from the research section on the
+    // same page, which lists the test conditions, and the answer says so.
+    // That section's numbers come from its own content file, not from here.
     const measured = copy.faq.find((item) =>
       /how fast/i.test(item.question),
     )?.answer;
     if (measured) {
       expect(measured).toMatch(/test conditions/i);
       expect(measured).toMatch(/depend on model/i);
+      expect(measured).toMatch(/this page/i);
+      expect(measured).not.toMatch(/home ?page/i);
     }
     for (const text of strings(copy)) {
+      // The founder's own Whisk lede keeps its "seamlessly" (2026-10-28).
+      if (text !== productCopy.whisk.en.hero.lede)
+        expect(text).not.toMatch(/seamless/i);
       expect(text).not.toMatch(
-        /revolutionary|game-changing|seamless|unleash|supercharge|cutting-edge|blazing/i,
+        /revolutionary|game-changing|unleash|supercharge|cutting-edge|blazing/i,
       );
       expect(text).not.toContain('!');
       if (text !== measured)
@@ -128,37 +145,57 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
 });
 
 describe('hardware tiers', () => {
-  it.each(['iron', 'butter'] as const)(
-    '%s ranks Metal over CUDA over the rest',
-    (slug) => {
-      const tiers = productCopy[slug].en.platforms?.tiers ?? [];
-      expect(tiers.map((tier) => [tier.platform, tier.level])).toEqual([
-        ['Apple · Metal', 'primary'],
-        ['NVIDIA · CUDA', 'secondary'],
-        ['AMD ROCm · Vulkan', 'runs'],
-      ]);
-    },
-  );
+  const ranked = [
+    ['Apple · Metal', 'primary'],
+    ['NVIDIA · CUDA', 'secondary'],
+    ['AMD ROCm · Vulkan', 'runs'],
+  ];
 
-  it('keeps tiers off the pages where hardware is not the point', () => {
-    expect(productCopy.waffle.en.platforms).toBeUndefined();
-    expect(productCopy.syrup.en.platforms).toBeUndefined();
+  it('Butter ranks Metal over CUDA over the rest', () => {
+    const tiers = productCopy.butter.en.platforms?.tiers ?? [];
+    expect(tiers.map((tier) => [tier.platform, tier.level])).toEqual(ranked);
   });
 
-  it('lists the enterprise datacenter GPUs as still in progress', () => {
-    const item = productsShared.en.runsOn.items.find((entry) =>
-      /datacenter/i.test(entry.label),
+  it('Iron ranks them the same way, once, in its kernel section', () => {
+    expect(kernelCode.en.tiers.map((tier) => [tier.name, tier.level])).toEqual(
+      ranked,
     );
-    expect(item?.inProgress).toBe(true);
+    expect(productCopy.iron.en.platforms).toBeUndefined();
+  });
+
+  it('keeps tiers off the pages where hardware is not the point', () => {
+    expect(productCopy.syrup.en.platforms).toBeUndefined();
+    expect(productCopy.whisk.en.platforms).toBeUndefined();
+  });
+
+  it('lists datacenter GPUs as first runs, not as in production', () => {
+    const labels = productsShared.en.runsOn.items.map((entry) => entry.label);
+    expect(labels).toContain('H100 · H200 · B100 · B200 · first runs');
+    expect(labels).toContain('MI300 · first runs');
+    // The chips say "first runs" themselves; an inProgress flag would append
+    // the "Next" badge to them.
+    const firstRuns = productsShared.en.runsOn.items.filter((entry) =>
+      /first runs/.test(entry.label),
+    );
+    expect(firstRuns.every((entry) => !entry.inProgress)).toBe(true);
+  });
+
+  it('names the tiers Primary, Tuning and Coming soon', () => {
+    expect(productsShared.en.tierLabels).toEqual({
+      primary: 'Primary',
+      secondary: 'Tuning',
+      runs: 'Coming soon',
+    });
   });
 });
 
 describe('product specifics from the brief', () => {
-  it('Iron shows the brief’s kernel and its public numbers', () => {
-    const { code } = productFacts.iron;
-    expect(code?.language).toBe('rust');
-    expect(code?.label).toBe('iron · rust dsl');
-    expect(code?.source).toContain(
+  it('Iron shows the brief’s kernel once, in its kernel section, and its public numbers', () => {
+    // One kernel on the page: the kernel section, not a second code sample.
+    expect(productFacts.iron.code).toBeUndefined();
+    const { code } = kernelCode.en;
+    expect(code.label).toBe('iron · rust dsl');
+    expect(code.tokens.map((token) => token.text).join('')).toContain(
       'pub fn iron_exp<T>(a: Tensor<T>, out: Tensor<T>) {',
     );
     const text = strings(productCopy.iron.en).join(' ');
@@ -226,6 +263,20 @@ describe('product specifics from the brief', () => {
     }
   });
 
+  it('Butter’s speed answer repeats the numbers from the section on its page', () => {
+    const answer = productCopy.butter.en.faq.find((item) =>
+      /how fast/i.test(item.question),
+    )?.answer;
+    const levels = speculativeEvidence.greedy.levels;
+    const single = levels[0];
+    const busiest = levels.at(-1)!;
+    expect(single.requests).toBe(1);
+    expect(answer).toContain(`${Math.round(single.burst)} tokens per second`);
+    expect(answer).toContain(`${Math.round(busiest.burst)} tokens per second`);
+    expect(answer).toContain(`${busiest.requests} concurrent requests`);
+    expect(answer).toContain(`about ${Math.round(busiest.lane)} per request`);
+  });
+
   it('Butter’s snippet is illustrative and keeps placeholders', () => {
     const sample = productFacts.butter.code;
     expect(sample?.source).toContain('butter serve <model>');
@@ -233,8 +284,8 @@ describe('product specifics from the brief', () => {
     expect(productCopy.butter.en.code?.caption).toMatch(/not a benchmark/i);
   });
 
-  it('Waffle names the engines it works with', () => {
-    const engines = productCopy.waffle.en.specs.rows
+  it('Syrup names the engines it works with', () => {
+    const engines = productCopy.syrup.en.specs.rows
       .find((row) => row.term === 'Engines')
       ?.chips?.map((chip) => chip.label);
     expect(engines).toEqual([
@@ -246,12 +297,12 @@ describe('product specifics from the brief', () => {
     ]);
   });
 
-  it('Syrup’s specifics cover retrieval, TurboQuant+, search, citations and MCP', () => {
-    const text = productCopy.syrup.en.specs.rows
+  it('Whisk’s specifics cover retrieval, AURA, search, citations and MCP', () => {
+    const text = productCopy.whisk.en.specs.rows
       .map((row) => `${row.term} ${row.detail ?? ''}`)
       .join(' ');
     expect(text).toMatch(/locally/i);
-    expect(text).toContain('TurboQuant+');
+    expect(text).toContain('AURA');
     expect(text).toMatch(/lexical plus vector/i);
     expect(text).toMatch(/citations/i);
     expect(text).toContain('MCP');
@@ -276,10 +327,9 @@ describe('the overview', () => {
   it('uses the stack line in the lede', () => {
     expect(copy.hero.lede).toContain('Iron compiles the kernels.');
     expect(copy.hero.lede).toContain('Butter runs models on them.');
-    expect(copy.hero.lede).toContain('Waffle watches the GPUs.');
-    expect(copy.hero.lede).toContain(
-      'Syrup remembers what you were working on.',
-    );
+    expect(copy.hero.lede).toContain('Syrup controls the GPUs.');
+    expect(copy.hero.lede).toContain('Whisk mixes in memory and context.');
+    expect(copy.hero.lede).toContain('Waffle runs your agents');
   });
 
   it('keeps the voice', () => {

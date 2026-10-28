@@ -4,7 +4,7 @@ const ironJa: (typeof iron)['en'] = {
   layer: 'カーネル',
   tagline: 'ひとつのカーネル定義から、4 つのバックエンドへ。',
   summary:
-    'Rust に埋め込む DSL。カーネルは共通の IR に落とされ、そこから Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ。バージョン管理された C と Rust の ABI で、既存のホストから呼び出せます。',
+    'Rust で一度書けば、どこでも最適化されたカーネルに。Rust に埋め込む DSL。カーネルは共通の IR に落とされ、そこから Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ。バージョン管理された C と Rust の ABI で、既存のホストから呼び出せます。',
   seo: {
     title: 'Iron：GPU カーネルを一度書けば 4 バックエンドへ',
     description:
@@ -20,7 +20,7 @@ const ironJa: (typeof iron)['en'] = {
   },
   hero: {
     title: 'ひとつのカーネル定義から、*4 つ*のバックエンドへ。',
-    lede: '純粋な数学を、高性能なシリコンに直接焼き込む。Iron は Rust に埋め込む DSL です。カーネルを一度書けば、共通の IR に落とされ、そこから Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ向かいます。',
+    lede: '推論エンジンを、ブルルッと全開に。Iron は Rust に埋め込む DSL です。カーネルを一度書けば、特定のハードウェア向けに最適化されたカーネルへコンパイルされ、主要なモデルと一般的なワークロードに合わせてチューニングされます。',
     highlights: [
       {
         value: '4',
@@ -56,15 +56,15 @@ const ironJa: (typeof iron)['en'] = {
       },
       {
         title: 'Rust で記述',
-        body: 'Rust に埋め込む DSL。カーネルは #[kernel] を付けた Rust の関数で、program_id、load、store といったプリミティブで組み立てます。',
+        body: 'Rust に埋め込む DSL。カーネルは #[kernel] を付けた Rust の関数で、program_id、load、store といったプリミティブで組み立てます。Iron 自体も Rust で書かれ、速さとメモリ安全性を備えています。依存関係を最小限に抑えているので、サプライチェーン攻撃の入り込む余地が少なくなります。',
       },
       {
         title: 'ホストから呼び出せる',
         body: 'バージョン管理された C と Rust の ABI により、既存のホストを書き直すことなく Iron のカーネルを呼び出せます。',
       },
       {
-        title: 'テストで確かめたビット単位の一致',
-        body: 'HIP と Vulkan のテストコーパスには 4,164 件のケースがあり、4,164 件すべてがビット単位で一致しています。',
+        title: 'テストで確かめたビット単位の一致、ベンチで測った性能',
+        body: 'HIP と Vulkan のテストコーパスには 4,164 件のケースがあり、4,164 件すべてがビット単位で一致しています。ベンチマークと性能計測のツールも同梱しているので、すべてのカーネルは検証されるだけでなく、計測もされます。',
       },
       {
         title: '1,000 を超えるカーネル',
@@ -72,20 +72,12 @@ const ironJa: (typeof iron)['en'] = {
       },
       {
         title: '効くところをチューニング',
-        body: 'すべてのカーネルを、まず Metal で書いてチューニングします。CUDA は第二の対象で、ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
+        body: 'すべてのカーネルを、まず Metal で書いてチューニングします。CUDA はチューニングを進めているところで、ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
       },
     ],
   },
-  code: {
-    heading: 'カーネル全体を、*最初から最後まで*。',
-    intro:
-      'テンソルに対する exp です。各インスタンスが要素を 1 つ読み込み、exp を適用して、結果を書き込みます。#[kernel] 属性には、演算とその許容誤差を記します。',
-    caption:
-      'Iron DSL のソース。Iron が Metal、CUDA、HIP/ROCm、Vulkan SPIR-V へ変換します。',
-  },
   specs: {
     heading: '技術的な*詳細*',
-    intro: '細部まで読みたい人のための、詳細です。',
     rows: [
       {
         term: '言語',
@@ -122,32 +114,10 @@ const ironJa: (typeof iron)['en'] = {
       },
     ],
   },
-  platforms: {
-    heading: '*チューニング*の状況',
-    intro:
-      'Metal が最優先です。すべてのカーネルを、まずここで書き、チューニングするからです。',
-    tiers: [
-      {
-        platform: 'Apple · Metal',
-        level: 'primary',
-        note: 'すべてのカーネルを、まずここで書き、チューニングします。MSL → .metallib。',
-      },
-      {
-        platform: 'NVIDIA · CUDA',
-        level: 'secondary',
-        note: 'RTX と DGX Spark では本番稼働中。データセンター GPU は対応中です。CUDA → PTX。',
-      },
-      {
-        platform: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        note: '現時点で動作しますが、チューニングはこれからです。HIP → AMDGPU、Vulkan → SPIR-V。',
-      },
-    ],
-  },
   stack: {
     heading: '*スタック*のほかの部分とも連携する。',
     intro:
-      'Iron は単体でも使えます。カーネルの上でモデルを動かすなら Butter を、その GPU を見守るなら Waffle を、取り組んでいたことを AI に覚えさせるなら Syrup を足してください。',
+      'Iron は単体でも使えます。カーネルの上でモデルを動かすなら Butter を、その GPU を見守るなら Syrup を、取り組んでいたことを AI に覚えさせるなら Whisk を足してください。',
   },
   faq: [
     {
@@ -158,7 +128,7 @@ const ironJa: (typeof iron)['en'] = {
     {
       question: 'どのハードウェアで動きますか？',
       answer:
-        'Apple シリコン上の Metal が第一の対象で、すべてのカーネルをまずここで書き、チューニングします。CUDA は第二の対象で、RTX と DGX Spark では本番稼働中、データセンター GPU は対応中です。ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
+        'Apple シリコン上の Metal が第一の対象で、すべてのカーネルをまずここで書き、チューニングします。CUDA は、RTX と DGX Spark では本番稼働中でチューニングを進めており、H100、H200、B100、B200 では初回の実行を終えています。AMD では MI300 で初回の実行を終えており、ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
     },
     {
       question: 'ホスト側のコードを書き直す必要はありますか？',

@@ -2,16 +2,17 @@ import type { MDXComponents } from 'mdx/types';
 import Image, { type ImageProps } from 'next/image';
 
 import { MdxFigure, Pre } from '@/components/blog/code-block';
-import { LocalizedLink } from '@/components/localized-link';
+import { PublishedLink } from '@/components/published-link';
 import { slugify, textOf } from '@/lib/headings';
 import { cn } from '@/lib/utils';
 
 /**
  * Internal links keep the visitor's language and navigate client-side; web
- * links open in a new tab (see `LocalizedLink`).
+ * links open in a new tab (see `LocalizedLink`). Links to unlaunched pages
+ * render as plain text until they launch (see `PublishedLink`).
  */
 function MdxLink({ href = '', ...props }: React.ComponentPropsWithoutRef<'a'>) {
-  return <LocalizedLink href={href} {...props} />;
+  return <PublishedLink href={href} {...props} />;
 }
 
 /**

@@ -3,6 +3,8 @@ import { readFileSync } from 'node:fs';
 
 import { describe, expect, it } from 'vitest';
 
+import { site } from '../src/content/site';
+import { isPublishedPath } from '../src/lib/launch';
 import {
   canonicalPath,
   englishAssetPath,
@@ -10,7 +12,9 @@ import {
   isDocumentPath,
   markdownPathFor,
   publicLocation,
+  REDIRECTS,
   route,
+  sectionRedirects,
 } from './routing';
 
 const BASE = 'https://waffuru.ai';
@@ -47,6 +51,47 @@ describe('englishAssetPath', () => {
   });
 });
 
+describe('sectionRedirects', () => {
+  const none = {
+    pantry: false,
+    stack: false,
+    solutions: false,
+    industries: false,
+  };
+
+  it('sends shortcuts into a section only once it launches', () => {
+    expect(sectionRedirects(none)).toEqual({});
+    expect(sectionRedirects({ ...none, pantry: true })).toEqual({
+      '/pantry': '/products/pantry',
+      '/wpantry': '/products/pantry',
+    });
+    expect(sectionRedirects({ ...none, stack: true })['/iron']).toBe(
+      '/products/iron',
+    );
+  });
+
+  it('only redirects to pages production publishes', () => {
+    for (const target of Object.values(REDIRECTS)) {
+      expect(isPublishedPath(target, { unreleased: false }), target).toBe(true);
+    }
+  });
+
+  it('sends /pantry/install.sh to the latest release script, temporarily', () => {
+    expect(decide('/pantry/install.sh')).toEqual({
+      kind: 'redirect',
+      location:
+        'https://github.com/waffuruai/pantry/releases/latest/download/install.sh',
+      status: 302,
+    });
+  });
+
+  it('redirects bare names only, never an installer path under them', () => {
+    for (const from of Object.keys(REDIRECTS)) {
+      expect(from).toMatch(/^\/[a-z-]+$/);
+    }
+  });
+});
+
 describe('canonicalPath', () => {
   it.each([
     ['/about/', '/about'],
@@ -56,7 +101,6 @@ describe('canonicalPath', () => {
     ['/en', '/'],
     ['/en/about', '/about'],
     ['/en/products/iron/', '/products/iron'],
-    ['/iron', '/products/iron'],
     ['/team', '/about/team'],
   ])('redirects %s to %s', (path, expected) => {
     expect(canonicalPath(path)).toBe(expected);
@@ -121,11 +165,21 @@ describe('route', () => {
     }
   });
 
-  it('sends bare product names to their product pages', () => {
-    expect(decide('/butter')).toMatchObject({
-      kind: 'redirect',
-      location: '/products/butter',
-    });
+  it('sends bare product names to their pages once their section launches', () => {
+    for (const [from, to, live] of [
+      ['/butter', '/products/butter', site.launched.stack],
+      ['/pantry', '/products/pantry', site.launched.pantry],
+      ['/wpantry', '/products/pantry', site.launched.pantry],
+    ] as const) {
+      if (live) {
+        expect(decide(from), from).toMatchObject({
+          kind: 'redirect',
+          location: to,
+        });
+      } else {
+        expect(decide(from), from).not.toMatchObject({ kind: 'redirect' });
+      }
+    }
   });
 
   it('routes /api and robots.txt to the Worker', () => {

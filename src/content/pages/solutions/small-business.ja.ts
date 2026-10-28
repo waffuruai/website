@@ -41,7 +41,7 @@ const smallBusinessJa: (typeof smallBusiness)['en'] = {
       {
         tag: 'control',
         title: '顧客のファイルを、どこにも送らずに扱う。',
-        body: 'モデルも、プロンプトも、書類も、オプトインしない限りマシンの中にとどまります。契約書の要約、返信の下書き、請求書の確認を、第三者を挟まずに行えます。',
+        body: 'モデルも、プロンプトも、書類も、ホスト型の AI 推論プロバイダーを使うと選ばない限り、マシンの中にとどまります。契約書の要約、返信の下書き、請求書の確認を、第三者を挟まずに行えます。',
       },
       {
         tag: 'inference',
@@ -51,14 +51,14 @@ const smallBusinessJa: (typeof smallBusiness)['en'] = {
       {
         tag: 'control',
         title: '自分のノートやコードに、質問する。',
-        body: 'Syrup はノートとコードに対する検索をローカルで行うので、答えは出どころの出典付きで返ってきます。検索はキーワード検索とベクトル検索の併用なので、正確な名前でも、あいまいな質問でも見つかります。',
+        body: 'Whisk はノートとコードに対する検索をローカルで行うので、答えは出どころの出典付きで返ってきます。検索はキーワード検索とベクトル検索の併用なので、正確な名前でも、あいまいな質問でも見つかります。',
       },
     ],
   },
   stackFit: {
     title: 'スタックの*かみ合わせ方*',
     intro:
-      '重い仕事は Butter が担います。Syrup と Waffle は、必要なときにそばにあります。',
+      '重い仕事は Butter が担います。Whisk と Syrup は、必要なときにそばにあります。',
     items: [
       {
         product: 'butter',
@@ -66,12 +66,12 @@ const smallBusinessJa: (typeof smallBusiness)['en'] = {
         body: 'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。Llama、Gemma、Qwen、GPT-OSS などに加え、音声認識、音声合成、ビジョンのモデルも動かせます。butter serve で、アプリに OpenAI 互換のエンドポイントを提供します。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '自分のファイルに質問して、出典も得る。',
         body: 'ノートとコードに対するローカル検索。結果は MCP 経由で出典付きで返るので、アシスタントは根拠を示せます。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'デスクの下のマシンに、目を配る。',
         body: '1 台から小さなラックまで、すべての GPU と、その上で動くすべてのエンジンを見渡せます。Butter でも、llama.cpp でも、vLLM でも、SGLang でも。',
       },
@@ -101,7 +101,7 @@ const smallBusinessJa: (typeof smallBusiness)['en'] = {
     {
       question: 'データはマシンの外に出ますか？',
       answer:
-        'オプトインしない限り、出ません。モデルはローカルで動き、プロンプト、ファイル、ノートは、デフォルトであなたのマシンにとどまります。',
+        'ホスト型の AI 推論プロバイダーを使うと選ばない限り、出ません。モデルはローカルで動き、プロンプト、ファイル、ノートは、デフォルトであなたのマシンにとどまります。',
     },
     {
       question: 'いま使っているアプリは、そのまま使えますか？',

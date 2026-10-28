@@ -4,7 +4,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
   seo: {
     title: 'Kernels GPU et serving LLM pour sociétés d’IA',
     description:
-      'Écrivez un kernel une fois, livrez-le sur Metal, CUDA, ROCm et Vulkan. Servez des modèles sans Python, avec cache KV quantifié et décodage spéculatif.',
+      'Écrivez un kernel une fois, livrez-le sur Metal, CUDA, ROCm et Vulkan. Servez des modèles avec un minimum de dépendances, un cache KV quantifié et du décodage spéculatif.',
     keywords: [
       'optimisation de l’inférence',
       'portabilité des kernels GPU',
@@ -17,17 +17,17 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
   card: {
     title: 'Entreprises de modèles et d’*inférence*',
     summary:
-      'Une définition de kernel pour chaque backend GPU, et un serving qui se passe de Python.',
+      'Une définition de kernel pour chaque backend GPU, et un serving avec un minimum de dépendances.',
   },
   hero: {
     title: 'Écrivez le kernel une fois. Livrez-le sur quatre *backends*.',
-    lede: 'Iron compile une définition de kernel vers Metal, CUDA, ROCm et Vulkan. Butter sert des modèles par-dessus sans Python, et Syrup donne une mémoire à vos agents.',
+    lede: 'Iron compile une définition de kernel vers Metal, CUDA, ROCm et Vulkan. Butter sert des modèles par-dessus avec un minimum de dépendances, et Whisk donne une mémoire à vos agents.',
   },
   problem: {
     title: 'Chaque backend est une *réécriture*.',
     statement:
       'Votre modèle n’est portable que dans la mesure où vos kernels le sont, et les kernels s’écrivent généralement une fois par fournisseur.',
-    body: 'Prendre en charge le silicium Apple, NVIDIA, AMD et Vulkan implique souvent des bases de code séparées et des bugs séparés, avec Python sur le chemin critique de la stack de serving. Le coût d’inférence retombe directement sur votre marge, et les agents perdent leur contexte dès qu’une session se termine.',
+    body: 'Prendre en charge le silicium Apple, NVIDIA, AMD et Vulkan implique souvent des bases de code séparées et des bugs séparés, et une stack de serving chargée de dépendances. Le coût d’inférence retombe directement sur votre marge, et les agents perdent leur contexte dès qu’une session se termine.',
   },
   useCases: {
     title: 'Ce que vous pouvez *livrer*.',
@@ -41,8 +41,8 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
       },
       {
         tag: 'inference',
-        title: 'Servez sans Python ni JIT.',
-        body: 'Butter, c’est du Swift sur Metal pour le silicium Apple et du Rust pour CUDA et le reste, avec une API compatible OpenAI, du streaming et de l’appel d’outils. Modèles hybrides et MoE, décodage spéculatif et LoRA sont fournis.',
+        title: 'Servez sans compromis.',
+        body: 'Butter, c’est du Swift pour macOS et iOS et du Rust pour tout le reste, avec un minimum de dépendances, une API compatible OpenAI, du streaming et de l’appel d’outils. Modèles hybrides et MoE, décodage spéculatif et LoRA sont fournis.',
       },
       {
         tag: 'cost',
@@ -52,7 +52,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: 'Donnez à vos agents une mémoire qui reste locale.',
-        body: 'Syrup compresse les embeddings avec TurboQuant+ et exécute une recherche lexicale plus vectorielle sur la machine. Les résultats reviennent avec leurs citations via MCP, et les agents peuvent reprendre là où ils s’étaient arrêtés.',
+        body: 'Whisk compresse les embeddings avec notre algorithme propriétaire AURA et exécute une recherche lexicale plus vectorielle sur la machine. Les résultats reviennent avec leurs citations via MCP, et les agents peuvent reprendre là où ils s’étaient arrêtés.',
       },
     ],
   },
@@ -75,7 +75,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
   stackFit: {
     title: 'Comment la stack *s’assemble*.',
     intro:
-      'Iron et Butter forment le cœur. Syrup et Waffle complètent l’ensemble.',
+      'Iron et Butter forment le cœur. Whisk et Syrup complètent l’ensemble.',
     items: [
       {
         product: 'iron',
@@ -84,16 +84,16 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
       },
       {
         product: 'butter',
-        need: 'Servir des modèles sans Python.',
+        need: 'Servir des modèles avec un minimum de dépendances.',
         body: 'Charge safetensors, MLX, JANG et GGUF sans conversion, plus des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et MoE, un cache KV quantifié, du décodage spéculatif et LoRA. Des modèles de texte, de vision, de reconnaissance vocale, de synthèse vocale et omni se trouvent derrière une API compatible OpenAI.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'De la mémoire pour les agents.',
-        body: 'Recherche locale sur les notes et le code : embeddings compressés avec TurboQuant+, recherche lexicale plus vectorielle et résultats cités via MCP.',
+        body: 'Recherche locale sur les notes et le code : embeddings compressés avec notre algorithme AURA, recherche lexicale plus vectorielle et résultats cités via MCP.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Chaque moteur sur chaque GPU, en une seule vue.',
         body: 'Faites tourner Butter à côté de vLLM, SGLang ou llama.cpp et voyez-les côte à côte. Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée.',
       },
@@ -105,7 +105,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
     notes: [
       'Iron compte aujourd’hui environ 1 139 déclarations de kernels.',
       'HIP et Vulkan passent un corpus de tests de 4 164 cas sur 4 164, exacts au bit près, mais ne sont pas encore optimisés.',
-      'CUDA est en production sur RTX et DGX Spark, avec les GPU de datacenter en cours.',
+      'CUDA est en production sur RTX et DGX Spark, avec de premières exécutions faites sur H100, H200, B100 et B200.',
     ],
   },
   faq: [
@@ -138,7 +138,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
   ],
   cta: {
     title: 'Pressez vos maths dans le *silicium*.',
-    body: 'Accès anticipé, code fermé pour l’instant. Dites-nous ce que vous construisez, quels backends comptent et où Python vous gêne, et nous vous répondrons.',
+    body: 'Accès anticipé, code fermé pour l’instant. Dites-nous ce que vous construisez, quels backends comptent et où votre stack actuelle vous gêne, et nous vous répondrons.',
   },
 };
 

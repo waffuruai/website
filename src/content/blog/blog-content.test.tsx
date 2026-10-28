@@ -4,6 +4,8 @@ import { readdirSync } from 'node:fs';
 import { describe, expect, it, vi } from 'vitest';
 
 import { BLOG_CATEGORIES, type Article } from '@/lib/blog';
+import { home } from '@/content/pages/home';
+import { pantryFacts } from '@/content/pages/pantry/facts';
 import { getMember } from '@/content/team';
 import { isLocale } from '@/i18n/config';
 import { withDictionary } from '@/i18n/test-utils';
@@ -99,11 +101,12 @@ describe('the launch post', () => {
     );
   }
 
-  it('is published, by Eric Kryski, dated 2026-10-26, in Company', async () => {
+  it('is published, by Eric Kryski, dated 2026-10-28, in Company', async () => {
     const { article } = await load!();
     expect(article).toMatchObject({
+      title: 'Announcing Waffuru',
       author: 'eric-kryski',
-      date: '2026-10-26',
+      date: '2026-10-28',
       category: 'Company',
       published: true,
     });
@@ -134,27 +137,38 @@ describe('the launch post', () => {
       .getAllByRole('heading', { level: 2 })
       .map((h) => h.textContent);
     expect(h2).toEqual([
-      'Why now',
-      'What we are building',
-      'What we value',
+      'What we believe',
+      'The stack',
+      'First out the kitchen: Pantry',
       'Who’s in the kitchen',
       'Where we are',
-      'Follow along',
+      'Reserve your seat',
     ]);
   });
 
-  it('links each product and the team page, and the ways to follow along', async () => {
+  it('shows the stack as the home page does', async () => {
+    const { default: Content } = await load!();
+    const { container } = renderPost(Content);
+    const figure = container.querySelector('figure figcaption');
+    expect(figure?.textContent).toBe(home.en.stack.flow.caption);
+    for (const layer of home.en.stack.flow.layers) {
+      expect(container.textContent).toContain(layer.role);
+    }
+  });
+
+  it('links the theses, the team, Pantry and the ways to follow along', async () => {
     const { default: Content } = await load!();
     renderPost(Content);
     const hrefs = screen
       .getAllByRole('link')
       .map((a) => a.getAttribute('href'));
     for (const href of [
-      '/products/iron',
-      '/products/butter',
-      '/products/waffle',
-      '/products/syrup',
+      '/',
+      '/about#beliefs',
       '/about/team',
+      '/products/pantry',
+      '/blog/introducing-pantry',
+      'https://github.com/waffuruai/pantry',
       'https://forms.gle/SHaVSRRWmZKy8UJy7',
       'https://x.com/waffuruai',
       'https://www.linkedin.com/company/waffuru/',
@@ -163,26 +177,24 @@ describe('the launch post', () => {
     }
   });
 
-  it('renders both code blocks, each with a Copy button', async () => {
+  it('renders the install block with a Copy button', async () => {
     const { default: Content } = await load!();
     const { container } = renderPost(Content);
-
     const blocks = container.querySelectorAll('figure[data-code-block]');
-    expect(blocks).toHaveLength(2);
+    expect(blocks).toHaveLength(1);
     expect(container.textContent).toContain(
-      'pub fn iron_exp<T>(a: Tensor<T>, out: Tensor<T>) {',
+      'mise use -g packslip:github.com/waffuruai/pantry',
     );
-    expect(container.textContent).toContain(
-      'curl -fsSL https://waffuru.ai/iron/install.sh | sh',
-    );
-    expect(screen.getAllByRole('button', { name: /^Copy/ })).toHaveLength(2);
+    expect(screen.getAllByRole('button', { name: /^Copy/ })).toHaveLength(1);
   });
 
-  it('keeps to the brand voice: no exclamation marks or hype words', async () => {
+  it('keeps to the brand voice: no hype words, and one exclamation mark', async () => {
     const { default: Content } = await load!();
     const { container } = renderPost(Content);
     const text = container.textContent ?? '';
-    expect(text).not.toContain('!');
+    // The founder's own line in "Where we are" is the one allowed.
+    expect(text.match(/!/g)).toHaveLength(1);
+    expect(text).toContain('executing at lightning pace!');
     for (const word of [
       'revolutionary',
       'game-changing',
@@ -202,5 +214,111 @@ describe('the launch post', () => {
     for (const name of ['Morpheus', 'wOS', 'wrunner', 'wci', 'Juke']) {
       expect(text, name).not.toMatch(new RegExp(`\\b${name}\\b`));
     }
+  });
+});
+
+describe('the Pantry post', () => {
+  const load = posts['./introducing-pantry/page.mdx'];
+
+  const renderPost = async () => {
+    const { default: Content } = await load!();
+    return render(
+      withDictionary(
+        <MDXProvider components={mdxComponents({})}>
+          <Content />
+        </MDXProvider>,
+      ),
+    );
+  };
+
+  it('is a published product post by Eric Kryski', async () => {
+    const { article } = await load!();
+    expect(article).toMatchObject({
+      author: 'eric-kryski',
+      category: 'Product',
+      published: true,
+    });
+  });
+
+  it('links the product page and the source, and shows the diagram', async () => {
+    const { container } = await renderPost();
+    const hrefs = screen
+      .getAllByRole('link')
+      .map((a) => a.getAttribute('href'));
+    expect(hrefs).toContain(pantryFacts.path);
+    expect(hrefs).toContain(pantryFacts.repo);
+    expect(container.textContent).toContain(pantryFacts.install.mise);
+    expect(container.textContent).toContain('gh attestation verify');
+    for (const source of [
+      'https://osv.dev',
+      'https://www.cisa.gov/known-exploited-vulnerabilities-catalog',
+      'https://endoflife.date',
+      'https://github.com/ossf/malicious-packages',
+    ]) {
+      expect(hrefs, source).toContain(source);
+    }
+    expect(container.querySelector('figure figcaption')?.textContent).toMatch(
+      /stay on your machine/,
+    );
+  });
+
+  it('keeps to the brand voice', async () => {
+    const { container } = await renderPost();
+    expect(container.textContent).not.toContain('!');
+  });
+});
+
+describe('the Rust and Swift post', () => {
+  const load = posts['./why-rust-and-swift/page.mdx'];
+
+  const renderPost = async () => {
+    const { default: Content } = await load!();
+    return render(
+      withDictionary(
+        <MDXProvider components={mdxComponents({})}>
+          <Content />
+        </MDXProvider>,
+      ),
+    );
+  };
+
+  it('is a published engineering post by Tom Turney', async () => {
+    const { article } = await load!();
+    expect(article).toMatchObject({
+      author: 'tom-turney',
+      category: 'Engineering',
+      date: '2026-10-28',
+      published: true,
+    });
+  });
+
+  it('links the products it describes and every source it cites', async () => {
+    await renderPost();
+    const hrefs = screen
+      .getAllByRole('link')
+      .map((a) => a.getAttribute('href'));
+    for (const href of [
+      '/products/butter',
+      '/products/iron',
+      pantryFacts.path,
+      pantryFacts.repo,
+      pantryFacts.packslip,
+      'https://github.com/ossf/malicious-packages',
+      'https://blog.npmjs.org/post/180565383195/details-about-the-event-stream-incident',
+      'https://pytorch.org/blog/compromised-nightly-dependency/',
+      'https://www.openwall.com/lists/oss-security/2024/03/29/4',
+      'https://blog.rust-lang.org/2022/05/10/malicious-crate-rustdecimal/',
+    ]) {
+      expect(hrefs, href).toContain(href);
+    }
+  });
+
+  it('keeps to the brand voice, and calls provable execution exploration', async () => {
+    const { container } = await renderPost();
+    const text = container.textContent ?? '';
+    expect(text).not.toContain('!');
+    expect(text).toContain(
+      'we are exploring now: mathematically verifiable, provable execution',
+    );
   });
 });

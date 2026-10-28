@@ -27,7 +27,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     title: 'Certaines données ne peuvent pas *sortir*.',
     statement:
       'Les charges de travail qui valent la peine d’être automatisées touchent aux dossiers clients, aux contrats, au code source et aux données réglementées : justement celles que vous ne pouvez pas envoyer à la légère à l’API de quelqu’un d’autre.',
-    body: 'Alors une politique dit non pendant que les équipes disent oui en silence, et les GPU sont éparpillés sur des clusters et des clouds que personne ne voit au même endroit. La sécurité veut un périmètre, la finance veut un chiffre par charge de travail, et l’ingénierie veut un modèle qui répond simplement aux requêtes.',
+    body: 'Alors une politique dit non pendant que les équipes disent oui en silence, et les GPU sont éparpillés sur des clusters et des clouds que personne ne voit au même endroit. La sécurité veut un périmètre, la finance veut un chiffre par charge de travail, et vos équipes veulent un modèle qui fonctionne, tout simplement.',
   },
   useCases: {
     title: 'Un travail qui reste *à l’intérieur*.',
@@ -37,12 +37,12 @@ const enterpriseFr: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: 'Servez des modèles à l’intérieur de votre propre périmètre.',
-        body: 'Faites tourner Butter sur des serveurs que vous exploitez, sur site ou dans un cloud privé : prompts, documents et sorties restent sur une infrastructure que vous maîtrisez. Notre règle par défaut : les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager.',
+        body: 'Faites tourner Butter sur des serveurs que vous exploitez, sur site ou dans un cloud privé : prompts, documents et sorties restent sur une infrastructure que vous maîtrisez. Notre règle par défaut : les données d’un utilisateur restent sur sa machine, sauf s’il choisit d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       {
         tag: 'cost',
         title: 'Voyez chaque GPU et chaque moteur au même endroit.',
-        body: 'Waffle montre quels GPU sont occupés, quels moteurs y tournent et lesquels sont inactifs, que le moteur soit Butter, vLLM, SGLang ou llama.cpp. C’est le point de départ pour décider quoi consolider, retirer ou acheter.',
+        body: 'Syrup montre quels GPU sont occupés, quels moteurs y tournent et lesquels sont inactifs, que le moteur soit Butter, vLLM, SGLang ou llama.cpp. C’est le point de départ pour décider quoi consolider, retirer ou acheter.',
       },
       {
         tag: 'inference',
@@ -52,27 +52,27 @@ const enterpriseFr: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: 'Branchez vos applications existantes sans les réécrire.',
-        body: 'L’API compatible OpenAI de Butter prend en charge le streaming et l’appel d’outils : vos outils internes changent d’adresse, pas de SDK. Rien ne vous enferme dans un moteur, car Waffle fonctionne aux côtés de vLLM, SGLang et llama.cpp.',
+        body: 'L’API compatible OpenAI de Butter prend en charge le streaming et l’appel d’outils : vos outils internes changent d’adresse, pas de SDK. Rien ne vous enferme dans un moteur, car Syrup fonctionne aux côtés de vLLM, SGLang et llama.cpp.',
       },
     ],
   },
   stackFit: {
     title: 'Comment la stack *s’assemble*.',
     intro:
-      'Butter sert, Waffle surveille, Syrup retrouve, et Iron se trouve sous les trois.',
+      'Butter sert, Syrup surveille, Whisk retrouve, et Iron se trouve sous les trois.',
     items: [
       {
         product: 'butter',
         need: 'Servir des modèles sur des serveurs que vous exploitez.',
-        body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python dans le chemin de serving. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF : aucune chaîne de conversion entre un nouveau modèle et vos serveurs.',
-      },
-      {
-        product: 'waffle',
-        need: 'Une seule vue de chaque GPU et de chaque moteur.',
-        body: 'Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée. Waffle fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : l’adopter ne veut pas dire remplacer ce qui tourne déjà.',
+        body: 'Du serving compatible OpenAI en Swift pour macOS et iOS et en Rust pour tout le reste, avec un minimum de dépendances. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF : aucune chaîne de conversion entre un nouveau modèle et vos serveurs.',
       },
       {
         product: 'syrup',
+        need: 'Une seule vue de chaque GPU et de chaque moteur.',
+        body: 'Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée. Syrup fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : l’adopter ne veut pas dire remplacer ce qui tourne déjà.',
+      },
+      {
+        product: 'whisk',
         need: 'Des réponses tirées de vos propres sources, avec citations.',
         body: 'Recherche locale sur vos notes et votre code internes. La recherche est lexicale plus vectorielle, et les résultats reviennent avec leurs citations via MCP.',
       },
@@ -85,10 +85,10 @@ const enterpriseFr: (typeof enterprise)['en'] = {
   },
   whereWeAre: {
     title: 'Où nous *en sommes*.',
-    lede: 'Les GPU de datacenter pour entreprises sont en cours, et nous préférons le dire d’emblée. Les produits sont en accès anticipé et à code fermé pour l’instant.',
+    lede: 'Sur les GPU de datacenter, nous en sommes aux premières exécutions, pas à la production, et nous préférons le dire d’emblée. Les produits sont en accès anticipé et à code fermé pour l’instant.',
     notes: [
       'Prévoyez vos pilotes autour du silicium Apple, des stations RTX et de DGX Spark, là où la stack tourne aujourd’hui.',
-      'Les GPU de datacenter sont en cours. S’ils sont votre cible, dites-nous lesquels : cela détermine ce que nous construisons en premier.',
+      'Les premières exécutions sont faites sur H100, H200, B100, B200 et MI300. Si les GPU de datacenter sont votre cible, dites-nous lesquels : cela détermine ce que nous optimisons en premier.',
       'ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
     ],
   },
@@ -96,28 +96,28 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     {
       question: 'Pouvons-nous l’exécuter sur site ou dans un cloud privé ?',
       answer:
-        'C’est ainsi qu’il est conçu. Butter sert des modèles sur du matériel que vous exploitez, et les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. La prise en charge des GPU de datacenter est en cours : dites-nous sur quoi vous comptez le déployer.',
+        'C’est ainsi qu’il est conçu. Butter sert des modèles sur du matériel que vous exploitez, et les données d’un utilisateur restent sur sa machine, sauf s’il choisit d’utiliser un fournisseur d’inférence d’IA hébergé. Les premières exécutions sur GPU de datacenter sont faites : dites-nous sur lesquels vous comptez le déployer.',
     },
     {
       question: 'Quels GPU sont pris en charge aujourd’hui ?',
       answer:
-        'Le silicium Apple via Metal est principal, et NVIDIA via CUDA est secondaire, en production sur RTX et DGX Spark. AMD ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés. Les GPU de datacenter pour entreprises sont en cours.',
+        'Le silicium Apple via Metal est principal, et NVIDIA via CUDA est en production sur RTX et DGX Spark et en cours d’optimisation, avec de premières exécutions faites sur H100, H200, B100 et B200. Côté AMD, les premières exécutions sont faites sur MI300, et ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',
     },
     {
       question:
         'Devons-nous remplacer la stack de serving que nous utilisons déjà ?',
       answer:
-        'Non. Waffle fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : vous pouvez d’abord gagner en visibilité et décider des moteurs plus tard.',
+        'Non. Syrup fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : vous pouvez d’abord gagner en visibilité et décider des moteurs plus tard.',
     },
     {
       question: 'Qu’est-ce qui quitte notre réseau ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut, car les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. Chaque hôte Waffle exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
+        'Les données d’inférence ne sortent pas par défaut, car les données d’un utilisateur restent sur sa machine, sauf s’il choisit d’utiliser un fournisseur d’inférence d’IA hébergé. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
     },
     {
       question: 'Comment l’évaluer ?',
       answer:
-        'Parlez-nous avec votre matériel et votre charge de travail. Nous vous dirons honnêtement si cela convient aujourd’hui, et l’accès anticipé est ouvert sur demande.',
+        'Parlez-nous de votre matériel et de votre charge de travail. Nous vous dirons honnêtement si cela convient aujourd’hui, et l’accès anticipé est ouvert sur demande.',
     },
   ],
   cta: {

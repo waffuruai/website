@@ -32,19 +32,19 @@ const solutionsSharedZh: (typeof solutionsShared)['en'] = {
       linkLabel: '了解 Butter',
       href: '/products/butter',
     },
-    waffle: {
+    syrup: {
       index: '03',
       role: '控制平面',
-      name: 'Waffle',
-      linkLabel: '了解 Waffle',
-      href: '/products/waffle',
-    },
-    syrup: {
-      index: '04',
-      role: '记忆',
       name: 'Syrup',
       linkLabel: '了解 Syrup',
       href: '/products/syrup',
+    },
+    whisk: {
+      index: '04',
+      role: '记忆',
+      name: 'Whisk',
+      linkLabel: '了解 Whisk',
+      href: '/products/whisk',
     },
   },
   hardware: {
@@ -61,14 +61,14 @@ const solutionsSharedZh: (typeof solutionsShared)['en'] = {
       {
         name: 'NVIDIA · CUDA',
         status: 'secondary',
-        statusLabel: '其次',
-        note: '已在 RTX 和 DGX Spark 上投入生产。数据中心 GPU 正在进行中。CUDA → PTX。',
+        statusLabel: '调优中',
+        note: '已在 RTX 和 DGX Spark 上投入生产，并已在 H100、H200、B100 和 B200 上完成首次运行。CUDA → PTX。',
       },
       {
         name: 'AMD ROCm · Vulkan',
         status: 'runs',
-        statusLabel: '可运行',
-        note: '目前可以运行，尚未调优。HIP → AMDGPU，Vulkan → SPIR-V。',
+        statusLabel: '即将推出',
+        note: '目前可以运行，尚未调优，已在 MI300 上完成首次运行。HIP → AMDGPU，Vulkan → SPIR-V。',
       },
     ],
     runsOn: [
@@ -77,7 +77,8 @@ const solutionsSharedZh: (typeof solutionsShared)['en'] = {
       { label: 'DGX Spark' },
       { label: 'Strix Halo' },
       { label: '新型云服务商集群' },
-      { label: '企业级数据中心 GPU · 进行中', inProgress: true },
+      { label: 'H100 · H200 · B100 · B200 · 首次运行', inProgress: true },
+      { label: 'MI300 · 首次运行', inProgress: true },
     ],
   },
 };

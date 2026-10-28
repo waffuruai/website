@@ -15,7 +15,11 @@ export const productsShared: Localized<ProductsShared> = {
     statusLabel: 'Private · early access',
     storyProblemLabel: 'The problem',
     storyOutcomeLabel: 'What you can do now',
-    tierLabels: { primary: 'Primary', secondary: 'Secondary', runs: 'Runs' },
+    tierLabels: {
+      primary: 'Primary',
+      secondary: 'Tuning',
+      runs: 'Coming soon',
+    },
     tierLegend: 'More bars, more tuning.',
     runsOn: {
       label: 'Runs on',
@@ -25,7 +29,8 @@ export const productsShared: Localized<ProductsShared> = {
         { label: 'DGX Spark' },
         { label: 'Strix Halo' },
         { label: 'Neocloud fleets' },
-        { label: 'Enterprise datacenter GPUs', inProgress: true },
+        { label: 'H100 · H200 · B100 · B200 · first runs' },
+        { label: 'MI300 · first runs' },
       ],
     },
   },

@@ -10,8 +10,11 @@ import butterKo from './butter.ko';
  * Butter, 02 · Serving. Facts come from the content brief and from Butter's
  * own docs on `origin/dev` (documentation/serve.md, README.md, models.md,
  * quantization.md, kv-cache.md) plus merged PRs, verified 2026-10-26. The
- * only measured number is in the "How fast is it?" answer. The terminal
- * snippet lives in `facts.ts` (placeholders, captioned as illustrative).
+ * only measured number in this copy is the "How fast is it?" answer, which
+ * repeats the speculative decoding section rendered on the same page (its
+ * numbers and test conditions live in `../speculative-research.ts`). The
+ * terminal snippet lives in `facts.ts` (placeholders, captioned as
+ * illustrative).
  *
  * TODO(founder): "no JIT" stays off the page because the CUDA host compiles
  * kernels through NVRTC at runtime (rust/README.md); Metal kernels ship
@@ -20,13 +23,13 @@ import butterKo from './butter.ko';
 export const butter: Localized<ProductCopy> = {
   en: {
     layer: 'Serving',
-    tagline: 'Model serving without Python.',
+    tagline: 'Multi-modal inference, without compromise.',
     summary:
       'Swift on Metal for Apple silicon, Rust for CUDA and the rest. Loads 2- to 8-bit quantized checkpoints, hybrid and MoE models, and serves them over OpenAI-compatible and Anthropic Messages APIs.',
     seo: {
-      title: 'Butter: LLM inference without Python',
+      title: 'Butter: multi-modal inference with minimal dependencies',
       description:
-        'Butter is an LLM inference engine in Swift on Metal and Rust for CUDA and the rest. It serves Hugging Face models over OpenAI-compatible and Anthropic Messages APIs, built for agent harnesses.',
+        'Butter is an LLM inference engine with minimal dependencies: Swift for macOS and iOS, Rust for everything else. It serves Hugging Face models over OpenAI-compatible and Anthropic Messages APIs, built for agent harnesses.',
       keywords: [
         'LLM inference engine',
         'local LLM serving',
@@ -38,8 +41,8 @@ export const butter: Localized<ProductCopy> = {
       ],
     },
     hero: {
-      title: 'Model serving *without* Python.',
-      lede: 'Butter is an inference engine written in Swift on Metal for Apple silicon and Rust for CUDA and the rest. No Python, Metal kernels shipped precompiled, and models load straight from Hugging Face.',
+      title: 'Model serving without *compromise*.',
+      lede: 'Butter serves models with minimal dependencies, using Swift for macOS and iOS and Rust for everything else, on kernels tuned for each backend. You get safety and maximal performance without compromises. Metal kernels ship precompiled, and models load straight from Hugging Face.',
       highlights: [
         {
           value: '4',
@@ -67,7 +70,7 @@ export const butter: Localized<ProductCopy> = {
     capabilities: {
       heading: 'What Butter *does*.',
       intro:
-        'From loading a checkpoint to streaming tokens, with no Python in between.',
+        'From loading a checkpoint to streaming tokens, with minimal dependencies along the way.',
       items: [
         {
           title: 'Loads models as they are',
@@ -167,12 +170,11 @@ export const butter: Localized<ProductCopy> = {
     ],
     specs: {
       heading: 'Technical *specifics*.',
-      intro: 'The details, for the people who will read them.',
       rows: [
         {
           term: 'Runtime',
           detail:
-            'Swift on Metal for Apple silicon, macOS 14 or later. Rust for CUDA and the rest. No Python.',
+            'Swift on Metal for macOS and iOS, with macOS 14 or later. Rust for CUDA and everything else. Minimal dependencies, for less supply-chain risk.',
         },
         {
           term: 'Model formats',
@@ -258,7 +260,7 @@ export const butter: Localized<ProductCopy> = {
     platforms: {
       heading: 'Where it *runs*.',
       intro:
-        'Metal is the primary target. CUDA is secondary, and AMD through ROCm and Vulkan is moving fast.',
+        'Metal is the primary target. CUDA is being tuned now, and AMD through ROCm and Vulkan is moving fast.',
       tiers: [
         {
           platform: 'Apple · Metal',
@@ -280,7 +282,7 @@ export const butter: Localized<ProductCopy> = {
     stack: {
       heading: 'Works with the rest of the *stack*.',
       intro:
-        'Butter runs models on the kernels Iron compiles. Waffle can watch it alongside vLLM, SGLang and llama.cpp, and Syrup gives your AI a memory of what you were working on.',
+        'Butter runs models on the kernels Iron compiles. Syrup can watch it alongside vLLM, SGLang and llama.cpp, and Whisk gives your AI a memory of what you were working on.',
     },
     faq: [
       {
@@ -291,7 +293,7 @@ export const butter: Localized<ProductCopy> = {
       {
         question: 'What hardware does it run on?',
         answer:
-          'Swift on Metal for Apple silicon is the primary target, from a MacBook to a Mac Studio on macOS 14 or later. CUDA is secondary, in production on RTX and DGX Spark. AMD through ROCm and Vulkan is moving fast.',
+          'Swift on Metal for Apple silicon is the primary target, from a MacBook to a Mac Studio on macOS 14 or later. CUDA is in production on RTX and DGX Spark and being tuned. AMD through ROCm and Vulkan is moving fast.',
       },
       {
         question: 'Which models does it run?',
@@ -299,9 +301,9 @@ export const butter: Localized<ProductCopy> = {
           'Coverage today includes Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite and Phi, among the others listed above, in text, vision, speech and omni variants.',
       },
       {
-        question: 'Do I need Python?',
+        question: 'What is Butter written in?',
         answer:
-          'No. Butter is Swift on Metal for Apple silicon and Rust for CUDA and the rest, with no Python anywhere in the serving path.',
+          'Swift for macOS and iOS, and Rust for everything else, for speed and memory safety. Butter keeps its dependencies minimal, so there is less room for a supply-chain attack, and it runs on kernels tuned for each backend.',
       },
       {
         question: 'Will my existing tools and agent harnesses work with it?',
@@ -311,7 +313,7 @@ export const butter: Localized<ProductCopy> = {
       {
         question: 'How fast is it?',
         answer:
-          'On an M5 Max with 128 GB, Butter served Qwen3.8-27B 4-bit at 103 tokens per second for a single request (about 937-token prompts, greedy) and 146 tokens per second total across 8 concurrent requests, about 26 per request. Results depend on model, prompt length and hardware; the homepage lists the test conditions.',
+          'On an M5 Max with 128 GB, Butter served Qwen3.8-27B 4-bit at 103 tokens per second for a single request (about 937-token prompts, greedy) and 146 tokens per second total across 8 concurrent requests, about 26 per request. Results depend on model, prompt length and hardware; the test conditions are listed with the measurements on this page.',
       },
     ],
     cta: {

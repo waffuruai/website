@@ -29,13 +29,13 @@ export const teamPage: Localized<TeamPageContent> = {
     seo: {
       title: 'Meet the founders and team',
       description:
-        'The people building Waffuru: research, security, revenue and a couple of founders who have shipped before.',
+        'The people building Waffuru, with experience across cybersecurity, the military, consumer and enterprise, from scaling startups to working with small businesses and the enterprise.',
       keywords: ['Waffuru team', 'Waffuru founders'],
     },
     hero: {
       label: 'Team',
       title: 'Who’s in the *kitchen*.',
-      lede: 'Research, security, revenue and a couple of founders who have shipped before.',
+      lede: 'Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
     },
     portraitAlt: 'Portrait of {name}',
     linkAria: '{name} on {network}',
@@ -47,7 +47,7 @@ export const teamPage: Localized<TeamPageContent> = {
     },
     cta: {
       title: 'See what we’re *cooking*.',
-      body: 'Our products are private for now. Request early access to try them, or talk to us about what you need.',
+      body: 'Pantry is free and open source today. Our AI inference stack is in private early access: request access to try it, or talk to us about what you need.',
     },
   },
   es: teamPageEs,

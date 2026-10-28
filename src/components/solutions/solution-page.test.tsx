@@ -2,7 +2,11 @@ import { render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { SolutionPage } from '@/components/solutions/solution-page';
-import { solutionSlugs, solutions } from '@/content/pages/solutions/registry';
+import {
+  solutionPath,
+  solutionSlugs,
+  solutions,
+} from '@/content/pages/solutions/registry';
 import { solutionsShared } from '@/content/pages/solutions/shared';
 import { mailto, site } from '@/content/site';
 import type { Locale } from '@/i18n/config';
@@ -18,7 +22,8 @@ function renderPage(
   return render(
     withDictionary(
       <SolutionPage
-        slug={slug}
+        path={solutionPath(slug)}
+        parent={{ label: shared.breadcrumb.solutions, href: '/solutions' }}
         page={solutions[slug].en}
         shared={shared}
         locale={locale}
@@ -145,11 +150,12 @@ describe.each(solutionSlugs)('SolutionPage: %s', (slug) => {
   it('says where we are: early access and the hardware tiers', () => {
     renderPage(slug);
     expect(screen.getByText('Primary')).toBeTruthy();
-    expect(screen.getByText('Secondary')).toBeTruthy();
-    expect(screen.getByText('Runs')).toBeTruthy();
+    expect(screen.getByText('Tuning')).toBeTruthy();
+    expect(screen.getByText('Coming soon')).toBeTruthy();
     expect(
-      screen.getByText('Enterprise datacenter GPUs · in progress'),
+      screen.getByText('H100 · H200 · B100 · B200 · first runs'),
     ).toBeTruthy();
+    expect(screen.getByText('MI300 · first runs')).toBeTruthy();
   });
 });
 

@@ -6,8 +6,8 @@ const productsSharedFr: (typeof productsShared)['en'] = {
   storyOutcomeLabel: 'Ce que vous pouvez faire maintenant',
   tierLabels: {
     primary: 'Principal',
-    secondary: 'Secondaire',
-    runs: 'Fonctionne',
+    secondary: 'En optimisation',
+    runs: 'Bientôt',
   },
   tierLegend: 'Plus de barres, plus d’optimisation.',
   runsOn: {
@@ -18,7 +18,8 @@ const productsSharedFr: (typeof productsShared)['en'] = {
       { label: 'DGX Spark' },
       { label: 'Strix Halo' },
       { label: 'Flottes de neoclouds' },
-      { label: 'GPU de datacenter pour entreprises', inProgress: true },
+      { label: 'H100 · H200 · B100 · B200 · premières exécutions' },
+      { label: 'MI300 · premières exécutions' },
     ],
   },
 };

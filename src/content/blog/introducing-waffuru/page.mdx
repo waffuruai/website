@@ -1,20 +1,24 @@
 import { ArticleLayout } from '@/components/blog/article-layout';
+import { StackFlow } from '@/components/stack/stack-flow';
+import { home } from '@/content/pages/home';
 
 export const article = {
-  title: 'Introducing Waffuru',
+  title: 'Announcing Waffuru',
   description:
-    'Waffuru builds the foundation for running intelligence on the hardware you already own. Why we started, what is in the stack, and where we are.',
+    'Waffuru is building the AI stack that runs models fast and at the lowest cost per token, on hardware you own or rent. Our mission, what we believe, the team, and our first product: Pantry, a free vulnerability scanner.',
   author: 'eric-kryski',
-  date: '2026-10-26',
+  date: '2026-10-28',
   published: true,
+  image: 'blog/introducing-waffuru',
   category: 'Company',
-  tags: ['company', 'launch', 'stack'],
+  tags: ['company', 'launch', 'stack', 'pantry'],
   keywords: [
-    'waffuru',
+    'Waffuru',
     'local AI',
+    'private AI',
     'on-device inference',
-    'GPU kernels',
-    'early access',
+    'Pantry',
+    'vulnerability scanner',
   ],
 };
 
@@ -22,84 +26,83 @@ export default (props) => (
   <ArticleLayout article={article} slug="introducing-waffuru" {...props} />
 );
 
-You should be able to run intelligence on the machine in front of you, and keep what it learns about you right there. That is the job we set out to do, and our mission fits on one line: **Democratize access to intelligence.**
+You should be able to run intelligence on the machine in front of you, and keep what it learns about you right there. Today we are announcing Waffuru, the company building the stack to make that real, and shipping our first product with it: [Pantry](/products/pantry), a **free**, open-source vulnerability scanner for macOS and Linux.
 
-The name is the Japanese word for waffles, ワッフル (waffuru). It nods to Tom’s love of manga, to a shared love of waffles on the team, and to a mission that does not stop at any border.
+Our mission fits on one line: **Democratize access to intelligence.**
 
-## Why _now_
+The name is the Japanese word for waffles, ワッフル (waffuru). It is a nod to our respect for Japanese culture and its deep history, a shared love of waffles on the team, and to a mission that does not stop at any border.
 
-Demand for intelligence is limitless. The resources that power it are not. Scaling inference takes more than new datacenters and more power; it takes more useful work from every unit of compute and energy. The next generation of infrastructure has to grow access to intelligence faster than it grows cost, energy demand and environmental impact.
+## What we _believe_
 
-When power is the ceiling, efficiency is the variable you can still move. Tokens per watt and dollars per workload are the numbers we get to improve. Efficiency will not shrink demand, either. Every gain gets spent on more intelligence, the old Jevons paradox, so the appetite for compute only grows.
+We wrote our theses down so you can hold us to them. The short version:
 
-The other end of the curve is moving too. We think that within about two years, models running on hardware people already own will be good enough for meaningful work, because Moore’s law and fast AI progress keep compounding.
+- **Demand for intelligence is limitless. The resources behind it are not.** Power and chips are the ceiling, so the win is more useful work from every unit of compute and energy. Every gain gets spent on more intelligence, so that work never finishes.
+- **Good-enough models on hardware you own are here.** Models running on the laptops, desktops and servers people already have are good enough for meaningful work today.
+- **Everyone will have a personal assistant, or a team of them.** People want agency, so an assistant has to be a trusted extension of you: helpful, approachable, never scary, and yours.
+- **Access must not depend on geography, wealth or credentials.** Raising earning potential everywhere takes open, local access to intelligence.
 
-We expect everyone to have a personal assistant, or a team of them, talking to each other. People want agency, so an assistant has to be a trusted extension of yourself: helpful and approachable, not scary. That relationship will be as personal as the one you have with your phone. It should not depend on where you live, what you earn or which credentials you hold, and raising earning potential everywhere takes open, local access to intelligence.
+Two constraints follow: minimize token usage and cost per token, on consumer and data-centre hardware alike, and keep your data on your hardware unless you choose otherwise. [Our about page](/about#beliefs) has all seven theses and the values behind them.
 
-## What we are _building_
+## The _stack_
 
-Four products, numbered from the metal up. Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on. Each works alone, and together they are the foundation for local-first personal assistants.
+To run capable models and agents on hardware you own or rent, every layer between your question and the silicon has to be lean, fast and yours. So we are building all of them.
 
-### Iron, the kernels
+<StackFlow copy={home.en.stack.flow} className="not-prose my-10" />
 
-[Iron](/products/iron) is one kernel definition, four backends. You write a kernel in a Rust-embedded DSL. It lowers to a shared IR, then to Metal, CUDA, HIP/ROCm or Vulkan SPIR-V, and a versioned C and Rust ABI lets the hosts you already have call it. Today that is about 1,139 kernel declarations, and our HIP and Vulkan test corpus passes 4,164 of 4,164 cases bit-accurate. This is the whole definition of an `exp` kernel:
+Six products, from the top down:
 
-```rust title="unary.rs"
-#[kernel(bench(op = "unary", subop = "exp", tol = 1e-4))]
-pub fn iron_exp<T>(a: Tensor<T>, out: Tensor<T>) {
-    let idx = program_id(0);
-    store(out[idx], exp(load(a[idx])));
-}
+- **Pantry** keeps every machine safe: it finds what is exposed and patches it. It is **free** and open source today.
+- **Waffle** is the agent harness, with W, our assistant, inside. It runs local models first and reaches for the cloud only when a task needs more. Coming soon.
+- **Whisk** mixes the right documents and context into every request, from your own notes and code, with citations.
+- **Syrup** is the control plane: monitoring, telemetry, access control and cost, for every GPU and every engine on it.
+- **Butter** is the multi-modal inference engine: text, vision and audio, streamed, in Swift for macOS and iOS and Rust for everything else, with minimal dependencies.
+- **Iron** is the kernels: written once in Rust and optimized for each chip. Metal first, then CUDA, with ROCm and Vulkan running and not tuned yet.
+
+Your request goes down through them and the answer comes back the same way, on hardware you own or rent, and nothing leaves it unless you say so. Each product works on its own, and together they do more.
+
+Apart from Pantry, the stack is private and in early access while we harden it. The [home page](/) shows how the pieces fit, and you can **[reserve a seat](https://forms.gle/SHaVSRRWmZKy8UJy7)** to be one of the first to experience a brand new local AI experience.
+
+## First out the _kitchen_: Pantry
+
+Before AI runs on your machines, they have to be safe. Pantry is the tool we built to keep ours that way, and today it is yours, **free**.
+
+Security teams ask two questions: what am I exposed to, and how fast can I patch it? CVE lists and feeds answer the first with noise, and the tools that answer it well are mostly behind a paywall. Pantry closes the gap. It checks everything installed on your machine, and every repo on it, against open vulnerability data, reports only what applies to your exact versions, and fixes what it safely can.
+
+- **Rapid.** Answers are cached in SQLite on your machine, with an audit trail of every run, so a second scan the same day takes seconds.
+- **No AI, no telemetry.** Plain, deterministic code. Only package names and versions leave your machine, to look them up.
+- **Written in Rust** for speed and safety, dependency-light, and every release is versioned, hashed and verifiable before it runs.
+- **For people and agents**, on a personal computer or a fleet of servers.
+- **macOS and Linux today.** Windows support is planned, and if we see enough demand, we’ll bump up the timeline.
+
+Read [how Pantry works](/blog/introducing-pantry), see the [Pantry page](/products/pantry), or [read the source on GitHub](https://github.com/waffuruai/pantry).
+
+<p className="not-prose mt-8 -mb-5 label-mono text-muted-foreground">
+  {'Basic usage'}
+</p>
+
+```sh
+mise use -g packslip:github.com/waffuruai/pantry
+wpantry
 ```
-
-You write that. Iron writes the rest.
-
-### Butter, the engine
-
-[Butter](/products/butter) is model serving without Python: Swift on Metal for Apple silicon, Rust for CUDA and the rest. It loads models straight from Hugging Face (safetensors, MLX, JANG and GGUF) with no conversion, and runs 2- to 8-bit quantized checkpoints, hybrid and mixture-of-experts models and a quantized KV cache. `butter serve` speaks the OpenAI API, with streaming, tool calling, speculative decoding and LoRA. Text, vision, speech-to-text, text-to-speech and omni models all run. No Python, no JIT.
-
-### Waffle, the control plane
-
-[Waffle](/products/waffle) shows you every GPU and every engine running on it, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. It works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so there is no lock-in.
-
-### Syrup, the memory
-
-[Syrup](/products/syrup) is how your AI remembers what you were working on. It runs local retrieval over your notes and code, compresses embeddings with TurboQuant+, searches lexically and by vector, and returns results with citations over MCP.
-
-## What we _value_
-
-We wrote our values down so you can hold us to them, and a few shape this post. Honesty means we state status, risk, mistakes and limits directly, which is why the section on where we are below is specific. The scientific method means we hypothesize, measure and reproduce, because benchmarks beat opinions. Autonomy means we build systems that give people time back. Equal opportunity means access to intelligence must not depend on geography, wealth or credentials.
-
-Two constraints follow from those. What we build has to run on consumer hardware, and your data stays on your machine unless you opt in. We also try to have fun, because hard problems deserve a team that enjoys the work.
 
 ## Who’s in the _kitchen_
 
-Research, security, revenue and a couple of founders who have shipped before. There are five of us, and the [team page](/about/team) has the longer version.
+Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise. The [team page](/about/team) has the longer version.
 
-- **Kyle Croll, CEO.** Ex-military, with a background in threat intelligence and threat hunting, and an eye on AI strategy and security.
-- **Eric Gonzalez, Chief Revenue Officer.** Has scaled companies from $50M to $2B ARR, at Oracle NetSuite and at Anaconda.
-- **Eric Kryski, Chief Product Officer.** A full-stack developer, designer and ML researcher, and the co-founder of Bidali and Bullish Ventures. That is me.
-- **Tom Turney, Chief of Research.** The AI researcher behind TurboQuant+, and a former tech lead manager at Google.
-- **Cory Smith, CTO.** Has exited a company, then co-founded Bidali as its CTO and helped grow it to millions in stablecoin payments volume. He has been building consumer and enterprise products since 2009.
+- **Kyle Croll, Chief Executive Officer.** Served in the Navy, with a background in threat intelligence and threat hunting, then earned an MBA at McCombs. He brings a security lens to how AI gets built and deployed.
+- **Eric Gonzalez, Chief Revenue Officer.** Has scaled companies from $50M to $2B in ARR, at Oracle NetSuite and at Anaconda, and holds an MBA from McCombs.
+- **Eric Kryski, Chief Product Officer.** Leads product and strategy. A full-stack developer, designer and ML researcher, and co-founder of Bidali and Bullish Ventures. That is me.
+- **Tom Turney, Chief of Research.** Almost a decade at Google in a senior technical role, then the first working implementation of Google’s [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) compression, and TurboQuant+, which improves on it.
+- **Cory Smith, Chief Technology Officer.** A seasoned, hands-on, full-stack startup CTO with one exit and one failure behind him, and co-founder and CTO of Bidali.
 
 ## Where we _are_
 
-Early. Our products are private and closed source for now, and access is by request. Here is the hardware picture, stated plainly:
+We’re coming out of stealth after Tom and I started building six months ago. Tom brought in Eric Gonzalez and Kyle, and I brought in my long-time business partner Cory. We’re still early in our journey, but we have an aggressive product roadmap and are executing at lightning pace!
 
-- **Apple silicon, Metal: primary.** Every kernel is written and tuned here first.
-- **NVIDIA, CUDA: secondary.** In production on RTX and DGX Spark, with datacenter GPUs in progress.
-- **AMD ROCm and Vulkan: runs.** Both work today and neither is tuned yet.
+Pantry is public and free today. The rest of the stack is private, closed source for now, and open by request. We are not quoting speed numbers in this post; when we publish them, they come with the conditions we measured them under.
 
-In practice that means MacBooks and Mac Studios, RTX workstations, DGX Spark, Strix Halo and neocloud fleets, with enterprise datacenter GPUs still to come. We are not quoting speed numbers yet.
+## Reserve your _seat_
 
-If you are in early access, installing Iron is one line:
+[Secure your system with Pantry](/products/pantry), then tell us what it found. If you want the rest of the stack, [request early access](https://forms.gle/SHaVSRRWmZKy8UJy7). If you would rather watch first, sign up for the newsletter at the bottom of this page, or follow us on [X](https://x.com/waffuruai) and [LinkedIn](https://www.linkedin.com/company/waffuru/).
 
-```sh
-curl -fsSL https://waffuru.ai/iron/install.sh | sh
-```
-
-## Follow _along_
-
-Pull up a seat. The way in is to [request early access](https://forms.gle/SHaVSRRWmZKy8UJy7). If you would rather watch first, sign up for the newsletter in the footer of this page, or follow us on [X](https://x.com/waffuruai) and [LinkedIn](https://www.linkedin.com/company/waffuru/).
-
-Questions, or something you want to build on this? Write to [hello@waffuru.ai](mailto:hello@waffuru.ai).
+Questions, or something you want to build with us? Write to [hello@waffuru.ai](mailto:hello@waffuru.ai).

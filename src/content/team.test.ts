@@ -23,7 +23,6 @@ describe('team', () => {
         "eric-gonzalez.x",
         "tom-turney.website",
         "cory-smith.website",
-        "cory-smith.x",
         "cory-smith.github",
       ]
     `);
@@ -41,6 +40,7 @@ describe('team', () => {
       slug: 'test',
       name: 'Test Person',
       photo: 'team/test',
+      country: 'us',
       links: {
         linkedin: 'https://www.linkedin.com/in/test/',
         website: PLACEHOLDER,
@@ -80,5 +80,17 @@ describe('team', () => {
     expect(getMember('tom-turney')?.name).toBe('Tom Turney');
     expect(getMember('nobody')).toBeUndefined();
     expect(new Set(team.map((member) => member.slug)).size).toBe(team.length);
+  });
+
+  it('places each person in the United States or Canada', () => {
+    expect(
+      Object.fromEntries(team.map((member) => [member.slug, member.country])),
+    ).toEqual({
+      'kyle-croll': 'us',
+      'eric-gonzalez': 'us',
+      'eric-kryski': 'ca',
+      'tom-turney': 'us',
+      'cory-smith': 'ca',
+    });
   });
 });

@@ -42,7 +42,8 @@ export type TypeFace = {
   source: { label: string; href: string };
 };
 
-export type MotifKey = 'tiles' | 'stamps' | 'pat' | 'leds' | 'drip';
+export type MotifKey =
+  'jar' | 'shelf' | 'tiles' | 'whisk' | 'drips' | 'pat' | 'stamps' | 'leds';
 
 export type BrandContent = {
   seo: Seo;
@@ -157,7 +158,7 @@ export const brand: Localized<BrandContent> = {
           body: 'Capitalized in running text and headings. The lowercase “waffuru” belongs to the wordmark alone.',
         },
         {
-          term: 'Iron, Butter, Waffle, Syrup',
+          term: 'Iron, Butter, Syrup, Whisk',
           body: 'The four products, always capitalized and never translated, in every language.',
         },
         {
@@ -166,11 +167,11 @@ export const brand: Localized<BrandContent> = {
         },
         {
           term: 'The waffle mark',
-          body: 'Call the picture “the waffle mark”. Waffle with a capital W is our GPU control-plane product.',
+          body: 'Call the picture “the waffle mark”.',
         },
       ],
       origin:
-        '“Waffuru” is how Japanese says waffles. The name is a nod to a love of manga, a shared love of waffles and a global mission.',
+        '“Waffuru” is how Japanese says waffles. The name is a nod to our respect for Japanese culture and deep history, a shared love of waffles and a global mission.',
     },
     colour: {
       title: 'The *palette*.',
@@ -303,7 +304,7 @@ export const brand: Localized<BrandContent> = {
           role: 'Text',
           use: 'Body copy, buttons and interface.',
           sample:
-            'GPU kernels, inference, fleet control and memory for the hardware you already own.',
+            'Kernels, inference, a control plane, memory and an agent harness, for hardware you own or rent.',
           glyphs:
             'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
           source: {
@@ -335,32 +336,53 @@ export const brand: Localized<BrandContent> = {
     motifs: {
       title: 'Motifs, in *motion*.',
       intro:
-        'Pure CSS, drawn from the products: tiles that glow, a stamp, a melting pat, status lights and a drop of syrup. They stop moving when a visitor’s device asks for reduced motion.',
+        'Pure CSS, drawn from the products, top of the stack down: two options for Pantry, tiles that glow, a whisk, syrup drips, melting butter, a press, and status lights. They stop moving when a visitor’s device asks for reduced motion.',
       items: [
+        {
+          key: 'jar',
+          name: 'Sealed jar',
+          description:
+            'A lid twisting shut and a gold seal pressing on: checked before it runs. One option for Pantry.',
+        },
+        {
+          key: 'shelf',
+          name: 'Shelf check',
+          description:
+            'A scan down the shelves, and the one jar past its date swapped for a fresh one. One option for Pantry.',
+        },
         {
           key: 'tiles',
           name: 'Waffle tiles',
           description: 'A grid of tiles, a few of them glowing gold.',
         },
         {
-          key: 'stamps',
-          name: 'Stamps',
-          description: 'A grid pressed one square at a time. Iron’s motif.',
+          key: 'whisk',
+          name: 'Whisk',
+          description:
+            'Wire loops spinning in a bowl, folding gold into the mix. Whisk’s motif.',
+        },
+        {
+          key: 'drips',
+          name: 'Drips',
+          description:
+            'Syrup gathering and dripping, every drop a data point. Syrup’s motif.',
         },
         {
           key: 'pat',
-          name: 'Butter pat',
-          description: 'A pat that melts and resets. Butter’s motif.',
+          name: 'Melting butter',
+          description:
+            'A pat melting into a slick pool that greases the works. Butter’s motif.',
+        },
+        {
+          key: 'stamps',
+          name: 'Press',
+          description: 'A press coming down one row at a time. Iron’s motif.',
         },
         {
           key: 'leds',
           name: 'LEDs',
-          description: 'A rack of status lights. Waffle’s motif.',
-        },
-        {
-          key: 'drip',
-          name: 'Drip',
-          description: 'A drop running down a line. Syrup’s motif.',
+          description:
+            'A rack of status lights, held for a product still in the works.',
         },
       ],
     },
@@ -371,10 +393,10 @@ export const brand: Localized<BrandContent> = {
       dontLabel: 'Don’t',
       dos: [
         'Write Waffuru with a capital W. Use the lowercase “waffuru” only in the wordmark.',
-        'Write Iron, Butter, Waffle and Syrup as shown, in every language.',
+        'Write Iron, Butter, Syrup and Whisk as shown, in every language.',
         'Give the waffle mark room, on a dark or light ground with enough contrast.',
         'Describe our products as they are: private for now, with early access on request.',
-        'Describe hardware support as it is: Metal first, CUDA second, ROCm and Vulkan running but not yet tuned.',
+        'Describe hardware support as it is: Metal primary, CUDA being tuned, ROCm and Vulkan coming soon (they run, not tuned yet).',
       ],
       donts: [
         'Recolour, outline, rotate, crop or add effects to the mark.',

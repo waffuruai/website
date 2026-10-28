@@ -16,9 +16,10 @@ const fr: Dictionary = {
     faqHeading: 'Vos questions, nos réponses',
   },
   meta: {
-    defaultTitle: 'Waffuru : des maths brutes, pressées dans le silicium',
+    defaultTitle:
+      'Waffuru : plus d’intelligence sur le matériel que vous possédez déjà',
     defaultDescription:
-      'Kernels GPU, inférence, pilotage de flotte et mémoire pour le matériel que vous possédez déjà. Waffuru conçoit Iron, Butter, Waffle et Syrup.',
+      'Waffuru construit la stack d’IA qui fait tourner les modèles vite et à moindre coût sur du matériel que vous possédez ou louez, privée par défaut. Commencez par Pantry, notre scanner de vulnérabilités gratuit pour macOS et Linux.',
   },
   header: {
     mainNav: 'Principal',
@@ -46,10 +47,14 @@ const fr: Dictionary = {
     help: 'Aide',
     allProducts: 'Voir toute la stack',
     allSolutions: 'Toutes les solutions',
+    industries: 'Secteurs',
+    byIndustry: 'Par secteur',
+    allIndustries: 'Tous les secteurs',
+    openSource: 'Libre et open source',
     items: {
       stack: {
         label: 'La stack Waffuru',
-        description: 'Quatre produits, seuls ou ensemble.',
+        description: 'Cinq produits qui fonctionnent seuls ou ensemble.',
       },
       iron: {
         label: 'Iron',
@@ -57,16 +62,26 @@ const fr: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Servir des modèles sans Python.',
+        description: 'Inférence multimodale, sans compromis.',
+      },
+      syrup: {
+        label: 'Syrup',
+        description:
+          'Supervision, télémétrie, contrôle d’accès et coûts pour chaque GPU.',
+      },
+      whisk: {
+        label: 'Whisk',
+        description:
+          'Incorpore les bons documents et le bon contexte à chaque requête.',
       },
       waffle: {
         label: 'Waffle',
         description:
-          'Chaque GPU et chaque moteur qui y tourne, en un coup d’œil.',
+          'Faites tourner vos agents, avec W, votre assistant, à l’intérieur.',
       },
-      syrup: {
-        label: 'Syrup',
-        description: 'Votre IA se souvient de ce sur quoi vous travailliez.',
+      pantry: {
+        label: 'Pantry',
+        description: 'Scanner de vulnérabilités gratuit pour macOS et Linux.',
       },
       smallBusiness: {
         label: 'Petites entreprises',
@@ -85,6 +100,27 @@ const fr: Dictionary = {
         label: 'Entreprises de modèles et d’inférence',
         description:
           'Des kernels et un serving plus rapides sur chaque backend.',
+      },
+      cloudInfrastructure: {
+        label: 'Infrastructure cloud',
+        description: 'Plus de production et des marges claires sur chaque GPU.',
+      },
+      financialServices: {
+        label: 'Services financiers',
+        description: 'Une IA privée qui garde les données clients chez vous.',
+      },
+      lifeSciences: {
+        label: 'Sciences de la vie',
+        description:
+          'Des modèles au plus près de données de recherche sensibles.',
+      },
+      government: {
+        label: 'Secteur public',
+        description: 'Une IA souveraine sur un matériel que vous maîtrisez.',
+      },
+      military: {
+        label: 'Défense',
+        description: 'Une IA capable, sur un matériel à vous et sécurisé.',
       },
       about: {
         label: 'Qui sommes-nous',
@@ -121,10 +157,15 @@ const fr: Dictionary = {
       },
     },
   },
+  countries: {
+    us: 'États-Unis',
+    ca: 'Canada',
+  },
   footer: {
     heading: 'Pied de page',
     products: 'Produits',
     solutions: 'Solutions',
+    industries: 'Secteurs',
     company: 'Entreprise',
     help: 'Aide',
     terms: 'Conditions d’utilisation',
@@ -133,7 +174,8 @@ const fr: Dictionary = {
     madeIn: 'Fait avec 🤖 en Amérique du Nord',
     flagsLabel: 'États-Unis et Canada',
     social: 'Waffuru sur {network}',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
+    versionLabel: 'Version du site, commit et date',
   },
   newsletter: {
     heading: 'Restez informé',

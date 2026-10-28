@@ -21,6 +21,12 @@ describe('About page', () => {
     expect(h1[0]?.querySelector('em')?.textContent).toBe('intelligence');
   });
 
+  it('says what the name means, with the katakana', async () => {
+    await renderPage();
+    expect(screen.getByText(/how Japanese says waffles/)).toBeTruthy();
+    expect(screen.getByText('ワッフル').getAttribute('lang')).toBe('ja');
+  });
+
   it('has the sections in order, with ordered headings', async () => {
     await renderPage();
     expect(
@@ -30,7 +36,7 @@ describe('About page', () => {
       'What we believe.',
       'What we value.',
       'The people behind it.',
-      'Pull up a chair.',
+      'Put on an apron.',
       'Try it early.',
     ]);
   });

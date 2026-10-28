@@ -60,7 +60,7 @@ const brandZh: (typeof brand)['en'] = {
         body: '正文和标题中首字母大写。小写的“waffuru”只属于字标。',
       },
       {
-        term: 'Iron, Butter, Waffle, Syrup',
+        term: 'Iron, Butter, Syrup, Whisk',
         body: '四款产品，名称始终首字母大写，在任何语言中都不翻译。',
       },
       {
@@ -69,11 +69,11 @@ const brandZh: (typeof brand)['en'] = {
       },
       {
         term: '华夫饼标志',
-        body: '请把这幅图称作“华夫饼标志”。写作 Waffle 的，是我们的 GPU 控制平面产品。',
+        body: '请把这幅图称作“华夫饼标志”。',
       },
     ],
     origin:
-      '“Waffuru”是日语里“华夫饼”的说法。这个名字呼应了对漫画的热爱、对华夫饼的共同喜爱，以及一个面向全球的使命。',
+      '“Waffuru”是日语里“华夫饼”的说法。这个名字表达了我们对日本文化及其深厚历史的敬意、对华夫饼的共同喜爱，以及一个面向全球的使命。',
   },
   colour: {
     title: '*配色*。',
@@ -207,7 +207,7 @@ const brandZh: (typeof brand)['en'] = {
         role: '正文',
         use: '正文、按钮与界面。',
         sample:
-          'GPU kernels, inference, fleet control and memory for the hardware you already own.',
+          'Kernels, inference, a control plane, memory and an agent harness, for hardware you own or rent.',
         glyphs:
           'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
         source: {
@@ -238,32 +238,50 @@ const brandZh: (typeof brand)['en'] = {
   motifs: {
     title: '图案，让它*动起来*。',
     intro:
-      '纯 CSS 绘制，取材自各款产品：会发光的方块、一枚印章、融化的黄油块、状态灯和一滴糖浆。当访客的设备要求减少动态效果时，它们会停止运动。',
+      '纯 CSS 绘制，取材自各款产品，按技术栈从上到下：Pantry 的两个备选、会发光的方块、打蛋器、滴落的糖浆、融化的黄油、压机和状态灯。当访客的设备要求减少动态效果时，它们会停止运动。',
     items: [
+      {
+        key: 'jar',
+        name: '密封罐',
+        description:
+          '拧紧盖子，再压上金色封印：运行前先验证。Pantry 的备选之一。',
+      },
+      {
+        key: 'shelf',
+        name: '货架检查',
+        description:
+          '从上到下扫描货架，把唯一过期的罐子换成新的。Pantry 的备选之一。',
+      },
       {
         key: 'tiles',
         name: '华夫饼方格',
         description: '一格格方块，其中几块泛着金色的光。',
       },
       {
-        key: 'stamps',
-        name: '印章',
-        description: '一次压下一个方格的网格。Iron 的图案。',
+        key: 'whisk',
+        name: '打蛋器',
+        description: '钢丝圈在碗里旋转，把金色拌进去。Whisk 的图案。',
+      },
+      {
+        key: 'drips',
+        name: '糖浆滴',
+        description: '糖浆聚起又滴落，每一滴都是一个数据点。Syrup 的图案。',
       },
       {
         key: 'pat',
-        name: '黄油块',
-        description: '融化后再重置的黄油块。Butter 的图案。',
+        name: '融化的黄油',
+        description:
+          '黄油块化成一摊油亮的黄油，让一切运转更顺滑。Butter 的图案。',
+      },
+      {
+        key: 'stamps',
+        name: '压机',
+        description: '一次压下一整行的压机。Iron 的图案。',
       },
       {
         key: 'leds',
         name: 'LED 灯',
-        description: '一排状态灯。Waffle 的图案。',
-      },
-      {
-        key: 'drip',
-        name: '滴落',
-        description: '沿着线条流下的一滴。Syrup 的图案。',
+        description: '一排状态灯，留给一款还在打磨中的产品。',
       },
     ],
   },
@@ -274,10 +292,10 @@ const brandZh: (typeof brand)['en'] = {
     dontLabel: '请勿',
     dos: [
       '写作 Waffuru，W 大写。小写的“waffuru”只用于字标。',
-      '写作 Iron、Butter、Waffle 和 Syrup，在任何语言中都保持原样。',
+      '写作 Iron、Butter、Syrup 和 Whisk，在任何语言中都保持原样。',
       '给华夫饼标志留出空间，放在对比度足够的深色或浅色底色上。',
       '如实描述我们的产品：目前未公开，可申请抢先体验。',
-      '如实描述硬件支持：Metal 优先，CUDA 其次，ROCm 和 Vulkan 可运行但尚未调优。',
+      '如实描述硬件支持：Metal 为首要，CUDA 调优中，ROCm 和 Vulkan 即将推出（可运行但尚未调优）。',
     ],
     donts: [
       '给标志重新着色、描边、旋转、裁剪或添加特效。',

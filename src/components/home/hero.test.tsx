@@ -4,6 +4,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { Hero } from '@/components/home/hero';
 import { HeroTiles } from '@/components/home/hero-tiles';
 import { home } from '@/content/pages/home';
+import { pantryFacts } from '@/content/pages/pantry/facts';
 import { site } from '@/content/site';
 import { withDictionary } from '@/i18n/test-utils';
 
@@ -21,8 +22,10 @@ describe('Hero', () => {
     );
     const headings = screen.getAllByRole('heading', { level: 1 });
     expect(headings).toHaveLength(1);
-    expect(headings[0].textContent).toBe('Raw math, pressed into silicon.');
-    expect(headings[0].querySelector('em')?.textContent).toBe('pressed');
+    expect(headings[0].textContent).toBe(
+      'More intelligence on hardware you already own.',
+    );
+    expect(headings[0].querySelector('em')?.textContent).toBe('own');
     expect(container.querySelector('h1.heading-hero')).not.toBeNull();
   });
 
@@ -31,20 +34,18 @@ describe('Hero', () => {
     const access = screen.getByRole('link', { name: /request early access/i });
     expect(access.getAttribute('href')).toBe(site.urls.earlyAccess);
     expect(
-      screen.getByRole('link', { name: /see the stack/i }).getAttribute('href'),
+      screen
+        .getByRole('link', { name: /see how it works/i })
+        .getAttribute('href'),
     ).toBe('#stack');
   });
 
-  it('lists every backend Iron emits, with a decorative cursor', () => {
-    const { container } = render(
-      withDictionary(<Hero content={home.en.hero} primary={primary} />),
-    );
-    for (const target of home.en.hero.emits.targets) {
-      expect(screen.getByText(target)).toBeTruthy();
-    }
-    expect(
-      container.querySelector('.wf-blink')?.getAttribute('aria-hidden'),
-    ).toBe('true');
+  it('announces Pantry above the title', () => {
+    render(withDictionary(<Hero content={home.en.hero} primary={primary} />));
+    const launch = screen.getByRole('link', {
+      name: new RegExp(home.en.hero.launch.text),
+    });
+    expect(launch.getAttribute('href')).toBe(pantryFacts.path);
   });
 });
 

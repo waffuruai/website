@@ -4,7 +4,7 @@ const ironFr: (typeof iron)['en'] = {
   layer: 'Kernels',
   tagline: 'Une définition de kernel, quatre backends.',
   summary:
-    'Un DSL embarqué dans Rust. Les kernels sont compilés vers une IR partagée, puis vers Metal, CUDA, HIP/ROCm ou Vulkan SPIR-V. Une ABI C et Rust versionnée permet aux hôtes existants de les appeler.',
+    'Écrivez une fois en Rust, obtenez des kernels optimisés partout. Un DSL embarqué dans Rust. Les kernels sont compilés vers une IR partagée, puis vers Metal, CUDA, HIP/ROCm ou Vulkan SPIR-V. Une ABI C et Rust versionnée permet aux hôtes existants de les appeler.',
   seo: {
     title: 'Iron : une définition de kernel GPU, quatre backends',
     description:
@@ -20,7 +20,7 @@ const ironFr: (typeof iron)['en'] = {
   },
   hero: {
     title: 'Une définition de kernel, *quatre* backends.',
-    lede: 'Pressez des maths brutes directement dans du silicium haute performance. Iron est un DSL embarqué dans Rust : vous écrivez le kernel une fois, il est compilé vers une IR partagée, puis vers Metal, CUDA, HIP/ROCm ou Vulkan SPIR-V.',
+    lede: 'Faites faire brrrr à votre moteur d’inférence. Iron est un DSL embarqué dans Rust : vous écrivez le kernel une fois, il est compilé en kernels optimisés pour un matériel précis, réglés pour les modèles de pointe et les charges de travail courantes.',
     highlights: [
       {
         value: '4',
@@ -56,15 +56,15 @@ const ironFr: (typeof iron)['en'] = {
       },
       {
         title: 'Écrit en Rust',
-        body: 'Un DSL embarqué dans Rust. Les kernels sont des fonctions Rust annotées #[kernel], composées de primitives comme program_id, load et store.',
+        body: 'Un DSL embarqué dans Rust. Les kernels sont des fonctions Rust annotées #[kernel], composées de primitives comme program_id, load et store. Iron est lui-même écrit en Rust, pour la vitesse et la sûreté mémoire, et réduit ses dépendances au minimum, ce qui laisse moins de prise à une attaque de la chaîne d’approvisionnement.',
       },
       {
         title: 'Appelable depuis votre hôte',
         body: 'Une ABI C et Rust versionnée permet aux hôtes existants d’appeler les kernels Iron sans devoir être réécrits autour.',
       },
       {
-        title: 'Exact au bit près, par test',
-        body: 'Le corpus de tests HIP et Vulkan compte 4 164 cas, tous exacts au bit près.',
+        title: 'Exact au bit près par test, mesuré par bench',
+        body: 'Le corpus de tests HIP et Vulkan compte 4 164 cas, tous exacts au bit près. Des outils de bench et de performance sont fournis avec, si bien que chaque kernel est mesuré autant que vérifié.',
       },
       {
         title: 'Plus d’un millier de kernels',
@@ -72,20 +72,12 @@ const ironFr: (typeof iron)['en'] = {
       },
       {
         title: 'Optimisé là où ça compte',
-        body: 'Chaque kernel est d’abord écrit et optimisé sur Metal. CUDA est secondaire, et ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
+        body: 'Chaque kernel est d’abord écrit et optimisé sur Metal. CUDA est en cours d’optimisation, et ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
       },
     ],
   },
-  code: {
-    heading: 'Un kernel complet, *de bout en bout*.',
-    intro:
-      'Voici exp appliquée à un tenseur. Chaque instance charge un élément, applique exp et stocke le résultat. L’attribut #[kernel] indique l’opération et sa tolérance.',
-    caption:
-      'Source du DSL Iron. Iron la compile vers Metal, CUDA, HIP/ROCm ou Vulkan SPIR-V.',
-  },
   specs: {
     heading: 'Les *détails* techniques.',
-    intro: 'Les détails, pour celles et ceux qui les liront.',
     rows: [
       {
         term: 'Langage',
@@ -125,32 +117,10 @@ const ironFr: (typeof iron)['en'] = {
       },
     ],
   },
-  platforms: {
-    heading: 'Où c’est *optimisé*.',
-    intro:
-      'Metal passe en premier, car c’est là que chaque kernel est écrit et optimisé.',
-    tiers: [
-      {
-        platform: 'Apple · Metal',
-        level: 'primary',
-        note: 'Chaque kernel est d’abord écrit et optimisé ici. MSL → .metallib.',
-      },
-      {
-        platform: 'NVIDIA · CUDA',
-        level: 'secondary',
-        note: 'En production sur RTX et DGX Spark. GPU de datacenter en cours. CUDA → PTX.',
-      },
-      {
-        platform: 'AMD ROCm · Vulkan',
-        level: 'runs',
-        note: 'Fonctionne aujourd’hui, pas encore optimisé. HIP → AMDGPU, Vulkan → SPIR-V.',
-      },
-    ],
-  },
   stack: {
     heading: 'Compatible avec le reste de la *stack*.',
     intro:
-      'Iron se suffit à lui-même. Ajoutez Butter pour exécuter des modèles sur les kernels, Waffle pour surveiller les GPU sur lesquels ils tournent, ou Syrup pour donner à votre IA la mémoire de ce sur quoi vous travailliez.',
+      'Iron se suffit à lui-même. Ajoutez Butter pour exécuter des modèles sur les kernels, Syrup pour surveiller les GPU sur lesquels ils tournent, ou Whisk pour donner à votre IA la mémoire de ce sur quoi vous travailliez.',
   },
   faq: [
     {
@@ -161,7 +131,7 @@ const ironFr: (typeof iron)['en'] = {
     {
       question: 'Sur quel matériel cela tourne-t-il ?',
       answer:
-        'Metal sur le silicium Apple est la cible principale : chaque kernel y est d’abord écrit et optimisé. CUDA est secondaire, en production sur RTX et DGX Spark, avec les GPU de datacenter en cours. ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
+        'Metal sur le silicium Apple est la cible principale : chaque kernel y est d’abord écrit et optimisé. CUDA est en production sur RTX et DGX Spark et en cours d’optimisation, avec de premières exécutions faites sur H100, H200, B100 et B200. Côté AMD, les premières exécutions sont faites sur MI300, et ROCm et Vulkan fonctionnent aujourd’hui mais ne sont pas encore optimisés.',
     },
     {
       question: 'Dois-je réécrire mon code hôte ?',

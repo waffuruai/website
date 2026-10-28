@@ -50,7 +50,7 @@ How to read an entry: **Primary** is the one phrase the page should win. **Secon
 - **Primary:** local AI inference stack.
 - **Secondary:** GPU kernels, inference engine, GPU fleet monitoring and AI memory in one stack; Metal, CUDA, ROCm and Vulkan; open model serving.
 - **Intent:** commercial investigation.
-- **Where:** `h1` "The stack" style line; the intro sentence carries the primary phrase. `h2`s are the four products numbered 01 to 04 with their taglines. The stack line ("Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on.") belongs in the first screen.
+- **Where:** `h1` "The stack" style line; the intro sentence carries the primary phrase. `h2`s are the four products numbered 01 to 04 with their taglines. The stack line ("Iron compiles the kernels. Butter runs models on them. Syrup watches the GPUs. Whisk remembers what you were working on.") belongs in the first screen.
 
 ### Iron `/products/iron`
 
@@ -64,16 +64,16 @@ How to read an entry: **Primary** is the one phrase the page should win. **Secon
 - **Primary:** LLM inference engine for Apple silicon.
 - **Secondary:** model serving without Python; OpenAI-compatible local server; run Hugging Face models locally (safetensors, MLX, GGUF); quantized KV cache; speculative decoding; MoE and hybrid models; local speech-to-text and text-to-speech.
 - **Intent:** commercial investigation by developers and teams choosing a serving engine.
-- **Where:** `h1` "Model serving without Python." `h2`s: "Load straight from Hugging Face", "OpenAI-compatible `butter serve`", "Models on the menu" (the supported-model list). Never rank Butter against vLLM, SGLang or llama.cpp by name in headings; Waffle's copy already says they work together.
+- **Where:** `h1` "Model serving without Python." `h2`s: "Load straight from Hugging Face", "OpenAI-compatible `butter serve`", "Models on the menu" (the supported-model list). Never rank Butter against vLLM, SGLang or llama.cpp by name in headings; Syrup's copy already says they work together.
 
-### Waffle `/products/waffle`
+### Syrup `/products/syrup`
 
 - **Primary:** GPU fleet monitoring.
 - **Secondary:** GPU control plane; see every GPU and every engine running on it; signed GPU telemetry; works with vLLM, SGLang, llama.cpp and Butter; manage a GPU cloud.
 - **Intent:** commercial investigation by operators of GPU fleets.
 - **Where:** `h1` "See every GPU and every engine running on it." `h2`s: "From one box under a desk to a fleet", "Signed telemetry from a small Rust sidecar", "No lock-in" (any OpenAI-compatible server).
 
-### Syrup `/products/syrup`
+### Whisk `/products/whisk`
 
 - **Primary:** local memory for AI assistants.
 - **Secondary:** search your notes and code locally; hybrid lexical and vector search; MCP server for retrieval with citations; compressed embeddings (TurboQuant+).
@@ -106,14 +106,14 @@ How to read an entry: **Primary** is the one phrase the page should win. **Secon
 - **Primary:** software for GPU clouds (neoclouds).
 - **Secondary:** GPU fleet management; rent out GPUs with visibility into every engine; inference serving for GPU cloud customers; tokens per watt.
 - **Intent:** commercial investigation by operators who rent out GPU capacity.
-- **Where:** `h1` is the operator's outcome (fill and watch a fleet). `h2`s: fleet visibility (Waffle), serving (Butter), efficiency (tokens per watt and dollars per workload, as the thesis states, without numbers).
+- **Where:** `h1` is the operator's outcome (fill and watch a fleet). `h2`s: fleet visibility (Syrup), serving (Butter), efficiency (tokens per watt and dollars per workload, as the thesis states, without numbers).
 
 ### AI model and inference companies `/solutions/ai-companies`
 
 - **Primary:** inference engine for AI companies.
 - **Secondary:** reduce inference cost; more useful work per watt; cross-vendor GPU kernels; serve open models fast.
 - **Intent:** commercial investigation by model builders and inference providers.
-- **Where:** `h1` is the outcome (more intelligence out of every unit of compute and energy). `h2`s: kernels you write once (Iron), serving without Python (Butter), measure what you run (Waffle). Efficiency language only; no benchmark claims.
+- **Where:** `h1` is the outcome (more intelligence out of every unit of compute and energy). `h2`s: kernels you write once (Iron), serving without Python (Butter), measure what you run (Syrup). Efficiency language only; no benchmark claims.
 
 ### About `/about`
 
@@ -146,7 +146,7 @@ How to read an entry: **Primary** is the one phrase the page should win. **Secon
 ### Launch post `/blog/introducing-waffuru`
 
 - **Primary:** introducing Waffuru.
-- **Secondary:** what is Waffuru; democratize access to intelligence; Iron, Butter, Waffle and Syrup; local-first AI stack; why we are building it.
+- **Secondary:** what is Waffuru; democratize access to intelligence; Iron, Butter, Syrup and Whisk; local-first AI stack; why we are building it.
 - **Intent:** informational; the first thing a new reader or a journalist reads, and the page most likely to be cited by AI search.
 - **Where:** `h1` "Introducing Waffuru" (the slug and the title tag match it). `h2`s follow the story: the thesis (efficiency is the variable), the four products, what happens next (early access). Lead with a two-sentence answer to "what is Waffuru" so an agent can quote it. Code blocks carry a language so the markdown twin keeps it.
 
@@ -168,7 +168,7 @@ Legal pages (`/legal`, `/legal/terms`, `/legal/privacy`, `/legal/cookies`) targe
 
 ## Localised keywords
 
-Do not translate the keyword table word for word. Write each locale's title, description and `h1` around the phrase people in that language search for, and keep product and platform names in Latin script (Waffuru, Iron, Butter, Waffle, Syrup, Metal, CUDA, ROCm, Vulkan). Examples of the shape of the work (draft; have a native speaker confirm before shipping):
+Do not translate the keyword table word for word. Write each locale's title, description and `h1` around the phrase people in that language search for, and keep product and platform names in Latin script (Waffuru, Iron, Butter, Syrup, Whisk, Metal, CUDA, ROCm, Vulkan). Examples of the shape of the work (draft; have a native speaker confirm before shipping):
 
 | Locale | Home primary (draft)   |
 | ------ | ---------------------- |
@@ -222,7 +222,7 @@ The checks are the ones Cloudflare's [Agent Readiness score](https://blog.cloudf
 | API catalog (RFC 9727)           | `/.well-known/api-catalog`, a linkset generated from `releases/products.json`: a bookmark entry listing each product's `releases.json`, then one entry per API with `service-desc` (`/.well-known/releases.schema.json`). Served as `application/linkset+json`             | `curl -sI https://waffuru.ai/.well-known/api-catalog`            |
 | Agent Skills index               | `/.well-known/agent-skills/index.json` (discovery schema 0.2.0), generated from every `agent-skills/<name>/SKILL.md` with its `sha256:` digest. One skill, `install-waffuru`, covers installing Iron or Butter from the verified installer URLs and checking the `.sha256` | `curl -s https://waffuru.ai/.well-known/agent-skills/index.json` |
 | security.txt (RFC 9116)          | `public/.well-known/security.txt`: Contact (`mailto:hello@waffuru.ai?subject=Security`), Expires, Preferred-Languages, Canonical, Policy (`/support`). A test fails a month before it expires                                                                              | `curl -s https://waffuru.ai/.well-known/security.txt`            |
-| MCP server card                  | Not applicable: the site hosts no MCP server (Syrup's MCP server runs on the user's machine)                                                                                                                                                                               | n/a                                                              |
+| MCP server card                  | Not applicable: the site hosts no MCP server (Whisk's MCP server runs on the user's machine)                                                                                                                                                                               | n/a                                                              |
 | OAuth and protected resources    | Not applicable: the site has no authenticated API. Add RFC 9728 and RFC 8414 metadata if one ever ships                                                                                                                                                                    | n/a                                                              |
 | A2A card, WebMCP, x402, UCP, ACP | Not applicable: nothing to transact or expose to agents beyond reading and installing                                                                                                                                                                                      | n/a                                                              |
 

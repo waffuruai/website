@@ -10,6 +10,7 @@ import {
   installerLines,
   orderPages,
   sectionOf,
+  summary,
   writeLlmsTxt,
 } from './llms-txt.mjs';
 import { writeMarkdownMirrors } from './markdown-mirrors.mjs';
@@ -34,6 +35,8 @@ describe('sectionOf', () => {
   it('groups routes by their first segment', () => {
     expect(sectionOf('/products/iron')).toBe('Products');
     expect(sectionOf('/solutions')).toBe('Solutions');
+    expect(sectionOf('/industries/government')).toBe('Industries');
+    expect(sectionOf('/products/pantry')).toBe('Products');
     expect(sectionOf('/about/team')).toBe('Company');
     expect(sectionOf('/brand')).toBe('Company');
     expect(sectionOf('/blog/hello')).toBe('Blog');
@@ -44,11 +47,35 @@ describe('sectionOf', () => {
   });
 });
 
+describe('summary', () => {
+  const none = {
+    pantry: false,
+    stack: false,
+    solutions: false,
+    industries: false,
+  };
+
+  it('names the stack and Pantry only once they launch', () => {
+    const unlaunched = summary({ launched: none, unreleased: false });
+    expect(unlaunched).toMatch(/^> Waffuru is on a mission/);
+    expect(unlaunched).not.toMatch(/Iron|Pantry/);
+    expect(unlaunched).toContain('kernels, an inference engine');
+
+    const launched = summary({
+      launched: { ...none, stack: true, pantry: true },
+      unreleased: false,
+    });
+    expect(launched).toContain('Iron compiles the kernels');
+    expect(launched).toContain('Pantry (the `wpantry` command)');
+    expect(summary({ launched: none, unreleased: true })).toContain('Pantry');
+  });
+});
+
 describe('buildLlmsTxt', () => {
   const text = buildLlmsTxt({
     pages: [
       page('/', 'Waffuru', 'Home.'),
-      page('/products/syrup', 'Syrup'),
+      page('/products/whisk', 'Whisk'),
       page(
         '/products/iron',
         'Iron',
@@ -93,7 +120,7 @@ describe('buildLlmsTxt', () => {
     expect(products.split('\n').filter((l) => l.startsWith('- '))).toEqual([
       '- [Products](https://waffuru.ai/products.md): About Products.',
       '- [Iron](https://waffuru.ai/products/iron.md): One kernel definition, four backends.',
-      '- [Syrup](https://waffuru.ai/products/syrup.md): About Syrup.',
+      '- [Whisk](https://waffuru.ai/products/whisk.md): About Whisk.',
     ]);
     expect(text).not.toContain('(https://waffuru.ai/index.md)');
     expect(text).toContain('[Zebra](https://waffuru.ai/zebra.md)');

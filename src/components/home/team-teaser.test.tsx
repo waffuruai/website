@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { TeamTeaser } from '@/components/home/team-teaser';
 import { home } from '@/content/pages/home';
 import { team, teamCopy } from '@/content/team';
+import en from '@/i18n/dictionaries/en';
 import { withDictionary } from '@/i18n/test-utils';
 
 // The real <Picture> reads the image manifest that `pnpm images` generates.
@@ -24,7 +25,13 @@ vi.mock('@/components/picture', () => ({
 
 const renderTeaser = () =>
   render(
-    withDictionary(<TeamTeaser content={home.en.team} copy={teamCopy.en} />),
+    withDictionary(
+      <TeamTeaser
+        content={home.en.team}
+        copy={teamCopy.en}
+        countries={en.countries}
+      />,
+    ),
   );
 
 describe('TeamTeaser', () => {
@@ -33,11 +40,7 @@ describe('TeamTeaser', () => {
     const heading = screen.getByRole('heading', { level: 2 });
     expect(heading.textContent).toBe('Who’s in the kitchen.');
     expect(heading.querySelector('em')?.textContent).toBe('kitchen');
-    expect(
-      screen.getByText(
-        'Research, security, revenue and a couple of founders who have shipped before.',
-      ),
-    ).toBeTruthy();
+    expect(screen.getByText(home.en.team.intro)).toBeTruthy();
   });
 
   it('shows all five people with their portrait, name and role', () => {
@@ -53,9 +56,12 @@ describe('TeamTeaser', () => {
       expect(
         within(person).getByText(teamCopy.en[member.slug].role),
       ).toBeTruthy();
-      expect(within(person).getByRole('img').getAttribute('alt')).toBe(
-        `Portrait of ${member.name}`,
-      );
+      expect(
+        within(person).getByRole('img', { name: `Portrait of ${member.name}` }),
+      ).toBeTruthy();
+      expect(
+        within(person).getByRole('img', { name: en.countries[member.country] }),
+      ).toBeTruthy();
     });
     expect(container.querySelectorAll('.wf-portrait')).toHaveLength(5);
   });

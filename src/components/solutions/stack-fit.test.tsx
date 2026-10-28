@@ -10,7 +10,7 @@ const { products } = solutionsShared.en;
 describe('StackFit', () => {
   const items = [
     { product: 'butter', need: 'Serve models.', body: 'Without Python.' },
-    { product: 'waffle', need: 'See the fleet.', body: 'Every engine.' },
+    { product: 'syrup', need: 'See the fleet.', body: 'Every engine.' },
   ] as const;
 
   it('renders one row per product, each linking to its product page', () => {
@@ -36,8 +36,8 @@ describe('StackFit', () => {
       screen.getByRole('link', { name: /Explore Butter/ }).getAttribute('href'),
     ).toBe('/products/butter');
     expect(
-      screen.getByRole('link', { name: /Explore Waffle/ }).getAttribute('href'),
-    ).toBe('/products/waffle');
+      screen.getByRole('link', { name: /Explore Syrup/ }).getAttribute('href'),
+    ).toBe('/products/syrup');
   });
 
   it('labels the section by its heading and hides decorative motifs', () => {
@@ -57,7 +57,7 @@ describe('StackFit', () => {
     expect(section?.getAttribute('aria-labelledby')).toBe('stack');
     expect(container.querySelector('#stack')?.tagName).toBe('H2');
     expect(
-      container.querySelectorAll('[aria-hidden="true"] .wf-led').length,
-    ).toBe(32);
+      container.querySelectorAll('[aria-hidden="true"] .wf-strand').length,
+    ).toBe(6);
   });
 });

@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterZh: (typeof butter)['en'] = {
   layer: '模型服务',
-  tagline: '无需 Python 的模型服务。',
+  tagline: '多模态推理，绝不妥协。',
   summary:
     'Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。可加载 2 至 8 位量化检查点、混合模型和 MoE 模型，并通过兼容 OpenAI 和 Anthropic Messages 的 API 提供服务。',
   seo: {
-    title: 'Butter：无需 Python 的大模型推理引擎',
+    title: 'Butter：依赖极少的多模态推理引擎',
     description:
-      'Butter 是大模型推理引擎：Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。通过兼容 OpenAI 和 Anthropic Messages 的 API 提供 Hugging Face 模型服务，为智能体框架而建。',
+      'Butter 是依赖极少的大模型推理引擎：macOS 和 iOS 上用 Swift，其他平台用 Rust。通过兼容 OpenAI 和 Anthropic Messages 的 API 提供 Hugging Face 模型服务，为智能体框架而建。',
     keywords: [
       '大模型推理引擎',
       '本地大模型推理',
@@ -20,8 +20,8 @@ const butterZh: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: '模型服务，*无需* Python。',
-    lede: 'Butter 是一款推理引擎：Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。没有 Python，Metal 内核预编译交付，模型直接从 Hugging Face 加载。',
+    title: '模型服务，绝不*妥协*。',
+    lede: 'Butter 以极少的依赖提供模型服务：macOS 和 iOS 上用 Swift，其他平台用 Rust，运行在为每种后端调优的内核上。安全与极致性能兼得，无需妥协。Metal 内核预编译交付，模型直接从 Hugging Face 加载。',
     highlights: [
       {
         value: '4',
@@ -48,7 +48,7 @@ const butterZh: (typeof butter)['en'] = {
   },
   capabilities: {
     heading: 'Butter 能*做什么*。',
-    intro: '从加载检查点到流式输出 token，中间没有 Python。',
+    intro: '从加载检查点到流式输出 token，全程依赖极少。',
     items: [
       {
         title: '模型原样加载',
@@ -145,12 +145,11 @@ const butterZh: (typeof butter)['en'] = {
   ],
   specs: {
     heading: '技术*细节*。',
-    intro: '给会细读的人看的细节。',
     rows: [
       {
         term: '运行时',
         detail:
-          'Apple 芯片上是 Swift 搭配 Metal，需要 macOS 14 或更高版本；CUDA 及其他平台是 Rust。无 Python。',
+          'macOS 和 iOS 上是 Swift 搭配 Metal，macOS 需 14 或更高版本；CUDA 及其他平台是 Rust。依赖极少，供应链风险更低。',
       },
       {
         term: '模型格式',
@@ -236,7 +235,7 @@ const butterZh: (typeof butter)['en'] = {
   platforms: {
     heading: '在*哪里*运行。',
     intro:
-      'Metal 是首要目标。CUDA 其次，通过 ROCm 和 Vulkan 支持的 AMD 进展迅速。',
+      'Metal 是首要目标。CUDA 正在调优，通过 ROCm 和 Vulkan 支持的 AMD 进展迅速。',
     tiers: [
       {
         platform: 'Apple · Metal',
@@ -258,7 +257,7 @@ const butterZh: (typeof butter)['en'] = {
   stack: {
     heading: '与其余*技术栈*协同工作。',
     intro:
-      'Butter 在 Iron 编译的内核上运行模型。Waffle 可以把它和 vLLM、SGLang、llama.cpp 放在一起监看，Syrup 则让你的 AI 记得你在做什么。',
+      'Butter 在 Iron 编译的内核上运行模型。Syrup 可以把它和 vLLM、SGLang、llama.cpp 放在一起监看，Whisk 则让你的 AI 记得你在做什么。',
   },
   faq: [
     {
@@ -269,7 +268,7 @@ const butterZh: (typeof butter)['en'] = {
     {
       question: '它能在什么硬件上运行？',
       answer:
-        'Apple 芯片上的 Swift 与 Metal 是首要目标，从 MacBook 到 Mac Studio，需要 macOS 14 或更高版本。CUDA 其次，已在 RTX 和 DGX Spark 上投入生产。通过 ROCm 和 Vulkan 支持 AMD，进展迅速。',
+        'Apple 芯片上的 Swift 与 Metal 是首要目标，从 MacBook 到 Mac Studio，需要 macOS 14 或更高版本。CUDA 已在 RTX 和 DGX Spark 上投入生产，正在调优。通过 ROCm 和 Vulkan 支持 AMD，进展迅速。',
     },
     {
       question: '能运行哪些模型？',
@@ -277,9 +276,9 @@ const butterZh: (typeof butter)['en'] = {
         '目前覆盖上面列出的 Llama、Gemma、Qwen、GPT-OSS、Mistral、Nemotron、Granite、Phi 等模型家族，包括文本、视觉、语音和全模态变体。',
     },
     {
-      question: '需要 Python 吗？',
+      question: 'Butter 是用什么语言写的？',
       answer:
-        '不需要。Butter 在 Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust，服务路径上没有任何 Python。',
+        'macOS 和 iOS 上用 Swift，其他平台用 Rust，兼顾速度与内存安全。Butter 把依赖降到最少，供应链攻击的可乘之机更少，并运行在为每种后端调优的内核上。',
     },
     {
       question: '我现有的工具和智能体框架能用吗？',
@@ -289,7 +288,7 @@ const butterZh: (typeof butter)['en'] = {
     {
       question: '它有多快？',
       answer:
-        '在一台 128 GB 的 M5 Max 上，Butter 以 4-bit 运行 Qwen3.8-27B，单个请求达到每秒 103 个 token（约 937 token 的提示词，贪心解码），8 个并发请求合计每秒 146 个 token，约合每个请求 26。结果取决于模型、提示词长度和硬件；首页列出了测试条件。',
+        '在一台 128 GB 的 M5 Max 上，Butter 以 4-bit 运行 Qwen3.8-27B，单个请求达到每秒 103 个 token（约 937 token 的提示词，贪心解码），8 个并发请求合计每秒 146 个 token，约合每个请求 26。结果取决于模型、提示词长度和硬件；测试条件与测量结果一起列在本页上。',
     },
   ],
   cta: {

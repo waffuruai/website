@@ -16,9 +16,9 @@ const ko: Dictionary = {
     faqHeading: '자주 묻는 질문',
   },
   meta: {
-    defaultTitle: 'Waffuru: 순수한 수학을 실리콘에 새기다',
+    defaultTitle: 'Waffuru: 이미 가진 하드웨어에서 더 많은 지능을',
     defaultDescription:
-      '이미 가진 하드웨어를 위한 GPU 커널, 추론, 플릿 관리, 메모리. Waffuru는 Iron, Butter, Waffle, Syrup을 만듭니다.',
+      'Waffuru는 보유하거나 임대한 하드웨어에서 모델을 빠르고 저렴하게 실행하는 AI 스택을 만듭니다. 기본적으로 프라이빗합니다. macOS와 Linux용 무료 취약점 스캐너 Pantry로 시작하세요.',
   },
   header: {
     mainNav: '주 메뉴',
@@ -46,10 +46,14 @@ const ko: Dictionary = {
     help: '도움말',
     allProducts: '전체 스택 보기',
     allSolutions: '모든 솔루션',
+    industries: '산업',
+    byIndustry: '산업별',
+    allIndustries: '모든 산업',
+    openSource: '무료 오픈 소스',
     items: {
       stack: {
         label: 'Waffuru 스택',
-        description: '단독으로도, 함께도 쓸 수 있는 네 가지 제품.',
+        description: '단독으로도, 함께도 쓸 수 있는 다섯 가지 제품.',
       },
       iron: {
         label: 'Iron',
@@ -57,15 +61,23 @@ const ko: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Python 없는 모델 서빙.',
-      },
-      waffle: {
-        label: 'Waffle',
-        description: '모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에.',
+        description: '타협 없는 멀티모달 추론.',
       },
       syrup: {
         label: 'Syrup',
-        description: '당신의 AI가 하던 일을 기억합니다.',
+        description: '모든 GPU의 모니터링, 텔레메트리, 접근 제어, 비용.',
+      },
+      whisk: {
+        label: 'Whisk',
+        description: '요청마다 알맞은 문서와 컨텍스트를 섞어 넣습니다.',
+      },
+      waffle: {
+        label: 'Waffle',
+        description: '에이전트를 실행하는 하네스, 그 안에 어시스턴트 W.',
+      },
+      pantry: {
+        label: 'Pantry',
+        description: 'macOS와 Linux용 무료 취약점 스캐너.',
       },
       smallBusiness: {
         label: '중소기업',
@@ -82,6 +94,26 @@ const ko: Dictionary = {
       aiCompanies: {
         label: 'AI 모델·추론 기업',
         description: '모든 백엔드에서 더 빠른 커널과 서빙.',
+      },
+      cloudInfrastructure: {
+        label: '클라우드 인프라',
+        description: '모든 GPU에서 더 많은 산출과 분명한 마진을.',
+      },
+      financialServices: {
+        label: '금융 서비스',
+        description: '고객 데이터를 내부에 두는 프라이빗 AI.',
+      },
+      lifeSciences: {
+        label: '생명과학',
+        description: '민감한 연구 데이터 곁에서 모델을 실행하세요.',
+      },
+      government: {
+        label: '공공·정부',
+        description: '직접 통제하는 하드웨어 위의 소버린 AI.',
+      },
+      military: {
+        label: '국방',
+        description: '직접 소유하고 보호하는 하드웨어 위의 유능한 AI.',
       },
       about: {
         label: '회사 소개',
@@ -117,10 +149,15 @@ const ko: Dictionary = {
       },
     },
   },
+  countries: {
+    us: '미국',
+    ca: '캐나다',
+  },
   footer: {
     heading: '푸터',
     products: '제품',
     solutions: '솔루션',
+    industries: '산업',
     company: '회사',
     help: '도움말',
     terms: '이용약관',
@@ -129,7 +166,8 @@ const ko: Dictionary = {
     madeIn: '북미에서 🤖와 함께 만들었습니다',
     flagsLabel: '미국과 캐나다',
     social: '{network}의 Waffuru',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
+    versionLabel: '웹사이트 버전, 커밋, 날짜',
   },
   newsletter: {
     heading: '소식 받기',

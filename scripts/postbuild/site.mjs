@@ -11,10 +11,66 @@ export const SITE = {
   name: 'Waffuru',
   mission: 'Democratize access to intelligence.',
   description:
-    'Waffuru builds GPU kernels (Iron), an inference engine (Butter), a GPU control plane (Waffle) and a memory layer (Syrup) that run models fast on the hardware you already own.',
+    'Waffuru builds the AI stack that runs models fast and at the lowest cost per token, on hardware you own or rent: GPU kernels (Iron), an inference engine (Butter), a control plane (Syrup), memory (Whisk) and an agent harness (Waffle). Its first public product is Pantry, a free, open-source vulnerability scanner.',
   earlyAccessUrl: 'https://forms.gle/SHaVSRRWmZKy8UJy7',
   email: 'hello@waffuru.ai',
 };
+
+/**
+ * Launch sections: `LAUNCHED` mirrors `site.launched`, `SECTION_ROUTES` and
+ * `showUnreleased` mirror `src/lib/launch.ts`.
+ */
+export const LAUNCHED = {
+  pantry: true,
+  stack: true,
+  solutions: true,
+  industries: true,
+};
+
+export const SECTION_ROUTES = {
+  pantry: ['/products/pantry'],
+  stack: [
+    '/products',
+    '/products/iron',
+    '/products/butter',
+    '/products/syrup',
+    '/products/whisk',
+    '/products/waffle',
+  ],
+  solutions: [
+    '/solutions',
+    '/solutions/small-business',
+    '/solutions/enterprise',
+    '/solutions/neoclouds',
+    '/solutions/ai-companies',
+  ],
+  industries: [
+    '/industries',
+    '/industries/cloud-infrastructure',
+    '/industries/financial-services',
+    '/industries/life-sciences',
+    '/industries/government',
+    '/industries/military',
+  ],
+};
+
+/**
+ * Whether this build shows unlaunched sections. Postbuild only ever follows
+ * a production build, so it is `NEXT_PUBLIC_SHOW_UNRELEASED=1` or nothing.
+ */
+export const showUnreleased = (env = process.env) =>
+  env.NEXT_PUBLIC_SHOW_UNRELEASED === '1';
+
+/** Whether `section` is visible in this build. */
+export const isPublished = (section, { launched, unreleased } = {}) =>
+  (unreleased ?? showUnreleased()) || (launched ?? LAUNCHED)[section];
+
+/** Routes this build must not ship (unprefixed), deepest first. */
+export const unreleasedRoutes = (options) =>
+  Object.keys(SECTION_ROUTES)
+    .filter((section) => !isPublished(section, options))
+    .flatMap((section) => SECTION_ROUTES[section])
+    .sort((a, z) => z.split('/').length - a.split('/').length);
 
 export const DEFAULT_LOCALE = 'en';
 export const LOCALES = ['en', 'es', 'fr', 'zh', 'ja', 'ko'];

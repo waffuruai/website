@@ -1,14 +1,15 @@
 import { CtaCard } from '@/components/sections/cta-card';
 import { PageHero } from '@/components/sections/page-hero';
 import { JsonLd } from '@/components/seo/json-ld';
-import { Breadcrumb } from '@/components/solutions/breadcrumb';
+import {
+  Breadcrumb,
+  type BreadcrumbItem,
+} from '@/components/solutions/breadcrumb';
 import { SectionOpener } from '@/components/solutions/section-opener';
 import { SolutionCard } from '@/components/solutions/solution-card';
 import { ValueBand } from '@/components/solutions/value-band';
-import { solutionPath } from '@/content/pages/solutions/registry';
 import type {
   SolutionPage,
-  SolutionSlug,
   SolutionsOverview as SolutionsOverviewContent,
   SolutionsShared,
 } from '@/content/pages/solutions/types';
@@ -19,28 +20,28 @@ import { breadcrumbs, webPage } from '@/lib/json-ld';
 import type { SolutionCommon } from './solution-page';
 
 /**
- * /solutions: hero, one card per audience, the three value props every
- * audience shares, and the closing call to action.
+ * /solutions and /industries: hero, one card per page in the section, the
+ * three value props they all share, and the closing call to action.
  */
 export function SolutionsOverview({
   overview,
+  section,
   entries,
   shared,
   locale,
   common,
 }: {
   overview: SolutionsOverviewContent;
-  /** Audience pages in display order. */
-  entries: { slug: SolutionSlug; page: SolutionPage }[];
+  /** This page's crumb and unprefixed route ("Solutions", "/solutions"). */
+  section: BreadcrumbItem;
+  /** The section's pages in display order, each with its route. */
+  entries: { href: string; page: SolutionPage }[];
   shared: SolutionsShared;
   locale: Locale;
   common: SolutionCommon;
 }) {
-  const path = localizePath('/solutions', locale);
-  const trail = [
-    { label: shared.breadcrumb.home, href: '/' },
-    { label: shared.breadcrumb.solutions, href: '/solutions' },
-  ];
+  const path = localizePath(section.href, locale);
+  const trail = [{ label: shared.breadcrumb.home, href: '/' }, section];
 
   return (
     <>
@@ -63,10 +64,10 @@ export function SolutionsOverview({
             intro={overview.cards.intro}
           />
           <ul className="grid gap-5 md:grid-cols-2">
-            {entries.map(({ slug, page }) => (
-              <li key={slug}>
+            {entries.map(({ href, page }) => (
+              <li key={href}>
                 <SolutionCard
-                  href={solutionPath(slug)}
+                  href={href}
                   title={page.card.title}
                   summary={page.card.summary}
                   products={page.stackFit.items.map(

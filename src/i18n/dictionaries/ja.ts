@@ -16,9 +16,9 @@ const ja: Dictionary = {
     faqHeading: 'よくある質問',
   },
   meta: {
-    defaultTitle: 'Waffuru：純粋な数学を、シリコンに焼き込む',
+    defaultTitle: 'Waffuru：今あるハードウェアで、もっと多くの知能を',
     defaultDescription:
-      'お手持ちのハードウェアのための GPU カーネル、推論、フリート管理、メモリ。Waffuru は Iron、Butter、Waffle、Syrup をつくっています。',
+      'Waffuru は、所有またはレンタルのハードウェアでモデルを速く、安く動かす AI スタックをつくっています。デフォルトでプライベート。まずは macOS と Linux 向けの無料脆弱性スキャナー Pantry から。',
   },
   header: {
     mainNav: 'メイン',
@@ -46,10 +46,14 @@ const ja: Dictionary = {
     help: 'ヘルプ',
     allProducts: 'スタック全体を見る',
     allSolutions: 'すべてのソリューション',
+    industries: '業界',
+    byIndustry: '業界別',
+    allIndustries: 'すべての業界',
+    openSource: '無料・オープンソース',
     items: {
       stack: {
         label: 'Waffuru スタック',
-        description: '単体でも組み合わせても使える 4 つの製品。',
+        description: '単体でも組み合わせても使える 5 つの製品。',
       },
       iron: {
         label: 'Iron',
@@ -57,15 +61,24 @@ const ja: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Python 不要のモデルサービング。',
-      },
-      waffle: {
-        label: 'Waffle',
-        description: 'すべての GPU と、その上で動くすべてのエンジンを可視化。',
+        description: '妥協のないマルチモーダル推論。',
       },
       syrup: {
         label: 'Syrup',
-        description: 'あなたの AI が、取り組んでいたことを覚えています。',
+        description: 'すべての GPU の監視、テレメトリ、アクセス制御、コスト。',
+      },
+      whisk: {
+        label: 'Whisk',
+        description:
+          'リクエストごとに、適切なドキュメントとコンテキストを混ぜ込みます。',
+      },
+      waffle: {
+        label: 'Waffle',
+        description: 'エージェントを動かすハーネス。中にはアシスタントの W。',
+      },
+      pantry: {
+        label: 'Pantry',
+        description: 'macOS と Linux 向けの無料脆弱性スキャナー。',
       },
       smallBusiness: {
         label: '中小企業',
@@ -82,6 +95,26 @@ const ja: Dictionary = {
       aiCompanies: {
         label: 'AI モデル・推論企業',
         description: 'あらゆるバックエンドで、より速いカーネルとサービングを。',
+      },
+      cloudInfrastructure: {
+        label: 'クラウドインフラ',
+        description: 'すべての GPU から、より多くの出力と明確な利益を。',
+      },
+      financialServices: {
+        label: '金融サービス',
+        description: '顧客データを社内に留めるプライベート AI。',
+      },
+      lifeSciences: {
+        label: 'ライフサイエンス',
+        description: '機密性の高い研究データのそばでモデルを動かす。',
+      },
+      government: {
+        label: '政府・公共',
+        description: '自ら管理するハードウェア上のソブリン AI。',
+      },
+      military: {
+        label: '防衛',
+        description: '自ら所有し守るハードウェア上で動く、実用的な AI。',
       },
       about: {
         label: '私たちについて',
@@ -117,10 +150,15 @@ const ja: Dictionary = {
       },
     },
   },
+  countries: {
+    us: 'アメリカ合衆国',
+    ca: 'カナダ',
+  },
   footer: {
     heading: 'フッター',
     products: '製品',
     solutions: 'ソリューション',
+    industries: '業界',
     company: '会社',
     help: 'ヘルプ',
     terms: '利用規約',
@@ -129,7 +167,8 @@ const ja: Dictionary = {
     madeIn: '北米で 🤖 とともに制作',
     flagsLabel: 'アメリカ合衆国とカナダ',
     social: '{network} の Waffuru',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
+    versionLabel: 'サイトのバージョン、コミット、日付',
   },
   newsletter: {
     heading: '最新情報を受け取る',

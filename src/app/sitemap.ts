@@ -3,7 +3,7 @@ import path from 'node:path';
 
 import type { MetadataRoute } from 'next';
 
-import { internalNavHrefs } from '@/content/navigation';
+import { internalNavHrefs, publishedNavigation } from '@/content/navigation';
 import { site } from '@/content/site';
 import {
   defaultLocale,
@@ -12,6 +12,7 @@ import {
   locales,
   type Locale,
 } from '@/i18n/config';
+import { isPublishedPath } from '@/lib/launch';
 
 export const dynamic = 'force-static';
 
@@ -143,15 +144,20 @@ function readPosts(): Post[] {
 /* Sitemap ---------------------------------------------------------------------- */
 
 /**
- * sitemap.xml: the home page and every page in the navigation in all
- * locales, the legal pages in English, and the blog posts in the locales
- * they are written in. 404s and non-page files are never listed.
+ * sitemap.xml: the home page and every published page in the navigation in
+ * all locales, the legal pages in English, and the blog posts in the
+ * locales they are written in. 404s, unlaunched sections and non-page files
+ * are never listed.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = new Set<string>(['/']);
-  for (const href of internalNavHrefs()) {
+  for (const href of internalNavHrefs(publishedNavigation())) {
     const route = href.split(/[?#]/)[0] || '/';
-    if (!route.startsWith('/legal') && !route.startsWith('/api')) {
+    if (
+      !route.startsWith('/legal') &&
+      !route.startsWith('/api') &&
+      isPublishedPath(route)
+    ) {
       routes.add(route);
     }
   }

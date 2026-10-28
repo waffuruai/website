@@ -14,10 +14,10 @@ describe('HiringCallout', () => {
     );
     const section = container.querySelector('section#hiring');
     expect(section).not.toBeNull();
-    expect(screen.getByRole('region', { name: 'Pull up a chair.' })).toBe(
+    expect(screen.getByRole('region', { name: 'Put on an apron.' })).toBe(
       section,
     );
-    expect(section?.querySelector('em')?.textContent).toBe('chair');
+    expect(section?.querySelector('em')?.textContent).toBe('apron');
   });
 
   it('lists what we like working on and says who we want', () => {

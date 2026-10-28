@@ -3,16 +3,17 @@ import { Faq } from '@/components/sections/faq';
 import { PageHero } from '@/components/sections/page-hero';
 import { plainText } from '@/components/sections/accent';
 import { JsonLd } from '@/components/seo/json-ld';
-import { Breadcrumb } from '@/components/solutions/breadcrumb';
+import {
+  Breadcrumb,
+  type BreadcrumbItem,
+} from '@/components/solutions/breadcrumb';
 import { CodeSample } from '@/components/solutions/code-sample';
 import { Problem } from '@/components/solutions/problem';
 import { StackFit } from '@/components/solutions/stack-fit';
 import { UseCases } from '@/components/solutions/use-cases';
 import { WhereWeAre } from '@/components/solutions/where-we-are';
-import { solutionPath } from '@/content/pages/solutions/registry';
 import type {
   SolutionPage as SolutionPageContent,
-  SolutionSlug,
   SolutionsShared,
 } from '@/content/pages/solutions/types';
 import { mailto, site } from '@/content/site';
@@ -27,29 +28,33 @@ export type SolutionCommon = Pick<
 >;
 
 /**
- * The one template behind /solutions/<audience>: breadcrumb, hero, the
- * problem, use cases, how the stack fits, where we are, FAQ and the closing
- * call to action. Content comes from `src/content/pages/solutions`; the
+ * The one template behind /solutions/<audience> and /industries/<sector>:
+ * breadcrumb, hero, the problem, use cases, how the stack fits, where we
+ * are, FAQ and the closing call to action. Content comes from
+ * `src/content/pages/solutions` or `src/content/pages/industries`; the
  * visible breadcrumb, Service and BreadcrumbList JSON-LD say the same thing.
  */
 export function SolutionPage({
-  slug,
+  path,
+  parent,
   page,
   shared,
   locale,
   common,
 }: {
-  slug: SolutionSlug;
+  /** This page's route, unprefixed ("/solutions/enterprise"). */
+  path: string;
+  /** The section crumb between Home and this page ("Solutions"). */
+  parent: BreadcrumbItem;
   page: SolutionPageContent;
   shared: SolutionsShared;
   locale: Locale;
   common: SolutionCommon;
 }) {
-  const path = localizePath(solutionPath(slug), locale);
   const trail = [
     { label: shared.breadcrumb.home, href: '/' },
-    { label: shared.breadcrumb.solutions, href: '/solutions' },
-    { label: page.name, href: solutionPath(slug) },
+    parent,
+    { label: page.name, href: path },
   ];
   const actions = [
     { label: common.talkToUs, href: mailto('Sales') },
@@ -113,7 +118,7 @@ export function SolutionPage({
           service({
             name: plainText(page.seo.title),
             description: page.seo.description,
-            path,
+            path: localizePath(path, locale),
             serviceType: page.serviceType,
           }),
           breadcrumbs(

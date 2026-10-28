@@ -23,7 +23,7 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
     hero: {
       label: 'Solutions',
       title: 'Local-first AI, fitted to your *job*.',
-      lede: 'Waffuru is one stack, from kernels to memory, that runs models fast on hardware you already own. Pick the page closest to what you are trying to get done.',
+      lede: 'Waffuru is one stack, from kernels to memory, that runs models fast on hardware you own or rent. Pick the page closest to what you are trying to get done.',
     },
     cards: {
       label: 'Who it’s for',
@@ -41,17 +41,17 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
           title: 'Dollars per *workload*.',
           body: 'When power is the ceiling, tokens per watt and dollars per workload are the numbers you can still improve. Waffuru is built around both.',
           points: [
-            'Run on hardware you already own instead of renting',
+            'Run on hardware you own or rent, at a lower cost per token',
             'Quantized models fit more in the memory you have',
-            'Waffle shows where capacity sits idle',
+            'Syrup shows where capacity sits idle',
           ],
         },
         {
           tag: 'inference',
           title: 'Better *inference*.',
-          body: 'Kernels tuned for each backend, quantized models and KV cache, and speculative decoding, in an engine with no Python on the hot path.',
+          body: 'Kernels tuned for each backend, quantized models and KV cache, and speculative decoding, in an engine with minimal dependencies.',
           points: [
-            'Metal first, CUDA next, ROCm and Vulkan running',
+            'Metal first, CUDA being tuned, ROCm and Vulkan coming soon',
             'Loads Hugging Face models with no conversion',
             'Text, vision, speech and omni models',
           ],
@@ -59,10 +59,10 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
         {
           tag: 'control',
           title: 'More *control*.',
-          body: 'Local-first: your data stays where it is unless you opt in, on a laptop, on-prem or in your own cloud.',
+          body: 'Local-first: on a laptop, on-prem or in your own cloud, your data stays where it is unless you choose to use a hosted AI inference provider.',
           points: [
             'OpenAI-compatible serving, so apps keep working',
-            'Waffle works with vLLM, SGLang and llama.cpp',
+            'Syrup works with vLLM, SGLang and llama.cpp',
             'No lock-in to one engine or one vendor',
           ],
         },

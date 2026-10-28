@@ -38,6 +38,13 @@ const GROUPS = [
     widths: [40, 80, 160, 384],
     formats: ['webp', 'png'],
   },
+  {
+    // Post covers and share cards, 1200x630; sources in design/share/*.svg.
+    name: 'blog',
+    dir: 'assets/blog',
+    widths: [600, 1200],
+    formats: ['avif', 'webp', 'jpeg'],
+  },
 ];
 
 /** Icons for the browser and home screens, from the waffle mark. */

@@ -25,6 +25,8 @@ export type TeamMember = {
   name: string;
   /** `<Picture>` manifest key, built from `assets/team/<slug>.jpg`. */
   photo: string;
+  /** Where they are based: the flag beside their name. */
+  country: Country;
   links: {
     linkedin: ProfileLink;
     website: ProfileLink;
@@ -32,6 +34,8 @@ export type TeamMember = {
     github: ProfileLink;
   };
 };
+
+export type Country = 'us' | 'ca';
 
 export type TeamCopy = {
   role: string;
@@ -47,6 +51,7 @@ export const team: TeamMember[] = [
     slug: 'kyle-croll',
     name: 'Kyle Croll',
     photo: 'team/kyle-croll',
+    country: 'us',
     links: {
       linkedin: 'https://www.linkedin.com/in/kylecroll/',
       website: PLACEHOLDER,
@@ -60,6 +65,7 @@ export const team: TeamMember[] = [
     slug: 'eric-gonzalez',
     name: 'Eric Gonzalez',
     photo: 'team/eric-gonzalez',
+    country: 'us',
     links: {
       linkedin: 'https://www.linkedin.com/in/ericgonzalez/',
       website: PLACEHOLDER,
@@ -74,6 +80,7 @@ export const team: TeamMember[] = [
     slug: 'eric-kryski',
     name: 'Eric Kryski',
     photo: 'team/eric-kryski',
+    country: 'ca',
     links: {
       linkedin: 'https://www.linkedin.com/in/ekryski/',
       website: 'https://erickryski.com',
@@ -86,6 +93,7 @@ export const team: TeamMember[] = [
     slug: 'tom-turney',
     name: 'Tom Turney',
     photo: 'team/tom-turney',
+    country: 'us',
     links: {
       linkedin: 'https://www.linkedin.com/in/tturney/',
       // TODO(founder): his GitHub profile lists psyguard.ai as a website,
@@ -100,10 +108,12 @@ export const team: TeamMember[] = [
     slug: 'cory-smith',
     name: 'Cory Smith',
     photo: 'team/cory-smith',
+    country: 'ca',
     links: {
       linkedin: 'https://www.linkedin.com/in/corysmith/',
       website: PLACEHOLDER,
-      x: PLACEHOLDER,
+      // Confirmed by the founder (2026-10-27).
+      x: 'https://x.com/smixx',
       github: PLACEHOLDER,
     },
   },
@@ -112,31 +122,33 @@ export const team: TeamMember[] = [
 export const teamCopy: Localized<Record<string, TeamCopy>> = {
   en: {
     'kyle-croll': {
-      role: 'CEO',
-      background: 'Ex-military. Threat intelligence, AI strategy and security.',
-      bio: 'Kyle is ex-military, with a background in threat intelligence and threat hunting. As CEO he sets Waffuru’s direction and brings a security lens to how AI gets built and deployed. He studied at UT Austin’s McCombs School of Business.',
+      role: 'Chief Executive Officer',
+      background:
+        'Ex-Navy, with an MBA from McCombs. Threat intelligence, AI strategy and security.',
+      bio: 'Kyle leads Waffuru’s fundraising and operations, while bringing a security lens to how AI gets built and deployed. He served in the Navy, with a background in threat intelligence and threat hunting, then earned an MBA from UT Austin’s McCombs School of Business.',
     },
     'eric-gonzalez': {
       role: 'Chief Revenue Officer',
-      background: 'Scaled companies from $50M to $2B ARR. Ex-Oracle NetSuite.',
-      bio: 'Eric is a revenue leader who has scaled companies from $50M to $2B in ARR. He previously worked at Oracle NetSuite and at Anaconda, the company behind Conda, and he serves as a board member.',
+      background:
+        'Scaled companies from $50M to $2B ARR. Ex-Oracle NetSuite and Anaconda. McCombs MBA.',
+      bio: 'Eric leads revenue and GTM at Waffuru. He has scaled companies from $50M to $2B in ARR, worked at Oracle NetSuite and at Anaconda, the company behind Conda, and serves as a board member. He holds an MBA from UT Austin’s McCombs School of Business.',
     },
     'eric-kryski': {
       role: 'Chief Product Officer',
       background:
         'Full-stack developer, designer and ML researcher. Co-founder of Bidali.',
-      bio: 'Eric is a full-stack developer, designer and ML researcher who ships product end to end. He is CEO and co-founder of Bidali and co-founder of Bullish Ventures, and he leads product at Waffuru.',
+      bio: 'Eric leads product and strategy at Waffuru, and ships product end to end, from design to code to ML research. He is CEO and co-founder of Bidali and co-founder of Bullish Ventures. He has worked every function in a business, from finance, product and sales to compliance and customer support, and his work has ranged from advising government on pandemic response to speaking at WEF about the future of money.',
     },
     'tom-turney': {
       role: 'Chief of Research',
       background:
         'AI researcher behind TurboQuant+. Former tech lead manager at Google.',
-      bio: 'Tom is the AI researcher behind TurboQuant+, the compression work Syrup uses to shrink embeddings, and he leads research at Waffuru. Before this he was a tech lead manager at Google.',
+      bio: 'Tom leads research at Waffuru, spanning compression, performance, context management and memory. He spent almost a decade at Google in a senior technical role. After leaving he co-founded an AI startup and put out the first working solution of Google’s TurboQuant compression algorithm, demonstrating he could do better with TurboQuant+.',
     },
     'cory-smith': {
       role: 'Chief Technology Officer',
-      background: 'Has exited a company. Co-founder and CTO of Bidali.',
-      bio: 'Cory has exited a company and is co-founder and CTO of Bidali, which he helped grow to millions in stablecoin payments volume. He is a managing director at Bullish Ventures and has been building consumer and enterprise products since 2009.',
+      background: 'Hands-on startup CTO. One exit, one failure. CTO of Bidali.',
+      bio: 'Cory leads technology at Waffuru. He is a seasoned, hands-on, full-stack startup CTO with one exit and one failure behind him, and co-founder and CTO of Bidali, which he helped grow to millions in stablecoin payments volume. He has built consumer and enterprise products since 2009. He also raps, and is pretty damn good.',
     },
   },
   es: teamCopyEs,

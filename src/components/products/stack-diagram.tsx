@@ -69,7 +69,7 @@ function Layer({
 }
 
 /**
- * The four layers as slabs, Syrup (04) on top down to Iron (01) at the metal,
+ * The four layers as slabs, Whisk (04) on top down to Iron (01) at the metal,
  * with a drop running down a spine through all of them. Each slab links to
  * its product page. Below sit the backends they all end up on.
  */
@@ -132,7 +132,12 @@ export function StackDiagram({
                   key={i}
                   className="wf-cell h-4"
                   data-hot={i % 5 === 2 ? '' : undefined}
-                  style={{ animationDelay: `${(i * 0.18).toFixed(2)}s` }}
+                  style={
+                    {
+                      animationDelay: `${(i * 0.18).toFixed(2)}s`,
+                      '--twinkle': '3.2s',
+                    } as React.CSSProperties
+                  }
                 />
               ))}
             </div>

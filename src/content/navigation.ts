@@ -1,18 +1,38 @@
+import {
+  industryPath,
+  industrySlugs,
+  type IndustrySlug,
+} from '@/content/pages/industries/types';
+import { pantryFacts } from '@/content/pages/pantry/facts';
 import { site } from '@/content/site';
-import type { NavLink, Navigation } from '@/content/types';
+import type {
+  NavColumn,
+  NavItemKey,
+  NavLink,
+  NavMenu,
+  Navigation,
+} from '@/content/types';
+import { isPublishedPath } from '@/lib/launch';
 
 /*
  * Site navigation, shared by the navbar, the mobile menu, the footer, the
  * sitemap and llms.txt. Labels are dictionary keys (`nav.items.<key>`).
- * `navigation.test.ts` checks every internal href resolves to a route.
+ * Everything renders through `publishedNavigation()`, which drops links to
+ * sections that are not launched (`site.launched`).
  */
 
-/** The stack, numbered from the metal up: kernels (01) to memory (04). */
+/** The stack, numbered from the metal up: kernels (01) to agents (05). */
 export const productLinks: NavLink[] = [
-  { key: 'iron', href: '/products/iron', index: '01' },
-  { key: 'butter', href: '/products/butter', index: '02' },
-  { key: 'waffle', href: '/products/waffle', index: '03' },
-  { key: 'syrup', href: '/products/syrup', index: '04' },
+  { key: 'iron', href: '/products/iron', index: '01', icon: 'iron' },
+  { key: 'butter', href: '/products/butter', index: '02', icon: 'butter' },
+  { key: 'syrup', href: '/products/syrup', index: '03', icon: 'syrup' },
+  { key: 'whisk', href: '/products/whisk', index: '04', icon: 'whisk' },
+  { key: 'waffle', href: '/products/waffle', index: '05', icon: 'waffle' },
+];
+
+/** Free, open-source tools that stand apart from the stack. */
+export const openSourceLinks: NavLink[] = [
+  { key: 'pantry', href: pantryFacts.path, icon: 'pantry' },
 ];
 
 export const solutionLinks: NavLink[] = [
@@ -21,6 +41,19 @@ export const solutionLinks: NavLink[] = [
   { key: 'neoclouds', href: '/solutions/neoclouds' },
   { key: 'aiCompanies', href: '/solutions/ai-companies' },
 ];
+
+const industryKeys: Record<IndustrySlug, NavItemKey> = {
+  'cloud-infrastructure': 'cloudInfrastructure',
+  'financial-services': 'financialServices',
+  'life-sciences': 'lifeSciences',
+  government: 'government',
+  military: 'military',
+};
+
+export const industryLinks: NavLink[] = industrySlugs.map((slug) => ({
+  key: industryKeys[slug],
+  href: industryPath(slug),
+}));
 
 export const aboutLinks: NavLink[] = [
   { key: 'about', href: '/about' },
@@ -48,6 +81,7 @@ export const navigation: Navigation = {
           links: productLinks,
           footer: { labelKey: 'allProducts', href: '/products' },
         },
+        { heading: 'openSource', links: openSourceLinks },
       ],
     },
     {
@@ -58,6 +92,17 @@ export const navigation: Navigation = {
           heading: 'byCustomer',
           links: solutionLinks,
           footer: { labelKey: 'allSolutions', href: '/solutions' },
+        },
+      ],
+    },
+    {
+      type: 'menu',
+      labelKey: 'industries',
+      columns: [
+        {
+          heading: 'byIndustry',
+          links: industryLinks,
+          footer: { labelKey: 'allIndustries', href: '/industries' },
         },
       ],
     },
@@ -78,9 +123,17 @@ export const navigation: Navigation = {
     columns: [
       {
         headingKey: 'products',
-        links: [{ key: 'stack', href: '/products' }, ...productLinks],
+        links: [
+          { key: 'stack', href: '/products' },
+          ...productLinks,
+          ...openSourceLinks,
+        ],
       },
       { headingKey: 'solutions', links: solutionLinks },
+      {
+        headingKey: 'industries',
+        links: industryLinks,
+      },
       {
         headingKey: 'company',
         links: [...aboutLinks, { key: 'blog', href: '/blog' }],
@@ -94,6 +147,44 @@ export const navigation: Navigation = {
     ],
   },
 };
+
+/**
+ * `nav` without links to unpublished pages: links go first, then a column
+ * left with no links, then a menu left with no columns. Footer columns with
+ * no links go too.
+ */
+export function publishedNavigation(
+  nav: Navigation = navigation,
+  isPublished: (href: string) => boolean = isPublishedPath,
+): Navigation {
+  const links = (list: NavLink[]) =>
+    list.filter((link) => isPublished(link.href));
+
+  const column = ({ footer, ...col }: NavColumn): NavColumn => ({
+    ...col,
+    links: links(col.links),
+    ...(footer && isPublished(footer.href) ? { footer } : {}),
+  });
+
+  const main = nav.main.flatMap((menu): NavMenu[] => {
+    if (menu.type === 'link') return isPublished(menu.href) ? [menu] : [];
+    const columns = menu.columns
+      .map(column)
+      .filter((col) => col.links.length > 0);
+    return columns.length ? [{ ...menu, columns }] : [];
+  });
+
+  return {
+    ...nav,
+    main,
+    footer: {
+      ...nav.footer,
+      columns: nav.footer.columns
+        .map((col) => ({ ...col, links: links(col.links) }))
+        .filter((col) => col.links.length > 0),
+    },
+  };
+}
 
 /** Every internal href in the navigation (used by the sitemap and tests). */
 export function internalNavHrefs(nav: Navigation = navigation): string[] {

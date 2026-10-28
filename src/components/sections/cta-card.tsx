@@ -5,7 +5,7 @@ import type { Cta } from '@/content/types';
 import { cn } from '@/lib/utils';
 
 /**
- * The After Hours closing card ("Pull up a seat."): raised surface, serif
+ * The After Hours closing card ("Reserve your seat."): raised surface, serif
  * title, copy, actions on the right and the tile square peeking from the
  * corner. Every page ends with one.
  */

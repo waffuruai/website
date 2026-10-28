@@ -34,6 +34,15 @@ const jsonLd = (container: HTMLElement) =>
   );
 
 describe('/contact', () => {
+  it('links our address in the lede, in every locale that names it', async () => {
+    for (const locale of ['en', 'ja'] as const) {
+      const { unmount } = await renderPage(locale);
+      const link = screen.getByRole('link', { name: site.emails.hello });
+      expect(link.getAttribute('href')).toBe(`mailto:${site.emails.hello}`);
+      unmount();
+    }
+  });
+
   it('has one h1 and a callout for every topic', async () => {
     await renderPage();
     expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);

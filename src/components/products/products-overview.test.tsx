@@ -29,16 +29,17 @@ describe('ProductsOverview', () => {
     expect(h1s[0]?.textContent).toBe('The Waffuru stack.');
   });
 
-  it('stacks the layers from Syrup (04) down to Iron (01)', () => {
+  it('stacks the layers from Waffle (05) down to Iron (01)', () => {
     renderOverview();
     const stack = screen.getByRole('list', { name: copy.layers.listLabel });
     const layers = within(stack).getAllByRole('listitem');
     expect(
       layers.map((layer) => layer.querySelector('h3')?.textContent),
-    ).toEqual(['Syrup', 'Waffle', 'Butter', 'Iron']);
+    ).toEqual(['Waffle', 'Whisk', 'Syrup', 'Butter', 'Iron']);
     expect(
       layers.map((layer) => layer.querySelector('p')?.textContent),
     ).toEqual([
+      '05 · Agents',
       '04 · Memory',
       '03 · Control plane',
       '02 · Serving',
@@ -66,10 +67,10 @@ describe('ProductsOverview', () => {
     }
   });
 
-  it('says each product works alone, and all four together', () => {
+  it('says each product works alone, and all five together', () => {
     const { container } = renderOverview();
     expect(
-      screen.getByRole('heading', { level: 2, name: 'Use one, or all four.' }),
+      screen.getByRole('heading', { level: 2, name: 'Use one, or all five.' }),
     ).toBeTruthy();
     for (const line of Object.values(copy.together.alone)) {
       expect(container.textContent).toContain(line);
@@ -82,6 +83,7 @@ describe('ProductsOverview', () => {
     for (const key of audienceKeys) {
       const link = screen.getByRole('link', { name: en.nav.items[key].label });
       expect(link.getAttribute('href')).toBe(audienceHrefs[key]);
+      expect(link.closest('article')?.textContent).toContain('Learn more');
     }
   });
 

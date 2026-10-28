@@ -10,7 +10,7 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
   hero: {
     label: '솔루션',
     title: '해야 할 *일*에 맞춘 로컬 우선 AI.',
-    lede: 'Waffuru는 커널부터 메모리까지 이어지는 하나의 스택으로, 이미 가진 하드웨어에서 모델을 빠르게 돌립니다. 하려는 일과 가장 가까운 페이지를 골라 보세요.',
+    lede: 'Waffuru는 커널부터 메모리까지 이어지는 하나의 스택으로, 보유하거나 임대한 하드웨어에서 모델을 빠르게 돌립니다. 하려는 일과 가장 가까운 페이지를 골라 보세요.',
   },
   cards: {
     label: '누구를 위한 것인가',
@@ -28,17 +28,17 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
         title: '워크로드당 *비용*.',
         body: '전력이 한계라면 와트당 토큰 수와 워크로드당 비용은 여전히 개선할 수 있는 지표입니다. Waffuru는 이 둘을 중심으로 만들어졌습니다.',
         points: [
-          '빌리는 대신 이미 가진 하드웨어에서 실행',
+          '보유하거나 임대한 하드웨어에서 더 낮은 토큰당 비용으로 실행',
           '양자화된 모델로 가진 메모리에 더 많이 적재',
-          'Waffle로 놀고 있는 용량을 확인',
+          'Syrup으로 놀고 있는 용량을 확인',
         ],
       },
       {
         tag: 'inference',
         title: '더 나은 *추론*.',
-        body: '핫 패스에 Python이 없는 엔진에서, 백엔드별로 튜닝한 커널과 양자화된 모델·KV 캐시, 추측 디코딩을 제공합니다.',
+        body: '의존성을 최소화한 엔진에서, 백엔드별로 튜닝한 커널과 양자화된 모델·KV 캐시, 추측 디코딩을 제공합니다.',
         points: [
-          'Metal이 먼저, 그다음 CUDA, ROCm과 Vulkan은 구동 중',
+          'Metal이 먼저, CUDA는 튜닝 중, ROCm과 Vulkan은 곧 지원',
           '변환 없이 Hugging Face 모델 로드',
           '텍스트, 비전, 음성, 옴니 모델',
         ],
@@ -46,10 +46,10 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
       {
         tag: 'control',
         title: '더 많은 *통제*.',
-        body: '로컬 우선: 노트북이든 온프레미스든 자체 클라우드든, 직접 동의하지 않는 한 데이터는 있는 곳에 그대로 있습니다.',
+        body: '로컬 우선: 노트북이든 온프레미스든 자체 클라우드든, 호스팅된 AI 추론 제공업체를 쓰기로 선택하지 않는 한 데이터는 있는 곳에 그대로 있습니다.',
         points: [
           'OpenAI 호환 서빙이라 기존 앱이 그대로 동작',
-          'Waffle은 vLLM, SGLang, llama.cpp와도 동작',
+          'Syrup은 vLLM, SGLang, llama.cpp와도 동작',
           '특정 엔진이나 벤더에 묶이지 않음',
         ],
       },

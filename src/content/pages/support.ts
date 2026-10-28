@@ -67,7 +67,7 @@ export const support: Localized<SupportContent> = {
       {
         question: 'What can I use today?',
         answer:
-          'Our products (Iron, Butter, Waffle and Syrup) are private and closed source for now, and nothing is generally available yet. Early access is how people get in first.',
+          'Our products (Iron, Butter, Syrup and Whisk) are private and closed source for now, and nothing is generally available yet. Early access is how people get in first.',
       },
       {
         question: 'How does early access work?',
@@ -77,7 +77,7 @@ export const support: Localized<SupportContent> = {
       {
         question: 'Which hardware does it run on?',
         answer:
-          'Apple silicon is the primary target: every kernel is written and tuned for Metal first. NVIDIA CUDA is secondary, in production on RTX and DGX Spark. AMD through ROCm and Vulkan is moving fast. Think MacBook and Mac Studio, RTX workstations, DGX Spark, Strix Halo and neocloud fleets.',
+          'Apple silicon is the primary target: every kernel is written and tuned for Metal first. NVIDIA CUDA is in production on RTX and DGX Spark and being tuned, with first runs done on H100, H200, B100 and B200. AMD through ROCm and Vulkan is moving fast. Think MacBook and Mac Studio, RTX workstations, DGX Spark, Strix Halo and neocloud fleets.',
       },
       {
         question: 'How do I report a bug?',

@@ -10,7 +10,7 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
   hero: {
     label: 'Solutions',
     title: 'Une IA locale, taillée pour votre *usage*.',
-    lede: 'Waffuru est une seule stack, des kernels à la mémoire, qui fait tourner vite des modèles sur du matériel que vous possédez déjà. Choisissez la page qui se rapproche le plus de ce que vous voulez accomplir.',
+    lede: 'Waffuru est une seule stack, des kernels à la mémoire, qui fait tourner vite des modèles sur du matériel que vous possédez ou louez. Choisissez la page qui se rapproche le plus de ce que vous voulez accomplir.',
   },
   cards: {
     label: 'Pour qui',
@@ -29,17 +29,17 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
         title: 'Des dollars par *charge de travail*.',
         body: 'Quand l’énergie est le plafond, les tokens par watt et les dollars par charge de travail sont les chiffres que vous pouvez encore améliorer. Waffuru est construit autour des deux.',
         points: [
-          'Tournez sur du matériel que vous possédez déjà plutôt que de louer',
+          'Tournez sur du matériel que vous possédez ou louez, pour un coût par token plus bas',
           'Les modèles quantifiés tiennent davantage dans la mémoire dont vous disposez',
-          'Waffle montre où la capacité reste inutilisée',
+          'Syrup montre où la capacité reste inutilisée',
         ],
       },
       {
         tag: 'inference',
         title: 'Une meilleure *inférence*.',
-        body: 'Des kernels optimisés pour chaque backend, des modèles et un cache KV quantifiés, et du décodage spéculatif, dans un moteur sans Python sur le chemin critique.',
+        body: 'Des kernels optimisés pour chaque backend, des modèles et un cache KV quantifiés, et du décodage spéculatif, dans un moteur avec un minimum de dépendances.',
         points: [
-          'Metal d’abord, CUDA ensuite, ROCm et Vulkan fonctionnent',
+          'Metal d’abord, CUDA en cours d’optimisation, ROCm et Vulkan bientôt',
           'Charge les modèles Hugging Face sans conversion',
           'Modèles de texte, de vision, de voix et omni',
         ],
@@ -47,10 +47,10 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
       {
         tag: 'control',
         title: 'Plus de *maîtrise*.',
-        body: 'Local-first : vos données restent où elles sont, sauf si vous choisissez de les partager, que ce soit sur un portable, sur site ou dans votre propre cloud.',
+        body: 'Local-first : sur un portable, sur site ou dans votre propre cloud, vos données restent où elles sont, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
         points: [
           'Serving compatible OpenAI : vos applications continuent de fonctionner',
-          'Waffle fonctionne avec vLLM, SGLang et llama.cpp',
+          'Syrup fonctionne avec vLLM, SGLang et llama.cpp',
           'Aucun verrouillage sur un moteur ou un fournisseur',
         ],
       },

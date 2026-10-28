@@ -1,11 +1,22 @@
+import { buildInfo } from '@/generated/build-info';
 import { CookieSettingsButton } from '@/components/consent/cookie-settings-button';
 import { LocalizedLink } from '@/components/localized-link';
 import { NewsletterSignup } from '@/components/newsletter/newsletter-signup';
 import { Wordmark } from '@/components/wordmark';
-import { navigation } from '@/content/navigation';
+import { navigation, publishedNavigation } from '@/content/navigation';
 import { site } from '@/content/site';
 import { interpolate } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/dictionaries/en';
+import { cn } from '@/lib/utils';
+
+/** Column classes by count; Tailwind needs whole class names. */
+const COLUMNS: Record<number, string> = {
+  1: 'sm:grid-cols-2',
+  2: 'sm:grid-cols-2',
+  3: 'sm:grid-cols-3',
+  4: 'sm:grid-cols-4',
+  5: 'sm:grid-cols-3 xl:grid-cols-5',
+};
 
 /** Copyright year, fixed at build time (the site rebuilds on every release). */
 const YEAR = new Date().getFullYear();
@@ -18,10 +29,12 @@ const SOCIALS = [
 
 /**
  * Site footer: mailing list, link columns, then the After Hours footer bar
- * (copyright, "Made with 🤖 in North America", contact and socials).
+ * (copyright, the site's version as `v1.0.0 (commit date)`, "Made with 🤖 in
+ * North America", contact and socials).
  */
 export function Footer({ dictionary }: { dictionary: Dictionary }) {
   const { footer, nav, common } = dictionary;
+  const { columns } = publishedNavigation().footer;
 
   return (
     <footer className="mt-24 border-t border-foreground/10">
@@ -38,9 +51,12 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
         </div>
         <nav
           aria-label={footer.heading}
-          className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4"
+          className={cn(
+            'grid grid-cols-2 gap-x-8 gap-y-10',
+            COLUMNS[columns.length] ?? 'sm:grid-cols-4',
+          )}
         >
-          {navigation.footer.columns.map((column) => (
+          {columns.map((column) => (
             <div key={column.headingKey}>
               <p className="label-mono text-[11px] text-muted-foreground">
                 {footer[column.headingKey]}
@@ -64,7 +80,11 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
 
       <div className="mx-auto flex max-w-site flex-col gap-4 border-t border-foreground/10 px-site pt-6 pb-12 font-mono text-xs tracking-[0.06em] text-muted-foreground md:flex-row md:flex-wrap md:items-center md:justify-between">
         <p>
-          {interpolate(footer.rights, { year: YEAR })} · {footer.madeIn}{' '}
+          {interpolate(footer.rights, { year: YEAR })} ·{' '}
+          <span title={footer.versionLabel}>
+            v{buildInfo.version} ({buildInfo.commit} {buildInfo.date})
+          </span>{' '}
+          · {footer.madeIn}{' '}
           <span role="img" aria-label={footer.flagsLabel}>
             🇺🇸 🤝 🇨🇦
           </span>

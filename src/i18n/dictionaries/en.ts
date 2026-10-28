@@ -2,7 +2,7 @@
  * English UI chrome: the source of truth for every dictionary. The other
  * locales are typed against this shape, so a missing key fails typecheck.
  * Page copy lives in `src/content/*`, not here. Product names (Waffuru, Iron,
- * Butter, Waffle, Syrup) and platform names (Metal, CUDA, …) never translate.
+ * Butter, Syrup, Whisk) and platform names (Metal, CUDA, …) never translate.
  */
 const en = {
   common: {
@@ -20,9 +20,9 @@ const en = {
     faqHeading: 'Questions, answered',
   },
   meta: {
-    defaultTitle: 'Waffuru: raw math, pressed into silicon',
+    defaultTitle: 'Waffuru: more intelligence on hardware you already own',
     defaultDescription:
-      'GPU kernels, inference, fleet control and memory for the hardware you already own. Waffuru builds Iron, Butter, Waffle and Syrup.',
+      'Waffuru builds the AI stack that runs models fast and cheap on hardware you own or rent, private by default. Start with Pantry, our free vulnerability scanner for macOS and Linux.',
   },
   header: {
     mainNav: 'Main',
@@ -50,10 +50,14 @@ const en = {
     help: 'Help',
     allProducts: 'See the whole stack',
     allSolutions: 'All solutions',
+    industries: 'Industries',
+    byIndustry: 'By industry',
+    allIndustries: 'All industries',
+    openSource: 'Free and open source',
     items: {
       stack: {
         label: 'The Waffuru stack',
-        description: 'Four products that work alone or together.',
+        description: 'Five products that work alone or together.',
       },
       iron: {
         label: 'Iron',
@@ -61,15 +65,25 @@ const en = {
       },
       butter: {
         label: 'Butter',
-        description: 'Model serving without Python.',
-      },
-      waffle: {
-        label: 'Waffle',
-        description: 'See every GPU and every engine running on it.',
+        description: 'Multi-modal inference, without compromise.',
       },
       syrup: {
         label: 'Syrup',
-        description: 'Your AI remembers what you were working on.',
+        description:
+          'Monitoring, telemetry, access control and cost for every GPU.',
+      },
+      whisk: {
+        label: 'Whisk',
+        description:
+          'Mixes the right documents and context into every request.',
+      },
+      waffle: {
+        label: 'Waffle',
+        description: 'Run your agents, with W, your assistant, inside.',
+      },
+      pantry: {
+        label: 'Pantry',
+        description: 'Free vulnerability scanner for macOS and Linux.',
       },
       smallBusiness: {
         label: 'Small business',
@@ -86,6 +100,26 @@ const en = {
       aiCompanies: {
         label: 'AI model and inference companies',
         description: 'Faster kernels and serving across every backend.',
+      },
+      cloudInfrastructure: {
+        label: 'Cloud infrastructure',
+        description: 'More output and clear margins from every GPU.',
+      },
+      financialServices: {
+        label: 'Financial services',
+        description: 'Private AI that keeps client data in house.',
+      },
+      lifeSciences: {
+        label: 'Life sciences',
+        description: 'Run models next to sensitive research data.',
+      },
+      government: {
+        label: 'Government',
+        description: 'Sovereign AI on hardware you control.',
+      },
+      military: {
+        label: 'Military',
+        description: 'Capable AI on hardware you own and secure.',
       },
       about: {
         label: 'About us',
@@ -121,10 +155,15 @@ const en = {
       },
     },
   },
+  countries: {
+    us: 'United States',
+    ca: 'Canada',
+  },
   footer: {
     heading: 'Footer',
     products: 'Products',
     solutions: 'Solutions',
+    industries: 'Industries',
     company: 'Company',
     help: 'Help',
     terms: 'Terms of use',
@@ -133,7 +172,8 @@ const en = {
     madeIn: 'Made with 🤖 in North America',
     flagsLabel: 'United States and Canada',
     social: 'Waffuru on {network}',
-    rights: '© {year} Waffuru',
+    rights: '© {year} Waffuru AI Inc.',
+    versionLabel: 'Website version, commit and date',
   },
   newsletter: {
     heading: 'Stay in the loop',

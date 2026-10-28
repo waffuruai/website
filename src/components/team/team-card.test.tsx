@@ -10,6 +10,7 @@ import {
   teamCopy,
   type TeamMember,
 } from '@/content/team';
+import en from '@/i18n/dictionaries/en';
 import { withDictionary } from '@/i18n/test-utils';
 
 const labels: TeamCardLabels = {
@@ -21,6 +22,7 @@ const labels: TeamCardLabels = {
     x: 'X',
     github: 'GitHub',
   },
+  countries: en.countries,
 };
 
 const sizes = '320px';
@@ -97,8 +99,10 @@ describe('TeamCard', () => {
     );
 
     const links = screen.getAllByRole('link');
-    expect(links).toHaveLength(1);
-    expect(links[0]?.ariaLabel).toBe('Cory Smith on LinkedIn');
+    expect(links.map((link) => link.ariaLabel)).toEqual([
+      'Cory Smith on LinkedIn',
+      'Cory Smith on X',
+    ]);
     expect(screen.queryByText(PLACEHOLDER)).toBeNull();
   });
 
@@ -146,5 +150,25 @@ describe('TeamGrid', () => {
     expect(
       screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent),
     ).toEqual(team.map((person) => person.name));
+  });
+
+  it('flags where each person is based, by country name', () => {
+    for (const slug of ['kyle-croll', 'cory-smith']) {
+      const person = member(slug);
+      const { unmount } = render(
+        withDictionary(
+          <TeamCard
+            member={person}
+            copy={copy[slug]}
+            labels={labels}
+            sizes={sizes}
+          />,
+        ),
+      );
+      expect(
+        screen.getByRole('img', { name: en.countries[person.country] }),
+      ).toBeTruthy();
+      unmount();
+    }
   });
 });

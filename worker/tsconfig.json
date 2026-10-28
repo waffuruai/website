@@ -12,6 +12,6 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["./**/*.ts", "../src/i18n/config.ts"],
+  "include": ["./**/*.ts", "../src/i18n/config.ts", "../src/content/site.ts"],
   "exclude": ["./**/*.test.ts", "../.claude"]
 }
