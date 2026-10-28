@@ -109,6 +109,7 @@ const homeFr: (typeof home)['en'] = {
       {
         title: 'Pour vous',
         body: 'Un assistant privé sur votre propre portable. Vos notes, votre code et vos questions restent sur votre machine.',
+        soon: true,
       },
       {
         title: 'Pour les entreprises',
@@ -127,6 +128,7 @@ const homeFr: (typeof home)['en'] = {
       },
     ],
     linkLabel: 'Voir comment',
+    soonLabel: 'Bientôt',
   },
 
   beliefs: {

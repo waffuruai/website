@@ -105,6 +105,15 @@ describe('HomePage', () => {
     }
   });
 
+  it('marks the audience whose product is not out yet as coming soon', async () => {
+    await renderPage();
+    const card = screen
+      .getByRole('heading', { level: 3, name: 'For you' })
+      .closest('li');
+    expect(card?.textContent).toContain('Coming soon');
+    expect(screen.getAllByText('Coming soon')).toHaveLength(1);
+  });
+
   it('links each audience on once its page is live, and the team', async () => {
     await renderPage();
     const linked = home.en.audiences.items.filter((item) => item.href);

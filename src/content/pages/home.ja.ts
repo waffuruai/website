@@ -109,6 +109,7 @@ const homeJa: (typeof home)['en'] = {
       {
         title: 'あなたへ',
         body: 'あなた自身のノート PC で動く、プライベートなアシスタント。ノート、コード、質問は、あなたのマシンにとどまります。',
+        soon: true,
       },
       {
         title: '企業へ',
@@ -127,6 +128,7 @@ const homeJa: (typeof home)['en'] = {
       },
     ],
     linkLabel: '詳しく見る',
+    soonLabel: '近日公開',
   },
 
   beliefs: {

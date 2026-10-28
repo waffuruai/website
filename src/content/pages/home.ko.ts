@@ -109,6 +109,7 @@ const homeKo: (typeof home)['en'] = {
       {
         title: '개인을 위해',
         body: '내 노트북에서 돌아가는 프라이빗 어시스턴트. 노트, 코드, 질문이 모두 내 컴퓨터에 머뭅니다.',
+        soon: true,
       },
       {
         title: '기업을 위해',
@@ -127,6 +128,7 @@ const homeKo: (typeof home)['en'] = {
       },
     ],
     linkLabel: '자세히 보기',
+    soonLabel: '곧 출시',
   },
 
   beliefs: {

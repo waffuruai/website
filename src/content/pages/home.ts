@@ -48,8 +48,11 @@ export type HomeContent = {
   audiences: {
     title: string;
     intro: string;
-    items: { title: string; body: string; href?: string }[];
+    /** `soon` marks an audience whose product isn't out yet. */
+    items: { title: string; body: string; href?: string; soon?: boolean }[];
     linkLabel: string;
+    /** The badge on a `soon` item. */
+    soonLabel: string;
   };
   beliefs: {
     title: string;
@@ -177,6 +180,7 @@ export const home: Localized<HomeContent> = {
         {
           title: 'For you',
           body: 'A private assistant on your own laptop. Your notes, your code and your questions stay on your machine.',
+          soon: true,
         },
         {
           title: 'For companies',
@@ -195,6 +199,7 @@ export const home: Localized<HomeContent> = {
         },
       ],
       linkLabel: 'See how',
+      soonLabel: 'Coming soon',
     },
 
     beliefs: {

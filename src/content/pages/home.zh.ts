@@ -105,6 +105,7 @@ const homeZh: (typeof home)['en'] = {
       {
         title: '为你自己',
         body: '在你自己的笔记本上运行私人助理。你的笔记、代码和问题都留在你的机器上。',
+        soon: true,
       },
       {
         title: '为企业',
@@ -123,6 +124,7 @@ const homeZh: (typeof home)['en'] = {
       },
     ],
     linkLabel: '看看怎么做',
+    soonLabel: '即将推出',
   },
 
   beliefs: {
