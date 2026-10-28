@@ -125,13 +125,13 @@ export const teamCopy: Localized<Record<string, TeamCopy>> = {
       role: 'Chief Executive Officer',
       background:
         'Ex-Navy, with an MBA from McCombs. Threat intelligence, AI strategy and security.',
-      bio: 'Kyle sets Waffuru’s direction and brings a security lens to how AI gets built and deployed. He served in the Navy, with a background in threat intelligence and threat hunting, then earned an MBA from UT Austin’s McCombs School of Business.',
+      bio: 'Kyle leads Waffuru’s fundraising and operations, while bringing a security lens to how AI gets built and deployed. He served in the Navy, with a background in threat intelligence and threat hunting, then earned an MBA from UT Austin’s McCombs School of Business.',
     },
     'eric-gonzalez': {
       role: 'Chief Revenue Officer',
       background:
         'Scaled companies from $50M to $2B ARR. Ex-Oracle NetSuite and Anaconda. McCombs MBA.',
-      bio: 'Eric leads revenue at Waffuru. He has scaled companies from $50M to $2B in ARR, worked at Oracle NetSuite and at Anaconda, the company behind Conda, and serves as a board member. He holds an MBA from UT Austin’s McCombs School of Business.',
+      bio: 'Eric leads revenue and GTM at Waffuru. He has scaled companies from $50M to $2B in ARR, worked at Oracle NetSuite and at Anaconda, the company behind Conda, and serves as a board member. He holds an MBA from UT Austin’s McCombs School of Business.',
     },
     'eric-kryski': {
       role: 'Chief Product Officer',

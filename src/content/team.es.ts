@@ -5,13 +5,13 @@ const teamCopyEs: (typeof teamCopy)['en'] = {
     role: 'Director Ejecutivo (CEO)',
     background:
       'Veterano de la Marina de EE. UU., con un MBA de McCombs. Inteligencia de amenazas, estrategia de IA y seguridad.',
-    bio: 'Kyle marca el rumbo de Waffuru y aporta una mirada de seguridad a cómo se construye y se despliega la IA. Sirvió en la Marina de EE. UU., tiene experiencia en inteligencia de amenazas y caza de amenazas (threat hunting) y después obtuvo un MBA en la McCombs School of Business de UT Austin.',
+    bio: 'Kyle dirige la financiación y las operaciones de Waffuru, y aporta una mirada de seguridad a cómo se construye y se despliega la IA. Sirvió en la Marina de EE. UU., tiene experiencia en inteligencia de amenazas y caza de amenazas (threat hunting) y después obtuvo un MBA en la McCombs School of Business de UT Austin.',
   },
   'eric-gonzalez': {
     role: 'Director de Ingresos (CRO)',
     background:
       'Escaló empresas de $50M a $2B de ARR. Ex-Oracle NetSuite y Anaconda. MBA de McCombs.',
-    bio: 'Eric dirige el área de ingresos de Waffuru. Ha escalado empresas de $50M a $2B de ARR, trabajó en Oracle NetSuite y en Anaconda, la empresa detrás de Conda, y actúa como consejero. Tiene un MBA de la McCombs School of Business de UT Austin.',
+    bio: 'Eric dirige el área de ingresos y la salida al mercado (GTM) de Waffuru. Ha escalado empresas de $50M a $2B de ARR, trabajó en Oracle NetSuite y en Anaconda, la empresa detrás de Conda, y actúa como consejero. Tiene un MBA de la McCombs School of Business de UT Austin.',
   },
   'eric-kryski': {
     role: 'Director de Producto (CPO)',

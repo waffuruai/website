@@ -20,11 +20,11 @@ const aboutEs: (typeof about)['en'] = {
       { label: 'Conoce al equipo', href: '/about/team' },
       { label: 'Trabaja con nosotros', href: '#hiring', variant: 'outline' },
     ],
-    name: '“Waffuru” es como se dice waffles en japonés. El nombre es un guiño al respeto por la cultura japonesa y su larga historia, a un cariño compartido por los waffles y a una misión global.',
+    name: '“Waffuru” es como se dice waffles en japonés. El nombre es un guiño a nuestro respeto por la cultura japonesa y su larga historia, a un cariño compartido por los waffles y a una misión global.',
   },
   why: {
     title: 'Por qué *construimos*.',
-    intro: 'La inteligencia debe correr donde ya está la gente.',
+    intro: 'La inteligencia debe correr donde la gente ya usa la tecnología.',
     paragraphs: [
       'Los modelos se están volviendo lo bastante buenos para correr en el hardware que la gente ya tiene.',
       'Eso solo importa si el stack que los ejecuta está listo. Tiene que ser más rápido, más barato, fácil de usar y **tuyo**: kernels que sacan más de cada vatio, resultados correctos más rápido, modelos de visión, audio y texto que funcionan sin una montaña de dependencias y complejidad, y una memoria y un contexto que se quedan en tu equipo.',
@@ -52,7 +52,7 @@ const aboutEs: (typeof about)['en'] = {
       },
       {
         statement: 'La demanda de cómputo es insaciable.',
-        body: 'Cada mejora de eficiencia se gasta en más inteligencia: la paradoja de Jevons en acción. Por eso el trabajo de eficiencia nunca termina.',
+        body: 'Cada mejora de eficiencia se gasta en más inteligencia: la [paradoja de Jevons](https://es.wikipedia.org/wiki/Paradoja_de_Jevons) en acción. Por eso el trabajo de eficiencia nunca termina.',
       },
       {
         statement:

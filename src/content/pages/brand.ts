@@ -171,7 +171,7 @@ export const brand: Localized<BrandContent> = {
         },
       ],
       origin:
-        '“Waffuru” is how Japanese says waffles. The name is a nod to respect for Japanese culture and deep history, a shared love of waffles and a global mission.',
+        '“Waffuru” is how Japanese says waffles. The name is a nod to our respect for Japanese culture and deep history, a shared love of waffles and a global mission.',
     },
     colour: {
       title: 'The *palette*.',

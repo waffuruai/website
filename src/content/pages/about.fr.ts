@@ -20,11 +20,12 @@ const aboutFr: (typeof about)['en'] = {
       { label: 'Rencontrer l’équipe', href: '/about/team' },
       { label: 'Travailler avec nous', href: '#hiring', variant: 'outline' },
     ],
-    name: '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil au respect de la culture japonaise et de sa longue histoire, à un amour partagé des gaufres et à une mission mondiale.',
+    name: '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil à notre respect pour la culture japonaise et sa longue histoire, à un amour partagé des gaufres et à une mission mondiale.',
   },
   why: {
     title: 'Pourquoi nous *construisons*.',
-    intro: 'L’intelligence doit tourner là où les gens se trouvent déjà.',
+    intro:
+      'L’intelligence doit tourner là où les gens utilisent déjà la technologie.',
     paragraphs: [
       'Les modèles deviennent assez bons pour tourner sur le matériel que les gens possèdent déjà.',
       'Encore faut-il que la stack qui les exécute soit prête. Elle doit être plus rapide, moins chère, simple à utiliser et **à vous** : des kernels qui tirent plus de chaque watt, des résultats corrects plus vite, des modèles de vision, d’audio et de texte qui tournent sans une montagne de dépendances et de complexité, et une mémoire et un contexte qui restent sur votre machine.',
@@ -52,7 +53,7 @@ const aboutFr: (typeof about)['en'] = {
       },
       {
         statement: 'La demande de calcul est insatiable.',
-        body: 'Chaque gain d’efficacité est dépensé en intelligence supplémentaire : le paradoxe de Jevons à l’œuvre. C’est pourquoi le travail sur l’efficacité n’est jamais terminé.',
+        body: 'Chaque gain d’efficacité est dépensé en intelligence supplémentaire : le [paradoxe de Jevons](https://fr.wikipedia.org/wiki/Paradoxe_de_Jevons) à l’œuvre. C’est pourquoi le travail sur l’efficacité n’est jamais terminé.',
       },
       {
         statement:

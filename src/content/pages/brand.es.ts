@@ -77,7 +77,7 @@ const brandEs: (typeof brand)['en'] = {
       },
     ],
     origin:
-      '“Waffuru” es como se dice waffles en japonés. El nombre es un guiño al respeto por la cultura japonesa y su larga historia, a un cariño compartido por los waffles y a una misión global.',
+      '“Waffuru” es como se dice waffles en japonés. El nombre es un guiño a nuestro respeto por la cultura japonesa y su larga historia, a un cariño compartido por los waffles y a una misión global.',
   },
   colour: {
     title: 'La *paleta*.',

@@ -5,13 +5,13 @@ const teamCopyJa: (typeof teamCopy)['en'] = {
     role: '最高経営責任者（CEO）',
     background:
       '元米海軍、McCombs で MBA 取得。脅威インテリジェンス、AI 戦略、セキュリティ。',
-    bio: 'Kyle は Waffuru の進む方向を定め、AI のつくり方と展開のしかたにセキュリティの視点を持ち込んでいます。米海軍で軍務に就き、脅威インテリジェンスとスレットハンティングの経歴を持ちます。その後、UT Austin の McCombs School of Business で MBA を取得しました。',
+    bio: 'Kyle は Waffuru の資金調達とオペレーションを率いながら、AI のつくり方と展開のしかたにセキュリティの視点を持ち込んでいます。米海軍で軍務に就き、脅威インテリジェンスとスレットハンティングの経歴を持ちます。その後、UT Austin の McCombs School of Business で MBA を取得しました。',
   },
   'eric-gonzalez': {
     role: '最高売上責任者（CRO）',
     background:
       'ARR 5,000 万ドルから 20 億ドルまで企業を成長させた。元 Oracle NetSuite、Anaconda。McCombs で MBA 取得。',
-    bio: 'Eric は Waffuru で収益部門を率いています。ARR 5,000 万ドルから 20 億ドルまで企業を成長させてきたほか、Oracle NetSuite と、Conda を提供する Anaconda に在籍し、取締役会のメンバーも務めています。UT Austin の McCombs School of Business で MBA を取得しています。',
+    bio: 'Eric は Waffuru で収益と GTM（市場投入）を率いています。ARR 5,000 万ドルから 20 億ドルまで企業を成長させてきたほか、Oracle NetSuite と、Conda を提供する Anaconda に在籍し、取締役会のメンバーも務めています。UT Austin の McCombs School of Business で MBA を取得しています。',
   },
   'eric-kryski': {
     role: '最高製品責任者（CPO）',

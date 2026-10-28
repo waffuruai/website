@@ -96,11 +96,12 @@ export const about: Localized<AboutContent> = {
         { label: 'Meet the team', href: '/about/team' },
         { label: 'Work with us', href: '#hiring', variant: 'outline' },
       ],
-      name: '“Waffuru” is how Japanese says waffles. The name is a nod to respect for Japanese culture and deep history, a shared love of waffles and a global mission.',
+      name: '“Waffuru” is how Japanese says waffles. The name is a nod to our respect for Japanese culture and deep history, a shared love of waffles and a global mission.',
     },
     why: {
       title: 'Why we *build*.',
-      intro: 'Intelligence should run where people already are.',
+      intro:
+        'Intelligence should run where people already are using technology.',
       paragraphs: [
         'Models are getting good enough to run on hardware people already own.',
         'That only matters if the stack that runs them is ready for it. It has to be faster, cheaper, easy to use and **yours**: kernels that get more from every watt, correct results faster, running vision, audio and text models without a pile of dependencies and complexity, and memory and context that stays on your machine.',
@@ -127,7 +128,7 @@ export const about: Localized<AboutContent> = {
         },
         {
           statement: 'Demand for compute is insatiable.',
-          body: 'Every efficiency gain gets spent on more intelligence, the Jevons paradox at work. That is why efficiency work never finishes.',
+          body: 'Every efficiency gain gets spent on more intelligence, the [Jevons paradox](https://en.wikipedia.org/wiki/Jevons_paradox) at work. That is why efficiency work never finishes.',
         },
         {
           statement: 'Good-enough models on commodity hardware are close.',

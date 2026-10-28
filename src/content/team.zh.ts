@@ -4,13 +4,13 @@ const teamCopyZh: (typeof teamCopy)['en'] = {
   'kyle-croll': {
     role: '首席执行官',
     background: '美国海军退役，McCombs MBA。威胁情报、AI 战略与安全。',
-    bio: 'Kyle 决定 Waffuru 的方向，并用安全的视角看待 AI 该如何构建与部署。他曾在美国海军服役，具有威胁情报与威胁狩猎背景，之后在 UT Austin 的 McCombs School of Business 获得 MBA 学位。',
+    bio: 'Kyle 负责 Waffuru 的融资与运营，同时用安全的视角看待 AI 该如何构建与部署。他曾在美国海军服役，具有威胁情报与威胁狩猎背景，之后在 UT Austin 的 McCombs School of Business 获得 MBA 学位。',
   },
   'eric-gonzalez': {
     role: '首席营收官',
     background:
       '带领公司从 5000 万美元做到 20 亿美元 ARR。前 Oracle NetSuite 与 Anaconda。McCombs MBA。',
-    bio: 'Eric 负责 Waffuru 的营收。他曾带领多家公司的 ARR 从 5000 万美元增长到 20 亿美元，先后任职于 Oracle NetSuite 和 Anaconda（Conda 背后的公司），现为董事会成员。他拥有 UT Austin 的 McCombs School of Business MBA 学位。',
+    bio: 'Eric 负责 Waffuru 的营收与市场进入（GTM）。他曾带领多家公司的 ARR 从 5000 万美元增长到 20 亿美元，先后任职于 Oracle NetSuite 和 Anaconda（Conda 背后的公司），现为董事会成员。他拥有 UT Austin 的 McCombs School of Business MBA 学位。',
   },
   'eric-kryski': {
     role: '首席产品官',

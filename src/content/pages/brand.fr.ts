@@ -73,7 +73,7 @@ const brandFr: (typeof brand)['en'] = {
       },
     ],
     origin:
-      '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil au respect de la culture japonaise et de sa longue histoire, à un amour partagé des gaufres et à une mission mondiale.',
+      '« Waffuru » est la façon dont le japonais dit gaufres. Le nom est un clin d’œil à notre respect pour la culture japonaise et sa longue histoire, à un amour partagé des gaufres et à une mission mondiale.',
   },
   colour: {
     title: 'La *palette*.',

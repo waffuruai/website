@@ -5,13 +5,13 @@ const teamCopyFr: (typeof teamCopy)['en'] = {
     role: 'Directeur général (CEO)',
     background:
       'Ancien de la Marine américaine, titulaire d’un MBA de McCombs. Renseignement sur les menaces, stratégie IA et sécurité.',
-    bio: 'Kyle fixe la direction de Waffuru et apporte un regard de sécurité sur la façon dont l’IA est conçue et déployée. Il a servi dans la Marine américaine, avec une expérience du renseignement sur les menaces et de la chasse aux menaces (threat hunting), puis a obtenu un MBA à la McCombs School of Business, à UT Austin.',
+    bio: 'Kyle dirige la levée de fonds et les opérations de Waffuru, tout en apportant un regard de sécurité sur la façon dont l’IA est conçue et déployée. Il a servi dans la Marine américaine, avec une expérience du renseignement sur les menaces et de la chasse aux menaces (threat hunting), puis a obtenu un MBA à la McCombs School of Business, à UT Austin.',
   },
   'eric-gonzalez': {
     role: 'Directeur des revenus (CRO)',
     background:
       'A fait passer des entreprises de 50 M$ à 2 Md$ d’ARR. Ancien d’Oracle NetSuite et d’Anaconda. MBA de McCombs.',
-    bio: 'Eric est responsable des revenus chez Waffuru. Il a fait passer des entreprises de 50 M$ à 2 Md$ de revenus annuels récurrents (ARR), a travaillé chez Oracle NetSuite et chez Anaconda, l’entreprise derrière Conda, et siège à un conseil d’administration. Il est titulaire d’un MBA de la McCombs School of Business, à UT Austin.',
+    bio: 'Eric est responsable des revenus et du go-to-market chez Waffuru. Il a fait passer des entreprises de 50 M$ à 2 Md$ de revenus annuels récurrents (ARR), a travaillé chez Oracle NetSuite et chez Anaconda, l’entreprise derrière Conda, et siège à un conseil d’administration. Il est titulaire d’un MBA de la McCombs School of Business, à UT Austin.',
   },
   'eric-kryski': {
     role: 'Directeur produit (CPO)',

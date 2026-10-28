@@ -4,13 +4,13 @@ const teamCopyKo: (typeof teamCopy)['en'] = {
   'kyle-croll': {
     role: '최고경영자(CEO)',
     background: '미 해군 출신, McCombs MBA. 위협 인텔리전스, AI 전략, 보안.',
-    bio: 'Kyle은 Waffuru의 방향을 정하고, AI를 만들고 배포하는 방식에 보안의 관점을 더합니다. 미 해군에서 복무했고 위협 인텔리전스와 위협 헌팅 분야에서 일했으며, 이후 UT Austin의 McCombs School of Business에서 MBA를 받았습니다.',
+    bio: 'Kyle은 Waffuru의 투자 유치와 운영을 이끌면서, AI를 만들고 배포하는 방식에 보안의 관점을 더합니다. 미 해군에서 복무했고 위협 인텔리전스와 위협 헌팅 분야에서 일했으며, 이후 UT Austin의 McCombs School of Business에서 MBA를 받았습니다.',
   },
   'eric-gonzalez': {
     role: '최고매출책임자(CRO)',
     background:
       '기업을 ARR $50M에서 $2B까지 성장시킴. 전 Oracle NetSuite, Anaconda. McCombs MBA.',
-    bio: 'Eric은 Waffuru에서 매출을 이끌고 있습니다. 기업을 ARR $50M에서 $2B까지 키워 냈고, Oracle NetSuite와 Conda를 만든 Anaconda에서 일했으며, 이사회 구성원으로도 활동하고 있습니다. UT Austin의 McCombs School of Business에서 MBA를 받았습니다.',
+    bio: 'Eric은 Waffuru에서 매출과 GTM(시장 진출)을 이끌고 있습니다. 기업을 ARR $50M에서 $2B까지 키워 냈고, Oracle NetSuite와 Conda를 만든 Anaconda에서 일했으며, 이사회 구성원으로도 활동하고 있습니다. UT Austin의 McCombs School of Business에서 MBA를 받았습니다.',
   },
   'eric-kryski': {
     role: '최고제품책임자(CPO)',
