@@ -28,7 +28,7 @@ const enterpriseEs: (typeof enterprise)['en'] = {
     title: 'Algunos datos no pueden *salir*.',
     statement:
       'Las cargas de trabajo que vale la pena automatizar tocan registros de clientes, contratos, código fuente y datos regulados, justo los que no puedes enviar sin más a la API de otro.',
-    body: 'Así que una política dice que no mientras los equipos dicen que sí a escondidas, y las GPU quedan repartidas entre clústeres y nubes que nadie ve en un solo lugar. Seguridad quiere un perímetro, finanzas quiere una cifra por cada carga de trabajo, e ingeniería quiere un modelo que simplemente atienda solicitudes.',
+    body: 'Así que una política dice que no mientras los equipos dicen que sí a escondidas, y las GPU quedan repartidas entre clústeres y nubes que nadie ve en un solo lugar. Seguridad quiere un perímetro, finanzas quiere una cifra por cada carga de trabajo, y tu plantilla quiere un modelo que simplemente funcione.',
   },
   useCases: {
     title: 'Trabajo que se queda *dentro*.',

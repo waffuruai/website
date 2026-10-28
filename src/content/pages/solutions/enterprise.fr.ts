@@ -27,7 +27,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     title: 'Certaines données ne peuvent pas *sortir*.',
     statement:
       'Les charges de travail qui valent la peine d’être automatisées touchent aux dossiers clients, aux contrats, au code source et aux données réglementées : justement celles que vous ne pouvez pas envoyer à la légère à l’API de quelqu’un d’autre.',
-    body: 'Alors une politique dit non pendant que les équipes disent oui en silence, et les GPU sont éparpillés sur des clusters et des clouds que personne ne voit au même endroit. La sécurité veut un périmètre, la finance veut un chiffre par charge de travail, et l’ingénierie veut un modèle qui répond simplement aux requêtes.',
+    body: 'Alors une politique dit non pendant que les équipes disent oui en silence, et les GPU sont éparpillés sur des clusters et des clouds que personne ne voit au même endroit. La sécurité veut un périmètre, la finance veut un chiffre par charge de travail, et vos équipes veulent un modèle qui fonctionne, tout simplement.',
   },
   useCases: {
     title: 'Un travail qui reste *à l’intérieur*.',

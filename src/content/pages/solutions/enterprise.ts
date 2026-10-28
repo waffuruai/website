@@ -47,7 +47,7 @@ export const enterprise: Localized<SolutionPage> = {
       title: 'Some data can’t *leave*.',
       statement:
         'The workloads worth automating touch customer records, contracts, source code and regulated data, which are the ones you cannot casually send to someone else’s API.',
-      body: 'So a policy says no while teams quietly say yes, and GPUs sit scattered across clusters and clouds that nobody can see in one place. Security wants a boundary, finance wants a number for each workload, and engineering wants a model that simply serves requests.',
+      body: 'So a policy says no while teams quietly say yes, and GPUs sit scattered across clusters and clouds that nobody can see in one place. Security wants a boundary, finance wants a number for each workload, and your workforce wants a model that just works.',
     },
     useCases: {
       title: 'Work that stays *inside*.',
