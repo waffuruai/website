@@ -83,6 +83,7 @@ describe('ProductsOverview', () => {
     for (const key of audienceKeys) {
       const link = screen.getByRole('link', { name: en.nav.items[key].label });
       expect(link.getAttribute('href')).toBe(audienceHrefs[key]);
+      expect(link.closest('article')?.textContent).toContain('Learn more');
     }
   });
 

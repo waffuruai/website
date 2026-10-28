@@ -55,7 +55,11 @@ export function ProductsOverview({
         privateLabel={common.private}
       />
       <UseOneOrAll together={copy.together} products={bottomUp} />
-      <AudienceCards audience={copy.audience} nav={nav} />
+      <AudienceCards
+        audience={copy.audience}
+        nav={nav}
+        learnMore={common.learnMore}
+      />
       <CtaCard
         title={copy.cta.title}
         body={copy.cta.body}
