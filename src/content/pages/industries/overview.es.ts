@@ -35,7 +35,7 @@ const industriesOverviewEs: (typeof industriesOverview)['en'] = {
         body: 'Los dólares por carga de trabajo son lo que pide finanzas, y casi nadie puede verlos. Syrup muestra cada GPU y cada motor que corre en ella, para que el gasto se vincule con el trabajo que hizo.',
         points: [
           'Ve qué GPU están ocupadas, ociosas o desajustadas',
-          'Saca más del hardware que ya tienes',
+          'Saca más del hardware propio o alquilado',
           'Los modelos cuantizados hacen caber más en la memoria disponible',
         ],
       },

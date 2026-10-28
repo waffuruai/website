@@ -19,7 +19,7 @@ const homeEs: (typeof home)['en'] = {
   hero: {
     eyebrow: 'Tu hardware · tus datos · tu IA',
     title: 'Más inteligencia del hardware que ya *tienes*.',
-    lede: 'Waffuru construye el stack que ejecuta IA en tus propias máquinas, desde un portátil hasta una flota de GPU. Sacas más del hardware que tienes, tus datos se quedan contigo y no hay una factura de la nube por cada prompt.',
+    lede: 'Waffuru construye el stack de IA que funciona en el hardware que tienes o alquilas, desde un portátil hasta una flota de GPU en el centro de datos. Sacas más de cada GPU, gastas menos por token y tus datos se quedan contigo.',
     launch: {
       label: 'Nuevo',
       text: 'Pantry, nuestro escáner de vulnerabilidades gratuito para macOS y Linux',
@@ -30,7 +30,7 @@ const homeEs: (typeof home)['en'] = {
   pantry: {
     label: 'Gratis · Código abierto · Ya disponible',
     title: 'Descubre qué está *expuesto*. Parchéalo rápido.',
-    body: 'Antes de que un asistente funcione en tu equipo, el equipo tiene que ser seguro. Pantry contrasta todo lo instalado, y cada repositorio, con datos abiertos de vulnerabilidades, informa solo de lo que te afecta y corrige lo que puede sin riesgo.',
+    body: 'Antes de que la IA funcione en tus equipos, tienen que ser seguros. Pantry contrasta todo lo instalado, y cada repositorio, con datos abiertos de vulnerabilidades, informa solo de lo que te afecta y corrige lo que puede sin riesgo.',
     points: [
       'Solo lo que afecta a tus versiones exactas',
       'Aplica por ti las correcciones seguras; muestra los pasos con sudo',
@@ -44,45 +44,61 @@ const homeEs: (typeof home)['en'] = {
   stack: {
     title: 'Del silicio a la *respuesta*.',
     intro:
-      'Cuatro capas que funcionan solas o juntas. Tu petición baja, la respuesta sube, y nada de eso tiene que salir de tu hardware.',
-    note: 'El stack es privado y está en acceso anticipado. Primero Metal, después CUDA; ROCm y Vulkan funcionan, pero aún sin afinar.',
+      'Seis productos que funcionan solos o juntos. Tu petición baja, la respuesta sube, y nada de eso tiene que salir del hardware que controlas.',
+    note: 'Pantry ya es gratuito y de código abierto; el resto del stack está en acceso anticipado privado, y Waffle llegará pronto. Primero Metal, después CUDA; ROCm y Vulkan funcionan, pero aún sin afinar.',
     flow: {
-      you: 'Tú, tus apps, tus agentes',
-      boundary: 'Tu hardware · tu red',
+      you: 'Tú, tu equipo, tus agentes',
+      boundary: 'Hardware que tienes o alquilas',
       layers: [
         {
-          role: 'Control',
-          name: 'Syrup',
-          line: 'Ve cada GPU y cada motor que corre en ella.',
+          role: 'Seguridad',
+          name: 'Pantry',
+          icon: 'pantry',
+          line: 'Encuentra lo que está expuesto en cada equipo y lo parchea.',
+        },
+        {
+          role: 'Agentes',
+          name: 'Waffle',
+          icon: 'waffle',
+          line: 'El harness de agentes, con W, tu asistente, dentro.',
         },
         {
           role: 'Memoria',
           name: 'Whisk',
-          line: 'Contexto de tus propias notas y tu código, con citas.',
+          icon: 'whisk',
+          line: 'Mezcla los documentos y el contexto adecuados en cada petición.',
+        },
+        {
+          role: 'Control',
+          name: 'Syrup',
+          icon: 'syrup',
+          line: 'Monitoreo, telemetría, control de acceso y costos, para cada GPU.',
         },
         {
           role: 'Motor',
           name: 'Butter',
-          line: 'Ejecuta el modelo, sin Python en la ruta de serving.',
+          icon: 'butter',
+          line: 'Inferencia multimodal para texto, visión y audio, en streaming.',
         },
         {
           role: 'Kernels',
           name: 'Iron',
-          line: 'Una definición de kernel, afinada para cada chip.',
+          icon: 'iron',
+          line: 'Escribe una vez en Rust y obtén kernels optimizados en todas partes.',
         },
       ],
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
-        title: 'La nube de otros',
-        note: 'No hace falta. Tus datos se quedan contigo a menos que lo autorices.',
+        title: 'La API de otros',
+        note: 'No hace falta. Tus datos se quedan en tu hardware a menos que lo autorices.',
       },
       outcomes: [
+        'Pensado para un menor costo por token',
         'Privado por defecto',
-        'Más del hardware que tienes',
-        'Cada GPU a la vista',
+        'Parcheado y a la vista',
       ],
       caption:
-        'Tu petición pasa por el plano de control, la memoria, el motor y los kernels hasta tu propio hardware, y la respuesta vuelve por el mismo camino, todo dentro de tu hardware y tu red. El resultado: privado por defecto, más del hardware que tienes y cada GPU a la vista.',
+        'Una petición tuya, de tu equipo o de tus agentes pasa por Pantry (seguridad), Waffle (agentes), Whisk (memoria), Syrup (control), Butter (el motor) e Iron (kernels) hasta el hardware que tienes o alquilas, y la respuesta vuelve por el mismo camino. Pensado para un menor costo por token, privado por defecto, parcheado y a la vista.',
     },
   },
 
@@ -96,7 +112,7 @@ const homeEs: (typeof home)['en'] = {
       },
       {
         title: 'Para empresas',
-        body: 'Lleva la IA a tu propia infraestructura. Mantén los datos sensibles donde deben estar y deja de pagar por prompt un trabajo que tu hardware puede hacer.',
+        body: 'Lleva la IA a tu propia infraestructura, en GPU propias o alquiladas. Mantén los datos sensibles donde deben estar y gasta menos por token.',
         href: '/solutions/enterprise',
       },
       {

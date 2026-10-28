@@ -15,12 +15,12 @@ const teamCopyZh: (typeof teamCopy)['en'] = {
   'eric-kryski': {
     role: '首席产品官',
     background: '全栈开发者、设计师与机器学习研究员。Bidali 联合创始人。',
-    bio: 'Eric 负责 Waffuru 的产品与战略，从设计、代码到机器学习研究，亲手把产品从头到尾做出来。他是 Bidali 的首席执行官兼联合创始人，也是 Bullish Ventures 的联合创始人。',
+    bio: 'Eric 负责 Waffuru 的产品与战略，从设计、代码到机器学习研究，亲手把产品从头到尾做出来。他是 Bidali 的首席执行官兼联合创始人，也是 Bullish Ventures 的联合创始人。他做过企业里的各个职能，从财务、产品和销售，到合规与客户支持；他的工作既包括就疫情应对为政府提供建议，也包括在 WEF 上就货币的未来发表演讲。',
   },
   'tom-turney': {
     role: '首席研究官',
     background: 'TurboQuant+ 背后的 AI 研究员。前 Google 技术主管经理。',
-    bio: 'Tom 负责 Waffuru 的研究。他在 Google 担任高级技术职位近十年。离开后，他联合创办了一家 AI 创业公司，发布了 Google TurboQuant 压缩算法的首个可用实现，并以 TurboQuant+ 证明自己能做得更好。在 Waffuru，他的研究涵盖压缩、性能、上下文管理与记忆。',
+    bio: 'Tom 负责 Waffuru 的研究，涵盖压缩、性能、上下文管理与记忆。他在 Google 担任高级技术职位近十年。离开后，他联合创办了一家 AI 创业公司，发布了 Google TurboQuant 压缩算法的首个可用实现，并以 TurboQuant+ 证明自己能做得更好。',
   },
   'cory-smith': {
     role: '首席技术官',

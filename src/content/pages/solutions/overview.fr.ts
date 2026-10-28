@@ -10,7 +10,7 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
   hero: {
     label: 'Solutions',
     title: 'Une IA locale, taillée pour votre *usage*.',
-    lede: 'Waffuru est une seule stack, des kernels à la mémoire, qui fait tourner vite des modèles sur du matériel que vous possédez déjà. Choisissez la page qui se rapproche le plus de ce que vous voulez accomplir.',
+    lede: 'Waffuru est une seule stack, des kernels à la mémoire, qui fait tourner vite des modèles sur du matériel que vous possédez ou louez. Choisissez la page qui se rapproche le plus de ce que vous voulez accomplir.',
   },
   cards: {
     label: 'Pour qui',
@@ -29,7 +29,7 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
         title: 'Des dollars par *charge de travail*.',
         body: 'Quand l’énergie est le plafond, les tokens par watt et les dollars par charge de travail sont les chiffres que vous pouvez encore améliorer. Waffuru est construit autour des deux.',
         points: [
-          'Tournez sur du matériel que vous possédez déjà plutôt que de louer',
+          'Tournez sur du matériel que vous possédez ou louez, pour un coût par token plus bas',
           'Les modèles quantifiés tiennent davantage dans la mémoire dont vous disposez',
           'Syrup montre où la capacité reste inutilisée',
         ],

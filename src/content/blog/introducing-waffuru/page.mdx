@@ -5,7 +5,7 @@ import { home } from '@/content/pages/home';
 export const article = {
   title: 'Announcing Waffuru',
   description:
-    'Waffuru is building the stack that runs AI on the hardware you already own, private by default. Our mission, what we believe, the team, and our first product: Pantry, a free vulnerability scanner.',
+    'Waffuru is building the AI stack that runs models fast and at the lowest cost per token, on hardware you own or rent. Our mission, what we believe, the team, and our first product: Pantry, a free vulnerability scanner.',
   author: 'eric-kryski',
   date: '2026-10-28',
   published: true,
@@ -41,21 +41,30 @@ We wrote our theses down so you can hold us to them. The short version:
 - **Everyone will have a personal assistant, or a team of them.** People want agency, so an assistant has to be a trusted extension of you: helpful, approachable, never scary, and yours.
 - **Access must not depend on geography, wealth or credentials.** Raising earning potential everywhere takes open, local access to intelligence.
 
-Two constraints follow. What we build has to run on consumer hardware, and your data stays on your machine unless you choose otherwise. The [about page](/about#beliefs) has all seven theses and the values behind them.
+Two constraints follow: minimize token spend and cost per token, on consumer and data-centre hardware alike, and keep your data on your hardware unless you choose otherwise. The [about page](/about#beliefs) has all seven theses and the values behind them.
 
 ## The _stack_
 
-To put a capable assistant on hardware you already own, every layer between your question and the silicon has to be lean, fast and yours. So we are building all of them.
+To run capable models and agents on hardware you own or rent, every layer between your question and the silicon has to be lean, fast and yours. So we are building all of them.
 
 <StackFlow copy={home.en.stack.flow} className="not-prose my-10" />
 
-Your request comes in through a **control plane** (Syrup) that shows every GPU and every engine running on it. **Memory** (Whisk) brings in context from your own notes and code, with citations. The **engine** (Butter) runs the model, with no Python in the serving path. The **kernels** (Iron) do the math, written once and tuned for each chip: Metal first, then CUDA, with ROCm and Vulkan running and not tuned yet. The answer comes back the same way, and nothing leaves your hardware unless you say so.
+Six products, from the top down:
 
-The stack is private and in early access while we harden it. The [home page](/) shows how the pieces fit, and you can [request a seat](https://forms.gle/SHaVSRRWmZKy8UJy7).
+- **Pantry** keeps every machine safe: it finds what is exposed and patches it. It is free and open source today.
+- **Waffle** is the agent harness, with W, our assistant, inside. It runs local models first and reaches for the cloud only when a task needs more. Coming soon.
+- **Whisk** mixes the right documents and context into every request, from your own notes and code, with citations.
+- **Syrup** is the control plane: monitoring, telemetry, access control and cost, for every GPU and every engine on it.
+- **Butter** is the multi-modal inference engine: text, vision and audio, streamed, with no Python in the serving path.
+- **Iron** is the kernels: written once in Rust and optimized for each chip. Metal first, then CUDA, with ROCm and Vulkan running and not tuned yet.
+
+Your request goes down through them and the answer comes back the same way, on hardware you own or rent, and nothing leaves it unless you say so. Each product works on its own, and together they do more.
+
+Apart from Pantry, the stack is private and in early access while we harden it. The [home page](/) shows how the pieces fit, and you can [request a seat](https://forms.gle/SHaVSRRWmZKy8UJy7).
 
 ## First off the _griddle_: Pantry
 
-Before we put an assistant on your machine, the machine has to be safe. Pantry is the tool we built to keep ours that way, and today it is yours, free.
+Before AI runs on your machines, they have to be safe. Pantry is the tool we built to keep ours that way, and today it is yours, free.
 
 Security teams ask two questions: what am I exposed to, and how fast can I patch it? CVE lists and feeds answer the first with noise, and the tools that answer it well are mostly behind a paywall. Pantry closes the gap. It checks everything installed on your machine, and every repo on it, against open vulnerability data, reports only what applies to your exact versions, and fixes what it safely can.
 

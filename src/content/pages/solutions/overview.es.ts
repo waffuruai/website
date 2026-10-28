@@ -10,7 +10,7 @@ const solutionsOverviewEs: (typeof solutionsOverview)['en'] = {
   hero: {
     label: 'Soluciones',
     title: 'IA local-first, a la medida de tu *trabajo*.',
-    lede: 'Waffuru es un solo stack, de los kernels a la memoria, que ejecuta modelos con rapidez en el hardware que ya tienes. Elige la página más cercana a lo que quieres lograr.',
+    lede: 'Waffuru es un solo stack, de los kernels a la memoria, que ejecuta modelos con rapidez en hardware propio o alquilado. Elige la página más cercana a lo que quieres lograr.',
   },
   cards: {
     label: 'Para quién es',
@@ -28,7 +28,7 @@ const solutionsOverviewEs: (typeof solutionsOverview)['en'] = {
         title: 'Dólares por *carga de trabajo*.',
         body: 'Cuando el límite es la energía, los tokens por vatio y los dólares por carga de trabajo son las cifras que todavía se pueden mejorar. Waffuru está construido en torno a ambos.',
         points: [
-          'Ejecuta en el hardware que ya tienes en lugar de alquilar',
+          'Ejecuta en hardware propio o alquilado, con un menor costo por token',
           'Los modelos cuantizados hacen caber más en la memoria disponible',
           'Syrup muestra dónde hay capacidad ociosa',
         ],

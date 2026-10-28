@@ -19,7 +19,7 @@ const homeZh: (typeof home)['en'] = {
   hero: {
     eyebrow: '你的硬件 · 你的数据 · 你的 AI',
     title: '用你*已有*的硬件，获得更多智能。',
-    lede: 'Waffuru 打造在你自己的机器上运行 AI 的技术栈，从一台笔记本到一整支 GPU 集群。你能从现有硬件中获得更多，数据留在你手里，也不会每发一次提示词就多一笔云账单。',
+    lede: 'Waffuru 打造在你自有或租用的硬件上运行的 AI 技术栈，从一台笔记本到数据中心里的一整支 GPU 集群。你能从每块 GPU 中获得更多，每个 token 花得更少，数据也留在你手里。',
     launch: {
       label: '新品',
       text: 'Pantry，我们面向 macOS 和 Linux 的免费漏洞扫描器',
@@ -30,7 +30,7 @@ const homeZh: (typeof home)['en'] = {
   pantry: {
     label: '免费 · 开源 · 今日发布',
     title: '看清哪里*暴露*，快速修补。',
-    body: '助理要在你的机器上运行，这台机器得先安全。Pantry 会对照公开的漏洞数据，检查已安装的一切和每个代码仓库，只报告真正影响你的问题，并修复能安全修复的部分。',
+    body: 'AI 要在你的机器上运行，这些机器得先安全。Pantry 会对照公开的漏洞数据，检查已安装的一切和每个代码仓库，只报告真正影响你的问题，并修复能安全修复的部分。',
     points: [
       '只报与你确切版本相关的问题',
       '安全的修复替你执行；需要 sudo 的步骤会打印出来',
@@ -44,41 +44,57 @@ const homeZh: (typeof home)['en'] = {
   stack: {
     title: '从芯片到*答案*。',
     intro:
-      '四个层次，可单独使用，也可组合使用。请求向下传递，答案原路返回，全程都不必离开你的硬件。',
-    note: '技术栈目前未公开，处于抢先体验阶段。Metal 优先，CUDA 其次；ROCm 和 Vulkan 可以运行，但尚未调优。',
+      '六款产品，可单独使用，也可组合使用。请求向下传递，答案原路返回，全程都不必离开你掌控的硬件。',
+    note: 'Pantry 今天已免费开源；技术栈的其余部分处于非公开抢先体验阶段，Waffle 即将推出。Metal 优先，CUDA 其次；ROCm 和 Vulkan 可以运行，但尚未调优。',
     flow: {
-      you: '你、你的应用、你的智能体',
-      boundary: '你的硬件 · 你的网络',
+      you: '你、你的团队、你的智能体',
+      boundary: '你自有或租用的硬件',
       layers: [
         {
-          role: '控制',
-          name: 'Syrup',
-          line: '看清每一块 GPU 和其上运行的每个引擎。',
+          role: '安全',
+          name: 'Pantry',
+          icon: 'pantry',
+          line: '找出每台机器上暴露的问题，并加以修补。',
+        },
+        {
+          role: '智能体',
+          name: 'Waffle',
+          icon: 'waffle',
+          line: '智能体框架，你的助理 W 就在其中。',
         },
         {
           role: '记忆',
           name: 'Whisk',
-          line: '来自你自己笔记和代码的上下文，附带引用。',
+          icon: 'whisk',
+          line: '把合适的文档和上下文调入每一次请求。',
+        },
+        {
+          role: '控制',
+          name: 'Syrup',
+          icon: 'syrup',
+          line: '监控、遥测、访问控制与成本，覆盖每一块 GPU。',
         },
         {
           role: '引擎',
           name: 'Butter',
-          line: '运行模型，服务路径中没有 Python。',
+          icon: 'butter',
+          line: '面向文本、视觉和音频的多模态推理，流式输出。',
         },
         {
           role: '内核',
           name: 'Iron',
-          line: '一份内核定义，针对每种芯片分别调优。',
+          icon: 'iron',
+          line: '用 Rust 写一次，到处都能得到优化的内核。',
         },
       ],
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
-        title: '别人的云',
-        note: '不需要。除非你主动选择开启，数据始终留在你手里。',
+        title: '别人的 API',
+        note: '不需要。除非你主动选择开启，数据始终留在你的硬件上。',
       },
-      outcomes: ['默认私密', '从已有硬件中获得更多', '每块 GPU 一目了然'],
+      outcomes: ['为降低每 token 成本而打造', '默认私密', '补丁到位，一目了然'],
       caption:
-        '你的请求依次经过控制平面、记忆、引擎和内核，抵达你自己的硬件，答案再沿原路返回，全程都在你的硬件和网络之内。结果是：默认私密，从已有硬件中获得更多，每块 GPU 一目了然。',
+        '来自你、你的团队或你的智能体的请求，依次经过 Pantry（安全）、Waffle（智能体）、Whisk（记忆）、Syrup（控制）、Butter（引擎）和 Iron（内核），抵达你自有或租用的硬件，答案再沿原路返回。为降低每 token 成本而打造，默认私密，补丁到位，一目了然。',
     },
   },
 
@@ -92,7 +108,7 @@ const homeZh: (typeof home)['en'] = {
       },
       {
         title: '为企业',
-        body: '把 AI 搬进公司内部。让敏感数据待在该待的地方，不再为硬件本可完成的工作按提示词付费。',
+        body: '把 AI 搬进公司内部，跑在你自有或租用的 GPU 上。让敏感数据待在该待的地方，每个 token 花得更少。',
         href: '/solutions/enterprise',
       },
       {

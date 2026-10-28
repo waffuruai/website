@@ -23,7 +23,7 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
     hero: {
       label: 'Solutions',
       title: 'Local-first AI, fitted to your *job*.',
-      lede: 'Waffuru is one stack, from kernels to memory, that runs models fast on hardware you already own. Pick the page closest to what you are trying to get done.',
+      lede: 'Waffuru is one stack, from kernels to memory, that runs models fast on hardware you own or rent. Pick the page closest to what you are trying to get done.',
     },
     cards: {
       label: 'Who it’s for',
@@ -41,7 +41,7 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
           title: 'Dollars per *workload*.',
           body: 'When power is the ceiling, tokens per watt and dollars per workload are the numbers you can still improve. Waffuru is built around both.',
           points: [
-            'Run on hardware you already own instead of renting',
+            'Run on hardware you own or rent, at a lower cost per token',
             'Quantized models fit more in the memory you have',
             'Syrup shows where capacity sits idle',
           ],

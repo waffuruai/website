@@ -34,7 +34,7 @@ const industriesOverviewZh: (typeof industriesOverview)['en'] = {
         body: '每个工作负载的成本，是财务部门要的数字，却几乎没人能看到。Syrup 显示每一块 GPU 和其上的每个引擎，让开支能对应回它完成的工作。',
         points: [
           '看清哪些 GPU 正忙、闲置或错配',
-          '从你已有的硬件中获得更多产出',
+          '从你自有或租用的硬件中获得更多产出',
           '量化模型让现有内存装下更多',
         ],
       },

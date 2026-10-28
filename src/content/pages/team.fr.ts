@@ -22,7 +22,7 @@ const teamPageFr: (typeof teamPage)['en'] = {
   },
   cta: {
     title: 'Voyez ce qui *mijote*.',
-    body: 'Nos produits sont privés pour l’instant. Demandez un accès anticipé pour les essayer, ou parlez-nous de vos besoins.',
+    body: 'Pantry est gratuit et open source dès aujourd’hui. Notre stack d’inférence IA est en accès anticipé privé : demandez un accès pour l’essayer, ou parlez-nous de vos besoins.',
   },
 };
 

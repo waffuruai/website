@@ -18,7 +18,7 @@ const zh: Dictionary = {
   meta: {
     defaultTitle: 'Waffuru：让你已有的硬件发挥更多智能',
     defaultDescription:
-      'Waffuru 打造在你已有硬件上运行 AI 的技术栈，默认私密。从 Pantry 开始：适用于 macOS 和 Linux 的免费漏洞扫描器。',
+      'Waffuru 打造 AI 技术栈，在你自有或租用的硬件上又快又省地运行模型，默认私密。从 Pantry 开始：适用于 macOS 和 Linux 的免费漏洞扫描器。',
   },
   header: {
     mainNav: '主导航',
@@ -53,7 +53,7 @@ const zh: Dictionary = {
     items: {
       stack: {
         label: 'Waffuru 技术栈',
-        description: '四款产品，可单独使用，也可组合使用。',
+        description: '五款产品，可单独使用，也可组合使用。',
       },
       iron: {
         label: 'Iron',
@@ -61,15 +61,19 @@ const zh: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: '无需 Python 的模型服务。',
+        description: '多模态推理，无需 Python。',
       },
       syrup: {
         label: 'Syrup',
-        description: '看清每一块 GPU 和其上运行的每个引擎。',
+        description: '监控、遥测、访问控制与成本，覆盖每一块 GPU。',
       },
       whisk: {
         label: 'Whisk',
-        description: '让你的 AI 记得你在做什么。',
+        description: '把合适的文档和上下文融入每一次请求。',
+      },
+      waffle: {
+        label: 'Waffle',
+        description: '运行你的智能体，内置你的助手 W。',
       },
       pantry: {
         label: 'Pantry',

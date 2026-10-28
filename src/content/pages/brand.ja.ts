@@ -206,7 +206,7 @@ const brandJa: (typeof brand)['en'] = {
         role: '本文',
         use: '本文、ボタン、インターフェース。',
         sample:
-          'お手元のハードウェアのための GPU カーネル、推論、フリート管理、記憶。',
+          '所有またはレンタルのハードウェアのための、カーネル、推論、コントロールプレーン、記憶、エージェントハーネス。',
         glyphs:
           'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
         source: {

@@ -137,13 +137,13 @@ export const teamCopy: Localized<Record<string, TeamCopy>> = {
       role: 'Chief Product Officer',
       background:
         'Full-stack developer, designer and ML researcher. Co-founder of Bidali.',
-      bio: 'Eric leads product and strategy at Waffuru, and ships product end to end, from design to code to ML research. He is CEO and co-founder of Bidali and co-founder of Bullish Ventures.',
+      bio: 'Eric leads product and strategy at Waffuru, and ships product end to end, from design to code to ML research. He is CEO and co-founder of Bidali and co-founder of Bullish Ventures. He has worked every function in a business, from finance, product and sales to compliance and customer support, and his work has ranged from advising government on pandemic response to speaking at WEF about the future of money.',
     },
     'tom-turney': {
       role: 'Chief of Research',
       background:
         'AI researcher behind TurboQuant+. Former tech lead manager at Google.',
-      bio: 'Tom leads research at Waffuru. He spent almost a decade at Google in a senior technical role. After leaving he co-founded an AI startup and put out the first working solution of Google’s TurboQuant compression algorithm, demonstrating he could do better with TurboQuant+. He leads research at Waffuru spanning compression, performance, context management and memory.',
+      bio: 'Tom leads research at Waffuru, spanning compression, performance, context management and memory. He spent almost a decade at Google in a senior technical role. After leaving he co-founded an AI startup and put out the first working solution of Google’s TurboQuant compression algorithm, demonstrating he could do better with TurboQuant+.',
     },
     'cory-smith': {
       role: 'Chief Technology Officer',

@@ -53,7 +53,7 @@ export const industriesOverview: Localized<IndustriesOverview> = {
           body: 'Dollars per workload is what finance asks for, and almost nobody can see it. Syrup shows every GPU and every engine on it, so spend ties back to the work it did.',
           points: [
             'See which GPUs are busy, idle or mismatched',
-            'Get more output from hardware you already own',
+            'Get more output from hardware you own or rent',
             'Quantized models fit more in the memory you have',
           ],
         },

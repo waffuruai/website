@@ -18,7 +18,7 @@ const fr: Dictionary = {
   meta: {
     defaultTitle: 'Waffuru : plus d’intelligence du matériel que vous possédez',
     defaultDescription:
-      'Waffuru construit la stack qui fait tourner l’IA sur le matériel que vous possédez déjà, privée par défaut. Commencez par Pantry, notre scanner de vulnérabilités gratuit pour macOS et Linux.',
+      'Waffuru construit la stack d’IA qui fait tourner les modèles vite et à moindre coût sur du matériel que vous possédez ou louez, privée par défaut. Commencez par Pantry, notre scanner de vulnérabilités gratuit pour macOS et Linux.',
   },
   header: {
     mainNav: 'Principal',
@@ -53,7 +53,7 @@ const fr: Dictionary = {
     items: {
       stack: {
         label: 'La stack Waffuru',
-        description: 'Quatre produits, seuls ou ensemble.',
+        description: 'Cinq produits qui fonctionnent seuls ou ensemble.',
       },
       iron: {
         label: 'Iron',
@@ -61,16 +61,22 @@ const fr: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Servir des modèles sans Python.',
+        description: 'Inférence multimodale, sans Python.',
       },
       syrup: {
         label: 'Syrup',
         description:
-          'Chaque GPU et chaque moteur qui y tourne, en un coup d’œil.',
+          'Supervision, télémétrie, contrôle d’accès et coûts pour chaque GPU.',
       },
       whisk: {
         label: 'Whisk',
-        description: 'Votre IA se souvient de ce sur quoi vous travailliez.',
+        description:
+          'Incorpore les bons documents et le bon contexte à chaque requête.',
+      },
+      waffle: {
+        label: 'Waffle',
+        description:
+          'Faites tourner vos agents, avec W, votre assistant, à l’intérieur.',
       },
       pantry: {
         label: 'Pantry',

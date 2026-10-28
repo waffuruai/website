@@ -206,7 +206,7 @@ const brandFr: (typeof brand)['en'] = {
         role: 'Texte',
         use: 'Texte courant, boutons et interface.',
         sample:
-          'Kernels GPU, inférence, pilotage de flotte et mémoire pour le matériel que vous possédez déjà.',
+          'Kernels, inférence, un plan de contrôle, une mémoire et un harnais d’agents, pour du matériel que vous possédez ou louez.',
         glyphs:
           'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
         source: {

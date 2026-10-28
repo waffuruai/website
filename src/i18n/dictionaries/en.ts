@@ -22,7 +22,7 @@ const en = {
   meta: {
     defaultTitle: 'Waffuru: more intelligence from the hardware you own',
     defaultDescription:
-      'Waffuru builds the stack that runs AI on the hardware you already own, private by default. Start with Pantry, our free vulnerability scanner for macOS and Linux.',
+      'Waffuru builds the AI stack that runs models fast and cheap on hardware you own or rent, private by default. Start with Pantry, our free vulnerability scanner for macOS and Linux.',
   },
   header: {
     mainNav: 'Main',
@@ -57,7 +57,7 @@ const en = {
     items: {
       stack: {
         label: 'The Waffuru stack',
-        description: 'Four products that work alone or together.',
+        description: 'Five products that work alone or together.',
       },
       iron: {
         label: 'Iron',
@@ -65,15 +65,21 @@ const en = {
       },
       butter: {
         label: 'Butter',
-        description: 'Model serving without Python.',
+        description: 'Multi-modal inference, without Python.',
       },
       syrup: {
         label: 'Syrup',
-        description: 'See every GPU and every engine running on it.',
+        description:
+          'Monitoring, telemetry, access control and cost for every GPU.',
       },
       whisk: {
         label: 'Whisk',
-        description: 'Your AI remembers what you were working on.',
+        description:
+          'Mixes the right documents and context into every request.',
+      },
+      waffle: {
+        label: 'Waffle',
+        description: 'Run your agents, with W, your assistant, inside.',
       },
       pantry: {
         label: 'Pantry',

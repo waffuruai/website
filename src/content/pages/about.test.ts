@@ -9,7 +9,10 @@ describe('about content', () => {
 
   it('states the mission verbatim, with no vision statement', () => {
     expect(content.hero.title.replace(/\*/g, '')).toBe(site.mission);
-    expect(JSON.stringify(content).toLowerCase()).not.toContain('vision');
+    // "vision" alone is fine (vision models); a vision statement is not.
+    expect(JSON.stringify(content).toLowerCase()).not.toMatch(
+      /our vision|vision statement|the vision/,
+    );
   });
 
   it('has the seven theses and the fourteen values', () => {

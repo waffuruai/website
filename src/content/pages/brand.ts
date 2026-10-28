@@ -303,7 +303,7 @@ export const brand: Localized<BrandContent> = {
           role: 'Text',
           use: 'Body copy, buttons and interface.',
           sample:
-            'GPU kernels, inference, fleet control and memory for the hardware you already own.',
+            'Kernels, inference, a control plane, memory and an agent harness, for hardware you own or rent.',
           glyphs:
             'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
           source: {

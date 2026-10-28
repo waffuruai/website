@@ -22,7 +22,7 @@ const teamPageEs: (typeof teamPage)['en'] = {
   },
   cta: {
     title: 'Mira lo que estamos *cocinando*.',
-    body: 'Nuestros productos son privados por ahora. Solicita acceso anticipado para probarlos o cuéntanos qué necesitas.',
+    body: 'Pantry ya es gratuito y de código abierto. Nuestro stack de inferencia de IA está en acceso anticipado privado: solicita acceso para probarlo o cuéntanos qué necesitas.',
   },
 };
 

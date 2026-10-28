@@ -10,7 +10,7 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
   hero: {
     label: '솔루션',
     title: '해야 할 *일*에 맞춘 로컬 우선 AI.',
-    lede: 'Waffuru는 커널부터 메모리까지 이어지는 하나의 스택으로, 이미 가진 하드웨어에서 모델을 빠르게 돌립니다. 하려는 일과 가장 가까운 페이지를 골라 보세요.',
+    lede: 'Waffuru는 커널부터 메모리까지 이어지는 하나의 스택으로, 보유하거나 임대한 하드웨어에서 모델을 빠르게 돌립니다. 하려는 일과 가장 가까운 페이지를 골라 보세요.',
   },
   cards: {
     label: '누구를 위한 것인가',
@@ -28,7 +28,7 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
         title: '워크로드당 *비용*.',
         body: '전력이 한계라면 와트당 토큰 수와 워크로드당 비용은 여전히 개선할 수 있는 지표입니다. Waffuru는 이 둘을 중심으로 만들어졌습니다.',
         points: [
-          '빌리는 대신 이미 가진 하드웨어에서 실행',
+          '보유하거나 임대한 하드웨어에서 더 낮은 토큰당 비용으로 실행',
           '양자화된 모델로 가진 메모리에 더 많이 적재',
           'Syrup으로 놀고 있는 용량을 확인',
         ],

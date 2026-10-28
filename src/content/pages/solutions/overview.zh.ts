@@ -10,7 +10,7 @@ const solutionsOverviewZh: (typeof solutionsOverview)['en'] = {
   hero: {
     label: '解决方案',
     title: '本地优先的 AI，贴合你的*工作*。',
-    lede: 'Waffuru 是从内核到记忆的一整套技术栈，让模型在你已有的硬件上快速运行。选一个最接近你想完成之事的页面。',
+    lede: 'Waffuru 是从内核到记忆的一整套技术栈，让模型在你自有或租用的硬件上快速运行。选一个最接近你想完成之事的页面。',
   },
   cards: {
     label: '适合谁',
@@ -28,7 +28,7 @@ const solutionsOverviewZh: (typeof solutionsOverview)['en'] = {
         title: '每个工作负载的*成本*。',
         body: '当电力成为天花板，每瓦 token 数和每个工作负载的成本，就是你仍能继续优化的指标。Waffuru 围绕这两者而建。',
         points: [
-          '在你已有的硬件上运行，而不是租用',
+          '在自有或租用的硬件上运行，每个 token 的成本更低',
           '量化模型让现有内存装下更多',
           'Syrup 显示哪里的算力在闲置',
         ],

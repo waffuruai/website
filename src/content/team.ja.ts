@@ -17,13 +17,13 @@ const teamCopyJa: (typeof teamCopy)['en'] = {
     role: '最高製品責任者（CPO）',
     background:
       'フルスタック開発者、デザイナー、ML リサーチャー。Bidali 共同創業者。',
-    bio: 'Eric は Waffuru でプロダクトと戦略を率い、デザインからコード、ML リサーチまで、製品を一貫して手がけています。Bidali の CEO 兼共同創業者であり、Bullish Ventures の共同創業者でもあります。',
+    bio: 'Eric は Waffuru でプロダクトと戦略を率い、デザインからコード、ML リサーチまで、製品を一貫して手がけています。Bidali の CEO 兼共同創業者であり、Bullish Ventures の共同創業者でもあります。財務、プロダクト、営業からコンプライアンス、カスタマーサポートまで、事業のあらゆる職務を経験してきました。その仕事は、パンデミック対応をめぐる政府への助言から、WEF でのお金の未来についての講演にまで及びます。',
   },
   'tom-turney': {
     role: '研究責任者（Chief of Research）',
     background:
       'TurboQuant+ を手がけた AI 研究者。元 Google テックリードマネージャー。',
-    bio: 'Tom は Waffuru でリサーチを率いています。Google で上級技術職を 10 年近く務めました。退社後は AI スタートアップを共同創業し、Google の圧縮アルゴリズム TurboQuant の初の動作する実装を公開したうえで、TurboQuant+ でさらに上を行けることを示しました。Waffuru での研究は、圧縮、パフォーマンス、コンテキスト管理、メモリにわたります。',
+    bio: 'Tom は Waffuru で、圧縮、パフォーマンス、コンテキスト管理、メモリにわたるリサーチを率いています。Google で上級技術職を 10 年近く務めました。退社後は AI スタートアップを共同創業し、Google の圧縮アルゴリズム TurboQuant の初の動作する実装を公開したうえで、TurboQuant+ でさらに上を行けることを示しました。',
   },
   'cory-smith': {
     role: '最高技術責任者（CTO）',

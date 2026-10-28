@@ -207,7 +207,7 @@ const brandZh: (typeof brand)['en'] = {
         role: '正文',
         use: '正文、按钮与界面。',
         sample:
-          'GPU kernels, inference, fleet control and memory for the hardware you already own.',
+          'Kernels, inference, a control plane, memory and an agent harness, for hardware you own or rent.',
         glyphs:
           'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
         source: {

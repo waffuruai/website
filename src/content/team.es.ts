@@ -17,13 +17,13 @@ const teamCopyEs: (typeof teamCopy)['en'] = {
     role: 'Director de Producto (CPO)',
     background:
       'Desarrollador full-stack, diseñador e investigador de ML. Cofundador de Bidali.',
-    bio: 'Eric dirige el producto y la estrategia de Waffuru, y lanza producto de principio a fin, del diseño al código y a la investigación en ML. Es CEO y cofundador de Bidali y cofundador de Bullish Ventures.',
+    bio: 'Eric dirige el producto y la estrategia de Waffuru, y lanza producto de principio a fin, del diseño al código y a la investigación en ML. Es CEO y cofundador de Bidali y cofundador de Bullish Ventures. Ha trabajado en todas las áreas de una empresa, de finanzas, producto y ventas a cumplimiento normativo y atención al cliente, y su trabajo ha ido desde asesorar al gobierno en la respuesta a la pandemia hasta hablar en el WEF sobre el futuro del dinero.',
   },
   'tom-turney': {
     role: 'Director de Investigación',
     background:
       'Investigador de IA detrás de TurboQuant+. Fue tech lead manager en Google.',
-    bio: 'Tom dirige la investigación en Waffuru. Pasó casi una década en Google en un puesto técnico sénior. Tras su salida, cofundó una startup de IA y publicó la primera implementación funcional del algoritmo de compresión TurboQuant de Google, y demostró que podía mejorarlo con TurboQuant+. En Waffuru, su investigación abarca compresión, rendimiento, gestión del contexto y memoria.',
+    bio: 'Tom dirige la investigación en Waffuru, que abarca compresión, rendimiento, gestión del contexto y memoria. Pasó casi una década en Google en un puesto técnico sénior. Tras su salida, cofundó una startup de IA y publicó la primera implementación funcional del algoritmo de compresión TurboQuant de Google, y demostró que podía mejorarlo con TurboQuant+.',
   },
   'cory-smith': {
     role: 'Director de Tecnología (CTO)',

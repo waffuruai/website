@@ -35,7 +35,7 @@ const industriesOverviewFr: (typeof industriesOverview)['en'] = {
         body: 'Les dollars par charge de travail, c’est ce que demande la finance, et presque personne ne peut les voir. Syrup montre chaque GPU et chaque moteur qui y tourne, pour que la dépense se rattache au travail effectué.',
         points: [
           'Voyez quels GPU sont occupés, inactifs ou mal adaptés',
-          'Tirez davantage du matériel que vous possédez déjà',
+          'Tirez davantage du matériel que vous possédez ou louez',
           'Les modèles quantifiés tiennent davantage dans la mémoire dont vous disposez',
         ],
       },

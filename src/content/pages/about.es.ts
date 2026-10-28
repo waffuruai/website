@@ -4,18 +4,18 @@ const aboutEs: (typeof about)['en'] = {
   seo: {
     title: 'Misión: democratizar el acceso a la inteligencia',
     description:
-      'La misión de Waffuru es democratizar el acceso a la inteligencia. En qué creemos, qué valoramos y por qué construimos infraestructura de IA local.',
+      'La misión de Waffuru es democratizar el acceso a la inteligencia. En qué creemos, qué valoramos y por qué construimos infraestructura de IA que funciona en el hardware que tienes o alquilas.',
     keywords: [
       'misión de Waffuru',
       'democratizar la IA',
-      'empresa de IA local',
+      'empresa de infraestructura de IA',
       'startup de infraestructura de IA',
     ],
   },
   hero: {
     label: 'Sobre Waffuru',
     title: 'Democratizar el acceso a la *inteligencia*.',
-    lede: 'Waffuru construye el stack que sostiene la IA local-first: kernels, inferencia, control de flotas y memoria que ejecutan modelos con rapidez en el hardware que la gente ya tiene.',
+    lede: 'Waffuru construye el stack de IA que ejecuta modelos con rapidez y al menor costo por token, en el hardware que tienes o alquilas, desde los portátiles del personal hasta flotas de GPU en centros de datos: kernels, inferencia, un plano de control, memoria y un harness de agentes.',
     actions: [
       { label: 'Conoce al equipo', href: '/about/team' },
       { label: 'Trabaja con nosotros', href: '#hiring', variant: 'outline' },
@@ -26,13 +26,13 @@ const aboutEs: (typeof about)['en'] = {
     intro: 'La inteligencia debe correr donde ya está la gente.',
     paragraphs: [
       'Los modelos se están volviendo lo bastante buenos para correr en el hardware que la gente ya tiene.',
-      'Eso solo importa si el stack que hay debajo está listo. Tiene que ser más rápido, más barato y tuyo: kernels que sacan más de cada vatio, serving sin Python de por medio y una memoria que se queda en tu equipo. Es también la base de los asistentes personales local-first.',
-      'El acceso a la inteligencia no debe depender de la geografía, la riqueza ni las credenciales. Un modelo que necesita un centro de datos, un presupuesto o una credencial no es acceso. Uno que corre en un equipo que ya tienes, sí.',
+      'Eso solo importa si el stack que los ejecuta está listo. Tiene que ser más rápido, más barato, fácil de usar y **tuyo**: kernels que sacan más de cada vatio, resultados correctos más rápido, modelos de visión, audio y texto que funcionan sin una montaña de dependencias y complejidad, y una memoria y un contexto que se quedan en tu equipo.',
+      'El acceso a la inteligencia no debe depender de la geografía, la riqueza ni las credenciales. Eso significa un menor costo por token en todas partes: en el portátil que alguien ya tiene y en las GPU que una empresa tiene o alquila.',
     ],
     constraintsLabel: 'Dos límites que nos imponemos',
     constraints: [
-      'Funciona en hardware de consumo.',
-      'Tus datos se quedan en tu equipo a menos que tú lo autorices.',
+      'Minimizar el gasto en tokens y el costo por token.',
+      'Tus datos se quedan en tu hardware a menos que tú lo autorices.',
     ],
   },
   beliefs: {
@@ -125,7 +125,7 @@ const aboutEs: (typeof about)['en'] = {
       },
       {
         name: 'Prudencia fiscal',
-        line: 'Gastamos tiempo y dinero como si fueran escasos.',
+        line: 'Gastamos tiempo y dinero con intención, como si fueran escasos.',
       },
       {
         name: 'Disfrutar',
@@ -143,7 +143,7 @@ const aboutEs: (typeof about)['en'] = {
     label: 'Estamos contratando',
     title: 'Acerca una *silla*.',
     lines: [
-      'Buscamos personas a las que les guste el trabajo de bajo nivel: kernels de GPU, motores de inferencia, Rust, Swift y Metal, y el producto que se construye encima.',
+      'Buscamos personas a las que les guste el trabajo de bajo nivel: kernels de GPU, motores de inferencia, Rust, Swift, Metal, CUDA y HIP/ROCm, y el producto que se construye encima.',
       'Trabajamos de forma asíncrona entre husos horarios. Además, somos una empresa que trabaja con agentes: personas y agentes construyendo juntos.',
       'Si esa es tu clase de cocina, cuéntanos qué te gustaría construir.',
     ],
@@ -154,13 +154,14 @@ const aboutEs: (typeof about)['en'] = {
       'Inferencia',
       'Rust',
       'Swift y Metal',
+      'CUDA y HIP/ROCm',
       'Producto',
     ],
     cta: 'Ponte en contacto',
   },
   cta: {
     title: 'Pruébalo *antes*.',
-    body: 'Nuestros productos son privados por ahora. Solicita acceso anticipado o cuéntanos qué quieres ejecutar en el hardware que ya tienes.',
+    body: 'Pantry ya es gratuito y de código abierto. Nuestro stack de inferencia de IA está en acceso anticipado privado: solicita acceso o cuéntanos qué quieres ejecutar en el hardware que tienes o alquilas.',
   },
 };
 

@@ -87,7 +87,7 @@ export const home: Localized<HomeContent> = {
     hero: {
       eyebrow: 'Your hardware · your data · your AI',
       title: 'More intelligence from the hardware you already *own*.',
-      lede: 'Waffuru builds the stack that runs AI on your own machines, from a laptop to a GPU fleet. You get more from the hardware you have, your data stays with you, and there is no cloud bill for every prompt.',
+      lede: 'Waffuru builds the AI stack that runs on hardware you own or rent, from a laptop to a GPU fleet in the data centre. You get more from every GPU, spend less per token, and your data stays with you.',
       launch: {
         label: 'New',
         text: 'Pantry, our free vulnerability scanner for macOS and Linux',
@@ -98,7 +98,7 @@ export const home: Localized<HomeContent> = {
     pantry: {
       label: 'Free · Open source · Out today',
       title: 'Know what’s *exposed*. Patch it fast.',
-      body: 'Before an assistant runs on your machine, the machine has to be safe. Pantry checks everything installed, and every repo, against open vulnerability data, reports only what applies, and fixes what it safely can.',
+      body: 'Before AI runs on your machines, they have to be safe. Pantry checks everything installed, and every repo, against open vulnerability data, reports only what applies, and fixes what it safely can.',
       points: [
         'Only what applies to your exact versions',
         'Safe fixes, run for you; sudo steps printed',
@@ -112,45 +112,61 @@ export const home: Localized<HomeContent> = {
     stack: {
       title: 'From silicon to *answer*.',
       intro:
-        'Four layers that work alone or together. Your request goes down, the answer comes back, and none of it has to leave your hardware.',
-      note: 'The stack is private and in early access. Metal first, CUDA next; ROCm and Vulkan run, not tuned yet.',
+        'Six products that work alone or together. Your request goes down, the answer comes back, and none of it has to leave hardware you control.',
+      note: 'Pantry is free and open source today; the rest of the stack is in private early access, and Waffle is coming soon. Metal first, CUDA next; ROCm and Vulkan run, not tuned yet.',
       flow: {
-        you: 'You, your apps, your agents',
-        boundary: 'Your hardware · your network',
+        you: 'You, your team, your agents',
+        boundary: 'Hardware you own or rent',
         layers: [
           {
-            role: 'Control',
-            name: 'Syrup',
-            line: 'See every GPU and every engine running on it.',
+            role: 'Security',
+            name: 'Pantry',
+            icon: 'pantry',
+            line: 'Finds what is exposed on every machine, and patches it.',
+          },
+          {
+            role: 'Agents',
+            name: 'Waffle',
+            icon: 'waffle',
+            line: 'The agent harness, with W, your assistant, inside.',
           },
           {
             role: 'Memory',
             name: 'Whisk',
-            line: 'Context from your own notes and code, with citations.',
+            icon: 'whisk',
+            line: 'Mixes the right documents and context into every request.',
+          },
+          {
+            role: 'Control',
+            name: 'Syrup',
+            icon: 'syrup',
+            line: 'Monitoring, telemetry, access control and cost, for every GPU.',
           },
           {
             role: 'Engine',
             name: 'Butter',
-            line: 'Runs the model, with no Python in the serving path.',
+            icon: 'butter',
+            line: 'Multi-modal inference for text, vision and audio, streamed.',
           },
           {
             role: 'Kernels',
             name: 'Iron',
-            line: 'One kernel definition, tuned for each chip.',
+            icon: 'iron',
+            line: 'Write once in Rust, get optimized kernels everywhere.',
           },
         ],
         hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
         outside: {
-          title: 'Someone else’s cloud',
-          note: 'Not needed. Your data stays with you unless you opt in.',
+          title: 'Someone else’s API',
+          note: 'Not needed. Your data stays on your hardware unless you opt in.',
         },
         outcomes: [
+          'Built for a lower cost per token',
           'Private by default',
-          'More from the hardware you own',
-          'Every GPU in view',
+          'Patched and in view',
         ],
         caption:
-          'A request from you passes through the control plane, memory, engine and kernels to your own hardware, and the answer comes back the same way, all inside your hardware and network. The outcome: private by default, more from the hardware you own, and every GPU in view.',
+          'A request from you, your team or your agents passes through Pantry (security), Waffle (agents), Whisk (memory), Syrup (control), Butter (the engine) and Iron (kernels) to hardware you own or rent, and the answer comes back the same way. Built for a lower cost per token, private by default, patched and in view.',
       },
     },
 
@@ -164,7 +180,7 @@ export const home: Localized<HomeContent> = {
         },
         {
           title: 'For companies',
-          body: 'Bring AI in-house. Keep sensitive data where it belongs and stop paying per prompt for work your hardware can do.',
+          body: 'Bring AI in-house, on GPUs you own or rent. Keep sensitive data where it belongs and spend less per token.',
           href: '/solutions/enterprise',
         },
         {

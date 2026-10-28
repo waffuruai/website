@@ -18,7 +18,7 @@ const ja: Dictionary = {
   meta: {
     defaultTitle: 'Waffuru：今あるハードウェアから、もっと多くの知能を',
     defaultDescription:
-      'Waffuru は、お持ちのハードウェアで AI を動かすスタックをつくっています。デフォルトでプライベート。まずは macOS と Linux 向けの無料脆弱性スキャナー Pantry から。',
+      'Waffuru は、所有またはレンタルのハードウェアでモデルを速く、安く動かす AI スタックをつくっています。デフォルトでプライベート。まずは macOS と Linux 向けの無料脆弱性スキャナー Pantry から。',
   },
   header: {
     mainNav: 'メイン',
@@ -53,7 +53,7 @@ const ja: Dictionary = {
     items: {
       stack: {
         label: 'Waffuru スタック',
-        description: '単体でも組み合わせても使える 4 つの製品。',
+        description: '単体でも組み合わせても使える 5 つの製品。',
       },
       iron: {
         label: 'Iron',
@@ -61,15 +61,20 @@ const ja: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Python 不要のモデルサービング。',
+        description: 'Python 不要のマルチモーダル推論。',
       },
       syrup: {
         label: 'Syrup',
-        description: 'すべての GPU と、その上で動くすべてのエンジンを可視化。',
+        description: 'すべての GPU の監視、テレメトリ、アクセス制御、コスト。',
       },
       whisk: {
         label: 'Whisk',
-        description: 'あなたの AI が、取り組んでいたことを覚えています。',
+        description:
+          'リクエストごとに、適切なドキュメントとコンテキストを混ぜ込みます。',
+      },
+      waffle: {
+        label: 'Waffle',
+        description: 'エージェントを動かすハーネス。中にはアシスタントの W。',
       },
       pantry: {
         label: 'Pantry',

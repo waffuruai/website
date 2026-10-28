@@ -78,18 +78,18 @@ export const about: Localized<AboutContent> = {
     seo: {
       title: 'Our mission: democratize access to intelligence',
       description:
-        'Waffuru’s mission is to democratize access to intelligence. What we believe, what we value and why we build local-first AI infrastructure.',
+        'Waffuru’s mission is to democratize access to intelligence. What we believe, what we value and why we build AI infrastructure that runs on hardware you own or rent.',
       keywords: [
         'Waffuru mission',
         'democratize AI',
-        'local-first AI company',
+        'AI infrastructure company',
         'AI infrastructure startup',
       ],
     },
     hero: {
       label: 'About Waffuru',
       title: 'Democratize access to *intelligence*.',
-      lede: 'Waffuru builds the stack underneath local-first AI: kernels, inference, fleet control and memory that run models fast on the hardware people already own.',
+      lede: 'Waffuru builds the AI stack that runs models fast and at the lowest cost per token, on hardware you own or rent, from staff laptops to data-centre GPU fleets: kernels, inference, a control plane, memory and an agent harness.',
       actions: [
         { label: 'Meet the team', href: '/about/team' },
         { label: 'Work with us', href: '#hiring', variant: 'outline' },
@@ -100,13 +100,13 @@ export const about: Localized<AboutContent> = {
       intro: 'Intelligence should run where people already are.',
       paragraphs: [
         'Models are getting good enough to run on hardware people already own.',
-        'That only matters if the stack underneath is ready for it. It has to be faster, cheaper and yours: kernels that get more from every watt, serving without Python in the way, and memory that stays on your machine. It is also the foundation for local-first personal assistants.',
-        'Access to intelligence must not depend on geography, wealth or credentials. A model that needs a datacenter, a budget or a badge is not access. One that runs on a computer you already own is.',
+        'That only matters if the stack that runs them is ready for it. It has to be faster, cheaper, easy to use and **yours**: kernels that get more from every watt, correct results faster, running vision, audio and text models without a pile of dependencies and complexity, and memory and context that stays on your machine.',
+        'Access to intelligence must not depend on geography, wealth or credentials. That means a lower cost per token everywhere: on the laptop someone already owns, and on the GPUs a business owns or rents.',
       ],
       constraintsLabel: 'Two constraints we hold ourselves to',
       constraints: [
-        'It runs on consumer hardware.',
-        'Your data stays on your machine unless you opt in.',
+        'Minimize token spend and cost per token.',
+        'Your data stays on your hardware unless you opt in.',
       ],
     },
     beliefs: {
@@ -191,7 +191,7 @@ export const about: Localized<AboutContent> = {
         },
         {
           name: 'Fiscal conservatism',
-          line: 'We spend time and money like they are scarce.',
+          line: 'We spend time and money with intention, as if they are scarce.',
         },
         {
           name: 'Having fun',
@@ -209,7 +209,7 @@ export const about: Localized<AboutContent> = {
       label: 'Hiring',
       title: 'Pull up a *chair*.',
       lines: [
-        'We want people who enjoy the low-level work: GPU kernels, inference engines, Rust, Swift and Metal, and the product that sits on top of them.',
+        'We want people who enjoy the low-level work: GPU kernels, inference engines, Rust, Swift, Metal, CUDA and HIP/ROCm, and the product that sits on top of them.',
         'We work asynchronously across time zones. We are also an agentic company, with humans and agents building together.',
         'If that sounds like your kind of kitchen, tell us what you would like to build.',
       ],
@@ -220,13 +220,14 @@ export const about: Localized<AboutContent> = {
         'Inference',
         'Rust',
         'Swift and Metal',
+        'CUDA and HIP/ROCm',
         'Product',
       ],
       cta: 'Get in touch',
     },
     cta: {
       title: 'Try it *early*.',
-      body: 'Our products are private for now. Request early access, or talk to us about what you want to run on the hardware you already own.',
+      body: 'Pantry is free and open source today. Our AI inference stack is in private early access: request access, or talk to us about what you want to run on hardware you own or rent.',
     },
   },
   es: aboutEs,

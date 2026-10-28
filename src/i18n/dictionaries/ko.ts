@@ -18,7 +18,7 @@ const ko: Dictionary = {
   meta: {
     defaultTitle: 'Waffuru: 이미 가진 하드웨어에서 더 많은 지능을',
     defaultDescription:
-      'Waffuru는 이미 가진 하드웨어에서 AI를 실행하는 스택을 만듭니다. 기본적으로 프라이빗합니다. macOS와 Linux용 무료 취약점 스캐너 Pantry로 시작하세요.',
+      'Waffuru는 보유하거나 임대한 하드웨어에서 모델을 빠르고 저렴하게 실행하는 AI 스택을 만듭니다. 기본적으로 프라이빗합니다. macOS와 Linux용 무료 취약점 스캐너 Pantry로 시작하세요.',
   },
   header: {
     mainNav: '주 메뉴',
@@ -53,7 +53,7 @@ const ko: Dictionary = {
     items: {
       stack: {
         label: 'Waffuru 스택',
-        description: '단독으로도, 함께도 쓸 수 있는 네 가지 제품.',
+        description: '단독으로도, 함께도 쓸 수 있는 다섯 가지 제품.',
       },
       iron: {
         label: 'Iron',
@@ -61,15 +61,19 @@ const ko: Dictionary = {
       },
       butter: {
         label: 'Butter',
-        description: 'Python 없는 모델 서빙.',
+        description: 'Python 없는 멀티모달 추론.',
       },
       syrup: {
         label: 'Syrup',
-        description: '모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에.',
+        description: '모든 GPU의 모니터링, 텔레메트리, 접근 제어, 비용.',
       },
       whisk: {
         label: 'Whisk',
-        description: '당신의 AI가 하던 일을 기억합니다.',
+        description: '요청마다 알맞은 문서와 컨텍스트를 섞어 넣습니다.',
+      },
+      waffle: {
+        label: 'Waffle',
+        description: '에이전트를 실행하는 하네스, 그 안에 어시스턴트 W.',
       },
       pantry: {
         label: 'Pantry',

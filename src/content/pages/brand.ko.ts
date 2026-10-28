@@ -211,7 +211,7 @@ const brandKo: (typeof brand)['en'] = {
         role: '본문',
         use: '본문, 버튼, 인터페이스.',
         sample:
-          'GPU kernels, inference, fleet control and memory for the hardware you already own.',
+          'Kernels, inference, a control plane, memory and an agent harness, for hardware you own or rent.',
         glyphs:
           'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789',
         source: {

@@ -47,7 +47,7 @@ export const teamPage: Localized<TeamPageContent> = {
     },
     cta: {
       title: 'See what we’re *cooking*.',
-      body: 'Our products are private for now. Request early access to try them, or talk to us about what you need.',
+      body: 'Pantry is free and open source today. Our AI inference stack is in private early access: request access to try it, or talk to us about what you need.',
     },
   },
   es: teamPageEs,
