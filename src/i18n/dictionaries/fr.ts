@@ -150,6 +150,10 @@ const fr: Dictionary = {
       },
     },
   },
+  countries: {
+    us: 'États-Unis',
+    ca: 'Canada',
+  },
   footer: {
     heading: 'Pied de page',
     products: 'Produits',

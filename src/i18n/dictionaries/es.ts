@@ -146,6 +146,10 @@ const es: Dictionary = {
       },
     },
   },
+  countries: {
+    us: 'Estados Unidos',
+    ca: 'Canadá',
+  },
   footer: {
     heading: 'Pie de página',
     products: 'Productos',

@@ -134,7 +134,8 @@ const homeZh: (typeof home)['en'] = {
 
   team: {
     title: '谁在*厨房*里。',
-    intro: '研究、安全、营收，还有几位曾把产品做出来的创始人。',
+    intro:
+      '我们来自网络安全、军队、消费和企业领域。创办并做大过创业公司，合作对象从小企业到大型企业都有。',
     portraitAlt: '{name} 的肖像',
     link: { label: '认识团队', href: '/about/team' },
   },

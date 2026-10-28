@@ -139,7 +139,7 @@ const homeEs: (typeof home)['en'] = {
   team: {
     title: 'Quién está en la *cocina*.',
     intro:
-      'Investigación, seguridad, ingresos y algunos fundadores que ya han llevado productos al mercado.',
+      'Ciberseguridad, sector militar, consumo y empresa. Hemos creado y escalado startups, y hemos trabajado con todos, desde pequeños negocios hasta grandes empresas.',
     portraitAlt: 'Retrato de {name}',
     link: { label: 'Conoce al equipo', href: '/about/team' },
   },

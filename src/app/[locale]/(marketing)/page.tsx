@@ -51,7 +51,7 @@ export async function generateMetadata({
  */
 export default async function HomePage({ params }: { params: LocaleParams }) {
   const locale = await resolveLocale(params);
-  const { common, meta } = await getDictionary(locale);
+  const { common, meta, countries } = await getDictionary(locale);
   const content = localize(home, locale);
 
   return (
@@ -73,7 +73,11 @@ export default async function HomePage({ params }: { params: LocaleParams }) {
       <StackSection content={content.stack} />
       <Audiences content={content.audiences} />
       <Beliefs content={content.beliefs} />
-      <TeamTeaser content={content.team} copy={localize(teamCopy, locale)} />
+      <TeamTeaser
+        content={content.team}
+        copy={localize(teamCopy, locale)}
+        countries={countries}
+      />
       <CtaCard
         title={content.cta.title}
         body={content.cta.body}

@@ -149,6 +149,10 @@ const en = {
       },
     },
   },
+  countries: {
+    us: 'United States',
+    ca: 'Canada',
+  },
   footer: {
     heading: 'Footer',
     products: 'Products',

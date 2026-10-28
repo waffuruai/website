@@ -124,7 +124,7 @@ const aboutZh: (typeof about)['en'] = {
   },
   teamTeaser: {
     title: '*幕后*的人。',
-    body: '研究、安全、营收，还有几位曾把产品做出来的创始人。',
+    body: '我们来自网络安全、军队、消费和企业领域。创办并做大过创业公司，合作对象从小企业到大型企业都有。',
     cta: '认识团队',
     portraitAlt: '{name} 的肖像',
   },

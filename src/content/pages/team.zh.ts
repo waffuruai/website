@@ -4,13 +4,13 @@ const teamPageZh: (typeof teamPage)['en'] = {
   seo: {
     title: '创始人与团队',
     description:
-      '认识打造 Waffuru 的人：研究、安全、营收，以及几位做过产品的创始人。',
+      '认识打造 Waffuru 的人：经验横跨网络安全、军队、消费和企业领域，既做大过创业公司，也与小企业和大型企业合作过。',
     keywords: ['Waffuru 团队', 'Waffuru 创始人'],
   },
   hero: {
     label: '团队',
     title: '谁在*厨房*里。',
-    lede: '研究、安全、营收，还有几位曾把产品做出来的创始人。',
+    lede: '我们来自网络安全、军队、消费和企业领域。创办并做大过创业公司，合作对象从小企业到大型企业都有。',
   },
   portraitAlt: '{name} 的肖像',
   linkAria: '{name} 的 {network} 主页',

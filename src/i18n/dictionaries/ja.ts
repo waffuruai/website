@@ -145,6 +145,10 @@ const ja: Dictionary = {
       },
     },
   },
+  countries: {
+    us: 'アメリカ合衆国',
+    ca: 'カナダ',
+  },
   footer: {
     heading: 'フッター',
     products: '製品',

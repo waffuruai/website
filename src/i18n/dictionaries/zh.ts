@@ -145,6 +145,10 @@ const zh: Dictionary = {
       },
     },
   },
+  countries: {
+    us: '美国',
+    ca: '加拿大',
+  },
   footer: {
     heading: '页脚',
     products: '产品',

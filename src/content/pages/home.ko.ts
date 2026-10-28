@@ -138,7 +138,8 @@ const homeKo: (typeof home)['en'] = {
 
   team: {
     title: '*주방*에 있는 사람들.',
-    intro: '연구, 보안, 매출, 그리고 이미 제품을 출시해 본 창업자들.',
+    intro:
+      '사이버보안, 군, 소비자, 엔터프라이즈 분야를 두루 거쳤습니다. 스타트업을 세우고 키워 왔으며, 중소기업부터 대기업까지 폭넓게 함께 일해 왔습니다.',
     portraitAlt: '{name}의 사진',
     link: { label: '팀 소개', href: '/about/team' },
   },

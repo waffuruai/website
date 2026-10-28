@@ -145,6 +145,10 @@ const ko: Dictionary = {
       },
     },
   },
+  countries: {
+    us: '미국',
+    ca: '캐나다',
+  },
   footer: {
     heading: '푸터',
     products: '제품',
