@@ -170,7 +170,6 @@ export const butter: Localized<ProductCopy> = {
     ],
     specs: {
       heading: 'Technical *specifics*.',
-      intro: 'The details, for the people who will read them.',
       rows: [
         {
           term: 'Runtime',

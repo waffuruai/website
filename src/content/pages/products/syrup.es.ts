@@ -80,7 +80,6 @@ const syrupEs: (typeof syrup)['en'] = {
   },
   specs: {
     heading: 'Detalles *técnicos*.',
-    intro: 'Los detalles, para quienes los van a leer.',
     rows: [
       { term: 'Función', detail: 'Un plano de control para LLM en GPU.' },
       {

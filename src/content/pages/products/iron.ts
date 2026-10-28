@@ -87,7 +87,6 @@ export const iron: Localized<ProductCopy> = {
     },
     specs: {
       heading: 'Technical *specifics*.',
-      intro: 'The details, for the people who will read them.',
       rows: [
         {
           term: 'Language',

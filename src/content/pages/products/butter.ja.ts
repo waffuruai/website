@@ -149,7 +149,6 @@ const butterJa: (typeof butter)['en'] = {
   ],
   specs: {
     heading: '技術的な*詳細*',
-    intro: '細部まで読みたい人のための、詳細です。',
     rows: [
       {
         term: 'ランタイム',

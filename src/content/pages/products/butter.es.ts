@@ -151,7 +151,6 @@ const butterEs: (typeof butter)['en'] = {
   ],
   specs: {
     heading: 'Detalles *técnicos*.',
-    intro: 'Los detalles, para quienes los van a leer.',
     rows: [
       {
         term: 'Runtime',

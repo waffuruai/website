@@ -82,7 +82,6 @@ const syrupFr: (typeof syrup)['en'] = {
   },
   specs: {
     heading: 'Les *détails* techniques.',
-    intro: 'Les détails, pour celles et ceux qui les liront.',
     rows: [
       { term: 'Rôle', detail: 'Un plan de contrôle pour les LLM sur GPU.' },
       {

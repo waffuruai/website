@@ -74,7 +74,6 @@ const ironZh: (typeof iron)['en'] = {
   },
   specs: {
     heading: '技术*细节*。',
-    intro: '给会细读的人看的细节。',
     rows: [
       {
         term: '语言',

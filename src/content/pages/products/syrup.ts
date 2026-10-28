@@ -89,7 +89,6 @@ export const syrup: Localized<ProductCopy> = {
     },
     specs: {
       heading: 'Technical *specifics*.',
-      intro: 'The details, for the people who will read them.',
       rows: [
         { term: 'Role', detail: 'A control plane for LLMs on GPUs.' },
         {

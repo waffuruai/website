@@ -78,7 +78,6 @@ const syrupKo: (typeof syrup)['en'] = {
   },
   specs: {
     heading: '기술 *세부 사항*.',
-    intro: '꼼꼼히 읽어 보실 분들을 위한 상세 정보.',
     rows: [
       { term: '역할', detail: 'GPU 위에서 도는 LLM을 위한 컨트롤 플레인.' },
       {

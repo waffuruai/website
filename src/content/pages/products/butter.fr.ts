@@ -150,7 +150,6 @@ const butterFr: (typeof butter)['en'] = {
   ],
   specs: {
     heading: 'Les *détails* techniques.',
-    intro: 'Les détails, pour celles et ceux qui les liront.',
     rows: [
       {
         term: 'Runtime',

@@ -78,7 +78,6 @@ const syrupJa: (typeof syrup)['en'] = {
   },
   specs: {
     heading: '技術的な*詳細*',
-    intro: '細部まで読みたい人のための、詳細です。',
     rows: [
       { term: '役割', detail: 'GPU 上の LLM のためのコントロールプレーン。' },
       {

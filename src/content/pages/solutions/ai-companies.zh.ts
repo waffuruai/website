@@ -50,7 +50,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: '给智能体一份留在本地的记忆。',
-        body: 'Whisk 用 TurboQuant+ 压缩嵌入向量，在本机运行关键词加向量搜索。结果通过 MCP 附带引用返回，智能体可以接着上次停下的地方继续。',
+        body: 'Whisk 用我们专有的 AURA 算法压缩嵌入向量，在本机运行关键词加向量搜索。结果通过 MCP 附带引用返回，智能体可以接着上次停下的地方继续。',
       },
     ],
   },
@@ -86,7 +86,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
       {
         product: 'whisk',
         need: '给智能体的记忆。',
-        body: '对笔记和代码做本地检索：用 TurboQuant+ 压缩的嵌入向量，关键词加向量搜索，以及通过 MCP 返回的带引用结果。',
+        body: '对笔记和代码做本地检索：用我们的 AURA 算法压缩的嵌入向量，关键词加向量搜索，以及通过 MCP 返回的带引用结果。',
       },
       {
         product: 'syrup',

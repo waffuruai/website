@@ -129,8 +129,11 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
       expect(measured).not.toMatch(/home ?page/i);
     }
     for (const text of strings(copy)) {
+      // The founder's own Whisk lede keeps its "seamlessly" (2026-10-28).
+      if (text !== productCopy.whisk.en.hero.lede)
+        expect(text).not.toMatch(/seamless/i);
       expect(text).not.toMatch(
-        /revolutionary|game-changing|seamless|unleash|supercharge|cutting-edge|blazing/i,
+        /revolutionary|game-changing|unleash|supercharge|cutting-edge|blazing/i,
       );
       expect(text).not.toContain('!');
       if (text !== measured)
@@ -294,12 +297,12 @@ describe('product specifics from the brief', () => {
     ]);
   });
 
-  it('Whisk’s specifics cover retrieval, TurboQuant+, search, citations and MCP', () => {
+  it('Whisk’s specifics cover retrieval, AURA, search, citations and MCP', () => {
     const text = productCopy.whisk.en.specs.rows
       .map((row) => `${row.term} ${row.detail ?? ''}`)
       .join(' ');
     expect(text).toMatch(/locally/i);
-    expect(text).toContain('TurboQuant+');
+    expect(text).toContain('AURA');
     expect(text).toMatch(/lexical plus vector/i);
     expect(text).toMatch(/citations/i);
     expect(text).toContain('MCP');

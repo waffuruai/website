@@ -78,7 +78,6 @@ const ironEs: (typeof iron)['en'] = {
   },
   specs: {
     heading: 'Detalles *técnicos*.',
-    intro: 'Los detalles, para quienes los van a leer.',
     rows: [
       {
         term: 'Lenguaje',

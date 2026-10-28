@@ -75,7 +75,6 @@ const syrupZh: (typeof syrup)['en'] = {
   },
   specs: {
     heading: '技术*细节*。',
-    intro: '给会细读的人看的细节。',
     rows: [
       { term: '角色', detail: '面向 GPU 上大模型的控制平面。' },
       {

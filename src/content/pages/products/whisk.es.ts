@@ -2,13 +2,13 @@ import type { whisk } from './whisk';
 
 const whiskEs: (typeof whisk)['en'] = {
   layer: 'Memoria',
-  tagline: 'Tu IA recuerda en qué estabas trabajando.',
+  tagline: 'IA que recuerda en qué estabas trabajando.',
   summary:
-    'Recuperación local sobre tus notas y tu código. Los embeddings se comprimen con TurboQuant+, la búsqueda combina léxico y vectores, y los resultados llegan con citas a través de MCP.',
+    'Recuperación local sobre tus notas, código, documentos e imágenes. Los embeddings se comprimen con nuestro algoritmo propietario de compresión AURA, la búsqueda combina léxico y vectores, y los resultados llegan con citas a través de MCP.',
   seo: {
     title: 'Whisk: memoria y recuperación local para tu IA',
     description:
-      'Recuperación local sobre tus notas y tu código. Embeddings comprimidos con TurboQuant+, búsqueda léxica y vectorial, y resultados con citas a través de MCP.',
+      'Whisk mezcla tus notas, código, documentos e imágenes en tus sesiones de IA. Búsqueda léxica y vectorial sobre embeddings comprimidos con AURA, con citas a través de MCP.',
     keywords: [
       'RAG local',
       'memoria para IA',
@@ -17,13 +17,17 @@ const whiskEs: (typeof whisk)['en'] = {
     ],
   },
   hero: {
-    title: 'Tu IA *recuerda* en qué estabas trabajando.',
-    lede: 'Whisk es recuperación local sobre tus notas y tu código. Los embeddings se comprimen con TurboQuant+, la búsqueda es léxica más vectorial, y los resultados llegan con citas a través de MCP.',
+    title: 'IA que *recuerda* en qué estabas trabajando.',
+    lede: 'Whisk busca y mezcla las notas, el código, los documentos y las imágenes relevantes que tienes en tu equipo, y los incorpora de forma fluida a tus sesiones de IA.',
     highlights: [
-      { value: 'Local', label: 'recuperación sobre tus notas y tu código' },
+      {
+        value: 'Local',
+        label: 'recuperación sobre tus notas, código, documentos e imágenes',
+      },
       {
         value: 'Léxica + vectorial',
-        label: 'búsqueda, sobre embeddings comprimidos con TurboQuant+',
+        label:
+          'búsqueda, sobre embeddings comprimidos con nuestro algoritmo AURA',
       },
       { value: 'Con citas', label: 'resultados, entregados a través de MCP' },
     ],
@@ -33,7 +37,7 @@ const whiskEs: (typeof whisk)['en'] = {
     problem:
       'Cada chat nuevo empieza de cero. Vuelves a pegar las mismas notas y los mismos archivos, y cuando llega una respuesta no sabes de cuál de ellos salió.',
     outcome:
-      'Whisk indexa tus notas y tu código en tu propio equipo. Tu IA le pregunta por MCP y recibe los pasajes que importan, cada uno con una cita que puedes comprobar.',
+      'Whisk indexa tus notas, código, documentos e imágenes en tu propio equipo. Tu IA se lo pide y recibe los pasajes que importan, cada uno con una cita a la fuente original que puedes comprobar.',
     outcomes: [
       'Mantén tus notas y tu código en tu propio equipo. La recuperación es local.',
       'Encuentra las cosas por las palabras exactas que usaste o por lo que significan: la búsqueda es léxica más vectorial.',
@@ -47,11 +51,11 @@ const whiskEs: (typeof whisk)['en'] = {
     items: [
       {
         title: 'Recuperación local',
-        body: 'Whisk busca en tus notas y tu código en tu propio equipo, y tus datos se quedan ahí a menos que tú lo autorices.',
+        body: 'Whisk busca en tus notas, código, documentos e imágenes en tu propio equipo, y tus datos se quedan ahí a menos que optes por usar un modelo alojado con un proveedor de inferencia.',
       },
       {
         title: 'Embeddings comprimidos',
-        body: 'Los embeddings se comprimen con TurboQuant+, así que el índice ocupa menos espacio.',
+        body: 'Los embeddings se comprimen con nuestro algoritmo propietario de compresión AURA, así que tus datos ocupan menos espacio.',
       },
       {
         title: 'Búsqueda léxica más vectorial',
@@ -65,11 +69,14 @@ const whiskEs: (typeof whisk)['en'] = {
   },
   specs: {
     heading: 'Detalles *técnicos*.',
-    intro: 'Los detalles, para quienes los van a leer.',
     rows: [
-      { term: 'Indexa', detail: 'Tus notas y tu código.' },
+      { term: 'Indexa', detail: 'Tus notas, código, documentos e imágenes.' },
       { term: 'Dónde se ejecuta', detail: 'En local, en tu equipo.' },
-      { term: 'Embeddings', detail: 'Comprimidos con TurboQuant+.' },
+      {
+        term: 'Embeddings',
+        detail:
+          'Comprimidos con AURA, nuestro algoritmo propietario de compresión.',
+      },
       { term: 'Búsqueda', detail: 'Léxica más vectorial.' },
       { term: 'Resultados', detail: 'Se devuelven con citas.' },
       { term: 'Interfaz', detail: 'MCP.' },
@@ -93,16 +100,16 @@ const whiskEs: (typeof whisk)['en'] = {
     {
       question: '¿Mis datos salen de mi equipo?',
       answer:
-        'La recuperación es local: Whisk indexa y busca en tu equipo. Nos atenemos a una regla sencilla: tus datos se quedan en tu equipo a menos que tú lo autorices.',
+        'La recuperación es local: Whisk indexa y busca en tu equipo. Nos atenemos a una regla sencilla: tus datos se quedan en tu equipo a menos que optes por usar un modelo alojado con un proveedor de inferencia.',
     },
     {
       question: '¿Qué indexa?',
-      answer: 'Tus notas y tu código.',
+      answer: 'Tus notas, código, documentos e imágenes.',
     },
     {
-      question: '¿Qué es TurboQuant+?',
+      question: '¿Qué es AURA?',
       answer:
-        'El método que usa Whisk para comprimir embeddings. Viene de nuestro Director de Investigación, Tom Turney.',
+        'Nuestro algoritmo propietario de compresión, para que tus datos ocupen menos espacio. Se inspiró en TurboQuant+, las mejoras de Tom Turney a [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) de Google, y lo llevamos aún más lejos con algunas técnicas novedosas propias. AURA nació de una colaboración entre Eric Kryski y Tom Turney.',
     },
     {
       question: '¿Qué puede usar Whisk?',
