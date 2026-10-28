@@ -247,17 +247,13 @@ export function PantryFlow({
           aria-label={step.title}
           className={cn('flex items-stretch', styles.flow)}
         >
-          {step.flow.map((stop, index) => (
+          {step.flow.map((stop) => (
             <li
               key={stop}
               className={cn(
                 'relative flex min-h-14 flex-1 items-center justify-center rounded-xl border px-2 py-2 text-center text-[12px] leading-snug sm:px-3 sm:text-[13px]',
-                index === 1
-                  ? 'border-brand/50 bg-brand/10 text-foreground'
-                  : 'border-foreground/10 bg-card text-soft',
                 styles.stop,
               )}
-              style={{ '--i': index } as React.CSSProperties}
             >
               {stop}
             </li>

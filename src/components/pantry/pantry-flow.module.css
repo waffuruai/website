@@ -1,9 +1,9 @@
 /*
- * Pantry's "How it works": transcript lines type in one after another, the
- * flow's stops light up left to right with a pulse running along each track,
- * and the selected step's progress bar fills while the sequence plays.
- * Reduced motion turns every animation off (tailwind.css), leaving the
- * finished frame.
+ * Pantry's "How it works": transcript lines type in one after another, one
+ * dot travels the flow under the terminal and each stop lights as the dot
+ * reaches it, left to right, on a loop. The selected step's progress bar
+ * fills while the sequence plays. Reduced motion turns every animation off
+ * (tailwind.css), leaving the finished frame: every stop lit, no dot.
  */
 @keyframes type {
   from {
@@ -13,24 +13,6 @@
   to {
     opacity: 1;
     transform: none;
-  }
-}
-@keyframes light {
-  from {
-    opacity: 0.35;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes pulse {
-  from {
-    left: 100%;
-    opacity: 1;
-  }
-  to {
-    left: calc(100% + var(--gap) - 6px);
-    opacity: 0.2;
   }
 }
 @keyframes fill {
@@ -47,8 +29,12 @@
   animation-delay: calc(var(--i) * 140ms);
 }
 
+/* One loop: the dot leaves the first stop, crosses to the second, passes
+   behind it, crosses to the third, then everything fades and starts again. */
 .flow {
   --gap: 28px;
+  --stop: calc((100% - 2 * var(--gap)) / 3);
+  position: relative;
   gap: var(--gap);
 }
 @media (min-width: 640px) {
@@ -56,34 +42,132 @@
     --gap: 44px;
   }
 }
-
-.stop {
-  animation: light 0.5s ease-out both;
-  animation-delay: calc(0.4s + var(--i) * 0.6s);
-}
-/* The track to the next stop, and the pulse that runs along it. */
-.stop:not(:last-child)::after,
-.stop:not(:last-child)::before {
+.flow::before {
   content: '';
   position: absolute;
   top: 50%;
-  left: 100%;
-  pointer-events: none;
-}
-.stop:not(:last-child)::after {
-  width: var(--gap);
-  height: 1px;
-  background: color-mix(in oklab, var(--foreground) 22%, transparent);
-}
-.stop:not(:last-child)::before {
-  z-index: 1;
+  z-index: 2;
   width: 6px;
   height: 6px;
   margin-top: -3px;
   border-radius: 999px;
   background: var(--brand);
-  animation: pulse 1.4s ease-in-out infinite;
-  animation-delay: calc(0.6s + var(--i) * 0.6s);
+  box-shadow: 0 0 8px color-mix(in oklab, var(--brand) 60%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  animation: travel 3.6s ease-in-out infinite;
+}
+
+/* Lit is the resting style, so reduced motion shows every stop lit. */
+.stop {
+  border-color: color-mix(in oklab, var(--brand) 50%, transparent);
+  background: color-mix(in oklab, var(--brand) 10%, var(--card));
+  color: var(--foreground);
+}
+.stop:nth-child(1) {
+  animation: lit-first 3.6s ease-in-out infinite;
+}
+.stop:nth-child(2) {
+  animation: lit-second 3.6s ease-in-out infinite;
+}
+.stop:nth-child(3) {
+  animation: lit-third 3.6s ease-in-out infinite;
+}
+/* The track to the next stop. */
+.stop:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: var(--gap);
+  height: 1px;
+  background: color-mix(in oklab, var(--foreground) 22%, transparent);
+  pointer-events: none;
+}
+
+@keyframes travel {
+  0%,
+  8% {
+    left: calc(var(--stop) - 3px);
+    opacity: 0;
+  }
+  10%,
+  33% {
+    opacity: 1;
+  }
+  34% {
+    left: calc(var(--stop) + var(--gap) - 3px);
+    opacity: 0;
+  }
+  38% {
+    left: calc(var(--stop) * 2 + var(--gap) - 3px);
+    opacity: 0;
+  }
+  40%,
+  65% {
+    opacity: 1;
+  }
+  66%,
+  100% {
+    left: calc(var(--stop) * 2 + var(--gap) * 2 - 3px);
+    opacity: 0;
+  }
+}
+@keyframes lit-first {
+  0% {
+    border-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+    background: var(--card);
+    color: var(--soft);
+  }
+  6%,
+  90% {
+    border-color: color-mix(in oklab, var(--brand) 50%, transparent);
+    background: color-mix(in oklab, var(--brand) 10%, var(--card));
+    color: var(--foreground);
+  }
+  100% {
+    border-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+    background: var(--card);
+    color: var(--soft);
+  }
+}
+@keyframes lit-second {
+  0%,
+  32% {
+    border-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+    background: var(--card);
+    color: var(--soft);
+  }
+  37%,
+  90% {
+    border-color: color-mix(in oklab, var(--brand) 50%, transparent);
+    background: color-mix(in oklab, var(--brand) 10%, var(--card));
+    color: var(--foreground);
+  }
+  100% {
+    border-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+    background: var(--card);
+    color: var(--soft);
+  }
+}
+@keyframes lit-third {
+  0%,
+  64% {
+    border-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+    background: var(--card);
+    color: var(--soft);
+  }
+  69%,
+  90% {
+    border-color: color-mix(in oklab, var(--brand) 50%, transparent);
+    background: color-mix(in oklab, var(--brand) 10%, var(--card));
+    color: var(--foreground);
+  }
+  100% {
+    border-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+    background: var(--card);
+    color: var(--soft);
+  }
 }
 
 .progress {
