@@ -103,7 +103,7 @@ const homeFr: (typeof home)['en'] = {
   },
 
   audiences: {
-    title: 'Une place à *table*.',
+    title: 'Nous avons réservé une place à table pour *vous*.',
     intro: 'Qui que vous soyez, la même stack fonctionne pour vous.',
     items: [
       {

@@ -99,7 +99,7 @@ const homeZh: (typeof home)['en'] = {
   },
 
   audiences: {
-    title: '为你留一个*座位*。',
+    title: '我们已在餐桌旁为*你*留好了座位。',
     intro: '无论你是谁，同一套技术栈都适用。',
     items: [
       {

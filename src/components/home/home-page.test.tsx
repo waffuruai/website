@@ -33,7 +33,7 @@ describe('HomePage', () => {
       'More intelligence on hardware you already own.',
       'Know what’s exposed. Patch it fast.',
       'From silicon to answer.',
-      'A seat at the table.',
+      'We’ve reserved a seat at the table for you.',
       'Why we’re cooking.',
       'Who’s in the kitchen.',
       'Reserve your seat.',

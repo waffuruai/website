@@ -103,7 +103,7 @@ const homeJa: (typeof home)['en'] = {
   },
 
   audiences: {
-    title: '*テーブル*に、あなたの席を',
+    title: 'テーブルに、*あなた*の席をご用意しました。',
     intro: 'どなたであっても、同じスタックが役に立ちます。',
     items: [
       {

@@ -103,7 +103,7 @@ const homeEs: (typeof home)['en'] = {
   },
 
   audiences: {
-    title: 'Un lugar en la *mesa*.',
+    title: 'Te hemos reservado un lugar en la mesa a *ti*.',
     intro: 'Seas quien seas, el mismo stack te sirve.',
     items: [
       {

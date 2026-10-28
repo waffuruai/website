@@ -171,7 +171,7 @@ export const home: Localized<HomeContent> = {
     },
 
     audiences: {
-      title: 'A seat at the *table*.',
+      title: 'We’ve reserved a seat at the table for *you*.',
       intro: 'Whoever you are, the same stack works for you.',
       items: [
         {

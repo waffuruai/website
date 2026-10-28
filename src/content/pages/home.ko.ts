@@ -103,7 +103,7 @@ const homeKo: (typeof home)['en'] = {
   },
 
   audiences: {
-    title: '모두를 위한 *자리*.',
+    title: '*당신*을 위한 자리를 마련해 두었습니다.',
     intro: '누구든 같은 스택을 쓸 수 있습니다.',
     items: [
       {
