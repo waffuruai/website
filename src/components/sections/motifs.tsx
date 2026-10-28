@@ -3,8 +3,9 @@ import type { CSSProperties } from 'react';
 import { cn } from '@/lib/utils';
 
 /*
- * The product motifs, drawn by the classes in motifs.css: Iron's press,
- * Butter's melting pat, Syrup's drips and Whisk's whisk. `sm` fits a stack
+ * The product motifs, drawn by the classes in motifs.css: Pantry's sealed jar
+ * and shelf check (two options), Iron's press, Butter's melting pat, Syrup's
+ * drips and Whisk's whisk. `sm` fits a stack
  * row or card, `md` the brand gallery, `lg` a product page's hero.
  * Decorative and CSS-only: callers hide them from assistive tech.
  */
@@ -15,6 +16,65 @@ type MotifProps = { size: MotifSize; className?: string };
 /** Custom properties for the motif classes, as an inline style. */
 const vars = (values: Record<string, string | number>) =>
   values as CSSProperties;
+
+/** The jar's width per size, in pixels. */
+const JAR = { sm: 40, md: 72, lg: 110 } as const;
+
+/** Pantry, option one: a lid twisting shut, then a gold seal pressed on. */
+export function PantryJar({ size, className }: MotifProps) {
+  return (
+    <div
+      className={cn('wf-jar', className)}
+      style={vars({ '--jar': `${JAR[size]}px` })}
+    >
+      <span className="wf-jar-body">
+        <span className="wf-label" />
+        <span className="wf-seal" />
+      </span>
+      <span className="wf-lid" />
+    </div>
+  );
+}
+
+const SHELVES = {
+  sm: { jars: 4, can: 9, box: 'h-[72px] w-[108px]' },
+  md: { jars: 4, can: 16, box: 'h-[132px] w-[150px]' },
+  lg: { jars: 5, can: 22, box: 'h-[210px] w-[240px]' },
+} as const;
+
+/** Jar heights, as a share of the shelf, so no two neighbours match. */
+const CAN_HEIGHTS = [0.62, 0.78, 0.54, 0.7, 0.6] as const;
+
+/** Pantry, option two: a scan down the shelves, an expired jar replaced. */
+export function PantryShelf({ size, className }: MotifProps) {
+  const { jars, can, box } = SHELVES[size];
+  return (
+    <div
+      className={cn('wf-shelves', box, className)}
+      style={vars({ '--can': `${can}px` })}
+    >
+      {[0, 1, 2].map((shelf) => (
+        <div
+          key={shelf}
+          className="wf-shelf"
+          style={vars({ '--shelf': shelf })}
+        >
+          {Array.from({ length: jars }, (_, i) => (
+            <span
+              key={i}
+              className="wf-can"
+              data-expired={shelf === 1 && i === 2 ? '' : undefined}
+              style={{
+                height: `${CAN_HEIGHTS[(i + shelf * 2) % CAN_HEIGHTS.length]! * 100}%`,
+              }}
+            />
+          ))}
+        </div>
+      ))}
+      <span className="wf-scan" />
+    </div>
+  );
+}
 
 const PRESS = {
   sm: { side: 4, grid: 'w-24 gap-1.5' },

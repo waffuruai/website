@@ -238,8 +238,20 @@ const brandFr: (typeof brand)['en'] = {
   motifs: {
     title: 'Des motifs en *mouvement*.',
     intro:
-      'Du CSS pur, tiré des produits, du haut de la pile vers le bas : des alvéoles qui s’illuminent, un fouet, des gouttes de sirop, du beurre qui fond, une presse et des voyants d’état. Tout s’immobilise quand l’appareil du visiteur demande de réduire les animations.',
+      'Du CSS pur, tiré des produits, du haut de la pile vers le bas : deux options pour Pantry, des alvéoles qui s’illuminent, un fouet, des gouttes de sirop, du beurre qui fond, une presse et des voyants d’état. Tout s’immobilise quand l’appareil du visiteur demande de réduire les animations.',
     items: [
+      {
+        key: 'jar',
+        name: 'Bocal scellé',
+        description:
+          'Un couvercle qui se visse et un sceau doré : vérifié avant de s’exécuter. Une option pour Pantry.',
+      },
+      {
+        key: 'shelf',
+        name: 'Inventaire des étagères',
+        description:
+          'Un balayage des étagères, et le seul bocal périmé remplacé par un neuf. Une option pour Pantry.',
+      },
       {
         key: 'tiles',
         name: 'Alvéoles de gaufre',

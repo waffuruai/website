@@ -74,9 +74,11 @@ describe('Brand page', () => {
     ).toBeTruthy();
   });
 
-  it('runs all six motifs live in CSS, top of the stack down', async () => {
+  it('runs every motif live in CSS, top of the stack down', async () => {
     const { container } = await renderPage();
     const motifs = container.querySelector('#motifs');
+    expect(motifs?.querySelector('.wf-seal')).not.toBeNull();
+    expect(motifs?.querySelectorAll('.wf-can')).toHaveLength(12);
     expect(motifs?.querySelectorAll('.wf-cell')).toHaveLength(16);
     expect(motifs?.querySelectorAll('.wf-loop')).toHaveLength(4);
     expect(motifs?.querySelectorAll('.wf-strand')).toHaveLength(7);
@@ -86,6 +88,8 @@ describe('Brand page', () => {
     expect(
       [...(motifs?.querySelectorAll('h3') ?? [])].map((h) => h.textContent),
     ).toEqual([
+      'Sealed jar',
+      'Shelf check',
       'Waffle tiles',
       'Whisk',
       'Drips',

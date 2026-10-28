@@ -242,8 +242,20 @@ const brandEs: (typeof brand)['en'] = {
   motifs: {
     title: 'Motivos, en *movimiento*.',
     intro:
-      'CSS puro, tomado de los productos, de arriba abajo del stack: casillas que brillan, un batidor, gotas de jarabe, mantequilla que se derrite, una prensa y luces de estado. Dejan de moverse cuando el dispositivo del visitante pide reducir el movimiento.',
+      'CSS puro, tomado de los productos, de arriba abajo del stack: dos opciones para Pantry, casillas que brillan, un batidor, gotas de jarabe, mantequilla que se derrite, una prensa y luces de estado. Dejan de moverse cuando el dispositivo del visitante pide reducir el movimiento.',
     items: [
+      {
+        key: 'jar',
+        name: 'Tarro sellado',
+        description:
+          'Una tapa que se enrosca y un sello dorado: verificado antes de ejecutarse. Una opción para Pantry.',
+      },
+      {
+        key: 'shelf',
+        name: 'Revisión de estantes',
+        description:
+          'Un escaneo por los estantes, y el único tarro caducado cambiado por uno nuevo. Una opción para Pantry.',
+      },
       {
         key: 'tiles',
         name: 'Casillas de waffle',

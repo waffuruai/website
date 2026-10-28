@@ -42,7 +42,8 @@ export type TypeFace = {
   source: { label: string; href: string };
 };
 
-export type MotifKey = 'tiles' | 'whisk' | 'drips' | 'pat' | 'stamps' | 'leds';
+export type MotifKey =
+  'jar' | 'shelf' | 'tiles' | 'whisk' | 'drips' | 'pat' | 'stamps' | 'leds';
 
 export type BrandContent = {
   seo: Seo;
@@ -335,8 +336,20 @@ export const brand: Localized<BrandContent> = {
     motifs: {
       title: 'Motifs, in *motion*.',
       intro:
-        'Pure CSS, drawn from the products, top of the stack down: tiles that glow, a whisk, syrup drips, melting butter, a press, and status lights. They stop moving when a visitor’s device asks for reduced motion.',
+        'Pure CSS, drawn from the products, top of the stack down: two options for Pantry, tiles that glow, a whisk, syrup drips, melting butter, a press, and status lights. They stop moving when a visitor’s device asks for reduced motion.',
       items: [
+        {
+          key: 'jar',
+          name: 'Sealed jar',
+          description:
+            'A lid twisting shut and a gold seal pressing on: checked before it runs. One option for Pantry.',
+        },
+        {
+          key: 'shelf',
+          name: 'Shelf check',
+          description:
+            'A scan down the shelves, and the one jar past its date swapped for a fresh one. One option for Pantry.',
+        },
         {
           key: 'tiles',
           name: 'Waffle tiles',

@@ -1,7 +1,7 @@
 /*
- * The After Hours motifs: tile grid, Iron's press, Butter's melting pat,
- * Syrup's drips, Whisk's whisk, LEDs, the overview's syrup rail, pulses,
- * cursor and the hero rise. Pure CSS, so they cost no JavaScript.
+ * The After Hours motifs: tile grid, Pantry's sealed jar and shelf check (two
+ * options), Iron's press, Butter's melting pat, Syrup's drips, Whisk's whisk,
+ * LEDs, the overview's syrup rail, pulses, cursor and the hero rise. Pure CSS, so they cost no JavaScript.
  * Every animation stops under prefers-reduced-motion (see tailwind.css).
  * Colours come from tokens so the motifs follow light and dark.
  */
@@ -35,9 +35,161 @@
     aspect-ratio: 1;
     background: var(--off);
     border-radius: 2px;
-    animation: wfa-stamp calc(var(--rows, 4) * 0.7s)
+    animation: wfa-stamp calc(var(--rows, 4) * 0.32s)
       cubic-bezier(0.7, 0, 0.2, 1) infinite;
-    animation-delay: calc(var(--row, 0) * 0.7s);
+    animation-delay: calc(var(--row, 0) * 0.32s);
+  }
+
+  /* Pantry, option one: a jar whose lid twists shut, then a gold seal
+     presses on. --jar sets the jar's width; everything scales from it. */
+  .wf-jar {
+    position: relative;
+    width: var(--jar, 72px);
+    height: calc(var(--jar, 72px) * 1.5);
+  }
+  .wf-jar-body {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(var(--jar, 72px) * 1.12);
+    border: 1.5px solid color-mix(in oklab, var(--foreground) 40%, transparent);
+    border-radius: calc(var(--jar, 72px) * 0.14) calc(var(--jar, 72px) * 0.14)
+      calc(var(--jar, 72px) * 0.2) calc(var(--jar, 72px) * 0.2);
+    background: linear-gradient(
+      to top,
+      color-mix(in oklab, var(--brand) 28%, transparent) 46%,
+      transparent 46%
+    );
+  }
+  .wf-jar-body::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 14%;
+    right: 14%;
+    height: calc(var(--jar, 72px) * 0.1);
+    border: 1.5px solid color-mix(in oklab, var(--foreground) 40%, transparent);
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+  }
+  .wf-label {
+    position: absolute;
+    top: 22%;
+    right: 12%;
+    left: 12%;
+    height: 30%;
+    border-radius: 3px;
+    background: var(--off);
+  }
+  .wf-label::before,
+  .wf-label::after {
+    content: '';
+    position: absolute;
+    left: 16%;
+    height: 2px;
+    border-radius: 1px;
+    background: color-mix(in oklab, var(--foreground) 28%, transparent);
+  }
+  .wf-label::before {
+    top: 32%;
+    right: 30%;
+  }
+  .wf-label::after {
+    top: 60%;
+    right: 50%;
+  }
+  .wf-lid {
+    position: absolute;
+    top: calc(var(--jar, 72px) * 0.13);
+    right: 8%;
+    left: 8%;
+    height: calc(var(--jar, 72px) * 0.17);
+    border-radius: 4px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--brand) 0 calc(var(--jar, 72px) * 0.06),
+      color-mix(in oklab, var(--brand) 72%, var(--roast))
+        calc(var(--jar, 72px) * 0.06) calc(var(--jar, 72px) * 0.08)
+    );
+    animation: wfa-lid 5s ease-in-out infinite;
+  }
+  .wf-seal {
+    position: absolute;
+    top: 12%;
+    right: -14%;
+    width: calc(var(--jar, 72px) * 0.36);
+    height: calc(var(--jar, 72px) * 0.36);
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 2px var(--background);
+    animation: wfa-seal 5s ease-out infinite;
+  }
+  .wf-seal::after {
+    content: '';
+    position: absolute;
+    top: 22%;
+    left: 37%;
+    width: 22%;
+    height: 40%;
+    border: solid var(--roast);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Pantry, option two: a scan runs down three shelves, each jar checks in
+     as it passes, and the one past its date turns gold, comes off the shelf
+     and is replaced. Shelves set --shelf; --can sets a jar's width. */
+  .wf-shelves {
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+  .wf-shelf {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: calc(var(--can, 14px) * 0.6);
+    border-bottom: 1.5px solid
+      color-mix(in oklab, var(--foreground) 24%, transparent);
+  }
+  .wf-can {
+    position: relative;
+    width: var(--can, 14px);
+    border: 1.5px solid color-mix(in oklab, var(--foreground) 36%, transparent);
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    background: color-mix(in oklab, var(--brand) 14%, transparent);
+    animation: wfa-check 6s ease-out infinite;
+    animation-delay: calc(var(--shelf, 0) * 1.1s);
+  }
+  .wf-can::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 8%;
+    right: 8%;
+    height: calc(var(--can, 14px) * 0.22);
+    border-radius: 2px 2px 0 0;
+    background: color-mix(in oklab, var(--foreground) 36%, transparent);
+  }
+  /* Without motion, the jar past its date simply shows gold. */
+  .wf-can[data-expired] {
+    background: var(--brand);
+    border-color: var(--brand);
+    animation-name: wfa-expire;
+    animation-delay: 0s;
+  }
+  .wf-scan {
+    position: absolute;
+    right: -6%;
+    left: -6%;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--brand);
+    box-shadow: 0 0 10px var(--brand);
+    opacity: 0;
+    animation: wfa-scan 6s linear infinite;
   }
 
   /* Butter: a pat melting into a slick pool, and a glint running across it.
@@ -370,6 +522,125 @@
   12% {
     background: var(--faint);
     transform: scale(1.04);
+  }
+}
+
+/* The lid comes down twisting (its ridges slide), sits, and lifts off. */
+@keyframes wfa-lid {
+  0% {
+    background-position: 0 0;
+    opacity: 0;
+    transform: translateY(calc(var(--jar, 72px) * -0.5));
+  }
+  8% {
+    opacity: 1;
+  }
+  32%,
+  88% {
+    background-position: calc(var(--jar, 72px) * 0.4) 0;
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    background-position: calc(var(--jar, 72px) * 0.4) 0;
+    opacity: 0;
+    transform: translateY(calc(var(--jar, 72px) * -0.5));
+  }
+}
+
+@keyframes wfa-seal {
+  0%,
+  36% {
+    opacity: 0;
+    transform: scale(0) rotate(-30deg);
+  }
+  44% {
+    opacity: 1;
+    transform: scale(1.18) rotate(0);
+  }
+  50%,
+  86% {
+    opacity: 1;
+    transform: none;
+  }
+  94%,
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+/* Top to bottom over the first half of the cycle, then gone. */
+@keyframes wfa-scan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  4%,
+  52% {
+    opacity: 1;
+  }
+  55% {
+    top: 100%;
+    opacity: 1;
+  }
+  60%,
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* A jar lifts a touch and outlines gold as the scan passes it. */
+@keyframes wfa-check {
+  0%,
+  8%,
+  20%,
+  100% {
+    border-color: color-mix(in oklab, var(--foreground) 36%, transparent);
+    transform: none;
+  }
+  11% {
+    border-color: var(--brand);
+    transform: translateY(-2px);
+  }
+}
+
+/* Flagged as the scan reaches the middle shelf, taken off, and replaced. */
+@keyframes wfa-expire {
+  0%,
+  27% {
+    background: color-mix(in oklab, var(--brand) 14%, transparent);
+    border-color: color-mix(in oklab, var(--foreground) 36%, transparent);
+    opacity: 1;
+    transform: none;
+  }
+  30%,
+  62% {
+    background: var(--brand);
+    border-color: var(--brand);
+    opacity: 1;
+    transform: none;
+  }
+  68% {
+    background: var(--brand);
+    border-color: var(--brand);
+    opacity: 0;
+    transform: translateY(-40%);
+  }
+  74% {
+    background: color-mix(in oklab, var(--brand) 14%, transparent);
+    border-color: var(--brand);
+    opacity: 0;
+    transform: translateY(-60%);
+  }
+  84%,
+  100% {
+    background: color-mix(in oklab, var(--brand) 14%, transparent);
+    border-color: color-mix(in oklab, var(--foreground) 36%, transparent);
+    opacity: 1;
+    transform: none;
   }
 }
 

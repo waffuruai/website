@@ -2,6 +2,8 @@ import { BrandSection } from '@/components/brand/brand-section';
 import {
   ButterMelt,
   IronPress,
+  PantryJar,
+  PantryShelf,
   SyrupDrips,
   WhiskSpin,
 } from '@/components/sections/motifs';
@@ -11,6 +13,10 @@ import type { BrandContent, MotifKey } from '@/content/pages/brand';
 /** Live CSS from `motifs.css`: nothing is an image, nothing needs script. */
 function Motif({ kind }: { kind: MotifKey }) {
   switch (kind) {
+    case 'jar':
+      return <PantryJar size="md" className="mt-2" />;
+    case 'shelf':
+      return <PantryShelf size="md" />;
     case 'tiles':
       return (
         <TileDeco
