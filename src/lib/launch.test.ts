@@ -97,7 +97,7 @@ describe('isPublishedPath', () => {
       '/about#hiring',
       '/blog/introducing-waffuru',
       '/products/unknown',
-      'https://github.com/waffuruai/wscanner',
+      'https://github.com/waffuruai/pantry',
       'mailto:hello@waffuru.ai',
       '#install',
     ]) {

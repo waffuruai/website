@@ -27,7 +27,7 @@ export const pantry: Localized<PantryContent> = {
         'Linux vulnerability scanner',
         'OSV',
         'CISA KEV',
-        'wscanner',
+        'wpantry',
       ],
     },
     hero: {
@@ -93,32 +93,33 @@ export const pantry: Localized<PantryContent> = {
         'Choose how much you want to check yourself. Every route verifies the release before anything runs.',
       methods: [
         {
-          id: 'packslip',
+          id: 'mise',
           label: 'One line',
-          title: 'With packslip',
-          body: 'Downloads the build for your platform and checks its signature and SHA-256 before installing it.',
+          title: 'With mise',
+          body: 'mise reads the release’s signed packslip and verifies it against our release workflow before installing anything, then remembers the signer for every update.',
           link: 'What is packslip?',
+        },
+        {
+          id: 'script',
+          label: 'No mise',
+          title: 'With the install script',
+          body: 'Picks the build for your machine, checks it against SHA256SUMS, verifies its signature with packslip, the GitHub CLI or cosign, and installs it to ~/.local/bin.',
+          link: 'Read the script first',
         },
         {
           id: 'verify',
           label: 'By hand',
           title: 'Verify it yourself',
-          body: 'Download the binary, check it against SHA256SUMS and its GitHub build attestation, then install it. A cosign bundle ships too.',
+          body: 'Download the binary, check it against SHA256SUMS, its signed packslip and its GitHub build attestation, then install it. A cosign bundle ships too.',
           link: 'Full install guide',
-        },
-        {
-          id: 'cargo',
-          label: 'From source',
-          title: 'Build it with cargo',
-          body: 'Builds from crates.io with the exact dependency versions in the lockfile. Needs a Rust toolchain and a C compiler.',
         },
       ],
       then: 'Then scan, and see the plan:',
     },
     checks: {
-      title: 'Everything on the *shelves*.',
+      title: 'Verify *everything* on the shelves.',
       intro:
-        'A pantry check covers what you have, what is past its date and what has been recalled. So does Pantry.',
+        'A pantry check covers what you have, what is past its date and what needs to be replaced.',
       items: [
         {
           title: 'Everything installed',
@@ -158,6 +159,21 @@ export const pantry: Localized<PantryContent> = {
         },
       ],
     },
+    sources: {
+      title: 'Where the answers *come from*.',
+      intro:
+        'Open data only, no paywall. Every finding carries its advisory ID, so you can check it at the source.',
+      items: {
+        osv: 'Open vulnerability records for every major package ecosystem and Linux distribution. Pantry asks about your exact versions.',
+        ghsa: 'GitHub’s advisories for open-source packages, which reach Pantry through OSV.',
+        kev: 'The vulnerabilities attackers are exploiting right now. Pantry ranks these first.',
+        eol: 'When runtimes and datastores stop getting security fixes.',
+        malicious:
+          'Packages published to do harm, collected by the Open Source Security Foundation.',
+        vendors:
+          'Release and security data from the vendors themselves, for apps, browsers, databases, Linux packages and editor extensions.',
+      },
+    },
     trust: {
       title: 'Built to be *trusted*.',
       intro:
@@ -185,7 +201,7 @@ export const pantry: Localized<PantryContent> = {
         },
         {
           title: 'Two ways to verify',
-          body: 'Check a download with packslip or with its GitHub build attestation, before it runs.',
+          body: 'Check a download against its signed packslip or its GitHub build attestation, before it runs.',
         },
         {
           title: 'Reads first',
@@ -197,7 +213,7 @@ export const pantry: Localized<PantryContent> = {
         },
         {
           title: 'Free and open source',
-          body: 'Apache-2.0. Read every line, fork it, and run it on as many machines as you like.',
+          body: 'MIT licensed. Read every line, fork it, and run it on as many machines as you like.',
         },
       ],
     },
@@ -212,7 +228,7 @@ export const pantry: Localized<PantryContent> = {
         },
         {
           title: 'Agents',
-          body: 'Structured JSON and a bundled skill (wscanner skill) teach your coding agent to triage and fix, without ever running sudo.',
+          body: 'Structured JSON and a bundled skill (wpantry skill) teach your coding agent to triage and fix, without ever running sudo.',
         },
         {
           title: 'Fleets and CI',
@@ -244,7 +260,7 @@ export const pantry: Localized<PantryContent> = {
       {
         question: 'Why is it called Pantry?',
         answer:
-          'A pantry check tells you what you have, what is past its date and what has been recalled. That is the job. The command is wscanner.',
+          'A pantry check tells you what you have, what is past its date and what has been recalled. That is the job. The command is wpantry.',
       },
       {
         question: 'Does it run on Windows?',
@@ -254,7 +270,7 @@ export const pantry: Localized<PantryContent> = {
       {
         question: 'Can my AI agent use it?',
         answer:
-          'Yes. wscanner --json gives your agent structured findings, and wscanner skill prints a skill that teaches it to triage and fix, and never to run the steps that need sudo.',
+          'Yes. wpantry --json gives your agent structured findings, and wpantry skill prints a skill that teaches it to triage and fix, and never to run the steps that need sudo.',
       },
     ],
     cta: {

@@ -13,7 +13,7 @@ const pantryKo: (typeof pantry)['en'] = {
       'Linux 취약점 스캐너',
       'OSV',
       'CISA KEV',
-      'wscanner',
+      'wpantry',
     ],
   },
   hero: {
@@ -79,32 +79,33 @@ const pantryKo: (typeof pantry)['en'] = {
       '직접 얼마나 확인할지 고르세요. 어떤 방법이든 무엇이 실행되기 전에 릴리스부터 검증합니다.',
     methods: [
       {
-        id: 'packslip',
+        id: 'mise',
         label: '한 줄로',
-        title: 'packslip으로',
-        body: '플랫폼에 맞는 빌드를 내려받아, 설치 전에 서명과 SHA-256을 확인합니다.',
+        title: 'mise로',
+        body: 'mise는 릴리스의 서명된 packslip을 읽고, 무엇이든 설치하기 전에 우리 릴리스 워크플로와 대조해 검증합니다. 서명자는 기억해 두고 이후 모든 업데이트에 사용합니다.',
         link: 'packslip이란?',
+      },
+      {
+        id: 'script',
+        label: 'mise 없이',
+        title: '설치 스크립트로',
+        body: '내 컴퓨터에 맞는 빌드를 골라 SHA256SUMS로 확인하고, packslip, GitHub CLI 또는 cosign으로 서명을 검증한 뒤 ~/.local/bin에 설치합니다.',
+        link: '스크립트 먼저 읽어 보기',
       },
       {
         id: 'verify',
         label: '수동으로',
         title: '직접 검증하기',
-        body: '바이너리를 내려받아 SHA256SUMS와 GitHub 빌드 증명(attestation)으로 확인한 뒤 설치하세요. cosign 번들도 함께 제공됩니다.',
+        body: '바이너리를 내려받아 SHA256SUMS, 서명된 packslip, GitHub 빌드 증명(attestation)으로 확인한 뒤 설치하세요. cosign 번들도 함께 제공됩니다.',
         link: '전체 설치 가이드',
-      },
-      {
-        id: 'cargo',
-        label: '소스에서',
-        title: 'cargo로 빌드하기',
-        body: '락 파일에 고정된 의존성 버전 그대로 crates.io에서 빌드합니다. Rust 툴체인과 C 컴파일러가 필요합니다.',
       },
     ],
     then: '그다음 스캔하고 계획을 확인하세요:',
   },
   checks: {
-    title: '*선반* 위의 모든 것.',
+    title: '선반 위의 *모든 것*을 확인하세요.',
     intro:
-      '팬트리(식료품 저장실)를 점검할 때는 무엇이 있는지, 무엇이 유통기한이 지났는지, 무엇이 리콜되었는지 살핍니다. Pantry도 마찬가지입니다.',
+      '팬트리(식료품 저장실)를 점검할 때는 무엇이 있는지, 무엇이 유통기한이 지났는지, 무엇을 바꿔야 하는지 살핍니다.',
     items: [
       {
         title: '설치된 모든 것',
@@ -144,6 +145,21 @@ const pantryKo: (typeof pantry)['en'] = {
       },
     ],
   },
+  sources: {
+    title: '답이 *나오는 곳*.',
+    intro:
+      '공개 데이터만 쓰고, 페이월은 없습니다. 모든 결과에 보안 권고 ID가 붙어 있어 출처에서 직접 확인할 수 있습니다.',
+    items: {
+      osv: '주요 패키지 생태계와 Linux 배포판을 아우르는 공개 취약점 기록. Pantry는 사용 중인 바로 그 버전을 조회합니다.',
+      ghsa: '오픈소스 패키지에 대한 GitHub의 보안 권고. OSV를 거쳐 Pantry에 들어옵니다.',
+      kev: '공격자들이 지금 실제로 악용하고 있는 취약점. Pantry는 이것부터 보여 줍니다.',
+      eol: '런타임과 데이터 저장소의 보안 수정이 언제 끝나는지.',
+      malicious:
+        '해를 끼치려고 배포된 패키지. Open Source Security Foundation이 수집합니다.',
+      vendors:
+        '앱, 브라우저, 데이터베이스, Linux 패키지, 에디터 확장 프로그램에 대해 공급업체가 직접 내놓는 릴리스·보안 데이터.',
+    },
+  },
   trust: {
     title: '*신뢰*할 수 있도록 만들었습니다.',
     intro:
@@ -171,7 +187,7 @@ const pantryKo: (typeof pantry)['en'] = {
       },
       {
         title: '두 가지 검증 방법',
-        body: '다운로드한 파일을 실행하기 전에 packslip이나 GitHub 빌드 증명으로 확인하세요.',
+        body: '다운로드한 파일을 실행하기 전에 서명된 packslip이나 GitHub 빌드 증명으로 확인하세요.',
       },
       {
         title: '먼저 읽기만',
@@ -183,7 +199,7 @@ const pantryKo: (typeof pantry)['en'] = {
       },
       {
         title: '무료 오픈소스',
-        body: 'Apache-2.0. 모든 코드를 읽고, 포크하고, 원하는 만큼 많은 컴퓨터에서 실행하세요.',
+        body: 'MIT 라이선스. 모든 코드를 읽고, 포크하고, 원하는 만큼 많은 컴퓨터에서 실행하세요.',
       },
     ],
   },
@@ -198,7 +214,7 @@ const pantryKo: (typeof pantry)['en'] = {
       },
       {
         title: '에이전트',
-        body: '구조화된 JSON과 번들 스킬(wscanner skill)이 코딩 에이전트에게 분류와 수정 방법을 가르칩니다. sudo는 절대 실행하지 않습니다.',
+        body: '구조화된 JSON과 번들 스킬(wpantry skill)이 코딩 에이전트에게 분류와 수정 방법을 가르칩니다. sudo는 절대 실행하지 않습니다.',
       },
       {
         title: '플릿과 CI',
@@ -230,7 +246,7 @@ const pantryKo: (typeof pantry)['en'] = {
     {
       question: '왜 이름이 Pantry인가요?',
       answer:
-        'Pantry는 영어로 식료품 저장실을 뜻합니다. 팬트리를 점검하면 무엇이 있고, 무엇이 유통기한이 지났고, 무엇이 리콜되었는지 알 수 있죠. 바로 그 일을 합니다. 명령어는 wscanner입니다.',
+        'Pantry는 영어로 식료품 저장실을 뜻합니다. 팬트리를 점검하면 무엇이 있고, 무엇이 유통기한이 지났고, 무엇이 리콜되었는지 알 수 있죠. 바로 그 일을 합니다. 명령어는 wpantry입니다.',
     },
     {
       question: 'Windows에서 실행되나요?',
@@ -240,7 +256,7 @@ const pantryKo: (typeof pantry)['en'] = {
     {
       question: 'AI 에이전트도 쓸 수 있나요?',
       answer:
-        '네. wscanner --json은 에이전트에게 구조화된 결과를 넘겨 주고, wscanner skill은 분류와 수정 방법, 그리고 sudo가 필요한 단계는 절대 실행하지 않는 법을 가르치는 스킬을 출력합니다.',
+        '네. wpantry --json은 에이전트에게 구조화된 결과를 넘겨 주고, wpantry skill은 분류와 수정 방법, 그리고 sudo가 필요한 단계는 절대 실행하지 않는 법을 가르치는 스킬을 출력합니다.',
     },
   ],
   cta: {

@@ -66,7 +66,7 @@ describe('summary', () => {
       unreleased: false,
     });
     expect(launched).toContain('Iron compiles the kernels');
-    expect(launched).toContain('Pantry (the `wscanner` command)');
+    expect(launched).toContain('Pantry (the `wpantry` command)');
     expect(summary({ launched: none, unreleased: true })).toContain('Pantry');
   });
 });

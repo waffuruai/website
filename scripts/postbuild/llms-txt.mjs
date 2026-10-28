@@ -138,7 +138,7 @@ const STACK =
 const STACK_UNNAMED =
   'It builds the stack that runs AI on the hardware you already own: kernels, an inference engine, a GPU control plane and memory, all closed source and in early access.';
 const PANTRY =
-  'Pantry (the `wscanner` command) is its free, open-source vulnerability scanner for macOS and Linux.';
+  'Pantry (the `wpantry` command) is its free, open-source vulnerability scanner for macOS and Linux.';
 
 /**
  * The summary blockquote shared by llms.txt and llms-full.txt. It names only

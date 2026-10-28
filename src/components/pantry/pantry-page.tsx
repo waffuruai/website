@@ -10,6 +10,7 @@ import { PageHero } from '@/components/sections/page-hero';
 import { SectionHeading } from '@/components/sections/section-heading';
 import { pantryFacts } from '@/content/pages/pantry/facts';
 import { pantry } from '@/content/pages/pantry/pantry';
+import { pantrySources } from '@/content/pages/pantry/types';
 import { mailto, site } from '@/content/site';
 import type { Cta } from '@/content/types';
 import { localizePath, type Locale } from '@/i18n/config';
@@ -128,12 +129,11 @@ export function PantryPage({
         />
         <ol className="mt-12 flex flex-col gap-4 md:mt-16">
           {copy.install.methods.map((method, index) => {
-            const link =
-              method.id === 'packslip'
-                ? facts.packslip
-                : method.id === 'verify'
-                  ? facts.installGuide
-                  : undefined;
+            const link = {
+              mise: facts.packslip,
+              script: `${facts.releases}/latest/download/install.sh`,
+              verify: facts.installGuide,
+            }[method.id];
             return (
               <li
                 key={method.id}
@@ -167,7 +167,7 @@ export function PantryPage({
         </ol>
         <div className="mt-10 flex max-w-[640px] flex-col gap-4">
           <p className="text-[15px] text-soft">{copy.install.then}</p>
-          <CommandBlock label="wscanner" command={facts.firstRun} />
+          <CommandBlock label={facts.command} command={facts.firstRun} />
         </div>
       </ProductSection>
 
@@ -178,6 +178,42 @@ export function PantryPage({
           intro={copy.checks.intro}
         />
         <CardGrid items={copy.checks.items} />
+      </ProductSection>
+
+      <ProductSection id="sources">
+        <SectionHeading
+          id="sources"
+          title={copy.sources.title}
+          intro={copy.sources.intro}
+        />
+        <ul className="mt-12 grid gap-x-12 gap-y-px border-y border-foreground/10 md:mt-16 md:grid-cols-2">
+          {pantrySources.map((source) => (
+            <li
+              key={source}
+              className="flex flex-col gap-2 border-b border-foreground/10 py-6 last:border-b-0 md:[&:nth-last-child(2)]:border-b-0"
+            >
+              <p className="flex flex-wrap gap-x-4 gap-y-1">
+                {facts.sources[source].map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-serif text-[24px] leading-tight text-foreground underline decoration-foreground/25 underline-offset-4 hover:decoration-brand"
+                  >
+                    {link.label}
+                    <span aria-hidden className="text-[15px] text-brand-ink">
+                      ↗
+                    </span>
+                  </a>
+                ))}
+              </p>
+              <p className="text-[15px] leading-[1.6] text-muted-foreground">
+                {copy.sources.items[source]}
+              </p>
+            </li>
+          ))}
+        </ul>
       </ProductSection>
 
       <ProductSection id="trust">

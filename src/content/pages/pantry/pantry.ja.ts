@@ -13,7 +13,7 @@ const pantryJa: (typeof pantry)['en'] = {
       'Linux 脆弱性スキャナー',
       'OSV',
       'CISA KEV',
-      'wscanner',
+      'wpantry',
     ],
   },
   hero: {
@@ -79,32 +79,33 @@ const pantryJa: (typeof pantry)['en'] = {
       '自分でどこまで確認するかを選べます。どの方法でも、何かが実行される前にリリースを検証します。',
     methods: [
       {
-        id: 'packslip',
+        id: 'mise',
         label: '1 行で',
-        title: 'packslip で',
-        body: 'プラットフォームに合ったビルドをダウンロードし、インストール前に署名と SHA-256 を確認します。',
+        title: 'mise で',
+        body: 'mise はリリースの署名付き packslip を読み、何かをインストールする前に、私たちのリリースワークフローと照合して検証します。署名者は記憶され、以降のアップデートすべてで使われます。',
         link: 'packslip とは？',
+      },
+      {
+        id: 'script',
+        label: 'mise なしで',
+        title: 'インストールスクリプトで',
+        body: 'マシンに合ったビルドを選び、SHA256SUMS で確認し、packslip、GitHub CLI、cosign のいずれかで署名を検証してから、~/.local/bin にインストールします。',
+        link: '先にスクリプトを読む',
       },
       {
         id: 'verify',
         label: '手動で',
         title: '自分で検証',
-        body: 'バイナリをダウンロードし、SHA256SUMS と GitHub のビルド証明（attestation）で確認してからインストールします。cosign バンドルも同梱しています。',
+        body: 'バイナリをダウンロードし、SHA256SUMS、署名付き packslip、GitHub のビルド証明（attestation）で確認してからインストールします。cosign バンドルも同梱しています。',
         link: '詳しいインストールガイド',
-      },
-      {
-        id: 'cargo',
-        label: 'ソースから',
-        title: 'cargo でビルド',
-        body: 'ロックファイルに記録されたとおりの依存バージョンで、crates.io からビルドします。Rust ツールチェーンと C コンパイラが必要です。',
       },
     ],
     then: '続いてスキャンし、プランを確認します：',
   },
   checks: {
-    title: '*棚*にあるもの、すべて。',
+    title: '棚にあるものを*すべて*確かめる。',
     intro:
-      'パントリー（食品庫）の点検では、何があるか、何が期限切れか、何がリコールされたかを確かめます。Pantry も同じです。',
+      'パントリー（食品庫）の点検では、何があるか、何が期限切れか、何を取り替えるべきかを確かめます。',
     items: [
       {
         title: 'インストール済みのすべて',
@@ -144,6 +145,21 @@ const pantryJa: (typeof pantry)['en'] = {
       },
     ],
   },
+  sources: {
+    title: '答えの*出どころ*。',
+    intro:
+      '使うのはオープンデータだけで、ペイウォールはありません。すべての検出結果にアドバイザリ ID が付いているので、情報源で直接確かめられます。',
+    items: {
+      osv: '主要なパッケージエコシステムと Linux ディストリビューションを網羅する、オープンな脆弱性レコード。Pantry は、あなたが使っているバージョンそのものについて問い合わせます。',
+      ghsa: 'オープンソースパッケージを対象とした GitHub のアドバイザリ。OSV を経由して Pantry に届きます。',
+      kev: '攻撃者がいままさに悪用している脆弱性。Pantry はこれらを最優先で示します。',
+      eol: 'ランタイムやデータストアへのセキュリティ修正が、いつ終わるか。',
+      malicious:
+        '害を与える目的で公開されたパッケージ。Open Source Security Foundation が収集しています。',
+      vendors:
+        'アプリ、ブラウザ、データベース、Linux パッケージ、エディタの拡張機能について、ベンダー自身が公開しているリリース情報とセキュリティ情報。',
+    },
+  },
   trust: {
     title: '*信頼*に足るように。',
     intro:
@@ -171,7 +187,7 @@ const pantryJa: (typeof pantry)['en'] = {
       },
       {
         title: '2 通りの検証方法',
-        body: 'ダウンロードしたファイルは、実行前に packslip か GitHub のビルド証明で確認できます。',
+        body: 'ダウンロードしたファイルは、実行前に署名付き packslip か GitHub のビルド証明で確認できます。',
       },
       {
         title: 'まずは読むだけ',
@@ -183,7 +199,7 @@ const pantryJa: (typeof pantry)['en'] = {
       },
       {
         title: '無料でオープンソース',
-        body: 'Apache-2.0。すべての行を読み、フォークし、好きなだけ多くのマシンで実行できます。',
+        body: 'MIT ライセンス。すべての行を読み、フォークし、好きなだけ多くのマシンで実行できます。',
       },
     ],
   },
@@ -198,7 +214,7 @@ const pantryJa: (typeof pantry)['en'] = {
       },
       {
         title: 'エージェント',
-        body: '構造化された JSON と同梱のスキル（wscanner skill）が、コーディングエージェントにトリアージと修正のやり方を教えます。sudo を実行することはありません。',
+        body: '構造化された JSON と同梱のスキル（wpantry skill）が、コーディングエージェントにトリアージと修正のやり方を教えます。sudo を実行することはありません。',
       },
       {
         title: 'フリートと CI',
@@ -230,7 +246,7 @@ const pantryJa: (typeof pantry)['en'] = {
     {
       question: 'なぜ Pantry という名前なのですか？',
       answer:
-        'Pantry は英語で食品庫のこと。パントリーを点検すれば、何があって、何が期限切れで、何がリコールされたかがわかります。それがこのツールの仕事です。コマンド名は wscanner です。',
+        'Pantry は英語で食品庫のこと。パントリーを点検すれば、何があって、何が期限切れで、何がリコールされたかがわかります。それがこのツールの仕事です。コマンド名は wpantry です。',
     },
     {
       question: 'Windows で動きますか？',
@@ -240,7 +256,7 @@ const pantryJa: (typeof pantry)['en'] = {
     {
       question: 'AI エージェントでも使えますか？',
       answer:
-        'はい。wscanner --json はエージェントに構造化された検出結果を渡し、wscanner skill はトリアージと修正のやり方、そして sudo が必要な手順は決して実行しないことを教えるスキルを出力します。',
+        'はい。wpantry --json はエージェントに構造化された検出結果を渡し、wpantry skill はトリアージと修正のやり方、そして sudo が必要な手順は決して実行しないことを教えるスキルを出力します。',
     },
   ],
   cta: {

@@ -3,6 +3,7 @@
 import { Pause, Play } from 'lucide-react';
 import { useEffect, useId, useRef, useState } from 'react';
 
+import { pantryFacts } from '@/content/pages/pantry/facts';
 import type { PantryContent, PantryStep } from '@/content/pages/pantry/types';
 import { cn } from '@/lib/utils';
 
@@ -208,7 +209,7 @@ export function PantryFlow({
                 <span className="size-2.5 rounded-full bg-off" />
                 <span className="size-2.5 rounded-full bg-off" />
               </span>
-              wscanner
+              {pantryFacts.command}
             </span>
             <span>{step.label}</span>
           </div>

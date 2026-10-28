@@ -11,8 +11,19 @@ import type { FaqItem, Seo } from '@/content/types';
 export const pantrySteps = ['install', 'scan', 'cache', 'fix'] as const;
 export type PantryStep = (typeof pantrySteps)[number];
 
+/** Where Pantry's answers come from, in the order the page lists them. */
+export const pantrySources = [
+  'osv',
+  'ghsa',
+  'kev',
+  'eol',
+  'malicious',
+  'vendors',
+] as const;
+export type PantrySource = (typeof pantrySources)[number];
+
 /** Ways to install, in the order the page offers them. */
-export const installMethods = ['packslip', 'verify', 'cargo'] as const;
+export const installMethods = ['mise', 'script', 'verify'] as const;
 export type InstallMethod = (typeof installMethods)[number];
 
 export type PantryStepCopy = {
@@ -66,6 +77,12 @@ export type PantryContent = {
     title: string;
     intro: string;
     items: { title: string; body: string }[];
+  };
+  /** Open data Pantry asks; names and links come from `facts.sources`. */
+  sources: {
+    title: string;
+    intro: string;
+    items: Record<PantrySource, string>;
   };
   trust: {
     title: string;

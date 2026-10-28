@@ -13,7 +13,7 @@ const pantryEs: (typeof pantry)['en'] = {
       'escáner de vulnerabilidades para Linux',
       'OSV',
       'CISA KEV',
-      'wscanner',
+      'wpantry',
     ],
   },
   hero: {
@@ -79,32 +79,33 @@ const pantryEs: (typeof pantry)['en'] = {
       'Elige cuánto quieres comprobar por tu cuenta. Todas las vías verifican la versión antes de que se ejecute nada.',
     methods: [
       {
-        id: 'packslip',
+        id: 'mise',
         label: 'Una línea',
-        title: 'Con packslip',
-        body: 'Descarga la compilación para tu plataforma y comprueba su firma y su SHA-256 antes de instalarla.',
+        title: 'Con mise',
+        body: 'mise lee el packslip firmado de la versión y comprueba que procede de nuestro flujo de publicación antes de instalar nada. Después recuerda al firmante en cada actualización.',
         link: '¿Qué es packslip?',
+      },
+      {
+        id: 'script',
+        label: 'Sin mise',
+        title: 'Con el script de instalación',
+        body: 'Elige la compilación para tu equipo, la comprueba con SHA256SUMS, verifica su firma con packslip, la CLI de GitHub o cosign, y la instala en ~/.local/bin.',
+        link: 'Lee primero el script',
       },
       {
         id: 'verify',
         label: 'A mano',
         title: 'Verifícalo tú mismo',
-        body: 'Descarga el binario, compruébalo con SHA256SUMS y con su atestación de compilación de GitHub, y luego instálalo. También se incluye un bundle de cosign.',
+        body: 'Descarga el binario, compruébalo con SHA256SUMS, con su packslip firmado y con su atestación de compilación de GitHub, y luego instálalo. También se incluye un bundle de cosign.',
         link: 'Guía de instalación completa',
-      },
-      {
-        id: 'cargo',
-        label: 'Desde el código',
-        title: 'Compílalo con cargo',
-        body: 'Compila desde crates.io con las versiones exactas de las dependencias del lockfile. Necesita una toolchain de Rust y un compilador de C.',
       },
     ],
     then: 'Después, escanea y revisa el plan:',
   },
   checks: {
-    title: 'Todo lo que hay en las *estanterías*.',
+    title: 'Verifica *todo* lo que hay en las estanterías.',
     intro:
-      'Revisar la despensa es ver qué tienes, qué está caducado y qué han retirado del mercado. Pantry hace lo mismo.',
+      'Revisar la despensa es ver qué tienes, qué está caducado y qué hay que reemplazar.',
     items: [
       {
         title: 'Todo lo instalado',
@@ -144,6 +145,21 @@ const pantryEs: (typeof pantry)['en'] = {
       },
     ],
   },
+  sources: {
+    title: 'De dónde *vienen* las respuestas.',
+    intro:
+      'Solo datos abiertos, sin muros de pago. Cada resultado lleva el ID de su aviso, para que puedas comprobarlo en la fuente.',
+    items: {
+      osv: 'Registros abiertos de vulnerabilidades de todos los grandes ecosistemas de paquetes y distribuciones de Linux. Pantry pregunta por tus versiones exactas.',
+      ghsa: 'Los avisos de GitHub para paquetes de código abierto, que llegan a Pantry a través de OSV.',
+      kev: 'Las vulnerabilidades que los atacantes están explotando ahora mismo. Pantry las pone en primer lugar.',
+      eol: 'Cuándo dejan de recibir parches de seguridad los runtimes y los almacenes de datos.',
+      malicious:
+        'Paquetes publicados para hacer daño, recopilados por la Open Source Security Foundation.',
+      vendors:
+        'Datos de versiones y de seguridad de los propios proveedores, para apps, navegadores, bases de datos, paquetes de Linux y extensiones del editor.',
+    },
+  },
   trust: {
     title: 'Hecho para merecer tu *confianza*.',
     intro:
@@ -171,7 +187,7 @@ const pantryEs: (typeof pantry)['en'] = {
       },
       {
         title: 'Dos formas de verificar',
-        body: 'Comprueba una descarga con packslip o con su atestación de compilación de GitHub antes de que se ejecute.',
+        body: 'Comprueba una descarga con su packslip firmado o con su atestación de compilación de GitHub antes de que se ejecute.',
       },
       {
         title: 'Primero, solo lectura',
@@ -183,7 +199,7 @@ const pantryEs: (typeof pantry)['en'] = {
       },
       {
         title: 'Gratis y de código abierto',
-        body: 'Apache-2.0. Lee cada línea, haz un fork y ejecútalo en tantos equipos como quieras.',
+        body: 'Licencia MIT. Lee cada línea, haz un fork y ejecútalo en tantos equipos como quieras.',
       },
     ],
   },
@@ -198,7 +214,7 @@ const pantryEs: (typeof pantry)['en'] = {
       },
       {
         title: 'Agentes',
-        body: 'Un JSON estructurado y una skill incluida (wscanner skill) enseñan a tu agente de programación a clasificar y corregir, sin ejecutar nunca sudo.',
+        body: 'Un JSON estructurado y una skill incluida (wpantry skill) enseñan a tu agente de programación a clasificar y corregir, sin ejecutar nunca sudo.',
       },
       {
         title: 'Flotas y CI',
@@ -230,7 +246,7 @@ const pantryEs: (typeof pantry)['en'] = {
     {
       question: '¿Por qué se llama Pantry?',
       answer:
-        'En inglés, pantry es la despensa. Revisarla te dice qué tienes, qué está caducado y qué han retirado del mercado. Ese es el trabajo. El comando es wscanner.',
+        'En inglés, pantry es la despensa. Revisarla te dice qué tienes, qué está caducado y qué han retirado del mercado. Ese es el trabajo. El comando es wpantry.',
     },
     {
       question: '¿Funciona en Windows?',
@@ -240,7 +256,7 @@ const pantryEs: (typeof pantry)['en'] = {
     {
       question: '¿Puede usarlo mi agente de IA?',
       answer:
-        'Sí. wscanner --json le da a tu agente resultados estructurados, y wscanner skill imprime una skill que le enseña a clasificar y corregir, y a no ejecutar nunca los pasos que necesitan sudo.',
+        'Sí. wpantry --json le da a tu agente resultados estructurados, y wpantry skill imprime una skill que le enseña a clasificar y corregir, y a no ejecutar nunca los pasos que necesitan sudo.',
     },
   ],
   cta: {

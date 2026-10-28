@@ -61,13 +61,14 @@ describe('/products/pantry', () => {
   it('offers every install route with its exact command', async () => {
     const { container } = await renderPage();
     const text = container.textContent ?? '';
-    expect(text).toContain(pantryFacts.install.packslip);
-    expect(text).toContain(pantryFacts.install.cargo);
+    expect(text).toContain(pantryFacts.install.mise);
+    expect(text).toContain(pantryFacts.install.script);
+    expect(text).toContain('packslip verify');
     expect(text).toContain('gh attestation verify');
     expect(copy.install.methods.map((method) => method.id)).toEqual([
-      'packslip',
+      'mise',
+      'script',
       'verify',
-      'cargo',
     ]);
   });
 
@@ -91,7 +92,7 @@ describe('/products/pantry', () => {
     for (const locale of ['es', 'fr', 'zh', 'ja', 'ko'] as const) {
       const page = pantry[locale];
       expect(page, locale).toBeDefined();
-      expect(JSON.stringify(page)).toContain('wscanner');
+      expect(JSON.stringify(page)).toContain('wpantry');
     }
   });
 
@@ -120,7 +121,7 @@ describe('How it works', () => {
     fireEvent.keyDown(tabs[2], { key: 'End' });
     expect(tabs[3].getAttribute('aria-selected')).toBe('true');
     expect(screen.getByRole('tabpanel').textContent).toContain(
-      'wscanner --update',
+      'wpantry --update',
     );
   });
 

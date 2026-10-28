@@ -13,7 +13,7 @@ export const article = {
   tags: ['pantry', 'security', 'open source', 'rust'],
   keywords: [
     'Pantry',
-    'wscanner',
+    'wpantry',
     'vulnerability scanner',
     'CVE scanner',
     'open source security',
@@ -29,7 +29,7 @@ export default (props) => (
 
 Every security team asks two questions. What am I exposed to? And how fast can I fix it? Most tools answer the first with a firehose and leave the second to you.
 
-[Pantry](/products/pantry) answers both. It checks everything installed on your Mac or Linux machine, and every repo on it, against open vulnerability data. It reports only what actually applies, names the version that fixes it, and applies the fixes it safely can. It is free, open source, written in Rust, and its first signed release is out today. The command is `wscanner`.
+[Pantry](/products/pantry) answers both. It checks everything installed on your Mac or Linux machine, and every repo on it, against open vulnerability data. It reports only what actually applies, names the version that fixes it, and applies the fixes it safely can. It is free, open source, written in Rust, and its first signed release is out today. The command is `wpantry`.
 
 ## Why we _built_ it
 
@@ -48,29 +48,36 @@ Pantry does four things, in order, all on your machine.
 1. **Take stock.** It inventories what is installed: every runtime and compiler your version managers keep (not just the one on your `PATH`), package managers and global packages, apps and browsers, operating system updates, the MCP servers and plugins your AI coding tools run, your trust stores, and the lockfiles, git history and container images of every repo you point it at.
 2. **Ask about exact versions.** It asks [OSV.dev](https://osv.dev), CISA's [Known Exploited Vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) list and [endoflife.date](https://endoflife.date) about those versions, and nothing else. It checks every package name against the OpenSSF malicious-packages index, and git history for committed secrets.
 3. **Report what applies.** It fails only when something on your machine has a known vulnerability with a released fix, is past its end of life, is a known malicious package, or is a committed secret. Each finding names the version that fixes it. If a source cannot be reached, Pantry says "not checked". It never calls that clean.
-4. **Fix what it safely can.** `wscanner --update --dryrun` shows the plan. `wscanner --update` runs the unattended, user-level fixes (Homebrew, pip, npm, cargo, rustup, uv, editor extensions) and checks again. Anything that needs sudo, a vendor update or a code change is printed for you to run. It picks one fix per component, the version that clears every advisory at once.
+4. **Fix what it safely can.** `wpantry --update --dryrun` shows the plan. `wpantry --update` runs the unattended, user-level fixes (Homebrew, pip, npm, cargo, rustup, uv, editor extensions) and checks again. Anything that needs sudo, a vendor update or a code change is printed for you to run. It picks one fix per component, the version that clears every advisory at once.
 
 ```sh
-wscanner                     # scan this machine and its repos
-wscanner --update --dryrun   # see the plan
-wscanner --update            # run the safe fixes, then check again
+wpantry                     # scan this machine and its repos
+wpantry --update --dryrun   # see the plan
+wpantry --update            # run the safe fixes, then check again
 ```
 
 ## Open data, not a _paywall_
 
-Pantry uses open sources only. OSV.dev brings together advisories from GitHub, the language ecosystems and the Linux distributions. CISA's list marks what attackers are exploiting right now, so Pantry ranks it first. endoflife.date says when a runtime or datastore stops getting fixes. The OpenSSF index covers packages published to do harm.
+Pantry uses open data only, so you can check every finding at its source:
+
+- [OSV.dev](https://osv.dev): open vulnerability records for every major package ecosystem and Linux distribution. Pantry asks about your exact versions.
+- [GitHub Advisory Database](https://github.com/advisories): advisories for open-source packages, which reach Pantry through OSV.
+- [CISA Known Exploited Vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog): what attackers are exploiting right now. Pantry ranks these first.
+- [endoflife.date](https://endoflife.date): when runtimes and datastores stop getting security fixes.
+- [OpenSSF malicious packages](https://github.com/ossf/malicious-packages): packages published to do harm.
+- Release and security data from the vendors themselves: [Homebrew](https://formulae.brew.sh), [Chrome](https://versionhistory.googleapis.com), [Firefox](https://product-details.mozilla.org), [PostgreSQL](https://www.postgresql.org/support/security/), the [Arch Linux security tracker](https://security.archlinux.org) and the [VS Code Marketplace](https://marketplace.visualstudio.com).
 
 Only package names and versions leave your machine, to look them up. File contents, paths and secrets never do. There is no telemetry and no account. The one exception is an optional email breach check, and it runs only after you say yes.
 
 ## A cache that is _yours_
 
-Answers land in a SQLite database at `~/.cache/wscanner/wscanner.db`, with a record of every run: an audit trail of what was checked on this machine, and when. OSV answers stay fresh for a day and end-of-life dates for a week, so a second scan the same day takes seconds.
+Answers land in a SQLite database at `~/.cache/wpantry/wpantry.db`, with a record of every run: an audit trail of what was checked on this machine, and when. OSV answers stay fresh for a day and end-of-life dates for a week, so a second scan the same day takes seconds.
 
 It is plain SQLite, so you can read it yourself, and search it offline:
 
 ```sh
-wscanner search "openssl" --applicable   # cached advisories that apply here
-sqlite3 -readonly ~/.cache/wscanner/wscanner.db .tables
+wpantry search "openssl" --applicable   # cached advisories that apply here
+sqlite3 -readonly ~/.cache/wpantry/wpantry.db .tables
 ```
 
 It is a cache, not a mirror. It holds what your machine asked about, nothing more.
@@ -83,34 +90,43 @@ A vulnerability scanner reads your whole home directory. That makes it a target,
 - **Dependency-light.** A handful of pinned crates, each vetted with `cargo deny` and `cargo vet`. No runtime to install.
 - **No AI.** Plain, deterministic code: the same machine gets the same answer every time.
 - **Versioned and hashed.** Every release is tagged, built twice and published only if both builds match byte for byte, and listed in `SHA256SUMS`.
-- **Verifiable two ways.** Install with [packslip](https://packslip.dev), which checks the signature and SHA-256 before installing, or check the GitHub build attestation yourself. A cosign bundle ships with every binary too.
+- **Verifiable, more than one way.** Every release ships a signed [packslip](https://packslip.dev), a GitHub build attestation and a cosign bundle for each binary.
+
+Install with [mise](https://mise.jdx.dev), which verifies the signed packslip against our release workflow before it installs anything, and remembers the signer for every update:
 
 ```sh
-packslip install github.com/waffuruai/wscanner
+mise use -g packslip:github.com/waffuruai/pantry
 ```
 
-Or by hand:
+No mise? The install script checks the download against `SHA256SUMS`, verifies its signature with packslip, the GitHub CLI or cosign, and installs it to `~/.local/bin`:
 
 ```sh
-ASSET=wscanner-universal-apple-darwin   # Linux: wscanner-x86_64-unknown-linux-musl
-gh release download --repo waffuruai/wscanner -p "$ASSET" -p SHA256SUMS
+curl -fsSL https://github.com/waffuruai/pantry/releases/latest/download/install.sh | sh
+```
+
+Or verify it by hand:
+
+```sh
+ASSET=wpantry-universal-apple-darwin   # Linux: wpantry-x86_64-unknown-linux-musl
+gh release download --repo waffuruai/pantry -p "$ASSET" -p SHA256SUMS -p packslip.sigstore.json
 grep " $ASSET$" SHA256SUMS | shasum -a 256 -c -
-gh attestation verify "$ASSET" --repo waffuruai/wscanner
-install -m 0755 "$ASSET" ~/.local/bin/wscanner
+packslip verify packslip.sigstore.json --artifact "$ASSET"
+gh attestation verify "$ASSET" --repo waffuruai/pantry
+install -m 0755 "$ASSET" ~/.local/bin/wpantry
 ```
 
-The [install guide](https://github.com/waffuruai/wscanner/blob/main/docs/public/install.md) covers cosign, `cargo install` and rebuilding a release yourself. It is Apache-2.0: [read every line](https://github.com/waffuruai/wscanner) before you run it. That is the point.
+The [install guide](https://github.com/waffuruai/pantry/blob/main/docs/public/install.md) covers cosign, crates.io and rebuilding a release yourself. It is MIT licensed: [read every line](https://github.com/waffuruai/pantry) before you run it. That is the point.
 
 ## For people, agents and _fleets_
 
 The same binary works on a laptop, in CI and across a fleet of servers.
 
 - **People** run it, read the plan and apply the safe fixes. The exit code says whether anything still needs you.
-- **Agents** get structured findings from `wscanner --json --no-input`, and `wscanner skill` prints a skill that teaches a coding agent to triage (malicious packages, then secrets, then actively exploited, then end of life) and fix, without ever running the steps that need sudo.
+- **Agents** get structured findings from `wpantry --json --no-input`, and `wpantry skill` prints a skill that teaches a coding agent to triage (malicious packages, then secrets, then actively exploited, then end of life) and fix, without ever running the steps that need sudo.
 - **CI and fleets** point it at a checkout with `--path . --no-machine`, and fail the build when something has a released fix.
 
 ## What is _next_
 
 Pantry runs on macOS and Linux today. Windows support is planned, and demand sets the date, so [tell us if you need it](mailto:hello@waffuru.ai?subject=Pantry%20on%20Windows).
 
-Run it on your machine and tell us what it found that you did not expect. Issues and pull requests are welcome on [GitHub](https://github.com/waffuruai/wscanner), and the [Pantry page](/products/pantry) has the rest. Pull up a seat.
+Run it on your machine and tell us what it found that you did not expect. Issues and pull requests are welcome on [GitHub](https://github.com/waffuruai/pantry), and the [Pantry page](/products/pantry) has the rest. Pull up a seat.

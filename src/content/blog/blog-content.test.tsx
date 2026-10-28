@@ -168,7 +168,7 @@ describe('the launch post', () => {
       '/about/team',
       '/products/pantry',
       '/blog/introducing-pantry',
-      'https://github.com/waffuruai/wscanner',
+      'https://github.com/waffuruai/pantry',
       'https://forms.gle/SHaVSRRWmZKy8UJy7',
       'https://x.com/waffuruai',
       'https://www.linkedin.com/company/waffuru/',
@@ -183,7 +183,7 @@ describe('the launch post', () => {
     const blocks = container.querySelectorAll('figure[data-code-block]');
     expect(blocks).toHaveLength(1);
     expect(container.textContent).toContain(
-      'packslip install github.com/waffuruai/wscanner',
+      'mise use -g packslip:github.com/waffuruai/pantry',
     );
     expect(screen.getAllByRole('button', { name: /^Copy/ })).toHaveLength(1);
   });
@@ -245,8 +245,16 @@ describe('the Pantry post', () => {
       .map((a) => a.getAttribute('href'));
     expect(hrefs).toContain(pantryFacts.path);
     expect(hrefs).toContain(pantryFacts.repo);
-    expect(container.textContent).toContain(pantryFacts.install.packslip);
+    expect(container.textContent).toContain(pantryFacts.install.mise);
     expect(container.textContent).toContain('gh attestation verify');
+    for (const source of [
+      'https://osv.dev',
+      'https://www.cisa.gov/known-exploited-vulnerabilities-catalog',
+      'https://endoflife.date',
+      'https://github.com/ossf/malicious-packages',
+    ]) {
+      expect(hrefs, source).toContain(source);
+    }
     expect(container.querySelector('figure figcaption')?.textContent).toMatch(
       /stay on your machine/,
     );

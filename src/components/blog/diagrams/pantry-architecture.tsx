@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 /*
  * How Pantry works, as a diagram for the blog (DESIGN.md's diagram rules):
- * the machine it runs on inside a dashed boundary, the wscanner binary and
+ * the machine it runs on inside a dashed boundary, the wpantry binary and
  * its SQLite cache in gold (built), the open data it asks in blue (systems
  * we do not own), and the one thing that crosses the boundary on the arrow.
  * Plain HTML and CSS, so it follows the theme and reads in any width; the
@@ -126,7 +126,7 @@ export function PantryArchitecture() {
               <div className="flex flex-col gap-2">
                 <Label index="2">Pantry</Label>
                 <Node
-                  title="wscanner"
+                  title="wpantry"
                   body="One static Rust binary. Inventories, asks, reports."
                 />
                 <Down />

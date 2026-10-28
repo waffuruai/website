@@ -13,7 +13,7 @@ const pantryFr: (typeof pantry)['en'] = {
       'scanner de vulnérabilités Linux',
       'OSV',
       'CISA KEV',
-      'wscanner',
+      'wpantry',
     ],
   },
   hero: {
@@ -83,32 +83,33 @@ const pantryFr: (typeof pantry)['en'] = {
       'Choisissez ce que vous voulez vérifier vous-même. Chaque méthode vérifie la version avant que quoi que ce soit ne s’exécute.',
     methods: [
       {
-        id: 'packslip',
+        id: 'mise',
         label: 'Une ligne',
-        title: 'Avec packslip',
-        body: 'Télécharge la version adaptée à votre plateforme et vérifie sa signature et son SHA-256 avant de l’installer.',
+        title: 'Avec mise',
+        body: 'mise lit le packslip signé de la version et vérifie qu’il provient bien de notre workflow de publication avant d’installer quoi que ce soit, puis retient le signataire pour chaque mise à jour.',
         link: 'Qu’est-ce que packslip ?',
+      },
+      {
+        id: 'script',
+        label: 'Sans mise',
+        title: 'Avec le script d’installation',
+        body: 'Choisit le build adapté à votre machine, le vérifie avec SHA256SUMS, contrôle sa signature avec packslip, la CLI GitHub ou cosign, puis l’installe dans ~/.local/bin.',
+        link: 'Lisez d’abord le script',
       },
       {
         id: 'verify',
         label: 'À la main',
         title: 'Vérifiez par vous-même',
-        body: 'Téléchargez le binaire, vérifiez-le avec SHA256SUMS et son attestation de build GitHub, puis installez-le. Un bundle cosign est aussi fourni.',
+        body: 'Téléchargez le binaire, vérifiez-le avec SHA256SUMS, son packslip signé et son attestation de build GitHub, puis installez-le. Un bundle cosign est aussi fourni.',
         link: 'Guide d’installation complet',
-      },
-      {
-        id: 'cargo',
-        label: 'Depuis les sources',
-        title: 'Compilez avec cargo',
-        body: 'Compile depuis crates.io avec les versions exactes des dépendances du lockfile. Nécessite une toolchain Rust et un compilateur C.',
       },
     ],
     then: 'Ensuite, lancez l’analyse et consultez le plan :',
   },
   checks: {
-    title: 'Tout ce qu’il y a sur les *étagères*.',
+    title: 'Vérifiez *tout* ce qu’il y a sur les étagères.',
     intro:
-      'Faire le tour du garde-manger, c’est voir ce que vous avez, ce qui est périmé et ce qui a fait l’objet d’un rappel. Pantry fait de même.',
+      'Faire le tour du garde-manger, c’est voir ce que vous avez, ce qui est périmé et ce qu’il faut remplacer.',
     items: [
       {
         title: 'Tout ce qui est installé',
@@ -148,6 +149,21 @@ const pantryFr: (typeof pantry)['en'] = {
       },
     ],
   },
+  sources: {
+    title: 'D’où *viennent* les réponses.',
+    intro:
+      'Des données ouvertes uniquement, sans accès payant. Chaque résultat porte l’identifiant de son avis de sécurité, pour que vous puissiez le vérifier à la source.',
+    items: {
+      osv: 'Des fiches de vulnérabilité ouvertes pour tous les grands écosystèmes de paquets et toutes les grandes distributions Linux. Pantry les interroge sur vos versions exactes.',
+      ghsa: 'Les avis de sécurité de GitHub pour les paquets open source, qui parviennent à Pantry via OSV.',
+      kev: 'Les vulnérabilités que des attaquants exploitent en ce moment même. Pantry les fait passer en premier.',
+      eol: 'Quand les runtimes et les bases de données cessent de recevoir des correctifs de sécurité.',
+      malicious:
+        'Des paquets publiés pour nuire, recensés par l’Open Source Security Foundation.',
+      vendors:
+        'Les données de version et de sécurité publiées par les éditeurs eux-mêmes, pour les applications, les navigateurs, les bases de données, les paquets Linux et les extensions d’éditeur de code.',
+    },
+  },
   trust: {
     title: 'Conçu pour mériter votre *confiance*.',
     intro:
@@ -175,7 +191,7 @@ const pantryFr: (typeof pantry)['en'] = {
       },
       {
         title: 'Deux façons de vérifier',
-        body: 'Vérifiez un téléchargement avec packslip ou avec son attestation de build GitHub, avant qu’il ne s’exécute.',
+        body: 'Vérifiez un téléchargement avec son packslip signé ou son attestation de build GitHub, avant qu’il ne s’exécute.',
       },
       {
         title: 'Lecture d’abord',
@@ -187,7 +203,7 @@ const pantryFr: (typeof pantry)['en'] = {
       },
       {
         title: 'Gratuit et open source',
-        body: 'Apache-2.0. Lisez chaque ligne, forkez-le et faites-le tourner sur autant de machines que vous voulez.',
+        body: 'Sous licence MIT. Lisez chaque ligne, forkez-le et faites-le tourner sur autant de machines que vous voulez.',
       },
     ],
   },
@@ -202,7 +218,7 @@ const pantryFr: (typeof pantry)['en'] = {
       },
       {
         title: 'Les agents',
-        body: 'Un JSON structuré et une skill intégrée (wscanner skill) apprennent à votre agent de code à trier et à corriger, sans jamais lancer sudo.',
+        body: 'Un JSON structuré et une skill intégrée (wpantry skill) apprennent à votre agent de code à trier et à corriger, sans jamais lancer sudo.',
       },
       {
         title: 'Parcs et CI',
@@ -234,7 +250,7 @@ const pantryFr: (typeof pantry)['en'] = {
     {
       question: 'Pourquoi s’appelle-t-il Pantry ?',
       answer:
-        'En anglais, pantry désigne le garde-manger. En faire le tour vous dit ce que vous avez, ce qui est périmé et ce qui a fait l’objet d’un rappel. C’est son travail. La commande s’appelle wscanner.',
+        'En anglais, pantry désigne le garde-manger. En faire le tour vous dit ce que vous avez, ce qui est périmé et ce qui a fait l’objet d’un rappel. C’est son travail. La commande s’appelle wpantry.',
     },
     {
       question: 'Fonctionne-t-il sous Windows ?',
@@ -244,7 +260,7 @@ const pantryFr: (typeof pantry)['en'] = {
     {
       question: 'Mon agent IA peut-il l’utiliser ?',
       answer:
-        'Oui. wscanner --json fournit à votre agent des résultats structurés, et wscanner skill affiche une skill qui lui apprend à trier et à corriger, sans jamais exécuter les étapes qui demandent sudo.',
+        'Oui. wpantry --json fournit à votre agent des résultats structurés, et wpantry skill affiche une skill qui lui apprend à trier et à corriger, sans jamais exécuter les étapes qui demandent sudo.',
     },
   ],
   cta: {

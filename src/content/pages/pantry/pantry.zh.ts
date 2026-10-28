@@ -13,7 +13,7 @@ const pantryZh: (typeof pantry)['en'] = {
       'Linux 漏洞扫描器',
       'OSV',
       'CISA KEV',
-      'wscanner',
+      'wpantry',
     ],
   },
   hero: {
@@ -79,32 +79,32 @@ const pantryZh: (typeof pantry)['en'] = {
       '自己想核验多少，由你决定。无论哪种方式，都会在任何东西运行之前先验证发布版本。',
     methods: [
       {
-        id: 'packslip',
+        id: 'mise',
         label: '一行命令',
-        title: '用 packslip',
-        body: '下载适合你平台的构建，安装前先校验签名和 SHA-256。',
+        title: '用 mise',
+        body: 'mise 会读取发布版本附带的已签名 packslip，在安装任何东西之前先对照我们的发布工作流进行验证，之后每次更新都会记住这个签名者。',
         link: 'packslip 是什么？',
+      },
+      {
+        id: 'script',
+        label: '不用 mise',
+        title: '用安装脚本',
+        body: '为你的机器挑选合适的构建，用 SHA256SUMS 核对，再用 packslip、GitHub CLI 或 cosign 验证签名，然后安装到 ~/.local/bin。',
+        link: '先读一读脚本',
       },
       {
         id: 'verify',
         label: '手动',
         title: '自己验证',
-        body: '下载二进制文件，用 SHA256SUMS 和它的 GitHub 构建证明进行核对，然后安装。同时也提供 cosign bundle。',
+        body: '下载二进制文件，用 SHA256SUMS、它已签名的 packslip 和 GitHub 构建证明进行核对，然后安装。同时也提供 cosign bundle。',
         link: '完整安装指南',
-      },
-      {
-        id: 'cargo',
-        label: '从源码',
-        title: '用 cargo 构建',
-        body: '从 crates.io 构建，依赖版本与锁文件中的完全一致。需要 Rust 工具链和 C 编译器。',
       },
     ],
     then: '然后扫描，查看计划：',
   },
   checks: {
-    title: '*货架*上的一切。',
-    intro:
-      '检查食品储藏柜，就是看看有什么、什么过期了、什么被召回了。Pantry 也是这样。',
+    title: '核查货架上的*一切*。',
+    intro: '检查食品储藏柜，就是看看有什么、什么过期了、什么需要换掉。',
     items: [
       {
         title: '已安装的一切',
@@ -144,6 +144,21 @@ const pantryZh: (typeof pantry)['en'] = {
       },
     ],
   },
+  sources: {
+    title: '答案*从何而来*。',
+    intro:
+      '只用公开数据，没有付费墙。每条检查结果都附有对应的安全公告 ID，你可以到源头查证。',
+    items: {
+      osv: '覆盖各大软件包生态和 Linux 发行版的公开漏洞记录。Pantry 查询的正是你所用的确切版本。',
+      ghsa: 'GitHub 针对开源软件包发布的安全公告，经由 OSV 进入 Pantry。',
+      kev: '攻击者此刻正在利用的漏洞。Pantry 把它们排在最前面。',
+      eol: '运行时和数据存储何时不再获得安全修复。',
+      malicious:
+        '专为作恶而发布的软件包，由 Open Source Security Foundation 收集。',
+      vendors:
+        '直接来自厂商的发布与安全数据，涵盖应用、浏览器、数据库、Linux 软件包和编辑器扩展。',
+    },
+  },
   trust: {
     title: '为赢得*信任*而打造。',
     intro:
@@ -171,7 +186,7 @@ const pantryZh: (typeof pantry)['en'] = {
       },
       {
         title: '两种验证方式',
-        body: '在运行之前，用 packslip 或其 GitHub 构建证明校验下载的文件。',
+        body: '在运行之前，用已签名的 packslip 或 GitHub 构建证明校验下载的文件。',
       },
       {
         title: '先只读',
@@ -183,7 +198,7 @@ const pantryZh: (typeof pantry)['en'] = {
       },
       {
         title: '免费且开源',
-        body: 'Apache-2.0 许可。逐行阅读、自由 fork，想在多少台机器上运行都可以。',
+        body: '采用 MIT 许可证。逐行阅读、自由 fork，想在多少台机器上运行都可以。',
       },
     ],
   },
@@ -198,7 +213,7 @@ const pantryZh: (typeof pantry)['en'] = {
       },
       {
         title: '智能体',
-        body: '结构化的 JSON 和内置的技能（wscanner skill）教会你的编程智能体分诊与修复，全程不运行 sudo。',
+        body: '结构化的 JSON 和内置的技能（wpantry skill）教会你的编程智能体分诊与修复，全程不运行 sudo。',
       },
       {
         title: '机群与 CI',
@@ -230,7 +245,7 @@ const pantryZh: (typeof pantry)['en'] = {
     {
       question: '为什么叫 Pantry？',
       answer:
-        'Pantry 在英文里是食品储藏柜的意思。检查一遍储藏柜，就知道有什么、什么过期了、什么被召回了。这正是它的工作。命令是 wscanner。',
+        'Pantry 在英文里是食品储藏柜的意思。检查一遍储藏柜，就知道有什么、什么过期了、什么被召回了。这正是它的工作。命令是 wpantry。',
     },
     {
       question: '能在 Windows 上运行吗？',
@@ -240,7 +255,7 @@ const pantryZh: (typeof pantry)['en'] = {
     {
       question: '我的 AI 智能体能用它吗？',
       answer:
-        '可以。wscanner --json 为你的智能体提供结构化的检查结果，wscanner skill 会输出一项技能，教它分诊和修复，并且绝不执行需要 sudo 的步骤。',
+        '可以。wpantry --json 为你的智能体提供结构化的检查结果，wpantry skill 会输出一项技能，教它分诊和修复，并且绝不执行需要 sudo 的步骤。',
     },
   ],
   cta: {

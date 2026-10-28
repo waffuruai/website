@@ -1,6 +1,7 @@
 /*
  * Facts about Pantry, our free, open-source vulnerability scanner. The
- * product is Pantry; the command and the repository are `wscanner`. Copy
+ * product is Pantry, the repository is waffuruai/pantry and the command,
+ * crates and release assets are `wpantry`. Copy
  * lives in `pantry.ts`; nothing here translates. The terminal transcripts
  * follow wscanner's real output format (`python/wscanner/report.py`) with an
  * example machine's findings, and the page captions them as examples.
@@ -9,13 +10,11 @@
  * without pulling in the page's copy.
  */
 
-const repo = 'https://github.com/waffuruai/wscanner';
+const repo = 'https://github.com/waffuruai/pantry';
 
-// TODO(founder): once the first release is signed with packslip, publish its
-// signer fingerprint here and add `--pin <fingerprint>` to the command.
 export const pantryFacts = {
   name: 'Pantry',
-  command: 'wscanner',
+  command: 'wpantry',
   path: '/products/pantry',
   repo,
   releases: `${repo}/releases`,
@@ -23,38 +22,80 @@ export const pantryFacts = {
   packslip: 'https://packslip.dev',
   /** The deep dive this page's "Learn more" points at. */
   post: '/blog/introducing-pantry',
-  license: 'Apache-2.0',
+  license: 'MIT',
   platforms: ['macOS', 'Linux'],
   install: {
-    packslip: 'packslip install github.com/waffuruai/wscanner',
+    mise: 'mise use -g packslip:github.com/waffuruai/pantry',
+    script: `curl -fsSL ${repo}/releases/latest/download/install.sh | sh`,
     verify: [
-      'ASSET=wscanner-universal-apple-darwin  # Linux: wscanner-x86_64-unknown-linux-musl',
-      'gh release download --repo waffuruai/wscanner -p "$ASSET" -p SHA256SUMS',
+      'ASSET=wpantry-universal-apple-darwin  # Linux: wpantry-x86_64-unknown-linux-musl',
+      'gh release download --repo waffuruai/pantry -p "$ASSET" -p SHA256SUMS -p packslip.sigstore.json',
       'grep " $ASSET$" SHA256SUMS | shasum -a 256 -c -',
-      'gh attestation verify "$ASSET" --repo waffuruai/wscanner',
-      'install -m 0755 "$ASSET" ~/.local/bin/wscanner',
+      'packslip verify packslip.sigstore.json --artifact "$ASSET"',
+      'gh attestation verify "$ASSET" --repo waffuruai/pantry',
+      'install -m 0755 "$ASSET" ~/.local/bin/wpantry',
     ].join('\n'),
-    cargo: 'cargo install --locked wscanner-cli',
+  },
+  /**
+   * Where Pantry's answers come from, in the order the page lists them. The
+   * hosts are the ones wscanner contacts (its README, "What leaves the
+   * machine"); GitHub advisories arrive through OSV.
+   */
+  sources: {
+    osv: [{ label: 'OSV.dev', url: 'https://osv.dev' }],
+    ghsa: [
+      {
+        label: 'GitHub Advisory Database',
+        url: 'https://github.com/advisories',
+      },
+    ],
+    kev: [
+      {
+        label: 'CISA Known Exploited Vulnerabilities',
+        url: 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog',
+      },
+    ],
+    eol: [{ label: 'endoflife.date', url: 'https://endoflife.date' }],
+    malicious: [
+      {
+        label: 'OpenSSF malicious packages',
+        url: 'https://github.com/ossf/malicious-packages',
+      },
+    ],
+    vendors: [
+      { label: 'Homebrew', url: 'https://formulae.brew.sh' },
+      { label: 'Chrome', url: 'https://versionhistory.googleapis.com' },
+      { label: 'Firefox', url: 'https://product-details.mozilla.org' },
+      {
+        label: 'PostgreSQL',
+        url: 'https://www.postgresql.org/support/security/',
+      },
+      { label: 'Arch Linux', url: 'https://security.archlinux.org' },
+      {
+        label: 'VS Code Marketplace',
+        url: 'https://marketplace.visualstudio.com',
+      },
+    ],
   },
   /** What to run once it is installed. */
-  firstRun: ['wscanner', 'wscanner --update --dryrun'].join('\n'),
+  firstRun: ['wpantry', 'wpantry --update --dryrun'].join('\n'),
   /** One command per "who uses it" card, in order: people, agents, fleets. */
   uses: [
-    'wscanner --update --dryrun',
-    'wscanner --json --no-input',
-    'wscanner --path . --no-machine --json',
+    'wpantry --update --dryrun',
+    'wpantry --json --no-input',
+    'wpantry --path . --no-machine --json',
   ],
   /** Transcript lines per step. `$ ` is a command, `# ` a comment. */
   transcripts: {
     install: [
-      '$ packslip install github.com/waffuruai/wscanner',
-      '# checks the release signature, then the SHA-256 of the download',
-      '$ wscanner version',
-      'wscanner 0.1.0 (rust, schema 1)',
+      '$ mise use -g packslip:github.com/waffuruai/pantry',
+      '# verifies the signed packslip, then the binary’s digest',
+      '$ wpantry version',
+      'wpantry 0.1.0 (rust, schema 1)',
     ],
     scan: [
-      '$ wscanner',
-      '==> Security scan (~/.cache/wscanner/wscanner.db)',
+      '$ wpantry',
+      '==> Security scan (~/.cache/wpantry/wpantry.db)',
       '  checked 9 git repos, 214 tools, runtimes and packages',
       '  ✗ runtime  node 20.11.0  (/opt/homebrew/bin/node)',
       '      CVE-2024-27983 HIGH  HTTP/2 server crash',
@@ -66,21 +107,22 @@ export const pantryFacts = {
       '✗ 2 thing(s) to update (2 advisories), 1 warning(s).',
     ],
     cache: [
-      '$ wscanner',
+      '$ wpantry',
       '# same day: answers come from the local cache, so it takes seconds',
-      '$ wscanner search "http2" --applicable',
+      '$ wpantry search "http2" --applicable',
       '# full-text search over cached advisories, offline',
-      '$ sqlite3 -readonly ~/.cache/wscanner/wscanner.db .tables',
+      '$ sqlite3 -readonly ~/.cache/wpantry/wpantry.db .tables',
       'casks  eol  findings  kev  malicious  meta  queries  runs  vulns  …',
     ],
     fix: [
-      '$ wscanner --update --dryrun',
+      '$ wpantry --update --dryrun',
       '==> Update plan (dry run: nothing is changed)',
       '  would run: brew upgrade node@20',
       '  would run: python3 -m pip install --upgrade requests',
       '  Also worth doing (warnings: outdated, or waiting on a vendor):',
       '    • pyenv install 3.13',
-      '$ wscanner --update',
+      '$ wpantry --update',
+      '? Run these 2 updates now? [Y/n] y',
       '✓ nothing with a released fix applies; 1 warning(s) above',
     ],
   },
