@@ -3,8 +3,9 @@ import { cn } from '@/lib/utils';
 
 /**
  * Section opener as on the After Hours page: a serif H2 on the left (accent
- * word allowed) and a short muted intro to its right, wrapping under it on
- * narrow screens.
+ * word allowed) and a short muted intro to its right. On large screens the
+ * two sit in fixed columns, so a long, wrapping title never pushes the intro
+ * underneath; on narrow screens the intro follows the title.
  */
 export function SectionHeading({
   title,
@@ -23,7 +24,9 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        'flex flex-wrap items-end justify-between gap-x-12 gap-y-6',
+        'flex flex-col gap-6',
+        (intro || children) &&
+          'lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] lg:items-end lg:gap-x-16',
         className,
       )}
     >
