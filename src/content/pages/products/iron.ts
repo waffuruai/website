@@ -127,7 +127,7 @@ export const iron: Localized<ProductCopy> = {
     stack: {
       heading: 'Works with the rest of the *stack*.',
       intro:
-        'Iron stands on its own. Add Butter to run models on the kernels, Waffle to watch the GPUs they run on, or Syrup to give your AI a memory of what you were working on.',
+        'Iron stands on its own. Add Butter to run models on the kernels, Syrup to watch the GPUs they run on, or Whisk to give your AI a memory of what you were working on.',
     },
     faq: [
       {

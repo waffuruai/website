@@ -52,12 +52,12 @@ const homeZh: (typeof home)['en'] = {
       layers: [
         {
           role: '控制',
-          name: 'Waffle',
+          name: 'Syrup',
           line: '看清每一块 GPU 和其上运行的每个引擎。',
         },
         {
           role: '记忆',
-          name: 'Syrup',
+          name: 'Whisk',
           line: '来自你自己笔记和代码的上下文，附带引用。',
         },
         {

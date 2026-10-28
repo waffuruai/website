@@ -21,7 +21,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
   },
   hero: {
     title: 'Écrivez le kernel une fois. Livrez-le sur quatre *backends*.',
-    lede: 'Iron compile une définition de kernel vers Metal, CUDA, ROCm et Vulkan. Butter sert des modèles par-dessus sans Python, et Syrup donne une mémoire à vos agents.',
+    lede: 'Iron compile une définition de kernel vers Metal, CUDA, ROCm et Vulkan. Butter sert des modèles par-dessus sans Python, et Whisk donne une mémoire à vos agents.',
   },
   problem: {
     title: 'Chaque backend est une *réécriture*.',
@@ -52,7 +52,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: 'Donnez à vos agents une mémoire qui reste locale.',
-        body: 'Syrup compresse les embeddings avec TurboQuant+ et exécute une recherche lexicale plus vectorielle sur la machine. Les résultats reviennent avec leurs citations via MCP, et les agents peuvent reprendre là où ils s’étaient arrêtés.',
+        body: 'Whisk compresse les embeddings avec TurboQuant+ et exécute une recherche lexicale plus vectorielle sur la machine. Les résultats reviennent avec leurs citations via MCP, et les agents peuvent reprendre là où ils s’étaient arrêtés.',
       },
     ],
   },
@@ -75,7 +75,7 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
   stackFit: {
     title: 'Comment la stack *s’assemble*.',
     intro:
-      'Iron et Butter forment le cœur. Syrup et Waffle complètent l’ensemble.',
+      'Iron et Butter forment le cœur. Whisk et Syrup complètent l’ensemble.',
     items: [
       {
         product: 'iron',
@@ -88,12 +88,12 @@ const aiCompaniesFr: (typeof aiCompanies)['en'] = {
         body: 'Charge safetensors, MLX, JANG et GGUF sans conversion, plus des checkpoints quantifiés de 2 à 8 bits, des modèles hybrides et MoE, un cache KV quantifié, du décodage spéculatif et LoRA. Des modèles de texte, de vision, de reconnaissance vocale, de synthèse vocale et omni se trouvent derrière une API compatible OpenAI.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'De la mémoire pour les agents.',
         body: 'Recherche locale sur les notes et le code : embeddings compressés avec TurboQuant+, recherche lexicale plus vectorielle et résultats cités via MCP.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Chaque moteur sur chaque GPU, en une seule vue.',
         body: 'Faites tourner Butter à côté de vLLM, SGLang ou llama.cpp et voyez-les côte à côte. Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée.',
       },

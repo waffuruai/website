@@ -64,7 +64,7 @@ const brandEs: (typeof brand)['en'] = {
         body: 'Con mayúscula inicial en el texto corrido y en los titulares. La forma en minúsculas “waffuru” pertenece solo al wordmark.',
       },
       {
-        term: 'Iron, Butter, Waffle, Syrup',
+        term: 'Iron, Butter, Syrup, Whisk',
         body: 'Los cuatro productos, siempre con mayúscula inicial y nunca traducidos, en todos los idiomas.',
       },
       {
@@ -73,7 +73,7 @@ const brandEs: (typeof brand)['en'] = {
       },
       {
         term: 'La marca del waffle',
-        body: 'Llama a la imagen “la marca del waffle”. Waffle, con W mayúscula, es nuestro producto de plano de control de GPU.',
+        body: 'Llama a la imagen “la marca del waffle”.',
       },
     ],
     origin:
@@ -264,12 +264,12 @@ const brandEs: (typeof brand)['en'] = {
       {
         key: 'leds',
         name: 'LED',
-        description: 'Un rack de luces de estado. El motivo de Waffle.',
+        description: 'Un rack de luces de estado. El motivo de Syrup.',
       },
       {
         key: 'drip',
         name: 'Goteo',
-        description: 'Una gota que baja por una línea. El motivo de Syrup.',
+        description: 'Una gota que baja por una línea. El motivo de Whisk.',
       },
     ],
   },
@@ -280,7 +280,7 @@ const brandEs: (typeof brand)['en'] = {
     dontLabel: 'No',
     dos: [
       'Escribir Waffuru con W mayúscula. Usar “waffuru” en minúsculas solo en el wordmark.',
-      'Escribir Iron, Butter, Waffle y Syrup tal como aparecen, en todos los idiomas.',
+      'Escribir Iron, Butter, Syrup y Whisk tal como aparecen, en todos los idiomas.',
       'Dar espacio a la marca del waffle, sobre un fondo oscuro o claro con contraste suficiente.',
       'Describir nuestros productos como son: privados por ahora, con acceso anticipado bajo solicitud.',
       'Describir el soporte de hardware como es: primero Metal, después CUDA; ROCm y Vulkan funcionan, pero aún sin afinar.',

@@ -63,13 +63,13 @@ const fr: Dictionary = {
         label: 'Butter',
         description: 'Servir des modèles sans Python.',
       },
-      waffle: {
-        label: 'Waffle',
+      syrup: {
+        label: 'Syrup',
         description:
           'Chaque GPU et chaque moteur qui y tourne, en un coup d’œil.',
       },
-      syrup: {
-        label: 'Syrup',
+      whisk: {
+        label: 'Whisk',
         description: 'Votre IA se souvient de ce sur quoi vous travailliez.',
       },
       pantry: {

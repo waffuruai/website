@@ -52,12 +52,12 @@ const homeKo: (typeof home)['en'] = {
       layers: [
         {
           role: '컨트롤',
-          name: 'Waffle',
+          name: 'Syrup',
           line: '모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에.',
         },
         {
           role: '메모리',
-          name: 'Syrup',
+          name: 'Whisk',
           line: '내 노트와 코드에서 가져온 컨텍스트를 출처와 함께.',
         },
         {

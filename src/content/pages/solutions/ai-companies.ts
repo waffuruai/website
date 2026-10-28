@@ -36,7 +36,7 @@ export const aiCompanies: Localized<SolutionPage> = {
     },
     hero: {
       title: 'Write the kernel once. Ship it to four *backends*.',
-      lede: 'Iron compiles one kernel definition to Metal, CUDA, ROCm and Vulkan. Butter serves models on top without Python, and Syrup gives your agents a memory.',
+      lede: 'Iron compiles one kernel definition to Metal, CUDA, ROCm and Vulkan. Butter serves models on top without Python, and Whisk gives your agents a memory.',
     },
     problem: {
       title: 'Every backend is a *rewrite*.',
@@ -66,7 +66,7 @@ export const aiCompanies: Localized<SolutionPage> = {
         {
           tag: 'control',
           title: 'Give your agents a memory that stays local.',
-          body: 'Syrup compresses embeddings with TurboQuant+ and runs lexical plus vector search on the machine. Results come back with citations over MCP, so agents can pick up where they left off.',
+          body: 'Whisk compresses embeddings with TurboQuant+ and runs lexical plus vector search on the machine. Results come back with citations over MCP, so agents can pick up where they left off.',
         },
       ],
     },
@@ -88,7 +88,7 @@ export const aiCompanies: Localized<SolutionPage> = {
     },
     stackFit: {
       title: 'How the stack *fits*.',
-      intro: 'Iron and Butter are the core. Syrup and Waffle round it out.',
+      intro: 'Iron and Butter are the core. Whisk and Syrup round it out.',
       items: [
         {
           product: 'iron',
@@ -101,12 +101,12 @@ export const aiCompanies: Localized<SolutionPage> = {
           body: 'Loads safetensors, MLX, JANG and GGUF with no conversion, plus 2- to 8-bit quantized checkpoints, hybrid and MoE models, a quantized KV cache, speculative decoding and LoRA. Text, vision, speech-to-text, text-to-speech and omni models sit behind an OpenAI-compatible API.',
         },
         {
-          product: 'syrup',
+          product: 'whisk',
           need: 'Memory for agents.',
           body: 'Local retrieval over notes and code: embeddings compressed with TurboQuant+, lexical plus vector search, and cited results over MCP.',
         },
         {
-          product: 'waffle',
+          product: 'syrup',
           need: 'Every engine on every GPU, in one view.',
           body: 'Run Butter next to vLLM, SGLang or llama.cpp and see them side by side. A small Rust sidecar on each host reports signed telemetry.',
         },

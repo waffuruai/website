@@ -32,19 +32,19 @@ const solutionsSharedFr: (typeof solutionsShared)['en'] = {
       linkLabel: 'Découvrir Butter',
       href: '/products/butter',
     },
-    waffle: {
+    syrup: {
       index: '03',
       role: 'Plan de contrôle',
-      name: 'Waffle',
-      linkLabel: 'Découvrir Waffle',
-      href: '/products/waffle',
-    },
-    syrup: {
-      index: '04',
-      role: 'Mémoire',
       name: 'Syrup',
       linkLabel: 'Découvrir Syrup',
       href: '/products/syrup',
+    },
+    whisk: {
+      index: '04',
+      role: 'Mémoire',
+      name: 'Whisk',
+      linkLabel: 'Découvrir Whisk',
+      href: '/products/whisk',
     },
   },
   hardware: {

@@ -20,7 +20,7 @@ const teamCopyZh: (typeof teamCopy)['en'] = {
   'tom-turney': {
     role: '首席研究官',
     background: 'TurboQuant+ 背后的 AI 研究员。前 Google 技术主管经理。',
-    bio: 'Tom 是 TurboQuant+ 背后的 AI 研究员，Syrup 正是用这项压缩技术缩小嵌入向量，他在 Waffuru 负责研究。此前，他是 Google 的技术主管经理（tech lead manager）。',
+    bio: 'Tom 是 TurboQuant+ 背后的 AI 研究员，Whisk 正是用这项压缩技术缩小嵌入向量，他在 Waffuru 负责研究。此前，他是 Google 的技术主管经理（tech lead manager）。',
   },
   'cory-smith': {
     role: '首席技术官',

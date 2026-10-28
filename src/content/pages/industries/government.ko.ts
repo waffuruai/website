@@ -42,12 +42,12 @@ const governmentKo: (typeof government)['en'] = {
       {
         tag: 'cost',
         title: '예산이 어디에 쓰이는지 보여 주세요.',
-        body: '예산 부서가 요구하는 숫자는 워크로드당 비용이지만, 이를 볼 수 있는 곳은 거의 없습니다. Waffle은 모든 GPU와 그 위의 모든 엔진, 놀고 있는 자원을 보여 주므로, 지출을 그것이 운영하는 서비스와 연결할 수 있습니다.',
+        body: '예산 부서가 요구하는 숫자는 워크로드당 비용이지만, 이를 볼 수 있는 곳은 거의 없습니다. Syrup은 모든 GPU와 그 위의 모든 엔진, 놀고 있는 자원을 보여 주므로, 지출을 그것이 운영하는 서비스와 연결할 수 있습니다.',
       },
       {
         tag: 'control',
         title: '하드웨어는 사되, 종속은 사지 마세요.',
-        body: '하나의 Iron 커널 정의가 Metal, CUDA, HIP/ROCm, Vulkan으로 변환되고, Waffle은 Butter, vLLM, SGLang, llama.cpp와 함께 동작합니다. GPU 벤더나 엔진을 바꾸는 일은 재작성이 아니라 결정이 됩니다.',
+        body: '하나의 Iron 커널 정의가 Metal, CUDA, HIP/ROCm, Vulkan으로 변환되고, Syrup은 Butter, vLLM, SGLang, llama.cpp와 함께 동작합니다. GPU 벤더나 엔진을 바꾸는 일은 재작성이 아니라 결정이 됩니다.',
       },
       {
         tag: 'inference',
@@ -59,7 +59,7 @@ const governmentKo: (typeof government)['en'] = {
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
     intro:
-      'Butter는 업무를 관할권 안에 두고, Waffle은 그 내역을 파악하며, Syrup은 자체 문서에서 답하고, Iron은 벤더를 바꿔 쓸 수 있게 합니다.',
+      'Butter는 업무를 관할권 안에 두고, Syrup은 그 내역을 파악하며, Whisk는 자체 문서에서 답하고, Iron은 벤더를 바꿔 쓸 수 있게 합니다.',
     items: [
       {
         product: 'butter',
@@ -67,12 +67,12 @@ const governmentKo: (typeof government)['en'] = {
         body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. 기존 도구는 SDK가 아니라 주소만 바꾸면 됩니다.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '모든 GPU를 하나의 장부로.',
         body: 'Butter든 vLLM, SGLang, llama.cpp든 모든 GPU와 모든 엔진을 하나의 화면으로 봅니다. 호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '자체 문서에서 나온 답을 출처와 함께.',
         body: '내부 노트, 문서, 코드에 대한 로컬 검색. 검색은 어휘 검색과 벡터 검색을 함께 쓰고, 결과는 MCP를 통해 출처 인용과 함께 돌아옵니다.',
       },
@@ -97,7 +97,7 @@ const governmentKo: (typeof government)['en'] = {
     {
       question: '우리 인프라 밖으로 나가는 데이터가 있나요?',
       answer:
-        '추론 데이터는 기본적으로 나가지 않습니다. 직접 동의하지 않는 한 데이터는 그 컴퓨터에 남기 때문입니다. Waffle 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 고객 환경에서 정확히 무엇인지 함께 짚어 드리겠습니다.',
+        '추론 데이터는 기본적으로 나가지 않습니다. 직접 동의하지 않는 한 데이터는 그 컴퓨터에 남기 때문입니다. Syrup 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 고객 환경에서 정확히 무엇인지 함께 짚어 드리겠습니다.',
     },
     {
       question: '오프라인으로 운영할 수 있나요?',
@@ -112,7 +112,7 @@ const governmentKo: (typeof government)['en'] = {
     {
       question: '종속을 어떻게 피하나요?',
       answer:
-        'Waffle은 Butter, vLLM, SGLang, llama.cpp와 함께 동작하므로 특정 엔진에 묶이지 않습니다. Iron 커널은 Metal, CUDA, HIP/ROCm, Vulkan으로 변환되므로 특정 GPU 벤더에 묶이지 않습니다.',
+        'Syrup은 Butter, vLLM, SGLang, llama.cpp와 함께 동작하므로 특정 엔진에 묶이지 않습니다. Iron 커널은 Metal, CUDA, HIP/ROCm, Vulkan으로 변환되므로 특정 GPU 벤더에 묶이지 않습니다.',
     },
     {
       question: '어떤 하드웨어를 지원하나요?',

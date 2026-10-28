@@ -23,7 +23,7 @@ const teamCopyFr: (typeof teamCopy)['en'] = {
     role: 'Directeur de la recherche',
     background:
       'Chercheur en IA derrière TurboQuant+. Ancien tech lead manager chez Google.',
-    bio: 'Tom est le chercheur en IA derrière TurboQuant+, le travail de compression que Syrup utilise pour réduire la taille des embeddings, et il dirige la recherche chez Waffuru. Auparavant, il était tech lead manager chez Google.',
+    bio: 'Tom est le chercheur en IA derrière TurboQuant+, le travail de compression que Whisk utilise pour réduire la taille des embeddings, et il dirige la recherche chez Waffuru. Auparavant, il était tech lead manager chez Google.',
   },
   'cory-smith': {
     role: 'Directeur technique (CTO)',

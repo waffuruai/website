@@ -14,7 +14,7 @@ import cloudInfrastructureKo from './cloud-infrastructure.ko';
  * one GPU vendor. No utilisation percentages, no revenue or margin claims,
  * no comparisons with other engines.
  *
- * Cost per tenant: the founder believes Waffle shows it today and it is on
+ * Cost per tenant: the founder believes Syrup shows it today and it is on
  * the roadmap regardless (2026-10-27), so the page says so.
  *
  * TODO(founder): before Industries launches, confirm (1) cost per tenant is
@@ -59,7 +59,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
         {
           tag: 'cost',
           title: 'Know what every GPU is doing.',
-          body: 'Waffle gives one view across hosts, GPUs, engines and tenants, whether the engine is Butter, vLLM, SGLang or llama.cpp. Idle and mismatched capacity shows up on your screen before it shows up in the margin.',
+          body: 'Syrup gives one view across hosts, GPUs, engines and tenants, whether the engine is Butter, vLLM, SGLang or llama.cpp. Idle and mismatched capacity shows up on your screen before it shows up in the margin.',
         },
         {
           tag: 'control',
@@ -81,12 +81,12 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
     stackFit: {
       title: 'How the stack *fits*.',
       intro:
-        'Waffle is where you start. Butter and Iron go after the output underneath.',
+        'Syrup is where you start. Butter and Iron go after the output underneath.',
       items: [
         {
-          product: 'waffle',
+          product: 'syrup',
           need: 'Every GPU, engine and tenant in one view.',
-          body: 'A small Rust sidecar on each host reports signed telemetry, and Waffle breaks cost down per tenant. It works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so tenants keep the engines they chose.',
+          body: 'A small Rust sidecar on each host reports signed telemetry, and Syrup breaks cost down per tenant. It works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so tenants keep the engines they chose.',
         },
         {
           product: 'butter',
@@ -102,7 +102,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
     },
     whereWeAre: {
       title: 'Where we *are*.',
-      lede: 'The part that matters most to a GPU cloud comes first: datacenter GPUs are in progress. Waffle, Butter and Iron are in early access and closed source for now.',
+      lede: 'The part that matters most to a GPU cloud comes first: datacenter GPUs are in progress. Syrup, Butter and Iron are in early access and closed source for now.',
       notes: [
         'CUDA is in production on RTX and DGX Spark. Tell us your datacenter GPU generations, because the fleets we hear about shape what comes first.',
         'ROCm and Vulkan run today but are not tuned yet.',
@@ -113,7 +113,7 @@ export const cloudInfrastructure: Localized<IndustryPage> = {
       {
         question: 'Do our tenants have to switch engines?',
         answer:
-          'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers. Tenants keep what they run, and you get one view across all of it.',
+          'No. Syrup works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers. Tenants keep what they run, and you get one view across all of it.',
       },
       {
         question: 'Which GPUs does it support?',

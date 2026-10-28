@@ -121,7 +121,7 @@ const ironFr: (typeof iron)['en'] = {
   stack: {
     heading: 'Compatible avec le reste de la *stack*.',
     intro:
-      'Iron se suffit à lui-même. Ajoutez Butter pour exécuter des modèles sur les kernels, Waffle pour surveiller les GPU sur lesquels ils tournent, ou Syrup pour donner à votre IA la mémoire de ce sur quoi vous travailliez.',
+      'Iron se suffit à lui-même. Ajoutez Butter pour exécuter des modèles sur les kernels, Syrup pour surveiller les GPU sur lesquels ils tournent, ou Whisk pour donner à votre IA la mémoire de ce sur quoi vous travailliez.',
   },
   faq: [
     {

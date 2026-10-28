@@ -157,7 +157,7 @@ export const brand: Localized<BrandContent> = {
           body: 'Capitalized in running text and headings. The lowercase “waffuru” belongs to the wordmark alone.',
         },
         {
-          term: 'Iron, Butter, Waffle, Syrup',
+          term: 'Iron, Butter, Syrup, Whisk',
           body: 'The four products, always capitalized and never translated, in every language.',
         },
         {
@@ -166,7 +166,7 @@ export const brand: Localized<BrandContent> = {
         },
         {
           term: 'The waffle mark',
-          body: 'Call the picture “the waffle mark”. Waffle with a capital W is our GPU control-plane product.',
+          body: 'Call the picture “the waffle mark”.',
         },
       ],
       origin:
@@ -355,12 +355,12 @@ export const brand: Localized<BrandContent> = {
         {
           key: 'leds',
           name: 'LEDs',
-          description: 'A rack of status lights. Waffle’s motif.',
+          description: 'A rack of status lights. Syrup’s motif.',
         },
         {
           key: 'drip',
           name: 'Drip',
-          description: 'A drop running down a line. Syrup’s motif.',
+          description: 'A drop running down a line. Whisk’s motif.',
         },
       ],
     },
@@ -371,7 +371,7 @@ export const brand: Localized<BrandContent> = {
       dontLabel: 'Don’t',
       dos: [
         'Write Waffuru with a capital W. Use the lowercase “waffuru” only in the wordmark.',
-        'Write Iron, Butter, Waffle and Syrup as shown, in every language.',
+        'Write Iron, Butter, Syrup and Whisk as shown, in every language.',
         'Give the waffle mark room, on a dark or light ground with enough contrast.',
         'Describe our products as they are: private for now, with early access on request.',
         'Describe hardware support as it is: Metal first, CUDA second, ROCm and Vulkan running but not yet tuned.',

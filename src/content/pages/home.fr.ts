@@ -52,12 +52,12 @@ const homeFr: (typeof home)['en'] = {
       layers: [
         {
           role: 'Contrôle',
-          name: 'Waffle',
+          name: 'Syrup',
           line: 'Voir chaque GPU et chaque moteur qui y tourne.',
         },
         {
           role: 'Mémoire',
-          name: 'Syrup',
+          name: 'Whisk',
           line: 'Du contexte tiré de vos notes et de votre code, avec citations.',
         },
         {

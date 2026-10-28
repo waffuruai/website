@@ -4,7 +4,7 @@ const productsOverviewJa: (typeof productsOverview)['en'] = {
   seo: {
     title: 'Waffuru スタック：カーネルから記憶まで',
     description:
-      'Iron がカーネルをコンパイル、Butter がモデルを実行、Waffle が GPU を見守り、Syrup が記憶。1 つだけでも、4 つ全部でも使えます。',
+      'Iron がカーネルをコンパイル、Butter がモデルを実行、Syrup が GPU を見守り、Whisk が記憶。1 つだけでも、4 つ全部でも使えます。',
     keywords: [
       'AI 推論スタック',
       'GPU カーネルからサービングまで',
@@ -14,12 +14,12 @@ const productsOverviewJa: (typeof productsOverview)['en'] = {
   hero: {
     label: '4 つの製品',
     title: 'Waffuru *スタック*',
-    lede: 'Iron がカーネルをコンパイルし、Butter がその上でモデルを動かします。Waffle が GPU を見守り、Syrup が取り組んでいたことを覚えています。4 つとも、お手元のハードウェアで動くようにつくっています。',
+    lede: 'Iron がカーネルをコンパイルし、Butter がその上でモデルを動かします。Syrup が GPU を見守り、Whisk が取り組んでいたことを覚えています。4 つとも、お手元のハードウェアで動くようにつくっています。',
   },
   layers: {
     heading: '4 つのレイヤーの*かみ合い方*',
     intro:
-      'ハードウェアに近いほうから順に、番号を振っています。いちばん上が Syrup、ハードウェアに接するのが Iron で、各レイヤーに専用のページがあります。',
+      'ハードウェアに近いほうから順に、番号を振っています。いちばん上が Whisk、ハードウェアに接するのが Iron で、各レイヤーに専用のページがあります。',
     metal: {
       label: 'ハードウェア層',
       backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
@@ -35,13 +35,13 @@ const productsOverviewJa: (typeof productsOverview)['en'] = {
       iron: 'GPU カーネルを一度書けば、Metal、CUDA、ROCm、Vulkan で動かせます。',
       butter:
         'OpenAI 互換 API でモデルを提供できます。間に Python は入りません。',
-      waffle:
-        'どのエンジンであっても、すべての GPU と、その上で動くすべてのエンジンを見渡せます。',
       syrup:
+        'どのエンジンであっても、すべての GPU と、その上で動くすべてのエンジンを見渡せます。',
+      whisk:
         'ノートとコードについての、ローカルで出典付きの記憶を、あなたの AI に持たせられます。',
     },
     allLabel: '組み合わせて',
-    all: 'Butter は Iron がコンパイルしたカーネルの上でモデルを動かし、Waffle はその下で動く GPU とエンジンを見守り、Syrup は取り組んでいたことを覚えています。足したレイヤーは、その下のレイヤーの上に積み重なります。',
+    all: 'Butter は Iron がコンパイルしたカーネルの上でモデルを動かし、Syrup はその下で動く GPU とエンジンを見守り、Whisk は取り組んでいたことを覚えています。足したレイヤーは、その下のレイヤーの上に積み重なります。',
   },
   audience: {
     heading: '*誰*のためのものか',

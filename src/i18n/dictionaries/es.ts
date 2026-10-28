@@ -63,12 +63,12 @@ const es: Dictionary = {
         label: 'Butter',
         description: 'Servir modelos sin Python.',
       },
-      waffle: {
-        label: 'Waffle',
-        description: 'Ve cada GPU y cada motor que corre en ella.',
-      },
       syrup: {
         label: 'Syrup',
+        description: 'Ve cada GPU y cada motor que corre en ella.',
+      },
+      whisk: {
+        label: 'Whisk',
         description: 'Tu IA recuerda en qué estabas trabajando.',
       },
       pantry: {

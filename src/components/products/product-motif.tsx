@@ -3,8 +3,8 @@ import { cn } from '@/lib/utils';
 
 /*
  * The four After Hours motifs, one per product, built from the classes in
- * motifs.css: stamps (Iron), a melting pat (Butter), LEDs (Waffle) and a
- * drip (Syrup). `sm` matches the stack rows on the home page; `lg` is the
+ * motifs.css: stamps (Iron), a melting pat (Butter), LEDs (Syrup) and a
+ * drip (Whisk). `sm` matches the stack rows on the home page; `lg` is the
  * larger version for a product page's hero. Decorative and CSS-only.
  */
 export type MotifSize = 'sm' | 'lg';
@@ -81,7 +81,7 @@ function ButterMotif({ size, className }: MotifProps) {
 /** The home page's LED stagger: a prime-ish walk through the 4s cycle. */
 const ledDelay = (i: number) => `${(((i * 14) % 23) * 0.17).toFixed(2)}s`;
 
-function WaffleMotif({ size, className }: MotifProps) {
+function SyrupMotif({ size, className }: MotifProps) {
   if (size === 'sm') {
     return (
       <div className={cn('grid grid-cols-8 gap-2', className)}>
@@ -121,7 +121,7 @@ function WaffleMotif({ size, className }: MotifProps) {
   );
 }
 
-function SyrupMotif({ size, className }: MotifProps) {
+function WhiskMotif({ size, className }: MotifProps) {
   if (size === 'sm') {
     return (
       <div className={cn('relative h-[120px] w-6', className)}>
@@ -145,8 +145,8 @@ function SyrupMotif({ size, className }: MotifProps) {
 const MOTIFS: Record<ProductSlug, (props: MotifProps) => React.ReactElement> = {
   iron: IronMotif,
   butter: ButterMotif,
-  waffle: WaffleMotif,
   syrup: SyrupMotif,
+  whisk: WhiskMotif,
 };
 
 /** The motif for a product. Always `aria-hidden`: it carries no information. */

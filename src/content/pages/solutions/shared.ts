@@ -46,19 +46,19 @@ export const solutionsShared: Localized<SolutionsShared> = {
         linkLabel: 'Explore Butter',
         href: '/products/butter',
       },
-      waffle: {
+      syrup: {
         index: '03',
         role: 'Control plane',
-        name: 'Waffle',
-        linkLabel: 'Explore Waffle',
-        href: '/products/waffle',
-      },
-      syrup: {
-        index: '04',
-        role: 'Memory',
         name: 'Syrup',
         linkLabel: 'Explore Syrup',
         href: '/products/syrup',
+      },
+      whisk: {
+        index: '04',
+        role: 'Memory',
+        name: 'Whisk',
+        linkLabel: 'Explore Whisk',
+        href: '/products/whisk',
       },
     },
     hardware: {

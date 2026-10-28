@@ -44,7 +44,7 @@ const financialServicesFr: (typeof financialServices)['en'] = {
       {
         tag: 'cost',
         title: 'Chiffrez chaque charge de travail.',
-        body: 'Les dollars par charge de travail, c’est le chiffre que demande la finance, et presque personne ne peut le voir. Waffle montre quels GPU sont occupés, quels moteurs y tournent et lesquels sont inactifs, pour que la dépense se rattache au travail effectué.',
+        body: 'Les dollars par charge de travail, c’est le chiffre que demande la finance, et presque personne ne peut le voir. Syrup montre quels GPU sont occupés, quels moteurs y tournent et lesquels sont inactifs, pour que la dépense se rattache au travail effectué.',
       },
       {
         tag: 'inference',
@@ -54,14 +54,14 @@ const financialServicesFr: (typeof financialServices)['en'] = {
       {
         tag: 'control',
         title: 'Répondez à partir de vos propres analyses, sources à l’appui.',
-        body: 'Syrup exécute la recherche en local sur vos notes, documents et code internes, et chaque réponse revient avec une citation. Un analyste peut vérifier la source au lieu de se fier au résumé.',
+        body: 'Whisk exécute la recherche en local sur vos notes, documents et code internes, et chaque réponse revient avec une citation. Un analyste peut vérifier la source au lieu de se fier au résumé.',
       },
     ],
   },
   stackFit: {
     title: 'Comment la stack *s’assemble*.',
     intro:
-      'Butter garde le travail en interne, Waffle le chiffre, Syrup apporte les sources, et Iron se trouve en dessous.',
+      'Butter garde le travail en interne, Syrup le chiffre, Whisk apporte les sources, et Iron se trouve en dessous.',
     items: [
       {
         product: 'butter',
@@ -69,12 +69,12 @@ const financialServicesFr: (typeof financialServices)['en'] = {
         body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python dans le chemin de serving. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF : un nouveau modèle ne demande aucune chaîne de conversion.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Un coût pour chaque charge de travail.',
         body: 'Chaque GPU et chaque moteur en une seule vue, que ce soit Butter, vLLM, SGLang ou llama.cpp. Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée : les mesures que vous présentez à la finance peuvent être rattachées à l’hôte qui les a envoyées.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'Des réponses avec leur source.',
         body: 'Recherche locale sur vos notes, documents et code internes. La recherche est lexicale plus vectorielle, et les résultats reviennent avec leurs citations via MCP.',
       },
@@ -98,12 +98,12 @@ const financialServicesFr: (typeof financialServices)['en'] = {
     {
       question: 'Les données clients quittent-elles notre réseau ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut, car les données restent sur la machine, sauf si vous choisissez de les partager. Chaque hôte Waffle exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient.',
+        'Les données d’inférence ne sortent pas par défaut, car les données restent sur la machine, sauf si vous choisissez de les partager. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient.',
     },
     {
       question: 'Pouvons-nous voir ce que coûte chaque charge de travail ?',
       answer:
-        'C’est le rôle de Waffle. Il montre chaque GPU et les moteurs qui y tournent, occupés ou inactifs : c’est là que commence un coût par charge de travail. Nous préférons vous le montrer sur votre matériel plutôt que promettre un chiffre.',
+        'C’est le rôle de Syrup. Il montre chaque GPU et les moteurs qui y tournent, occupés ou inactifs : c’est là que commence un coût par charge de travail. Nous préférons vous le montrer sur votre matériel plutôt que promettre un chiffre.',
     },
     {
       question: 'Sur quel matériel cela tourne-t-il aujourd’hui ?',
@@ -118,7 +118,7 @@ const financialServicesFr: (typeof financialServices)['en'] = {
     {
       question: 'Devons-nous remplacer ce que nous utilisons déjà ?',
       answer:
-        'Non. Waffle fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : la visibilité vient d’abord, et les choix de moteur peuvent attendre.',
+        'Non. Syrup fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : la visibilité vient d’abord, et les choix de moteur peuvent attendre.',
     },
   ],
   cta: {

@@ -75,7 +75,7 @@ describe('buildLlmsTxt', () => {
   const text = buildLlmsTxt({
     pages: [
       page('/', 'Waffuru', 'Home.'),
-      page('/products/syrup', 'Syrup'),
+      page('/products/whisk', 'Whisk'),
       page(
         '/products/iron',
         'Iron',
@@ -120,7 +120,7 @@ describe('buildLlmsTxt', () => {
     expect(products.split('\n').filter((l) => l.startsWith('- '))).toEqual([
       '- [Products](https://waffuru.ai/products.md): About Products.',
       '- [Iron](https://waffuru.ai/products/iron.md): One kernel definition, four backends.',
-      '- [Syrup](https://waffuru.ai/products/syrup.md): About Syrup.',
+      '- [Whisk](https://waffuru.ai/products/whisk.md): About Whisk.',
     ]);
     expect(text).not.toContain('(https://waffuru.ai/index.md)');
     expect(text).toContain('[Zebra](https://waffuru.ai/zebra.md)');

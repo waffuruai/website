@@ -4,7 +4,7 @@ const productsOverviewEs: (typeof productsOverview)['en'] = {
   seo: {
     title: 'El stack de Waffuru: kernels, serving, control y memoria',
     description:
-      'Iron compila los kernels. Butter ejecuta modelos sobre ellos. Waffle vigila las GPU. Syrup recuerda en qué estabas trabajando. Usa uno, o los cuatro.',
+      'Iron compila los kernels. Butter ejecuta modelos sobre ellos. Syrup vigila las GPU. Whisk recuerda en qué estabas trabajando. Usa uno, o los cuatro.',
     keywords: [
       'stack de inferencia de IA',
       'de kernels de GPU a serving',
@@ -14,12 +14,12 @@ const productsOverviewEs: (typeof productsOverview)['en'] = {
   hero: {
     label: 'Cuatro productos',
     title: 'El *stack* de Waffuru.',
-    lede: 'Iron compila los kernels. Butter ejecuta modelos sobre ellos. Waffle vigila las GPU. Syrup recuerda en qué estabas trabajando. Los cuatro están hechos para funcionar en el hardware que ya tienes.',
+    lede: 'Iron compila los kernels. Butter ejecuta modelos sobre ellos. Syrup vigila las GPU. Whisk recuerda en qué estabas trabajando. Los cuatro están hechos para funcionar en el hardware que ya tienes.',
   },
   layers: {
     heading: 'Cómo *encajan* las cuatro capas.',
     intro:
-      'Numeradas desde el metal hacia arriba. Syrup va arriba, Iron junto al metal, y cada capa tiene su propia página.',
+      'Numeradas desde el metal hacia arriba. Whisk va arriba, Iron junto al metal, y cada capa tiene su propia página.',
     metal: {
       label: 'El metal',
       backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
@@ -35,13 +35,13 @@ const productsOverviewEs: (typeof productsOverview)['en'] = {
       iron: 'Escribe un kernel de GPU una vez y ejecútalo en Metal, CUDA, ROCm y Vulkan.',
       butter:
         'Sirve modelos tras una API compatible con OpenAI, sin Python de por medio.',
-      waffle:
-        'Ve cada GPU y cada motor que corre en ella, sea cual sea el motor.',
       syrup:
+        'Ve cada GPU y cada motor que corre en ella, sea cual sea el motor.',
+      whisk:
         'Dale a tu IA una memoria local, con citas, de tus notas y tu código.',
     },
     allLabel: 'Juntos',
-    all: 'Butter ejecuta modelos sobre los kernels que compila Iron, Waffle vigila las GPU y los motores que hay debajo, y Syrup recuerda en qué estabas trabajando. Cada capa que añades se apoya en las de abajo.',
+    all: 'Butter ejecuta modelos sobre los kernels que compila Iron, Syrup vigila las GPU y los motores que hay debajo, y Whisk recuerda en qué estabas trabajando. Cada capa que añades se apoya en las de abajo.',
   },
   audience: {
     heading: 'Para quién *es*.',

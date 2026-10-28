@@ -65,7 +65,7 @@ const brandKo: (typeof brand)['en'] = {
         body: '본문과 제목에서는 대문자 W로 시작해 씁니다. 소문자 “waffuru”는 워드마크에서만 씁니다.',
       },
       {
-        term: 'Iron, Butter, Waffle, Syrup',
+        term: 'Iron, Butter, Syrup, Whisk',
         body: '네 가지 제품 이름은 어떤 언어에서든 항상 대문자로 시작하며 번역하지 않습니다.',
       },
       {
@@ -74,7 +74,7 @@ const brandKo: (typeof brand)['en'] = {
       },
       {
         term: '와플 마크',
-        body: '그림은 “와플 마크”라고 부릅니다. 영문 Waffle은 우리의 GPU 컨트롤 플레인 제품 이름입니다.',
+        body: '그림은 “와플 마크”라고 부릅니다.',
       },
     ],
     origin:
@@ -263,12 +263,12 @@ const brandKo: (typeof brand)['en'] = {
       {
         key: 'leds',
         name: 'LED',
-        description: '상태 표시등이 늘어선 랙. Waffle의 모티프입니다.',
+        description: '상태 표시등이 늘어선 랙. Syrup의 모티프입니다.',
       },
       {
         key: 'drip',
         name: '드립',
-        description: '선을 따라 흘러내리는 한 방울. Syrup의 모티프입니다.',
+        description: '선을 따라 흘러내리는 한 방울. Whisk의 모티프입니다.',
       },
     ],
   },
@@ -279,7 +279,7 @@ const brandKo: (typeof brand)['en'] = {
     dontLabel: '이렇게는 안 됩니다',
     dos: [
       'Waffuru는 대문자 W로 시작해 씁니다. 소문자 “waffuru”는 워드마크에서만 씁니다.',
-      'Iron, Butter, Waffle, Syrup은 어떤 언어에서든 표기 그대로 씁니다.',
+      'Iron, Butter, Syrup, Whisk는 어떤 언어에서든 표기 그대로 씁니다.',
       '와플 마크 주위에 여백을 두고, 대비가 충분한 어둡거나 밝은 바탕 위에 놓습니다.',
       '제품은 있는 그대로 설명합니다. 현재는 비공개이며, 요청하시면 얼리 액세스를 제공합니다.',
       '하드웨어 지원도 있는 그대로 설명합니다. Metal이 우선, CUDA가 그다음이며, ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',

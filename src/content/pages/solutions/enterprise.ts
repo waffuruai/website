@@ -13,7 +13,7 @@ import enterpriseKo from './enterprise.ko';
  * so. Do not claim certifications, SSO, audit logging or air-gap support
  * until a human confirms them.
  *
- * TODO(founder): confirm (1) exactly what Waffle's signed telemetry contains
+ * TODO(founder): confirm (1) exactly what Syrup's signed telemetry contains
  * and where the control plane runs (self-hosted or hosted), so the "what
  * leaves our network" answer can be specific; (2) any compliance or
  * certification facts we may state.
@@ -61,7 +61,7 @@ export const enterprise: Localized<SolutionPage> = {
         {
           tag: 'cost',
           title: 'See every GPU and every engine in one place.',
-          body: 'Waffle shows which GPUs are busy, which engines run on them and which sit idle, whether the engine is Butter, vLLM, SGLang or llama.cpp. That is the starting point for deciding what to consolidate, retire or buy.',
+          body: 'Syrup shows which GPUs are busy, which engines run on them and which sit idle, whether the engine is Butter, vLLM, SGLang or llama.cpp. That is the starting point for deciding what to consolidate, retire or buy.',
         },
         {
           tag: 'inference',
@@ -71,14 +71,14 @@ export const enterprise: Localized<SolutionPage> = {
         {
           tag: 'control',
           title: 'Point existing apps at it without a rewrite.',
-          body: 'Butter’s OpenAI-compatible API supports streaming and tool calling, so internal tools change an address, not an SDK. Nothing locks you to one engine, because Waffle works alongside vLLM, SGLang and llama.cpp.',
+          body: 'Butter’s OpenAI-compatible API supports streaming and tool calling, so internal tools change an address, not an SDK. Nothing locks you to one engine, because Syrup works alongside vLLM, SGLang and llama.cpp.',
         },
       ],
     },
     stackFit: {
       title: 'How the stack *fits*.',
       intro:
-        'Butter serves, Waffle watches, Syrup retrieves, and Iron sits underneath all three.',
+        'Butter serves, Syrup watches, Whisk retrieves, and Iron sits underneath all three.',
       items: [
         {
           product: 'butter',
@@ -86,12 +86,12 @@ export const enterprise: Localized<SolutionPage> = {
           body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so there is no conversion pipeline between a new model and your servers.',
         },
         {
-          product: 'waffle',
+          product: 'syrup',
           need: 'One view of every GPU and every engine.',
-          body: 'A small Rust sidecar on each host reports signed telemetry. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so adopting it does not mean replacing what already runs.',
+          body: 'A small Rust sidecar on each host reports signed telemetry. Syrup works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so adopting it does not mean replacing what already runs.',
         },
         {
-          product: 'syrup',
+          product: 'whisk',
           need: 'Answers from your own sources, with citations.',
           body: 'Local retrieval over internal notes and code. Search is lexical plus vector, and results come back with citations over MCP.',
         },
@@ -125,12 +125,12 @@ export const enterprise: Localized<SolutionPage> = {
       {
         question: 'Do we have to replace the serving stack we already run?',
         answer:
-          'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so you can get visibility first and decide about engines later.',
+          'No. Syrup works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so you can get visibility first and decide about engines later.',
       },
       {
         question: 'What leaves our network?',
         answer:
-          'Inference data does not leave by default, because a user’s data stays on their machine unless they opt in. Each Waffle host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
+          'Inference data does not leave by default, because a user’s data stays on their machine unless they opt in. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
       },
       {
         question: 'How do we evaluate it?',

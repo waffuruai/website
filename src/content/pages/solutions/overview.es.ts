@@ -30,7 +30,7 @@ const solutionsOverviewEs: (typeof solutionsOverview)['en'] = {
         points: [
           'Ejecuta en el hardware que ya tienes en lugar de alquilar',
           'Los modelos cuantizados hacen caber más en la memoria disponible',
-          'Waffle muestra dónde hay capacidad ociosa',
+          'Syrup muestra dónde hay capacidad ociosa',
         ],
       },
       {
@@ -49,7 +49,7 @@ const solutionsOverviewEs: (typeof solutionsOverview)['en'] = {
         body: 'Local-first: tus datos se quedan donde están a menos que tú lo autorices, ya sea en una laptop, en tus instalaciones o en tu propia nube.',
         points: [
           'Serving compatible con OpenAI, para que tus apps sigan funcionando',
-          'Waffle funciona con vLLM, SGLang y llama.cpp',
+          'Syrup funciona con vLLM, SGLang y llama.cpp',
           'Sin dependencia de un solo motor ni de un solo proveedor',
         ],
       },

@@ -42,7 +42,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
       {
         tag: 'cost',
         title: 'Voyez chaque GPU et chaque moteur au même endroit.',
-        body: 'Waffle montre quels GPU sont occupés, quels moteurs y tournent et lesquels sont inactifs, que le moteur soit Butter, vLLM, SGLang ou llama.cpp. C’est le point de départ pour décider quoi consolider, retirer ou acheter.',
+        body: 'Syrup montre quels GPU sont occupés, quels moteurs y tournent et lesquels sont inactifs, que le moteur soit Butter, vLLM, SGLang ou llama.cpp. C’est le point de départ pour décider quoi consolider, retirer ou acheter.',
       },
       {
         tag: 'inference',
@@ -52,14 +52,14 @@ const enterpriseFr: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: 'Branchez vos applications existantes sans les réécrire.',
-        body: 'L’API compatible OpenAI de Butter prend en charge le streaming et l’appel d’outils : vos outils internes changent d’adresse, pas de SDK. Rien ne vous enferme dans un moteur, car Waffle fonctionne aux côtés de vLLM, SGLang et llama.cpp.',
+        body: 'L’API compatible OpenAI de Butter prend en charge le streaming et l’appel d’outils : vos outils internes changent d’adresse, pas de SDK. Rien ne vous enferme dans un moteur, car Syrup fonctionne aux côtés de vLLM, SGLang et llama.cpp.',
       },
     ],
   },
   stackFit: {
     title: 'Comment la stack *s’assemble*.',
     intro:
-      'Butter sert, Waffle surveille, Syrup retrouve, et Iron se trouve sous les trois.',
+      'Butter sert, Syrup surveille, Whisk retrouve, et Iron se trouve sous les trois.',
     items: [
       {
         product: 'butter',
@@ -67,12 +67,12 @@ const enterpriseFr: (typeof enterprise)['en'] = {
         body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python dans le chemin de serving. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF : aucune chaîne de conversion entre un nouveau modèle et vos serveurs.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Une seule vue de chaque GPU et de chaque moteur.',
-        body: 'Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée. Waffle fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : l’adopter ne veut pas dire remplacer ce qui tourne déjà.',
+        body: 'Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée. Syrup fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : l’adopter ne veut pas dire remplacer ce qui tourne déjà.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'Des réponses tirées de vos propres sources, avec citations.',
         body: 'Recherche locale sur vos notes et votre code internes. La recherche est lexicale plus vectorielle, et les résultats reviennent avec leurs citations via MCP.',
       },
@@ -107,12 +107,12 @@ const enterpriseFr: (typeof enterprise)['en'] = {
       question:
         'Devons-nous remplacer la stack de serving que nous utilisons déjà ?',
       answer:
-        'Non. Waffle fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : vous pouvez d’abord gagner en visibilité et décider des moteurs plus tard.',
+        'Non. Syrup fonctionne avec Butter, vLLM, SGLang, llama.cpp et d’autres serveurs compatibles OpenAI : vous pouvez d’abord gagner en visibilité et décider des moteurs plus tard.',
     },
     {
       question: 'Qu’est-ce qui quitte notre réseau ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut, car les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. Chaque hôte Waffle exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
+        'Les données d’inférence ne sortent pas par défaut, car les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
     },
     {
       question: 'Comment l’évaluer ?',

@@ -43,7 +43,7 @@ const lifeSciencesJa: (typeof lifeSciences)['en'] = {
       {
         tag: 'inference',
         title: '情報源に質問し、出典も受け取る。',
-        body: 'Syrup はノート、書類、コードに対する検索をローカルで行います。検索はキーワード検索とベクトル検索の併用なので、正確な遺伝子名でも、あいまいな質問でも見つかり、すべての答えに出どころが示されます。',
+        body: 'Whisk はノート、書類、コードに対する検索をローカルで行います。検索はキーワード検索とベクトル検索の併用なので、正確な遺伝子名でも、あいまいな質問でも見つかり、すべての答えに出どころが示されます。',
       },
       {
         tag: 'control',
@@ -53,14 +53,14 @@ const lifeSciencesJa: (typeof lifeSciences)['en'] = {
       {
         tag: 'cost',
         title: '各プロジェクトの計算コストを、把握する。',
-        body: 'Waffle は、稼働中か遊んでいるかを含め、すべての GPU と、その上のすべてのエンジンを示すので、研究用の計算資源を、それが担った仕事に結びつけられます。予算は、推測ではなく数字にもとづいて立てられます。',
+        body: 'Syrup は、稼働中か遊んでいるかを含め、すべての GPU と、その上のすべてのエンジンを示すので、研究用の計算資源を、それが担った仕事に結びつけられます。予算は、推測ではなく数字にもとづいて立てられます。',
       },
     ],
   },
   stackFit: {
     title: 'スタックの*かみ合わせ方*',
     intro:
-      'Butter がモデルを動かし、Syrup が情報源を読み、Waffle が数字を記録します。',
+      'Butter がモデルを動かし、Whisk が情報源を読み、Syrup が数字を記録します。',
     items: [
       {
         product: 'butter',
@@ -68,12 +68,12 @@ const lifeSciencesJa: (typeof lifeSciences)['en'] = {
         body: 'Apple シリコンでは Metal 上の Swift、CUDA では Rust。サービングの経路に Python はありません。テキスト、ビジョン、音声、オムニの各モデルが OpenAI 互換 API の背後にあり、チェックポイントは Hugging Face から直接読み込めます。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '自分の情報源にもとづく答えを、出典付きで。',
         body: 'ノート、書類、コードに対するローカル検索。検索はキーワード検索とベクトル検索の併用で、結果は MCP 経由で出典付きで返るので、アシスタントは根拠を示せます。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '説明のつく計算資源。',
         body: '1 台のワークステーションから共有クラスターまで、Butter でも、vLLM でも、SGLang でも、llama.cpp でも、すべての GPU とすべてのエンジンを、ひとつの画面で。',
       },
@@ -85,7 +85,7 @@ const lifeSciencesJa: (typeof lifeSciences)['en'] = {
     notes: [
       'いちばん始めやすいのは、Mac Studio か RTX ワークステーションです。Metal が第一で、CUDA は RTX と DGX Spark で本番稼働中です。',
       'データセンター GPU は対応中です。ROCm と Vulkan は動作しますが、チューニングはこれからです。',
-      'Syrup は出典を示しますが、科学的な正しさは確かめません。それは引き続き、あなたのレビュアーの仕事です。',
+      'Whisk は出典を示しますが、科学的な正しさは確かめません。それは引き続き、あなたのレビュアーの仕事です。',
     ],
   },
   faq: [
@@ -97,7 +97,7 @@ const lifeSciencesJa: (typeof lifeSciences)['en'] = {
     {
       question: '自分たちの書類をもとに、答えられますか？',
       answer:
-        'はい。Syrup はノート、書類、コードに対する検索をローカルで行い、すべての結果が MCP 経由で、出典付きで返ってきます。',
+        'はい。Whisk はノート、書類、コードに対する検索をローカルで行い、すべての結果が MCP 経由で、出典付きで返ってきます。',
     },
     {
       question: '臨床や規制対象の業務向けに、バリデーションされていますか？',

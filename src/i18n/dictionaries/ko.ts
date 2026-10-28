@@ -63,12 +63,12 @@ const ko: Dictionary = {
         label: 'Butter',
         description: 'Python 없는 모델 서빙.',
       },
-      waffle: {
-        label: 'Waffle',
-        description: '모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에.',
-      },
       syrup: {
         label: 'Syrup',
+        description: '모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에.',
+      },
+      whisk: {
+        label: 'Whisk',
         description: '당신의 AI가 하던 일을 기억합니다.',
       },
       pantry: {

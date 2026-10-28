@@ -43,7 +43,7 @@ const financialServicesKo: (typeof financialServices)['en'] = {
       {
         tag: 'cost',
         title: '모든 워크로드에 비용을 매기세요.',
-        body: '재무팀이 요구하는 숫자는 워크로드당 비용이지만, 이를 볼 수 있는 곳은 거의 없습니다. Waffle은 어느 GPU가 바쁘고, 그 위에서 어떤 엔진이 돌며, 어느 것이 놀고 있는지 보여 주므로, 지출을 그것이 해낸 일과 연결할 수 있습니다.',
+        body: '재무팀이 요구하는 숫자는 워크로드당 비용이지만, 이를 볼 수 있는 곳은 거의 없습니다. Syrup은 어느 GPU가 바쁘고, 그 위에서 어떤 엔진이 돌며, 어느 것이 놀고 있는지 보여 주므로, 지출을 그것이 해낸 일과 연결할 수 있습니다.',
       },
       {
         tag: 'inference',
@@ -53,14 +53,14 @@ const financialServicesKo: (typeof financialServices)['en'] = {
       {
         tag: 'control',
         title: '자체 리서치에서 출처와 함께 답을 얻으세요.',
-        body: 'Syrup은 사내 노트와 문서, 코드를 로컬에서 검색하며, 모든 답은 출처 인용과 함께 돌아옵니다. 애널리스트는 요약을 그대로 믿는 대신 출처를 확인할 수 있습니다.',
+        body: 'Whisk는 사내 노트와 문서, 코드를 로컬에서 검색하며, 모든 답은 출처 인용과 함께 돌아옵니다. 애널리스트는 요약을 그대로 믿는 대신 출처를 확인할 수 있습니다.',
       },
     ],
   },
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
     intro:
-      'Butter는 업무를 안에 두고, Waffle은 거기에 숫자를 매기며, Syrup은 출처를 가져오고, Iron은 그 밑을 받칩니다.',
+      'Butter는 업무를 안에 두고, Syrup은 거기에 숫자를 매기며, Whisk는 출처를 가져오고, Iron은 그 밑을 받칩니다.',
     items: [
       {
         product: 'butter',
@@ -68,12 +68,12 @@ const financialServicesKo: (typeof financialServices)['en'] = {
         body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 직접 불러오므로 새 모델에 변환 파이프라인이 필요 없습니다.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '모든 워크로드에 비용을.',
         body: 'Butter든 vLLM, SGLang, llama.cpp든 모든 GPU와 모든 엔진을 하나의 화면으로 봅니다. 호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고하므로, 재무팀에 가져가는 수치를 그것을 보낸 호스트까지 추적할 수 있습니다.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '출처가 붙은 답.',
         body: '사내 노트, 문서, 코드에 대한 로컬 검색. 검색은 어휘 검색과 벡터 검색을 함께 쓰고, 결과는 MCP를 통해 출처 인용과 함께 돌아옵니다.',
       },
@@ -97,12 +97,12 @@ const financialServicesKo: (typeof financialServices)['en'] = {
     {
       question: '고객 데이터가 우리 네트워크 밖으로 나가나요?',
       answer:
-        '추론 데이터는 기본적으로 나가지 않습니다. 직접 동의하지 않는 한 데이터는 그 컴퓨터에 남기 때문입니다. Waffle 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 정확히 무엇인지 함께 짚어 드리겠습니다.',
+        '추론 데이터는 기본적으로 나가지 않습니다. 직접 동의하지 않는 한 데이터는 그 컴퓨터에 남기 때문입니다. Syrup 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 정확히 무엇인지 함께 짚어 드리겠습니다.',
     },
     {
       question: '워크로드별 비용을 볼 수 있나요?',
       answer:
-        '그것이 Waffle의 역할입니다. 바쁘든 놀고 있든 모든 GPU와 그 위의 엔진을 보여 주며, 워크로드당 비용은 여기서 출발합니다. 수치를 약속하기보다 고객의 하드웨어에서 직접 보여 드리겠습니다.',
+        '그것이 Syrup의 역할입니다. 바쁘든 놀고 있든 모든 GPU와 그 위의 엔진을 보여 주며, 워크로드당 비용은 여기서 출발합니다. 수치를 약속하기보다 고객의 하드웨어에서 직접 보여 드리겠습니다.',
     },
     {
       question: '지금은 어떤 하드웨어에서 돌아가나요?',
@@ -117,7 +117,7 @@ const financialServicesKo: (typeof financialServices)['en'] = {
     {
       question: '지금 쓰는 것을 교체해야 하나요?',
       answer:
-        '아니요. Waffle은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 가시성을 먼저 확보하고 엔진 결정은 나중으로 미룰 수 있습니다.',
+        '아니요. Syrup은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 가시성을 먼저 확보하고 엔진 결정은 나중으로 미룰 수 있습니다.',
     },
   ],
   cta: {

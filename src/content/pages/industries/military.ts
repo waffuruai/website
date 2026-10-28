@@ -78,14 +78,14 @@ export const military: Localized<IndustryPage> = {
         {
           tag: 'cost',
           title: 'Account for every GPU you bought.',
-          body: 'Waffle shows every GPU and every engine on it, busy or idle, across Macs, workstations and racks. Capacity that sits idle shows up before the next purchase does.',
+          body: 'Syrup shows every GPU and every engine on it, busy or idle, across Macs, workstations and racks. Capacity that sits idle shows up before the next purchase does.',
         },
       ],
     },
     stackFit: {
       title: 'How the stack *fits*.',
       intro:
-        'Butter runs the models, Waffle accounts for the hardware, and Iron keeps the next platform open.',
+        'Butter runs the models, Syrup accounts for the hardware, and Iron keeps the next platform open.',
       items: [
         {
           product: 'butter',
@@ -93,7 +93,7 @@ export const military: Localized<IndustryPage> = {
           body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, with no conversion step.',
         },
         {
-          product: 'waffle',
+          product: 'syrup',
           need: 'Every GPU you own, in one view.',
           body: 'Every GPU and every engine on it, whether that is Butter, vLLM, SGLang or llama.cpp. A small Rust sidecar on each host reports signed telemetry.',
         },
@@ -118,7 +118,7 @@ export const military: Localized<IndustryPage> = {
       {
         question: 'Does anything leave our machines?',
         answer:
-          'Inference data does not leave by default: models run on hardware you operate, and data stays there unless you opt in. Each Waffle host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains.',
+          'Inference data does not leave by default: models run on hardware you operate, and data stays there unless you opt in. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains.',
       },
       {
         question: 'Which hardware does it run on?',

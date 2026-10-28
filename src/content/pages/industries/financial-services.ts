@@ -15,9 +15,9 @@ import financialServicesKo from './financial-services.ko';
  * claims, no customers.
  *
  * TODO(founder): confirm (1) any compliance, certification or security
- * review facts we may state; (2) exactly what Waffle's signed telemetry
+ * review facts we may state; (2) exactly what Syrup's signed telemetry
  * contains and where the control plane runs, so "what leaves our network"
- * can be specific; (3) whether Butter or Waffle keep a request log we can
+ * can be specific; (3) whether Butter or Syrup keep a request log we can
  * describe to model risk teams.
  */
 export const financialServices: Localized<IndustryPage> = {
@@ -64,7 +64,7 @@ export const financialServices: Localized<IndustryPage> = {
         {
           tag: 'cost',
           title: 'Put a cost on every workload.',
-          body: 'Dollars per workload is the number finance asks for, and almost nobody can see it. Waffle shows which GPUs are busy, which engines run on them and which sit idle, so spend ties back to the work it did.',
+          body: 'Dollars per workload is the number finance asks for, and almost nobody can see it. Syrup shows which GPUs are busy, which engines run on them and which sit idle, so spend ties back to the work it did.',
         },
         {
           tag: 'inference',
@@ -74,14 +74,14 @@ export const financialServices: Localized<IndustryPage> = {
         {
           tag: 'control',
           title: 'Answer from your own research, with sources.',
-          body: 'Syrup runs retrieval locally over internal notes, documents and code, and every answer comes back with a citation. An analyst can check the source instead of trusting the summary.',
+          body: 'Whisk runs retrieval locally over internal notes, documents and code, and every answer comes back with a citation. An analyst can check the source instead of trusting the summary.',
         },
       ],
     },
     stackFit: {
       title: 'How the stack *fits*.',
       intro:
-        'Butter keeps the work inside, Waffle puts a number on it, Syrup brings the sources, and Iron sits underneath.',
+        'Butter keeps the work inside, Syrup puts a number on it, Whisk brings the sources, and Iron sits underneath.',
       items: [
         {
           product: 'butter',
@@ -89,12 +89,12 @@ export const financialServices: Localized<IndustryPage> = {
           body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. It loads safetensors, MLX, JANG and GGUF checkpoints directly, so a new model needs no conversion pipeline.',
         },
         {
-          product: 'waffle',
+          product: 'syrup',
           need: 'A cost for every workload.',
           body: 'Every GPU and every engine in one view, whether that is Butter, vLLM, SGLang or llama.cpp. A small Rust sidecar on each host reports signed telemetry, so the readings you take to finance can be traced to the host that sent them.',
         },
         {
-          product: 'syrup',
+          product: 'whisk',
           need: 'Answers with the source attached.',
           body: 'Local retrieval over internal notes, documents and code. Search is lexical plus vector, and results come back with citations over MCP.',
         },
@@ -118,12 +118,12 @@ export const financialServices: Localized<IndustryPage> = {
       {
         question: 'Does client data leave our network?',
         answer:
-          'Inference data does not leave by default, because data stays on the machine unless you opt in. Each Waffle host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains.',
+          'Inference data does not leave by default, because data stays on the machine unless you opt in. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains.',
       },
       {
         question: 'Can we see what each workload costs?',
         answer:
-          'That is what Waffle is for. It shows every GPU and the engines on it, busy or idle, which is where a cost per workload starts. We would rather show it on your hardware than promise a figure.',
+          'That is what Syrup is for. It shows every GPU and the engines on it, busy or idle, which is where a cost per workload starts. We would rather show it on your hardware than promise a figure.',
       },
       {
         question: 'Which hardware does it run on today?',
@@ -138,7 +138,7 @@ export const financialServices: Localized<IndustryPage> = {
       {
         question: 'Do we have to replace what we already run?',
         answer:
-          'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so visibility comes first and engine decisions can wait.',
+          'No. Syrup works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so visibility comes first and engine decisions can wait.',
       },
     ],
     cta: {

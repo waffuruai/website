@@ -283,7 +283,7 @@ export const butter: Localized<ProductCopy> = {
     stack: {
       heading: 'Works with the rest of the *stack*.',
       intro:
-        'Butter runs models on the kernels Iron compiles. Waffle can watch it alongside vLLM, SGLang and llama.cpp, and Syrup gives your AI a memory of what you were working on.',
+        'Butter runs models on the kernels Iron compiles. Syrup can watch it alongside vLLM, SGLang and llama.cpp, and Whisk gives your AI a memory of what you were working on.',
     },
     faq: [
       {

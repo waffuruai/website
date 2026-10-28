@@ -60,7 +60,7 @@ const brandZh: (typeof brand)['en'] = {
         body: '正文和标题中首字母大写。小写的“waffuru”只属于字标。',
       },
       {
-        term: 'Iron, Butter, Waffle, Syrup',
+        term: 'Iron, Butter, Syrup, Whisk',
         body: '四款产品，名称始终首字母大写，在任何语言中都不翻译。',
       },
       {
@@ -69,7 +69,7 @@ const brandZh: (typeof brand)['en'] = {
       },
       {
         term: '华夫饼标志',
-        body: '请把这幅图称作“华夫饼标志”。写作 Waffle 的，是我们的 GPU 控制平面产品。',
+        body: '请把这幅图称作“华夫饼标志”。',
       },
     ],
     origin:
@@ -258,12 +258,12 @@ const brandZh: (typeof brand)['en'] = {
       {
         key: 'leds',
         name: 'LED 灯',
-        description: '一排状态灯。Waffle 的图案。',
+        description: '一排状态灯。Syrup 的图案。',
       },
       {
         key: 'drip',
         name: '滴落',
-        description: '沿着线条流下的一滴。Syrup 的图案。',
+        description: '沿着线条流下的一滴。Whisk 的图案。',
       },
     ],
   },
@@ -274,7 +274,7 @@ const brandZh: (typeof brand)['en'] = {
     dontLabel: '请勿',
     dos: [
       '写作 Waffuru，W 大写。小写的“waffuru”只用于字标。',
-      '写作 Iron、Butter、Waffle 和 Syrup，在任何语言中都保持原样。',
+      '写作 Iron、Butter、Syrup 和 Whisk，在任何语言中都保持原样。',
       '给华夫饼标志留出空间，放在对比度足够的深色或浅色底色上。',
       '如实描述我们的产品：目前未公开，可申请抢先体验。',
       '如实描述硬件支持：Metal 优先，CUDA 其次，ROCm 和 Vulkan 可运行但尚未调优。',

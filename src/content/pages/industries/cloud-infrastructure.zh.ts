@@ -37,7 +37,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'cost',
         title: '知道每块 GPU 在做什么。',
-        body: 'Waffle 提供跨主机、GPU、引擎和租户的统一视图，不论引擎是 Butter、vLLM、SGLang 还是 llama.cpp。闲置和错配的算力会先出现在你的屏幕上，而不是先体现在毛利里。',
+        body: 'Syrup 提供跨主机、GPU、引擎和租户的统一视图，不论引擎是 Butter、vLLM、SGLang 还是 llama.cpp。闲置和错配的算力会先出现在你的屏幕上，而不是先体现在毛利里。',
       },
       {
         tag: 'control',
@@ -58,12 +58,12 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
   },
   stackFit: {
     title: '技术栈如何*配合*。',
-    intro: '从 Waffle 开始。Butter 和 Iron 负责提升底层的产出。',
+    intro: '从 Syrup 开始。Butter 和 Iron 负责提升底层的产出。',
     items: [
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '一个视图，看清每一块 GPU、每个引擎和每个租户。',
-        body: '每台主机上的小型 Rust sidecar 上报带签名的遥测数据，Waffle 还会按租户拆分成本。它支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以租户可以继续使用他们选定的引擎。',
+        body: '每台主机上的小型 Rust sidecar 上报带签名的遥测数据，Syrup 还会按租户拆分成本。它支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以租户可以继续使用他们选定的引擎。',
       },
       {
         product: 'butter',
@@ -79,7 +79,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
   },
   whereWeAre: {
     title: '我们的*进度*。',
-    lede: '先说对 GPU 云最重要的一点：数据中心 GPU 正在进行中。Waffle、Butter 和 Iron 目前处于抢先体验阶段，暂未开源。',
+    lede: '先说对 GPU 云最重要的一点：数据中心 GPU 正在进行中。Syrup、Butter 和 Iron 目前处于抢先体验阶段，暂未开源。',
     notes: [
       'CUDA 已在 RTX 和 DGX Spark 上投入生产。告诉我们你的数据中心 GPU 世代，因为我们听到的集群情况会决定先做什么。',
       'ROCm 和 Vulkan 目前可以运行，但尚未调优。',
@@ -90,7 +90,7 @@ const cloudInfrastructureZh: (typeof cloudInfrastructure)['en'] = {
     {
       question: '我们的租户必须更换引擎吗？',
       answer:
-        '不必。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。租户继续运行他们现有的东西，你则获得覆盖全部的统一视图。',
+        '不必。Syrup 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。租户继续运行他们现有的东西，你则获得覆盖全部的统一视图。',
     },
     {
       question: '它支持哪些 GPU？',

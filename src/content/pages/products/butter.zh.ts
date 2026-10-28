@@ -258,7 +258,7 @@ const butterZh: (typeof butter)['en'] = {
   stack: {
     heading: '与其余*技术栈*协同工作。',
     intro:
-      'Butter 在 Iron 编译的内核上运行模型。Waffle 可以把它和 vLLM、SGLang、llama.cpp 放在一起监看，Syrup 则让你的 AI 记得你在做什么。',
+      'Butter 在 Iron 编译的内核上运行模型。Syrup 可以把它和 vLLM、SGLang、llama.cpp 放在一起监看，Whisk 则让你的 AI 记得你在做什么。',
   },
   faq: [
     {

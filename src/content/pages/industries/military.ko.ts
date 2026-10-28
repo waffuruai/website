@@ -53,14 +53,14 @@ const militaryKo: (typeof military)['en'] = {
       {
         tag: 'cost',
         title: '구매한 모든 GPU를 파악하세요.',
-        body: 'Waffle은 Mac과 워크스테이션, 랙에 걸쳐 바쁘든 놀고 있든 모든 GPU와 그 위의 모든 엔진을 보여 줍니다. 놀고 있는 용량이 다음 구매보다 먼저 드러납니다.',
+        body: 'Syrup은 Mac과 워크스테이션, 랙에 걸쳐 바쁘든 놀고 있든 모든 GPU와 그 위의 모든 엔진을 보여 줍니다. 놀고 있는 용량이 다음 구매보다 먼저 드러납니다.',
       },
     ],
   },
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
     intro:
-      'Butter가 모델을 돌리고, Waffle이 하드웨어를 파악하며, Iron이 다음 플랫폼으로 가는 길을 열어 둡니다.',
+      'Butter가 모델을 돌리고, Syrup이 하드웨어를 파악하며, Iron이 다음 플랫폼으로 가는 길을 열어 둡니다.',
     items: [
       {
         product: 'butter',
@@ -68,7 +68,7 @@ const militaryKo: (typeof military)['en'] = {
         body: 'Metal 위의 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 변환 단계 없이 직접 불러옵니다.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '보유한 모든 GPU를 하나의 화면으로.',
         body: 'Butter든 vLLM, SGLang, llama.cpp든 모든 GPU와 그 위의 모든 엔진을 봅니다. 호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다.',
       },
@@ -93,7 +93,7 @@ const militaryKo: (typeof military)['en'] = {
     {
       question: '우리 머신 밖으로 나가는 것이 있나요?',
       answer:
-        '추론 데이터는 기본적으로 나가지 않습니다. 모델은 직접 운영하는 하드웨어에서 돌아가고, 직접 동의하지 않는 한 데이터는 그곳에 남습니다. Waffle 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 정확히 무엇인지 함께 짚어 드리겠습니다.',
+        '추론 데이터는 기본적으로 나가지 않습니다. 모델은 직접 운영하는 하드웨어에서 돌아가고, 직접 동의하지 않는 한 데이터는 그곳에 남습니다. Syrup 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 정확히 무엇인지 함께 짚어 드리겠습니다.',
     },
     {
       question: '어떤 하드웨어에서 돌아가나요?',

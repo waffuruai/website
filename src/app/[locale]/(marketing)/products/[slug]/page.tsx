@@ -39,8 +39,8 @@ export function generateStaticParams() {
  * The research sections a product page carries, each reading its own content
  * file. Butter: how fast (speculative decoding), how much context fits
  * (AURA), the quantized models, how reliable tool calls are, and the labs it
- * runs. Iron: the kernel, its backends and how far each is tuned. Waffle and
- * Syrup have none yet.
+ * runs. Iron: the kernel, its backends and how far each is tuned. Syrup and
+ * Whisk have none yet.
  */
 const research: Partial<
   Record<ProductSlug, (locale: Locale) => React.ReactNode>
@@ -75,7 +75,7 @@ export async function generateMetadata({
   });
 }
 
-/** /products/iron, /products/butter, /products/waffle, /products/syrup. */
+/** /products/iron, /products/butter, /products/syrup, /products/whisk. */
 export default async function ProductRoute({
   params,
 }: {

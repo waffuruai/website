@@ -64,7 +64,7 @@ describe('publishedNavigation at launch (Pantry only)', () => {
     );
     for (const href of internalNavHrefs(atLaunch)) {
       expect(href).not.toMatch(
-        /^\/(solutions|industries)|^\/products(\/(iron|butter|waffle|syrup))?$/,
+        /^\/(solutions|industries)|^\/products(\/(iron|butter|syrup|whisk))?$/,
       );
     }
   });

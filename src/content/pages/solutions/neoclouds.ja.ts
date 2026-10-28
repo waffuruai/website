@@ -1,6 +1,6 @@
 import type { neoclouds } from './neoclouds';
 
-// TODO(founder): confirm what Waffle can break down per tenant, and how the
+// TODO(founder): confirm what Syrup can break down per tenant, and how the
 // telemetry signature is verified, before this page says more than "signed
 // telemetry" and "across tenants and engines".
 const neocloudsJa: (typeof neoclouds)['en'] = {
@@ -39,7 +39,7 @@ const neocloudsJa: (typeof neoclouds)['en'] = {
       {
         tag: 'cost',
         title: 'すべての GPU で何が動いているかを、把握する。',
-        body: 'vLLM でも、SGLang でも、llama.cpp でも、Butter でも、Waffle はホスト、GPU、エンジン、テナントをまたいで、ひとつの画面を提供します。遊んでいる容量や、噛み合っていない容量は、まずあなたの画面に現れます。',
+        body: 'vLLM でも、SGLang でも、llama.cpp でも、Butter でも、Syrup はホスト、GPU、エンジン、テナントをまたいで、ひとつの画面を提供します。遊んでいる容量や、噛み合っていない容量は、まずあなたの画面に現れます。',
       },
       {
         tag: 'control',
@@ -54,19 +54,19 @@ const neocloudsJa: (typeof neoclouds)['en'] = {
       {
         tag: 'control',
         title: '特定のエンジンに賭けずに、選択肢を提供する。',
-        body: 'Butter は OpenAI 互換 API を提供し、Waffle は vLLM、SGLang、llama.cpp と連携します。特定のエンジンを軸に組み直すことなく、お客様により多くの選択肢を提供できます。',
+        body: 'Butter は OpenAI 互換 API を提供し、Syrup は vLLM、SGLang、llama.cpp と連携します。特定のエンジンを軸に組み直すことなく、お客様により多くの選択肢を提供できます。',
       },
     ],
   },
   stackFit: {
     title: 'スタックの*かみ合わせ方*',
     intro:
-      'あなたのためにあるのは Waffle です。Butter と Iron は、その下で効率を高めます。',
+      'あなたのためにあるのは Syrup です。Butter と Iron は、その下で効率を高めます。',
     items: [
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'フリート全体を見渡す。',
-        body: 'デスクの下の 1 台から、フリートを貸し出すネオクラウドまで。各ホストの小さな Rust 製サイドカーが署名付きテレメトリを報告し、Waffle は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携します。',
+        body: 'デスクの下の 1 台から、フリートを貸し出すネオクラウドまで。各ホストの小さな Rust 製サイドカーが署名付きテレメトリを報告し、Syrup は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携します。',
       },
       {
         product: 'butter',
@@ -82,7 +82,7 @@ const neocloudsJa: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: '私たちの*現在地*',
-    lede: 'Waffle と Butter は、現時点で早期アクセスで、クローズドソースです。CUDA は RTX と DGX Spark で本番稼働中で、データセンター GPU は対応中です。',
+    lede: 'Syrup と Butter は、現時点で早期アクセスで、クローズドソースです。CUDA は RTX と DGX Spark で本番稼働中で、データセンター GPU は対応中です。',
     notes: [
       'お使いの GPU の世代を教えてください。データセンター向けの CUDA は対応中なので、お聞きするフリートの状況が、何から先に取り組むかを左右します。',
       'ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
@@ -91,9 +91,9 @@ const neocloudsJa: (typeof neoclouds)['en'] = {
   },
   faq: [
     {
-      question: 'Waffle は、いま使っているエンジンを置き換えますか？',
+      question: 'Syrup は、いま使っているエンジンを置き換えますか？',
       answer:
-        '置き換えません。Waffle は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携します。まず可視化を手に入れ、エンジンを変えるのは、変えたいと思ったときだけで構いません。',
+        '置き換えません。Syrup は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携します。まず可視化を手に入れ、エンジンを変えるのは、変えたいと思ったときだけで構いません。',
     },
     {
       question: 'どの GPU で動きますか？',

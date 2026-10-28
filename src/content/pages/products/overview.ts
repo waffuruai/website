@@ -7,7 +7,7 @@ import productsOverviewJa from './overview.ja';
 import productsOverviewKo from './overview.ko';
 
 /*
- * /products: the stack, from Syrup (04) at the top down to Iron (01) at the
+ * /products: the stack, from Whisk (04) at the top down to Iron (01) at the
  * metal. Per-product pitches come from each product's own copy.
  */
 export const productsOverview: Localized<ProductsOverviewCopy> = {
@@ -15,7 +15,7 @@ export const productsOverview: Localized<ProductsOverviewCopy> = {
     seo: {
       title: 'The Waffuru stack: kernels, serving, control and memory',
       description:
-        'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on. Use one, or all four.',
+        'Iron compiles the kernels. Butter runs models on them. Syrup watches the GPUs. Whisk remembers what you were working on. Use one, or all four.',
       keywords: [
         'AI inference stack',
         'GPU kernels to serving',
@@ -25,12 +25,12 @@ export const productsOverview: Localized<ProductsOverviewCopy> = {
     hero: {
       label: 'Four products',
       title: 'The Waffuru *stack*.',
-      lede: 'Iron compiles the kernels. Butter runs models on them. Waffle watches the GPUs. Syrup remembers what you were working on. All four are built to run on the hardware you already own.',
+      lede: 'Iron compiles the kernels. Butter runs models on them. Syrup watches the GPUs. Whisk remembers what you were working on. All four are built to run on the hardware you already own.',
     },
     layers: {
       heading: 'How the four layers *fit*.',
       intro:
-        'Numbered from the metal up. Syrup sits on top, Iron sits at the metal, and each layer has its own page.',
+        'Numbered from the metal up. Whisk sits on top, Iron sits at the metal, and each layer has its own page.',
       metal: {
         label: 'The metal',
         backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
@@ -46,12 +46,12 @@ export const productsOverview: Localized<ProductsOverviewCopy> = {
         iron: 'Write a GPU kernel once and run it on Metal, CUDA, ROCm and Vulkan.',
         butter:
           'Serve models behind an OpenAI-compatible API, with no Python in the way.',
-        waffle:
+        syrup:
           'See every GPU and every engine running on it, whichever engine that is.',
-        syrup: 'Give your AI local, cited memory of your notes and code.',
+        whisk: 'Give your AI local, cited memory of your notes and code.',
       },
       allLabel: 'Together',
-      all: 'Butter runs models on the kernels Iron compiles, Waffle watches the GPUs and engines under them, and Syrup remembers what you were working on. Each layer you add builds on the ones below.',
+      all: 'Butter runs models on the kernels Iron compiles, Syrup watches the GPUs and engines under them, and Whisk remembers what you were working on. Each layer you add builds on the ones below.',
     },
     audience: {
       heading: 'Who it’s *for*.',

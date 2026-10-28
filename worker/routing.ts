@@ -34,8 +34,8 @@ const SECTION_REDIRECTS: Record<Section, Record<string, string>> = {
   stack: {
     '/iron': '/products/iron',
     '/butter': '/products/butter',
-    '/waffle': '/products/waffle',
     '/syrup': '/products/syrup',
+    '/whisk': '/products/whisk',
     '/stack': '/products',
   },
   solutions: {},

@@ -31,7 +31,7 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
         points: [
           'Tournez sur du matériel que vous possédez déjà plutôt que de louer',
           'Les modèles quantifiés tiennent davantage dans la mémoire dont vous disposez',
-          'Waffle montre où la capacité reste inutilisée',
+          'Syrup montre où la capacité reste inutilisée',
         ],
       },
       {
@@ -50,7 +50,7 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
         body: 'Local-first : vos données restent où elles sont, sauf si vous choisissez de les partager, que ce soit sur un portable, sur site ou dans votre propre cloud.',
         points: [
           'Serving compatible OpenAI : vos applications continuent de fonctionner',
-          'Waffle fonctionne avec vLLM, SGLang et llama.cpp',
+          'Syrup fonctionne avec vLLM, SGLang et llama.cpp',
           'Aucun verrouillage sur un moteur ou un fournisseur',
         ],
       },

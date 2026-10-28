@@ -63,12 +63,12 @@ const ja: Dictionary = {
         label: 'Butter',
         description: 'Python 不要のモデルサービング。',
       },
-      waffle: {
-        label: 'Waffle',
-        description: 'すべての GPU と、その上で動くすべてのエンジンを可視化。',
-      },
       syrup: {
         label: 'Syrup',
+        description: 'すべての GPU と、その上で動くすべてのエンジンを可視化。',
+      },
+      whisk: {
+        label: 'Whisk',
         description: 'あなたの AI が、取り組んでいたことを覚えています。',
       },
       pantry: {

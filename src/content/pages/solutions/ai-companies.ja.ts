@@ -21,7 +21,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
   },
   hero: {
     title: 'カーネルは一度書くだけ。4 つの*バックエンド*へ届ける。',
-    lede: 'Iron は、ひとつのカーネル定義を Metal、CUDA、ROCm、Vulkan にコンパイルします。その上で Butter が Python なしでモデルを提供し、Syrup がエージェントに記憶を与えます。',
+    lede: 'Iron は、ひとつのカーネル定義を Metal、CUDA、ROCm、Vulkan にコンパイルします。その上で Butter が Python なしでモデルを提供し、Whisk がエージェントに記憶を与えます。',
   },
   problem: {
     title: 'バックエンドが増えるたび、*書き直し*。',
@@ -51,7 +51,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: 'エージェントに、ローカルにとどまる記憶を与える。',
-        body: 'Syrup は TurboQuant+ で埋め込みを圧縮し、マシン上でキーワード検索とベクトル検索を併用します。結果は MCP 経由で出典付きで返るので、エージェントは前回の続きから再開できます。',
+        body: 'Whisk は TurboQuant+ で埋め込みを圧縮し、マシン上でキーワード検索とベクトル検索を併用します。結果は MCP 経由で出典付きで返るので、エージェントは前回の続きから再開できます。',
       },
     ],
   },
@@ -73,7 +73,7 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
   },
   stackFit: {
     title: 'スタックの*かみ合わせ方*',
-    intro: '中核は Iron と Butter。Syrup と Waffle が、それを補います。',
+    intro: '中核は Iron と Butter。Whisk と Syrup が、それを補います。',
     items: [
       {
         product: 'iron',
@@ -86,12 +86,12 @@ const aiCompaniesJa: (typeof aiCompanies)['en'] = {
         body: 'safetensors、MLX、JANG、GGUF を変換なしで読み込み、さらに 2〜8 ビットの量子化チェックポイント、ハイブリッドモデルと MoE モデル、量子化された KV キャッシュ、投機的デコーディング、LoRA に対応します。テキスト、ビジョン、音声認識、音声合成、オムニの各モデルが、OpenAI 互換 API の背後にあります。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'エージェントのための記憶。',
         body: 'ノートとコードに対するローカル検索。TurboQuant+ で圧縮した埋め込み、キーワード検索とベクトル検索の併用、MCP 経由の出典付きの結果。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'すべての GPU のすべてのエンジンを、ひとつの画面で。',
         body: 'Butter を vLLM、SGLang、llama.cpp と並べて動かし、横並びで確認できます。各ホストの小さな Rust 製サイドカーが署名付きテレメトリを報告します。',
       },

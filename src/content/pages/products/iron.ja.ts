@@ -118,7 +118,7 @@ const ironJa: (typeof iron)['en'] = {
   stack: {
     heading: '*スタック*のほかの部分とも連携する。',
     intro:
-      'Iron は単体でも使えます。カーネルの上でモデルを動かすなら Butter を、その GPU を見守るなら Waffle を、取り組んでいたことを AI に覚えさせるなら Syrup を足してください。',
+      'Iron は単体でも使えます。カーネルの上でモデルを動かすなら Butter を、その GPU を見守るなら Syrup を、取り組んでいたことを AI に覚えさせるなら Whisk を足してください。',
   },
   faq: [
     {

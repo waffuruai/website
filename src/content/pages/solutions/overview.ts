@@ -43,7 +43,7 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
           points: [
             'Run on hardware you already own instead of renting',
             'Quantized models fit more in the memory you have',
-            'Waffle shows where capacity sits idle',
+            'Syrup shows where capacity sits idle',
           ],
         },
         {
@@ -62,7 +62,7 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
           body: 'Local-first: your data stays where it is unless you opt in, on a laptop, on-prem or in your own cloud.',
           points: [
             'OpenAI-compatible serving, so apps keep working',
-            'Waffle works with vLLM, SGLang and llama.cpp',
+            'Syrup works with vLLM, SGLang and llama.cpp',
             'No lock-in to one engine or one vendor',
           ],
         },

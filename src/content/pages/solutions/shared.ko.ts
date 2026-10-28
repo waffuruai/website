@@ -32,19 +32,19 @@ const solutionsSharedKo: (typeof solutionsShared)['en'] = {
       linkLabel: 'Butter 살펴보기',
       href: '/products/butter',
     },
-    waffle: {
+    syrup: {
       index: '03',
       role: '컨트롤 플레인',
-      name: 'Waffle',
-      linkLabel: 'Waffle 살펴보기',
-      href: '/products/waffle',
-    },
-    syrup: {
-      index: '04',
-      role: '메모리',
       name: 'Syrup',
       linkLabel: 'Syrup 살펴보기',
       href: '/products/syrup',
+    },
+    whisk: {
+      index: '04',
+      role: '메모리',
+      name: 'Whisk',
+      linkLabel: 'Whisk 살펴보기',
+      href: '/products/whisk',
     },
   },
   hardware: {

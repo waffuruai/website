@@ -37,7 +37,7 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'cost',
         title: 'すべての GPU が何をしているかを、把握する。',
-        body: 'Butter でも、vLLM でも、SGLang でも、llama.cpp でも、Waffle はホスト、GPU、エンジン、テナントをまたいで、ひとつの画面を提供します。遊んでいる容量や、噛み合っていない容量は、利益率に表れる前に、あなたの画面に現れます。',
+        body: 'Butter でも、vLLM でも、SGLang でも、llama.cpp でも、Syrup はホスト、GPU、エンジン、テナントをまたいで、ひとつの画面を提供します。遊んでいる容量や、噛み合っていない容量は、利益率に表れる前に、あなたの画面に現れます。',
       },
       {
         tag: 'control',
@@ -59,12 +59,12 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
   stackFit: {
     title: 'スタックの*かみ合わせ方*',
     intro:
-      '出発点は Waffle です。Butter と Iron は、その下で出力を引き上げます。',
+      '出発点は Syrup です。Butter と Iron は、その下で出力を引き上げます。',
     items: [
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'すべての GPU、エンジン、テナントを、ひとつの画面で。',
-        body: '各ホストの小さな Rust 製サイドカーが署名付きテレメトリを報告し、Waffle はコストをテナントごとに内訳で示します。Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携するので、テナントは自分で選んだエンジンをそのまま使えます。',
+        body: '各ホストの小さな Rust 製サイドカーが署名付きテレメトリを報告し、Syrup はコストをテナントごとに内訳で示します。Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携するので、テナントは自分で選んだエンジンをそのまま使えます。',
       },
       {
         product: 'butter',
@@ -80,7 +80,7 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
   },
   whereWeAre: {
     title: '私たちの*現在地*',
-    lede: 'GPU クラウドにとっていちばん重要なことを、最初にお伝えします。データセンター GPU は対応中です。Waffle、Butter、Iron は、現時点で早期アクセスで、クローズドソースです。',
+    lede: 'GPU クラウドにとっていちばん重要なことを、最初にお伝えします。データセンター GPU は対応中です。Syrup、Butter、Iron は、現時点で早期アクセスで、クローズドソースです。',
     notes: [
       'CUDA は RTX と DGX Spark で本番稼働中です。お使いのデータセンター GPU の世代を教えてください。お聞きするフリートの状況が、何から先に取り組むかを左右します。',
       'ROCm と Vulkan は現時点で動作しますが、チューニングはこれからです。',
@@ -91,7 +91,7 @@ const cloudInfrastructureJa: (typeof cloudInfrastructure)['en'] = {
     {
       question: 'テナントは、エンジンを切り替える必要がありますか？',
       answer:
-        'ありません。Waffle は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携します。テナントはいま動かしているものをそのまま使い、あなたはそのすべてをひとつの画面で見渡せます。',
+        'ありません。Syrup は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携します。テナントはいま動かしているものをそのまま使い、あなたはそのすべてをひとつの画面で見渡せます。',
     },
     {
       question: 'どの GPU に対応していますか？',

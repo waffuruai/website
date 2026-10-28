@@ -30,7 +30,7 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
         points: [
           '빌리는 대신 이미 가진 하드웨어에서 실행',
           '양자화된 모델로 가진 메모리에 더 많이 적재',
-          'Waffle로 놀고 있는 용량을 확인',
+          'Syrup으로 놀고 있는 용량을 확인',
         ],
       },
       {
@@ -49,7 +49,7 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
         body: '로컬 우선: 노트북이든 온프레미스든 자체 클라우드든, 직접 동의하지 않는 한 데이터는 있는 곳에 그대로 있습니다.',
         points: [
           'OpenAI 호환 서빙이라 기존 앱이 그대로 동작',
-          'Waffle은 vLLM, SGLang, llama.cpp와도 동작',
+          'Syrup은 vLLM, SGLang, llama.cpp와도 동작',
           '특정 엔진이나 벤더에 묶이지 않음',
         ],
       },

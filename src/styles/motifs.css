@@ -45,7 +45,7 @@
     animation: wfa-melt 6s ease-in-out infinite alternate;
   }
 
-  /* Waffle: a rack of status LEDs. */
+  /* Syrup: a rack of status LEDs. */
   .wf-led {
     width: 8px;
     height: 8px;
@@ -54,7 +54,7 @@
     animation: wfa-led 4s steps(1) infinite;
   }
 
-  /* Syrup: a drop running down a line. */
+  /* Whisk: a drop running down a line. */
   .wf-drip {
     position: absolute;
     top: 0;

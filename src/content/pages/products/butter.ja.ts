@@ -262,7 +262,7 @@ const butterJa: (typeof butter)['en'] = {
   stack: {
     heading: '*スタック*のほかの部分とも連携する。',
     intro:
-      'Butter は、Iron がコンパイルしたカーネルの上でモデルを動かします。Waffle は vLLM、SGLang、llama.cpp と並べて Butter を見守ることができ、Syrup は、取り組んでいたことを AI に覚えさせます。',
+      'Butter は、Iron がコンパイルしたカーネルの上でモデルを動かします。Syrup は vLLM、SGLang、llama.cpp と並べて Butter を見守ることができ、Whisk は、取り組んでいたことを AI に覚えさせます。',
   },
   faq: [
     {

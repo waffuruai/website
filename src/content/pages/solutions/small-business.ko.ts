@@ -50,14 +50,14 @@ const smallBusinessKo: (typeof smallBusiness)['en'] = {
       {
         tag: 'control',
         title: '내 노트와 코드에 질문하세요.',
-        body: 'Syrup이 노트와 코드를 로컬에서 검색하므로, 답은 출처 인용과 함께 돌아옵니다. 검색은 어휘 검색과 벡터 검색을 함께 쓰기 때문에 정확한 이름도, 두루뭉술한 질문도 잘 찾아냅니다.',
+        body: 'Whisk가 노트와 코드를 로컬에서 검색하므로, 답은 출처 인용과 함께 돌아옵니다. 검색은 어휘 검색과 벡터 검색을 함께 쓰기 때문에 정확한 이름도, 두루뭉술한 질문도 잘 찾아냅니다.',
       },
     ],
   },
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
     intro:
-      'Butter가 무거운 일을 맡습니다. Syrup과 Waffle은 필요할 때 더하면 됩니다.',
+      'Butter가 무거운 일을 맡습니다. Whisk와 Syrup은 필요할 때 더하면 됩니다.',
     items: [
       {
         product: 'butter',
@@ -65,12 +65,12 @@ const smallBusinessKo: (typeof smallBusiness)['en'] = {
         body: 'Apple 실리콘에는 Metal 위의 Swift, CUDA를 비롯한 나머지에는 Rust. Llama, Gemma, Qwen, GPT-OSS 등이 음성 인식, 음성 합성, 비전 모델과 함께 돌아가며, butter serve가 앱에 OpenAI 호환 엔드포인트를 제공합니다.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '내 파일에 물어보고, 출처를 받으세요.',
         body: '노트와 코드에 대한 로컬 검색. 결과는 MCP를 통해 출처 인용과 함께 돌아오므로, 어시스턴트가 근거를 보여 줄 수 있습니다.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '책상 아래 장비를 지켜보세요.',
         body: '머신 한 대에서 작은 랙까지, Butter든 llama.cpp, vLLM, SGLang이든 모든 GPU와 그 위에서 돌아가는 모든 엔진을 봅니다.',
       },

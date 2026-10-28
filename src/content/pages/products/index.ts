@@ -3,14 +3,14 @@ import { productFacts } from '@/content/pages/products/facts';
 import { iron } from '@/content/pages/products/iron';
 import { productsOverview } from '@/content/pages/products/overview';
 import { productsShared } from '@/content/pages/products/shared';
-import { syrup } from '@/content/pages/products/syrup';
+import { whisk } from '@/content/pages/products/whisk';
 import {
   productSlugs,
   type ProductCopy,
   type ProductFacts,
   type ProductSlug,
 } from '@/content/pages/products/types';
-import { waffle } from '@/content/pages/products/waffle';
+import { syrup } from '@/content/pages/products/syrup';
 import type { Localized } from '@/content/types';
 import type { Locale } from '@/i18n/config';
 import { localize } from '@/lib/content';
@@ -23,8 +23,8 @@ export { productsOverview, productsShared };
 export const productCopy: Record<ProductSlug, Localized<ProductCopy>> = {
   iron,
   butter,
-  waffle,
   syrup,
+  whisk,
 };
 
 export const isProductSlug = (value: string): value is ProductSlug =>

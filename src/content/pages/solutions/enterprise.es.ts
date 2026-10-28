@@ -43,7 +43,7 @@ const enterpriseEs: (typeof enterprise)['en'] = {
       {
         tag: 'cost',
         title: 'Ve cada GPU y cada motor en un solo lugar.',
-        body: 'Waffle muestra qué GPU están ocupadas, qué motores corren en ellas y cuáles están ociosas, sea el motor Butter, vLLM, SGLang o llama.cpp. Es el punto de partida para decidir qué consolidar, retirar o comprar.',
+        body: 'Syrup muestra qué GPU están ocupadas, qué motores corren en ellas y cuáles están ociosas, sea el motor Butter, vLLM, SGLang o llama.cpp. Es el punto de partida para decidir qué consolidar, retirar o comprar.',
       },
       {
         tag: 'inference',
@@ -53,14 +53,14 @@ const enterpriseEs: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: 'Apunta tus apps actuales a él sin reescribir nada.',
-        body: 'La API de Butter compatible con OpenAI admite streaming y llamada a herramientas, así que las herramientas internas cambian una dirección, no un SDK. Nada te ata a un motor, porque Waffle funciona junto a vLLM, SGLang y llama.cpp.',
+        body: 'La API de Butter compatible con OpenAI admite streaming y llamada a herramientas, así que las herramientas internas cambian una dirección, no un SDK. Nada te ata a un motor, porque Syrup funciona junto a vLLM, SGLang y llama.cpp.',
       },
     ],
   },
   stackFit: {
     title: 'Cómo *encaja* el stack.',
     intro:
-      'Butter sirve, Waffle vigila, Syrup recupera e Iron está debajo de los tres.',
+      'Butter sirve, Syrup vigila, Whisk recupera e Iron está debajo de los tres.',
     items: [
       {
         product: 'butter',
@@ -68,12 +68,12 @@ const enterpriseEs: (typeof enterprise)['en'] = {
         body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, así que no hay un pipeline de conversión entre un modelo nuevo y tus servidores.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Una sola vista de cada GPU y cada motor.',
-        body: 'Un pequeño sidecar en Rust en cada host reporta telemetría firmada. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI, así que adoptarlo no implica reemplazar lo que ya corre.',
+        body: 'Un pequeño sidecar en Rust en cada host reporta telemetría firmada. Syrup funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI, así que adoptarlo no implica reemplazar lo que ya corre.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'Respuestas de tus propias fuentes, con citas.',
         body: 'Recuperación local sobre notas y código internos. La búsqueda es léxica más vectorial, y los resultados llegan con citas a través de MCP.',
       },
@@ -108,12 +108,12 @@ const enterpriseEs: (typeof enterprise)['en'] = {
     {
       question: '¿Tenemos que reemplazar el stack de serving que ya usamos?',
       answer:
-        'No. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI, así que puedes ganar visibilidad primero y decidir sobre los motores después.',
+        'No. Syrup funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI, así que puedes ganar visibilidad primero y decidir sobre los motores después.',
     },
     {
       question: '¿Qué sale de nuestra red?',
       answer:
-        'Los datos de inferencia no salen por defecto, porque los datos de un usuario se quedan en su equipo a menos que lo autorice. Cada host de Waffle ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
+        'Los datos de inferencia no salen por defecto, porque los datos de un usuario se quedan en su equipo a menos que lo autorice. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
     },
     {
       question: '¿Cómo lo evaluamos?',

@@ -111,7 +111,7 @@ const ironZh: (typeof iron)['en'] = {
   stack: {
     heading: '与其余*技术栈*协同工作。',
     intro:
-      'Iron 可以独立使用。加上 Butter，在这些内核上运行模型；加上 Waffle，盯着它们所跑的 GPU；加上 Syrup，让你的 AI 记得你在做什么。',
+      'Iron 可以独立使用。加上 Butter，在这些内核上运行模型；加上 Syrup，盯着它们所跑的 GPU；加上 Whisk，让你的 AI 记得你在做什么。',
   },
   faq: [
     {

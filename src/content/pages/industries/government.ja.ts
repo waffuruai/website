@@ -43,12 +43,12 @@ const governmentJa: (typeof government)['en'] = {
       {
         tag: 'cost',
         title: 'お金の行き先を、示す。',
-        body: 'ワークロードあたりのコストは予算担当部署が求める数字ですが、それを見られる人はほとんどいません。Waffle はすべての GPU、その上のすべてのエンジン、そして遊んでいるものを示すので、支出を、それが動かしているサービスに結びつけられます。',
+        body: 'ワークロードあたりのコストは予算担当部署が求める数字ですが、それを見られる人はほとんどいません。Syrup はすべての GPU、その上のすべてのエンジン、そして遊んでいるものを示すので、支出を、それが動かしているサービスに結びつけられます。',
       },
       {
         tag: 'control',
         title: 'ハードウェアを買っても、ロックインは買わない。',
-        body: 'Iron のひとつのカーネル定義が Metal、CUDA、HIP/ROCm、Vulkan に変換され、Waffle は Butter、vLLM、SGLang、llama.cpp と連携します。GPU ベンダーやエンジンを変えることは、書き直しではなく、判断の問題になります。',
+        body: 'Iron のひとつのカーネル定義が Metal、CUDA、HIP/ROCm、Vulkan に変換され、Syrup は Butter、vLLM、SGLang、llama.cpp と連携します。GPU ベンダーやエンジンを変えることは、書き直しではなく、判断の問題になります。',
       },
       {
         tag: 'inference',
@@ -60,7 +60,7 @@ const governmentJa: (typeof government)['en'] = {
   stackFit: {
     title: 'スタックの*かみ合わせ方*',
     intro:
-      'Butter が仕事を管轄内にとどめ、Waffle がそれを説明可能にし、Syrup が自分たちの書類から答え、Iron がベンダーを入れ替え可能に保ちます。',
+      'Butter が仕事を管轄内にとどめ、Syrup がそれを説明可能にし、Whisk が自分たちの書類から答え、Iron がベンダーを入れ替え可能に保ちます。',
     items: [
       {
         product: 'butter',
@@ -68,12 +68,12 @@ const governmentJa: (typeof government)['en'] = {
         body: 'Metal 上の Swift と CUDA 向けの Rust による OpenAI 互換のサービング。サービングの経路に Python はありません。既存のツールで変えるのは接続先であり、SDK ではありません。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'すべての GPU を、ひとつの台帳で。',
         body: 'Butter でも、vLLM でも、SGLang でも、llama.cpp でも、すべての GPU とすべてのエンジンを、ひとつの画面で。各ホストの小さな Rust 製サイドカーが、署名付きテレメトリを報告します。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '自分たちの書類にもとづく答えを、出典付きで。',
         body: '社内のノート、書類、コードに対するローカル検索。検索はキーワード検索とベクトル検索の併用で、結果は MCP 経由で出典付きで返ります。',
       },
@@ -98,7 +98,7 @@ const governmentJa: (typeof government)['en'] = {
     {
       question: 'インフラの外に出るデータはありますか？',
       answer:
-        '推論のデータは、既定では外に出ません。データは、オプトインしない限りそのマシンにとどまるからです。Waffle の各ホストでは、署名付きテレメトリを報告するサイドカーが動いており、ご利用の環境でその中身が具体的に何になるかは、個別にご説明します。',
+        '推論のデータは、既定では外に出ません。データは、オプトインしない限りそのマシンにとどまるからです。Syrup の各ホストでは、署名付きテレメトリを報告するサイドカーが動いており、ご利用の環境でその中身が具体的に何になるかは、個別にご説明します。',
     },
     {
       question: 'オフラインで動かせますか？',
@@ -113,7 +113,7 @@ const governmentJa: (typeof government)['en'] = {
     {
       question: 'どのようにロックインを避けるのですか？',
       answer:
-        'Waffle は Butter、vLLM、SGLang、llama.cpp と連携するので、特定のエンジンに縛られません。Iron のカーネルは Metal、CUDA、HIP/ROCm、Vulkan に変換されるので、特定の GPU ベンダーにも縛られません。',
+        'Syrup は Butter、vLLM、SGLang、llama.cpp と連携するので、特定のエンジンに縛られません。Iron のカーネルは Metal、CUDA、HIP/ROCm、Vulkan に変換されるので、特定の GPU ベンダーにも縛られません。',
     },
     {
       question: 'どのハードウェアに対応していますか？',

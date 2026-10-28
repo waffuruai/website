@@ -60,7 +60,7 @@ const brandJa: (typeof brand)['en'] = {
         body: '本文と見出しでは、W を大文字にして書きます。小文字の「waffuru」はワードマーク専用です。',
       },
       {
-        term: 'Iron, Butter, Waffle, Syrup',
+        term: 'Iron, Butter, Syrup, Whisk',
         body: '4 つの製品名は、どの言語でも必ず頭文字を大文字にし、翻訳しません。',
       },
       {
@@ -69,7 +69,7 @@ const brandJa: (typeof brand)['en'] = {
       },
       {
         term: 'ワッフルのマーク',
-        body: 'この絵柄は「ワッフルのマーク」と呼びます。大文字の W で始まる Waffle は、GPU コントロールプレーン製品の名前です。',
+        body: 'この絵柄は「ワッフルのマーク」と呼びます。',
       },
     ],
     origin:
@@ -259,12 +259,12 @@ const brandJa: (typeof brand)['en'] = {
       {
         key: 'leds',
         name: 'LED',
-        description: 'ラックに並ぶステータスライト。Waffle のモチーフ。',
+        description: 'ラックに並ぶステータスライト。Syrup のモチーフ。',
       },
       {
         key: 'drip',
         name: 'しずく',
-        description: '線を伝って落ちるしずく。Syrup のモチーフ。',
+        description: '線を伝って落ちるしずく。Whisk のモチーフ。',
       },
     ],
   },
@@ -275,7 +275,7 @@ const brandJa: (typeof brand)['en'] = {
     dontLabel: 'しないこと',
     dos: [
       'Waffuru は W を大文字で書く。小文字の「waffuru」はワードマークにだけ使う。',
-      'Iron、Butter、Waffle、Syrup は、どの言語でも表記のとおりに書く。',
+      'Iron、Butter、Syrup、Whisk は、どの言語でも表記のとおりに書く。',
       'ワッフルのマークには余白を取り、十分なコントラストのあるダークまたはライトの背景に置く。',
       '製品は実際のとおりに説明する。現時点では非公開で、早期アクセスは申し込み制。',
       'ハードウェア対応も実際のとおりに説明する。Metal が第一、CUDA が第二、ROCm と Vulkan は動作するがチューニングはこれから。',

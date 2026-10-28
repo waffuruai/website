@@ -262,7 +262,7 @@ const butterKo: (typeof butter)['en'] = {
   stack: {
     heading: '나머지 *스택*과 함께 쓰기.',
     intro:
-      'Butter는 Iron이 컴파일한 커널 위에서 모델을 실행합니다. Waffle은 vLLM, SGLang, llama.cpp와 나란히 Butter도 지켜볼 수 있고, Syrup은 AI가 하던 일을 기억하게 합니다.',
+      'Butter는 Iron이 컴파일한 커널 위에서 모델을 실행합니다. Syrup은 vLLM, SGLang, llama.cpp와 나란히 Butter도 지켜볼 수 있고, Whisk는 AI가 하던 일을 기억하게 합니다.',
   },
   faq: [
     {

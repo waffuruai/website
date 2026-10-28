@@ -41,7 +41,7 @@ const enterpriseZh: (typeof enterprise)['en'] = {
       {
         tag: 'cost',
         title: '在一处看清每一块 GPU 和每个引擎。',
-        body: 'Waffle 显示哪些 GPU 正忙，上面跑着哪些引擎，哪些在闲置，不论引擎是 Butter、vLLM、SGLang 还是 llama.cpp。这是决定合并、淘汰还是新购的起点。',
+        body: 'Syrup 显示哪些 GPU 正忙，上面跑着哪些引擎，哪些在闲置，不论引擎是 Butter、vLLM、SGLang 还是 llama.cpp。这是决定合并、淘汰还是新购的起点。',
       },
       {
         tag: 'inference',
@@ -51,14 +51,14 @@ const enterpriseZh: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: '无需重写，让现有应用直接指向它。',
-        body: 'Butter 兼容 OpenAI 的 API 支持流式输出和工具调用，内部工具只需换一个地址，不用换 SDK。没有什么会把你锁在某一种引擎上，因为 Waffle 与 vLLM、SGLang 和 llama.cpp 并肩工作。',
+        body: 'Butter 兼容 OpenAI 的 API 支持流式输出和工具调用，内部工具只需换一个地址，不用换 SDK。没有什么会把你锁在某一种引擎上，因为 Syrup 与 vLLM、SGLang 和 llama.cpp 并肩工作。',
       },
     ],
   },
   stackFit: {
     title: '技术栈如何*配合*。',
     intro:
-      'Butter 提供服务，Waffle 盯着全局，Syrup 负责检索，Iron 垫在这三者之下。',
+      'Butter 提供服务，Syrup 盯着全局，Whisk 负责检索，Iron 垫在这三者之下。',
     items: [
       {
         product: 'butter',
@@ -66,12 +66,12 @@ const enterpriseZh: (typeof enterprise)['en'] = {
         body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，所以新模型到你的服务器之间，没有转换流水线。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '一个视图，看清每一块 GPU 和每个引擎。',
-        body: '每台主机上的小型 Rust sidecar 上报带签名的遥测数据。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以采用它，并不意味着要替换已经在跑的东西。',
+        body: '每台主机上的小型 Rust sidecar 上报带签名的遥测数据。Syrup 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以采用它，并不意味着要替换已经在跑的东西。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '答案来自你自己的资料，并附引用。',
         body: '对内部笔记和代码做本地检索。搜索结合关键词与向量，结果通过 MCP 附带引用返回。',
       },
@@ -105,12 +105,12 @@ const enterpriseZh: (typeof enterprise)['en'] = {
     {
       question: '我们必须替换现在运行的服务栈吗？',
       answer:
-        '不必。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以你可以先获得可见性，再决定引擎的事。',
+        '不必。Syrup 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以你可以先获得可见性，再决定引擎的事。',
     },
     {
       question: '哪些数据会离开我们的网络？',
       answer:
-        '推理数据默认不会离开，因为除非用户主动选择开启，数据始终留在用户自己的机器上。每台 Waffle 主机运行一个 sidecar，上报带签名的遥测数据，我们会针对你的环境，逐项讲清楚其中包含什么。',
+        '推理数据默认不会离开，因为除非用户主动选择开启，数据始终留在用户自己的机器上。每台 Syrup 主机运行一个 sidecar，上报带签名的遥测数据，我们会针对你的环境，逐项讲清楚其中包含什么。',
     },
     {
       question: '我们如何评估？',

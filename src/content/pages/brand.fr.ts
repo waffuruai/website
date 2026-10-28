@@ -60,7 +60,7 @@ const brandFr: (typeof brand)['en'] = {
         body: 'Avec une majuscule dans le texte courant et les titres. Le « waffuru » en minuscules appartient au seul logotype.',
       },
       {
-        term: 'Iron, Butter, Waffle, Syrup',
+        term: 'Iron, Butter, Syrup, Whisk',
         body: 'Les quatre produits, toujours avec une majuscule et jamais traduits, dans toutes les langues.',
       },
       {
@@ -69,7 +69,7 @@ const brandFr: (typeof brand)['en'] = {
       },
       {
         term: 'Le logo gaufre',
-        body: 'Appelez l’image « le logo gaufre ». Waffle, avec un W majuscule, est notre produit de plan de contrôle GPU.',
+        body: 'Appelez l’image « le logo gaufre ».',
       },
     ],
     origin:
@@ -259,13 +259,13 @@ const brandFr: (typeof brand)['en'] = {
       {
         key: 'leds',
         name: 'LED',
-        description: 'Une baie de voyants d’état. Le motif de Waffle.',
+        description: 'Une baie de voyants d’état. Le motif de Syrup.',
       },
       {
         key: 'drip',
         name: 'Goutte',
         description:
-          'Une goutte qui coule le long d’une ligne. Le motif de Syrup.',
+          'Une goutte qui coule le long d’une ligne. Le motif de Whisk.',
       },
     ],
   },
@@ -276,7 +276,7 @@ const brandFr: (typeof brand)['en'] = {
     dontLabel: 'À ne pas faire',
     dos: [
       'Écrivez Waffuru avec un W majuscule. N’utilisez « waffuru » en minuscules que dans le logotype.',
-      'Écrivez Iron, Butter, Waffle et Syrup tels quels, dans toutes les langues.',
+      'Écrivez Iron, Butter, Syrup et Whisk tels quels, dans toutes les langues.',
       'Laissez de l’espace autour du logo gaufre, sur un fond sombre ou clair avec assez de contraste.',
       'Décrivez nos produits tels qu’ils sont : privés pour l’instant, avec un accès anticipé sur demande.',
       'Décrivez la prise en charge matérielle telle qu’elle est : Metal en premier, CUDA en second, ROCm et Vulkan fonctionnent mais ne sont pas encore optimisés.',

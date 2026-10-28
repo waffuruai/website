@@ -31,7 +31,7 @@ const solutionsOverviewJa: (typeof solutionsOverview)['en'] = {
         points: [
           '借りる代わりに、すでに持っているハードウェアで動かす',
           '量子化モデルなら、手持ちのメモリにより多く収まる',
-          '遊んでいる容量を Waffle が示す',
+          '遊んでいる容量を Syrup が示す',
         ],
       },
       {
@@ -50,7 +50,7 @@ const solutionsOverviewJa: (typeof solutionsOverview)['en'] = {
         body: 'ローカルファースト。ノート PC でも、オンプレミスでも、自社クラウドでも、データは、オプトインしない限りその場所にとどまります。',
         points: [
           'OpenAI 互換のサービング。アプリはそのまま動く',
-          'Waffle は vLLM、SGLang、llama.cpp と連携',
+          'Syrup は vLLM、SGLang、llama.cpp と連携',
           '特定のエンジンやベンダーへのロックインなし',
         ],
       },

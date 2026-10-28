@@ -43,12 +43,12 @@ const governmentEs: (typeof government)['en'] = {
       {
         tag: 'cost',
         title: 'Muestra a dónde va el dinero.',
-        body: 'Los dólares por carga de trabajo son la cifra que pide una oficina de presupuesto, y casi nadie puede verla. Waffle muestra cada GPU, cada motor que corre en ella y lo que está ocioso, para que el gasto se vincule con los servicios que ejecuta.',
+        body: 'Los dólares por carga de trabajo son la cifra que pide una oficina de presupuesto, y casi nadie puede verla. Syrup muestra cada GPU, cada motor que corre en ella y lo que está ocioso, para que el gasto se vincule con los servicios que ejecuta.',
       },
       {
         tag: 'control',
         title: 'Compra hardware sin comprar dependencia.',
-        body: 'Una sola definición de kernel de Iron se traduce a Metal, CUDA, HIP/ROCm y Vulkan, y Waffle funciona con Butter, vLLM, SGLang y llama.cpp. Cambiar de proveedor de GPU o de motor pasa a ser una decisión, no una reescritura.',
+        body: 'Una sola definición de kernel de Iron se traduce a Metal, CUDA, HIP/ROCm y Vulkan, y Syrup funciona con Butter, vLLM, SGLang y llama.cpp. Cambiar de proveedor de GPU o de motor pasa a ser una decisión, no una reescritura.',
       },
       {
         tag: 'inference',
@@ -60,7 +60,7 @@ const governmentEs: (typeof government)['en'] = {
   stackFit: {
     title: 'Cómo *encaja* el stack.',
     intro:
-      'Butter mantiene el trabajo en tu jurisdicción, Waffle rinde cuentas de él, Syrup responde desde tus propios documentos e Iron mantiene a los proveedores intercambiables.',
+      'Butter mantiene el trabajo en tu jurisdicción, Syrup rinde cuentas de él, Whisk responde desde tus propios documentos e Iron mantiene a los proveedores intercambiables.',
     items: [
       {
         product: 'butter',
@@ -68,12 +68,12 @@ const governmentEs: (typeof government)['en'] = {
         body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Las herramientas existentes cambian una dirección, no un SDK.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Cuentas claras de cada GPU.',
         body: 'Cada GPU y cada motor en una sola vista, sea Butter, vLLM, SGLang o llama.cpp. Un pequeño sidecar en Rust en cada host reporta telemetría firmada.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'Respuestas de tus propios documentos, con fuentes.',
         body: 'Recuperación local sobre notas, documentos y código internos. La búsqueda es léxica más vectorial, y los resultados llegan con citas a través de MCP.',
       },
@@ -98,7 +98,7 @@ const governmentEs: (typeof government)['en'] = {
     {
       question: '¿Algún dato sale de nuestra infraestructura?',
       answer:
-        'Los datos de inferencia no salen por defecto, porque los datos se quedan en el equipo a menos que tú lo autorices. Cada host de Waffle ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
+        'Los datos de inferencia no salen por defecto, porque los datos se quedan en el equipo a menos que tú lo autorices. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
     },
     {
       question: '¿Puede funcionar sin conexión?',
@@ -113,7 +113,7 @@ const governmentEs: (typeof government)['en'] = {
     {
       question: '¿Cómo evita la dependencia?',
       answer:
-        'Waffle funciona con Butter, vLLM, SGLang y llama.cpp, así que no estás atado a un solo motor. Los kernels de Iron se traducen a Metal, CUDA, HIP/ROCm y Vulkan, así que no estás atado a un solo proveedor de GPU.',
+        'Syrup funciona con Butter, vLLM, SGLang y llama.cpp, así que no estás atado a un solo motor. Los kernels de Iron se traducen a Metal, CUDA, HIP/ROCm y Vulkan, así que no estás atado a un solo proveedor de GPU.',
     },
     {
       question: '¿Qué hardware admite?',

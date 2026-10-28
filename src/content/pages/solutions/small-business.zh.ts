@@ -45,13 +45,13 @@ const smallBusinessZh: (typeof smallBusiness)['en'] = {
       {
         tag: 'control',
         title: '向你自己的笔记和代码提问。',
-        body: 'Syrup 在本地对你的笔记和代码做检索，所以每个答案都带着出处的引用。搜索结合关键词与向量，确切的名称和模糊的问题都能命中。',
+        body: 'Whisk 在本地对你的笔记和代码做检索，所以每个答案都带着出处的引用。搜索结合关键词与向量，确切的名称和模糊的问题都能命中。',
       },
     ],
   },
   stackFit: {
     title: '技术栈如何*配合*。',
-    intro: 'Butter 负责最重的活。Syrup 和 Waffle 在你需要时随时待命。',
+    intro: 'Butter 负责最重的活。Whisk 和 Syrup 在你需要时随时待命。',
     items: [
       {
         product: 'butter',
@@ -59,12 +59,12 @@ const smallBusinessZh: (typeof smallBusiness)['en'] = {
         body: 'Apple 芯片上用 Swift 搭配 Metal，CUDA 及其他平台用 Rust。Llama、Gemma、Qwen、GPT-OSS 等模型，可以与语音转文字、文字转语音和视觉模型一起运行，butter serve 则为你的应用提供兼容 OpenAI 的端点。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '向你自己的文件提问，并拿到出处。',
         body: '对你的笔记和代码做本地检索。结果通过 MCP 附带引用返回，让助理能亮出依据。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '盯着你桌下的那台机器。',
         body: '从一台机器到一个小机架，看清每一块 GPU 和其上运行的每个引擎，不论是 Butter、llama.cpp、vLLM 还是 SGLang。',
       },

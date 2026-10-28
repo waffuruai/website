@@ -42,7 +42,7 @@ const lifeSciencesKo: (typeof lifeSciences)['en'] = {
       {
         tag: 'inference',
         title: '자료에 질문하고, 출처를 받으세요.',
-        body: 'Syrup은 노트와 문서, 코드를 로컬에서 검색합니다. 어휘 검색과 벡터 검색을 함께 쓰기 때문에 정확한 유전자 이름도, 두루뭉술한 질문도 잘 찾아내며, 모든 답은 어디서 왔는지 출처를 밝힙니다.',
+        body: 'Whisk는 노트와 문서, 코드를 로컬에서 검색합니다. 어휘 검색과 벡터 검색을 함께 쓰기 때문에 정확한 유전자 이름도, 두루뭉술한 질문도 잘 찾아내며, 모든 답은 어디서 왔는지 출처를 밝힙니다.',
       },
       {
         tag: 'control',
@@ -52,14 +52,13 @@ const lifeSciencesKo: (typeof lifeSciences)['en'] = {
       {
         tag: 'cost',
         title: '프로젝트별 컴퓨팅 비용을 파악하세요.',
-        body: 'Waffle은 바쁘든 놀고 있든 모든 GPU와 그 위의 모든 엔진을 보여 주므로, 연구용 컴퓨팅을 그것이 해낸 일과 연결할 수 있습니다. 예산에 추측 대신 숫자가 들어갑니다.',
+        body: 'Syrup은 바쁘든 놀고 있든 모든 GPU와 그 위의 모든 엔진을 보여 주므로, 연구용 컴퓨팅을 그것이 해낸 일과 연결할 수 있습니다. 예산에 추측 대신 숫자가 들어갑니다.',
       },
     ],
   },
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
-    intro:
-      'Butter가 모델을 돌리고, Syrup이 자료를 읽으며, Waffle이 집계합니다.',
+    intro: 'Butter가 모델을 돌리고, Whisk가 자료를 읽으며, Syrup이 집계합니다.',
     items: [
       {
         product: 'butter',
@@ -67,12 +66,12 @@ const lifeSciencesKo: (typeof lifeSciences)['en'] = {
         body: 'Apple 실리콘에는 Metal 위의 Swift, CUDA에는 Rust를 쓰며, 서빙 경로에 Python이 없습니다. 텍스트, 비전, 음성, 옴니 모델을 OpenAI 호환 API 뒤에서 제공하며, 체크포인트는 Hugging Face에서 곧바로 불러옵니다.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '내 자료에서 나온 답을 출처와 함께.',
         body: '노트, 문서, 코드에 대한 로컬 검색. 검색은 어휘 검색과 벡터 검색을 함께 쓰고, 결과는 MCP를 통해 출처 인용과 함께 돌아오므로 어시스턴트가 근거를 보여 줄 수 있습니다.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '사용 내역을 밝힐 수 있는 컴퓨팅.',
         body: '워크스테이션 한 대부터 공유 클러스터까지, Butter든 vLLM, SGLang, llama.cpp든 모든 GPU와 모든 엔진을 하나의 화면으로 봅니다.',
       },
@@ -84,7 +83,7 @@ const lifeSciencesKo: (typeof lifeSciences)['en'] = {
     notes: [
       'Mac Studio나 RTX 워크스테이션이 가장 쉽게 시작할 수 있는 환경입니다. Metal이 주력이고, CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중입니다.',
       '데이터센터 GPU는 진행 중입니다. ROCm과 Vulkan은 구동되지만 아직 튜닝하지 않았습니다.',
-      'Syrup은 출처를 밝히지만 과학적 타당성을 확인하지는 않습니다. 그 일은 여전히 리뷰어의 몫입니다.',
+      'Whisk는 출처를 밝히지만 과학적 타당성을 확인하지는 않습니다. 그 일은 여전히 리뷰어의 몫입니다.',
     ],
   },
   faq: [
@@ -96,7 +95,7 @@ const lifeSciencesKo: (typeof lifeSciences)['en'] = {
     {
       question: '우리 문서를 바탕으로 답할 수 있나요?',
       answer:
-        '네. Syrup은 노트와 문서, 코드를 로컬에서 검색하며, 모든 결과는 MCP를 통해 출처 인용과 함께 돌아옵니다.',
+        '네. Whisk는 노트와 문서, 코드를 로컬에서 검색하며, 모든 결과는 MCP를 통해 출처 인용과 함께 돌아옵니다.',
     },
     {
       question: '임상이나 규제 대상 업무용으로 검증되었나요?',

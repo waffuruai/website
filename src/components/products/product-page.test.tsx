@@ -237,7 +237,7 @@ describe('Butter’s page', () => {
 });
 
 describe('Other product pages', () => {
-  it.each(['iron', 'waffle', 'syrup'] as const)(
+  it.each(['iron', 'syrup', 'whisk'] as const)(
     '%s has no extra sections',
     (slug) => {
       const { container } = renderPage(slug);

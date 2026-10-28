@@ -18,7 +18,7 @@ import { localize } from '@/lib/content';
 import { breadcrumbs, webPage } from '@/lib/json-ld';
 
 /**
- * /products: the Waffuru stack. The four layers as a stack from Syrup (04)
+ * /products: the Waffuru stack. The four layers as a stack from Whisk (04)
  * down to Iron (01), what each does alone and together, who it is for.
  */
 export function ProductsOverview({

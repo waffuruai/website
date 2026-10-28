@@ -132,7 +132,7 @@ export const teamCopy: Localized<Record<string, TeamCopy>> = {
       role: 'Chief of Research',
       background:
         'AI researcher behind TurboQuant+. Former tech lead manager at Google.',
-      bio: 'Tom leads research at Waffuru. He is the AI researcher behind TurboQuant+, the compression work Syrup uses to shrink embeddings, and was a tech lead manager at Google.',
+      bio: 'Tom leads research at Waffuru. He is the AI researcher behind TurboQuant+, the compression work Whisk uses to shrink embeddings, and was a tech lead manager at Google.',
     },
     'cory-smith': {
       role: 'Chief Technology Officer',

@@ -31,7 +31,7 @@ const industriesOverviewZh: (typeof industriesOverview)['en'] = {
       {
         tag: 'cost',
         title: '真正*重要*的数字。',
-        body: '每个工作负载的成本，是财务部门要的数字，却几乎没人能看到。Waffle 显示每一块 GPU 和其上的每个引擎，让开支能对应回它完成的工作。',
+        body: '每个工作负载的成本，是财务部门要的数字，却几乎没人能看到。Syrup 显示每一块 GPU 和其上的每个引擎，让开支能对应回它完成的工作。',
         points: [
           '看清哪些 GPU 正忙、闲置或错配',
           '从你已有的硬件中获得更多产出',
@@ -54,7 +54,7 @@ const industriesOverviewZh: (typeof industriesOverview)['en'] = {
         body: '一份 Iron 内核定义，可转换为 Metal、CUDA、HIP 和 Vulkan；除非你主动选择开启，数据始终留在原处。更换厂商是一个决定，而不是一次重写。',
         points: [
           '本地机房、你自己的云，或一台工作站',
-          'Waffle 支持 vLLM、SGLang 和 llama.cpp',
+          'Syrup 支持 vLLM、SGLang 和 llama.cpp',
           '不被锁定在某一种引擎或某一家 GPU 厂商',
         ],
       },

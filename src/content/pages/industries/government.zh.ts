@@ -41,12 +41,12 @@ const governmentZh: (typeof government)['en'] = {
       {
         tag: 'cost',
         title: '讲清钱花在了哪里。',
-        body: '每个工作负载的成本，是预算部门要的数字，却几乎没人能看到。Waffle 显示每一块 GPU、其上的每个引擎以及哪些在闲置，让开支能对应回它所支撑的服务。',
+        body: '每个工作负载的成本，是预算部门要的数字，却几乎没人能看到。Syrup 显示每一块 GPU、其上的每个引擎以及哪些在闲置，让开支能对应回它所支撑的服务。',
       },
       {
         tag: 'control',
         title: '买硬件，不买锁定。',
-        body: '一份 Iron 内核定义，可转换为 Metal、CUDA、HIP/ROCm 和 Vulkan，而 Waffle 支持 Butter、vLLM、SGLang 和 llama.cpp。更换 GPU 厂商或引擎，变成一个决定，而不是一次重写。',
+        body: '一份 Iron 内核定义，可转换为 Metal、CUDA、HIP/ROCm 和 Vulkan，而 Syrup 支持 Butter、vLLM、SGLang 和 llama.cpp。更换 GPU 厂商或引擎，变成一个决定，而不是一次重写。',
       },
       {
         tag: 'inference',
@@ -58,7 +58,7 @@ const governmentZh: (typeof government)['en'] = {
   stackFit: {
     title: '技术栈如何*配合*。',
     intro:
-      'Butter 让工作留在你的管辖范围内，Waffle 为它记账，Syrup 根据你自己的文档作答，Iron 让厂商可以互换。',
+      'Butter 让工作留在你的管辖范围内，Syrup 为它记账，Whisk 根据你自己的文档作答，Iron 让厂商可以互换。',
     items: [
       {
         product: 'butter',
@@ -66,12 +66,12 @@ const governmentZh: (typeof government)['en'] = {
         body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。现有工具只需换一个地址，不用换 SDK。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '每一块 GPU，一本账。',
         body: '一个视图看清每一块 GPU 和每个引擎，不论是 Butter、vLLM、SGLang 还是 llama.cpp。每台主机上的小型 Rust sidecar 上报带签名的遥测数据。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '答案来自你自己的文档，并附出处。',
         body: '对内部笔记、文档和代码做本地检索。搜索结合关键词与向量，结果通过 MCP 附带引用返回。',
       },
@@ -96,7 +96,7 @@ const governmentZh: (typeof government)['en'] = {
     {
       question: '会有数据离开我们的基础设施吗？',
       answer:
-        '推理数据默认不会离开，因为除非你主动选择开启，数据始终留在机器上。每台 Waffle 主机运行一个 sidecar，上报带签名的遥测数据，我们会针对你的环境，逐项讲清楚其中包含什么。',
+        '推理数据默认不会离开，因为除非你主动选择开启，数据始终留在机器上。每台 Syrup 主机运行一个 sidecar，上报带签名的遥测数据，我们会针对你的环境，逐项讲清楚其中包含什么。',
     },
     {
       question: '可以离线运行吗？',
@@ -111,7 +111,7 @@ const governmentZh: (typeof government)['en'] = {
     {
       question: '它如何避免锁定？',
       answer:
-        'Waffle 支持 Butter、vLLM、SGLang 和 llama.cpp，所以你不会被绑在某一种引擎上。Iron 内核可转换为 Metal、CUDA、HIP/ROCm 和 Vulkan，所以你也不会被绑在某一家 GPU 厂商上。',
+        'Syrup 支持 Butter、vLLM、SGLang 和 llama.cpp，所以你不会被绑在某一种引擎上。Iron 内核可转换为 Metal、CUDA、HIP/ROCm 和 Vulkan，所以你也不会被绑在某一家 GPU 厂商上。',
     },
     {
       question: '它支持哪些硬件？',

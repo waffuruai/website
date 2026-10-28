@@ -32,7 +32,7 @@ const industriesOverviewEs: (typeof industriesOverview)['en'] = {
       {
         tag: 'cost',
         title: 'La cifra que *importa*.',
-        body: 'Los dólares por carga de trabajo son lo que pide finanzas, y casi nadie puede verlos. Waffle muestra cada GPU y cada motor que corre en ella, para que el gasto se vincule con el trabajo que hizo.',
+        body: 'Los dólares por carga de trabajo son lo que pide finanzas, y casi nadie puede verlos. Syrup muestra cada GPU y cada motor que corre en ella, para que el gasto se vincule con el trabajo que hizo.',
         points: [
           'Ve qué GPU están ocupadas, ociosas o desajustadas',
           'Saca más del hardware que ya tienes',
@@ -55,7 +55,7 @@ const industriesOverviewEs: (typeof industriesOverview)['en'] = {
         body: 'Una sola definición de kernel de Iron se traduce a Metal, CUDA, HIP y Vulkan, y tus datos se quedan donde están a menos que tú lo autorices. Cambiar de proveedor es una decisión, no una reescritura.',
         points: [
           'En tus instalaciones, en tu propia nube o en una sola estación de trabajo',
-          'Waffle funciona con vLLM, SGLang y llama.cpp',
+          'Syrup funciona con vLLM, SGLang y llama.cpp',
           'Sin dependencia de un solo motor ni de un solo proveedor de GPU',
         ],
       },

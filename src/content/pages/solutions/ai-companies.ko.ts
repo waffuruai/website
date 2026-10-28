@@ -21,7 +21,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
   },
   hero: {
     title: '커널은 한 번만 쓰세요. 네 *백엔드*로 내보내세요.',
-    lede: 'Iron이 하나의 커널 정의를 Metal, CUDA, ROCm, Vulkan으로 컴파일합니다. 그 위에서 Butter가 Python 없이 모델을 서빙하고, Syrup이 에이전트에 메모리를 줍니다.',
+    lede: 'Iron이 하나의 커널 정의를 Metal, CUDA, ROCm, Vulkan으로 컴파일합니다. 그 위에서 Butter가 Python 없이 모델을 서빙하고, Whisk가 에이전트에 메모리를 줍니다.',
   },
   problem: {
     title: '백엔드마다 *재작성*입니다.',
@@ -51,7 +51,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: '로컬에 머무는 메모리를 에이전트에 주세요.',
-        body: 'Syrup은 TurboQuant+로 임베딩을 압축하고, 머신에서 어휘 검색과 벡터 검색을 함께 실행합니다. 결과는 MCP로 출처 인용과 함께 돌아오므로, 에이전트가 중단한 지점에서 이어갈 수 있습니다.',
+        body: 'Whisk는 TurboQuant+로 임베딩을 압축하고, 머신에서 어휘 검색과 벡터 검색을 함께 실행합니다. 결과는 MCP로 출처 인용과 함께 돌아오므로, 에이전트가 중단한 지점에서 이어갈 수 있습니다.',
       },
     ],
   },
@@ -73,7 +73,7 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
   },
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
-    intro: 'Iron과 Butter가 핵심입니다. Syrup과 Waffle이 이를 완성합니다.',
+    intro: 'Iron과 Butter가 핵심입니다. Whisk와 Syrup이 이를 완성합니다.',
     items: [
       {
         product: 'iron',
@@ -86,12 +86,12 @@ const aiCompaniesKo: (typeof aiCompanies)['en'] = {
         body: 'safetensors, MLX, JANG, GGUF를 변환 없이 불러오고, 2~8비트 양자화 체크포인트, 하이브리드·MoE 모델, 양자화된 KV 캐시, 추측 디코딩, LoRA를 지원합니다. 텍스트, 비전, 음성 인식, 음성 합성, 옴니 모델을 OpenAI 호환 API 뒤에서 제공합니다.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '에이전트를 위한 메모리.',
         body: '노트와 코드에 대한 로컬 검색: TurboQuant+로 압축한 임베딩, 어휘 검색과 벡터 검색, MCP를 통한 출처 표기 결과.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '모든 GPU의 모든 엔진을 하나의 뷰로.',
         body: 'Butter를 vLLM, SGLang, llama.cpp 옆에서 돌리고 나란히 비교해 보세요. 호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다.',
       },

@@ -2,7 +2,7 @@
  * English UI chrome: the source of truth for every dictionary. The other
  * locales are typed against this shape, so a missing key fails typecheck.
  * Page copy lives in `src/content/*`, not here. Product names (Waffuru, Iron,
- * Butter, Waffle, Syrup) and platform names (Metal, CUDA, …) never translate.
+ * Butter, Syrup, Whisk) and platform names (Metal, CUDA, …) never translate.
  */
 const en = {
   common: {
@@ -67,12 +67,12 @@ const en = {
         label: 'Butter',
         description: 'Model serving without Python.',
       },
-      waffle: {
-        label: 'Waffle',
-        description: 'See every GPU and every engine running on it.',
-      },
       syrup: {
         label: 'Syrup',
+        description: 'See every GPU and every engine running on it.',
+      },
+      whisk: {
+        label: 'Whisk',
         description: 'Your AI remembers what you were working on.',
       },
       pantry: {

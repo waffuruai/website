@@ -55,14 +55,14 @@ const militaryFr: (typeof military)['en'] = {
       {
         tag: 'cost',
         title: 'Rendez compte de chaque GPU acheté.',
-        body: 'Waffle montre chaque GPU et chaque moteur qui y tourne, occupé ou inactif, sur les Mac, les stations de travail et les baies. La capacité inutilisée apparaît avant le prochain achat.',
+        body: 'Syrup montre chaque GPU et chaque moteur qui y tourne, occupé ou inactif, sur les Mac, les stations de travail et les baies. La capacité inutilisée apparaît avant le prochain achat.',
       },
     ],
   },
   stackFit: {
     title: 'Comment la stack *s’assemble*.',
     intro:
-      'Butter fait tourner les modèles, Waffle rend compte du matériel, et Iron laisse la porte ouverte à la prochaine plateforme.',
+      'Butter fait tourner les modèles, Syrup rend compte du matériel, et Iron laisse la porte ouverte à la prochaine plateforme.',
     items: [
       {
         product: 'butter',
@@ -70,7 +70,7 @@ const militaryFr: (typeof military)['en'] = {
         body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python dans le chemin de serving. Il charge directement les checkpoints safetensors, MLX, JANG et GGUF, sans étape de conversion.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Chaque GPU que vous possédez, en une seule vue.',
         body: 'Chaque GPU et chaque moteur qui y tourne, que ce soit Butter, vLLM, SGLang ou llama.cpp. Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée.',
       },
@@ -95,7 +95,7 @@ const militaryFr: (typeof military)['en'] = {
     {
       question: 'Quelque chose quitte-t-il nos machines ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut : les modèles tournent sur du matériel que vous exploitez, et les données y restent, sauf si vous choisissez de les partager. Chaque hôte Waffle exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient.',
+        'Les données d’inférence ne sortent pas par défaut : les modèles tournent sur du matériel que vous exploitez, et les données y restent, sauf si vous choisissez de les partager. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient.',
     },
     {
       question: 'Sur quel matériel cela tourne-t-il ?',

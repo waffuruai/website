@@ -7,69 +7,83 @@ import syrupJa from './syrup.ja';
 import syrupKo from './syrup.ko';
 
 /*
- * Syrup, 04 · Memory. Facts come from the content brief only.
- * TurboQuant+ is Tom Turney's work (Chief of Research); the FAQ credits him.
+ * Syrup, 03 · Control plane. Facts come from the content brief only.
+ * TODO(founder): publish a hardware and engine support matrix for Syrup and
+ * link it from the FAQ; until then the page says plainly that there isn't one.
  */
 export const syrup: Localized<ProductCopy> = {
   en: {
-    layer: 'Memory',
-    tagline: 'Your AI remembers what you were working on.',
+    layer: 'Control plane',
+    tagline: 'See every GPU and every engine running on it.',
     summary:
-      'Local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+      'A control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry. Works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
     seo: {
-      title: 'Syrup: local memory and retrieval for your AI',
+      title: 'Syrup: a control plane for LLMs on GPUs',
       description:
-        'Syrup is local retrieval over your notes and code. Lexical plus vector search over TurboQuant+ compressed embeddings, with citations returned over MCP.',
+        'See every GPU and inference engine, from one box to a neocloud. A Rust sidecar reports signed telemetry. Works with Butter, vLLM, SGLang and llama.cpp.',
       keywords: [
-        'local RAG',
-        'AI memory',
-        'MCP retrieval',
-        'private semantic search',
+        'GPU fleet management',
+        'LLM control plane',
+        'GPU observability',
+        'vLLM SGLang llama.cpp monitoring',
       ],
     },
     hero: {
-      title: 'Your AI *remembers* what you were working on.',
-      lede: 'Syrup is local retrieval over your notes and code. Embeddings are compressed with TurboQuant+, search is lexical plus vector, and results come back with citations over MCP.',
+      title: 'See every GPU and every *engine* running on it.',
+      lede: 'Syrup is a control plane for LLMs on GPUs, from one box under a desk to a neocloud renting out a fleet. Each host runs a small Rust sidecar that reports signed telemetry.',
       highlights: [
-        { value: 'Local', label: 'retrieval over your notes and code' },
+        { value: 'One box', label: 'under a desk, up to a neocloud fleet' },
         {
-          value: 'Lexical + vector',
-          label: 'search, over embeddings compressed with TurboQuant+',
+          value: 'Signed',
+          label: 'telemetry from a small Rust sidecar on each host',
         },
-        { value: 'Cited', label: 'results, delivered over MCP' },
+        {
+          value: 'No lock-in',
+          label:
+            'Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers',
+        },
       ],
     },
     story: {
-      heading: 'Stop re-explaining *yourself*.',
+      heading: 'Know what’s running on every *GPU*.',
       problem:
-        'Every new chat starts from nothing. You paste in the same notes and files again, and when an answer comes back you can’t tell which of them it came from.',
+        'A GPU box runs whatever engine somebody started on it: llama.cpp on one machine, vLLM on the next, SGLang on the new one. Finding out what is running, and where, means logging in to each host.',
       outcome:
-        'Syrup indexes your notes and code on your own machine. Your AI asks it over MCP and gets back the passages that matter, each with a citation you can check.',
+        'Put a small Rust sidecar on each host. It reports signed telemetry, and Syrup shows you every GPU and every engine on it, whether you run one machine or a whole fleet.',
       outcomes: [
-        'Keep your notes and code on your own machine. Retrieval is local.',
-        'Find things by the exact words you used or by what they mean: search is lexical plus vector.',
-        'Check any answer against its source, because results come back with citations.',
+        'Watch one box under your desk, or a fleet you rent out, with the same tool.',
+        'Keep the engines you already run. Syrup works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+        'Rely on what you see: every host reports signed telemetry.',
       ],
     },
     capabilities: {
       heading: 'What Syrup *does*.',
-      intro: 'A memory layer you run yourself, for the work you already have.',
+      intro:
+        'A control plane that sits beside your engines instead of replacing them.',
       items: [
         {
-          title: 'Local retrieval',
-          body: 'Syrup searches your notes and code on your own machine, and your data stays there unless you opt in.',
+          title: 'Every GPU',
+          body: 'See each GPU on each host in one place.',
         },
         {
-          title: 'Compressed embeddings',
-          body: 'Embeddings are compressed with TurboQuant+, so the index takes up less room.',
+          title: 'Every engine',
+          body: 'See which engine is running on it: Butter, vLLM, SGLang, llama.cpp or another OpenAI-compatible server.',
         },
         {
-          title: 'Lexical plus vector search',
-          body: 'Exact-word matching and meaning-based search work together.',
+          title: 'A small Rust sidecar',
+          body: 'Each host runs a small sidecar written in Rust, so adding a machine means adding the sidecar.',
         },
         {
-          title: 'Citations over MCP',
-          body: 'Results come back with citations over MCP, so any MCP client can use them and show where each one came from.',
+          title: 'Signed telemetry',
+          body: 'Each sidecar signs the telemetry it reports.',
+        },
+        {
+          title: 'One box to a fleet',
+          body: 'Start with a single machine under a desk. The same setup reaches a neocloud renting out a fleet.',
+        },
+        {
+          title: 'No lock-in',
+          body: 'Syrup doesn’t need Butter. It works with vLLM, SGLang, llama.cpp and other OpenAI-compatible servers too.',
         },
       ],
     },
@@ -77,12 +91,33 @@ export const syrup: Localized<ProductCopy> = {
       heading: 'Technical *specifics*.',
       intro: 'The details, for the people who will read them.',
       rows: [
-        { term: 'Indexes', detail: 'Your notes and code.' },
-        { term: 'Where it runs', detail: 'Locally, on your machine.' },
-        { term: 'Embeddings', detail: 'Compressed with TurboQuant+.' },
-        { term: 'Search', detail: 'Lexical plus vector.' },
-        { term: 'Results', detail: 'Returned with citations.' },
-        { term: 'Interface', detail: 'MCP.' },
+        { term: 'Role', detail: 'A control plane for LLMs on GPUs.' },
+        {
+          term: 'On each host',
+          detail: 'A small sidecar written in Rust.',
+        },
+        {
+          term: 'Telemetry',
+          detail: 'Signed by the sidecar that reports it.',
+        },
+        {
+          term: 'Engines',
+          chips: [
+            { label: 'Butter' },
+            { label: 'vLLM' },
+            { label: 'SGLang' },
+            { label: 'llama.cpp' },
+            { label: 'Other OpenAI-compatible servers' },
+          ],
+        },
+        {
+          term: 'Scale',
+          detail: 'One box under a desk to a neocloud fleet.',
+        },
+        {
+          term: 'Lock-in',
+          detail: 'None. Syrup works with engines other than Butter.',
+        },
         {
           term: 'Availability',
           detail: 'Private and closed source during early access.',
@@ -92,7 +127,7 @@ export const syrup: Localized<ProductCopy> = {
     stack: {
       heading: 'Works with the rest of the *stack*.',
       intro:
-        'Syrup works on its own, with any MCP client. Underneath it, Butter runs models, Waffle watches the GPUs and Iron compiles the kernels.',
+        'Syrup watches the GPUs, with Butter or without it. Butter runs models on the kernels Iron compiles, and Whisk remembers what you were working on.',
     },
     faq: [
       {
@@ -101,33 +136,29 @@ export const syrup: Localized<ProductCopy> = {
           'Not today. Syrup is private and closed source during early access. Request access and we’ll write when there is more to share.',
       },
       {
-        question: 'Does my data leave my machine?',
+        question: 'Do I have to use Butter?',
         answer:
-          'Retrieval is local: Syrup indexes and searches on your machine. We hold ourselves to a simple rule, which is that your data stays on your machine unless you opt in.',
+          'No. Syrup works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers, so you keep the engines you already run.',
       },
       {
-        question: 'What does it index?',
-        answer: 'Your notes and your code.',
+        question: 'Who is it for?',
+        answer:
+          'Anyone who runs LLMs on GPUs and wants to see them, from a single box under a desk to a neocloud renting out a fleet.',
       },
       {
-        question: 'What is TurboQuant+?',
+        question: 'What does the sidecar do?',
         answer:
-          'The method Syrup uses to compress embeddings. It comes from our Chief of Research, Tom Turney.',
+          'Each host runs a small sidecar written in Rust. It reports signed telemetry about the host’s GPUs and the engines running on them.',
       },
       {
-        question: 'What can use Syrup?',
+        question: 'Which GPUs does it support?',
         answer:
-          'Anything that speaks MCP can ask Syrup for results, and each result comes back with a citation.',
-      },
-      {
-        question: 'Do I need the rest of the stack?',
-        answer:
-          'No. Each Waffuru product works on its own, and Syrup is no exception.',
+          'We haven’t published a hardware matrix for Syrup yet. Tell us what you run and we’ll say plainly whether it fits.',
       },
     ],
     cta: {
-      title: 'Give your AI a *memory*.',
-      body: 'Syrup is in early access and closed source for now. Request access, or tell us what you’d like it to remember.',
+      title: 'See your *fleet*.',
+      body: 'Syrup is in early access and closed source for now. Request access, or tell us what you run.',
     },
   },
   es: syrupEs,

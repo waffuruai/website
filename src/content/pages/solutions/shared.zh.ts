@@ -32,19 +32,19 @@ const solutionsSharedZh: (typeof solutionsShared)['en'] = {
       linkLabel: '了解 Butter',
       href: '/products/butter',
     },
-    waffle: {
+    syrup: {
       index: '03',
       role: '控制平面',
-      name: 'Waffle',
-      linkLabel: '了解 Waffle',
-      href: '/products/waffle',
-    },
-    syrup: {
-      index: '04',
-      role: '记忆',
       name: 'Syrup',
       linkLabel: '了解 Syrup',
       href: '/products/syrup',
+    },
+    whisk: {
+      index: '04',
+      role: '记忆',
+      name: 'Whisk',
+      linkLabel: '了解 Whisk',
+      href: '/products/whisk',
     },
   },
   hardware: {

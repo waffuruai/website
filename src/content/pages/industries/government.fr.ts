@@ -43,12 +43,12 @@ const governmentFr: (typeof government)['en'] = {
       {
         tag: 'cost',
         title: 'Montrez où va l’argent.',
-        body: 'Les dollars par charge de travail, c’est le chiffre que demande un service du budget, et presque personne ne peut le voir. Waffle montre chaque GPU, chaque moteur qui y tourne et ce qui reste inactif, pour que la dépense se rattache aux services qu’elle fait tourner.',
+        body: 'Les dollars par charge de travail, c’est le chiffre que demande un service du budget, et presque personne ne peut le voir. Syrup montre chaque GPU, chaque moteur qui y tourne et ce qui reste inactif, pour que la dépense se rattache aux services qu’elle fait tourner.',
       },
       {
         tag: 'control',
         title: 'Achetez du matériel sans acheter de verrouillage.',
-        body: 'Une seule définition de kernel Iron est compilée vers Metal, CUDA, HIP/ROCm et Vulkan, et Waffle fonctionne avec Butter, vLLM, SGLang et llama.cpp. Changer de fournisseur de GPU ou de moteur devient une décision, pas une réécriture.',
+        body: 'Une seule définition de kernel Iron est compilée vers Metal, CUDA, HIP/ROCm et Vulkan, et Syrup fonctionne avec Butter, vLLM, SGLang et llama.cpp. Changer de fournisseur de GPU ou de moteur devient une décision, pas une réécriture.',
       },
       {
         tag: 'inference',
@@ -60,7 +60,7 @@ const governmentFr: (typeof government)['en'] = {
   stackFit: {
     title: 'Comment la stack *s’assemble*.',
     intro:
-      'Butter garde le travail dans votre juridiction, Waffle en rend compte, Syrup répond à partir de vos propres documents, et Iron rend les fournisseurs interchangeables.',
+      'Butter garde le travail dans votre juridiction, Syrup en rend compte, Whisk répond à partir de vos propres documents, et Iron rend les fournisseurs interchangeables.',
     items: [
       {
         product: 'butter',
@@ -68,12 +68,12 @@ const governmentFr: (typeof government)['en'] = {
         body: 'Du serving compatible OpenAI en Swift sur Metal et en Rust pour CUDA, sans Python dans le chemin de serving. Vos outils existants changent d’adresse, pas de SDK.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Un inventaire unique de chaque GPU.',
         body: 'Chaque GPU et chaque moteur en une seule vue, que ce soit Butter, vLLM, SGLang ou llama.cpp. Un petit sidecar Rust sur chaque hôte remonte une télémétrie signée.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'Des réponses tirées de vos propres documents, avec leurs sources.',
         body: 'Recherche locale sur vos notes, documents et code internes. La recherche est lexicale plus vectorielle, et les résultats reviennent avec leurs citations via MCP.',
       },
@@ -98,7 +98,7 @@ const governmentFr: (typeof government)['en'] = {
     {
       question: 'Des données quittent-elles notre infrastructure ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut, car les données restent sur la machine, sauf si vous choisissez de les partager. Chaque hôte Waffle exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
+        'Les données d’inférence ne sortent pas par défaut, car les données restent sur la machine, sauf si vous choisissez de les partager. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
     },
     {
       question: 'Cela peut-il fonctionner hors ligne ?',
@@ -113,7 +113,7 @@ const governmentFr: (typeof government)['en'] = {
     {
       question: 'Comment évite-t-on le verrouillage ?',
       answer:
-        'Waffle fonctionne avec Butter, vLLM, SGLang et llama.cpp : vous n’êtes pas lié à un seul moteur. Les kernels Iron sont compilés vers Metal, CUDA, HIP/ROCm et Vulkan : vous n’êtes pas lié à un seul fournisseur de GPU.',
+        'Syrup fonctionne avec Butter, vLLM, SGLang et llama.cpp : vous n’êtes pas lié à un seul moteur. Les kernels Iron sont compilés vers Metal, CUDA, HIP/ROCm et Vulkan : vous n’êtes pas lié à un seul fournisseur de GPU.',
     },
     {
       question: 'Quel matériel est pris en charge ?',

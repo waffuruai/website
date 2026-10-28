@@ -52,12 +52,12 @@ const homeJa: (typeof home)['en'] = {
       layers: [
         {
           role: 'コントロール',
-          name: 'Waffle',
+          name: 'Syrup',
           line: 'すべての GPU と、その上で動くすべてのエンジンを可視化。',
         },
         {
           role: '記憶',
-          name: 'Syrup',
+          name: 'Whisk',
           line: '自分のノートとコードからのコンテキストを、出典付きで。',
         },
         {

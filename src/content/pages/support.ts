@@ -67,7 +67,7 @@ export const support: Localized<SupportContent> = {
       {
         question: 'What can I use today?',
         answer:
-          'Our products (Iron, Butter, Waffle and Syrup) are private and closed source for now, and nothing is generally available yet. Early access is how people get in first.',
+          'Our products (Iron, Butter, Syrup and Whisk) are private and closed source for now, and nothing is generally available yet. Early access is how people get in first.',
       },
       {
         question: 'How does early access work?',

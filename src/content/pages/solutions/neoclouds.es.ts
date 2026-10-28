@@ -37,7 +37,7 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
       {
         tag: 'cost',
         title: 'Sabe qué corre en cada GPU.',
-        body: 'Waffle ofrece una sola vista de hosts, GPU, motores e inquilinos, ya sea vLLM, SGLang, llama.cpp o Butter. La capacidad ociosa o desajustada aparece primero en tu pantalla.',
+        body: 'Syrup ofrece una sola vista de hosts, GPU, motores e inquilinos, ya sea vLLM, SGLang, llama.cpp o Butter. La capacidad ociosa o desajustada aparece primero en tu pantalla.',
       },
       {
         tag: 'control',
@@ -52,19 +52,19 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
       {
         tag: 'control',
         title: 'Ofrece opciones sin apostar por un solo motor.',
-        body: 'Butter sirve una API compatible con OpenAI, y Waffle funciona con vLLM, SGLang y llama.cpp. Puedes dar más opciones a tus clientes sin reconstruir todo en torno a un único motor.',
+        body: 'Butter sirve una API compatible con OpenAI, y Syrup funciona con vLLM, SGLang y llama.cpp. Puedes dar más opciones a tus clientes sin reconstruir todo en torno a un único motor.',
       },
     ],
   },
   stackFit: {
     title: 'Cómo *encaja* el stack.',
     intro:
-      'Waffle es la parte pensada para ti. Butter e Iron trabajan en la eficiencia que hay debajo.',
+      'Syrup es la parte pensada para ti. Butter e Iron trabajan en la eficiencia que hay debajo.',
     items: [
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Ve toda la flota.',
-        body: 'De un equipo bajo el escritorio a un neocloud que alquila una flota. Un pequeño sidecar en Rust en cada host reporta telemetría firmada, y Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
+        body: 'De un equipo bajo el escritorio a un neocloud que alquila una flota. Un pequeño sidecar en Rust en cada host reporta telemetría firmada, y Syrup funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI.',
       },
       {
         product: 'butter',
@@ -80,7 +80,7 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: 'Dónde *estamos*.',
-    lede: 'Waffle y Butter están en acceso anticipado y son de código cerrado por ahora. CUDA está en producción en RTX y DGX Spark, y las GPU de centros de datos están en desarrollo.',
+    lede: 'Syrup y Butter están en acceso anticipado y son de código cerrado por ahora. CUDA está en producción en RTX y DGX Spark, y las GPU de centros de datos están en desarrollo.',
     notes: [
       'Cuéntanos tus generaciones de GPU. CUDA para centros de datos está en desarrollo, así que las flotas que conocemos marcan qué hacemos primero.',
       'ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
@@ -89,9 +89,9 @@ const neocloudsEs: (typeof neoclouds)['en'] = {
   },
   faq: [
     {
-      question: '¿Waffle reemplaza a nuestros motores actuales?',
+      question: '¿Syrup reemplaza a nuestros motores actuales?',
       answer:
-        'No. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI. Gana visibilidad primero y cambia de motor solo si y cuando quieras.',
+        'No. Syrup funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI. Gana visibilidad primero y cambia de motor solo si y cuando quieras.',
     },
     {
       question: '¿En qué GPU funciona?',

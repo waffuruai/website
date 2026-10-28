@@ -264,7 +264,7 @@ const butterEs: (typeof butter)['en'] = {
   stack: {
     heading: 'Funciona con el resto del *stack*.',
     intro:
-      'Butter ejecuta modelos sobre los kernels que compila Iron. Waffle puede vigilarlo junto con vLLM, SGLang y llama.cpp, y Syrup hace que tu IA recuerde en qué estabas trabajando.',
+      'Butter ejecuta modelos sobre los kernels que compila Iron. Syrup puede vigilarlo junto con vLLM, SGLang y llama.cpp, y Whisk hace que tu IA recuerde en qué estabas trabajando.',
   },
   faq: [
     {

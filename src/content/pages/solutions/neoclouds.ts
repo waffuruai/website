@@ -12,7 +12,7 @@ import neocloudsKo from './neoclouds.ko';
  * tokens per GPU, signed telemetry. No utilization percentages, no
  * revenue claims, no comparisons with other engines.
  *
- * TODO(founder): confirm what Waffle can break down per tenant, and how the
+ * TODO(founder): confirm what Syrup can break down per tenant, and how the
  * telemetry signature is verified, before this page says more than "signed
  * telemetry" and "across tenants and engines".
  */
@@ -21,7 +21,7 @@ export const neoclouds: Localized<SolutionPage> = {
     seo: {
       title: 'Inference platform for GPU clouds',
       description:
-        'Fleet visibility across tenants and engines, more useful tokens per GPU, and signed telemetry. Waffle works with vLLM, SGLang and llama.cpp. Early access.',
+        'Fleet visibility across tenants and engines, more useful tokens per GPU, and signed telemetry. Syrup works with vLLM, SGLang and llama.cpp. Early access.',
       keywords: [
         'GPU cloud software',
         'GPU utilization',
@@ -53,7 +53,7 @@ export const neoclouds: Localized<SolutionPage> = {
         {
           tag: 'cost',
           title: 'Know what is running on every GPU.',
-          body: 'Waffle gives one view across hosts, GPUs, engines and tenants, whether the engine is vLLM, SGLang, llama.cpp or Butter. Idle and mismatched capacity shows up on your screen first.',
+          body: 'Syrup gives one view across hosts, GPUs, engines and tenants, whether the engine is vLLM, SGLang, llama.cpp or Butter. Idle and mismatched capacity shows up on your screen first.',
         },
         {
           tag: 'control',
@@ -68,19 +68,19 @@ export const neoclouds: Localized<SolutionPage> = {
         {
           tag: 'control',
           title: 'Offer options without betting on one engine.',
-          body: 'Butter serves an OpenAI-compatible API, and Waffle works with vLLM, SGLang and llama.cpp. You can give customers more choice without rebuilding around any single engine.',
+          body: 'Butter serves an OpenAI-compatible API, and Syrup works with vLLM, SGLang and llama.cpp. You can give customers more choice without rebuilding around any single engine.',
         },
       ],
     },
     stackFit: {
       title: 'How the stack *fits*.',
       intro:
-        'Waffle is the part built for you. Butter and Iron work on the efficiency underneath.',
+        'Syrup is the part built for you. Butter and Iron work on the efficiency underneath.',
       items: [
         {
-          product: 'waffle',
+          product: 'syrup',
           need: 'See the whole fleet.',
-          body: 'From one box under a desk to a neocloud renting out a fleet. A small Rust sidecar on each host reports signed telemetry, and Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
+          body: 'From one box under a desk to a neocloud renting out a fleet. A small Rust sidecar on each host reports signed telemetry, and Syrup works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers.',
         },
         {
           product: 'butter',
@@ -96,7 +96,7 @@ export const neoclouds: Localized<SolutionPage> = {
     },
     whereWeAre: {
       title: 'Where we *are*.',
-      lede: 'Waffle and Butter are in early access and closed source for now. CUDA is in production on RTX and DGX Spark, and datacenter GPUs are in progress.',
+      lede: 'Syrup and Butter are in early access and closed source for now. CUDA is in production on RTX and DGX Spark, and datacenter GPUs are in progress.',
       notes: [
         'Tell us your GPU generations. Datacenter CUDA is in progress, so the fleets we hear about shape what we do first.',
         'ROCm and Vulkan run today but are not tuned yet.',
@@ -105,9 +105,9 @@ export const neoclouds: Localized<SolutionPage> = {
     },
     faq: [
       {
-        question: 'Does Waffle replace our current engines?',
+        question: 'Does Syrup replace our current engines?',
         answer:
-          'No. Waffle works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers. Get visibility first, and change engines only if and when you want to.',
+          'No. Syrup works with Butter, vLLM, SGLang, llama.cpp and other OpenAI-compatible servers. Get visibility first, and change engines only if and when you want to.',
       },
       {
         question: 'What GPUs does it run on?',

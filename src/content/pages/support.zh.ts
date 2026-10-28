@@ -43,7 +43,7 @@ const supportZh: (typeof support)['en'] = {
     {
       question: '目前能用什么？',
       answer:
-        '我们的产品（Iron、Butter、Waffle 和 Syrup）暂时是私有的闭源软件，尚未全面开放。抢先体验是最早用上的途径。',
+        '我们的产品（Iron、Butter、Syrup 和 Whisk）暂时是私有的闭源软件，尚未全面开放。抢先体验是最早用上的途径。',
     },
     {
       question: '抢先体验如何运作？',

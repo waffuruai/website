@@ -42,7 +42,7 @@ const enterpriseKo: (typeof enterprise)['en'] = {
       {
         tag: 'cost',
         title: '모든 GPU와 모든 엔진을 한곳에서 확인하세요.',
-        body: 'Waffle은 어느 GPU가 바쁘고, 그 위에서 어떤 엔진이 돌며, 어느 것이 놀고 있는지 보여 줍니다. 엔진이 Butter든 vLLM, SGLang, llama.cpp든 마찬가지입니다. 무엇을 통합하고, 폐기하고, 구매할지 정하는 출발점입니다.',
+        body: 'Syrup은 어느 GPU가 바쁘고, 그 위에서 어떤 엔진이 돌며, 어느 것이 놀고 있는지 보여 줍니다. 엔진이 Butter든 vLLM, SGLang, llama.cpp든 마찬가지입니다. 무엇을 통합하고, 폐기하고, 구매할지 정하는 출발점입니다.',
       },
       {
         tag: 'inference',
@@ -52,14 +52,14 @@ const enterpriseKo: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: '재작성 없이 기존 앱을 연결하세요.',
-        body: 'Butter의 OpenAI 호환 API는 스트리밍과 도구 호출을 지원하므로, 사내 도구는 SDK가 아니라 주소만 바꾸면 됩니다. Waffle이 vLLM, SGLang, llama.cpp와 함께 동작하므로 특정 엔진에 묶이지 않습니다.',
+        body: 'Butter의 OpenAI 호환 API는 스트리밍과 도구 호출을 지원하므로, 사내 도구는 SDK가 아니라 주소만 바꾸면 됩니다. Syrup이 vLLM, SGLang, llama.cpp와 함께 동작하므로 특정 엔진에 묶이지 않습니다.',
       },
     ],
   },
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
     intro:
-      'Butter가 서빙하고, Waffle이 지켜보고, Syrup이 검색하며, Iron이 이 셋의 밑을 받칩니다.',
+      'Butter가 서빙하고, Syrup이 지켜보고, Whisk가 검색하며, Iron이 이 셋의 밑을 받칩니다.',
     items: [
       {
         product: 'butter',
@@ -67,12 +67,12 @@ const enterpriseKo: (typeof enterprise)['en'] = {
         body: 'Apple 실리콘의 Metal 위 Swift와 CUDA용 Rust로 만든 OpenAI 호환 서빙이며, 서빙 경로에 Python이 없습니다. safetensors, MLX, JANG, GGUF 체크포인트를 직접 불러오므로 새 모델과 서버 사이에 변환 파이프라인이 필요 없습니다.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '모든 GPU와 모든 엔진을 하나의 화면으로.',
-        body: '호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다. Waffle은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 도입한다고 해서 지금 돌아가는 것을 교체할 필요는 없습니다.',
+        body: '호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고합니다. Syrup은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 도입한다고 해서 지금 돌아가는 것을 교체할 필요는 없습니다.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '내 자료에서 나온 답을 출처와 함께.',
         body: '사내 노트와 코드에 대한 로컬 검색. 검색은 어휘 검색과 벡터 검색을 함께 쓰고, 결과는 MCP를 통해 출처 인용과 함께 돌아옵니다.',
       },
@@ -106,12 +106,12 @@ const enterpriseKo: (typeof enterprise)['en'] = {
     {
       question: '지금 쓰는 서빙 스택을 교체해야 하나요?',
       answer:
-        '아니요. Waffle은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 먼저 가시성을 확보하고 엔진은 나중에 결정하면 됩니다.',
+        '아니요. Syrup은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 먼저 가시성을 확보하고 엔진은 나중에 결정하면 됩니다.',
     },
     {
       question: '우리 네트워크 밖으로 나가는 것은 무엇인가요?',
       answer:
-        '추론 데이터는 기본적으로 나가지 않습니다. 사용자가 동의하지 않는 한 데이터는 사용자의 컴퓨터에 남기 때문입니다. Waffle 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 고객 환경에서 정확히 무엇인지 함께 짚어 드리겠습니다.',
+        '추론 데이터는 기본적으로 나가지 않습니다. 사용자가 동의하지 않는 한 데이터는 사용자의 컴퓨터에 남기 때문입니다. Syrup 호스트마다 사이드카가 돌며 서명된 텔레메트리를 보고하는데, 그 내용이 고객 환경에서 정확히 무엇인지 함께 짚어 드리겠습니다.',
     },
     {
       question: '어떻게 평가할 수 있나요?',

@@ -41,7 +41,7 @@ const financialServicesZh: (typeof financialServices)['en'] = {
       {
         tag: 'cost',
         title: '为每个工作负载算清成本。',
-        body: '每个工作负载的成本，是财务部门要的数字，却几乎没人能看到。Waffle 显示哪些 GPU 正忙，上面跑着哪些引擎，哪些在闲置，让开支能对应回它完成的工作。',
+        body: '每个工作负载的成本，是财务部门要的数字，却几乎没人能看到。Syrup 显示哪些 GPU 正忙，上面跑着哪些引擎，哪些在闲置，让开支能对应回它完成的工作。',
       },
       {
         tag: 'inference',
@@ -51,14 +51,14 @@ const financialServicesZh: (typeof financialServices)['en'] = {
       {
         tag: 'control',
         title: '从你自己的研究中作答，并附出处。',
-        body: 'Syrup 在本地对内部笔记、文档和代码做检索，每个答案都附带引用返回。分析师可以去核对出处，而不必只信摘要。',
+        body: 'Whisk 在本地对内部笔记、文档和代码做检索，每个答案都附带引用返回。分析师可以去核对出处，而不必只信摘要。',
       },
     ],
   },
   stackFit: {
     title: '技术栈如何*配合*。',
     intro:
-      'Butter 让工作留在内部，Waffle 为它算出数字，Syrup 带来出处，Iron 垫在底下。',
+      'Butter 让工作留在内部，Syrup 为它算出数字，Whisk 带来出处，Iron 垫在底下。',
     items: [
       {
         product: 'butter',
@@ -66,12 +66,12 @@ const financialServicesZh: (typeof financialServices)['en'] = {
         body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，所以新模型不需要转换流水线。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '为每个工作负载算出成本。',
         body: '一个视图看清每一块 GPU 和每个引擎，不论是 Butter、vLLM、SGLang 还是 llama.cpp。每台主机上的小型 Rust sidecar 上报带签名的遥测数据，所以你拿给财务的读数，可以追溯到发送它的那台主机。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '答案附带出处。',
         body: '对内部笔记、文档和代码做本地检索。搜索结合关键词与向量，结果通过 MCP 附带引用返回。',
       },
@@ -95,12 +95,12 @@ const financialServicesZh: (typeof financialServices)['en'] = {
     {
       question: '客户数据会离开我们的网络吗？',
       answer:
-        '推理数据默认不会离开，因为除非你主动选择开启，数据始终留在机器上。每台 Waffle 主机运行一个 sidecar，上报带签名的遥测数据，我们会逐项讲清楚其中包含什么。',
+        '推理数据默认不会离开，因为除非你主动选择开启，数据始终留在机器上。每台 Syrup 主机运行一个 sidecar，上报带签名的遥测数据，我们会逐项讲清楚其中包含什么。',
     },
     {
       question: '我们能看到每个工作负载的成本吗？',
       answer:
-        '这正是 Waffle 的用途。它显示每一块 GPU 和其上的引擎，无论正忙还是闲置，而这正是计算每个工作负载成本的起点。我们更愿意在你的硬件上展示，而不是承诺一个数字。',
+        '这正是 Syrup 的用途。它显示每一块 GPU 和其上的引擎，无论正忙还是闲置，而这正是计算每个工作负载成本的起点。我们更愿意在你的硬件上展示，而不是承诺一个数字。',
     },
     {
       question: '它目前能在哪些硬件上运行？',
@@ -115,7 +115,7 @@ const financialServicesZh: (typeof financialServices)['en'] = {
     {
       question: '我们必须替换现在运行的东西吗？',
       answer:
-        '不必。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以可以先获得可见性，引擎的决定可以往后放。',
+        '不必。Syrup 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，所以可以先获得可见性，引擎的决定可以往后放。',
     },
   ],
   cta: {

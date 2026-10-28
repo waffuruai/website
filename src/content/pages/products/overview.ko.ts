@@ -4,18 +4,18 @@ const productsOverviewKo: (typeof productsOverview)['en'] = {
   seo: {
     title: 'Waffuru 스택: 커널, 서빙, 제어, 메모리',
     description:
-      'Iron은 커널을 컴파일하고 Butter는 모델을 실행합니다. Waffle은 GPU를 지켜보고 Syrup은 기억합니다. 하나만 써도, 넷을 함께 써도 됩니다.',
+      'Iron은 커널을 컴파일하고 Butter는 모델을 실행합니다. Syrup은 GPU를 지켜보고 Whisk는 기억합니다. 하나만 써도, 넷을 함께 써도 됩니다.',
     keywords: ['AI 추론 스택', 'GPU 커널부터 서빙까지', '로컬 우선 AI 인프라'],
   },
   hero: {
     label: '제품 4종',
     title: 'Waffuru *스택*.',
-    lede: 'Iron이 커널을 컴파일하고, Butter가 그 위에서 모델을 실행합니다. Waffle은 GPU를 지켜보고, Syrup은 하던 일을 기억합니다. 넷 모두 이미 가진 하드웨어에서 돌아가도록 만들었습니다.',
+    lede: 'Iron이 커널을 컴파일하고, Butter가 그 위에서 모델을 실행합니다. Syrup은 GPU를 지켜보고, Whisk는 하던 일을 기억합니다. 넷 모두 이미 가진 하드웨어에서 돌아가도록 만들었습니다.',
   },
   layers: {
     heading: '네 계층이 *맞물리는* 방식.',
     intro:
-      '하드웨어에서부터 위로 번호를 붙였습니다. 맨 위가 Syrup, 하드웨어에 닿는 맨 아래가 Iron이며, 계층마다 전용 페이지가 있습니다.',
+      '하드웨어에서부터 위로 번호를 붙였습니다. 맨 위가 Whisk, 하드웨어에 닿는 맨 아래가 Iron이며, 계층마다 전용 페이지가 있습니다.',
     metal: {
       label: '하드웨어',
       backends: ['Apple · Metal', 'NVIDIA · CUDA', 'AMD ROCm · Vulkan'],
@@ -30,12 +30,12 @@ const productsOverviewKo: (typeof productsOverview)['en'] = {
     alone: {
       iron: 'GPU 커널을 한 번만 작성해 Metal, CUDA, ROCm, Vulkan에서 실행합니다.',
       butter: 'Python 없이 OpenAI 호환 API 뒤에서 모델을 서빙합니다.',
-      waffle:
+      syrup:
         '어떤 엔진이든, 모든 GPU와 그 위에서 돌아가는 모든 엔진을 한눈에 봅니다.',
-      syrup: 'AI에 노트와 코드에 대한 로컬 메모리를 출처와 함께 제공합니다.',
+      whisk: 'AI에 노트와 코드에 대한 로컬 메모리를 출처와 함께 제공합니다.',
     },
     allLabel: '함께 쓸 때',
-    all: 'Butter는 Iron이 컴파일한 커널 위에서 모델을 실행하고, Waffle은 그 아래의 GPU와 엔진을 지켜보며, Syrup은 하던 일을 기억합니다. 계층을 더할수록 아래 계층 위에 차곡차곡 쌓입니다.',
+    all: 'Butter는 Iron이 컴파일한 커널 위에서 모델을 실행하고, Syrup은 그 아래의 GPU와 엔진을 지켜보며, Whisk는 하던 일을 기억합니다. 계층을 더할수록 아래 계층 위에 차곡차곡 쌓입니다.',
   },
   audience: {
     heading: '누구를 *위한* 것인가.',

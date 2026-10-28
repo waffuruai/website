@@ -44,7 +44,7 @@ const lifeSciencesEs: (typeof lifeSciences)['en'] = {
       {
         tag: 'inference',
         title: 'Pregunta a tus fuentes y obtén la cita.',
-        body: 'Syrup ejecuta la recuperación en local sobre notas, documentos y código. La búsqueda es léxica más vectorial, así que tanto los nombres exactos de genes como las preguntas difusas dan en el blanco, y cada respuesta cita de dónde salió.',
+        body: 'Whisk ejecuta la recuperación en local sobre notas, documentos y código. La búsqueda es léxica más vectorial, así que tanto los nombres exactos de genes como las preguntas difusas dan en el blanco, y cada respuesta cita de dónde salió.',
       },
       {
         tag: 'control',
@@ -54,14 +54,14 @@ const lifeSciencesEs: (typeof lifeSciences)['en'] = {
       {
         tag: 'cost',
         title: 'Sabe cuánto cuesta el cómputo de cada proyecto.',
-        body: 'Waffle muestra cada GPU y cada motor que corre en ella, ocupada u ociosa, para que el cómputo de investigación se vincule con el trabajo que hizo. Los presupuestos tienen una cifra en lugar de una suposición.',
+        body: 'Syrup muestra cada GPU y cada motor que corre en ella, ocupada u ociosa, para que el cómputo de investigación se vincule con el trabajo que hizo. Los presupuestos tienen una cifra en lugar de una suposición.',
       },
     ],
   },
   stackFit: {
     title: 'Cómo *encaja* el stack.',
     intro:
-      'Butter ejecuta los modelos, Syrup lee tus fuentes y Waffle lleva la cuenta.',
+      'Butter ejecuta los modelos, Whisk lee tus fuentes y Syrup lleva la cuenta.',
     items: [
       {
         product: 'butter',
@@ -69,12 +69,12 @@ const lifeSciencesEs: (typeof lifeSciences)['en'] = {
         body: 'Swift sobre Metal para Apple silicon y Rust para CUDA, sin Python en la ruta de serving. Modelos de texto, visión, voz y omni tras una API compatible con OpenAI, y los checkpoints se cargan directo desde Hugging Face.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'Respuestas de tus fuentes, con citas.',
         body: 'Recuperación local sobre notas, documentos y código. La búsqueda es léxica más vectorial, y los resultados llegan con citas a través de MCP, para que los asistentes muestren de dónde sacan lo que dicen.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Cómputo del que puedes rendir cuentas.',
         body: 'Cada GPU y cada motor en una sola vista, sea Butter, vLLM, SGLang o llama.cpp, de una sola estación de trabajo a un clúster compartido.',
       },
@@ -86,7 +86,7 @@ const lifeSciencesEs: (typeof lifeSciences)['en'] = {
     notes: [
       'Un Mac Studio o una estación de trabajo RTX es el lugar más fácil para empezar: Metal es el principal, y CUDA está en producción en RTX y DGX Spark.',
       'Las GPU de centros de datos están en desarrollo. ROCm y Vulkan funcionan, pero aún sin afinar.',
-      'Syrup cita sus fuentes, pero no comprueba la ciencia. Eso lo siguen haciendo tus revisores.',
+      'Whisk cita sus fuentes, pero no comprueba la ciencia. Eso lo siguen haciendo tus revisores.',
     ],
   },
   faq: [
@@ -99,7 +99,7 @@ const lifeSciencesEs: (typeof lifeSciences)['en'] = {
     {
       question: '¿Puede responder a partir de nuestros propios documentos?',
       answer:
-        'Sí. Syrup ejecuta la recuperación en local sobre notas, documentos y código, y cada resultado llega con una cita a su fuente, a través de MCP.',
+        'Sí. Whisk ejecuta la recuperación en local sobre notas, documentos y código, y cada resultado llega con una cita a su fuente, a través de MCP.',
     },
     {
       question: '¿Está validado para trabajo clínico o regulado?',

@@ -24,7 +24,7 @@ export const solutionPath = (slug: SolutionSlug) => `/solutions/${slug}`;
 export type SolutionTag = 'cost' | 'inference' | 'control';
 
 /** The Waffuru stack, numbered from the metal up. */
-export type ProductKey = 'iron' | 'butter' | 'waffle' | 'syrup';
+export type ProductKey = 'iron' | 'butter' | 'syrup' | 'whisk';
 
 /** How well a hardware tier is supported: drives the bars, never the copy. */
 export type HardwareStatus = 'primary' | 'secondary' | 'runs';

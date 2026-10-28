@@ -121,7 +121,7 @@ const ironEs: (typeof iron)['en'] = {
   stack: {
     heading: 'Funciona con el resto del *stack*.',
     intro:
-      'Iron funciona por sí solo. Añade Butter para ejecutar modelos sobre los kernels, Waffle para vigilar las GPU en las que corren, o Syrup para que tu IA recuerde en qué estabas trabajando.',
+      'Iron funciona por sí solo. Añade Butter para ejecutar modelos sobre los kernels, Syrup para vigilar las GPU en las que corren, o Whisk para que tu IA recuerde en qué estabas trabajando.',
   },
   faq: [
     {

@@ -32,7 +32,7 @@ const industriesOverviewJa: (typeof industriesOverview)['en'] = {
       {
         tag: 'cost',
         title: '本当に*大事な*数字',
-        body: '財務が求めるのはワークロードあたりのコストですが、それを見られる人はほとんどいません。Waffle はすべての GPU と、その上のすべてのエンジンを示すので、支出を、それが生んだ仕事に結びつけられます。',
+        body: '財務が求めるのはワークロードあたりのコストですが、それを見られる人はほとんどいません。Syrup はすべての GPU と、その上のすべてのエンジンを示すので、支出を、それが生んだ仕事に結びつけられます。',
         points: [
           'どの GPU が稼働中か、遊んでいるか、噛み合っていないかがわかる',
           'すでに持っているハードウェアから、より多くの出力を引き出す',
@@ -55,7 +55,7 @@ const industriesOverviewJa: (typeof industriesOverview)['en'] = {
         body: 'Iron のひとつのカーネル定義が Metal、CUDA、HIP、Vulkan に変換され、データは、オプトインしない限りその場所にとどまります。ベンダーを変えるのは判断の問題であり、書き直しではありません。',
         points: [
           'オンプレミスでも、自社クラウドでも、1 台のワークステーションでも',
-          'Waffle は vLLM、SGLang、llama.cpp と連携',
+          'Syrup は vLLM、SGLang、llama.cpp と連携',
           '特定のエンジンや GPU ベンダーへのロックインなし',
         ],
       },

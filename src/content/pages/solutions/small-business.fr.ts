@@ -53,14 +53,14 @@ const smallBusinessFr: (typeof smallBusiness)['en'] = {
       {
         tag: 'control',
         title: 'Interrogez vos propres notes et votre propre code.',
-        body: 'Syrup exécute la recherche en local sur vos notes et votre code : une réponse revient avec une citation de sa source. La recherche est lexicale plus vectorielle, donc les noms exacts comme les questions floues trouvent leur cible.',
+        body: 'Whisk exécute la recherche en local sur vos notes et votre code : une réponse revient avec une citation de sa source. La recherche est lexicale plus vectorielle, donc les noms exacts comme les questions floues trouvent leur cible.',
       },
     ],
   },
   stackFit: {
     title: 'Comment la stack *s’assemble*.',
     intro:
-      'Butter fait le gros du travail. Syrup et Waffle sont là quand vous en avez envie.',
+      'Butter fait le gros du travail. Whisk et Syrup sont là quand vous en avez envie.',
     items: [
       {
         product: 'butter',
@@ -68,12 +68,12 @@ const smallBusinessFr: (typeof smallBusiness)['en'] = {
         body: 'Swift sur Metal pour le silicium Apple, Rust pour CUDA et le reste. Llama, Gemma, Qwen, GPT-OSS et d’autres tournent aux côtés de modèles de reconnaissance vocale, de synthèse vocale et de vision, et butter serve donne à vos applications un endpoint compatible OpenAI.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'Interroger vos propres fichiers, et obtenir des sources.',
         body: 'Recherche locale sur vos notes et votre code. Les résultats reviennent avec leurs citations via MCP : les assistants peuvent montrer leur travail.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Garder un œil sur la machine sous votre bureau.',
         body: 'D’une machine à une petite baie, voyez chaque GPU et chaque moteur qui y tourne, que ce soit Butter, llama.cpp, vLLM ou SGLang.',
       },

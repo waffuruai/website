@@ -21,7 +21,7 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
   },
   hero: {
     title: 'Escribe el kernel una vez. Llévalo a cuatro *backends*.',
-    lede: 'Iron compila una definición de kernel a Metal, CUDA, ROCm y Vulkan. Butter sirve modelos encima sin Python, y Syrup da memoria a tus agentes.',
+    lede: 'Iron compila una definición de kernel a Metal, CUDA, ROCm y Vulkan. Butter sirve modelos encima sin Python, y Whisk da memoria a tus agentes.',
   },
   problem: {
     title: 'Cada backend es una *reescritura*.',
@@ -52,7 +52,7 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: 'Dale a tus agentes una memoria que se queda en local.',
-        body: 'Syrup comprime los embeddings con TurboQuant+ y ejecuta la búsqueda léxica más vectorial en la propia máquina. Los resultados llegan con citas a través de MCP, para que los agentes retomen donde lo dejaron.',
+        body: 'Whisk comprime los embeddings con TurboQuant+ y ejecuta la búsqueda léxica más vectorial en la propia máquina. Los resultados llegan con citas a través de MCP, para que los agentes retomen donde lo dejaron.',
       },
     ],
   },
@@ -74,7 +74,7 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
   },
   stackFit: {
     title: 'Cómo *encaja* el stack.',
-    intro: 'Iron y Butter son el núcleo. Syrup y Waffle lo completan.',
+    intro: 'Iron y Butter son el núcleo. Whisk y Syrup lo completan.',
     items: [
       {
         product: 'iron',
@@ -87,12 +87,12 @@ const aiCompaniesEs: (typeof aiCompanies)['en'] = {
         body: 'Carga safetensors, MLX, JANG y GGUF sin conversión, además de checkpoints cuantizados de 2 a 8 bits, modelos híbridos y MoE, una caché KV cuantizada, decodificación especulativa y LoRA. Los modelos de texto, visión, voz a texto, texto a voz y omni quedan tras una API compatible con OpenAI.',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: 'Memoria para agentes.',
         body: 'Recuperación local sobre notas y código: embeddings comprimidos con TurboQuant+, búsqueda léxica más vectorial y resultados con citas a través de MCP.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Cada motor en cada GPU, en una sola vista.',
         body: 'Ejecuta Butter junto a vLLM, SGLang o llama.cpp y míralos lado a lado. Un pequeño sidecar en Rust en cada host reporta telemetría firmada.',
       },

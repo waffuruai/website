@@ -31,7 +31,7 @@ const industriesOverviewKo: (typeof industriesOverview)['en'] = {
       {
         tag: 'cost',
         title: '*중요한* 숫자.',
-        body: '재무팀이 요구하는 것은 워크로드당 비용이지만, 이를 볼 수 있는 곳은 거의 없습니다. Waffle은 모든 GPU와 그 위의 모든 엔진을 보여 주므로, 지출을 그것이 해낸 일과 연결할 수 있습니다.',
+        body: '재무팀이 요구하는 것은 워크로드당 비용이지만, 이를 볼 수 있는 곳은 거의 없습니다. Syrup은 모든 GPU와 그 위의 모든 엔진을 보여 주므로, 지출을 그것이 해낸 일과 연결할 수 있습니다.',
         points: [
           '어느 GPU가 바쁜지, 놀고 있는지, 맞지 않게 배치됐는지 확인',
           '이미 가진 하드웨어에서 더 많은 산출',
@@ -54,7 +54,7 @@ const industriesOverviewKo: (typeof industriesOverview)['en'] = {
         body: '하나의 Iron 커널 정의가 Metal, CUDA, HIP, Vulkan으로 변환되며, 직접 동의하지 않는 한 데이터는 있는 곳에 그대로 있습니다. 벤더를 바꾸는 일은 재작성이 아니라 결정입니다.',
         points: [
           '온프레미스든 자체 클라우드든 워크스테이션 한 대든',
-          'Waffle은 vLLM, SGLang, llama.cpp와도 동작',
+          'Syrup은 vLLM, SGLang, llama.cpp와도 동작',
           '특정 엔진이나 GPU 벤더에 묶이지 않음',
         ],
       },

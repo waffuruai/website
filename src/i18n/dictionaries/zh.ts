@@ -63,12 +63,12 @@ const zh: Dictionary = {
         label: 'Butter',
         description: '无需 Python 的模型服务。',
       },
-      waffle: {
-        label: 'Waffle',
-        description: '看清每一块 GPU 和其上运行的每个引擎。',
-      },
       syrup: {
         label: 'Syrup',
+        description: '看清每一块 GPU 和其上运行的每个引擎。',
+      },
+      whisk: {
+        label: 'Whisk',
         description: '让你的 AI 记得你在做什么。',
       },
       pantry: {

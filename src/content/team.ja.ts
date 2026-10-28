@@ -22,7 +22,7 @@ const teamCopyJa: (typeof teamCopy)['en'] = {
     role: '研究責任者（Chief of Research）',
     background:
       'TurboQuant+ を手がけた AI 研究者。元 Google テックリードマネージャー。',
-    bio: 'Tom は、Syrup が埋め込みの圧縮に使う TurboQuant+ を手がけた AI 研究者で、Waffuru ではリサーチを率いています。以前は Google でテックリードマネージャーを務めていました。',
+    bio: 'Tom は、Whisk が埋め込みの圧縮に使う TurboQuant+ を手がけた AI 研究者で、Waffuru ではリサーチを率いています。以前は Google でテックリードマネージャーを務めていました。',
   },
   'cory-smith': {
     role: '最高技術責任者（CTO）',

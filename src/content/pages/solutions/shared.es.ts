@@ -32,19 +32,19 @@ const solutionsSharedEs: (typeof solutionsShared)['en'] = {
       linkLabel: 'Explorar Butter',
       href: '/products/butter',
     },
-    waffle: {
+    syrup: {
       index: '03',
       role: 'Plano de control',
-      name: 'Waffle',
-      linkLabel: 'Explorar Waffle',
-      href: '/products/waffle',
-    },
-    syrup: {
-      index: '04',
-      role: 'Memoria',
       name: 'Syrup',
       linkLabel: 'Explorar Syrup',
       href: '/products/syrup',
+    },
+    whisk: {
+      index: '04',
+      role: 'Memoria',
+      name: 'Whisk',
+      linkLabel: 'Explorar Whisk',
+      href: '/products/whisk',
     },
   },
   hardware: {

@@ -37,7 +37,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'cost',
         title: '모든 GPU가 무엇을 하는지 파악하세요.',
-        body: 'Waffle은 호스트, GPU, 엔진, 테넌트를 가로지르는 하나의 뷰를 제공합니다. 엔진이 Butter, vLLM, SGLang, llama.cpp 무엇이든 마찬가지입니다. 놀고 있거나 맞지 않게 배치된 용량이 마진에 드러나기 전에 화면에 먼저 드러납니다.',
+        body: 'Syrup은 호스트, GPU, 엔진, 테넌트를 가로지르는 하나의 뷰를 제공합니다. 엔진이 Butter, vLLM, SGLang, llama.cpp 무엇이든 마찬가지입니다. 놀고 있거나 맞지 않게 배치된 용량이 마진에 드러나기 전에 화면에 먼저 드러납니다.',
       },
       {
         tag: 'control',
@@ -58,13 +58,12 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
   },
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
-    intro:
-      '시작은 Waffle입니다. Butter와 Iron은 그 밑에서 산출을 끌어올립니다.',
+    intro: '시작은 Syrup입니다. Butter와 Iron은 그 밑에서 산출을 끌어올립니다.',
     items: [
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '모든 GPU, 엔진, 테넌트를 하나의 화면으로.',
-        body: '호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고하고, Waffle은 비용을 테넌트별로 나누어 보여 줍니다. Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 테넌트는 자신이 고른 엔진을 그대로 씁니다.',
+        body: '호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고하고, Syrup은 비용을 테넌트별로 나누어 보여 줍니다. Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작하므로, 테넌트는 자신이 고른 엔진을 그대로 씁니다.',
       },
       {
         product: 'butter',
@@ -80,7 +79,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
   },
   whereWeAre: {
     title: '우리는 지금 *어디쯤*인가.',
-    lede: 'GPU 클라우드에 가장 중요한 이야기부터 하겠습니다. 데이터센터 GPU는 진행 중입니다. Waffle, Butter, Iron은 얼리 액세스 중이며 당분간 비공개 소스입니다.',
+    lede: 'GPU 클라우드에 가장 중요한 이야기부터 하겠습니다. 데이터센터 GPU는 진행 중입니다. Syrup, Butter, Iron은 얼리 액세스 중이며 당분간 비공개 소스입니다.',
     notes: [
       'CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중입니다. 보유한 데이터센터 GPU 세대를 알려 주세요. 우리가 듣는 플릿 이야기가 무엇을 먼저 할지 결정합니다.',
       'ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
@@ -91,7 +90,7 @@ const cloudInfrastructureKo: (typeof cloudInfrastructure)['en'] = {
     {
       question: '테넌트가 엔진을 바꿔야 하나요?',
       answer:
-        '아니요. Waffle은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작합니다. 테넌트는 쓰던 것을 그대로 쓰고, 여러분은 그 전체를 하나의 뷰로 봅니다.',
+        '아니요. Syrup은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작합니다. 테넌트는 쓰던 것을 그대로 쓰고, 여러분은 그 전체를 하나의 뷰로 봅니다.',
     },
     {
       question: '어떤 GPU를 지원하나요?',

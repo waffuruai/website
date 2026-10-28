@@ -20,7 +20,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
   },
   hero: {
     title: '内核只写一次，交付*四种*后端。',
-    lede: 'Iron 把一份内核定义编译到 Metal、CUDA、ROCm 和 Vulkan。Butter 在其上提供无需 Python 的模型服务，Syrup 则给你的智能体一份记忆。',
+    lede: 'Iron 把一份内核定义编译到 Metal、CUDA、ROCm 和 Vulkan。Butter 在其上提供无需 Python 的模型服务，Whisk 则给你的智能体一份记忆。',
   },
   problem: {
     title: '每多一个后端，就是一次*重写*。',
@@ -50,7 +50,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
       {
         tag: 'control',
         title: '给智能体一份留在本地的记忆。',
-        body: 'Syrup 用 TurboQuant+ 压缩嵌入向量，在本机运行关键词加向量搜索。结果通过 MCP 附带引用返回，智能体可以接着上次停下的地方继续。',
+        body: 'Whisk 用 TurboQuant+ 压缩嵌入向量，在本机运行关键词加向量搜索。结果通过 MCP 附带引用返回，智能体可以接着上次停下的地方继续。',
       },
     ],
   },
@@ -71,7 +71,7 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
   },
   stackFit: {
     title: '技术栈如何*配合*。',
-    intro: 'Iron 和 Butter 是核心。Syrup 和 Waffle 补全其余。',
+    intro: 'Iron 和 Butter 是核心。Whisk 和 Syrup 补全其余。',
     items: [
       {
         product: 'iron',
@@ -84,12 +84,12 @@ const aiCompaniesZh: (typeof aiCompanies)['en'] = {
         body: '无需转换即可加载 safetensors、MLX、JANG 和 GGUF，并支持 2 至 8 位量化检查点、混合模型和 MoE 模型、量化 KV 缓存、推测解码和 LoRA。文本、视觉、语音转文字、文字转语音和全模态模型，都在兼容 OpenAI 的 API 背后。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '给智能体的记忆。',
         body: '对笔记和代码做本地检索：用 TurboQuant+ 压缩的嵌入向量，关键词加向量搜索，以及通过 MCP 返回的带引用结果。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '一个视图，看清每块 GPU 上的每个引擎。',
         body: '让 Butter 与 vLLM、SGLang 或 llama.cpp 并排运行，并排对照。每台主机上的小型 Rust sidecar 上报带签名的遥测数据。',
       },

@@ -4,7 +4,7 @@ const neocloudsZh: (typeof neoclouds)['en'] = {
   seo: {
     title: 'GPU 云服务商的推理平台',
     description:
-      '跨租户、跨引擎的集群可见性，每块 GPU 产出更多有用的 token，每台主机上报带签名的遥测。Waffle 支持 vLLM、SGLang 和 llama.cpp。抢先体验。',
+      '跨租户、跨引擎的集群可见性，每块 GPU 产出更多有用的 token，每台主机上报带签名的遥测。Syrup 支持 vLLM、SGLang 和 llama.cpp。抢先体验。',
     keywords: ['GPU 云软件', 'GPU 利用率', 'GPU 云推理平台', '多租户 GPU 监控'],
   },
   name: '新型云服务商',
@@ -30,7 +30,7 @@ const neocloudsZh: (typeof neoclouds)['en'] = {
       {
         tag: 'cost',
         title: '知道每块 GPU 上在跑什么。',
-        body: 'Waffle 提供跨主机、GPU、引擎和租户的统一视图，不论引擎是 vLLM、SGLang、llama.cpp 还是 Butter。闲置和错配的算力会最先出现在你的屏幕上。',
+        body: 'Syrup 提供跨主机、GPU、引擎和租户的统一视图，不论引擎是 vLLM、SGLang、llama.cpp 还是 Butter。闲置和错配的算力会最先出现在你的屏幕上。',
       },
       {
         tag: 'control',
@@ -45,18 +45,18 @@ const neocloudsZh: (typeof neoclouds)['en'] = {
       {
         tag: 'control',
         title: '提供更多选择，而不押注某一种引擎。',
-        body: 'Butter 提供兼容 OpenAI 的 API，Waffle 支持 vLLM、SGLang 和 llama.cpp。你可以给客户更多选择，而不必围绕任何单一引擎重建。',
+        body: 'Butter 提供兼容 OpenAI 的 API，Syrup 支持 vLLM、SGLang 和 llama.cpp。你可以给客户更多选择，而不必围绕任何单一引擎重建。',
       },
     ],
   },
   stackFit: {
     title: '技术栈如何*配合*。',
-    intro: 'Waffle 是为你打造的那一部分。Butter 和 Iron 负责底下的效率。',
+    intro: 'Syrup 是为你打造的那一部分。Butter 和 Iron 负责底下的效率。',
     items: [
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '看清整个集群。',
-        body: '从桌下的一台机器，到出租集群的新型云服务商。每台主机上的小型 Rust sidecar 上报带签名的遥测数据，Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
+        body: '从桌下的一台机器，到出租集群的新型云服务商。每台主机上的小型 Rust sidecar 上报带签名的遥测数据，Syrup 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
       },
       {
         product: 'butter',
@@ -72,7 +72,7 @@ const neocloudsZh: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: '我们的*进度*。',
-    lede: 'Waffle 和 Butter 目前处于抢先体验阶段，暂未开源。CUDA 已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。',
+    lede: 'Syrup 和 Butter 目前处于抢先体验阶段，暂未开源。CUDA 已在 RTX 和 DGX Spark 上投入生产，数据中心 GPU 正在进行中。',
     notes: [
       '告诉我们你的 GPU 世代。数据中心级 CUDA 正在进行中，我们听到的集群情况会决定先做什么。',
       'ROCm 和 Vulkan 目前可以运行，但尚未调优。',
@@ -81,9 +81,9 @@ const neocloudsZh: (typeof neoclouds)['en'] = {
   },
   faq: [
     {
-      question: 'Waffle 会取代我们现有的引擎吗？',
+      question: 'Syrup 会取代我们现有的引擎吗？',
       answer:
-        '不会。Waffle 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。先获得可见性，只在你想换的时候才换引擎。',
+        '不会。Syrup 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。先获得可见性，只在你想换的时候才换引擎。',
     },
     {
       question: '它能在哪些 GPU 上运行？',

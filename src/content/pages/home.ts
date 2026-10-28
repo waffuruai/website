@@ -8,7 +8,7 @@ import homeKo from './home.ko';
 /*
  * Home page copy. English is the source of truth; translators add `home.es.ts`
  * and friends typed against `HomeContent`. Product, platform and lab names
- * (Waffuru, Iron, Butter, Waffle, Syrup, Metal, CUDA, ROCm, Vulkan, …) never
+ * (Waffuru, Iron, Butter, Syrup, Whisk, Metal, CUDA, ROCm, Vulkan, …) never
  * translate. `*word*` is the gold italic accent in a heading.
  *
  * The primary calls to action ("Request early access", "Talk to us") come
@@ -120,12 +120,12 @@ export const home: Localized<HomeContent> = {
         layers: [
           {
             role: 'Control',
-            name: 'Waffle',
+            name: 'Syrup',
             line: 'See every GPU and every engine running on it.',
           },
           {
             role: 'Memory',
-            name: 'Syrup',
+            name: 'Whisk',
             line: 'Context from your own notes and code, with citations.',
           },
           {

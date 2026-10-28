@@ -29,13 +29,13 @@ describe('ProductsOverview', () => {
     expect(h1s[0]?.textContent).toBe('The Waffuru stack.');
   });
 
-  it('stacks the layers from Syrup (04) down to Iron (01)', () => {
+  it('stacks the layers from Whisk (04) down to Iron (01)', () => {
     renderOverview();
     const stack = screen.getByRole('list', { name: copy.layers.listLabel });
     const layers = within(stack).getAllByRole('listitem');
     expect(
       layers.map((layer) => layer.querySelector('h3')?.textContent),
-    ).toEqual(['Syrup', 'Waffle', 'Butter', 'Iron']);
+    ).toEqual(['Whisk', 'Syrup', 'Butter', 'Iron']);
     expect(
       layers.map((layer) => layer.querySelector('p')?.textContent),
     ).toEqual([

@@ -10,11 +10,11 @@ import lifeSciencesKo from './life-sciences.ko';
 /*
  * Life sciences: pharma, biotech and research institutes. Sensitive research
  * and patient data, IP that must not leak, and a literature nobody can read
- * fast enough, answered by Syrup with citations. No compliance, clinical
+ * fast enough, answered by Whisk with citations. No compliance, clinical
  * validation or certification claims (HIPAA, GxP and the like), no
  * customers, no model-quality claims.
  *
- * TODO(founder): confirm (1) which document formats Syrup indexes today
+ * TODO(founder): confirm (1) which document formats Whisk indexes today
  * (PDF papers, long reports) before the page names them; (2) any
  * compliance or validation facts we may state.
  */
@@ -62,7 +62,7 @@ export const lifeSciences: Localized<IndustryPage> = {
         {
           tag: 'inference',
           title: 'Ask your sources, and get the citation.',
-          body: 'Syrup runs retrieval locally over notes, documents and code. Search is lexical plus vector, so exact gene names and fuzzy questions both land, and every answer cites where it came from.',
+          body: 'Whisk runs retrieval locally over notes, documents and code. Search is lexical plus vector, so exact gene names and fuzzy questions both land, and every answer cites where it came from.',
         },
         {
           tag: 'control',
@@ -72,14 +72,14 @@ export const lifeSciences: Localized<IndustryPage> = {
         {
           tag: 'cost',
           title: 'Know what each project’s compute costs.',
-          body: 'Waffle shows every GPU and every engine on it, busy or idle, so research compute can be tied to the work it did. Budgets get a number instead of a guess.',
+          body: 'Syrup shows every GPU and every engine on it, busy or idle, so research compute can be tied to the work it did. Budgets get a number instead of a guess.',
         },
       ],
     },
     stackFit: {
       title: 'How the stack *fits*.',
       intro:
-        'Butter runs the models, Syrup reads your sources, and Waffle keeps count.',
+        'Butter runs the models, Whisk reads your sources, and Syrup keeps count.',
       items: [
         {
           product: 'butter',
@@ -87,12 +87,12 @@ export const lifeSciences: Localized<IndustryPage> = {
           body: 'Swift on Metal for Apple silicon and Rust for CUDA, with no Python in the serving path. Text, vision, speech and omni models sit behind an OpenAI-compatible API, and checkpoints load straight from Hugging Face.',
         },
         {
-          product: 'syrup',
+          product: 'whisk',
           need: 'Answers from your sources, with citations.',
           body: 'Local retrieval over notes, documents and code. Search is lexical plus vector, and results come back with citations over MCP, so assistants show their work.',
         },
         {
-          product: 'waffle',
+          product: 'syrup',
           need: 'Compute you can account for.',
           body: 'Every GPU and every engine in one view, whether that is Butter, vLLM, SGLang or llama.cpp, from one workstation to a shared cluster.',
         },
@@ -104,7 +104,7 @@ export const lifeSciences: Localized<IndustryPage> = {
       notes: [
         'A Mac Studio or an RTX workstation is the easiest place to start: Metal is primary, and CUDA is in production on RTX and DGX Spark.',
         'Datacenter GPUs are in progress. ROCm and Vulkan run but are not tuned yet.',
-        'Syrup cites its sources, but it does not check the science. Your reviewers still do.',
+        'Whisk cites its sources, but it does not check the science. Your reviewers still do.',
       ],
     },
     faq: [
@@ -116,7 +116,7 @@ export const lifeSciences: Localized<IndustryPage> = {
       {
         question: 'Can it answer from our own documents?',
         answer:
-          'Yes. Syrup runs retrieval locally over notes, documents and code, and every result comes back with a citation to its source, over MCP.',
+          'Yes. Whisk runs retrieval locally over notes, documents and code, and every result comes back with a citation to its source, over MCP.',
       },
       {
         question: 'Is it validated for clinical or regulated work?',

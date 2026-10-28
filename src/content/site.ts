@@ -9,7 +9,7 @@ export const site = {
   /** Katakana for "waffle"; shown beside the wordmark. */
   kana: 'ワッフル',
   description:
-    'Waffuru builds the stack that runs AI on the hardware you already own: GPU kernels (Iron), an inference engine (Butter), a GPU control plane (Waffle) and a memory layer (Syrup). Its first public product is Pantry, a free, open-source vulnerability scanner.',
+    'Waffuru builds the stack that runs AI on the hardware you already own: GPU kernels (Iron), an inference engine (Butter), a GPU control plane (Syrup) and a memory layer (Whisk). Its first public product is Pantry, a free, open-source vulnerability scanner.',
   mission: 'Democratize access to intelligence.',
   url: 'https://waffuru.ai',
   emails: {

@@ -16,7 +16,7 @@ import governmentKo from './government.ko';
  * support is coming soon (founder, 2026-10-27); say no more than that.
  *
  * TODO(founder): confirm (1) on-prem support terms and procurement routes
- * we can name; (2) any accreditation status we may state; (3) what Waffle's
+ * we can name; (2) any accreditation status we may state; (3) what Syrup's
  * signed telemetry contains and whether the control plane runs fully
  * self-hosted, so "does any data leave" can be specific.
  */
@@ -64,12 +64,12 @@ export const government: Localized<IndustryPage> = {
         {
           tag: 'cost',
           title: 'Show where the money goes.',
-          body: 'Dollars per workload is the number a budget office asks for, and almost nobody can see it. Waffle shows every GPU, every engine on it and what sits idle, so spend ties back to the services it runs.',
+          body: 'Dollars per workload is the number a budget office asks for, and almost nobody can see it. Syrup shows every GPU, every engine on it and what sits idle, so spend ties back to the services it runs.',
         },
         {
           tag: 'control',
           title: 'Buy hardware without buying lock-in.',
-          body: 'One Iron kernel definition lowers to Metal, CUDA, HIP/ROCm and Vulkan, and Waffle works with Butter, vLLM, SGLang and llama.cpp. Changing a GPU vendor or an engine becomes a decision, not a rewrite.',
+          body: 'One Iron kernel definition lowers to Metal, CUDA, HIP/ROCm and Vulkan, and Syrup works with Butter, vLLM, SGLang and llama.cpp. Changing a GPU vendor or an engine becomes a decision, not a rewrite.',
         },
         {
           tag: 'inference',
@@ -81,7 +81,7 @@ export const government: Localized<IndustryPage> = {
     stackFit: {
       title: 'How the stack *fits*.',
       intro:
-        'Butter keeps the work in your jurisdiction, Waffle accounts for it, Syrup answers from your own documents, and Iron keeps vendors interchangeable.',
+        'Butter keeps the work in your jurisdiction, Syrup accounts for it, Whisk answers from your own documents, and Iron keeps vendors interchangeable.',
       items: [
         {
           product: 'butter',
@@ -89,12 +89,12 @@ export const government: Localized<IndustryPage> = {
           body: 'OpenAI-compatible serving in Swift on Metal and Rust for CUDA, with no Python in the serving path. Existing tools change an address, not an SDK.',
         },
         {
-          product: 'waffle',
+          product: 'syrup',
           need: 'One account of every GPU.',
           body: 'Every GPU and every engine in one view, whether that is Butter, vLLM, SGLang or llama.cpp. A small Rust sidecar on each host reports signed telemetry.',
         },
         {
-          product: 'syrup',
+          product: 'whisk',
           need: 'Answers from your own documents, with sources.',
           body: 'Local retrieval over internal notes, documents and code. Search is lexical plus vector, and results come back with citations over MCP.',
         },
@@ -119,7 +119,7 @@ export const government: Localized<IndustryPage> = {
       {
         question: 'Does any data leave our infrastructure?',
         answer:
-          'Inference data does not leave by default, because data stays on the machine unless you opt in. Each Waffle host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
+          'Inference data does not leave by default, because data stays on the machine unless you opt in. Each Syrup host runs a sidecar that reports signed telemetry, and we will walk you through exactly what that contains for your environment.',
       },
       {
         question: 'Can it run offline?',
@@ -134,7 +134,7 @@ export const government: Localized<IndustryPage> = {
       {
         question: 'How does it avoid lock-in?',
         answer:
-          'Waffle works with Butter, vLLM, SGLang and llama.cpp, so you are not tied to one engine. Iron kernels lower to Metal, CUDA, HIP/ROCm and Vulkan, so you are not tied to one GPU vendor.',
+          'Syrup works with Butter, vLLM, SGLang and llama.cpp, so you are not tied to one engine. Iron kernels lower to Metal, CUDA, HIP/ROCm and Vulkan, so you are not tied to one GPU vendor.',
       },
       {
         question: 'Which hardware does it support?',

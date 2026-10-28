@@ -263,7 +263,7 @@ const butterFr: (typeof butter)['en'] = {
   stack: {
     heading: 'Compatible avec le reste de la *stack*.',
     intro:
-      'Butter exécute les modèles sur les kernels qu’Iron compile. Waffle peut le surveiller aux côtés de vLLM, SGLang et llama.cpp, et Syrup donne à votre IA la mémoire de ce sur quoi vous travailliez.',
+      'Butter exécute les modèles sur les kernels qu’Iron compile. Syrup peut le surveiller aux côtés de vLLM, SGLang et llama.cpp, et Whisk donne à votre IA la mémoire de ce sur quoi vous travailliez.',
   },
   faq: [
     {

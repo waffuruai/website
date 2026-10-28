@@ -112,7 +112,7 @@ const ironKo: (typeof iron)['en'] = {
   stack: {
     heading: '나머지 *스택*과 함께 쓰기.',
     intro:
-      'Iron은 단독으로도 쓸 수 있습니다. 커널 위에서 모델을 돌리려면 Butter를, 그 GPU를 지켜보려면 Waffle을, AI가 하던 일을 기억하게 하려면 Syrup을 더하세요.',
+      'Iron은 단독으로도 쓸 수 있습니다. 커널 위에서 모델을 돌리려면 Butter를, 그 GPU를 지켜보려면 Syrup을, AI가 하던 일을 기억하게 하려면 Whisk를 더하세요.',
   },
   faq: [
     {

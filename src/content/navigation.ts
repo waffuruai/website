@@ -25,8 +25,8 @@ import { isPublishedPath } from '@/lib/launch';
 export const productLinks: NavLink[] = [
   { key: 'iron', href: '/products/iron', index: '01' },
   { key: 'butter', href: '/products/butter', index: '02' },
-  { key: 'waffle', href: '/products/waffle', index: '03' },
-  { key: 'syrup', href: '/products/syrup', index: '04' },
+  { key: 'syrup', href: '/products/syrup', index: '03' },
+  { key: 'whisk', href: '/products/whisk', index: '04' },
 ];
 
 /** Free, open-source tools that stand apart from the stack. */

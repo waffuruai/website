@@ -43,7 +43,7 @@ const supportEs: (typeof support)['en'] = {
     {
       question: '¿Qué puedo usar hoy?',
       answer:
-        'Nuestros productos (Iron, Butter, Waffle y Syrup) son privados y de código cerrado por ahora, y todavía no hay nada disponible para el público general. El acceso anticipado es la forma de entrar primero.',
+        'Nuestros productos (Iron, Butter, Syrup y Whisk) son privados y de código cerrado por ahora, y todavía no hay nada disponible para el público general. El acceso anticipado es la forma de entrar primero.',
     },
     {
       question: '¿Cómo funciona el acceso anticipado?',

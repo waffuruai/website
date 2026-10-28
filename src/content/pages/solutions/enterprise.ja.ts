@@ -1,6 +1,6 @@
 import type { enterprise } from './enterprise';
 
-// TODO(founder): confirm (1) exactly what Waffle's signed telemetry contains
+// TODO(founder): confirm (1) exactly what Syrup's signed telemetry contains
 // and where the control plane runs (self-hosted or hosted), so the "what
 // leaves our network" answer can be specific; (2) any compliance or
 // certification facts we may state.
@@ -46,7 +46,7 @@ const enterpriseJa: (typeof enterprise)['en'] = {
       {
         tag: 'cost',
         title: 'すべての GPU とエンジンを、一か所で見渡す。',
-        body: 'Butter でも、vLLM でも、SGLang でも、llama.cpp でも、どの GPU が稼働中で、どのエンジンが動いていて、どれが遊んでいるかを Waffle が示します。何を統合し、何を廃止し、何を買うかを決める出発点になります。',
+        body: 'Butter でも、vLLM でも、SGLang でも、llama.cpp でも、どの GPU が稼働中で、どのエンジンが動いていて、どれが遊んでいるかを Syrup が示します。何を統合し、何を廃止し、何を買うかを決める出発点になります。',
       },
       {
         tag: 'inference',
@@ -56,14 +56,14 @@ const enterpriseJa: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: '既存のアプリを、書き直さずにつなぐ。',
-        body: 'Butter の OpenAI 互換 API はストリーミングとツール呼び出しに対応しているので、社内ツールで変えるのは接続先であり、SDK ではありません。Waffle は vLLM、SGLang、llama.cpp とも併用できるため、特定のエンジンに縛られることもありません。',
+        body: 'Butter の OpenAI 互換 API はストリーミングとツール呼び出しに対応しているので、社内ツールで変えるのは接続先であり、SDK ではありません。Syrup は vLLM、SGLang、llama.cpp とも併用できるため、特定のエンジンに縛られることもありません。',
       },
     ],
   },
   stackFit: {
     title: 'スタックの*かみ合わせ方*',
     intro:
-      'Butter が提供し、Waffle が見守り、Syrup が検索し、Iron がその 3 つの下を支えます。',
+      'Butter が提供し、Syrup が見守り、Whisk が検索し、Iron がその 3 つの下を支えます。',
     items: [
       {
         product: 'butter',
@@ -71,12 +71,12 @@ const enterpriseJa: (typeof enterprise)['en'] = {
         body: 'Metal 上の Swift と CUDA 向けの Rust による OpenAI 互換のサービング。サービングの経路に Python はありません。safetensors、MLX、JANG、GGUF のチェックポイントを直接読み込むので、新しいモデルとサーバーのあいだに変換のパイプラインは要りません。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'すべての GPU とエンジンを、ひとつの画面で。',
-        body: '各ホストの小さな Rust 製サイドカーが、署名付きテレメトリを報告します。Waffle は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携するので、導入しても、いま動いているものを置き換える必要はありません。',
+        body: '各ホストの小さな Rust 製サイドカーが、署名付きテレメトリを報告します。Syrup は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携するので、導入しても、いま動いているものを置き換える必要はありません。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '自社の情報源にもとづく答えを、出典付きで。',
         body: '社内のノートとコードに対するローカル検索。検索はキーワード検索とベクトル検索の併用で、結果は MCP 経由で出典付きで返ります。',
       },
@@ -110,12 +110,12 @@ const enterpriseJa: (typeof enterprise)['en'] = {
     {
       question: '現在のサービングスタックを置き換える必要はありますか？',
       answer:
-        'ありません。Waffle は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携するので、まず可視化を手に入れ、エンジンについては後で決められます。',
+        'ありません。Syrup は Butter、vLLM、SGLang、llama.cpp など OpenAI 互換のサーバーと連携するので、まず可視化を手に入れ、エンジンについては後で決められます。',
     },
     {
       question: '社内ネットワークの外に出るものは何ですか？',
       answer:
-        '推論のデータは、既定では外に出ません。ユーザーのデータは、オプトインしない限りそのマシンにとどまるからです。Waffle の各ホストでは、署名付きテレメトリを報告するサイドカーが動いており、お客様の環境でその中身が具体的に何になるかは、個別にご説明します。',
+        '推論のデータは、既定では外に出ません。ユーザーのデータは、オプトインしない限りそのマシンにとどまるからです。Syrup の各ホストでは、署名付きテレメトリを報告するサイドカーが動いており、お客様の環境でその中身が具体的に何になるかは、個別にご説明します。',
     },
     {
       question: 'どのように評価すればよいですか？',

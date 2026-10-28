@@ -1,59 +1,75 @@
 import type { syrup } from './syrup';
 
 const syrupZh: (typeof syrup)['en'] = {
-  layer: '记忆',
-  tagline: '让你的 AI 记得你在做什么。',
+  layer: '控制平面',
+  tagline: '看清每一块 GPU 和其上运行的每个引擎。',
   summary:
-    '对你的笔记和代码做本地检索。嵌入向量用 TurboQuant+ 压缩，搜索结合关键词与向量，结果通过 MCP 返回，并附带引用。',
+    '面向 GPU 上大模型的控制平面，从桌下的一台机器，到出租集群的新型云服务商。每台主机运行一个小型 Rust sidecar，上报带签名的遥测数据。支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
   seo: {
-    title: 'Syrup：为你的 AI 提供本地记忆与检索',
+    title: 'Syrup：GPU 上大模型的控制平面',
     description:
-      'Syrup 对你的笔记和代码做本地检索。嵌入向量由 TurboQuant+ 压缩，关键词加向量搜索，结果通过 MCP 附带引用返回。',
-    keywords: ['本地 RAG', 'AI 记忆', 'MCP 检索', '私有语义搜索'],
+      '看清每块 GPU 和其上的每个推理引擎，从桌下一台机器到新型云服务商的集群。Rust sidecar 上报签名遥测，支持 Butter、vLLM、SGLang、llama.cpp。',
+    keywords: [
+      'GPU 集群管理',
+      '大模型控制平面',
+      'GPU 可观测性',
+      'vLLM SGLang llama.cpp 监控',
+    ],
   },
   hero: {
-    title: '你的 AI *记得*你在做什么。',
-    lede: 'Syrup 对你的笔记和代码做本地检索。嵌入向量用 TurboQuant+ 压缩，搜索结合关键词与向量，结果通过 MCP 返回，并附带引用。',
+    title: '看清每一块 GPU，和其上运行的每个*引擎*。',
+    lede: 'Syrup 是 GPU 上大模型的控制平面，从桌下的一台机器，到出租集群的新型云服务商。每台主机运行一个小型 Rust sidecar，上报带签名的遥测数据。',
     highlights: [
-      { value: '本地', label: '对你的笔记和代码做检索' },
+      { value: '一台机器', label: '桌下一台，直至新型云服务商的集群' },
       {
-        value: '关键词 + 向量',
-        label: '搜索，基于用 TurboQuant+ 压缩的嵌入向量',
+        value: '已签名',
+        label: '每台主机上的小型 Rust sidecar 上报的遥测数据',
       },
-      { value: '附引用', label: '的结果，通过 MCP 交付' },
+      {
+        value: '无锁定',
+        label: 'Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器',
+      },
     ],
   },
   story: {
-    heading: '不用再一遍遍*解释自己*。',
+    heading: '每块 GPU 上*跑着什么*，一目了然。',
     problem:
-      '每次新开一个对话，都是从零开始。你把同样的笔记和文件再贴一遍，答案回来了，你却分不清它出自哪一份。',
+      'GPU 机器上跑的，是某个人在上面启动的任何引擎：这台是 llama.cpp，下一台是 vLLM，新的那台是 SGLang。想知道什么在哪里运行，就得逐台登录主机。',
     outcome:
-      'Syrup 在你自己的机器上为笔记和代码建立索引。你的 AI 通过 MCP 向它提问，拿回要紧的段落，每一段都附带可核对的引用。',
+      '在每台主机上放一个小型 Rust sidecar。它上报带签名的遥测数据，Syrup 则呈现每一块 GPU 和其上的每个引擎，不论你管的是一台机器还是一整个集群。',
     outcomes: [
-      '笔记和代码留在你自己的机器上。检索在本地完成。',
-      '既能按你用过的原词查找，也能按意思查找：搜索结合关键词与向量。',
-      '任何答案都能对照来源核实，因为结果附带引用。',
+      '用同一个工具，看管桌下的一台机器，或你出租的整个集群。',
+      '保留你已在运行的引擎。Syrup 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
+      '放心依赖你所看到的：每台主机都上报带签名的遥测数据。',
     ],
   },
   capabilities: {
     heading: 'Syrup 能*做什么*。',
-    intro: '一个由你自己运行的记忆层，服务于你已有的工作。',
+    intro: '控制平面守在你的引擎旁边，而不是取代它们。',
     items: [
       {
-        title: '本地检索',
-        body: 'Syrup 在你自己的机器上搜索笔记和代码，除非你主动选择开启，否则数据始终留在那里。',
+        title: '每一块 GPU',
+        body: '在一处看到每台主机上的每块 GPU。',
       },
       {
-        title: '压缩的嵌入向量',
-        body: '嵌入向量用 TurboQuant+ 压缩，索引占用的空间更小。',
+        title: '每一个引擎',
+        body: '看到其上运行的是哪个引擎：Butter、vLLM、SGLang、llama.cpp，或其他兼容 OpenAI 的服务器。',
       },
       {
-        title: '关键词加向量搜索',
-        body: '精确词匹配与按语义搜索协同工作。',
+        title: '小型 Rust sidecar',
+        body: '每台主机运行一个用 Rust 编写的小型 sidecar，所以加一台机器，就是加一个 sidecar。',
       },
       {
-        title: '通过 MCP 返回引用',
-        body: '结果通过 MCP 附带引用返回，因此任何 MCP 客户端都能使用，并展示每条结果的出处。',
+        title: '带签名的遥测',
+        body: '每个 sidecar 都会为它上报的遥测数据签名。',
+      },
+      {
+        title: '从一台机器到整个集群',
+        body: '从桌下的一台机器开始。同样的部署也能覆盖出租集群的新型云服务商。',
+      },
+      {
+        title: '无锁定',
+        body: 'Syrup 不要求使用 Butter。它同样支持 vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器。',
       },
     ],
   },
@@ -61,12 +77,33 @@ const syrupZh: (typeof syrup)['en'] = {
     heading: '技术*细节*。',
     intro: '给会细读的人看的细节。',
     rows: [
-      { term: '索引对象', detail: '你的笔记和代码。' },
-      { term: '运行位置', detail: '本地，在你的机器上。' },
-      { term: '嵌入向量', detail: '用 TurboQuant+ 压缩。' },
-      { term: '搜索', detail: '关键词加向量。' },
-      { term: '结果', detail: '附带引用返回。' },
-      { term: '接口', detail: 'MCP。' },
+      { term: '角色', detail: '面向 GPU 上大模型的控制平面。' },
+      {
+        term: '每台主机上',
+        detail: '一个用 Rust 编写的小型 sidecar。',
+      },
+      {
+        term: '遥测',
+        detail: '由上报它的 sidecar 签名。',
+      },
+      {
+        term: '引擎',
+        chips: [
+          { label: 'Butter' },
+          { label: 'vLLM' },
+          { label: 'SGLang' },
+          { label: 'llama.cpp' },
+          { label: '其他兼容 OpenAI 的服务器' },
+        ],
+      },
+      {
+        term: '规模',
+        detail: '从桌下的一台机器，到新型云服务商的集群。',
+      },
+      {
+        term: '锁定',
+        detail: '没有。Syrup 也支持 Butter 以外的引擎。',
+      },
       {
         term: '可用性',
         detail: '抢先体验期间为私有闭源。',
@@ -76,7 +113,7 @@ const syrupZh: (typeof syrup)['en'] = {
   stack: {
     heading: '与其余*技术栈*协同工作。',
     intro:
-      'Syrup 可以单独使用，配合任何 MCP 客户端。在它之下，Butter 运行模型，Waffle 盯着 GPU，Iron 编译内核。',
+      '无论是否使用 Butter，Syrup 都盯着 GPU。Butter 在 Iron 编译的内核上运行模型，Whisk 记得你在做什么。',
   },
   faq: [
     {
@@ -85,32 +122,29 @@ const syrupZh: (typeof syrup)['en'] = {
         '目前不开源。抢先体验期间，Syrup 为私有闭源。申请访问，有更多内容可以分享时，我们会写信给你。',
     },
     {
-      question: '我的数据会离开我的机器吗？',
+      question: '我必须用 Butter 吗？',
       answer:
-        '检索在本地完成：Syrup 在你的机器上建立索引并搜索。我们给自己定了一条简单的规矩：除非你主动选择开启，否则数据始终留在你的机器上。',
+        '不必。Syrup 支持 Butter、vLLM、SGLang、llama.cpp 以及其他兼容 OpenAI 的服务器，你可以继续用已经在跑的引擎。',
     },
     {
-      question: '它会索引什么？',
-      answer: '你的笔记和代码。',
-    },
-    {
-      question: 'TurboQuant+ 是什么？',
+      question: '适合谁？',
       answer:
-        'Syrup 用来压缩嵌入向量的方法。它来自我们的首席研究官 Tom Turney。',
+        '任何在 GPU 上运行大模型、并希望看清它们的人，从桌下的一台机器，到出租集群的新型云服务商。',
     },
     {
-      question: '什么可以使用 Syrup？',
+      question: 'sidecar 是做什么的？',
       answer:
-        '任何支持 MCP 的工具都可以向 Syrup 请求结果，每条结果都附带引用。',
+        '每台主机运行一个用 Rust 编写的小型 sidecar。它上报该主机上的 GPU，以及其上所运行引擎的带签名遥测数据。',
     },
     {
-      question: '我需要整套技术栈吗？',
-      answer: '不需要。Waffuru 的每款产品都可以单独使用，Syrup 也不例外。',
+      question: '支持哪些 GPU？',
+      answer:
+        '我们还没有发布 Syrup 的硬件支持矩阵。告诉我们你在用什么，我们会直接告诉你是否合适。',
     },
   ],
   cta: {
-    title: '给你的 AI 一份*记忆*。',
-    body: 'Syrup 目前处于抢先体验阶段，暂未开源。申请访问，或者告诉我们你希望它记住什么。',
+    title: '看看你的*集群*。',
+    body: 'Syrup 目前处于抢先体验阶段，暂未开源。申请访问，或者告诉我们你在运行什么。',
   },
 };
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
 <title id="t">Announcing Waffuru</title>
-<desc id="d">Share card for the post Announcing Waffuru. Headline: More intelligence from the hardware you already own. Below it: Announcing Waffuru, and Pantry, our free vulnerability scanner, out today. On the right, the stack inside a dashed boundary labelled your hardware, your network: you, your apps and your agents at the top, then four layers, Control (Waffle), Memory (Syrup), Engine (Butter, lit in gold as a request passes) and Kernels (Iron), above Apple silicon, NVIDIA and AMD. The waffle mark and waffuru.ai sit bottom left.</desc>
+<desc id="d">Share card for the post Announcing Waffuru. Headline: More intelligence from the hardware you already own. Below it: Announcing Waffuru, and Pantry, our free vulnerability scanner, out today. On the right, the stack inside a dashed boundary labelled your hardware, your network: you, your apps and your agents at the top, then four layers, Control (Syrup), Memory (Whisk), Engine (Butter, lit in gold as a request passes) and Kernels (Iron), above Apple silicon, NVIDIA and AMD. The waffle mark and waffuru.ai sit bottom left.</desc>
 <style>
 text { font-family: Geist, "Helvetica Neue", Arial, sans-serif; }
 .serif { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; }
@@ -23,10 +23,10 @@ text { font-family: Geist, "Helvetica Neue", Arial, sans-serif; }
 <line x1="920" y1="160" x2="920" y2="482" stroke="#ede8df" stroke-opacity="0.18"/>
 <rect x="728" y="176" width="384" height="54" rx="14" fill="#12100e" stroke="#ede8df" stroke-opacity="0.12"/>
 <text x="750" y="212" class="serif" font-size="27" fill="#ede8df">Control</text>
-<text x="1090" y="209" text-anchor="end" class="mono" font-size="12" letter-spacing="2" fill="#e8a33d">WAFFLE</text>
+<text x="1090" y="209" text-anchor="end" class="mono" font-size="12" letter-spacing="2" fill="#e8a33d">SYRUP</text>
 <rect x="728" y="242" width="384" height="54" rx="14" fill="#12100e" stroke="#ede8df" stroke-opacity="0.12"/>
 <text x="750" y="278" class="serif" font-size="27" fill="#ede8df">Memory</text>
-<text x="1090" y="275" text-anchor="end" class="mono" font-size="12" letter-spacing="2" fill="#e8a33d">SYRUP</text>
+<text x="1090" y="275" text-anchor="end" class="mono" font-size="12" letter-spacing="2" fill="#e8a33d">WHISK</text>
 <rect x="728" y="308" width="384" height="54" rx="14" fill="#12100e" stroke="#e8a33d" stroke-opacity="1"/>
 <text x="750" y="344" class="serif" font-size="27" fill="#ede8df">Engine</text>
 <text x="1090" y="341" text-anchor="end" class="mono" font-size="12" letter-spacing="2" fill="#e8a33d">BUTTER</text>

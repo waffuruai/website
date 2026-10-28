@@ -17,7 +17,7 @@ describe('/products route', () => {
     const hrefs = [...container.querySelectorAll('a')].map((a) =>
       a.getAttribute('href'),
     );
-    for (const slug of ['iron', 'butter', 'waffle', 'syrup']) {
+    for (const slug of ['iron', 'butter', 'syrup', 'whisk']) {
       expect(hrefs).toContain(`/products/${slug}`);
     }
   });

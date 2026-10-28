@@ -54,7 +54,7 @@ describe('Brand page', () => {
     const { container } = await renderPage();
     expect(screen.getAllByText('waffuru')).toHaveLength(2);
     expect(container.querySelectorAll('[lang="ja"]').length).toBeGreaterThan(0);
-    expect(screen.getByText('Iron, Butter, Waffle, Syrup')).toBeTruthy();
+    expect(screen.getByText('Iron, Butter, Syrup, Whisk')).toBeTruthy();
   });
 
   it('gives every swatch a copy button', async () => {

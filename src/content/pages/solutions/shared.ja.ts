@@ -32,19 +32,19 @@ const solutionsSharedJa: (typeof solutionsShared)['en'] = {
       linkLabel: 'Butter を見る',
       href: '/products/butter',
     },
-    waffle: {
+    syrup: {
       index: '03',
       role: 'コントロールプレーン',
-      name: 'Waffle',
-      linkLabel: 'Waffle を見る',
-      href: '/products/waffle',
-    },
-    syrup: {
-      index: '04',
-      role: '記憶',
       name: 'Syrup',
       linkLabel: 'Syrup を見る',
       href: '/products/syrup',
+    },
+    whisk: {
+      index: '04',
+      role: '記憶',
+      name: 'Whisk',
+      linkLabel: 'Whisk を見る',
+      href: '/products/whisk',
     },
   },
   hardware: {

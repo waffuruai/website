@@ -30,7 +30,7 @@ const solutionsOverviewZh: (typeof solutionsOverview)['en'] = {
         points: [
           '在你已有的硬件上运行，而不是租用',
           '量化模型让现有内存装下更多',
-          'Waffle 显示哪里的算力在闲置',
+          'Syrup 显示哪里的算力在闲置',
         ],
       },
       {
@@ -49,7 +49,7 @@ const solutionsOverviewZh: (typeof solutionsOverview)['en'] = {
         body: '本地优先：除非你主动选择开启，数据始终留在原处，无论是在笔记本、本地机房还是你自己的云上。',
         points: [
           '兼容 OpenAI 的服务，应用照常工作',
-          'Waffle 支持 vLLM、SGLang 和 llama.cpp',
+          'Syrup 支持 vLLM、SGLang 和 llama.cpp',
           '不被锁定在某一种引擎或某一家厂商',
         ],
       },

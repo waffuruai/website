@@ -19,7 +19,7 @@ const teamCopyKo: (typeof teamCopy)['en'] = {
   'tom-turney': {
     role: '최고연구책임자(Chief of Research)',
     background: 'TurboQuant+를 만든 AI 연구자. 전 Google 테크 리드 매니저.',
-    bio: 'Tom은 TurboQuant+를 만든 AI 연구자입니다. Syrup이 임베딩을 줄이는 데 쓰는 압축 기술이 바로 TurboQuant+이며, Waffuru에서 연구를 이끌고 있습니다. 이전에는 Google에서 테크 리드 매니저로 일했습니다.',
+    bio: 'Tom은 TurboQuant+를 만든 AI 연구자입니다. Whisk가 임베딩을 줄이는 데 쓰는 압축 기술이 바로 TurboQuant+이며, Waffuru에서 연구를 이끌고 있습니다. 이전에는 Google에서 테크 리드 매니저로 일했습니다.',
   },
   'cory-smith': {
     role: '최고기술책임자(CTO)',

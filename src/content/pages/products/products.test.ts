@@ -29,7 +29,7 @@ const accentCount = (text: string) => (text.match(/\*[^*]+\*/g) ?? []).length;
 
 describe('stack order', () => {
   it('lists four products from the metal up, Iron first', () => {
-    expect(productSlugs).toEqual(['iron', 'butter', 'waffle', 'syrup']);
+    expect(productSlugs).toEqual(['iron', 'butter', 'syrup', 'whisk']);
     expect(productsBottomUp.map((p) => p.index)).toEqual([
       '01',
       '02',
@@ -37,8 +37,8 @@ describe('stack order', () => {
       '04',
     ]);
     expect(productsTopDown.map((p) => p.slug)).toEqual([
+      'whisk',
       'syrup',
-      'waffle',
       'butter',
       'iron',
     ]);
@@ -153,8 +153,8 @@ describe('hardware tiers', () => {
   });
 
   it('keeps tiers off the pages where hardware is not the point', () => {
-    expect(productCopy.waffle.en.platforms).toBeUndefined();
     expect(productCopy.syrup.en.platforms).toBeUndefined();
+    expect(productCopy.whisk.en.platforms).toBeUndefined();
   });
 
   it('lists the enterprise datacenter GPUs as still in progress', () => {
@@ -260,8 +260,8 @@ describe('product specifics from the brief', () => {
     expect(productCopy.butter.en.code?.caption).toMatch(/not a benchmark/i);
   });
 
-  it('Waffle names the engines it works with', () => {
-    const engines = productCopy.waffle.en.specs.rows
+  it('Syrup names the engines it works with', () => {
+    const engines = productCopy.syrup.en.specs.rows
       .find((row) => row.term === 'Engines')
       ?.chips?.map((chip) => chip.label);
     expect(engines).toEqual([
@@ -273,8 +273,8 @@ describe('product specifics from the brief', () => {
     ]);
   });
 
-  it('Syrup’s specifics cover retrieval, TurboQuant+, search, citations and MCP', () => {
-    const text = productCopy.syrup.en.specs.rows
+  it('Whisk’s specifics cover retrieval, TurboQuant+, search, citations and MCP', () => {
+    const text = productCopy.whisk.en.specs.rows
       .map((row) => `${row.term} ${row.detail ?? ''}`)
       .join(' ');
     expect(text).toMatch(/locally/i);
@@ -303,9 +303,9 @@ describe('the overview', () => {
   it('uses the stack line in the lede', () => {
     expect(copy.hero.lede).toContain('Iron compiles the kernels.');
     expect(copy.hero.lede).toContain('Butter runs models on them.');
-    expect(copy.hero.lede).toContain('Waffle watches the GPUs.');
+    expect(copy.hero.lede).toContain('Syrup watches the GPUs.');
     expect(copy.hero.lede).toContain(
-      'Syrup remembers what you were working on.',
+      'Whisk remembers what you were working on.',
     );
   });
 

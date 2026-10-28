@@ -41,7 +41,7 @@ const lifeSciencesZh: (typeof lifeSciences)['en'] = {
       {
         tag: 'inference',
         title: '向你的资料提问，并拿到引用。',
-        body: 'Syrup 在本地对笔记、文档和代码做检索。搜索结合关键词与向量，确切的基因名称和模糊的问题都能命中，每个答案都注明出处。',
+        body: 'Whisk 在本地对笔记、文档和代码做检索。搜索结合关键词与向量，确切的基因名称和模糊的问题都能命中，每个答案都注明出处。',
       },
       {
         tag: 'control',
@@ -51,13 +51,13 @@ const lifeSciencesZh: (typeof lifeSciences)['en'] = {
       {
         tag: 'cost',
         title: '知道每个项目的算力花了多少。',
-        body: 'Waffle 显示每一块 GPU 和其上的每个引擎，无论正忙还是闲置，让科研算力能对应回它完成的工作。预算拿到的是一个数字，而不是一个猜测。',
+        body: 'Syrup 显示每一块 GPU 和其上的每个引擎，无论正忙还是闲置，让科研算力能对应回它完成的工作。预算拿到的是一个数字，而不是一个猜测。',
       },
     ],
   },
   stackFit: {
     title: '技术栈如何*配合*。',
-    intro: 'Butter 运行模型，Syrup 阅读你的资料，Waffle 负责记账。',
+    intro: 'Butter 运行模型，Whisk 阅读你的资料，Syrup 负责记账。',
     items: [
       {
         product: 'butter',
@@ -65,12 +65,12 @@ const lifeSciencesZh: (typeof lifeSciences)['en'] = {
         body: 'Apple 芯片上用 Swift 搭配 Metal，CUDA 上用 Rust，服务路径上没有 Python。文本、视觉、语音和全模态模型都在兼容 OpenAI 的 API 背后，检查点直接从 Hugging Face 加载。',
       },
       {
-        product: 'syrup',
+        product: 'whisk',
         need: '答案来自你的资料，并附引用。',
         body: '对笔记、文档和代码做本地检索。搜索结合关键词与向量，结果通过 MCP 附带引用返回，让助理能亮出依据。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '算得清的算力。',
         body: '一个视图看清每一块 GPU 和每个引擎，不论是 Butter、vLLM、SGLang 还是 llama.cpp，从一台工作站到共享集群。',
       },
@@ -82,7 +82,7 @@ const lifeSciencesZh: (typeof lifeSciences)['en'] = {
     notes: [
       'Mac Studio 或 RTX 工作站是最容易的起点：Metal 是首要平台，CUDA 已在 RTX 和 DGX Spark 上投入生产。',
       '数据中心 GPU 正在进行中。ROCm 和 Vulkan 可以运行，但尚未调优。',
-      'Syrup 会注明出处，但不会核查科学本身。这仍然要靠你的评审人员。',
+      'Whisk 会注明出处，但不会核查科学本身。这仍然要靠你的评审人员。',
     ],
   },
   faq: [
@@ -94,7 +94,7 @@ const lifeSciencesZh: (typeof lifeSciences)['en'] = {
     {
       question: '它能根据我们自己的文档作答吗？',
       answer:
-        '可以。Syrup 在本地对笔记、文档和代码做检索，每条结果都通过 MCP 返回，并附带指向出处的引用。',
+        '可以。Whisk 在本地对笔记、文档和代码做检索，每条结果都通过 MCP 返回，并附带指向出处的引用。',
     },
     {
       question: '它是否经过了临床或受监管工作的验证？',

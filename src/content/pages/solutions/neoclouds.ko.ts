@@ -35,7 +35,7 @@ const neocloudsKo: (typeof neoclouds)['en'] = {
       {
         tag: 'cost',
         title: '모든 GPU에서 무엇이 도는지 파악하세요.',
-        body: 'Waffle은 호스트, GPU, 엔진, 테넌트를 가로지르는 하나의 뷰를 제공합니다. 엔진이 vLLM, SGLang, llama.cpp, Butter 무엇이든 마찬가지입니다. 놀고 있거나 맞지 않게 배치된 용량이 화면에 가장 먼저 드러납니다.',
+        body: 'Syrup은 호스트, GPU, 엔진, 테넌트를 가로지르는 하나의 뷰를 제공합니다. 엔진이 vLLM, SGLang, llama.cpp, Butter 무엇이든 마찬가지입니다. 놀고 있거나 맞지 않게 배치된 용량이 화면에 가장 먼저 드러납니다.',
       },
       {
         tag: 'control',
@@ -50,19 +50,19 @@ const neocloudsKo: (typeof neoclouds)['en'] = {
       {
         tag: 'control',
         title: '하나의 엔진에 걸지 않고 선택지를 제공하세요.',
-        body: 'Butter는 OpenAI 호환 API를 제공하고 Waffle은 vLLM, SGLang, llama.cpp와 함께 동작합니다. 어느 한 엔진을 중심으로 다시 짜지 않고도 고객에게 더 많은 선택권을 줄 수 있습니다.',
+        body: 'Butter는 OpenAI 호환 API를 제공하고 Syrup은 vLLM, SGLang, llama.cpp와 함께 동작합니다. 어느 한 엔진을 중심으로 다시 짜지 않고도 고객에게 더 많은 선택권을 줄 수 있습니다.',
       },
     ],
   },
   stackFit: {
     title: '스택이 *맞물리는* 방식.',
     intro:
-      'Waffle은 여러분을 위해 만든 부분입니다. Butter와 Iron은 그 밑의 효율을 다룹니다.',
+      'Syrup은 여러분을 위해 만든 부분입니다. Butter와 Iron은 그 밑의 효율을 다룹니다.',
     items: [
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '플릿 전체를 보세요.',
-        body: '책상 아래 서버 한 대부터 플릿을 임대하는 네오클라우드까지. 호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고하며, Waffle은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작합니다.',
+        body: '책상 아래 서버 한 대부터 플릿을 임대하는 네오클라우드까지. 호스트마다 작은 Rust 사이드카가 서명된 텔레메트리를 보고하며, Syrup은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작합니다.',
       },
       {
         product: 'butter',
@@ -78,7 +78,7 @@ const neocloudsKo: (typeof neoclouds)['en'] = {
   },
   whereWeAre: {
     title: '우리는 지금 *어디쯤*인가.',
-    lede: 'Waffle과 Butter는 얼리 액세스 중이며 당분간 비공개 소스입니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이고, 데이터센터 GPU는 진행 중입니다.',
+    lede: 'Syrup과 Butter는 얼리 액세스 중이며 당분간 비공개 소스입니다. CUDA는 RTX와 DGX Spark에서 프로덕션으로 운영 중이고, 데이터센터 GPU는 진행 중입니다.',
     notes: [
       '보유한 GPU 세대를 알려 주세요. 데이터센터용 CUDA는 진행 중이므로, 우리가 듣는 플릿 이야기가 무엇을 먼저 할지 결정합니다.',
       'ROCm과 Vulkan은 지금도 구동되지만 아직 튜닝하지 않았습니다.',
@@ -87,9 +87,9 @@ const neocloudsKo: (typeof neoclouds)['en'] = {
   },
   faq: [
     {
-      question: 'Waffle이 지금 쓰는 엔진을 대체하나요?',
+      question: 'Syrup이 지금 쓰는 엔진을 대체하나요?',
       answer:
-        '아니요. Waffle은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작합니다. 먼저 가시성을 확보하고, 엔진은 바꾸고 싶을 때에만 바꾸세요.',
+        '아니요. Syrup은 Butter, vLLM, SGLang, llama.cpp 및 기타 OpenAI 호환 서버와 함께 동작합니다. 먼저 가시성을 확보하고, 엔진은 바꾸고 싶을 때에만 바꾸세요.',
     },
     {
       question: '어떤 GPU에서 돌아가나요?',

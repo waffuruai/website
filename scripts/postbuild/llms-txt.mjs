@@ -10,7 +10,7 @@ import { SITE, SITE_URL, isPublished, markdownPath } from './site.mjs';
  * llms.txt is a reading list for agents: one H1, a summary, and H2 sections of
  * links to the English markdown twins with each page's meta description.
  * Sections come from the pages that were built (nothing here lists pages);
- * only their order has hints so the stack reads Iron, Butter, Waffle, Syrup.
+ * only their order has hints so the stack reads Iron, Butter, Syrup, Whisk.
  */
 
 const SECTIONS = [
@@ -56,8 +56,8 @@ const PATH_ORDER = [
   '/products/pantry',
   '/products/iron',
   '/products/butter',
-  '/products/waffle',
   '/products/syrup',
+  '/products/whisk',
   '/solutions',
   '/solutions/small-business',
   '/solutions/enterprise',
@@ -133,7 +133,7 @@ const INTRO = `Every page has a markdown twin: send \`Accept: text/markdown\` or
 
 const MISSION = `${SITE.name} is on a mission to ${SITE.mission.replace(/^D/, 'd').replace(/\.$/, '')}.`;
 const STACK =
-  'Iron compiles the kernels, Butter runs models on them, Waffle watches the GPUs and Syrup remembers what you were working on, all on the hardware you already own. The stack is closed source and in early access.';
+  'Iron compiles the kernels, Butter runs models on them, Syrup watches the GPUs and Whisk remembers what you were working on, all on the hardware you already own. The stack is closed source and in early access.';
 const STACK_UNNAMED =
   'It builds the stack that runs AI on the hardware you already own: kernels, an inference engine, a GPU control plane and memory, all closed source and in early access.';
 const PANTRY =

@@ -53,13 +53,13 @@ const militaryZh: (typeof military)['en'] = {
       {
         tag: 'cost',
         title: '清点你买下的每一块 GPU。',
-        body: 'Waffle 显示每一块 GPU 和其上的每个引擎，无论正忙还是闲置，覆盖 Mac、工作站和机架。闲置的算力，会在下一次采购之前先显现出来。',
+        body: 'Syrup 显示每一块 GPU 和其上的每个引擎，无论正忙还是闲置，覆盖 Mac、工作站和机架。闲置的算力，会在下一次采购之前先显现出来。',
       },
     ],
   },
   stackFit: {
     title: '技术栈如何*配合*。',
-    intro: 'Butter 运行模型，Waffle 清点硬件，Iron 为下一个平台留好余地。',
+    intro: 'Butter 运行模型，Syrup 清点硬件，Iron 为下一个平台留好余地。',
     items: [
       {
         product: 'butter',
@@ -67,7 +67,7 @@ const militaryZh: (typeof military)['en'] = {
         body: '用于 Metal 的 Swift 和用于 CUDA 的 Rust 提供兼容 OpenAI 的服务，服务路径上没有 Python。它直接加载 safetensors、MLX、JANG 和 GGUF 检查点，无需转换步骤。',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: '你拥有的每一块 GPU，尽在一个视图中。',
         body: '每一块 GPU 和其上的每个引擎，不论是 Butter、vLLM、SGLang 还是 llama.cpp。每台主机上的小型 Rust sidecar 上报带签名的遥测数据。',
       },
@@ -92,7 +92,7 @@ const militaryZh: (typeof military)['en'] = {
     {
       question: '会有任何东西离开我们的机器吗？',
       answer:
-        '推理数据默认不会离开：模型在你运营的硬件上运行，除非你主动选择开启，数据始终留在那里。每台 Waffle 主机运行一个 sidecar，上报带签名的遥测数据，我们会逐项讲清楚其中包含什么。',
+        '推理数据默认不会离开：模型在你运营的硬件上运行，除非你主动选择开启，数据始终留在那里。每台 Syrup 主机运行一个 sidecar，上报带签名的遥测数据，我们会逐项讲清楚其中包含什么。',
     },
     {
       question: '它能在哪些硬件上运行？',

@@ -3,7 +3,7 @@ import type { ProductFacts, ProductSlug } from '@/content/pages/products/types';
 /*
  * What never translates about each product: name, place in the stack, route,
  * which secondary call to action it carries, and any code sample. The words
- * live in `iron.ts`, `butter.ts`, `waffle.ts` and `syrup.ts`.
+ * live in `iron.ts`, `butter.ts`, `syrup.ts` and `whisk.ts`.
  */
 export const productFacts: Record<ProductSlug, ProductFacts> = {
   iron: {
@@ -38,31 +38,31 @@ $ curl http://localhost:<port>/v1/chat/completions \\
     }'`,
     },
   },
-  waffle: {
-    slug: 'waffle',
-    index: '03',
-    name: 'Waffle',
-    path: '/products/waffle',
-    secondaryCta: 'sales',
-  },
   syrup: {
     slug: 'syrup',
-    index: '04',
+    index: '03',
     name: 'Syrup',
     path: '/products/syrup',
     secondaryCta: 'sales',
   },
+  whisk: {
+    slug: 'whisk',
+    index: '04',
+    name: 'Whisk',
+    path: '/products/whisk',
+    secondaryCta: 'sales',
+  },
 };
 
-/** Stack order, from the metal up: Iron (01) to Syrup (04). */
+/** Stack order, from the metal up: Iron (01) to Whisk (04). */
 export const productsBottomUp: ProductFacts[] = [
   productFacts.iron,
   productFacts.butter,
-  productFacts.waffle,
   productFacts.syrup,
+  productFacts.whisk,
 ];
 
-/** Overview order, top of the stack first: Syrup (04) down to Iron (01). */
+/** Overview order, top of the stack first: Whisk (04) down to Iron (01). */
 export const productsTopDown: ProductFacts[] = [...productsBottomUp].reverse();
 
 /** Where each audience card on the overview points. */

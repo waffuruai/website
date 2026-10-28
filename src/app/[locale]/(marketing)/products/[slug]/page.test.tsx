@@ -19,8 +19,8 @@ describe('/products/[slug] route', () => {
     expect(generateStaticParams()).toEqual([
       { slug: 'iron' },
       { slug: 'butter' },
-      { slug: 'waffle' },
       { slug: 'syrup' },
+      { slug: 'whisk' },
     ]);
     expect(dynamicParams).toBe(false);
   });
@@ -28,8 +28,8 @@ describe('/products/[slug] route', () => {
   it.each([
     ['iron', 'Iron'],
     ['butter', 'Butter'],
-    ['waffle', 'Waffle'],
     ['syrup', 'Syrup'],
+    ['whisk', 'Whisk'],
   ])('renders %s with its h1, specs and call to action', async (slug, name) => {
     const element = await ProductRoute({ params: params(slug) });
     const { container } = render(withDictionary(element));
@@ -42,7 +42,7 @@ describe('/products/[slug] route', () => {
     ).not.toBeNull();
   });
 
-  it.each(['iron', 'butter', 'waffle', 'syrup'] as const)(
+  it.each(['iron', 'butter', 'syrup', 'whisk'] as const)(
     'builds metadata for %s from its content',
     async (slug) => {
       const { seo } = productCopy[slug].en;
@@ -63,8 +63,8 @@ describe('/products/[slug] route', () => {
     const wanted = {
       iron: 'Rust GPU kernel DSL',
       butter: 'LLM inference engine',
-      waffle: 'GPU fleet management',
-      syrup: 'local RAG',
+      syrup: 'GPU fleet management',
+      whisk: 'local RAG',
     } as const;
     for (const [slug, keyword] of Object.entries(wanted)) {
       const { keywords } = await generateMetadata({ params: params(slug) });
@@ -127,7 +127,7 @@ describe('/products/[slug] route', () => {
     ]);
   });
 
-  it.each(['waffle', 'syrup'])('adds no research to %s', async (slug) => {
+  it.each(['syrup', 'whisk'])('adds no research to %s', async (slug) => {
     const { container } = await renderRoute(slug);
     for (const id of ['native-inference', 'aura', 'models']) {
       expect(container.querySelector(`#${id}`)).toBeNull();

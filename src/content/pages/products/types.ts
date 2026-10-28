@@ -1,7 +1,7 @@
 import type { FaqItem, Seo } from '@/content/types';
 
 /** The four layers of the stack, in the order they sit from the metal up. */
-export const productSlugs = ['iron', 'butter', 'waffle', 'syrup'] as const;
+export const productSlugs = ['iron', 'butter', 'syrup', 'whisk'] as const;
 
 export type ProductSlug = (typeof productSlugs)[number];
 
@@ -34,7 +34,7 @@ export type ProductFacts = {
   name: string;
   /** Route path without a locale prefix. */
   path: `/products/${ProductSlug}`;
-  /** Iron and Butter have public docs; Waffle and Syrup go to sales. */
+  /** Iron and Butter have public docs; Syrup and Whisk go to sales. */
   secondaryCta: 'docs' | 'sales';
   code?: CodeSample;
 };

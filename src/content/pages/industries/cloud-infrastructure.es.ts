@@ -38,7 +38,7 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
       {
         tag: 'cost',
         title: 'Sabe qué hace cada GPU.',
-        body: 'Waffle ofrece una sola vista de hosts, GPU, motores e inquilinos, ya sea Butter, vLLM, SGLang o llama.cpp. La capacidad ociosa o desajustada aparece en tu pantalla antes de aparecer en el margen.',
+        body: 'Syrup ofrece una sola vista de hosts, GPU, motores e inquilinos, ya sea Butter, vLLM, SGLang o llama.cpp. La capacidad ociosa o desajustada aparece en tu pantalla antes de aparecer en el margen.',
       },
       {
         tag: 'control',
@@ -60,12 +60,12 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
   stackFit: {
     title: 'Cómo *encaja* el stack.',
     intro:
-      'Waffle es por donde empiezas. Butter e Iron se ocupan del rendimiento que hay debajo.',
+      'Syrup es por donde empiezas. Butter e Iron se ocupan del rendimiento que hay debajo.',
     items: [
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Cada GPU, motor e inquilino en una sola vista.',
-        body: 'Un pequeño sidecar en Rust en cada host reporta telemetría firmada, y Waffle desglosa el costo por inquilino. Funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI, así que los inquilinos conservan los motores que eligieron.',
+        body: 'Un pequeño sidecar en Rust en cada host reporta telemetría firmada, y Syrup desglosa el costo por inquilino. Funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI, así que los inquilinos conservan los motores que eligieron.',
       },
       {
         product: 'butter',
@@ -81,7 +81,7 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
   },
   whereWeAre: {
     title: 'Dónde *estamos*.',
-    lede: 'Lo que más le importa a una nube de GPU va primero: las GPU de centros de datos están en desarrollo. Waffle, Butter e Iron están en acceso anticipado y son de código cerrado por ahora.',
+    lede: 'Lo que más le importa a una nube de GPU va primero: las GPU de centros de datos están en desarrollo. Syrup, Butter e Iron están en acceso anticipado y son de código cerrado por ahora.',
     notes: [
       'CUDA está en producción en RTX y DGX Spark. Cuéntanos tus generaciones de GPU de centros de datos, porque las flotas que conocemos marcan qué va primero.',
       'ROCm y Vulkan funcionan hoy, pero aún sin afinar.',
@@ -92,7 +92,7 @@ const cloudInfrastructureEs: (typeof cloudInfrastructure)['en'] = {
     {
       question: '¿Nuestros inquilinos tienen que cambiar de motor?',
       answer:
-        'No. Waffle funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI. Los inquilinos conservan lo que usan, y tú obtienes una sola vista de todo.',
+        'No. Syrup funciona con Butter, vLLM, SGLang, llama.cpp y otros servidores compatibles con OpenAI. Los inquilinos conservan lo que usan, y tú obtienes una sola vista de todo.',
     },
     {
       question: '¿Qué GPU admite?',

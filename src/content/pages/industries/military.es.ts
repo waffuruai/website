@@ -55,14 +55,14 @@ const militaryEs: (typeof military)['en'] = {
       {
         tag: 'cost',
         title: 'Rinde cuentas de cada GPU que compraste.',
-        body: 'Waffle muestra cada GPU y cada motor que corre en ella, ocupada u ociosa, entre los Mac, las estaciones de trabajo y los racks. La capacidad ociosa aparece antes que la próxima compra.',
+        body: 'Syrup muestra cada GPU y cada motor que corre en ella, ocupada u ociosa, entre los Mac, las estaciones de trabajo y los racks. La capacidad ociosa aparece antes que la próxima compra.',
       },
     ],
   },
   stackFit: {
     title: 'Cómo *encaja* el stack.',
     intro:
-      'Butter ejecuta los modelos, Waffle rinde cuentas del hardware e Iron mantiene abierta la próxima plataforma.',
+      'Butter ejecuta los modelos, Syrup rinde cuentas del hardware e Iron mantiene abierta la próxima plataforma.',
     items: [
       {
         product: 'butter',
@@ -70,7 +70,7 @@ const militaryEs: (typeof military)['en'] = {
         body: 'Serving compatible con OpenAI en Swift sobre Metal y Rust para CUDA, sin Python en la ruta de serving. Carga checkpoints safetensors, MLX, JANG y GGUF directamente, sin paso de conversión.',
       },
       {
-        product: 'waffle',
+        product: 'syrup',
         need: 'Cada GPU que posees, en una sola vista.',
         body: 'Cada GPU y cada motor que corre en ella, sea Butter, vLLM, SGLang o llama.cpp. Un pequeño sidecar en Rust en cada host reporta telemetría firmada.',
       },
@@ -95,7 +95,7 @@ const militaryEs: (typeof military)['en'] = {
     {
       question: '¿Sale algo de nuestras máquinas?',
       answer:
-        'Los datos de inferencia no salen por defecto: los modelos se ejecutan en hardware que tú operas, y los datos se quedan ahí a menos que tú lo autorices. Cada host de Waffle ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene.',
+        'Los datos de inferencia no salen por defecto: los modelos se ejecutan en hardware que tú operas, y los datos se quedan ahí a menos que tú lo autorices. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene.',
     },
     {
       question: '¿En qué hardware funciona?',

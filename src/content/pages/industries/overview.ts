@@ -50,7 +50,7 @@ export const industriesOverview: Localized<IndustriesOverview> = {
         {
           tag: 'cost',
           title: 'The number that *matters*.',
-          body: 'Dollars per workload is what finance asks for, and almost nobody can see it. Waffle shows every GPU and every engine on it, so spend ties back to the work it did.',
+          body: 'Dollars per workload is what finance asks for, and almost nobody can see it. Syrup shows every GPU and every engine on it, so spend ties back to the work it did.',
           points: [
             'See which GPUs are busy, idle or mismatched',
             'Get more output from hardware you already own',
@@ -73,7 +73,7 @@ export const industriesOverview: Localized<IndustriesOverview> = {
           body: 'One Iron kernel definition lowers to Metal, CUDA, HIP and Vulkan, and your data stays where it is unless you opt in. Changing vendors is a decision, not a rewrite.',
           points: [
             'On-prem, in your own cloud or on one workstation',
-            'Waffle works with vLLM, SGLang and llama.cpp',
+            'Syrup works with vLLM, SGLang and llama.cpp',
             'No lock-in to one engine or one GPU vendor',
           ],
         },

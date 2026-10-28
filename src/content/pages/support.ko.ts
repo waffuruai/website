@@ -43,7 +43,7 @@ const supportKo: (typeof support)['en'] = {
     {
       question: '지금 무엇을 쓸 수 있나요?',
       answer:
-        '우리 제품(Iron, Butter, Waffle, Syrup)은 당분간 비공개 소스이며 아직 일반에 공개되지 않았습니다. 얼리 액세스가 가장 먼저 써 볼 수 있는 방법입니다.',
+        '우리 제품(Iron, Butter, Syrup, Whisk)은 당분간 비공개 소스이며 아직 일반에 공개되지 않았습니다. 얼리 액세스가 가장 먼저 써 볼 수 있는 방법입니다.',
     },
     {
       question: '얼리 액세스는 어떻게 진행되나요?',
