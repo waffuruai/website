@@ -33,7 +33,7 @@ const aboutZh: (typeof about)['en'] = {
     constraintsLabel: '我们给自己定的两条约束',
     constraints: [
       '尽量减少 token 用量，降低每 token 成本。',
-      '除非你主动选择开启，否则数据始终留在你的硬件上。',
+      '除非你选择使用托管的 AI 推理服务商，否则数据始终留在你的硬件上。',
     ],
   },
   beliefs: {

@@ -39,6 +39,14 @@ describe('/products/pantry', () => {
     expect(document.getElementById('install')).toBeTruthy();
   });
 
+  it('shows the shelf check and its headline facts under the hero', async () => {
+    const { container } = await renderPage();
+    expect(container.querySelectorAll('.wf-can')).toHaveLength(15);
+    expect(container.querySelector('[aria-hidden] .wf-shelves')).not.toBeNull();
+    expect(screen.getByText('Free · open source')).toBeTruthy();
+    expect(screen.getByText('Seconds')).toBeTruthy();
+  });
+
   it('links the deep dive, the source and the Windows intake', async () => {
     await renderPage();
     expect(

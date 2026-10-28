@@ -90,7 +90,7 @@ const homeEs: (typeof home)['en'] = {
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
         title: 'La API de otros',
-        note: 'No hace falta. Tus datos se quedan en tu hardware a menos que lo autorices.',
+        note: 'No hace falta. Tus datos se quedan en tu hardware a menos que elijas usar un proveedor de inferencia de IA alojado.',
       },
       outcomes: [
         'Pensado para un menor costo por token',

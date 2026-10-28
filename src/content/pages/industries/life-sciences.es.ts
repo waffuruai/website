@@ -39,7 +39,7 @@ const lifeSciencesEs: (typeof lifeSciences)['en'] = {
       {
         tag: 'control',
         title: 'Ejecuta modelos junto a datos sensibles.',
-        body: 'Butter sirve modelos en hardware que tú operas, desde un Mac Studio en el laboratorio hasta estaciones de trabajo RTX y servidores en tus instalaciones, para que los datos de pacientes y los resultados inéditos no se muevan. Los datos se quedan donde están a menos que tú lo autorices.',
+        body: 'Butter sirve modelos en hardware que tú operas, desde un Mac Studio en el laboratorio hasta estaciones de trabajo RTX y servidores en tus instalaciones, para que los datos de pacientes y los resultados inéditos no se muevan. Los datos se quedan donde están a menos que elijas usar un proveedor de inferencia de IA alojado.',
       },
       {
         tag: 'inference',
@@ -94,7 +94,7 @@ const lifeSciencesEs: (typeof lifeSciences)['en'] = {
       question:
         '¿Los datos de pacientes o de investigación salen de nuestros equipos?',
       answer:
-        'No por defecto. Los modelos se ejecutan en hardware que tú operas, y los datos se quedan donde están a menos que tú lo autorices.',
+        'No por defecto. Los modelos se ejecutan en hardware que tú operas, y los datos se quedan donde están a menos que elijas usar un proveedor de inferencia de IA alojado.',
     },
     {
       question: '¿Puede responder a partir de nuestros propios documentos?',

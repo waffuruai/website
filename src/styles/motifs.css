@@ -8,7 +8,8 @@
 
 @layer components {
   /* A waffle tile. Its glow lives on ::after, which inherits the tile's
-     inline animation-delay so a whole grid can ripple diagonally. */
+     inline animation-delay so a whole grid can ripple diagonally; --twinkle
+     sets the cycle (7s unless a grid wants it livelier). */
   .wf-cell {
     position: relative;
     overflow: hidden;
@@ -21,7 +22,7 @@
     inset: 0;
     background: var(--brand);
     opacity: 0;
-    animation: wfa-wave 7s ease-in-out infinite;
+    animation: wfa-wave var(--twinkle, 7s) ease-in-out infinite;
     animation-delay: inherit;
   }
   .wf-cell[data-hot]::after {
@@ -516,11 +517,11 @@
   }
   3%,
   8% {
-    background: var(--foreground);
+    background: color-mix(in oklab, var(--foreground) 38%, var(--off));
     transform: translateY(1px) scale(0.84);
   }
   12% {
-    background: var(--faint);
+    background: color-mix(in oklab, var(--foreground) 18%, var(--off));
     transform: scale(1.04);
   }
 }

@@ -3,6 +3,7 @@ import { CodeSection } from '@/components/products/code-section';
 import { ExtraSections } from '@/components/products/extra-sections';
 import { PlatformTiers } from '@/components/products/platform-tiers';
 import { ProductHeroPanel } from '@/components/products/product-hero-panel';
+import { ProductMotif } from '@/components/products/product-motif';
 import { ProductStory } from '@/components/products/product-story';
 import { SpecList } from '@/components/products/spec-list';
 import { StackLinks } from '@/components/products/stack-links';
@@ -88,7 +89,7 @@ export function ProductPage({
         className="pb-12 md:pb-16"
       >
         <ProductHeroPanel
-          slug={slug}
+          motif={<ProductMotif slug={slug} size="lg" />}
           highlights={copy.hero.highlights}
           statusLabel={shared.statusLabel}
         />

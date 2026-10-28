@@ -52,7 +52,7 @@ const whiskFr: (typeof whisk)['en'] = {
     items: [
       {
         title: 'Recherche locale',
-        body: 'Whisk fouille vos notes, votre code, vos documents et vos images sur votre propre machine, et vos données y restent, sauf si vous choisissez d’utiliser un modèle hébergé chez un fournisseur d’inférence.',
+        body: 'Whisk fouille vos notes, votre code, vos documents et vos images sur votre propre machine, et vos données y restent, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       {
         title: 'Embeddings compressés',
@@ -104,7 +104,7 @@ const whiskFr: (typeof whisk)['en'] = {
     {
       question: 'Mes données quittent-elles ma machine ?',
       answer:
-        'La recherche est locale : Whisk indexe et recherche sur votre machine. Nous nous tenons à une règle simple : vos données restent sur votre machine, sauf si vous choisissez d’utiliser un modèle hébergé chez un fournisseur d’inférence.',
+        'La recherche est locale : Whisk indexe et recherche sur votre machine. Nous nous tenons à une règle simple : vos données restent sur votre machine, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
     },
     {
       question: 'Qu’indexe-t-il ?',

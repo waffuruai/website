@@ -90,7 +90,7 @@ const homeJa: (typeof home)['en'] = {
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
         title: '他人の API',
-        note: '必要ありません。データは、オプトインしない限りあなたのハードウェアにとどまります。',
+        note: '必要ありません。データは、ホスト型の AI 推論プロバイダーを使うと選ばない限り、あなたのハードウェアにとどまります。',
       },
       outcomes: [
         'トークンあたりのコストを下げる設計',

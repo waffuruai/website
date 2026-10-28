@@ -110,7 +110,7 @@ export const about: Localized<AboutContent> = {
       constraintsLabel: 'Two constraints we hold ourselves to',
       constraints: [
         'Minimize token usage and cost per token.',
-        'Your data stays on your hardware unless you opt in.',
+        'Your data stays on your hardware unless you choose to use a hosted AI inference provider.',
       ],
     },
     beliefs: {

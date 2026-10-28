@@ -33,7 +33,7 @@ const aboutEs: (typeof about)['en'] = {
     constraintsLabel: 'Dos límites que nos imponemos',
     constraints: [
       'Minimizar el uso de tokens y el costo por token.',
-      'Tus datos se quedan en tu hardware a menos que tú lo autorices.',
+      'Tus datos se quedan en tu hardware a menos que elijas usar un proveedor de inferencia de IA alojado.',
     ],
   },
   beliefs: {

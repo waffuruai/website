@@ -52,7 +52,7 @@ const industriesOverviewFr: (typeof industriesOverview)['en'] = {
       {
         tag: 'control',
         title: 'Le matériel que vous *choisissez*.',
-        body: 'Une seule définition de kernel Iron est compilée vers Metal, CUDA, HIP et Vulkan, et vos données restent où elles sont, sauf si vous choisissez de les partager. Changer de fournisseur devient une décision, pas une réécriture.',
+        body: 'Une seule définition de kernel Iron est compilée vers Metal, CUDA, HIP et Vulkan, et vos données restent où elles sont, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé. Changer de fournisseur devient une décision, pas une réécriture.',
         points: [
           'Sur site, dans votre propre cloud ou sur une seule station de travail',
           'Syrup fonctionne avec vLLM, SGLang et llama.cpp',

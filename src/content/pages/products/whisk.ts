@@ -62,7 +62,7 @@ export const whisk: Localized<ProductCopy> = {
       items: [
         {
           title: 'Local retrieval',
-          body: 'Whisk searches your notes, code, documents and images on your own machine, and your data stays there unless you opt in to using a hosted model with an inference provider.',
+          body: 'Whisk searches your notes, code, documents and images on your own machine, and your data stays there unless you choose to use a hosted AI inference provider.',
         },
         {
           title: 'Compressed embeddings',
@@ -111,7 +111,7 @@ export const whisk: Localized<ProductCopy> = {
       {
         question: 'Does my data leave my machine?',
         answer:
-          'Retrieval is local: Whisk indexes and searches on your machine. We hold ourselves to a simple rule, which is that your data stays on your machine unless you opt in to using a hosted model with an inference provider.',
+          'Retrieval is local: Whisk indexes and searches on your machine. We hold ourselves to a simple rule, which is that your data stays on your machine unless you choose to use a hosted AI inference provider.',
       },
       {
         question: 'What does it index?',

@@ -46,7 +46,7 @@ const solutionsOverviewKo: (typeof solutionsOverview)['en'] = {
       {
         tag: 'control',
         title: '더 많은 *통제*.',
-        body: '로컬 우선: 노트북이든 온프레미스든 자체 클라우드든, 직접 동의하지 않는 한 데이터는 있는 곳에 그대로 있습니다.',
+        body: '로컬 우선: 노트북이든 온프레미스든 자체 클라우드든, 호스팅된 AI 추론 제공업체를 쓰기로 선택하지 않는 한 데이터는 있는 곳에 그대로 있습니다.',
         points: [
           'OpenAI 호환 서빙이라 기존 앱이 그대로 동작',
           'Syrup은 vLLM, SGLang, llama.cpp와도 동작',

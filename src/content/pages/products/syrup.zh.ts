@@ -20,7 +20,7 @@ const syrupZh: (typeof syrup)['en'] = {
     title: '看清每一块 GPU，和其上运行的每个*引擎*。',
     lede: 'Syrup 是 GPU 上大模型的控制平面，从桌下的一台机器，到出租集群的新型云服务商。每台主机运行一个小型 Rust sidecar，上报带签名的遥测数据。',
     highlights: [
-      { value: '一台机器', label: '桌下一台，直至新型云服务商的集群' },
+      { value: '全面可见', label: '从桌下的一台机器，到新型云服务商的集群' },
       {
         value: '已签名',
         label: '每台主机上的小型 Rust sidecar 上报的遥测数据',

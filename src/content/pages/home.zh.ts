@@ -90,7 +90,7 @@ const homeZh: (typeof home)['en'] = {
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
         title: '别人的 API',
-        note: '不需要。除非你主动选择开启，数据始终留在你的硬件上。',
+        note: '不需要。除非你选择使用托管的 AI 推理服务商，数据始终留在你的硬件上。',
       },
       outcomes: ['为降低每 token 成本而打造', '默认私密', '补丁到位，一目了然'],
       caption:

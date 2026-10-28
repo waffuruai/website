@@ -53,7 +53,7 @@ export const smallBusiness: Localized<SolutionPage> = {
         {
           tag: 'control',
           title: 'Work on client files without sending them anywhere.',
-          body: 'Models, prompts and documents stay on your machine unless you opt in. Summarize contracts, draft replies and check invoices without a third party in the loop.',
+          body: 'Models, prompts and documents stay on your machine unless you choose to use a hosted AI inference provider. Summarize contracts, draft replies and check invoices without a third party in the loop.',
         },
         {
           tag: 'inference',

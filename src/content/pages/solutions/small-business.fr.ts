@@ -43,7 +43,7 @@ const smallBusinessFr: (typeof smallBusiness)['en'] = {
         tag: 'control',
         title:
           'Travaillez sur les fichiers de vos clients sans les envoyer nulle part.',
-        body: 'Modèles, prompts et documents restent sur votre machine, sauf si vous choisissez de les partager. Résumez des contrats, rédigez des réponses et vérifiez des factures sans tiers dans la boucle.',
+        body: 'Modèles, prompts et documents restent sur votre machine, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé. Résumez des contrats, rédigez des réponses et vérifiez des factures sans tiers dans la boucle.',
       },
       {
         tag: 'inference',

@@ -90,7 +90,7 @@ const homeFr: (typeof home)['en'] = {
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
         title: 'L’API de quelqu’un d’autre',
-        note: 'Inutile. Vos données restent sur votre matériel, sauf si vous choisissez de les partager.',
+        note: 'Inutile. Vos données restent sur votre matériel, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       outcomes: [
         'Conçu pour un coût par token plus bas',

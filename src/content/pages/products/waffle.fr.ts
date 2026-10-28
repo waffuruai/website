@@ -33,7 +33,7 @@ const waffleFr: (typeof waffle)['en'] = {
     problem:
       'La plupart des assistants vivent sur les serveurs de quelqu’un d’autre, voient tout ce que vous partagez et facturent chaque token. Leur confier vos e-mails, votre agenda et vos fichiers, c’est confier votre travail et votre vie à un inconnu.',
     outcome:
-      'Waffle fait tourner votre assistant sur du matériel que vous possédez ou louez. W tire sa mémoire et son contexte de Whisk et ses modèles de Butter, et vos données restent chez vous, sauf si vous choisissez de les partager.',
+      'Waffle fait tourner votre assistant sur du matériel que vous possédez ou louez. W tire sa mémoire et son contexte de Whisk et ses modèles de Butter, et vos données restent chez vous, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
     outcomes: [
       'Déléguez le travail du quotidien, des e-mails et de l’agenda aux réservations, aux projets et aux documents.',
       'Gardez ce que votre assistant apprend sur vous sur du matériel que vous contrôlez.',

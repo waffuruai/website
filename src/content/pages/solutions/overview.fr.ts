@@ -47,7 +47,7 @@ const solutionsOverviewFr: (typeof solutionsOverview)['en'] = {
       {
         tag: 'control',
         title: 'Plus de *maîtrise*.',
-        body: 'Local-first : vos données restent où elles sont, sauf si vous choisissez de les partager, que ce soit sur un portable, sur site ou dans votre propre cloud.',
+        body: 'Local-first : sur un portable, sur site ou dans votre propre cloud, vos données restent où elles sont, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
         points: [
           'Serving compatible OpenAI : vos applications continuent de fonctionner',
           'Syrup fonctionne avec vLLM, SGLang et llama.cpp',

@@ -34,7 +34,7 @@ const aboutFr: (typeof about)['en'] = {
     constraintsLabel: 'Deux contraintes que nous nous imposons',
     constraints: [
       'Réduire au minimum la consommation de tokens et le coût par token.',
-      'Vos données restent sur votre matériel, sauf si vous choisissez de les partager.',
+      'Vos données restent sur votre matériel, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
     ],
   },
   beliefs: {

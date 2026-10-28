@@ -51,7 +51,7 @@ const whiskEs: (typeof whisk)['en'] = {
     items: [
       {
         title: 'Recuperación local',
-        body: 'Whisk busca en tus notas, código, documentos e imágenes en tu propio equipo, y tus datos se quedan ahí a menos que optes por usar un modelo alojado con un proveedor de inferencia.',
+        body: 'Whisk busca en tus notas, código, documentos e imágenes en tu propio equipo, y tus datos se quedan ahí a menos que elijas usar un proveedor de inferencia de IA alojado.',
       },
       {
         title: 'Embeddings comprimidos',
@@ -100,7 +100,7 @@ const whiskEs: (typeof whisk)['en'] = {
     {
       question: '¿Mis datos salen de mi equipo?',
       answer:
-        'La recuperación es local: Whisk indexa y busca en tu equipo. Nos atenemos a una regla sencilla: tus datos se quedan en tu equipo a menos que optes por usar un modelo alojado con un proveedor de inferencia.',
+        'La recuperación es local: Whisk indexa y busca en tu equipo. Nos atenemos a una regla sencilla: tus datos se quedan en tu equipo a menos que elijas usar un proveedor de inferencia de IA alojado.',
     },
     {
       question: '¿Qué indexa?',

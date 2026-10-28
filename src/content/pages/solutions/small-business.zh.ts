@@ -35,7 +35,7 @@ const smallBusinessZh: (typeof smallBusiness)['en'] = {
       {
         tag: 'control',
         title: '处理客户文件，不必把它们发往任何地方。',
-        body: '模型、提示词和文档都留在你的机器上，除非你主动选择开启。总结合同、起草回复、核对发票，全程没有第三方参与。',
+        body: '模型、提示词和文档都留在你的机器上，除非你选择使用托管的 AI 推理服务商。总结合同、起草回复、核对发票，全程没有第三方参与。',
       },
       {
         tag: 'inference',

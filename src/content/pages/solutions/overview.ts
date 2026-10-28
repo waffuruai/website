@@ -59,7 +59,7 @@ export const solutionsOverview: Localized<SolutionsOverview> = {
         {
           tag: 'control',
           title: 'More *control*.',
-          body: 'Local-first: your data stays where it is unless you opt in, on a laptop, on-prem or in your own cloud.',
+          body: 'Local-first: on a laptop, on-prem or in your own cloud, your data stays where it is unless you choose to use a hosted AI inference provider.',
           points: [
             'OpenAI-compatible serving, so apps keep working',
             'Syrup works with vLLM, SGLang and llama.cpp',

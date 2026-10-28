@@ -39,7 +39,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
       {
         tag: 'control',
         title: 'Usa IA con datos de clientes sin enviarlos fuera.',
-        body: 'Butter sirve modelos en servidores que tú operas, en tus instalaciones o en tu nube privada, para que los prompts, los documentos y los resultados se queden en la infraestructura que controlas. Nuestra norma por defecto es que los datos se quedan donde están a menos que tú lo autorices.',
+        body: 'Butter sirve modelos en servidores que tú operas, en tus instalaciones o en tu nube privada, para que los prompts, los documentos y los resultados se queden en la infraestructura que controlas. Nuestra norma por defecto es que los datos se quedan donde están a menos que elijas usar un proveedor de inferencia de IA alojado.',
       },
       {
         tag: 'cost',
@@ -98,7 +98,7 @@ const financialServicesEs: (typeof financialServices)['en'] = {
     {
       question: '¿Los datos de clientes salen de nuestra red?',
       answer:
-        'Los datos de inferencia no salen por defecto, porque los datos se quedan en el equipo a menos que tú lo autorices. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene.',
+        'Los datos de inferencia no salen por defecto, porque los datos se quedan en el equipo a menos que elijas usar un proveedor de inferencia de IA alojado. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene.',
     },
     {
       question: '¿Podemos ver cuánto cuesta cada carga de trabajo?',

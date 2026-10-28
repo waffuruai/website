@@ -38,7 +38,7 @@ const enterpriseEs: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: 'Sirve modelos dentro de tu propio perímetro.',
-        body: 'Ejecuta Butter en servidores que tú operas, en tus instalaciones o en una nube privada, para que los prompts, los documentos y los resultados se queden en la infraestructura que controlas. Nuestra norma por defecto es que los datos de un usuario se quedan en su equipo a menos que lo autorice.',
+        body: 'Ejecuta Butter en servidores que tú operas, en tus instalaciones o en una nube privada, para que los prompts, los documentos y los resultados se queden en la infraestructura que controlas. Nuestra norma por defecto es que los datos de un usuario se quedan en su equipo a menos que elija usar un proveedor de inferencia de IA alojado.',
       },
       {
         tag: 'cost',
@@ -98,7 +98,7 @@ const enterpriseEs: (typeof enterprise)['en'] = {
       question:
         '¿Podemos ejecutarlo en nuestras instalaciones o en una nube privada?',
       answer:
-        'Así está construido. Butter sirve modelos en hardware que tú operas, y los datos de un usuario se quedan en su equipo a menos que lo autorice. Las primeras ejecuciones en GPU de centros de datos ya están hechas, así que cuéntanos en cuáles planeas desplegarlo.',
+        'Así está construido. Butter sirve modelos en hardware que tú operas, y los datos de un usuario se quedan en su equipo a menos que elija usar un proveedor de inferencia de IA alojado. Las primeras ejecuciones en GPU de centros de datos ya están hechas, así que cuéntanos en cuáles planeas desplegarlo.',
     },
     {
       question: '¿Qué GPU admite hoy?',
@@ -113,7 +113,7 @@ const enterpriseEs: (typeof enterprise)['en'] = {
     {
       question: '¿Qué sale de nuestra red?',
       answer:
-        'Los datos de inferencia no salen por defecto, porque los datos de un usuario se quedan en su equipo a menos que lo autorice. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
+        'Los datos de inferencia no salen por defecto, porque los datos de un usuario se quedan en su equipo a menos que elija usar un proveedor de inferencia de IA alojado. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
     },
     {
       question: '¿Cómo lo evaluamos?',

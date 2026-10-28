@@ -25,6 +25,12 @@ const pantryZh: (typeof pantry)['en'] = {
     source: '查看源代码',
     windows: 'Windows 支持已在计划中。',
     windowsLink: '需要的话告诉我们',
+    panelLabel: '免费 · 开源',
+    highlights: [
+      { value: '免费', label: '开源，MIT 许可证，人人可用' },
+      { value: '本地', label: '扫描：只有软件包名称和版本会离开你的机器' },
+      { value: '几秒', label: '当天再次扫描，直接读取磁盘上的缓存' },
+    ],
   },
   how: {
     title: '安装。扫描。缓存。*修复*。',

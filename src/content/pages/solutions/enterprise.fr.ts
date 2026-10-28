@@ -37,7 +37,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
       {
         tag: 'control',
         title: 'Servez des modèles à l’intérieur de votre propre périmètre.',
-        body: 'Faites tourner Butter sur des serveurs que vous exploitez, sur site ou dans un cloud privé : prompts, documents et sorties restent sur une infrastructure que vous maîtrisez. Notre règle par défaut : les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager.',
+        body: 'Faites tourner Butter sur des serveurs que vous exploitez, sur site ou dans un cloud privé : prompts, documents et sorties restent sur une infrastructure que vous maîtrisez. Notre règle par défaut : les données d’un utilisateur restent sur sa machine, sauf s’il choisit d’utiliser un fournisseur d’inférence d’IA hébergé.',
       },
       {
         tag: 'cost',
@@ -96,7 +96,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     {
       question: 'Pouvons-nous l’exécuter sur site ou dans un cloud privé ?',
       answer:
-        'C’est ainsi qu’il est conçu. Butter sert des modèles sur du matériel que vous exploitez, et les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. Les premières exécutions sur GPU de datacenter sont faites : dites-nous sur lesquels vous comptez le déployer.',
+        'C’est ainsi qu’il est conçu. Butter sert des modèles sur du matériel que vous exploitez, et les données d’un utilisateur restent sur sa machine, sauf s’il choisit d’utiliser un fournisseur d’inférence d’IA hébergé. Les premières exécutions sur GPU de datacenter sont faites : dites-nous sur lesquels vous comptez le déployer.',
     },
     {
       question: 'Quels GPU sont pris en charge aujourd’hui ?',
@@ -112,7 +112,7 @@ const enterpriseFr: (typeof enterprise)['en'] = {
     {
       question: 'Qu’est-ce qui quitte notre réseau ?',
       answer:
-        'Les données d’inférence ne sortent pas par défaut, car les données d’un utilisateur restent sur sa machine, sauf s’il choisit de les partager. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
+        'Les données d’inférence ne sortent pas par défaut, car les données d’un utilisateur restent sur sa machine, sauf s’il choisit d’utiliser un fournisseur d’inférence d’IA hébergé. Chaque hôte Syrup exécute un sidecar qui remonte une télémétrie signée, et nous vous détaillerons exactement ce qu’elle contient pour votre environnement.',
     },
     {
       question: 'Comment l’évaluer ?',

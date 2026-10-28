@@ -90,7 +90,7 @@ const homeKo: (typeof home)['en'] = {
       hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
       outside: {
         title: '남의 API',
-        note: '필요 없습니다. 내가 동의하지 않는 한 데이터는 내 하드웨어에 머뭅니다.',
+        note: '필요 없습니다. 호스팅된 AI 추론 제공업체를 쓰기로 선택하지 않는 한 데이터는 내 하드웨어에 머뭅니다.',
       },
       outcomes: [
         '토큰당 비용을 낮추도록 설계',

@@ -1,3 +1,4 @@
+import type { Highlight } from '@/content/pages/products/types';
 import type { FaqItem, Seo } from '@/content/types';
 
 /*
@@ -49,6 +50,10 @@ export type PantryContent = {
     source: string;
     windows: string;
     windowsLink: string;
+    /** The chip on the hero panel, over the shelf check motif. */
+    panelLabel: string;
+    /** The hero panel's headline facts: a short value over a label. */
+    highlights: Highlight[];
   };
   how: {
     title: string;

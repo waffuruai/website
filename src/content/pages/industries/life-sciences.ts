@@ -57,7 +57,7 @@ export const lifeSciences: Localized<IndustryPage> = {
         {
           tag: 'control',
           title: 'Run models next to sensitive data.',
-          body: 'Butter serves models on hardware you operate, from a Mac Studio in the lab to RTX workstations and servers on-prem, so patient data and unpublished results stay where they are. Data stays put unless you opt in.',
+          body: 'Butter serves models on hardware you operate, from a Mac Studio in the lab to RTX workstations and servers on-prem, so patient data and unpublished results stay where they are. Data stays put unless you choose to use a hosted AI inference provider.',
         },
         {
           tag: 'inference',
@@ -111,7 +111,7 @@ export const lifeSciences: Localized<IndustryPage> = {
       {
         question: 'Does patient or research data leave our machines?',
         answer:
-          'Not by default. Models run on hardware you operate, and data stays where it is unless you opt in.',
+          'Not by default. Models run on hardware you operate, and data stays where it is unless you choose to use a hosted AI inference provider.',
       },
       {
         question: 'Can it answer from our own documents?',

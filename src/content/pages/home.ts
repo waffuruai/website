@@ -161,7 +161,7 @@ export const home: Localized<HomeContent> = {
         hardware: ['Apple silicon', 'NVIDIA', 'AMD'],
         outside: {
           title: 'Someone else’s API',
-          note: 'Not needed. Your data stays on your hardware unless you opt in.',
+          note: 'Not needed. Your data stays on your hardware unless you choose to use a hosted AI inference provider.',
         },
         outcomes: [
           'Built for a lower cost per token',

@@ -38,7 +38,7 @@ const governmentEs: (typeof government)['en'] = {
       {
         tag: 'control',
         title: 'Mantén los datos en tu jurisdicción.',
-        body: 'Butter sirve modelos en servidores que tú operas, en tus instalaciones o en la nube que elijas, para que los prompts y los documentos se queden en la infraestructura que controlas. Los datos se quedan donde están a menos que tú lo autorices.',
+        body: 'Butter sirve modelos en servidores que tú operas, en tus instalaciones o en la nube que elijas, para que los prompts y los documentos se queden en la infraestructura que controlas. Los datos se quedan donde están a menos que elijas usar un proveedor de inferencia de IA alojado.',
       },
       {
         tag: 'cost',
@@ -98,7 +98,7 @@ const governmentEs: (typeof government)['en'] = {
     {
       question: '¿Algún dato sale de nuestra infraestructura?',
       answer:
-        'Los datos de inferencia no salen por defecto, porque los datos se quedan en el equipo a menos que tú lo autorices. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
+        'Los datos de inferencia no salen por defecto, porque los datos se quedan en el equipo a menos que elijas usar un proveedor de inferencia de IA alojado. Cada host de Syrup ejecuta un sidecar que reporta telemetría firmada, y te explicaremos con detalle qué contiene en tu entorno.',
     },
     {
       question: '¿Puede funcionar sin conexión?',

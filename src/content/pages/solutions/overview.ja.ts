@@ -47,7 +47,7 @@ const solutionsOverviewJa: (typeof solutionsOverview)['en'] = {
       {
         tag: 'control',
         title: 'より多くの*コントロール*を。',
-        body: 'ローカルファースト。ノート PC でも、オンプレミスでも、自社クラウドでも、データは、オプトインしない限りその場所にとどまります。',
+        body: 'ローカルファースト。ノート PC でも、オンプレミスでも、自社クラウドでも、データは、ホスト型の AI 推論プロバイダーを使うと選ばない限り、その場所にとどまります。',
         points: [
           'OpenAI 互換のサービング。アプリはそのまま動く',
           'Syrup は vLLM、SGLang、llama.cpp と連携',
