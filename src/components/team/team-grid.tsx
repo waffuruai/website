@@ -6,8 +6,7 @@ import type { Locale } from '@/i18n/config';
 /**
  * How wide a portrait renders, so the browser picks the right size from the
  * srcset: a third of the 1360px container from 1025px, half of it from 701px,
- * and one column (capped at 420px) below that. Cory's source photo is only
- * 286px wide, so it is upscaled a little on the largest screens.
+ * and one column (capped at 420px) below that.
  */
 export const TEAM_CARD_SIZES =
   '(min-width: 1025px) calc((min(100vw, 1360px) - 120px) / 3), (min-width: 701px) calc((100vw - 84px) / 2), min(100vw - 40px, 420px)';
