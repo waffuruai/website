@@ -56,13 +56,17 @@ die() { printf 'error: %s\n' "$*" >&2; exit 1; }
 # Append one markdown row to the report rendered at the end of the run.
 report() { printf '%s\n' "$*" >>"$REPORT"; }
 
-# Print the sha256 of a file. macOS has no sha256sum; shasum ships with both.
+# The checksum tool, by OS: shasum ships with macOS (a sha256sum found on a Mac
+# is a third-party install, sometimes built for the wrong CPU); Linux has
+# sha256sum, with shasum (perl) as the fallback on minimal images.
+case "$(uname -s)" in
+  Darwin) SHA256=(shasum -a 256) ;;
+  *) if command -v sha256sum >/dev/null 2>&1; then SHA256=(sha256sum); else SHA256=(shasum -a 256); fi ;;
+esac
+
+# Print the sha256 of a file.
 sha256_of() {
-  if command -v sha256sum >/dev/null 2>&1; then
-    sha256sum "$1" | cut -d' ' -f1
-  else
-    shasum -a 256 "$1" | cut -d' ' -f1
-  fi
+  "${SHA256[@]}" "$1" | cut -d' ' -f1
 }
 
 # Verify <dir>/<asset> against the published <asset>.sha256 sitting beside it.
@@ -70,16 +74,10 @@ sha256_of() {
 # path, so the line is normalized to the bare asset name before it is checked.
 verify_checksum() {
   local dir=$1 asset=$2 expected
-  local -a checker
   expected=$(awk 'NR==1 {print $1}' "$dir/$asset.sha256")
   [ -n "$expected" ] || return 1
   printf '%s  %s\n' "$expected" "$asset" >"$dir/.expected.sha256"
-  if command -v sha256sum >/dev/null 2>&1; then
-    checker=(sha256sum -c --status)
-  else
-    checker=(shasum -a 256 -c --status)
-  fi
-  (cd "$dir" && "${checker[@]}" .expected.sha256)
+  (cd "$dir" && "${SHA256[@]}" -c --status .expected.sha256)
 }
 
 # Whether <repo> is public: attestations exist only for public repos on the
