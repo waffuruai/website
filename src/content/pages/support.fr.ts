@@ -28,7 +28,7 @@ const supportFr: (typeof support)['en'] = {
       },
       {
         title: 'Signaler une faille de sécurité',
-        body: 'En privé, par e-mail à hello@waffuru.ai avec l’objet Security.',
+        body: 'En privé, par e-mail à security@waffuru.ai avec l’objet Security.',
         href: mailto('Security'),
       },
       {
@@ -36,6 +36,11 @@ const supportFr: (typeof support)['en'] = {
         body: 'Notre contact sécurité sous forme lisible par machine.',
         href: '/.well-known/security.txt',
         file: true,
+      },
+      {
+        title: 'Politique de divulgation',
+        body: 'Ce qui entre dans le périmètre, la rapidité de nos réponses et la protection accordée à la recherche de bonne foi.',
+        href: '/security',
       },
     ],
   },
@@ -63,7 +68,7 @@ const supportFr: (typeof support)['en'] = {
     {
       question: 'Comment signaler une faille de sécurité ?',
       answer:
-        'Écrivez à hello@waffuru.ai avec l’objet Security et assez de détails pour la reproduire. Merci de la garder confidentielle tant que nous n’avons pas eu une chance raisonnable de la corriger. Notre security.txt indique le même contact sous forme lisible par machine.',
+        'Écrivez à security@waffuru.ai avec l’objet Security et assez de détails pour la reproduire. Nous accusons réception sous 3 jours ouvrés, corrigeons selon la gravité et convenons avec vous d’une divulgation publique sous 90 jours ; la [politique de divulgation des vulnérabilités](https://waffuru.ai/security) (en anglais) précise le périmètre, les règles et la protection accordée. Notre security.txt indique le même contact sous forme lisible par machine.',
     },
     {
       question: 'Que deviennent mes données ?',

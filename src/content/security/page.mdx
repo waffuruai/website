@@ -1,0 +1,103 @@
+import { PolicyLayout } from '@/components/legal/policy-layout';
+
+export const policy = {
+  title: 'Vulnerability disclosure policy',
+  description:
+    'How to report a security vulnerability in Waffuru software or waffuru.ai, what is in scope, how fast we respond and fix by severity, and the safe harbour for good-faith research.',
+  date: '2026-10-31',
+  published: true,
+  keywords: [
+    'Waffuru security',
+    'report a vulnerability',
+    'vulnerability disclosure policy',
+    'responsible disclosure',
+    'security.txt',
+    'safe harbour',
+  ],
+};
+
+export default (props) => (
+  <PolicyLayout
+    policy={policy}
+    back={{ href: '/support', label: 'Support' }}
+    {...props}
+  />
+);
+
+If you have found a security vulnerability in something we build or run, thank you for telling us. This page says how, what you can expect from us, and what we ask of you. It is the public form of the policies Waffuru AI Inc. ("Waffuru", "we") follows internally.
+
+## The short version
+
+- Email [security@waffuru.ai](mailto:security@waffuru.ai?subject=Security). Keep it private until we have agreed on disclosure.
+- We acknowledge within 3 business days, triage within 10, and fix by severity: Critical in 14 days, High in 30, Medium in 90, Low in 180.
+- Public disclosure is coordinated with you, 90 days after your report at the latest, or when the fix ships if sooner.
+- Good-faith research within the rules below is authorised. We will not take legal action against you for it.
+- We credit you if you want credit. There is no bug bounty today.
+
+## How to report
+
+Email [security@waffuru.ai](mailto:security@waffuru.ai?subject=Security). For a vulnerability in one of our public repositories you can instead use GitHub's private vulnerability reporting (Security → Report a vulnerability) on that repository; each repository's `SECURITY.md` says the same things as this page for that product.
+
+Include the product and its version or commit, the steps or a minimal reproducer, the impact as you see it, and how you would like to be credited. Remove secrets and other people's data first. Please do not open a public issue, pull request or post about it until we have agreed on disclosure.
+
+We have no PGP key yet. If a report needs encryption, say so in a first email and we will arrange a channel. Our [security.txt](/.well-known/security.txt) carries this contact in machine-readable form ([RFC 9116](https://www.rfc-editor.org/rfc/rfc9116)).
+
+## What to expect
+
+| Step                                                                       | Within                                                     |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Acknowledgement that we have your report                                   | 3 business days                                            |
+| Triage: whether it is in scope, the severity we assigned, and who is on it | 10 business days                                           |
+| A fix for a Critical vulnerability (CVSS 9.0 to 10.0)                      | 14 days                                                    |
+| A fix for a High vulnerability (CVSS 7.0 to 8.9)                           | 30 days                                                    |
+| A fix for a Medium vulnerability (CVSS 4.0 to 6.9)                         | 90 days                                                    |
+| A fix for a Low vulnerability (CVSS 0.1 to 3.9)                            | 180 days                                                   |
+| Coordinated public disclosure                                              | 90 days after your report, or when the fix ships if sooner |
+
+Severity follows the [CVSS](https://www.first.org/cvss/) base score. We keep you informed at each step and when the fix ships, and if a deadline will slip we say so and why. We may disclose earlier, with you, when a vulnerability is being exploited or is already public, and later, by agreement, when a fix is genuinely harder than 90 days. A vulnerability in our own code or packages gets a GitHub security advisory and a CVE.
+
+## Scope
+
+**In scope**
+
+- The code in the public [waffuruai](https://github.com/waffuruai) repositories, and the binaries, packages and installers released from them, such as Pantry (`wpantry`).
+- waffuru.ai and the subdomains we operate, including the release receiver and the installers it serves.
+- Anything that makes our software run something it shouldn't, read or send more than it says, report a result that is wrong in a way that misleads you (a scanner's false "clean", for example), or accept a tampered update, release or cache.
+
+**Out of scope**
+
+- Services we use but do not operate: GitHub, Cloudflare, Google Workspace, crates.io, npm, Hugging Face, OSV.dev, CISA, endoflife.date and the other data feeds. Report those to their owners.
+- Vulnerabilities in third-party dependencies. Report them upstream, and tell us if we ship one unpatched past the deadlines above.
+- Social engineering, phishing, physical attacks, and anything aimed at our people.
+- Denial of service, rate-limit testing, spam, and automated scanner output with no proof of impact.
+- Findings that a scan of your own machine reports: those are things for you to update, not vulnerabilities in the scanner.
+- Missing best-practice headers, SPF or DMARC records, version banners and the like, unless you show an impact.
+
+If you are not sure, ask first at the address above.
+
+## Rules of engagement
+
+- Test only your own machines, accounts and data, or ones whose owner has authorised you in writing.
+- Do not access, change, delete or keep anyone else's data. If you reach it by accident, stop, note what you saw, and tell us; do not go further to prove a point.
+- Take only the proof you need: one record, one screenshot, one request. No data exfiltration, no persistence, no pivoting to other systems.
+- No denial of service, no degrading a service others rely on, no spam, no brute force beyond what a proof needs.
+- Do not use a vulnerability for anything but demonstrating it to us.
+- Stop and report once you have proof.
+
+## Safe harbour
+
+Research done in good faith under this policy is authorised. We will not take legal action against you or refer you to law enforcement for it, including under computer-misuse and anti-circumvention laws, and we will say so to a third party that tries. Good faith means staying within the scope and the rules above, giving us the time described here before disclosure, and acting as you would want someone to act on your own systems. This covers what we control; the services we use set their own rules.
+
+## Credit
+
+We name you in the fix's release notes and security advisory if you want that, in the form you choose. There is no bug bounty today; if that changes, this page changes first. Duplicate reports are credited to the first.
+
+## Contacts
+
+| Address                                                            | For                                         |
+| ------------------------------------------------------------------ | ------------------------------------------- |
+| [security@waffuru.ai](mailto:security@waffuru.ai?subject=Security) | Vulnerability reports and anything security |
+| [hello@waffuru.ai](mailto:hello@waffuru.ai)                        | General enquiries, support, press           |
+| [sales@waffuru.ai](mailto:sales@waffuru.ai?subject=Sales)          | Sales and partnerships                      |
+
+Our software runs on your hardware and your data stays there unless you opt in to something that sends it elsewhere; the [privacy policy](/legal/privacy) covers what this website collects. Questions about this policy go to the security address too.

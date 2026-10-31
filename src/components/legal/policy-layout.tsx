@@ -71,10 +71,13 @@ function accentLastWord(title: string) {
 export function PolicyLayout({
   policy,
   headings = [],
+  back = { href: '/legal', label: legalCopy.allLegal },
   children,
 }: {
   policy: Policy;
   headings?: Heading[];
+  /** Where the arrow at the top leads: the legal index, unless the policy lives elsewhere. */
+  back?: { href: string; label: string };
   children: React.ReactNode;
 }) {
   const showToc = headings.length >= TOC_MIN_HEADINGS;
@@ -91,11 +94,11 @@ export function PolicyLayout({
       <article lang="en" className="max-w-[760px] min-w-0">
         <header className="flex flex-col gap-6">
           <LocalizedLink
-            href="/legal"
+            href={back.href}
             className="inline-flex min-h-11 w-fit items-center gap-2 label-mono text-soft hover:text-foreground"
           >
             <span aria-hidden="true">←</span>
-            {legalCopy.allLegal}
+            {back.label}
           </LocalizedLink>
           <h1 className="heading-section text-[clamp(44px,6vw,80px)]">
             <Accent text={accentLastWord(policy.title)} />

@@ -58,7 +58,7 @@ describe('sitemap.xml', () => {
 
     for (const href of internalNavHrefs()) {
       const route = href.split(/[?#]/)[0] || '/';
-      if (route.startsWith('/legal')) continue;
+      if (route.startsWith('/legal') || route === '/security') continue;
       for (const locale of locales) {
         const url = `https://waffuru.ai${locale === 'en' ? '' : `/${locale}`}${route === '/' ? '' : route}`;
         expect(urls, url).toContain(url);
@@ -106,13 +106,14 @@ describe('sitemap.xml', () => {
     expect(spanish?.alternates).toEqual(entry?.alternates);
   });
 
-  it('lists the legal pages in English only, without alternates', () => {
+  it('lists the legal pages and the security policy in English only, without alternates', () => {
     const entries = withBlog({});
     for (const route of [
       '/legal',
       '/legal/terms',
       '/legal/privacy',
       '/legal/cookies',
+      '/security',
     ]) {
       const entry = find(entries, `https://waffuru.ai${route}`);
       expect(entry, route).toBeDefined();
