@@ -166,6 +166,7 @@ const es: Dictionary = {
     terms: 'Términos de uso',
     privacy: 'Política de privacidad',
     cookies: 'Política de cookies',
+    security: 'Seguridad',
     madeIn: 'Hecho con 🤖 en Norteamérica',
     flagsLabel: 'Estados Unidos y Canadá',
     social: 'Waffuru en {network}',

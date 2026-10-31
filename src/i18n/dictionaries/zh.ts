@@ -163,6 +163,7 @@ const zh: Dictionary = {
     terms: '使用条款',
     privacy: '隐私政策',
     cookies: 'Cookie 政策',
+    security: '安全',
     madeIn: '在北美用 🤖 打造',
     flagsLabel: '美国和加拿大',
     social: 'Waffuru 的 {network}',

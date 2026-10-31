@@ -163,6 +163,7 @@ const ko: Dictionary = {
     terms: '이용약관',
     privacy: '개인정보 처리방침',
     cookies: '쿠키 정책',
+    security: '보안',
     madeIn: '북미에서 🤖와 함께 만들었습니다',
     flagsLabel: '미국과 캐나다',
     social: '{network}의 Waffuru',

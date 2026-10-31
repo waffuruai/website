@@ -1,8 +1,6 @@
 import { mailto } from '@/content/site';
 import type { support } from './support';
 
-// TODO(founder): add response expectations, a disclosure policy (safe harbour,
-// timelines) and a PGP key to the security answer below and to security.txt.
 const supportJa: (typeof support)['en'] = {
   seo: {
     title: 'サポート',
@@ -30,7 +28,7 @@ const supportJa: (typeof support)['en'] = {
       },
       {
         title: 'セキュリティ問題を報告する',
-        body: '非公開で、件名を Security にして hello@waffuru.ai へメールしてください。',
+        body: '非公開で、件名を Security にして security@waffuru.ai へメールしてください。',
         href: mailto('Security'),
       },
       {
@@ -38,6 +36,11 @@ const supportJa: (typeof support)['en'] = {
         body: 'セキュリティ連絡先を、機械で読める形式で公開しています。',
         href: '/.well-known/security.txt',
         file: true,
+      },
+      {
+        title: '脆弱性開示ポリシー',
+        body: '対象の範囲、対応の速さ、そして善意の調査を守るセーフハーバーについて。',
+        href: '/security',
       },
     ],
   },
@@ -65,7 +68,7 @@ const supportJa: (typeof support)['en'] = {
     {
       question: 'セキュリティ上の問題はどう報告すればよいですか？',
       answer:
-        '件名を Security にして、再現に十分な詳細とともに hello@waffuru.ai へメールしてください。修正のための妥当な時間をいただくまでは、非公開にしてください。同じ連絡先は、機械で読める形式で security.txt にも載せています。',
+        '件名を Security にして、再現に十分な詳細とともに security@waffuru.ai へメールしてください。3 営業日以内に受領をお知らせし、深刻度に応じて修正し、90 日以内の公開について相談のうえ決めます。範囲、ルール、セーフハーバーは[脆弱性開示ポリシー](https://waffuru.ai/security)（英語）にあります。同じ連絡先は、機械で読める形式で security.txt にも載せています。',
     },
     {
       question: 'データはどうなりますか？',

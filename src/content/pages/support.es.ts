@@ -28,7 +28,7 @@ const supportEs: (typeof support)['en'] = {
       },
       {
         title: 'Reporta un problema de seguridad',
-        body: 'En privado, por correo a hello@waffuru.ai con el asunto Security.',
+        body: 'En privado, por correo a security@waffuru.ai con el asunto Security.',
         href: mailto('Security'),
       },
       {
@@ -36,6 +36,11 @@ const supportEs: (typeof support)['en'] = {
         body: 'Nuestro contacto de seguridad en un formato legible por máquinas.',
         href: '/.well-known/security.txt',
         file: true,
+      },
+      {
+        title: 'Política de divulgación',
+        body: 'Qué entra en el alcance, con qué rapidez respondemos y el puerto seguro para la investigación de buena fe.',
+        href: '/security',
       },
     ],
   },
@@ -63,7 +68,7 @@ const supportEs: (typeof support)['en'] = {
     {
       question: '¿Cómo reporto un problema de seguridad?',
       answer:
-        'Escribe a hello@waffuru.ai con el asunto Security y el detalle suficiente para reproducirlo. Por favor, mantenlo en privado hasta que hayamos tenido una oportunidad razonable de corregirlo. Nuestro security.txt recoge el mismo contacto en un formato legible por máquinas.',
+        'Escribe a security@waffuru.ai con el asunto Security y el detalle suficiente para reproducirlo. Acusamos recibo en 3 días hábiles, corregimos según la gravedad y acordamos contigo la divulgación pública en un plazo de 90 días; la [política de divulgación de vulnerabilidades](https://waffuru.ai/security) (en inglés) recoge el alcance, las reglas y el puerto seguro. Nuestro security.txt recoge el mismo contacto en un formato legible por máquinas.',
     },
     {
       question: '¿Qué pasa con mis datos?',
