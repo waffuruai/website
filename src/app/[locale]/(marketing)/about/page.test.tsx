@@ -73,7 +73,7 @@ describe('About page', () => {
       .getAllByRole('link')
       .map((a) => a.getAttribute('href'));
     expect(hrefs).toContain('mailto:hello@waffuru.ai?subject=Hiring');
-    expect(hrefs).toContain('mailto:hello@waffuru.ai?subject=Sales');
+    expect(hrefs).toContain('mailto:sales@waffuru.ai?subject=Sales');
     expect(hrefs).toContain('#hiring');
   });
 

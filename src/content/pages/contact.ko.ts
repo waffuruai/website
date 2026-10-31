@@ -16,7 +16,7 @@ const contactKo: (typeof contact)['en'] = {
   hero: {
     label: '연락처',
     title: '무엇을 *만들고* 계신지 들려주세요.',
-    lede: '영업, 제휴, 언론, 지원, 보안, 채용 문의는 모두 hello@waffuru.ai로 연결됩니다. 주제에 맞는 항목을 골라 주세요.',
+    lede: '영업과 제휴 문의는 sales@waffuru.ai, 보안 신고는 security@waffuru.ai, 언론·지원·채용 문의는 hello@waffuru.ai로 연결됩니다. 주제에 맞는 항목을 골라 주세요.',
   },
   callouts: {
     title: '들어올 *문*을 고르세요.',

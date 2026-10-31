@@ -13,7 +13,12 @@ export const site = {
   mission: 'Democratize access to intelligence.',
   url: 'https://waffuru.ai',
   emails: {
+    /** General enquiries, support, press, privacy requests. */
     hello: 'hello@waffuru.ai',
+    /** Sales and partnerships. */
+    sales: 'sales@waffuru.ai',
+    /** Vulnerability reports; also in security.txt and /security. */
+    security: 'security@waffuru.ai',
   },
   socials: {
     x: 'https://x.com/waffuruai',
@@ -58,8 +63,19 @@ export type MailSubject =
   | 'Security'
   | 'Pantry on Windows';
 
-/** `mailto:hello@waffuru.ai?subject=…`, the destination for formless CTAs. */
-export const mailto = (
-  subject: MailSubject,
-  address: string = site.emails.hello,
-) => `mailto:${address}?subject=${encodeURIComponent(subject)}`;
+/** Which mailbox reads a subject: sales@ for buyers and partners, security@ for reports, hello@ for the rest. */
+export function addressFor(subject: MailSubject): string {
+  switch (subject) {
+    case 'Sales':
+    case 'Partnerships':
+      return site.emails.sales;
+    case 'Security':
+      return site.emails.security;
+    default:
+      return site.emails.hello;
+  }
+}
+
+/** `mailto:<mailbox>?subject=…`, the destination for formless CTAs. */
+export const mailto = (subject: MailSubject) =>
+  `mailto:${addressFor(subject)}?subject=${encodeURIComponent(subject)}`;
