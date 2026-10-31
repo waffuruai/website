@@ -54,7 +54,7 @@ describe('/security', () => {
       '30 days',
       '90 days',
       '180 days',
-      'no bug bounty',
+      'at our discretion',
     ]) {
       expect(text).toContain(promise);
     }
