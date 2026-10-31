@@ -19,14 +19,16 @@ export const dynamic = 'force-static';
 type Entry = MetadataRoute.Sitemap[number];
 
 /**
- * Legal pages are written once, in English. They are built in every locale
- * but canonicalise to the English URL, so only that one is listed.
+ * Legal pages and the security policy are written once, in English. They are
+ * built in every locale but canonicalise to the English URL, so only that one
+ * is listed.
  */
-const LEGAL_PATHS = [
+const ENGLISH_ONLY_PATHS = [
   '/legal',
   '/legal/terms',
   '/legal/privacy',
   '/legal/cookies',
+  '/security',
 ];
 
 /** Absolute URL for a locale's version of a route; the home page has no slash. */
@@ -155,6 +157,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const route = href.split(/[?#]/)[0] || '/';
     if (
       !route.startsWith('/legal') &&
+      !ENGLISH_ONLY_PATHS.includes(route) &&
       !route.startsWith('/api') &&
       isPublishedPath(route)
     ) {
@@ -164,7 +167,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...[...routes].flatMap((route) => entries(route, locales)),
-    ...LEGAL_PATHS.flatMap((route) => entries(route, [defaultLocale])),
+    ...ENGLISH_ONLY_PATHS.flatMap((route) => entries(route, [defaultLocale])),
     ...readPosts().flatMap((post) =>
       entries(`/blog/${post.slug}`, post.locales, post.lastModified),
     ),

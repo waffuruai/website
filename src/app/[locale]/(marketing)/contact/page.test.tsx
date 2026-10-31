@@ -18,6 +18,17 @@ const SUBJECTS: MailSubject[] = [
   'Hiring',
 ];
 
+/** Which mailbox each door opens: sales@ for buyers and partners, security@ for reports, hello@ for the rest. */
+const MAILBOX: Record<MailSubject, string> = {
+  Sales: 'sales@waffuru.ai',
+  Partnerships: 'sales@waffuru.ai',
+  Press: 'hello@waffuru.ai',
+  Support: 'hello@waffuru.ai',
+  Security: 'security@waffuru.ai',
+  Hiring: 'hello@waffuru.ai',
+  'Pantry on Windows': 'hello@waffuru.ai',
+};
+
 const params = (locale: string) => Promise.resolve({ locale });
 
 async function renderPage(locale: 'en' | 'ja' = 'en') {
@@ -34,11 +45,13 @@ const jsonLd = (container: HTMLElement) =>
   );
 
 describe('/contact', () => {
-  it('links our address in the lede, in every locale that names it', async () => {
+  it('links each of our addresses in the lede, in every locale that names them', async () => {
     for (const locale of ['en', 'ja'] as const) {
       const { unmount } = await renderPage(locale);
-      const link = screen.getByRole('link', { name: site.emails.hello });
-      expect(link.getAttribute('href')).toBe(`mailto:${site.emails.hello}`);
+      for (const email of Object.values(site.emails)) {
+        const link = screen.getByRole('link', { name: email });
+        expect(link.getAttribute('href')).toBe(`mailto:${email}`);
+      }
       unmount();
     }
   });
@@ -61,7 +74,7 @@ describe('/contact', () => {
       });
       expect(link.getAttribute('href')).toBe(mailto(subject));
       expect(link.getAttribute('href')).toBe(
-        `mailto:hello@waffuru.ai?subject=${subject}`,
+        `mailto:${MAILBOX[subject]}?subject=${subject}`,
       );
       // The link sits inside its own topic's card.
       const card = link.closest('li');

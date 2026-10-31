@@ -28,7 +28,7 @@ const supportZh: (typeof support)['en'] = {
       },
       {
         title: '报告安全问题',
-        body: '请私下发邮件到 hello@waffuru.ai，主题写 Security。',
+        body: '请私下发邮件到 security@waffuru.ai，主题写 Security。',
         href: mailto('Security'),
       },
       {
@@ -36,6 +36,11 @@ const supportZh: (typeof support)['en'] = {
         body: '我们的安全联系方式，机器可读格式。',
         href: '/.well-known/security.txt',
         file: true,
+      },
+      {
+        title: '漏洞披露政策',
+        body: '哪些在范围内、我们多快回应，以及对善意研究的安全港。',
+        href: '/security',
       },
     ],
   },
@@ -63,7 +68,7 @@ const supportZh: (typeof support)['en'] = {
     {
       question: '如何报告安全问题？',
       answer:
-        '发邮件到 hello@waffuru.ai，主题写 Security，并附上足以复现问题的细节。在我们有合理的时间修复之前，请先保密。我们的 security.txt 以机器可读的格式列出了同样的联系方式。',
+        '发邮件到 security@waffuru.ai，主题写 Security，并附上足以复现问题的细节。我们会在 3 个工作日内确认收到，按严重程度修复，并在 90 天内与你商定公开披露；[漏洞披露政策](https://waffuru.ai/security)（英文）说明了范围、规则和安全港。我们的 security.txt 以机器可读的格式列出了同样的联系方式。',
     },
     {
       question: '我的数据会怎么处理？',

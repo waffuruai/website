@@ -171,6 +171,7 @@ const fr: Dictionary = {
     terms: 'Conditions d’utilisation',
     privacy: 'Politique de confidentialité',
     cookies: 'Politique relative aux cookies',
+    security: 'Sécurité',
     madeIn: 'Fait avec 🤖 en Amérique du Nord',
     flagsLabel: 'États-Unis et Canada',
     social: 'Waffuru sur {network}',

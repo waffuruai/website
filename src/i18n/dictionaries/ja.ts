@@ -164,6 +164,7 @@ const ja: Dictionary = {
     terms: '利用規約',
     privacy: 'プライバシーポリシー',
     cookies: 'Cookie ポリシー',
+    security: 'セキュリティ',
     madeIn: '北米で 🤖 とともに制作',
     flagsLabel: 'アメリカ合衆国とカナダ',
     social: '{network} の Waffuru',

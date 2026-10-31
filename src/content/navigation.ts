@@ -144,6 +144,7 @@ export const navigation: Navigation = {
       { labelKey: 'terms', href: '/legal/terms' },
       { labelKey: 'privacy', href: '/legal/privacy' },
       { labelKey: 'cookies', href: '/legal/cookies' },
+      { labelKey: 'security', href: '/security' },
     ],
   },
 };

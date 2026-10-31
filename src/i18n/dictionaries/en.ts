@@ -169,6 +169,7 @@ const en = {
     terms: 'Terms of use',
     privacy: 'Privacy policy',
     cookies: 'Cookie policy',
+    security: 'Security',
     madeIn: 'Made with 🤖 in North America',
     flagsLabel: 'United States and Canada',
     social: 'Waffuru on {network}',

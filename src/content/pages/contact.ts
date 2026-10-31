@@ -48,7 +48,7 @@ export const contact: Localized<ContactContent> = {
     hero: {
       label: 'Contact',
       title: 'Tell us what you’re *building*.',
-      lede: 'Sales, partnerships, press, support, security and hiring all reach us at hello@waffuru.ai. Pick the topic that fits.',
+      lede: 'Sales and partnerships reach us at sales@waffuru.ai, security reports at security@waffuru.ai, and press, support and hiring at hello@waffuru.ai. Pick the topic that fits.',
     },
     callouts: {
       title: 'Pick a *door*.',

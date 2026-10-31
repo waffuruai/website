@@ -34,7 +34,7 @@ The design is Tom's "After Hours" page (`design/after-hours.html` is the referen
 - **i18n.** English is the source of truth. Use `LocalizedLink` / `localizePath` for internal links. Product and platform names never translate (Waffuru, Iron, Butter, Syrup, Whisk, Metal, CUDA, ROCm, Vulkan, …). `usePathname()` returns `/en/...` at build but `/...` in the browser: always pass it through `splitLocale()`.
 - **Pages:** every page under `src/app/[locale]/(marketing)/` exports `generateMetadata` using `createMetadata({ title, description, path, locale, keywords })` from `src/lib/seo.ts`, and emits JSON-LD for what it visibly shows (`src/lib/json-ld.ts` + `<JsonLd>`). Server components by default; client components only for interaction.
 - **Images:** originals in `assets/`, built to `public/img/` by `scripts/build-images.mjs`; render with `<Picture name="team/kyle-croll" sizes="…" alt="…" />`.
-- **Formless CTAs** link to `mailto(subject)` from `src/content/site.ts` (`mailto:hello@waffuru.ai?subject=…`). Early access is `site.urls.earlyAccess`.
+- **Formless CTAs** link to `mailto(subject)` from `src/content/site.ts`, which picks the mailbox by subject: `sales@waffuru.ai` for Sales and Partnerships, `security@waffuru.ai` for Security, `hello@waffuru.ai` for the rest (`mailto:<mailbox>?subject=…`). Early access is `site.urls.earlyAccess`.
 - **Tests** are colocated (`foo.test.ts(x)`), Vitest + Testing Library. Wrap components with `withDictionary` from `src/i18n/test-utils.tsx`. Test behaviour, not implementation.
 - **Dependencies:** fewer is better. Do not add a package that ~50 lines of our own code can replace. pnpm only.
 

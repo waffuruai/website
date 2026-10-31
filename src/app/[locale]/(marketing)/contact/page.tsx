@@ -29,22 +29,23 @@ export async function generateMetadata({
   });
 }
 
-/** The lede with our address, wherever it falls, as a gold mailto link. */
+const EMAILS: string[] = Object.values(site.emails);
+const EMAIL = new RegExp(`(${EMAILS.join('|')})`);
+
+/** The lede with each of our addresses, wherever it falls, as a gold mailto link. */
 function linkEmail(lede: string) {
-  const email = site.emails.hello;
-  const [before, ...after] = lede.split(email);
-  if (after.length === 0) return lede;
-  return (
-    <>
-      {before}
+  return lede.split(EMAIL).map((part, index) =>
+    EMAILS.includes(part) ? (
       <a
-        href={`mailto:${email}`}
+        key={index}
+        href={`mailto:${part}`}
         className="text-brand-ink underline decoration-brand-ink/40 underline-offset-4 transition-colors hover:decoration-brand-ink"
       >
-        {email}
+        {part}
       </a>
-      {after.join(email)}
-    </>
+    ) : (
+      part
+    ),
   );
 }
 
