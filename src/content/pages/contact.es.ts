@@ -16,7 +16,7 @@ const contactEs: (typeof contact)['en'] = {
   hero: {
     label: 'Contacto',
     title: 'Cuéntanos qué estás *construyendo*.',
-    lede: 'Ventas, alianzas, prensa, soporte, seguridad y empleo llegan a hello@waffuru.ai. Elige el tema que mejor encaje.',
+    lede: 'Ventas y alianzas llegan a sales@waffuru.ai, los reportes de seguridad a security@waffuru.ai, y prensa, soporte y empleo a hello@waffuru.ai. Elige el tema que mejor encaje.',
   },
   callouts: {
     title: 'Elige una *puerta*.',
