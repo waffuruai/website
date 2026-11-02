@@ -271,7 +271,7 @@ const pantryJa: (typeof pantry)['en'] = {
     {
       question: 'AI エージェントでも使えますか？',
       answer:
-        'はい。wpantry --json はエージェントに構造化された検出結果を渡し、wpantry skill はトリアージと修正のやり方、そして sudo が必要な手順は決して実行しないことを教えるスキルを出力します。',
+        'はい。wpantry scan --json はエージェントに構造化された検出結果を渡し、wpantry skill はトリアージと修正のやり方、そして sudo が必要な手順は決して実行しないことを教えるスキルを出力します。',
     },
   ],
   cta: {

@@ -81,12 +81,12 @@ export const pantryFacts = {
     ],
   },
   /** What to run once it is installed. */
-  firstRun: ['wpantry', 'wpantry --fix --dryrun'].join('\n'),
+  firstRun: ['wpantry scan', 'wpantry fix --dryrun'].join('\n'),
   /** One command per "who uses it" card, in order: people, agents, fleets. */
   uses: [
-    'wpantry --fix --dryrun',
-    'wpantry --json --no-input',
-    'wpantry --path . --no-machine --json',
+    'wpantry fix --dryrun',
+    'wpantry scan --json --no-input',
+    'wpantry scan --path . --no-machine --json',
   ],
   /** Transcript lines per step. `$ ` is a command, `# ` a comment. */
   transcripts: {
@@ -97,7 +97,7 @@ export const pantryFacts = {
       'wpantry 0.1.0 (rust, schema 1)',
     ],
     scan: [
-      '$ wpantry',
+      '$ wpantry scan',
       '==> Security scan (~/.cache/wpantry/wpantry.db)',
       '  checked 9 git repos, 214 tools, runtimes and packages',
       '  ✗ runtime  node 20.11.0  (/opt/homebrew/bin/node)',
@@ -110,7 +110,7 @@ export const pantryFacts = {
       '✗ 2 thing(s) to update (2 advisories), 1 warning(s).',
     ],
     cache: [
-      '$ wpantry',
+      '$ wpantry scan',
       '# same day: answers come from the local cache, so it takes seconds',
       '$ wpantry search "http2" --applicable',
       '# full-text search over cached advisories, offline',
@@ -118,13 +118,13 @@ export const pantryFacts = {
       'casks  eol  findings  kev  malicious  meta  queries  runs  vulns  …',
     ],
     fix: [
-      '$ wpantry --fix --dryrun',
+      '$ wpantry fix --dryrun',
       '==> Update plan (dry run: nothing is changed)',
       '  would run: brew upgrade node@20',
       '  would run: python3 -m pip install --upgrade requests',
       '  Also worth doing (warnings: outdated, or waiting on a vendor):',
       '    • pyenv install 3.13',
-      '$ wpantry --fix',
+      '$ wpantry fix',
       '? Run these 2 updates now? [Y/n] y',
       '✓ nothing with a released fix applies; 1 warning(s) above',
     ],

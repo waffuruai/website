@@ -282,7 +282,7 @@ export const pantry: Localized<PantryContent> = {
       {
         question: 'Can my AI agent use it?',
         answer:
-          'Yes. wpantry --json gives your agent structured findings, and wpantry skill prints a skill that teaches it to triage and fix, and never to run the steps that need sudo.',
+          'Yes. wpantry scan --json gives your agent structured findings, and wpantry skill prints a skill that teaches it to triage and fix, and never to run the steps that need sudo.',
       },
     ],
     cta: {
