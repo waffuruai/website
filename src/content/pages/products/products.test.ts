@@ -13,7 +13,6 @@ import {
   productsTopDown,
   type ProductSlug,
 } from '@/content/pages/products';
-import { speculativeEvidence } from '@/content/pages/speculative-research';
 
 /** Every string in a content tree, so copy rules apply to all of it. */
 function strings(value: unknown): string[] {
@@ -77,7 +76,7 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
       copy.hero.title,
       copy.story.heading,
       copy.capabilities.heading,
-      copy.specs.heading,
+      ...(copy.specs ? [copy.specs.heading] : []),
       copy.stack.heading,
       copy.cta.title,
       ...(copy.code ? [copy.code.heading] : []),
@@ -93,7 +92,8 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
     expect(copy.story.outcomes.length).toBeGreaterThanOrEqual(3);
     expect(copy.capabilities.items.length).toBeGreaterThanOrEqual(4);
     expect(copy.capabilities.items.length).toBeLessThanOrEqual(6);
-    expect(copy.specs.rows.length).toBeGreaterThanOrEqual(5);
+    if (copy.specs) expect(copy.specs.rows.length).toBeGreaterThanOrEqual(5);
+    else expect(slug).toBe('butter');
     expect(copy.faq.length).toBeGreaterThanOrEqual(4);
     expect(copy.faq.length).toBeLessThanOrEqual(6);
   });
@@ -129,9 +129,7 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
       expect(measured).not.toMatch(/home ?page/i);
     }
     for (const text of strings(copy)) {
-      // The founder's own Whisk lede keeps its "seamlessly" (2026-10-28).
-      if (text !== productCopy.whisk.en.hero.lede)
-        expect(text).not.toMatch(/seamless/i);
+      expect(text).not.toMatch(/seamless/i);
       expect(text).not.toMatch(
         /revolutionary|game-changing|unleash|supercharge|cutting-edge|blazing/i,
       );
@@ -203,36 +201,35 @@ describe('product specifics from the brief', () => {
     expect(text).toContain('4,164');
   });
 
-  it('Butter lists every model family and marks DeepSeek V4 in progress', () => {
-    const families = productCopy.butter.en.specs.rows.find(
-      (row) => row.term === 'Model families',
-    )?.groups;
-    expect(families).toHaveLength(16);
-    expect(families?.find((group) => group.label === 'DeepSeek')?.text).toBe(
-      'V4',
-    );
-    // No status badges on the Butter page: every family is listed plainly.
-    expect(families?.filter((group) => group.inProgress)).toHaveLength(0);
-  });
-
-  it('Butter names both APIs and states the quantized KV cache plainly', () => {
+  it('Butter has no technical specifics section; its facts live in its other copy', () => {
     const copy = productCopy.butter.en;
-    const api = copy.specs.rows.find((row) => row.term === 'Serving API');
-    expect(api?.detail).toMatch(/Chat Completions/);
-    expect(api?.detail).toMatch(/Anthropic Messages/);
-    const chips = api?.chips?.map((chip) => chip.label);
-    expect(chips).toContain('Speculative decoding');
-    expect(chips).toContain('LoRA');
-    const kv = copy.specs.rows.find((row) => row.term === 'KV cache');
-    expect(kv?.detail).toMatch(/Quantized/);
-    expect(kv?.detail).not.toMatch(/Apple silicon|on CUDA/);
+    expect(copy.specs).toBeUndefined();
+    const all = strings(copy).join(' ');
+    expect(all).toMatch(/Chat Completions/);
+    expect(all).toMatch(/Anthropic Messages/);
+    expect(all).toMatch(/Speculative decoding/);
+    expect(all).toMatch(/LoRA/);
+    expect(all).toMatch(/KV cache can be stored 4- or 8-bit/);
+    expect(all).toMatch(/safetensors, MLX, JANG or GGUF/);
+    expect(all).toMatch(/hybrid and mixture-of-experts models/);
+    expect(all).toMatch(/closed source during early access/);
+    for (const locale of ['es', 'fr', 'zh', 'ja', 'ko'] as const)
+      expect(productCopy.butter[locale]?.specs).toBeUndefined();
     // The CUDA host compiles kernels at runtime, so "no JIT" stays off the page.
-    for (const text of strings(copy)) expect(text).not.toMatch(/\bJIT\b/);
+    expect(all).not.toMatch(/\bJIT\b/);
   });
 
   it('Butter’s harness and quirks sections are compact and name no PRs', () => {
     const extras = productCopy.butter.en.extras ?? [];
-    expect(extras.map((section) => section.id)).toEqual(['agents', 'quirks']);
+    expect(extras.map((section) => section.id)).toEqual([
+      'modalities',
+      'swap',
+      'tools',
+      'validation',
+      'memory',
+      'agents',
+      'quirks',
+    ]);
     for (const section of extras) {
       expect(section.items.length).toBeGreaterThanOrEqual(3);
       expect(section.items.length).toBeLessThanOrEqual(6);
@@ -251,30 +248,33 @@ describe('product specifics from the brief', () => {
     for (const locale of ['es', 'fr', 'zh', 'ja', 'ko'] as const) {
       expect(
         productCopy.butter[locale]?.extras?.map((section) => section.id),
-      ).toEqual(['agents', 'quirks']);
+      ).toEqual([
+        'modalities',
+        'swap',
+        'tools',
+        'validation',
+        'memory',
+        'agents',
+        'quirks',
+      ]);
     }
   });
 
   it('Butter lists no gaps', () => {
-    const terms = productCopy.butter.en.specs.rows.map((row) => row.term);
-    expect(terms).not.toContain('Not yet');
     for (const text of strings(productCopy.butter.en)) {
       expect(text).not.toMatch(/not there yet|not yet\b/i);
     }
   });
 
-  it('Butter’s speed answer repeats the numbers from the section on its page', () => {
-    const answer = productCopy.butter.en.faq.find((item) =>
-      /how fast/i.test(item.question),
-    )?.answer;
-    const levels = speculativeEvidence.greedy.levels;
-    const single = levels[0];
-    const busiest = levels.at(-1)!;
-    expect(single.requests).toBe(1);
-    expect(answer).toContain(`${Math.round(single.burst)} tokens per second`);
-    expect(answer).toContain(`${Math.round(busiest.burst)} tokens per second`);
-    expect(answer).toContain(`${busiest.requests} concurrent requests`);
-    expect(answer).toContain(`about ${Math.round(busiest.lane)} per request`);
+  it('Butter’s copy carries no speed figures and promises no swap timing', () => {
+    const text = strings(productCopy.butter.en).join(' ');
+    expect(text).not.toMatch(/tokens per second|tok\/s|\bx faster\b|how fast/i);
+    expect(text).not.toMatch(/maximal performance|melt away/i);
+    const swap = productCopy.butter.en.extras?.find((s) => s.id === 'swap');
+    expect(strings(swap).join(' ')).not.toMatch(/\b(instant|fast|seconds?)\b/i);
+    expect(
+      productCopy.butter.en.faq.some((f) => /switch models/i.test(f.question)),
+    ).toBe(true);
   });
 
   it('Butter’s snippet is illustrative and keeps placeholders', () => {
@@ -285,8 +285,8 @@ describe('product specifics from the brief', () => {
   });
 
   it('Syrup names the engines it works with', () => {
-    const engines = productCopy.syrup.en.specs.rows
-      .find((row) => row.term === 'Engines')
+    const engines = productCopy.syrup.en
+      .specs!.rows.find((row) => row.term === 'Engines')
       ?.chips?.map((chip) => chip.label);
     expect(engines).toEqual([
       'Butter',
@@ -297,15 +297,37 @@ describe('product specifics from the brief', () => {
     ]);
   });
 
-  it('Whisk’s specifics cover retrieval, AURA, search, citations and MCP', () => {
-    const text = productCopy.whisk.en.specs.rows
-      .map((row) => `${row.term} ${row.detail ?? ''}`)
+  it('Whisk’s specifics cover local retrieval, optional AURA, search, citations and MCP', () => {
+    const text = productCopy.whisk.en
+      .specs!.rows.map((row) => `${row.term} ${row.detail ?? ''}`)
       .join(' ');
     expect(text).toMatch(/locally/i);
     expect(text).toContain('AURA');
-    expect(text).toMatch(/lexical plus vector/i);
-    expect(text).toMatch(/citations/i);
+    expect(text).toMatch(/Optional/);
+    expect(text).toMatch(/vector search/i);
+    expect(text).toMatch(/page, slide, sheet/i);
     expect(text).toContain('MCP');
+  });
+
+  it('Whisk labels session recall as in development and never as shipped', () => {
+    const copy = productCopy.whisk.en;
+    const continuity = copy.extras?.find((s) => s.id === 'continuity');
+    expect(continuity?.intro).toMatch(/In development/);
+    expect(continuity?.note).toMatch(/Not yet in any release/);
+    const inProgress = copy.specs!.rows.flatMap((row) =>
+      (row.chips ?? []).filter((chip) => chip.inProgress),
+    );
+    expect(inProgress.length).toBeGreaterThanOrEqual(2);
+    const all = strings(copy).join(' ');
+    expect(all).not.toMatch(/\bemail\b|e-mail|seamless/i);
+    expect(all).not.toMatch(/compressed with our proprietary/i);
+    expect(
+      copy.faq.some(
+        (f) =>
+          /yesterday/i.test(f.question) &&
+          /Not in the current release/.test(f.answer),
+      ),
+    ).toBe(true);
   });
 });
 
