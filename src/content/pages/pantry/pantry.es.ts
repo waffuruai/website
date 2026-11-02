@@ -117,7 +117,7 @@ const pantryEs: (typeof pantry)['en'] = {
         link: 'Guía de instalación completa',
       },
     ],
-    then: 'Después, escanea y revisa el plan:',
+    then: 'Después, escanea, revisa el plan y genera un informe HTML:',
   },
   checks: {
     title: 'Verifica *todo* lo que hay en las estanterías.',
