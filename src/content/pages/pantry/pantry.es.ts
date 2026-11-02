@@ -122,27 +122,15 @@ const pantryEs: (typeof pantry)['en'] = {
   checks: {
     title: 'Verifica *todo* lo que hay en las estanterías.',
     intro:
-      'Revisar la despensa es ver qué tienes, qué está caducado y qué hay que reemplazar.',
+      'Revisar la despensa es ver qué tienes, qué está caducado, qué hay que reemplazar y qué ha manipulado alguien.',
     items: [
       {
         title: 'Todo lo instalado',
-        body: 'Runtimes y compiladores (cada versión que guardan tus gestores de versiones), gestores de paquetes, herramientas de CLI, almacenes de datos, Docker, Homebrew y paquetes globales.',
+        body: 'Runtimes y compiladores (cada versión que guardan tus gestores de versiones), gestores de paquetes, herramientas de CLI, almacenes de datos, Docker, Homebrew, mise y paquetes globales.',
       },
       {
         title: 'El lockfile de cada repositorio',
-        body: 'Cargo, npm, pnpm, yarn, bun, Go, uv, poetry, pip, Bundler, Composer y más, antes de que se publique código vulnerable.',
-      },
-      {
-        title: 'Malware, no solo CVE',
-        body: 'Cada nombre de paquete, contrastado con el índice de paquetes maliciosos de OpenSSF, y las extensiones del editor, con la lista de extensiones maliciosas de VS Code.',
-      },
-      {
-        title: 'Secretos filtrados',
-        body: 'Credenciales presentes en cualquier commit del historial de git de un repositorio. El informe las muestra ocultas.',
-      },
-      {
-        title: 'Tus herramientas de programación con IA',
-        body: 'Lo que de verdad ejecutan Claude Code, Codex, Cursor, Gemini CLI y otros agentes: sus servidores MCP, plugins, skills y paquetes incluidos.',
+        body: 'Cargo, npm, pnpm, yarn, bun, Deno, Swift, Go, uv, poetry, pip, Bundler, Composer, Maven, Gradle, NuGet y más, antes de que se publique código vulnerable.',
       },
       {
         title: 'Sistema operativo, navegadores y apps',
@@ -153,12 +141,60 @@ const pantryEs: (typeof pantry)['en'] = {
         body: 'Runtimes y almacenes de datos que ya no reciben parches de seguridad, con la fecha en que dejaron de recibirlos.',
       },
       {
+        title: 'Malware, no solo CVE',
+        body: 'Cada nombre de paquete, contrastado con el índice de paquetes maliciosos de OpenSSF, y los nombres que imitan a un paquete popular a una tecla de distancia.',
+      },
+      {
+        title: 'Secretos filtrados',
+        body: 'Credenciales presentes en cualquier commit del historial de git de un repositorio, mostradas ocultas, además de contraseñas débiles escritas en el código y números de tarjeta a la vista.',
+      },
+      {
+        title: 'Tus herramientas de programación con IA',
+        body: 'Lo que de verdad ejecutan Claude Code, Codex, Cursor, Gemini CLI y otros agentes: sus servidores MCP, plugins, skills y paquetes incluidos, y cualquier servidor que ejecute siempre la última versión.',
+      },
+      {
+        title: 'Repositorios que se ejecutan al abrirlos',
+        body: 'Un repositorio clonado puede ejecutar código en cuanto tu agente o tu editor lo abre. Pantry encuentra esos hooks, tareas y scripts de instalación, y las huellas de campañas conocidas de repositorios secuestrados. Revisa un clon antes de abrirlo.',
+      },
+      {
+        title: 'Instrucciones ocultas',
+        body: 'Texto que se lee de una forma y se ejecuta de otra: Trojan Source, caracteres invisibles que cuelan instrucciones a tu asistente de IA, prompts ocultos en READMEs y páginas, y enlaces hechos para filtrar lo que leyó un agente.',
+      },
+      {
+        title: 'Código sospechoso',
+        body: 'Cargas que se decodifican al ejecutarse, almacenes de credenciales leídos y enviados, keyloggers, código que pide a tu cartera de criptomonedas que firme la cesión de la cuenta, y sudo o persistencia donde no corresponde.',
+      },
+      {
+        title: 'Documentos con trampa',
+        body: 'PDF que ejecutan JavaScript, archivos de Office con macros o plantillas remotas e imágenes que esconden un programa, en tus repositorios y en Descargas, Escritorio y Documentos. También con ClamAV, si está instalado.',
+      },
+      {
+        title: 'Clippers de criptomonedas',
+        body: 'Malware que cambia la dirección de cartera que copiaste por la suya. Pantry prueba el portapapeles, encuentra los elementos de inicio y las extensiones que lo hacen, y puede vigilar el portapapeles mientras trabajas.',
+      },
+      {
+        title: 'Extensiones del editor',
+        body: 'Las extensiones, contrastadas con la lista de extensiones maliciosas de VS Code, y si tus editores esperan antes de instalar una versión nueva, para que una versión secuestrada se retire antes de llegarte.',
+      },
+      {
+        title: 'La configuración de tu equipo',
+        body: 'Cifrado de disco, cortafuegos, Gatekeeper y SIP, actualizaciones automáticas, servicios para compartir, bloqueo de pantalla y si tu DNS sale cifrado del equipo.',
+      },
+      {
         title: 'Autoridades de certificación comprometidas',
-        body: 'Los almacenes de confianza de tu sistema, OpenSSL, Homebrew, Python y Node, contrastados con las autoridades de certificación que se sabe que ya no son de confianza.',
+        body: 'Los almacenes de confianza de tu sistema, OpenSSL, Homebrew, Python y Node, contrastados con las autoridades de certificación que se sabe que ya no son de confianza. Pantry puede retirarles la confianza hasta que llegue la actualización del sistema.',
       },
       {
         title: 'Riesgo en la cadena de suministro',
-        body: 'Licencias fuera de tu lista permitida, scripts de instalación de npm y las imágenes de contenedor a partir de las que se construyen tus repositorios.',
+        body: 'Licencias fuera de tu lista permitida, scripts de instalación, binarios precompilados sin código fuente y las imágenes de contenedor a partir de las que se construyen tus repositorios.',
+      },
+      {
+        title: 'Expuesto y aún sin parche',
+        body: 'Ante un fallo crítico o explotado activamente sin parche, Pantry dice qué hacer mientras tanto, puede comprobar cada hora si ya hay arreglo e instala una medida provisional cuando la tiene, como la de un fallo de TCP del kernel de Linux.',
+      },
+      {
+        title: 'Cuentas filtradas',
+        body: 'Solo si dices que sí: si tu dirección de correo aparece en una filtración de datos conocida.',
       },
     ],
   },
