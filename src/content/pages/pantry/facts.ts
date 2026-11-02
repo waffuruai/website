@@ -81,10 +81,10 @@ export const pantryFacts = {
     ],
   },
   /** What to run once it is installed. */
-  firstRun: ['wpantry', 'wpantry --update --dryrun'].join('\n'),
+  firstRun: ['wpantry', 'wpantry --fix --dryrun'].join('\n'),
   /** One command per "who uses it" card, in order: people, agents, fleets. */
   uses: [
-    'wpantry --update --dryrun',
+    'wpantry --fix --dryrun',
     'wpantry --json --no-input',
     'wpantry --path . --no-machine --json',
   ],
@@ -118,13 +118,13 @@ export const pantryFacts = {
       'casks  eol  findings  kev  malicious  meta  queries  runs  vulns  …',
     ],
     fix: [
-      '$ wpantry --update --dryrun',
+      '$ wpantry --fix --dryrun',
       '==> Update plan (dry run: nothing is changed)',
       '  would run: brew upgrade node@20',
       '  would run: python3 -m pip install --upgrade requests',
       '  Also worth doing (warnings: outdated, or waiting on a vendor):',
       '    • pyenv install 3.13',
-      '$ wpantry --update',
+      '$ wpantry --fix',
       '? Run these 2 updates now? [Y/n] y',
       '✓ nothing with a released fix applies; 1 warning(s) above',
     ],
