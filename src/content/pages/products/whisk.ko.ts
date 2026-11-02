@@ -180,7 +180,7 @@ const whiskKo: (typeof whisk)['en'] = {
       {
         term: '임베딩',
         detail:
-          '기본은 float32로 저장합니다. 새 캐시의 차가운 벡터에는 선택적으로 무손실 압축 또는 AURA 기반 압축을 쓸 수 있습니다.',
+          '기본은 float32로 저장합니다. 새 캐시의 자주 쓰지 않는(콜드) 벡터에는 선택적으로 무손실 압축 또는 AURA 기반 압축을 쓸 수 있습니다.',
       },
       {
         term: '개인정보 제어',
@@ -219,7 +219,7 @@ const whiskKo: (typeof whisk)['en'] = {
     {
       question: 'AURA는 무엇인가요?',
       answer:
-        'KV 캐시, 임베딩, 모델 가중치에 쓰는 저희의 압축 알고리즘입니다. Whisk에서는 새 색인의 차가운 벡터를 위한 선택 사항이며, 기본값은 임베딩을 압축하지 않고 저장합니다. Google의 [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/)를 Tom Turney가 개선한 TurboQuant+에서 영감을 받았고, 우리만의 새로운 기법으로 한층 더 발전시켰습니다. AURA는 Eric Kryski와 Tom Turney의 협업에서 나왔습니다.',
+        'KV 캐시, 임베딩, 모델 가중치에 쓰는 저희의 압축 알고리즘입니다. Whisk에서는 새 색인의 자주 쓰지 않는(콜드) 벡터를 위한 선택 사항이며, 기본값은 임베딩을 압축하지 않고 저장합니다. Google의 [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/)를 Tom Turney가 개선한 TurboQuant+에서 영감을 받았고, 우리만의 새로운 기법으로 한층 더 발전시켰습니다. AURA는 Eric Kryski와 Tom Turney의 협업에서 나왔습니다.',
     },
     {
       question: 'Whisk는 무엇과 함께 쓸 수 있나요?',

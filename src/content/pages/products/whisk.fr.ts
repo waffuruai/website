@@ -124,7 +124,7 @@ const whiskFr: (typeof whisk)['en'] = {
         },
         {
           title: 'Entre assistants et machines',
-          body: 'Importe les transcriptions de Claude Code, Codex et Grok et garde de quel ordinateur chacune vient. Une session copiée ou dupliquée est rattachée à son parent, sans être comptée deux fois.',
+          body: 'Importe les transcriptions de Claude Code, Codex et Grok et garde de quel ordinateur chacune vient. Une session copiée ou dérivée (fork) est rattachée à son parent, sans être comptée deux fois.',
         },
         {
           title: 'Dit contre fait',
@@ -143,7 +143,7 @@ const whiskFr: (typeof whisk)['en'] = {
           body: 'Supprimez une session et elle ne peut plus être réimportée. La purge retire le contenu, ses résumés et ses copies d’archive.',
         },
       ],
-      note: 'Précoce. La capture en direct est optionnelle par client, les imports sont explicites et le rappel ne couvre que les sessions capturées ; il ne prétend jamais connaître toute votre journée. Pas encore dans une version.',
+      note: 'Encore tôt. La capture en direct est optionnelle par client, les imports sont explicites et le rappel ne couvre que les sessions capturées ; il ne prétend jamais connaître toute votre journée. Dans aucune version pour l’instant.',
     },
   ],
   specs: {
@@ -167,7 +167,7 @@ const whiskFr: (typeof whisk)['en'] = {
       {
         term: 'Où il tourne',
         detail:
-          'En local, sur votre machine. Python 3.11 ou plus récent. Embeddings EmbeddingGemma 2 natifs via Butter sur silicium Apple ; un embedder CPU portable sinon.',
+          'En local, sur votre machine. Python 3.11 ou plus récent. Embeddings EmbeddingGemma 2 natifs via Butter sur silicium Apple ; un modèle d’embeddings portable sur CPU sinon.',
       },
       {
         term: 'Recherche',

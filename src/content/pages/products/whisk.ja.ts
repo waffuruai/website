@@ -51,7 +51,7 @@ const whiskJa: (typeof whisk)['en'] = {
       },
       {
         title: '元の出典を示す',
-        body: 'PDF の結果にはページ、スライドにはスライド番号、ブックにはシートとセル範囲、録音には秒数が示されます。移動したフォルダも引き続き解決されます。',
+        body: 'PDF の結果にはページ、スライド資料にはスライド番号、ブックにはシートとセル範囲、録音には秒数が示されます。移動したフォルダも引き続き解決されます。',
       },
       {
         title: '言葉でも意味でも検索',
@@ -159,7 +159,7 @@ const whiskJa: (typeof whisk)['en'] = {
       {
         term: '動作場所',
         detail:
-          'ローカル、お使いのマシン上。Python 3.11 以降。Apple シリコンでは Butter 経由でネイティブな EmbeddingGemma 2 の埋め込みを使い、それ以外は移植性のある CPU 埋め込みを使います。',
+          'ローカル、お使いのマシン上。Python 3.11 以降。Apple シリコンでは Butter 経由でネイティブな EmbeddingGemma 2 の埋め込みを使い、それ以外はポータブルな CPU 埋め込みモデルを使います。',
       },
       {
         term: '検索',
@@ -180,7 +180,7 @@ const whiskJa: (typeof whisk)['en'] = {
       {
         term: '埋め込み',
         detail:
-          '既定では float32 で保存します。新しいキャッシュの低頻度ベクトルには、任意で可逆圧縮または AURA 由来の圧縮を使えます。',
+          '既定では float32 で保存します。新しいキャッシュのアクセス頻度の低い（コールドな）ベクトルには、任意で可逆圧縮または AURA 由来の圧縮を使えます。',
       },
       {
         term: 'プライバシー制御',
@@ -222,7 +222,7 @@ const whiskJa: (typeof whisk)['en'] = {
     {
       question: 'AURA とは何ですか？',
       answer:
-        'KV キャッシュ、埋め込み、モデルの重みに使う、私たちの圧縮アルゴリズムです。Whisk では、新しいインデックスの低頻度ベクトル向けのオプションで、既定では埋め込みを圧縮せずに保存します。Google の [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) に Tom Turney が改良を加えた TurboQuant+ に着想を得て、私たち自身の新しい手法でさらに先へ進めました。AURA は、Eric Kryski と Tom Turney の共同作業から生まれました。',
+        'KV キャッシュ、埋め込み、モデルの重みに使う、私たちの圧縮アルゴリズムです。Whisk では、新しいインデックスのアクセス頻度の低い（コールドな）ベクトル向けのオプションで、既定では埋め込みを圧縮せずに保存します。Google の [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) に Tom Turney が改良を加えた TurboQuant+ に着想を得て、私たち自身の新しい手法でさらに先へ進めました。AURA は、Eric Kryski と Tom Turney の共同作業から生まれました。',
     },
     {
       question: '何から Whisk を使えますか？',

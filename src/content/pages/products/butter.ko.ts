@@ -20,7 +20,7 @@ const butterKo: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: '고른 모델을 *그대로* 돌리세요.',
+    title: '*고른* 모델을 돌리세요.',
     lede: 'Butter는 이미 가진 Mac이나 GPU 워크스테이션을 프라이빗 AI 서버로 바꿔 줍니다. 내 모델을 가져오고, 모든 프롬프트를 사내에 두고, 토큰 요금은 내지 않습니다. 일이 바뀌면 모델도 바꾸세요. 모델은 Hugging Face에서 곧바로 불러오고, 기존 도구는 이미 쓰던 OpenAI와 Anthropic API로 연결됩니다.',
     highlights: [
       { value: '4', label: '변환 없이 불러오는 체크포인트 형식' },
@@ -50,8 +50,8 @@ const butterKo: (typeof butter)['en'] = {
         body: 'safetensors, MLX, JANG, GGUF를 Hugging Face에서 곧바로 가져옵니다. 변환 단계는 없습니다.',
       },
       {
-        title: 'Dense, 하이브리드, MoE',
-        body: 'Dense, 하이브리드, 전문가 혼합(MoE) 모델을 실행합니다. 2~8비트 양자화 체크포인트부터 MXFP4와 NVFP4 블록 스케일 체크포인트까지 지원합니다.',
+        title: '밀집, 하이브리드, MoE',
+        body: '밀집, 하이브리드, 전문가 혼합(MoE) 모델을 실행합니다. 2~8비트 양자화 체크포인트부터 MXFP4와 NVFP4 블록 스케일 체크포인트까지 지원합니다.',
       },
       {
         title: '들어맞는 KV 캐시',
@@ -85,7 +85,7 @@ const butterKo: (typeof butter)['en'] = {
       items: [
         {
           title: '텍스트',
-          body: '밀집형, 하이브리드, 전문가 혼합 모델. Llama, Gemma, Qwen, GPT-OSS 등.',
+          body: '밀집, 하이브리드, 전문가 혼합(MoE) 모델. Llama, Gemma, Qwen, GPT-OSS 등.',
         },
         {
           title: '멀티모달',
@@ -99,7 +99,7 @@ const butterKo: (typeof butter)['en'] = {
     },
     {
       id: 'swap',
-      heading: '자리를 잃지 않고 모델을 *바꾸세요*.',
+      heading: '대화의 흐름을 놓치지 않고 모델을 *바꾸세요*.',
       intro:
         'butter serve 프로세스 하나가 요청마다 서빙할 모델을 바꿀 수 있어, 작업마다 알맞은 모델이 맡습니다.',
       items: [
@@ -109,7 +109,7 @@ const butterKo: (typeof butter)['en'] = {
         },
         {
           title: '대화는 이어집니다',
-          body: '대화는 전환을 거쳐도 이어갈 수 있고, 기록을 다시 읽지 않고 재개됩니다. 수락 시험에서 프리필이 반복된 경우는 없었고, 이어진 응답은 중단 없는 대화와 같았습니다.',
+          body: '대화는 전환을 거쳐도 이어갈 수 있고, 기록을 다시 읽지 않고 재개됩니다. 인수 테스트에서 프리필이 반복된 경우는 없었고, 이어진 응답은 중단 없는 대화와 같았습니다.',
         },
         {
           title: '잘못된 대상은 거부하거나 되돌립니다',
@@ -123,7 +123,7 @@ const butterKo: (typeof butter)['en'] = {
     },
     {
       id: 'tools',
-      heading: '돌아올 때 *유효한* 도구 호출.',
+      heading: '*유효한* 상태로 돌아오는 도구 호출.',
       intro:
         '에이전트를 만드는 분께: 도구 호출의 결과는 루프가 그대로 실행할 수 있는 형태로 돌아옵니다.',
       items: [
@@ -174,7 +174,7 @@ const butterKo: (typeof butter)['en'] = {
           body: '짧은 AgentX 실행이 실패한 요청 없이 끝났고 공식 검증기를 통과했습니다. 작은 시험일 뿐 전체 재현은 아닙니다. 실행하는 과정에서 실제 버그도 드러나 고쳤습니다.',
         },
       ],
-      note: '자체 하드웨어에서 돌린 내부 실행이며, DGX Spark와 Strix Halo 모두 InferenceX 공식 대상이 아닙니다. InferenceX 공식 결과가 아니며 SemiAnalysis의 승인을 받지 않았습니다. 엔터프라이즈 하드웨어에서의 성능은 아직 검증하지 않았습니다.',
+      note: '자체 하드웨어에서 돌린 내부 실행이며, DGX Spark와 Strix Halo 모두 InferenceX 공식 대상이 아닙니다. InferenceX 공식 결과가 아니며 SemiAnalysis가 보증한 것도 아닙니다. 엔터프라이즈 하드웨어에서의 성능은 아직 검증하지 않았습니다.',
     },
     {
       id: 'memory',

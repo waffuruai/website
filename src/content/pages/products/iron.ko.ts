@@ -75,7 +75,7 @@ const ironKo: (typeof iron)['en'] = {
   extras: [
     {
       id: 'abi',
-      heading: '호스트가 믿을 수 있는 버전 관리 *ABI*.',
+      heading: '호스트가 믿고 쓸 수 있는, 버전이 관리되는 *ABI*.',
       intro:
         '이미 쓰고 있는 엔진에서 작은 C ABI를 통해 선택한 Iron 커널을 호출할 수 있고, Rust 호출자도 쓸 수 있습니다. 현재 계약은 ABI 0.5입니다.',
       items: [
@@ -93,7 +93,7 @@ const ironKo: (typeof iron)['en'] = {
         },
         {
           title: 'Metal, CUDA, HIP',
-          body: 'Apple 실리콘, NVIDIA, AMD 전반에 걸쳐 하나의 통합 모델을 씁니다.',
+          body: 'Apple 실리콘, NVIDIA, AMD 전반에 걸쳐 통합 방식은 하나입니다.',
         },
       ],
       note: 'ABI는 1.0 이전이며, Iron은 얼리 액세스 중입니다.',

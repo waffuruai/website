@@ -88,12 +88,12 @@ const ironFr: (typeof iron)['en'] = {
           body: 'Votre hôte garde ses appareils, ses files, ses tampons et sa synchronisation. Iron compile les pipelines, choisit la route, vérifie le descripteur et encode la commande.',
         },
         {
-          title: 'Additive par règle',
+          title: 'Additive par principe',
           body: 'Les versions mineures ne font qu’ajouter. Les symboles, les dispositions et les valeurs numériques existants ne changent jamais, et un changement incompatible incrémente la version majeure.',
         },
         {
           title: 'Les anciens clients continuent de fonctionner',
-          body: 'Pour chaque version mineure, nous conservons le client compilé de la version précédente et l’exécutons avec la nouvelle bibliothèque : un hôte construit sur une ABI antérieure est donc testé, pas supposé.',
+          body: 'Pour chaque version mineure, nous conservons le client compilé de la version précédente et l’exécutons avec la nouvelle bibliothèque : un hôte construit sur une ABI antérieure est donc testé, pas supposé.',
         },
         {
           title: 'Metal, CUDA et HIP',

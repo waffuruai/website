@@ -88,7 +88,7 @@ const ironEs: (typeof iron)['en'] = {
           body: 'Tu host conserva sus dispositivos, colas, búferes y sincronización. Iron compila los pipelines, elige la ruta, comprueba el descriptor y codifica el comando.',
         },
         {
-          title: 'Aditiva por regla',
+          title: 'Aditiva por norma',
           body: 'Las versiones menores solo añaden. Los símbolos, las disposiciones y los valores numéricos existentes nunca cambian, y un cambio incompatible sube la versión mayor.',
         },
         {
