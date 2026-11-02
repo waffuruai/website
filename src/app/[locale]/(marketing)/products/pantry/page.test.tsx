@@ -128,9 +128,7 @@ describe('How it works', () => {
     expect(tabs[2].getAttribute('aria-selected')).toBe('true');
     fireEvent.keyDown(tabs[2], { key: 'End' });
     expect(tabs[3].getAttribute('aria-selected')).toBe('true');
-    expect(screen.getByRole('tabpanel').textContent).toContain(
-      'wpantry --update',
-    );
+    expect(screen.getByRole('tabpanel').textContent).toContain('wpantry --fix');
   });
 
   it('plays on its own and pauses on request', async () => {
