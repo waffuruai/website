@@ -2,88 +2,201 @@ import type { whisk } from './whisk';
 
 const whiskFr: (typeof whisk)['en'] = {
   layer: 'Mémoire',
-  tagline: 'Une IA qui se souvient de ce sur quoi vous travailliez.',
+  tagline: 'De la mémoire pour votre IA, gardée sur votre machine.',
   summary:
-    'Recherche locale sur vos notes, votre code, vos documents et vos images. Les embeddings sont compressés avec notre algorithme de compression propriétaire AURA, la recherche est lexicale plus vectorielle, et les résultats reviennent avec leurs citations via MCP.',
+    'Whisk indexe les fichiers que vous avez déjà, des notes et du code aux tableurs, PDF et enregistrements, et donne à votre IA les passages utiles avec une citation de l’original. Le rappel des sessions de votre assistant, par jour, semaine et mois, est en développement.',
   seo: {
-    title: 'Whisk : mémoire locale et recherche pour votre IA',
+    title: 'Whisk : mémoire et récupération locales pour votre IA',
     description:
-      'Whisk incorpore vos notes, votre code, vos documents et vos images à vos sessions d’IA. Recherche lexicale et vectorielle sur des embeddings compressés par AURA, résultats cités via MCP.',
+      'Whisk cherche dans vos notes, code, documents, tableurs, PDF et médias sur votre propre machine et renvoie des passages cités via MCP. Le rappel de sessions entre jours et assistants est en développement.',
     keywords: [
       'RAG local',
-      'mémoire d’IA',
-      'recherche via MCP',
+      'mémoire pour IA',
+      'récupération MCP',
       'recherche sémantique privée',
+      'recherche de documents pour IA',
     ],
   },
   hero: {
-    title: 'Une IA qui se *souvient* de ce sur quoi vous travailliez.',
-    lede: 'Whisk va chercher et mélange les notes, le code, les documents et les images utiles de votre ordinateur, et les incorpore en douceur à vos sessions d’IA.',
+    title: 'Votre IA oublie. Vos *fichiers* non.',
+    lede: 'Whisk indexe ce qui se trouve sur votre ordinateur et donne à votre IA les passages pertinents quand elle en a besoin, chacun avec une citation du fichier, de la page, de la diapositive ou de la plage de cellules d’où il vient. Rien n’est envoyé ailleurs ; la récupération tourne sur votre machine.',
     highlights: [
       {
         value: 'Local',
-        label:
-          'recherche sur vos notes, votre code, vos documents et vos images',
+        label: 'indexation et recherche sur votre propre machine',
       },
       {
-        value: 'Lexical + vectoriel',
+        value: 'Cité',
         label:
-          'recherche, sur des embeddings compressés avec notre algorithme AURA',
+          'chaque passage nomme son fichier, sa page, sa diapositive ou sa plage de cellules',
       },
-      { value: 'Cités', label: 'résultats, livrés via MCP' },
+      {
+        value: 'MCP',
+        label: 'plus un hook qui cherche avant l’envoi du prompt',
+      },
     ],
   },
   story: {
     heading: 'Cessez de vous *réexpliquer*.',
     problem:
-      'Chaque nouvelle conversation repart de zéro. Vous recollez les mêmes notes et les mêmes fichiers, et quand une réponse arrive, vous ne savez pas de quelle source elle vient.',
+      'Chaque nouvelle conversation repart de zéro. Vous recollez la même citation, le même tableur, la même moitié de PDF, et quand la réponse arrive vous ne savez pas lequel elle a utilisé. Le travail fait hier avec l’assistant a disparu de sa vue au matin.',
     outcome:
-      'Whisk indexe vos notes, votre code, vos documents et vos images sur votre propre machine. Votre IA le sollicite et récupère les passages utiles, chacun accompagné d’une citation vers la source d’origine, que vous pouvez vérifier.',
+      'Whisk indexe vos notes, votre code, vos documents et vos médias sur votre propre machine et surveille leurs changements. Votre IA interroge Whisk, ou Whisk répond avant l’envoi du prompt, et chaque passage arrive avec une citation que vous pouvez ouvrir. Le rappel des sessions de l’assistant, pour reprendre là où il s’est arrêté, est en développement.',
     outcomes: [
-      'Gardez vos notes et votre code sur votre propre machine. La recherche est locale.',
-      'Retrouvez les choses par les mots exacts que vous avez employés ou par leur sens : la recherche est lexicale plus vectorielle.',
-      'Vérifiez toute réponse à partir de sa source, car les résultats reviennent avec des citations.',
+      'Tout reste chez vous : fichiers, index et recherche restent sur votre machine, et la récupération n’exige aucune clé d’IA hébergée.',
+      'Vérifiez chaque réponse : les résultats citent le fichier et la page, la diapositive, la plage de cellules ou la plage de temps d’où ils viennent.',
+      'Cherchez comme vous pensez : par les mots exacts que vous avez employés ou par ce que vous vouliez dire, dans tous les dossiers enregistrés.',
     ],
   },
   capabilities: {
     heading: 'Ce que fait *Whisk*.',
     intro:
-      'Une couche de mémoire que vous faites tourner vous-même, pour le travail que vous avez déjà.',
+      'Une couche de mémoire que vous exécutez vous-même, pour les fichiers que vous avez déjà.',
     items: [
       {
-        title: 'Recherche locale',
-        body: 'Whisk fouille vos notes, votre code, vos documents et vos images sur votre propre machine, et vos données y restent, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
+        title: 'Lit vos documents tels quels',
+        body: 'Fichiers Word, PowerPoint et Excel, PDF avec couche de texte ou numérisés, images, audio et vidéo. Les formules des tableurs sont gardées comme texte, jamais évaluées.',
       },
       {
-        title: 'Embeddings compressés',
-        body: 'Les embeddings sont compressés avec notre algorithme de compression propriétaire AURA, pour que vos données prennent moins de place.',
+        title: 'Cite l’original',
+        body: 'Un résultat issu d’un PDF nomme la page, d’une présentation la diapositive, d’un classeur la feuille et la plage de cellules, d’un enregistrement les secondes. Les dossiers déplacés se résolvent toujours.',
       },
       {
-        title: 'Recherche lexicale plus vectorielle',
-        body: 'La correspondance de mots exacts et la recherche par le sens travaillent ensemble.',
+        title: 'Cherche par les mots et par le sens',
+        body: 'Recherche par mots-clés avec racinisation, recherche dense sur des embeddings, et correspondance sur le nom de fichier pour les documents dont le sujet n’apparaît que dans le titre. Les résultats sont fusionnés en une seule liste classée.',
       },
       {
-        title: 'Citations via MCP',
-        body: 'Les résultats reviennent avec leurs citations via MCP : n’importe quel client MCP peut les utiliser et montrer d’où vient chacun.',
+        title: 'Place la version actuelle en premier',
+        body: 'Quand un dossier contient plusieurs versions d’un document, la plus récente passe en premier et les anciennes sont marquées comme remplacées, jamais écartées.',
+      },
+      {
+        title: 'Répond aux questions qui couvrent plusieurs sources',
+        body: 'Demandez ce que chaque service a décidé et obtenez une fiche par source avec son meilleur passage, plus la liste des sources interrogées où il n’y avait rien.',
+      },
+      {
+        title: 'Agit sans qu’on le demande',
+        body: 'Un hook Claude Code cherche avant chaque prompt éligible et n’injecte que les passages qui passent un seuil de confiance. Une recherche rejetée n’ajoute rien.',
       },
     ],
   },
+  code: {
+    heading: 'Indexez un dossier, puis *posez* votre question.',
+    intro:
+      'Pointez Whisk vers un dossier. Tout client MCP peut y chercher, et le hook Claude Code peut chercher pour vous.',
+    caption:
+      'À titre d’illustration. Remplacez les valeurs entre chevrons par votre dossier et le nom de votre projet. Les options et valeurs par défaut sont dans la documentation.',
+  },
+  extras: [
+    {
+      id: 'privacy',
+      heading: 'Privé *par construction*.',
+      intro:
+        'Whisk tourne sur votre machine. Voici les contrôles qui l’y gardent.',
+      items: [
+        {
+          title: 'Loopback uniquement',
+          body: 'Le port MCP accepte les connexions de cette machine. Le lier à une adresse réseau est refusé sauf autorisation explicite, et le journal indique que le port n’est pas authentifié.',
+        },
+        {
+          title: 'Projets restreints',
+          body: 'Marquez un dossier comme restreint et il est exclu de toute recherche automatique. Il n’est consulté que s’il est nommé.',
+        },
+        {
+          title: 'Journaux expurgés',
+          body: 'Le texte des requêtes et les répertoires de travail peuvent être expurgés des journaux d’exploitation, et le journal de rejeu peut être désactivé.',
+        },
+        {
+          title: 'Hygiène contre les injections',
+          body: 'Le texte que le hook place dans un prompt est assaini : Unicode caché, faux marqueurs de rôle, liens récupérables et longs blocs encodés sont retirés ou neutralisés.',
+        },
+      ],
+      note: 'Le port local n’a aucune authentification par utilisateur aujourd’hui. Gardez le daemon sur loopback et traitez l’index avec le même soin que les fichiers à partir desquels il a été construit.',
+    },
+    {
+      id: 'continuity',
+      heading: 'Se souvenir *du travail lui-même*.',
+      intro:
+        'En développement : Whisk apprend à se souvenir de ce que vous et votre assistant avez fait, pour qu’une nouvelle session puisse commencer là où la précédente s’est arrêtée. Rien de cela n’est dans la version actuelle.',
+      items: [
+        {
+          title: 'Qu’ai-je fait hier ?',
+          body: 'Rappel par jour, semaine ou mois, groupé par projet, avec l’endroit où chaque session s’est arrêtée. Les jours calendaires suivent votre fuseau horaire, y compris les journées longues et courtes du changement d’heure.',
+        },
+        {
+          title: 'Entre assistants et machines',
+          body: 'Importe les transcriptions de Claude Code, Codex et Grok et garde de quel ordinateur chacune vient. Une session copiée ou dupliquée est rattachée à son parent, sans être comptée deux fois.',
+        },
+        {
+          title: 'Dit contre fait',
+          body: 'Une pull request compte comme créée seulement quand le reçu de la commande le dit. Un « terminé » de l’assistant sans reçu reste une affirmation.',
+        },
+        {
+          title: 'Des citations à l’octet près',
+          body: 'Chaque ligne d’un récapitulatif renvoie à l’enregistrement exact de la transcription d’où elle vient, même une fois la session archivée.',
+        },
+        {
+          title: 'Les corrections l’emportent',
+          body: 'Quand un récapitulatif est raccourci pour tenir, votre dernière correction garde sa place devant l’ancien résumé de l’assistant.',
+        },
+        {
+          title: 'Un oubli qui tient',
+          body: 'Supprimez une session et elle ne peut plus être réimportée. La purge retire le contenu, ses résumés et ses copies d’archive.',
+        },
+      ],
+      note: 'Précoce. La capture en direct est optionnelle par client, les imports sont explicites et le rappel ne couvre que les sessions capturées ; il ne prétend jamais connaître toute votre journée. Pas encore dans une version.',
+    },
+  ],
   specs: {
     heading: 'Les *détails* techniques.',
     rows: [
       {
         term: 'Indexe',
-        detail: 'Vos notes, votre code, vos documents et vos images.',
+        chips: [
+          { label: 'Markdown' },
+          { label: 'Code' },
+          { label: 'DOCX' },
+          { label: 'PPTX' },
+          { label: 'XLSX' },
+          { label: 'PDF' },
+          { label: 'Images' },
+          { label: 'Audio' },
+          { label: 'Vidéo' },
+          { label: 'Sessions de l’assistant', inProgress: true },
+        ],
       },
-      { term: 'Où ça tourne', detail: 'En local, sur votre machine.' },
+      {
+        term: 'Où il tourne',
+        detail:
+          'En local, sur votre machine. Python 3.11 ou plus récent. Embeddings EmbeddingGemma 2 natifs via Butter sur silicium Apple ; un embedder CPU portable sinon.',
+      },
+      {
+        term: 'Recherche',
+        detail:
+          'Mots-clés (FTS5, avec racinisation) plus recherche vectorielle dense avec fusion des rangs. Correspondance sur le nom de fichier. Préférence de version au sein d’un dossier. Regroupement entre sources.',
+      },
+      {
+        term: 'Citations',
+        detail:
+          'Chemin du fichier plus page, diapositive, feuille et plage de cellules, ou secondes de début et de fin.',
+        chips: [
+          { label: 'Citations de session à l’octet près', inProgress: true },
+        ],
+      },
+      {
+        term: 'Interfaces',
+        detail:
+          'MCP via stdio ou HTTP sur loopback. Hook UserPromptSubmit de Claude Code. Hook DeepSeek Harness.',
+      },
       {
         term: 'Embeddings',
         detail:
-          'Compressés avec AURA, notre algorithme de compression propriétaire.',
+          'Stockés en float32 par défaut. Compression optionnelle sans perte ou dérivée d’AURA pour les vecteurs froids d’un nouveau cache.',
       },
-      { term: 'Recherche', detail: 'Lexicale plus vectorielle.' },
-      { term: 'Résultats', detail: 'Renvoyés avec leurs citations.' },
-      { term: 'Interface', detail: 'MCP.' },
+      {
+        term: 'Contrôles de confidentialité',
+        detail:
+          'Liaison loopback, projets restreints, expurgation des requêtes et des chemins, assainisseur de prompts.',
+      },
       {
         term: 'Disponibilité',
         detail: 'Privé et à code fermé pendant l’accès anticipé.',
@@ -93,7 +206,7 @@ const whiskFr: (typeof whisk)['en'] = {
   stack: {
     heading: 'Compatible avec le reste de la *stack*.',
     intro:
-      'Whisk fonctionne seul, avec n’importe quel client MCP. En dessous, Butter exécute les modèles, Syrup surveille les GPU et Iron compile les kernels.',
+      'Whisk fonctionne seul avec tout client MCP. Butter fournit des embeddings natifs sur silicium Apple, Syrup surveille les machines et Iron compile les kernels en dessous.',
   },
   faq: [
     {
@@ -102,33 +215,34 @@ const whiskFr: (typeof whisk)['en'] = {
         'Pas aujourd’hui. Whisk est privé et à code fermé pendant l’accès anticipé. Demandez l’accès et nous vous écrirons quand il y aura plus à partager.',
     },
     {
-      question: 'Mes données quittent-elles ma machine ?',
+      question: 'Mes données quittent-elles ma machine ?',
       answer:
-        'La recherche est locale : Whisk indexe et recherche sur votre machine. Nous nous tenons à une règle simple : vos données restent sur votre machine, sauf si vous choisissez d’utiliser un fournisseur d’inférence d’IA hébergé.',
+        'Non. L’indexation et la recherche tournent en local et n’exigent aucune clé d’IA hébergée. Le seul événement réseau est le premier téléchargement du modèle d’embeddings. Si vous branchez votre assistant sur un fournisseur d’IA hébergé, ce fournisseur voit ce que l’assistant lui envoie ; Whisk n’y change rien.',
     },
     {
-      question: 'Qu’indexe-t-il ?',
-      answer: 'Vos notes, votre code, vos documents et vos images.',
+      question: 'Qu’indexe-t-il ?',
+      answer:
+        'Notes, code, fichiers Word, PowerPoint et Excel, PDF y compris numérisés, images, audio et vidéo. L’audio est indexé pour le sens, pas transcrit ; les pages numérisées bénéficient d’un OCR optionnel sur macOS.',
     },
     {
-      question: 'Qu’est-ce qu’AURA ?',
+      question: 'Se souviendra-t-il de ce que mon assistant a fait hier ?',
       answer:
-        'Notre algorithme de compression propriétaire, que nous utilisons pour le cache KV, les embeddings et les poids des modèles. Dans Whisk, il compresse les embeddings, pour que vos données prennent moins de place. Il s’inspire de TurboQuant+, les améliorations apportées par Tom Turney au [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) de Google, et nous sommes allés encore plus loin avec quelques techniques inédites de notre cru. AURA est né d’une collaboration entre Eric Kryski et Tom Turney.',
+        'Pas dans la version actuelle. Le rappel de sessions entre jours, assistants et ordinateurs est en développement, avec des citations vers l’enregistrement exact de la transcription. Nous vous écrirons à sa sortie.',
     },
     {
-      question: 'Qu’est-ce qui peut utiliser Whisk ?',
+      question: 'Qu’est-ce qu’AURA ?',
       answer:
-        'Tout ce qui parle MCP peut demander des résultats à Whisk, et chaque résultat revient avec une citation.',
+        'Notre algorithme de compression pour le cache KV, les embeddings et les poids des modèles. Dans Whisk, c’est une option pour les vecteurs froids d’un nouvel index ; par défaut, les embeddings sont stockés sans compression. Il s’inspire de TurboQuant+, les améliorations apportées par Tom Turney au [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) de Google, et nous sommes allés encore plus loin avec quelques techniques inédites de notre cru. AURA est né d’une collaboration entre Eric Kryski et Tom Turney.',
     },
     {
-      question: 'Ai-je besoin du reste de la stack ?',
+      question: 'Qu’est-ce qui peut utiliser Whisk ?',
       answer:
-        'Non. Chaque produit Waffuru fonctionne seul, et Whisk ne fait pas exception.',
+        'Tout ce qui parle MCP. Claude Code peut aussi l’exécuter comme hook, si bien que les passages pertinents arrivent avant que le modèle voie votre prompt.',
     },
   ],
   cta: {
     title: 'Donnez une *mémoire* à votre IA.',
-    body: 'Whisk est en accès anticipé et à code fermé pour l’instant. Demandez l’accès, ou dites-nous ce que vous aimeriez qu’il retienne.',
+    body: 'Whisk est en accès anticipé et à code fermé pour l’instant. Demandez l’accès, ou dites-nous quels fichiers vous aimeriez que votre IA connaisse déjà.',
   },
 };
 

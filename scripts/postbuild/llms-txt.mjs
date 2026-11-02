@@ -134,7 +134,7 @@ const INTRO = `Every page has a markdown twin: send \`Accept: text/markdown\` or
 
 const MISSION = `${SITE.name} is on a mission to ${SITE.mission.replace(/^D/, 'd').replace(/\.$/, '')}.`;
 const STACK =
-  'Iron compiles the kernels, Butter runs models on them, Syrup watches the GPUs and Whisk remembers what you were working on, all on the hardware you already own. The stack is closed source and in early access.';
+  'Iron compiles the kernels, Butter runs models on them, Syrup watches the GPUs and Whisk keeps memory for your AI on your machine, all on the hardware you already own. The stack is closed source and in early access.';
 const STACK_UNNAMED =
   'It builds the stack that runs AI on the hardware you already own: kernels, an inference engine, a GPU control plane and memory, all closed source and in early access.';
 const PANTRY =

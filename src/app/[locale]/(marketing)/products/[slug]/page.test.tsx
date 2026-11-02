@@ -131,7 +131,7 @@ describe('/products/[slug] route', () => {
     ]);
   });
 
-  it.each(['syrup', 'whisk'])('adds no research to %s', async (slug) => {
+  it.each(['syrup'])('adds no research to %s', async (slug) => {
     const { container } = await renderRoute(slug);
     for (const id of ['native-inference', 'aura', 'models']) {
       expect(container.querySelector(`#${id}`)).toBeNull();

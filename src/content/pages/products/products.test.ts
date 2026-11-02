@@ -129,9 +129,7 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
       expect(measured).not.toMatch(/home ?page/i);
     }
     for (const text of strings(copy)) {
-      // The founder's own Whisk lede keeps its "seamlessly" (2026-10-28).
-      if (text !== productCopy.whisk.en.hero.lede)
-        expect(text).not.toMatch(/seamless/i);
+      expect(text).not.toMatch(/seamless/i);
       expect(text).not.toMatch(
         /revolutionary|game-changing|unleash|supercharge|cutting-edge|blazing/i,
       );
@@ -299,15 +297,37 @@ describe('product specifics from the brief', () => {
     ]);
   });
 
-  it('Whisk’s specifics cover retrieval, AURA, search, citations and MCP', () => {
+  it('Whisk’s specifics cover local retrieval, optional AURA, search, citations and MCP', () => {
     const text = productCopy.whisk.en
       .specs!.rows.map((row) => `${row.term} ${row.detail ?? ''}`)
       .join(' ');
     expect(text).toMatch(/locally/i);
     expect(text).toContain('AURA');
-    expect(text).toMatch(/lexical plus vector/i);
-    expect(text).toMatch(/citations/i);
+    expect(text).toMatch(/Optional/);
+    expect(text).toMatch(/vector search/i);
+    expect(text).toMatch(/page, slide, sheet/i);
     expect(text).toContain('MCP');
+  });
+
+  it('Whisk labels session recall as in development and never as shipped', () => {
+    const copy = productCopy.whisk.en;
+    const continuity = copy.extras?.find((s) => s.id === 'continuity');
+    expect(continuity?.intro).toMatch(/In development/);
+    expect(continuity?.note).toMatch(/Not yet in any release/);
+    const inProgress = copy.specs!.rows.flatMap((row) =>
+      (row.chips ?? []).filter((chip) => chip.inProgress),
+    );
+    expect(inProgress.length).toBeGreaterThanOrEqual(2);
+    const all = strings(copy).join(' ');
+    expect(all).not.toMatch(/\bemail\b|e-mail|seamless/i);
+    expect(all).not.toMatch(/compressed with our proprietary/i);
+    expect(
+      copy.faq.some(
+        (f) =>
+          /yesterday/i.test(f.question) &&
+          /Not in the current release/.test(f.answer),
+      ),
+    ).toBe(true);
   });
 });
 
