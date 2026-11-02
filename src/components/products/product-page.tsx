@@ -109,7 +109,9 @@ export function ProductPage({
         <ExtraSections sections={copy.extras} />
       )}
       {children}
-      <SpecList specs={copy.specs} inProgressLabel={common.inProgress} />
+      {copy.specs && (
+        <SpecList specs={copy.specs} inProgressLabel={common.inProgress} />
+      )}
       {copy.platforms && (
         <PlatformTiers
           platforms={copy.platforms}
