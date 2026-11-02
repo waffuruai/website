@@ -49,8 +49,8 @@ const butterZh: (typeof butter)['en'] = {
         body: '直接从 Hugging Face 拉取 safetensors、MLX、JANG 或 GGUF。没有转换步骤。',
       },
       {
-        title: '量化、混合与 MoE',
-        body: '运行 2 至 8 位量化检查点、MXFP4 和 NVFP4 块缩放检查点、混合模型和混合专家（MoE）模型。',
+        title: '稠密、混合与 MoE',
+        body: '运行稠密、混合和混合专家（MoE）模型，涵盖 2 至 8 位量化检查点，以及 MXFP4 和 NVFP4 块缩放检查点。',
       },
       {
         title: '装得下的 KV 缓存',

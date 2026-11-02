@@ -57,8 +57,8 @@ const butterFr: (typeof butter)['en'] = {
         body: 'Récupérez safetensors, MLX, JANG ou GGUF directement depuis Hugging Face. Aucune étape de conversion.',
       },
       {
-        title: 'Quantifié, hybride et MoE',
-        body: 'Fait tourner des checkpoints quantifiés de 2 à 8 bits, des checkpoints MXFP4 et NVFP4 à échelles par bloc, des modèles hybrides et des modèles MoE (mixture of experts).',
+        title: 'Dense, hybride et MoE',
+        body: 'Fait tourner des modèles denses, hybrides et MoE (mixture of experts), des checkpoints quantifiés de 2 à 8 bits aux checkpoints MXFP4 et NVFP4 à échelles par bloc.',
       },
       {
         title: 'Un cache KV qui tient',

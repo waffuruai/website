@@ -50,8 +50,8 @@ const butterKo: (typeof butter)['en'] = {
         body: 'safetensors, MLX, JANG, GGUF를 Hugging Face에서 곧바로 가져옵니다. 변환 단계는 없습니다.',
       },
       {
-        title: '양자화, 하이브리드, MoE',
-        body: '2~8비트 양자화 체크포인트, MXFP4와 NVFP4 블록 스케일 체크포인트, 하이브리드 모델, 전문가 혼합(MoE) 모델을 실행합니다.',
+        title: 'Dense, 하이브리드, MoE',
+        body: 'Dense, 하이브리드, 전문가 혼합(MoE) 모델을 실행합니다. 2~8비트 양자화 체크포인트부터 MXFP4와 NVFP4 블록 스케일 체크포인트까지 지원합니다.',
       },
       {
         title: '들어맞는 KV 캐시',
