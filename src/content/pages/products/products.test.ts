@@ -13,7 +13,6 @@ import {
   productsTopDown,
   type ProductSlug,
 } from '@/content/pages/products';
-import { speculativeEvidence } from '@/content/pages/speculative-research';
 
 /** Every string in a content tree, so copy rules apply to all of it. */
 function strings(value: unknown): string[] {
@@ -203,16 +202,10 @@ describe('product specifics from the brief', () => {
     expect(text).toContain('4,164');
   });
 
-  it('Butter lists every model family and marks DeepSeek V4 in progress', () => {
-    const families = productCopy.butter.en.specs.rows.find(
-      (row) => row.term === 'Model families',
-    )?.groups;
-    expect(families).toHaveLength(16);
-    expect(families?.find((group) => group.label === 'DeepSeek')?.text).toBe(
-      'V4',
-    );
-    // No status badges on the Butter page: every family is listed plainly.
-    expect(families?.filter((group) => group.inProgress)).toHaveLength(0);
+  it('Butter shows its models once, in the menu, not in the specs table', () => {
+    const terms = productCopy.butter.en.specs.rows.map((row) => row.term);
+    expect(terms).not.toContain('Model families');
+    expect(terms).toContain('Modalities');
   });
 
   it('Butter names both APIs and states the quantized KV cache plainly', () => {
@@ -232,7 +225,15 @@ describe('product specifics from the brief', () => {
 
   it('Butter’s harness and quirks sections are compact and name no PRs', () => {
     const extras = productCopy.butter.en.extras ?? [];
-    expect(extras.map((section) => section.id)).toEqual(['agents', 'quirks']);
+    expect(extras.map((section) => section.id)).toEqual([
+      'modalities',
+      'swap',
+      'tools',
+      'validation',
+      'memory',
+      'agents',
+      'quirks',
+    ]);
     for (const section of extras) {
       expect(section.items.length).toBeGreaterThanOrEqual(3);
       expect(section.items.length).toBeLessThanOrEqual(6);
@@ -251,7 +252,15 @@ describe('product specifics from the brief', () => {
     for (const locale of ['es', 'fr', 'zh', 'ja', 'ko'] as const) {
       expect(
         productCopy.butter[locale]?.extras?.map((section) => section.id),
-      ).toEqual(['agents', 'quirks']);
+      ).toEqual([
+        'modalities',
+        'swap',
+        'tools',
+        'validation',
+        'memory',
+        'agents',
+        'quirks',
+      ]);
     }
   });
 
@@ -263,18 +272,15 @@ describe('product specifics from the brief', () => {
     }
   });
 
-  it('Butter’s speed answer repeats the numbers from the section on its page', () => {
-    const answer = productCopy.butter.en.faq.find((item) =>
-      /how fast/i.test(item.question),
-    )?.answer;
-    const levels = speculativeEvidence.greedy.levels;
-    const single = levels[0];
-    const busiest = levels.at(-1)!;
-    expect(single.requests).toBe(1);
-    expect(answer).toContain(`${Math.round(single.burst)} tokens per second`);
-    expect(answer).toContain(`${Math.round(busiest.burst)} tokens per second`);
-    expect(answer).toContain(`${busiest.requests} concurrent requests`);
-    expect(answer).toContain(`about ${Math.round(busiest.lane)} per request`);
+  it('Butter’s copy carries no speed figures and promises no swap timing', () => {
+    const text = strings(productCopy.butter.en).join(' ');
+    expect(text).not.toMatch(/tokens per second|tok\/s|\bx faster\b|how fast/i);
+    expect(text).not.toMatch(/maximal performance|melt away/i);
+    const swap = productCopy.butter.en.extras?.find((s) => s.id === 'swap');
+    expect(strings(swap).join(' ')).not.toMatch(/\b(instant|fast|seconds?)\b/i);
+    expect(
+      productCopy.butter.en.faq.some((f) => /switch models/i.test(f.question)),
+    ).toBe(true);
   });
 
   it('Butter’s snippet is illustrative and keeps placeholders', () => {

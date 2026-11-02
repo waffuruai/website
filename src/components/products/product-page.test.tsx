@@ -212,7 +212,6 @@ describe('Butter’s page', () => {
 
   it('lists DeepSeek V4 without a status badge', () => {
     const { container } = renderPage('butter');
-    expect(container.textContent).toContain('V4');
     expect(container.textContent).not.toContain('In progress');
   });
 

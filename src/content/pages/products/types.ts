@@ -59,6 +59,12 @@ export type Capability = { title: string; body: string };
  */
 export type ExtraSection = {
   id: string;
+  /**
+   * Names in the copy that link out. Each `label` is a term that appears
+   * verbatim (never translated) in the intro, an item body or the note; its
+   * first occurrence becomes a new-tab link to `href`.
+   */
+  links?: { label: string; href: string }[];
   heading: string;
   intro?: string;
   items: Capability[];

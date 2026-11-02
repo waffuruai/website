@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterJa: (typeof butter)['en'] = {
   layer: 'サービング',
-  tagline: '妥協のないマルチモーダル推論。',
+  tagline: 'あなたのモデルを、あなたのハードウェアで。',
   summary:
     'Apple シリコンでは Metal 上の Swift、CUDA などでは Rust。2〜8 ビットの量子化チェックポイント、ハイブリッドモデルや MoE モデルを読み込み、OpenAI 互換と Anthropic Messages の API で提供します。',
   seo: {
-    title: 'Butter：依存関係を最小限にしたマルチモーダル推論',
+    title: 'Butter：自分のモデルを自分のハードウェアで動かし、切り替える',
     description:
-      'Hugging Face のモデルを OpenAI 互換と Anthropic Messages の API で提供する LLM 推論エンジン。macOS と iOS では Swift、それ以外では Rust で書かれ、依存関係は最小限。エージェントハーネス向けに作られています。',
+      'すでにお持ちのハードウェアで動くプライベートな LLM サーバー。オープンなモデルを Hugging Face から直接読み込み、リクエストに応じて提供モデルを切り替え、OpenAI 互換と Anthropic Messages の API で提供します。macOS と iOS では Swift、それ以外では Rust。',
     keywords: [
       'LLM 推論エンジン',
       'ローカル LLM サービング',
@@ -20,18 +20,15 @@ const butterJa: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: 'モデルサービングを、*妥協*なしで。',
-    lede: 'Butter は最小限の依存関係でモデルを提供します。macOS と iOS では Swift、それ以外ではすべて Rust を使い、バックエンドごとにチューニングしたカーネルの上で動きます。安全性と最大限の性能を、妥協なく両立します。Metal カーネルは事前コンパイル済みで出荷され、モデルは Hugging Face から直接読み込みます。',
+    title: '選んだモデルを、*そのまま*動かす。',
+    lede: 'Butter は、すでにお持ちの Mac や GPU ワークステーションをプライベートな AI サーバーに変えます。自分のモデルを持ち込み、プロンプトはすべて社内に留め、トークン課金もありません。仕事が変わったらモデルを切り替えられます。モデルは Hugging Face から直接読み込み、ツールは普段使っている OpenAI と Anthropic の API でつながります。',
     highlights: [
+      { value: '4', label: '変換なしで読み込めるチェックポイント形式' },
       {
-        value: '4',
-        label: '変換なしで読み込めるチェックポイント形式',
+        value: 'オープンモデル',
+        label: 'テキスト、ビジョン、音声、オムニ',
       },
-      {
-        value: '2–8 bit',
-        label: '量子化チェックポイント。KV キャッシュも量子化',
-      },
-      { value: '2 つの API', label: 'OpenAI 互換と Anthropic Messages' },
+      { value: 'モデル切替', label: 'リクエストに応じて。会話は続きから' },
     ],
   },
   story: {
@@ -85,6 +82,130 @@ const butterJa: (typeof butter)['en'] = {
       'あくまで例です。プレースホルダーは、お使いのモデルとポートに置き換えてください。ベンチマークではありません。',
   },
   extras: [
+    {
+      id: 'modalities',
+      heading: 'テキスト、ビジョン、*音声*。',
+      items: [
+        {
+          title: 'テキスト',
+          body: '密モデル、ハイブリッドモデル、混合エキスパートモデル。Llama、Gemma、Qwen、GPT-OSS など。',
+        },
+        {
+          title: 'マルチモーダル',
+          body: 'ビジョン言語モデルとオムニモデル。Gemma 4、Qwen3.8 VL、Mistral 3 VL など。',
+        },
+        {
+          title: '音声',
+          body: '音声認識は Whisper、Voxtral、Qwen3-ASR。音声合成は Kokoro、FishSpeech、Marvis。',
+        },
+      ],
+    },
+    {
+      id: 'swap',
+      heading: '場所を失わずに、モデルを*切り替える*。',
+      intro:
+        '1 つの butter serve プロセスが、リクエストごとに提供するモデルを切り替えられます。仕事ごとに合ったモデルが応答します。',
+      items: [
+        {
+          title: 'リクエストに応じて切り替え',
+          body: 'butter serve を --model-swap 付きで起動すると、リクエストで別のモデルを指定できます。--model-swap-allow で許可するモデルを指定します。既定では起動時のモデルだけが許可されるので、指定しない限り切り替わりません。',
+        },
+        {
+          title: '会話はそのまま続く',
+          body: '会話は切り替えをまたいで持ち越せ、履歴を読み直さずに再開できます。受け入れテストでは、プレフィルの繰り返しはゼロで、続きの出力は中断のない会話と同一でした。',
+        },
+        {
+          title: '不正な切り替え先は拒否またはロールバック',
+          body: '形式が不正な切り替え先は、元のモデルにロールバックされます。壊れたアーカイブはそのまま保存され、クォータを超える切り替えは拒否されます。',
+        },
+        {
+          title: '最近のモデルはウォームのまま',
+          body: '最近使ったモデルのうち限られた数は、メモリ上でウォームのまま保たれるので、そのモデルに戻るのは手早く済みます。ウォームでないモデルはディスクから読み込まれ、相応の時間がかかります。時間の数値は示しません。',
+        },
+      ],
+    },
+    {
+      id: 'tools',
+      heading: '返ってくるときには*有効*なツール呼び出し。',
+      intro:
+        'エージェントを作る方へ。ツール呼び出しの結果は、そのままループで実行できる形で返ります。',
+      items: [
+        {
+          title: '型はスキーマに従う',
+          body: '引数の型はスキーマに従うので、整数は整数のままです。',
+        },
+        {
+          title: '不完全な呼び出しは拒否',
+          body: '不完全な呼び出しや、宣言していないツールへの呼び出しは、出力されずに拒否されます。',
+        },
+        {
+          title: '受け付ける前に検証',
+          body: 'リクエストを受け付ける前にツールのスキーマを検証し、未対応の tool_choice は最初の段階で拒否します。',
+        },
+        {
+          title: 'ストリーミングで、ID は安定',
+          body: '呼び出しは差分としてストリーミングされ、ID はターンをまたいでも一意のままです。',
+        },
+      ],
+    },
+    {
+      id: 'validation',
+      heading: '*InferenceX* ハーネスで検証済み。',
+      intro:
+        'InferenceX は SemiAnalysis が公開しているオープンなベンチマークハーネスです。そのチェックを自社のハードウェアで Butter に対して実行しているので、試す前に何が通るかを確認できます。',
+      links: [
+        {
+          label: 'InferenceX',
+          href: 'https://github.com/SemiAnalysisAI/InferenceX',
+        },
+        {
+          label: 'AgentX',
+          href: 'https://inferencex.semianalysis.com/agentx/quickstart/',
+        },
+      ],
+      items: [
+        {
+          title: 'API チェックはすべて合格',
+          body: 'ハーネスに対して実行している API とストリーミングのチェックは、2 つの Butter ビルドのどちらでもすべて合格しています。Apple シリコン向けの Swift と、NVIDIA、AMD などに向けた Rust です。',
+        },
+        {
+          title: 'GSM8K で約 97%',
+          body: 'GSM8K の全問題で、DGX Spark 上の Qwen3.8-27B と Strix Halo 上の Qwen3.8-Flash-Next はそれぞれ約 97% を記録し、下限の 90% を上回りました。すべての回答は独立に採点し直しています。',
+        },
+        {
+          title: 'AgentX の実行が問題なく完了',
+          body: '短い AgentX の実行は、失敗したリクエストなしで終わり、公式バリデーターに合格しました。小規模な試行であり、完全なリプレイではありません。実行の過程で実際のバグも見つかり、修正しました。',
+        },
+      ],
+      note: 'これらは自社のハードウェアでの内部実行で、DGX Spark も Strix Halo も InferenceX の公式ターゲットではありません。InferenceX の公式結果ではなく、SemiAnalysis による承認も受けていません。エンタープライズ向けハードウェアでの性能は、まだ検証していません。',
+    },
+    {
+      id: 'memory',
+      heading: '*TurboQuant+* をネイティブで、作者自身の手で。',
+      intro:
+        'TurboQuant+ は、AI のメモリキャッシュを小さくするための、私たちのオープンソースの取り組みです。Butter はこれをネイティブに実行します。同じ人物が書き、投機的デコーディング、セッションの再利用、ツールループも扱うサーバー向けに作り替えました。エンジン側のバージョンを AURA と呼んでいます。',
+      links: [
+        {
+          label: 'TurboQuant+',
+          href: 'https://github.com/TheTom/turboquant_plus',
+        },
+      ],
+      items: [
+        {
+          title: '新しい行は正確なまま',
+          body: '圧縮されるのは古い履歴だけです。巻き戻し、停止位置での切り詰め、投機的検証が、非可逆なデータに触れることはありません。',
+        },
+        {
+          title: '後付けではなく、キャッシュの一部',
+          body: '圧縮は Butter 自身の KV キャッシュのモードなので、セッションの再利用、スナップショット、長いマルチターンの会話も引き続き動作します。',
+        },
+        {
+          title: 'ビット幅を選べる',
+          body: '品質のため既定は 8 ビットで、4 ビットや、キーと値で別々のビット幅も使えます。',
+        },
+      ],
+      note: '現時点ではオプトインです。圧縮は少しの品質とメモリを引き換えにするもので、そのトレードオフを私たちは計測しています。',
+    },
     {
       id: 'agents',
       heading: 'あなたの*エージェント*ハーネスと組み合わせて使う。',
@@ -210,27 +331,6 @@ const butterJa: (typeof butter)['en'] = {
         ],
       },
       {
-        term: 'モデルファミリー',
-        groups: [
-          { label: 'Meta', text: 'Llama 3, 3.1, 3.2, 3.3' },
-          { label: 'Google', text: 'Gemma 2, 3, 4; PaliGemma' },
-          { label: 'Qwen', text: '2, 3, 3.5, 3.6, 3.8; VL; Omni' },
-          { label: 'OpenAI', text: 'GPT-OSS 20B, 120B; Whisper' },
-          { label: 'Mistral', text: 'Mistral; Mistral 3 VL; Voxtral' },
-          { label: 'NVIDIA', text: 'Nemotron H; Nemotron VLM' },
-          { label: 'DeepSeek', text: 'V4' },
-          { label: 'IBM', text: 'Granite 3, 4' },
-          { label: 'Microsoft', text: 'Phi 3' },
-          { label: 'Liquid AI', text: 'LFM2, LFM2.5' },
-          { label: 'Ai2', text: 'OLMo 1, 2' },
-          { label: 'Hugging Face', text: 'SmolLM; SmolVLM' },
-          { label: 'TII', text: 'Falcon H1' },
-          { label: 'AI21', text: 'Jamba' },
-          { label: 'Apple', text: 'FastVLM' },
-          { label: 'Shanghai AI Lab', text: 'InternLM 2' },
-        ],
-      },
-      {
         term: '提供状況',
         detail: '早期アクセス期間中は非公開で、クローズドソース。',
       },
@@ -277,12 +377,12 @@ const butterJa: (typeof butter)['en'] = {
     {
       question: 'どのモデルが動きますか？',
       answer:
-        '現時点では、Llama、Gemma、Qwen、GPT-OSS、Mistral、Nemotron、Granite、Phi のほか、上に挙げたモデルに対応しています。テキスト、ビジョン、音声、オムニの各バリエーションがあります。',
+        '多くのオープンなモデルファミリーに、テキスト、ビジョン、音声、オムニの各種で対応しています。現在対応しているものと近日対応予定のものは、このページ上部のモデル一覧で確認できます。',
     },
     {
       question: 'Butter は何で書かれていますか？',
       answer:
-        'macOS と iOS では Swift、それ以外ではすべて Rust で、速さとメモリ安全性を備えています。Butter は依存関係を最小限に抑えているので、サプライチェーン攻撃の入り込む余地が少なく、バックエンドごとにチューニングしたカーネルの上で動きます。',
+        'macOS と iOS では Swift、それ以外ではすべて Rust で、メモリ安全性を確保しています。Butter は依存関係を最小限に抑えているので、サプライチェーン攻撃の入り込む余地が少なく、バックエンドごとにチューニングしたカーネルの上で動きます。',
     },
     {
       question: 'いま使っているツールやエージェントハーネスは使えますか？',
@@ -290,13 +390,13 @@ const butterJa: (typeof butter)['en'] = {
         'Butter は 1 つの butter serve プロセスで OpenAI の Chat Completions API と Anthropic の Messages API を提供し、ストリーミング、構造化されたツール呼び出し、推論フィールド、再利用されるプロンプト接頭辞に対応します。どちらかの API を話すクライアントなら向けられます。',
     },
     {
-      question: 'どのくらい速いですか？',
+      question: 'モデルを切り替えられますか？',
       answer:
-        '128 GB の M5 Max で、Butter は 4-bit の Qwen3.8-27B を単一リクエストで毎秒 103 トークン（約 937 トークンのプロンプト、グリーディ）、同時 8 リクエストの合計で毎秒 146 トークン（1 リクエストあたり約 26）で提供しました。結果はモデル、プロンプトの長さ、ハードウェアによって変わります。試験条件は、このページの測定結果と一緒に記載しています。',
+        'はい。butter serve を --model-swap 付きで起動すると、リクエストで提供モデルを変えられます。--model-swap-allow で許可するモデルを指定し、既定では起動時のモデルだけが許可されます。会話は切り替えをまたいで持ち越せ、履歴を読み直さずに再開できます。不正な切り替え先は、安全に拒否またはロールバックされます。最近使ったモデルのうち限られた数は、メモリ上でウォームのまま保たれるので、そのモデルに戻るのは手早く済みます。ウォームでないモデルはディスクから読み込まれ、相応の時間がかかります。時間の数値は示しません。',
     },
   ],
   cta: {
-    title: '*レイテンシ*を、溶かして消す。',
+    title: 'あなたの*モデル*を持ち込もう。',
     body: 'Butter は現時点で早期アクセスで、クローズドソースです。アクセスをお申し込みください。',
     docsLabel: 'ドキュメントを読む',
   },
