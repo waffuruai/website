@@ -29,20 +29,13 @@ export function generateStaticParams() {
 
 /**
  * The research sections a product page carries, each reading its own content
- * file. Iron: the kernel, its backends and how far each is tuned; it leads
- * with the labs whose models it runs. Syrup and Whisk have none yet.
+ * file. Iron: the kernel, its backends and how far each is tuned; Syrup and Whisk have none yet.
  */
 const research: Partial<
   Record<ProductSlug, (locale: Locale) => React.ReactNode>
 > = {
   iron: (locale) => <KernelCode content={localize(kernelCode, locale)} />,
 };
-
-/** Sections that lead, right after the hero: Iron opens on the models it runs. */
-const lead: Partial<Record<ProductSlug, (locale: Locale) => React.ReactNode>> =
-  {
-    iron: (locale) => <Models content={localize(models, locale)} />,
-  };
 
 /** Sections right after the story: Butter shows the models it runs. */
 const afterStory: Partial<
@@ -84,7 +77,6 @@ export default async function ProductRoute({
       slug={slug}
       locale={locale}
       dictionary={dictionary}
-      lead={lead[slug]?.(locale)}
       afterStory={afterStory[slug]?.(locale)}
     >
       {research[slug]?.(locale)}

@@ -117,10 +117,10 @@ describe('/products/[slug] route', () => {
       ),
     ).toContain('You write this.Iron writes the rest.');
     expect(container.querySelector('#platforms')).toBeNull();
-    // It opens on the labs whose models run on it, before the story.
+    // The model menu is Butter's; Iron shows its ABI note after the capabilities.
     const ids = sectionIds(container);
-    expect(ids.indexOf('models')).toBeGreaterThan(-1);
-    expect(ids.indexOf('models')).toBeLessThan(ids.indexOf('story'));
+    expect(ids).not.toContain('models');
+    expect(ids.indexOf('abi')).toBeGreaterThan(ids.indexOf('capabilities'));
     const tiers = [...container.querySelectorAll('h4')].map(
       (heading) => heading.textContent,
     );
