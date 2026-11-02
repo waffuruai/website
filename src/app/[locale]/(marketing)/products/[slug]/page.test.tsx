@@ -37,7 +37,10 @@ describe('/products/[slug] route', () => {
     expect(container.querySelectorAll('h1')).toHaveLength(1);
     expect(container.querySelector('h1')?.textContent).toBeTruthy();
     expect(container.textContent).toContain(name);
-    expect(container.querySelectorAll('dl dt').length).toBeGreaterThan(4);
+    // Butter has no technical specifics section; the others keep theirs.
+    if (slug !== 'butter')
+      expect(container.querySelectorAll('dl dt').length).toBeGreaterThan(4);
+    else expect(container.querySelector('#specs')).toBeNull();
     expect(
       container.querySelector('a[href^="https://forms.gle/"]'),
     ).not.toBeNull();

@@ -76,7 +76,7 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
       copy.hero.title,
       copy.story.heading,
       copy.capabilities.heading,
-      copy.specs.heading,
+      ...(copy.specs ? [copy.specs.heading] : []),
       copy.stack.heading,
       copy.cta.title,
       ...(copy.code ? [copy.code.heading] : []),
@@ -92,7 +92,8 @@ describe.each(productSlugs)('%s content', (slug: ProductSlug) => {
     expect(copy.story.outcomes.length).toBeGreaterThanOrEqual(3);
     expect(copy.capabilities.items.length).toBeGreaterThanOrEqual(4);
     expect(copy.capabilities.items.length).toBeLessThanOrEqual(6);
-    expect(copy.specs.rows.length).toBeGreaterThanOrEqual(5);
+    if (copy.specs) expect(copy.specs.rows.length).toBeGreaterThanOrEqual(5);
+    else expect(slug).toBe('butter');
     expect(copy.faq.length).toBeGreaterThanOrEqual(4);
     expect(copy.faq.length).toBeLessThanOrEqual(6);
   });
@@ -202,25 +203,22 @@ describe('product specifics from the brief', () => {
     expect(text).toContain('4,164');
   });
 
-  it('Butter shows its models once, in the menu, not in the specs table', () => {
-    const terms = productCopy.butter.en.specs.rows.map((row) => row.term);
-    expect(terms).not.toContain('Model families');
-    expect(terms).toContain('Modalities');
-  });
-
-  it('Butter names both APIs and states the quantized KV cache plainly', () => {
+  it('Butter has no technical specifics section; its facts live in its other copy', () => {
     const copy = productCopy.butter.en;
-    const api = copy.specs.rows.find((row) => row.term === 'Serving API');
-    expect(api?.detail).toMatch(/Chat Completions/);
-    expect(api?.detail).toMatch(/Anthropic Messages/);
-    const chips = api?.chips?.map((chip) => chip.label);
-    expect(chips).toContain('Speculative decoding');
-    expect(chips).toContain('LoRA');
-    const kv = copy.specs.rows.find((row) => row.term === 'KV cache');
-    expect(kv?.detail).toMatch(/Quantized/);
-    expect(kv?.detail).not.toMatch(/Apple silicon|on CUDA/);
+    expect(copy.specs).toBeUndefined();
+    const all = strings(copy).join(' ');
+    expect(all).toMatch(/Chat Completions/);
+    expect(all).toMatch(/Anthropic Messages/);
+    expect(all).toMatch(/Speculative decoding/);
+    expect(all).toMatch(/LoRA/);
+    expect(all).toMatch(/KV cache can be stored 4- or 8-bit/);
+    expect(all).toMatch(/safetensors, MLX, JANG or GGUF/);
+    expect(all).toMatch(/hybrid and mixture-of-experts models/);
+    expect(all).toMatch(/closed source during early access/);
+    for (const locale of ['es', 'fr', 'zh', 'ja', 'ko'] as const)
+      expect(productCopy.butter[locale]?.specs).toBeUndefined();
     // The CUDA host compiles kernels at runtime, so "no JIT" stays off the page.
-    for (const text of strings(copy)) expect(text).not.toMatch(/\bJIT\b/);
+    expect(all).not.toMatch(/\bJIT\b/);
   });
 
   it('Butter’s harness and quirks sections are compact and name no PRs', () => {
@@ -265,8 +263,6 @@ describe('product specifics from the brief', () => {
   });
 
   it('Butter lists no gaps', () => {
-    const terms = productCopy.butter.en.specs.rows.map((row) => row.term);
-    expect(terms).not.toContain('Not yet');
     for (const text of strings(productCopy.butter.en)) {
       expect(text).not.toMatch(/not there yet|not yet\b/i);
     }
@@ -291,8 +287,8 @@ describe('product specifics from the brief', () => {
   });
 
   it('Syrup names the engines it works with', () => {
-    const engines = productCopy.syrup.en.specs.rows
-      .find((row) => row.term === 'Engines')
+    const engines = productCopy.syrup.en
+      .specs!.rows.find((row) => row.term === 'Engines')
       ?.chips?.map((chip) => chip.label);
     expect(engines).toEqual([
       'Butter',
@@ -304,8 +300,8 @@ describe('product specifics from the brief', () => {
   });
 
   it('Whisk’s specifics cover retrieval, AURA, search, citations and MCP', () => {
-    const text = productCopy.whisk.en.specs.rows
-      .map((row) => `${row.term} ${row.detail ?? ''}`)
+    const text = productCopy.whisk.en
+      .specs!.rows.map((row) => `${row.term} ${row.detail ?? ''}`)
       .join(' ');
     expect(text).toMatch(/locally/i);
     expect(text).toContain('AURA');
