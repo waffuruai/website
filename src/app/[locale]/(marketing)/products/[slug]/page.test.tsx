@@ -86,22 +86,18 @@ describe('/products/[slug] route', () => {
       (section) => section.id || section.getAttribute('aria-labelledby'),
     );
 
-  it('gives Butter its research after its own sections and before the specifics', async () => {
+  it('gives Butter its model menu right after the story and no figures sections', async () => {
     const { container } = await renderRoute('butter');
     const ids = sectionIds(container);
-    const research = [
+    expect(ids.indexOf('models')).toBe(ids.indexOf('story') + 1);
+    for (const gone of [
       'native-inference',
       'aura',
       'quantized-models',
       'tool-reliability',
-      'models',
-    ];
-    const at = research.map((id) => ids.indexOf(id));
-    expect(at).toEqual([...at].sort((a, b) => a - b));
-    expect(at[0]).toBe(ids.indexOf('quirks') + 1);
-    expect(ids.indexOf('specs')).toBe(at.at(-1)! + 1);
-    // The numbers and their test conditions are on the same page.
-    expect(container.textContent).toContain(
+    ])
+      expect(ids).not.toContain(gone);
+    expect(container.textContent).not.toContain(
       'See test conditions and limitations',
     );
   });
@@ -159,7 +155,7 @@ describe('/products/[slug] route', () => {
 
   it('localizes the research with the page', async () => {
     const { container } = await renderRoute('butter', 'ja');
-    expect(container.textContent).toContain('試験条件と制限を見る');
+    expect(container.textContent).toContain('メニューに並ぶモデル');
   });
 
   it('answers an unknown slug with a 404', async () => {
