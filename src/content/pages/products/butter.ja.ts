@@ -53,8 +53,8 @@ const butterJa: (typeof butter)['en'] = {
         body: 'safetensors、MLX、JANG、GGUF を Hugging Face から直接取得できます。変換の手順はありません。',
       },
       {
-        title: '量子化、ハイブリッド、MoE',
-        body: '2〜8 ビットの量子化チェックポイント、MXFP4 と NVFP4 のブロックスケール付きチェックポイント、ハイブリッドモデル、Mixture of Experts モデルを動かせます。',
+        title: 'Dense、ハイブリッド、MoE',
+        body: 'Dense、ハイブリッド、Mixture of Experts の各モデルを動かせます。2〜8 ビットの量子化チェックポイントから、MXFP4 と NVFP4 のブロックスケール付きチェックポイントまで対応します。',
       },
       {
         title: '収まる KV キャッシュ',

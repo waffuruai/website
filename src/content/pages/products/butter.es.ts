@@ -56,8 +56,8 @@ const butterEs: (typeof butter)['en'] = {
         body: 'Descarga safetensors, MLX, JANG o GGUF directo desde Hugging Face. No hay paso de conversión.',
       },
       {
-        title: 'Cuantizados, híbridos y MoE',
-        body: 'Ejecuta checkpoints cuantizados de 2 a 8 bits, checkpoints MXFP4 y NVFP4 con escalas por bloque, modelos híbridos y modelos de mezcla de expertos.',
+        title: 'Densos, híbridos y MoE',
+        body: 'Ejecuta modelos densos, híbridos y de mezcla de expertos, desde checkpoints cuantizados de 2 a 8 bits hasta checkpoints MXFP4 y NVFP4 con escalas por bloque.',
       },
       {
         title: 'Una caché KV que cabe',

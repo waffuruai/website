@@ -76,8 +76,8 @@ export const butter: Localized<ProductCopy> = {
           body: 'Pull safetensors, MLX, JANG or GGUF straight from Hugging Face. There is no conversion step.',
         },
         {
-          title: 'Quantized, hybrid and MoE',
-          body: 'Runs 2- to 8-bit quantized checkpoints, MXFP4 and NVFP4 block-scaled checkpoints, hybrid models and mixture-of-experts models.',
+          title: 'Dense, hybrid and MoE',
+          body: 'Runs dense, hybrid and mixture-of-experts models, from 2- to 8-bit quantized checkpoints to MXFP4 and NVFP4 block-scaled ones.',
         },
         {
           title: 'A KV cache that fits',
