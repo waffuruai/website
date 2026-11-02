@@ -76,6 +76,33 @@ const ironFr: (typeof iron)['en'] = {
       },
     ],
   },
+  extras: [
+    {
+      id: 'abi',
+      heading: 'Une *ABI* versionnée à laquelle votre hôte peut se fier.',
+      intro:
+        'Appelez des kernels Iron choisis depuis le moteur que vous avez déjà, via une petite ABI C que les appelants Rust peuvent aussi utiliser. Le contrat actuel est l’ABI 0.5.',
+      items: [
+        {
+          title: 'Vous gardez votre moteur',
+          body: 'Votre hôte garde ses appareils, ses files, ses tampons et sa synchronisation. Iron compile les pipelines, choisit la route, vérifie le descripteur et encode la commande.',
+        },
+        {
+          title: 'Additive par règle',
+          body: 'Les versions mineures ne font qu’ajouter. Les symboles, les dispositions et les valeurs numériques existants ne changent jamais, et un changement incompatible incrémente la version majeure.',
+        },
+        {
+          title: 'Les anciens clients continuent de fonctionner',
+          body: 'Pour chaque version mineure, nous conservons le client compilé de la version précédente et l’exécutons avec la nouvelle bibliothèque : un hôte construit sur une ABI antérieure est donc testé, pas supposé.',
+        },
+        {
+          title: 'Metal, CUDA et HIP',
+          body: 'Un seul modèle d’intégration sur le silicium Apple, NVIDIA et AMD.',
+        },
+      ],
+      note: 'L’ABI est antérieure à la 1.0, et Iron est en accès anticipé.',
+    },
+  ],
   specs: {
     heading: 'Les *détails* techniques.',
     rows: [
