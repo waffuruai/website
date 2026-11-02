@@ -20,7 +20,7 @@ const butterJa: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: '選んだモデルを、*そのまま*動かす。',
+    title: 'あなたが*選んだ*モデルを動かす。',
     lede: 'Butter は、すでにお持ちの Mac や GPU ワークステーションをプライベートな AI サーバーに変えます。自分のモデルを持ち込み、プロンプトはすべて社内に留め、トークン課金もありません。仕事が変わったらモデルを切り替えられます。モデルは Hugging Face から直接読み込み、ツールは普段使っている OpenAI と Anthropic の API でつながります。',
     highlights: [
       { value: '4', label: '変換なしで読み込めるチェックポイント形式' },
@@ -53,8 +53,8 @@ const butterJa: (typeof butter)['en'] = {
         body: 'safetensors、MLX、JANG、GGUF を Hugging Face から直接取得できます。変換の手順はありません。',
       },
       {
-        title: 'Dense、ハイブリッド、MoE',
-        body: 'Dense、ハイブリッド、Mixture of Experts の各モデルを動かせます。2〜8 ビットの量子化チェックポイントから、MXFP4 と NVFP4 のブロックスケール付きチェックポイントまで対応します。',
+        title: '密モデル、ハイブリッド、MoE',
+        body: '密モデル、ハイブリッドモデル、Mixture of Experts（MoE）モデルを動かせます。2〜8 ビットの量子化チェックポイントから、MXFP4 と NVFP4 のブロックスケール付きチェックポイントまで対応します。',
       },
       {
         title: '収まる KV キャッシュ',
@@ -88,7 +88,7 @@ const butterJa: (typeof butter)['en'] = {
       items: [
         {
           title: 'テキスト',
-          body: '密モデル、ハイブリッドモデル、混合エキスパートモデル。Llama、Gemma、Qwen、GPT-OSS など。',
+          body: '密モデル、ハイブリッドモデル、Mixture of Experts（MoE）モデル。Llama、Gemma、Qwen、GPT-OSS など。',
         },
         {
           title: 'マルチモーダル',
@@ -102,7 +102,7 @@ const butterJa: (typeof butter)['en'] = {
     },
     {
       id: 'swap',
-      heading: '場所を失わずに、モデルを*切り替える*。',
+      heading: '会話の続きを失わずに、モデルを*切り替える*。',
       intro:
         '1 つの butter serve プロセスが、リクエストごとに提供するモデルを切り替えられます。仕事ごとに合ったモデルが応答します。',
       items: [
@@ -112,7 +112,7 @@ const butterJa: (typeof butter)['en'] = {
         },
         {
           title: '会話はそのまま続く',
-          body: '会話は切り替えをまたいで持ち越せ、履歴を読み直さずに再開できます。受け入れテストでは、プレフィルの繰り返しはゼロで、続きの出力は中断のない会話と同一でした。',
+          body: '会話は切り替えをまたいで持ち越せ、履歴を読み直さずに再開できます。受け入れテストでは、プレフィルの繰り返しはゼロで、続きの出力は中断のない会話と一致しました。',
         },
         {
           title: '不正な切り替え先は拒否またはロールバック',
@@ -177,7 +177,7 @@ const butterJa: (typeof butter)['en'] = {
           body: '短い AgentX の実行は、失敗したリクエストなしで終わり、公式バリデーターに合格しました。小規模な試行であり、完全なリプレイではありません。実行の過程で実際のバグも見つかり、修正しました。',
         },
       ],
-      note: 'これらは自社のハードウェアでの内部実行で、DGX Spark も Strix Halo も InferenceX の公式ターゲットではありません。InferenceX の公式結果ではなく、SemiAnalysis による承認も受けていません。エンタープライズ向けハードウェアでの性能は、まだ検証していません。',
+      note: 'これらは自社のハードウェアでの内部実行で、DGX Spark も Strix Halo も InferenceX の公式ターゲットではありません。InferenceX の公式結果ではなく、SemiAnalysis が推奨しているわけでもありません。エンタープライズ向けハードウェアでの性能は、まだ検証していません。',
     },
     {
       id: 'memory',

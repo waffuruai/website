@@ -117,8 +117,8 @@ const whiskEs: (typeof whisk)['en'] = {
           body: 'Recuerdo por día, semana o mes, agrupado por proyecto, con el punto donde terminó cada sesión. Los días naturales siguen tu zona horaria, incluidos los días largos y cortos del cambio de hora.',
         },
         {
-          title: 'Entre asistentes y equipos',
-          body: 'Importa transcripciones de Claude Code, Codex y Grok y conserva de qué equipo viene cada una. Una sesión copiada o bifurcada se enlaza con su origen y no se cuenta dos veces.',
+          title: 'Entre asistentes y ordenadores',
+          body: 'Importa transcripciones de Claude Code, Codex y Grok y conserva de qué ordenador viene cada una. Una sesión copiada o bifurcada se enlaza con su origen y no se cuenta dos veces.',
         },
         {
           title: 'Lo dicho frente a lo hecho',
@@ -137,7 +137,7 @@ const whiskEs: (typeof whisk)['en'] = {
           body: 'Borra una sesión y no se puede volver a importar. La purga elimina el contenido, sus resúmenes y sus copias de archivo.',
         },
       ],
-      note: 'Inicial. La captura en vivo es opcional por cliente, las importaciones son explícitas y el recuerdo cubre solo las sesiones capturadas; nunca pretende conocer todo tu día. Aún no está en ninguna versión.',
+      note: 'Fase temprana. La captura en vivo es opcional por cliente, las importaciones son explícitas y el recuerdo cubre solo las sesiones capturadas; nunca pretende conocer todo tu día. Aún no está en ninguna versión.',
     },
   ],
   specs: {
@@ -161,7 +161,7 @@ const whiskEs: (typeof whisk)['en'] = {
       {
         term: 'Dónde se ejecuta',
         detail:
-          'En local, en tu equipo. Python 3.11 o posterior. Embeddings nativos de EmbeddingGemma 2 a través de Butter en Apple silicon; un embebedor portátil de CPU en el resto.',
+          'En local, en tu equipo. Python 3.11 o posterior. Embeddings nativos de EmbeddingGemma 2 a través de Butter en Apple silicon; un modelo de embeddings portátil en CPU en el resto.',
       },
       {
         term: 'Búsqueda',
@@ -219,7 +219,7 @@ const whiskEs: (typeof whisk)['en'] = {
     {
       question: '¿Recordará lo que hizo mi asistente ayer?',
       answer:
-        'No en la versión actual. El recuerdo de sesiones entre días, asistentes y equipos está en desarrollo, con citas al registro exacto de la transcripción. Te escribiremos cuando salga.',
+        'No en la versión actual. El recuerdo de sesiones entre días, asistentes y ordenadores está en desarrollo, con citas al registro exacto de la transcripción. Te escribiremos cuando salga.',
     },
     {
       question: '¿Qué es AURA?',

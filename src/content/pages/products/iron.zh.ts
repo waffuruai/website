@@ -93,7 +93,7 @@ const ironZh: (typeof iron)['en'] = {
         },
         {
           title: 'Metal、CUDA 与 HIP',
-          body: '在 Apple 芯片、NVIDIA 和 AMD 上采用同一种集成模型。',
+          body: '在 Apple 芯片、NVIDIA 和 AMD 上采用同一套集成方式。',
         },
       ],
       note: 'ABI 尚未到 1.0，Iron 也处于抢先体验阶段。',

@@ -97,7 +97,7 @@ const ironJa: (typeof iron)['en'] = {
         },
         {
           title: 'Metal、CUDA、HIP',
-          body: 'Apple シリコン、NVIDIA、AMD にわたって、同じ統合モデルです。',
+          body: 'Apple シリコン、NVIDIA、AMD にわたって、統合の方法は一つです。',
         },
       ],
       note: 'ABI は 1.0 より前で、Iron は早期アクセス中です。',

@@ -115,7 +115,7 @@ const butterEs: (typeof butter)['en'] = {
         },
         {
           title: 'La conversación continúa',
-          body: 'Una conversación puede pasar por un cambio de modelo y retomarse sin volver a leer su historial. En nuestras pruebas de aceptación no se repitió ningún prefill y las continuaciones fueron idénticas a las de una conversación sin interrupciones.',
+          body: 'Una conversación puede pasar por un cambio de modelo y retomarse sin volver a leer su historial. En nuestras pruebas de aceptación no se repitió ningún prefill y las continuaciones coincidieron con las de una conversación sin interrupciones.',
         },
         {
           title: 'Los destinos defectuosos se rechazan o se revierten',
@@ -153,9 +153,9 @@ const butterEs: (typeof butter)['en'] = {
     },
     {
       id: 'validation',
-      heading: 'Verificado con el arnés de *InferenceX*.',
+      heading: 'Verificado con el harness de *InferenceX*.',
       intro:
-        'InferenceX es el arnés de benchmarks abierto de SemiAnalysis. Ejecutamos sus comprobaciones contra Butter en nuestro propio hardware, para que veas qué se sostiene antes de probarlo.',
+        'InferenceX es el harness de benchmarks abierto de SemiAnalysis. Ejecutamos sus comprobaciones contra Butter en nuestro propio hardware, para que veas qué se sostiene antes de probarlo.',
       links: [
         {
           label: 'InferenceX',
@@ -169,7 +169,7 @@ const butterEs: (typeof butter)['en'] = {
       items: [
         {
           title: 'Pasan todas las comprobaciones de API',
-          body: 'Todas las comprobaciones de API y de streaming que ejecutamos contra el arnés pasan en las dos compilaciones de Butter: Swift para Apple silicon y Rust para NVIDIA, AMD y el resto.',
+          body: 'Todas las comprobaciones de API y de streaming que ejecutamos contra el harness pasan en las dos compilaciones de Butter: Swift para Apple silicon y Rust para NVIDIA, AMD y el resto.',
         },
         {
           title: 'Cerca del 97 % en GSM8K',

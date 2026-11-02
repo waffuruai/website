@@ -58,7 +58,7 @@ const butterFr: (typeof butter)['en'] = {
       },
       {
         title: 'Dense, hybride et MoE',
-        body: 'Fait tourner des modèles denses, hybrides et MoE (mixture of experts), des checkpoints quantifiés de 2 à 8 bits aux checkpoints MXFP4 et NVFP4 à échelles par bloc.',
+        body: 'Fait tourner des modèles denses, hybrides et MoE (mélange d’experts), des checkpoints quantifiés de 2 à 8 bits aux checkpoints MXFP4 et NVFP4 à échelles par bloc.',
       },
       {
         title: 'Un cache KV qui tient',
@@ -116,7 +116,7 @@ const butterFr: (typeof butter)['en'] = {
         },
         {
           title: 'La conversation continue',
-          body: 'Une conversation peut traverser un changement de modèle et reprendre sans relire son historique. Dans nos essais d’acceptation, aucun prefill n’a été répété et les suites étaient identiques à celles d’une conversation ininterrompue.',
+          body: 'Une conversation peut traverser un changement de modèle et reprendre sans relire son historique. Dans nos essais d’acceptation, aucun prefill n’a été répété et les suites correspondaient à celles d’une conversation ininterrompue.',
         },
         {
           title: 'Les cibles défectueuses sont refusées ou annulées',
