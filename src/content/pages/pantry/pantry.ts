@@ -126,7 +126,7 @@ export const pantry: Localized<PantryContent> = {
           link: 'Full install guide',
         },
       ],
-      then: 'Then scan, and see the plan:',
+      then: 'Then scan, see the plan, and write an HTML report:',
     },
     checks: {
       title: 'Verify *everything* on the shelves.',
