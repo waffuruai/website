@@ -277,7 +277,7 @@ const pantryFr: (typeof pantry)['en'] = {
     {
       question: 'Mon agent IA peut-il l’utiliser ?',
       answer:
-        'Oui. wpantry --json fournit à votre agent des résultats structurés, et wpantry skill affiche une skill qui lui apprend à trier et à corriger, sans jamais exécuter les étapes qui demandent sudo.',
+        'Oui. wpantry scan --json fournit à votre agent des résultats structurés, et wpantry skill affiche une skill qui lui apprend à trier et à corriger, sans jamais exécuter les étapes qui demandent sudo.',
     },
   ],
   cta: {
