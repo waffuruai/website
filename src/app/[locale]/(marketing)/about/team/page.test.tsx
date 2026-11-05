@@ -21,7 +21,7 @@ describe('Team page', () => {
     expect(h1[0]?.textContent).toBe('Who’s in the kitchen.');
     expect(
       screen.getByText(
-        'Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
+        'Experienced builders with backgrounds in consumer, enterprise and cybersecurity. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
       ),
     ).toBeTruthy();
   });

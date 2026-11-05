@@ -129,8 +129,8 @@ describe('TeamCard', () => {
     render(
       withDictionary(
         <TeamCard
-          member={member('kyle-croll')}
-          copy={copy['kyle-croll']!}
+          member={member('tom-turney')}
+          copy={copy['tom-turney']!}
           labels={labels}
           sizes={sizes}
           headingLevel="h3"
@@ -153,7 +153,7 @@ describe('TeamGrid', () => {
   });
 
   it('flags where each person is based, by country name', () => {
-    for (const slug of ['kyle-croll', 'cory-smith']) {
+    for (const slug of ['eric-gonzalez', 'cory-smith']) {
       const person = member(slug);
       const { unmount } = render(
         withDictionary(
