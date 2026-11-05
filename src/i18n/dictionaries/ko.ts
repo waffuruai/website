@@ -159,7 +159,7 @@ const ko: Dictionary = {
     solutions: '솔루션',
     industries: '산업',
     company: '회사',
-    help: '도움말',
+    legal: '법률',
     terms: '이용약관',
     privacy: '개인정보 처리방침',
     cookies: '쿠키 정책',
