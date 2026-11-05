@@ -35,7 +35,7 @@ function member(slug: string): TeamMember {
 }
 
 describe('TeamCard', () => {
-  it('shows the role and background over the portrait, then name and bio', () => {
+  it('shows the name, role and bio, and keeps the background for hover', () => {
     const tom = member('tom-turney');
     const tomCopy = copy['tom-turney']!;
     render(
@@ -81,7 +81,11 @@ describe('TeamCard', () => {
     );
     expect(linkedin.getAttribute('target')).toBe('_blank');
     expect(linkedin.getAttribute('rel')).toBe('noopener noreferrer');
-    expect(linkedin.textContent).toContain('LinkedIn');
+    // An icon, not text: the accessible name comes from the label.
+    expect(linkedin.textContent).toBe('');
+    expect(linkedin.querySelector('svg')?.getAttribute('aria-hidden')).toBe(
+      'true',
+    );
   });
 
   it('hides placeholder and missing links', () => {
