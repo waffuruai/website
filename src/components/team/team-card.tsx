@@ -1,4 +1,5 @@
 import { Picture } from '@/components/picture';
+import { SocialIcon } from '@/components/social-icon';
 import { CountryFlag } from '@/components/team/country-flag';
 import {
   visibleLinks,
@@ -21,11 +22,13 @@ export type TeamCardLabels = {
 };
 
 /**
- * One person, as in the After Hours team section: a square portrait that is
- * muted until hovered (or until a link in the card has focus; on touch
- * screens it is always in colour), a frosted band over the bottom of the photo
- * with the role and a one-line background, then the name in serif, the bio and
- * a row of profile links. Only real URLs render: placeholders stay hidden.
+ * One person: a square portrait, muted until hovered (or until a link in the
+ * card has focus; on touch screens it is always in colour), then the name in
+ * serif, the role in gold, the bio and a row of profile icons pinned to the
+ * bottom of the card, so the icons line up across a row of cards. Hovering
+ * the card raises the one-line background over the foot of the photo; touch
+ * screens skip it, since the bio says the same at length. Only real URLs
+ * render: placeholders stay hidden.
  */
 export function TeamCard({
   member,
@@ -48,7 +51,9 @@ export function TeamCard({
   const links = visibleLinks(member);
 
   return (
-    <article className={cn('group/card flex flex-col gap-[18px]', className)}>
+    <article
+      className={cn('group/card flex h-full flex-col gap-[18px]', className)}
+    >
       <div className="wf-portrait relative overflow-hidden rounded-[14px] bg-card">
         <Picture
           name={member.photo}
@@ -58,15 +63,11 @@ export function TeamCard({
           className="block"
           imgClassName="block aspect-square w-full object-cover object-[50%_20%] group-hover/card:filter-none group-focus-within/card:filter-none pointer-coarse:filter-none!"
         />
-        <div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 border-t border-foreground/15 bg-background/80 px-4 py-3 backdrop-blur-md">
-          <p className="label-mono text-foreground">{copy.role}</p>
-          {/* Two lines reserved (2 × 1.4em) so every band is the same height. */}
-          <p className="min-h-[2.8em] text-[13px] leading-[1.4] text-pretty text-soft">
-            {copy.background}
-          </p>
-        </div>
+        <p className="absolute inset-x-0 bottom-0 translate-y-full border-t border-foreground/15 bg-background/80 px-4 py-3 text-[13px] leading-[1.4] text-pretty text-soft opacity-0 backdrop-blur-md transition duration-300 ease-out group-focus-within/card:translate-y-0 group-focus-within/card:opacity-100 group-hover/card:translate-y-0 group-hover/card:opacity-100 motion-reduce:transition-none pointer-coarse:hidden">
+          {copy.background}
+        </p>
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-1 flex-col gap-2">
         <div className="flex items-center gap-3">
           <Heading className="font-serif text-[30px] leading-[1.05] font-normal">
             {member.name}
@@ -76,11 +77,12 @@ export function TeamCard({
             label={labels.countries[member.country]}
           />
         </div>
-        <p className="text-[15px] leading-[1.55] text-pretty text-muted-foreground">
+        <p className="label-mono text-brand-ink">{copy.role}</p>
+        <p className="mt-1 text-[15px] leading-[1.55] text-pretty text-muted-foreground">
           {copy.bio}
         </p>
         {links.length > 0 && (
-          <ul role="list" className="-mt-1 flex flex-wrap gap-x-5">
+          <ul role="list" className="mt-auto -ml-[13px] flex pt-1">
             {links.map(([network, href]) => (
               <li key={network}>
                 <a
@@ -91,12 +93,9 @@ export function TeamCard({
                     name: member.name,
                     network: labels.linkNames[network],
                   })}
-                  className="inline-flex min-h-11 items-center rounded-sm label-mono text-soft transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  className="inline-flex size-11 items-center justify-center rounded-sm text-soft transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                 >
-                  {labels.linkNames[network]}
-                  <span aria-hidden className="ml-1.5">
-                    ↗
-                  </span>
+                  <SocialIcon network={network} />
                 </a>
               </li>
             ))}

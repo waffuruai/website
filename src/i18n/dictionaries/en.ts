@@ -165,7 +165,7 @@ const en = {
     solutions: 'Solutions',
     industries: 'Industries',
     company: 'Company',
-    help: 'Help',
+    legal: 'Legal',
     terms: 'Terms of use',
     privacy: 'Privacy policy',
     cookies: 'Cookie policy',

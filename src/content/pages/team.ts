@@ -29,13 +29,13 @@ export const teamPage: Localized<TeamPageContent> = {
     seo: {
       title: 'Meet the founders and team',
       description:
-        'The people building Waffuru, with experience across cybersecurity, the military, consumer and enterprise, from scaling startups to working with small businesses and the enterprise.',
+        'The people building Waffuru, with experience across consumer, enterprise and cybersecurity, from scaling startups to working with small businesses and the enterprise.',
       keywords: ['Waffuru team', 'Waffuru founders'],
     },
     hero: {
       label: 'Team',
       title: 'Who’s in the *kitchen*.',
-      lede: 'Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
+      lede: 'Experienced builders with backgrounds in consumer, enterprise and cybersecurity. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
     },
     portraitAlt: 'Portrait of {name}',
     linkAria: '{name} on {network}',

@@ -23,7 +23,7 @@ const MIME: Record<string, string> = {
  * Width and height come from the original, so the browser reserves space
  * and nothing shifts while loading.
  *
- * `name` is the manifest key, e.g. `team/kyle-croll`. An empty `alt` marks
+ * `name` is the manifest key, e.g. `team/eric-kryski`. An empty `alt` marks
  * the image decorative, so it is also hidden from assistive tech.
  */
 export function Picture({

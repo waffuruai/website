@@ -157,7 +157,7 @@ const homeFr: (typeof home)['en'] = {
   team: {
     title: 'Qui est en *cuisine*.',
     intro:
-      'Des bâtisseurs expérimentés, issus de la cybersécurité, de l’armée, du grand public et de l’entreprise. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
+      'Des bâtisseurs expérimentés, issus du grand public, de l’entreprise et de la cybersécurité. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
     portraitAlt: 'Portrait de {name}',
     link: { label: 'Rencontrer l’équipe', href: '/about/team' },
   },

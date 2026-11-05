@@ -160,7 +160,7 @@ const ja: Dictionary = {
     solutions: 'ソリューション',
     industries: '業界',
     company: '会社',
-    help: 'ヘルプ',
+    legal: '法的情報',
     terms: '利用規約',
     privacy: 'プライバシーポリシー',
     cookies: 'Cookie ポリシー',

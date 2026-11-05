@@ -162,7 +162,7 @@ const es: Dictionary = {
     solutions: 'Soluciones',
     industries: 'Industrias',
     company: 'Empresa',
-    help: 'Ayuda',
+    legal: 'Legal',
     terms: 'Términos de uso',
     privacy: 'Política de privacidad',
     cookies: 'Política de cookies',

@@ -167,7 +167,7 @@ const fr: Dictionary = {
     solutions: 'Solutions',
     industries: 'Secteurs',
     company: 'Entreprise',
-    help: 'Aide',
+    legal: 'Légal',
     terms: 'Conditions d’utilisation',
     privacy: 'Politique de confidentialité',
     cookies: 'Politique relative aux cookies',

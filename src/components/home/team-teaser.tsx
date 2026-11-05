@@ -6,7 +6,7 @@ import { CountryFlag } from '@/components/team/country-flag';
 import { team, type Country, type TeamCopy } from '@/content/team';
 
 /**
- * "Who's in the kitchen.": the five portraits with name and role, and a link
+ * "Who's in the kitchen.": every portrait with name and role, and a link
  * to the full team page. Portraits are muted until hovered. No bios here.
  */
 export function TeamTeaser({
@@ -32,13 +32,13 @@ export function TeamTeaser({
         {team.map((member) => (
           <li
             key={member.slug}
-            className="wf-portrait flex basis-full gap-4 min-[721px]:basis-[calc((100%-40px)/3)] min-[721px]:flex-col min-[721px]:gap-[18px] min-[1025px]:basis-[calc((100%-80px)/5)]"
+            className="wf-portrait flex basis-full gap-4 min-[721px]:basis-[calc((100%-20px)/2)] min-[721px]:flex-col min-[721px]:gap-[18px] min-[1025px]:basis-[calc((100%-60px)/4)]"
           >
             <div className="w-24 shrink-0 overflow-hidden rounded-[14px] bg-card min-[721px]:w-full">
               <Picture
                 name={member.photo}
                 alt={content.portraitAlt.replace('{name}', member.name)}
-                sizes="(min-width: 1025px) 240px, (min-width: 721px) 33vw, 96px"
+                sizes="(min-width: 1025px) 300px, (min-width: 721px) 50vw, 96px"
                 className="block"
                 imgClassName="aspect-square w-full object-cover object-[50%_20%]"
               />

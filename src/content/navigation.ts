@@ -136,10 +136,10 @@ export const navigation: Navigation = {
       },
       {
         headingKey: 'company',
-        links: [...aboutLinks, { key: 'blog', href: '/blog' }],
+        links: [...aboutLinks, { key: 'blog', href: '/blog' }, ...helpLinks],
       },
-      { headingKey: 'help', links: helpLinks },
     ],
+    /** Its own column, last, so policies added later have a home. */
     legal: [
       { labelKey: 'terms', href: '/legal/terms' },
       { labelKey: 'privacy', href: '/legal/privacy' },

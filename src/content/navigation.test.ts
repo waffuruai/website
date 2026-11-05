@@ -57,7 +57,6 @@ describe('publishedNavigation at launch (Pantry only)', () => {
     expect(atLaunch.footer.columns.map((column) => column.headingKey)).toEqual([
       'products',
       'company',
-      'help',
     ]);
     expect(internalNavHrefs(atLaunch)).not.toEqual(
       expect.arrayContaining(['/products/iron']),

@@ -16,14 +16,10 @@ describe('team', () => {
   it('lists every placeholder link so it shows up in review', () => {
     expect(unfilledLinks()).toMatchInlineSnapshot(`
       [
-        "kyle-croll.website",
-        "kyle-croll.x",
-        "kyle-croll.github",
         "eric-gonzalez.website",
         "eric-gonzalez.x",
-        "tom-turney.website",
         "cory-smith.website",
-        "cory-smith.github",
+        "tom-turney.website",
       ]
     `);
   });
@@ -86,11 +82,10 @@ describe('team', () => {
     expect(
       Object.fromEntries(team.map((member) => [member.slug, member.country])),
     ).toEqual({
-      'kyle-croll': 'us',
-      'eric-gonzalez': 'us',
       'eric-kryski': 'ca',
-      'tom-turney': 'us',
+      'eric-gonzalez': 'us',
       'cory-smith': 'ca',
+      'tom-turney': 'us',
     });
   });
 });

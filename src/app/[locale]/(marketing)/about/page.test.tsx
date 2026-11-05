@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest';
 import AboutPage, {
   generateMetadata,
 } from '@/app/[locale]/(marketing)/about/page';
+import { team } from '@/content/team';
 import { withDictionary } from '@/i18n/test-utils';
 
 const params = Promise.resolve({ locale: 'en' });
@@ -53,12 +54,12 @@ describe('About page', () => {
     expect(values.querySelectorAll('dt')).toHaveLength(14);
   });
 
-  it('teases the team page with five portraits', async () => {
+  it('teases the team page with every portrait', async () => {
     await renderPage();
     const teaser = screen.getByRole('region', {
       name: 'The people behind it.',
     });
-    expect(within(teaser).getAllByRole('img')).toHaveLength(5);
+    expect(within(teaser).getAllByRole('img')).toHaveLength(team.length);
     expect(
       within(teaser)
         .getByRole('link', { name: /Meet the team/ })

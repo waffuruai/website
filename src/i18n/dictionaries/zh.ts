@@ -159,7 +159,7 @@ const zh: Dictionary = {
     solutions: '解决方案',
     industries: '行业',
     company: '公司',
-    help: '帮助',
+    legal: '法律',
     terms: '使用条款',
     privacy: '隐私政策',
     cookies: 'Cookie 政策',
