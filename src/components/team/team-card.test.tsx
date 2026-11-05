@@ -102,6 +102,7 @@ describe('TeamCard', () => {
     expect(links.map((link) => link.ariaLabel)).toEqual([
       'Cory Smith on LinkedIn',
       'Cory Smith on X',
+      'Cory Smith on GitHub',
     ]);
     expect(screen.queryByText(PLACEHOLDER)).toBeNull();
   });

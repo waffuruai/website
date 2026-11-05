@@ -85,7 +85,8 @@ export const team: TeamMember[] = [
       website: PLACEHOLDER,
       // Confirmed by the founder (2026-10-27).
       x: 'https://x.com/smixx',
-      github: PLACEHOLDER,
+      // Confirmed by the founder (2026-11-05).
+      github: 'https://github.com/corymsmith',
     },
   },
   {

@@ -19,7 +19,6 @@ describe('team', () => {
         "eric-gonzalez.website",
         "eric-gonzalez.x",
         "cory-smith.website",
-        "cory-smith.github",
         "tom-turney.website",
       ]
     `);
