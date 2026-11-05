@@ -8,10 +8,10 @@ const teamCopyJa: (typeof teamCopy)['en'] = {
     bio: 'Eric は Waffuru の戦略を定めて会社を率いながら、デザインからコード、ML リサーチまで、今も製品を一貫して手がけています。Bidali の CEO 兼共同創業者であり、Bullish Ventures の共同創業者でもあります。財務、プロダクト、営業からコンプライアンス、カスタマーサポートまで、事業のあらゆる職務を経験してきました。その仕事は、パンデミック対応をめぐる政府への助言から、WEF でのお金の未来についての講演にまで及びます。',
   },
   'eric-gonzalez': {
-    role: '最高執行責任者',
+    role: '最高売上責任者',
     background:
       'ARR 5,000 万ドルから 20 億ドルまで企業を成長させた。元 Oracle NetSuite、Anaconda。McCombs で MBA 取得。',
-    bio: 'Eric は Waffuru でオペレーション、収益、GTM（市場投入）を率いています。ARR 5,000 万ドルから 20 億ドルまで企業を成長させてきたほか、Oracle NetSuite と、Conda を提供する Anaconda に在籍し、取締役会のメンバーも務めています。UT Austin の McCombs School of Business で MBA を取得しています。',
+    bio: 'Eric は Waffuru で収益と GTM（市場投入）を率いています。ARR 5,000 万ドルから 20 億ドルまで企業を成長させてきたほか、Oracle NetSuite と、Conda を提供する Anaconda に在籍し、取締役会のメンバーも務めています。UT Austin の McCombs School of Business で MBA を取得しています。',
   },
   'cory-smith': {
     role: '最高技術責任者',

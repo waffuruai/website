@@ -114,10 +114,10 @@ export const teamCopy: Localized<Record<string, TeamCopy>> = {
       bio: 'Eric sets Waffuru’s strategy and leads the company, and still ships product end to end, from design to code to ML research. He is CEO and co-founder of Bidali and co-founder of Bullish Ventures. He has worked every function in a business, from finance, product and sales to compliance and customer support, and his work has ranged from advising government on pandemic response to speaking at WEF about the future of money.',
     },
     'eric-gonzalez': {
-      role: 'Chief Operating Officer',
+      role: 'Chief Revenue Officer',
       background:
         'Scaled companies from $50M to $2B ARR. Ex-Oracle NetSuite and Anaconda. McCombs MBA.',
-      bio: 'Eric leads operations, revenue and GTM at Waffuru. He has scaled companies from $50M to $2B in ARR, worked at Oracle NetSuite and at Anaconda, the company behind Conda, and serves as a board member. He holds an MBA from UT Austin’s McCombs School of Business.',
+      bio: 'Eric leads revenue and GTM at Waffuru. He has scaled companies from $50M to $2B in ARR, worked at Oracle NetSuite and at Anaconda, the company behind Conda, and serves as a board member. He holds an MBA from UT Austin’s McCombs School of Business.',
     },
     'cory-smith': {
       role: 'Chief Technology Officer',

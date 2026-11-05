@@ -8,10 +8,10 @@ const teamCopyFr: (typeof teamCopy)['en'] = {
     bio: 'Eric définit la stratégie de Waffuru et dirige l’entreprise, et livre toujours le produit de bout en bout, du design au code jusqu’à la recherche en ML. Il est directeur général et cofondateur de Bidali, et cofondateur de Bullish Ventures. Il a occupé toutes les fonctions d’une entreprise, de la finance, du produit et des ventes à la conformité et au support client, et son parcours va du conseil au gouvernement sur la réponse à la pandémie à des interventions au WEF sur l’avenir de l’argent.',
   },
   'eric-gonzalez': {
-    role: 'Directeur des opérations',
+    role: 'Directeur des revenus',
     background:
       'A fait passer des entreprises de 50 M$ à 2 Md$ d’ARR. Ancien d’Oracle NetSuite et d’Anaconda. MBA de McCombs.',
-    bio: 'Eric est responsable des opérations, des revenus et du go-to-market chez Waffuru. Il a fait passer des entreprises de 50 M$ à 2 Md$ de revenus annuels récurrents (ARR), a travaillé chez Oracle NetSuite et chez Anaconda, l’entreprise derrière Conda, et siège à un conseil d’administration. Il est titulaire d’un MBA de la McCombs School of Business, à UT Austin.',
+    bio: 'Eric est responsable des revenus et du go-to-market chez Waffuru. Il a fait passer des entreprises de 50 M$ à 2 Md$ de revenus annuels récurrents (ARR), a travaillé chez Oracle NetSuite et chez Anaconda, l’entreprise derrière Conda, et siège à un conseil d’administration. Il est titulaire d’un MBA de la McCombs School of Business, à UT Austin.',
   },
   'cory-smith': {
     role: 'Directeur technique',

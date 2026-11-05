@@ -7,10 +7,10 @@ const teamCopyZh: (typeof teamCopy)['en'] = {
     bio: 'Eric 制定 Waffuru 的战略并领导公司，同时仍亲手把产品从头到尾做出来，从设计、代码到机器学习研究。他是 Bidali 的首席执行官兼联合创始人，也是 Bullish Ventures 的联合创始人。他做过企业里的各个职能，从财务、产品和销售，到合规与客户支持；他的工作既包括就疫情应对为政府提供建议，也包括在 WEF 上就货币的未来发表演讲。',
   },
   'eric-gonzalez': {
-    role: '首席运营官',
+    role: '首席营收官',
     background:
       '带领公司从 5000 万美元做到 20 亿美元 ARR。前 Oracle NetSuite 与 Anaconda。McCombs MBA。',
-    bio: 'Eric 负责 Waffuru 的运营、营收与市场进入（GTM）。他曾带领多家公司的 ARR 从 5000 万美元增长到 20 亿美元，先后任职于 Oracle NetSuite 和 Anaconda（Conda 背后的公司），现为董事会成员。他拥有 UT Austin 的 McCombs School of Business MBA 学位。',
+    bio: 'Eric 负责 Waffuru 的营收与市场进入（GTM）。他曾带领多家公司的 ARR 从 5000 万美元增长到 20 亿美元，先后任职于 Oracle NetSuite 和 Anaconda（Conda 背后的公司），现为董事会成员。他拥有 UT Austin 的 McCombs School of Business MBA 学位。',
   },
   'cory-smith': {
     role: '首席技术官',
