@@ -81,10 +81,10 @@ export const pantryFacts = {
     ],
   },
   /** What to run once it is installed. */
-  firstRun: ['wpantry scan', 'wpantry fix --dryrun'].join('\n'),
+  firstRun: ['wpantry scan', 'wpantry fix --dry-run'].join('\n'),
   /** One command per "who uses it" card, in order: people, agents, fleets. */
   uses: [
-    'wpantry fix --dryrun',
+    'wpantry fix --dry-run',
     'wpantry scan --json --no-input',
     'wpantry scan --path . --no-machine --json',
   ],
@@ -94,7 +94,7 @@ export const pantryFacts = {
       '$ mise use -g packslip:github.com/waffuruai/pantry',
       '# verifies the signed packslip, then the binary’s digest',
       '$ wpantry version',
-      'wpantry 0.1.0 (rust, schema 1)',
+      'wpantry 0.4.0 (rust, schema 1)',
     ],
     scan: [
       '$ wpantry scan',
@@ -115,10 +115,10 @@ export const pantryFacts = {
       '$ wpantry search "http2" --applicable',
       '# full-text search over cached advisories, offline',
       '$ sqlite3 -readonly ~/.cache/wpantry/wpantry.db .tables',
-      'casks  eol  findings  kev  malicious  meta  queries  runs  vulns  …',
+      'casks  eol  events  exposures  findings  fixes  kev  malicious  meta  …',
     ],
     fix: [
-      '$ wpantry fix --dryrun',
+      '$ wpantry fix --dry-run',
       '==> Update plan (dry run: nothing is changed)',
       '  would run: brew upgrade node@20',
       '  would run: python3 -m pip install --upgrade requests',
