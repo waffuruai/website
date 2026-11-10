@@ -109,7 +109,7 @@ const pantryKo: (typeof pantry)['en'] = {
         link: '전체 설치 가이드',
       },
     ],
-    then: '그다음 스캔하고 계획을 확인하세요:',
+    then: '그다음 스캔하고 계획을 확인한 뒤 HTML 보고서를 만드세요:',
   },
   checks: {
     title: '선반 위의 *모든 것*을 확인하세요.',

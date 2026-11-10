@@ -121,7 +121,7 @@ const pantryFr: (typeof pantry)['en'] = {
         link: 'Guide d’installation complet',
       },
     ],
-    then: 'Ensuite, lancez l’analyse et consultez le plan :',
+    then: 'Ensuite, lancez l’analyse, consultez le plan et générez un rapport HTML :',
   },
   checks: {
     title: 'Vérifiez *tout* ce qu’il y a sur les étagères.',

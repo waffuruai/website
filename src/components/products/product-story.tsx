@@ -23,7 +23,7 @@ export function ProductStory({
       <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-14">
         <div className="flex flex-col gap-5 border-t border-foreground/12 pt-8">
           <MonoLabel>{shared.storyProblemLabel}</MonoLabel>
-          <p className="text-xl leading-[1.45] text-pretty text-soft md:text-[22px]">
+          <p className="font-serif text-[28px] leading-[1.2] text-pretty text-foreground md:text-[38px]">
             {story.problem}
           </p>
         </div>

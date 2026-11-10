@@ -82,7 +82,7 @@ export function SpecList({
   specs,
   inProgressLabel,
 }: {
-  specs: ProductCopy['specs'];
+  specs: NonNullable<ProductCopy['specs']>;
   /** Dictionary `common.inProgress`, for chips and groups still in progress. */
   inProgressLabel: string;
 }) {

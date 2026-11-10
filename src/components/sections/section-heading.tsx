@@ -15,7 +15,7 @@ export function SectionHeading({
   children,
 }: {
   title: string;
-  intro?: string;
+  intro?: React.ReactNode;
   id?: string;
   className?: string;
   /** Extra content under the intro (a legend, a link). */

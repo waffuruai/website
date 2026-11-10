@@ -81,7 +81,11 @@ export const pantryFacts = {
     ],
   },
   /** What to run once it is installed. */
-  firstRun: ['wpantry scan', 'wpantry fix --dry-run'].join('\n'),
+  firstRun: [
+    'wpantry scan',
+    'wpantry fix --dry-run',
+    'wpantry report --html -o report.html',
+  ].join('\n'),
   /** One command per "who uses it" card, in order: people, agents, fleets. */
   uses: [
     'wpantry fix --dry-run',

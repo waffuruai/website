@@ -106,7 +106,7 @@ const pantryZh: (typeof pantry)['en'] = {
         link: '完整安装指南',
       },
     ],
-    then: '然后扫描，查看计划：',
+    then: '然后扫描，查看计划，并生成 HTML 报告：',
   },
   checks: {
     title: '核查货架上的*一切*。',
