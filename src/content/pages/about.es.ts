@@ -136,7 +136,7 @@ const aboutEs: (typeof about)['en'] = {
   },
   teamTeaser: {
     title: 'Las personas *detrás*.',
-    body: 'Constructores experimentados con trayectoria en ciberseguridad, sector militar, consumo y empresa. Hemos creado y escalado startups, y hemos trabajado con todos, desde pequeños negocios hasta grandes empresas.',
+    body: 'Constructores experimentados con trayectoria en consumo, empresa y ciberseguridad. Hemos creado y escalado startups, y hemos trabajado con todos, desde pequeños negocios hasta grandes empresas.',
     cta: 'Conoce al equipo',
     portraitAlt: 'Retrato de {name}',
   },

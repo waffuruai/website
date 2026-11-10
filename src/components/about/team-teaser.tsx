@@ -6,7 +6,7 @@ import { team } from '@/content/team';
 import { interpolate } from '@/i18n/config';
 
 /**
- * A nod to the team page: five small portraits in a row and a "Meet the
+ * A nod to the team page: every portrait, small, in one row and a "Meet the
  * team" link. The portraits are muted until hovered, like the team cards.
  */
 export function TeamTeaser({
@@ -34,13 +34,16 @@ export function TeamTeaser({
         </div>
         <ul
           role="list"
-          className="grid grid-cols-5 gap-2 md:w-[min(520px,50%)] md:gap-3"
+          className="grid gap-2 md:w-[min(520px,50%)] md:gap-3"
+          style={{
+            gridTemplateColumns: `repeat(${team.length}, minmax(0, 1fr))`,
+          }}
         >
           {team.map((member) => (
             <li key={member.slug}>
               <Picture
                 name={member.photo}
-                sizes="(min-width: 768px) 100px, 18vw"
+                sizes="(min-width: 768px) 125px, 22vw"
                 alt={interpolate(content.portraitAlt, { name: member.name })}
                 className="wf-portrait block"
                 imgClassName="block aspect-square w-full rounded-xl object-cover object-[50%_20%] pointer-coarse:filter-none! md:rounded-2xl"

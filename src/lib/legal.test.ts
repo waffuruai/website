@@ -93,6 +93,8 @@ describe('legal policies', () => {
     const slugs = (await getAllPolicies()).map((policy) => policy.slug);
     expect(navigation.footer.legal.length).toBeGreaterThan(0);
     for (const { href } of navigation.footer.legal) {
+      // The security policy is its own route (src/app/[locale]/(marketing)/security).
+      if (href === '/security') continue;
       expect(href).toMatch(/^\/legal\/[a-z0-9-]+$/);
       expect(slugs).toContain(href.replace('/legal/', ''));
     }

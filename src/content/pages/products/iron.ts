@@ -85,6 +85,33 @@ export const iron: Localized<ProductCopy> = {
         },
       ],
     },
+    extras: [
+      {
+        id: 'abi',
+        heading: 'A versioned *ABI* your host can trust.',
+        intro:
+          'Call selected Iron kernels from the engine you already have, through a small C ABI that Rust callers can use too. The current contract is ABI 0.5.',
+        items: [
+          {
+            title: 'You keep your engine',
+            body: 'Your host keeps its devices, queues, buffers and synchronization. Iron compiles the pipelines, picks the route, checks the descriptor and encodes the command.',
+          },
+          {
+            title: 'Additive by rule',
+            body: 'Minor versions only add. Existing symbols, layouts and numeric values never change, and a breaking change bumps the major version.',
+          },
+          {
+            title: 'Old clients keep working',
+            body: 'For each minor release we keep the previous release’s compiled client and run it against the new library, so a host built on an earlier ABI is tested, not assumed.',
+          },
+          {
+            title: 'Metal, CUDA and HIP',
+            body: 'One integration model across Apple silicon, NVIDIA and AMD.',
+          },
+        ],
+        note: 'The ABI is pre-1.0, and Iron is in early access.',
+      },
+    ],
     specs: {
       heading: 'Technical *specifics*.',
       rows: [

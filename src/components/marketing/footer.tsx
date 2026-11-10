@@ -27,10 +27,15 @@ const SOCIALS = [
   { network: 'GitHub', href: site.socials.github },
 ] as const;
 
+/** The link style shared by every footer column. */
+const COLUMN_LINK =
+  'inline-flex min-h-9 cursor-pointer items-center text-left text-[15px] text-soft transition-colors hover:text-foreground';
+
 /**
- * Site footer: mailing list, link columns, then the After Hours footer bar
- * (copyright, the site's version as `v1.0.0 (commit date)`, "Made with 🤖 in
- * North America", contact and socials).
+ * Site footer: mailing list, link columns ending with Legal (the policies
+ * and cookie settings), then the After Hours footer bar (copyright, the
+ * site's version as `v1.0.0 (commit date)`, "Made with 🤖 in North
+ * America", contact and socials).
  */
 export function Footer({ dictionary }: { dictionary: Dictionary }) {
   const { footer, nav, common } = dictionary;
@@ -53,7 +58,7 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
           aria-label={footer.heading}
           className={cn(
             'grid grid-cols-2 gap-x-8 gap-y-10',
-            COLUMNS[columns.length] ?? 'sm:grid-cols-4',
+            COLUMNS[columns.length + 1] ?? 'sm:grid-cols-4',
           )}
         >
           {columns.map((column) => (
@@ -64,10 +69,7 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
               <ul className="mt-4 flex flex-col gap-1">
                 {column.links.map((link) => (
                   <li key={link.href}>
-                    <LocalizedLink
-                      href={link.href}
-                      className="inline-flex min-h-9 items-center text-[15px] text-soft transition-colors hover:text-foreground"
-                    >
+                    <LocalizedLink href={link.href} className={COLUMN_LINK}>
                       {nav.items[link.key].label}
                     </LocalizedLink>
                   </li>
@@ -75,6 +77,23 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
               </ul>
             </div>
           ))}
+          <div>
+            <p className="label-mono text-[11px] text-muted-foreground">
+              {footer.legal}
+            </p>
+            <ul className="mt-4 flex flex-col gap-1">
+              {navigation.footer.legal.map((link) => (
+                <li key={link.href}>
+                  <LocalizedLink href={link.href} className={COLUMN_LINK}>
+                    {footer[link.labelKey]}
+                  </LocalizedLink>
+                </li>
+              ))}
+              <li>
+                <CookieSettingsButton className={COLUMN_LINK} />
+              </li>
+            </ul>
+          </div>
         </nav>
       </div>
 
@@ -111,19 +130,6 @@ export function Footer({ dictionary }: { dictionary: Dictionary }) {
               </a>
             </li>
           ))}
-          {navigation.footer.legal.map((link) => (
-            <li key={link.href}>
-              <LocalizedLink
-                href={link.href}
-                className="inline-flex min-h-11 items-center hover:text-foreground"
-              >
-                {footer[link.labelKey]}
-              </LocalizedLink>
-            </li>
-          ))}
-          <li>
-            <CookieSettingsButton className="inline-flex min-h-11 items-center tracking-[0.06em] hover:text-foreground" />
-          </li>
           <li>
             <a
               href="#main"

@@ -35,7 +35,7 @@ function member(slug: string): TeamMember {
 }
 
 describe('TeamCard', () => {
-  it('shows the role and background over the portrait, then name and bio', () => {
+  it('shows the name, role and bio, and keeps the background for hover', () => {
     const tom = member('tom-turney');
     const tomCopy = copy['tom-turney']!;
     render(
@@ -81,7 +81,11 @@ describe('TeamCard', () => {
     );
     expect(linkedin.getAttribute('target')).toBe('_blank');
     expect(linkedin.getAttribute('rel')).toBe('noopener noreferrer');
-    expect(linkedin.textContent).toContain('LinkedIn');
+    // An icon, not text: the accessible name comes from the label.
+    expect(linkedin.textContent).toBe('');
+    expect(linkedin.querySelector('svg')?.getAttribute('aria-hidden')).toBe(
+      'true',
+    );
   });
 
   it('hides placeholder and missing links', () => {
@@ -102,6 +106,7 @@ describe('TeamCard', () => {
     expect(links.map((link) => link.ariaLabel)).toEqual([
       'Cory Smith on LinkedIn',
       'Cory Smith on X',
+      'Cory Smith on GitHub',
     ]);
     expect(screen.queryByText(PLACEHOLDER)).toBeNull();
   });
@@ -129,8 +134,8 @@ describe('TeamCard', () => {
     render(
       withDictionary(
         <TeamCard
-          member={member('kyle-croll')}
-          copy={copy['kyle-croll']!}
+          member={member('tom-turney')}
+          copy={copy['tom-turney']!}
           labels={labels}
           sizes={sizes}
           headingLevel="h3"
@@ -153,7 +158,7 @@ describe('TeamGrid', () => {
   });
 
   it('flags where each person is based, by country name', () => {
-    for (const slug of ['kyle-croll', 'cory-smith']) {
+    for (const slug of ['eric-gonzalez', 'cory-smith']) {
       const person = member(slug);
       const { unmount } = render(
         withDictionary(

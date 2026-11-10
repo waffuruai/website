@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterEs: (typeof butter)['en'] = {
   layer: 'Serving',
-  tagline: 'Inferencia multimodal, sin concesiones.',
+  tagline: 'Tus modelos, en tu propio hardware.',
   summary:
     'Swift sobre Metal para Apple silicon, Rust para CUDA y el resto. Carga checkpoints cuantizados de 2 a 8 bits, modelos híbridos y MoE, y los sirve con APIs compatibles con OpenAI y con Anthropic Messages.',
   seo: {
-    title: 'Butter: inferencia multimodal con dependencias mínimas',
+    title: 'Butter: ejecuta tus propios modelos y cámbialos en tu hardware',
     description:
-      'Motor de inferencia de LLM con dependencias mínimas: Swift para macOS e iOS, Rust para todo lo demás. Sirve modelos de Hugging Face con APIs compatibles con OpenAI y con Anthropic Messages, pensado para harnesses de agentes.',
+      'Butter es un servidor de LLM privado para el hardware que ya tienes. Carga modelos abiertos directo desde Hugging Face, cambia el modelo servido a petición y habla las APIs compatibles con OpenAI y Anthropic Messages. Swift para macOS e iOS, Rust para todo lo demás.',
     keywords: [
       'motor de inferencia de LLM',
       'servidor de LLM local',
@@ -20,18 +20,18 @@ const butterEs: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: 'Servir modelos sin *concesiones*.',
-    lede: 'Butter sirve modelos con dependencias mínimas, usando Swift para macOS e iOS y Rust para todo lo demás, sobre kernels afinados para cada backend. Obtienes seguridad y el máximo rendimiento, sin concesiones. Los kernels Metal vienen precompilados y los modelos se cargan directo desde Hugging Face.',
+    title: 'Ejecuta los modelos que *elijas*.',
+    lede: 'Butter convierte un Mac o una estación con GPU que ya tienes en un servidor de IA privado. Trae tus propios modelos, mantén cada prompt en casa y no pagues por token. Cambia de modelo cuando cambie el trabajo. Los modelos se cargan directo desde Hugging Face y tus herramientas se conectan con las APIs de OpenAI y Anthropic que ya usan.',
     highlights: [
+      { value: '4', label: 'formatos de checkpoint, cargados sin conversión' },
       {
-        value: '4',
-        label: 'formatos de checkpoint, cargados sin conversión',
+        value: 'Modelos abiertos',
+        label: 'texto, visión, voz y omni',
       },
       {
-        value: '2–8 bit',
-        label: 'checkpoints cuantizados, con caché KV cuantizada',
+        value: 'Cambia de modelo',
+        label: 'a petición, y retoma la conversación',
       },
-      { value: '2 APIs', label: 'compatible con OpenAI y Anthropic Messages' },
     ],
   },
   story: {
@@ -56,8 +56,8 @@ const butterEs: (typeof butter)['en'] = {
         body: 'Descarga safetensors, MLX, JANG o GGUF directo desde Hugging Face. No hay paso de conversión.',
       },
       {
-        title: 'Cuantizados, híbridos y MoE',
-        body: 'Ejecuta checkpoints cuantizados de 2 a 8 bits, checkpoints MXFP4 y NVFP4 con escalas por bloque, modelos híbridos y modelos de mezcla de expertos.',
+        title: 'Densos, híbridos y MoE',
+        body: 'Ejecuta modelos densos, híbridos y de mezcla de expertos, desde checkpoints cuantizados de 2 a 8 bits hasta checkpoints MXFP4 y NVFP4 con escalas por bloque.',
       },
       {
         title: 'Una caché KV que cabe',
@@ -85,6 +85,130 @@ const butterEs: (typeof butter)['en'] = {
       'Ilustrativo. Sustituye los marcadores por tu modelo y tu puerto. No es un benchmark.',
   },
   extras: [
+    {
+      id: 'modalities',
+      heading: 'Texto, visión y *audio*.',
+      items: [
+        {
+          title: 'Texto',
+          body: 'Modelos densos, híbridos y de mezcla de expertos. Llama, Gemma, Qwen, GPT-OSS y más.',
+        },
+        {
+          title: 'Multimodal',
+          body: 'Modelos de visión y lenguaje y modelos omni, entre ellos Gemma 4, Qwen3.8 VL y Mistral 3 VL.',
+        },
+        {
+          title: 'Audio',
+          body: 'Voz a texto con Whisper, Voxtral y Qwen3-ASR. Texto a voz con Kokoro, FishSpeech y Marvis.',
+        },
+      ],
+    },
+    {
+      id: 'swap',
+      heading: 'Cambia de modelo sin perder el *hilo*.',
+      intro:
+        'Un solo proceso de butter serve puede cambiar el modelo que sirve, solicitud a solicitud, para que cada tarea la atienda el modelo adecuado.',
+      items: [
+        {
+          title: 'Cambio a petición',
+          body: 'Inicia butter serve con --model-swap y una solicitud puede nombrar otro modelo. --model-swap-allow indica cuáles se permiten. Por defecto solo se permite el modelo con el que arrancó el servidor, así que nada cambia salvo que tú lo digas.',
+        },
+        {
+          title: 'La conversación continúa',
+          body: 'Una conversación puede pasar por un cambio de modelo y retomarse sin volver a leer su historial. En nuestras pruebas de aceptación no se repitió ningún prefill y las continuaciones coincidieron con las de una conversación sin interrupciones.',
+        },
+        {
+          title: 'Los destinos defectuosos se rechazan o se revierten',
+          body: 'Un destino mal formado revierte al modelo que tenías. Un archivo dañado se conserva tal cual, y un cambio que superaría una cuota se rechaza.',
+        },
+        {
+          title: 'Los modelos recientes siguen en caliente',
+          body: 'Un número limitado de modelos usados recientemente sigue en caliente en memoria, así que volver a uno es rápido. Un modelo que no está en caliente se carga desde el disco y tarda lo que tarda. No damos tiempos.',
+        },
+      ],
+    },
+    {
+      id: 'tools',
+      heading: 'Llamadas a herramientas que llegan *válidas*.',
+      intro:
+        'Para quien construye agentes: lo que devuelve una llamada a herramienta es algo que tu bucle puede ejecutar.',
+      items: [
+        {
+          title: 'Los tipos siguen tu esquema',
+          body: 'Los tipos de los argumentos siguen tu esquema, así que un entero sigue siendo un entero.',
+        },
+        {
+          title: 'Las llamadas incompletas se rechazan',
+          body: 'Una llamada incompleta, o a una herramienta que no anunciaste, se rechaza en lugar de emitirse.',
+        },
+        {
+          title: 'Se comprueba antes de admitir',
+          body: 'Los esquemas de herramientas se validan antes de admitir la solicitud, y un tool_choice no compatible se rechaza de entrada.',
+        },
+        {
+          title: 'En streaming, con ids estables',
+          body: 'Las llamadas llegan en streaming como deltas, con ids que se mantienen únicos entre turnos.',
+        },
+      ],
+    },
+    {
+      id: 'validation',
+      heading: 'Verificado con el harness de *InferenceX*.',
+      intro:
+        'InferenceX es el harness de benchmarks abierto de SemiAnalysis. Ejecutamos sus comprobaciones contra Butter en nuestro propio hardware, para que veas qué se sostiene antes de probarlo.',
+      links: [
+        {
+          label: 'InferenceX',
+          href: 'https://github.com/SemiAnalysisAI/InferenceX',
+        },
+        {
+          label: 'AgentX',
+          href: 'https://inferencex.semianalysis.com/agentx/quickstart/',
+        },
+      ],
+      items: [
+        {
+          title: 'Pasan todas las comprobaciones de API',
+          body: 'Todas las comprobaciones de API y de streaming que ejecutamos contra el harness pasan en las dos compilaciones de Butter: Swift para Apple silicon y Rust para NVIDIA, AMD y el resto.',
+        },
+        {
+          title: 'Cerca del 97 % en GSM8K',
+          body: 'En el conjunto completo de GSM8K, Qwen3.8-27B en un DGX Spark y Qwen3.8-Flash-Next en un Strix Halo obtuvieron cada uno cerca del 97 %, por encima del mínimo del 90 %. Cada respuesta se volvió a calificar de forma independiente.',
+        },
+        {
+          title: 'Una ejecución de AgentX termina limpia',
+          body: 'Una ejecución corta de AgentX terminó sin solicitudes fallidas y pasó el validador oficial. Es una prueba pequeña, no una repetición completa. Al ejecutarla también salieron errores reales, que corregimos.',
+        },
+      ],
+      note: 'Son ejecuciones internas en nuestro propio hardware, y ni el DGX Spark ni el Strix Halo son objetivos oficiales de InferenceX. No son resultados oficiales de InferenceX y SemiAnalysis no los ha avalado. El rendimiento en hardware empresarial aún no está validado.',
+    },
+    {
+      id: 'memory',
+      heading: '*TurboQuant+* nativo, de su autor.',
+      intro:
+        'TurboQuant+ es nuestro trabajo de código abierto para reducir la caché de memoria de la IA. Butter lo ejecuta de forma nativa, escrito por la misma persona y adaptado a un servidor que además hace decodificación especulativa, reutilización de sesiones y bucles de herramientas. A la versión del motor la llamamos AURA.',
+      links: [
+        {
+          label: 'TurboQuant+',
+          href: 'https://github.com/TheTom/turboquant_plus',
+        },
+      ],
+      items: [
+        {
+          title: 'Las filas recientes se mantienen exactas',
+          body: 'Solo se comprime el historial más antiguo. Los retrocesos, los cortes por parada y la verificación especulativa nunca tocan datos con pérdida.',
+        },
+        {
+          title: 'Parte de la caché, no un añadido',
+          body: 'La compresión es un modo de la propia caché KV de Butter, así que la reutilización de sesiones, las instantáneas y las conversaciones largas de varios turnos siguen funcionando.',
+        },
+        {
+          title: 'Elige el ancho',
+          body: '8 bits por defecto para conservar la calidad, con 4 bits y anchos distintos para claves y valores disponibles.',
+        },
+      ],
+      note: 'Por ahora es opcional. La compresión cambia un poco de calidad por memoria, y medimos ese intercambio.',
+    },
     {
       id: 'agents',
       heading: 'Funciona con tu harness de *agentes*.',
@@ -149,95 +273,6 @@ const butterEs: (typeof butter)['en'] = {
       ],
     },
   ],
-  specs: {
-    heading: 'Detalles *técnicos*.',
-    rows: [
-      {
-        term: 'Runtime',
-        detail:
-          'Swift sobre Metal para macOS e iOS, con macOS 14 o posterior. Rust para CUDA y todo lo demás. Dependencias mínimas, con menos riesgo en la cadena de suministro.',
-      },
-      {
-        term: 'Formatos de modelo',
-        detail: 'Se cargan directo desde Hugging Face, sin conversión.',
-        chips: [
-          { label: 'safetensors' },
-          { label: 'MLX' },
-          { label: 'JANG' },
-          { label: 'GGUF' },
-        ],
-      },
-      {
-        term: 'Cuantización',
-        detail:
-          'Checkpoints afines de 2, 3, 4, 5, 6 y 8 bits, con el ancho derivado por tensor. Checkpoints MXFP4 y NVFP4 con escalas por bloque. Block FP8 en CUDA.',
-      },
-      {
-        term: 'Arquitecturas',
-        detail:
-          'Modelos densos, híbridos (atención mezclada con recurrencia) y de mezcla de expertos (MoE).',
-      },
-      {
-        term: 'Caché KV',
-        detail:
-          'Cuantizada: afín de 4 u 8 bits, o comprimida con AURA. Toda caché es un anillo en el límite de contexto.',
-      },
-      {
-        term: 'API de serving',
-        detail:
-          'Chat Completions y Completions de OpenAI, Anthropic Messages, rutas de tokenización y recuento de tokens, salud, readiness y métricas Prometheus. Se inicia con butter serve, con --parallel para sesiones concurrentes.',
-        chips: [
-          { label: 'Streaming' },
-          { label: 'Llamada a herramientas' },
-          { label: 'Campos de razonamiento' },
-          { label: 'Reutilización de prefijo' },
-          { label: 'Entrada de visión' },
-          { label: 'Decodificación especulativa' },
-          { label: 'LoRA' },
-        ],
-      },
-      {
-        term: 'Harnesses de agentes',
-        detail:
-          'Probados y soportados: Oh My Pi sobre Chat Completions y clientes tipo Claude Code sobre Messages.',
-      },
-      {
-        term: 'Modalidades',
-        chips: [
-          { label: 'Texto' },
-          { label: 'Visión' },
-          { label: 'Voz a texto' },
-          { label: 'Texto a voz' },
-          { label: 'Omni' },
-        ],
-      },
-      {
-        term: 'Familias de modelos',
-        groups: [
-          { label: 'Meta', text: 'Llama 3, 3.1, 3.2, 3.3' },
-          { label: 'Google', text: 'Gemma 2, 3, 4; PaliGemma' },
-          { label: 'Qwen', text: '2, 3, 3.5, 3.6, 3.8; VL; Omni' },
-          { label: 'OpenAI', text: 'GPT-OSS 20B, 120B; Whisper' },
-          { label: 'Mistral', text: 'Mistral; Mistral 3 VL; Voxtral' },
-          { label: 'NVIDIA', text: 'Nemotron H; Nemotron VLM' },
-          { label: 'DeepSeek', text: 'V4' },
-          { label: 'IBM', text: 'Granite 3, 4' },
-          { label: 'Microsoft', text: 'Phi 3' },
-          { label: 'Liquid AI', text: 'LFM2, LFM2.5' },
-          { label: 'Ai2', text: 'OLMo 1, 2' },
-          { label: 'Hugging Face', text: 'SmolLM; SmolVLM' },
-          { label: 'TII', text: 'Falcon H1' },
-          { label: 'AI21', text: 'Jamba' },
-          { label: 'Apple', text: 'FastVLM' },
-          { label: 'Shanghai AI Lab', text: 'InternLM 2' },
-        ],
-      },
-      {
-        term: 'Disponibilidad',
-        detail: 'Privado y de código cerrado durante el acceso anticipado.',
-      },
-    ],
-  },
   platforms: {
     heading: 'Dónde *funciona*.',
     intro:
@@ -279,12 +314,12 @@ const butterEs: (typeof butter)['en'] = {
     {
       question: '¿Qué modelos ejecuta?',
       answer:
-        'La cobertura actual incluye Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite y Phi, entre otros de los listados arriba, en variantes de texto, visión, voz y omni.',
+        'Muchas familias abiertas, en variantes de texto, visión, voz y omni. El menú de modelos, cerca del inicio de esta página, muestra cuáles son compatibles hoy y cuáles llegan pronto.',
     },
     {
       question: '¿En qué está escrito Butter?',
       answer:
-        'En Swift para macOS e iOS, y en Rust para todo lo demás, por velocidad y seguridad de memoria. Butter mantiene sus dependencias al mínimo, lo que deja menos margen a un ataque a la cadena de suministro, y corre sobre kernels afinados para cada backend.',
+        'En Swift para macOS e iOS, y en Rust para todo lo demás, por seguridad de memoria. Butter mantiene sus dependencias al mínimo, lo que deja menos margen a un ataque a la cadena de suministro, y corre sobre kernels afinados para cada backend.',
     },
     {
       question:
@@ -293,13 +328,13 @@ const butterEs: (typeof butter)['en'] = {
         'Butter sirve la API Chat Completions de OpenAI y la API Messages de Anthropic desde un solo proceso de butter serve, con streaming, llamadas a herramientas estructuradas, campos de razonamiento y un prefijo de prompt reutilizado. Los clientes que hablan cualquiera de las dos APIs pueden apuntar a él.',
     },
     {
-      question: '¿Cuál es su velocidad?',
+      question: '¿Puedo cambiar de modelo?',
       answer:
-        'En un M5 Max con 128 GB, Butter sirvió Qwen3.8-27B en 4 bits a 103 tokens por segundo para una sola solicitud (prompts de unos 937 tokens, greedy) y 146 tokens por segundo en total con 8 solicitudes concurrentes, unos 26 por solicitud. Los resultados dependen del modelo, la longitud del prompt y el hardware; las condiciones de prueba aparecen junto a las mediciones en esta página.',
+        'Sí. Inicia butter serve con --model-swap y una solicitud puede cambiar el modelo servido; --model-swap-allow indica qué modelos se permiten y, por defecto, solo se permite el de arranque. Una conversación puede pasar por un cambio y retomarse sin volver a leer su historial. Los destinos defectuosos se rechazan o se revierten de forma segura. Un número limitado de modelos usados recientemente sigue en caliente en memoria, así que volver a uno es rápido. Un modelo que no está en caliente se carga desde el disco y tarda lo que tarda. No damos tiempos.',
     },
   ],
   cta: {
-    title: 'Derrite la *latencia*.',
+    title: 'Trae tus *modelos*.',
     body: 'Butter está en acceso anticipado y con código cerrado por ahora. Solicita acceso.',
     docsLabel: 'Lee la documentación',
   },

@@ -96,7 +96,7 @@ export const about: Localized<AboutContent> = {
         { label: 'Meet the team', href: '/about/team' },
         { label: 'Work with us', href: '#hiring', variant: 'outline' },
       ],
-      name: '“Waffuru” is how Japanese says waffles. The name is a nod to our respect for Japanese culture and deep history, a shared love of waffles and a global mission.',
+      name: '“Waffuru” is how the Japanese say waffles. The name is a nod to our respect for Japanese culture and deep history, a shared love of waffles and a global mission.',
     },
     why: {
       title: 'Why we *build*.',
@@ -205,7 +205,7 @@ export const about: Localized<AboutContent> = {
     },
     teamTeaser: {
       title: 'The people *behind* it.',
-      body: 'Experienced builders with backgrounds in cybersecurity, military, consumer and enterprise. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
+      body: 'Experienced builders with backgrounds in consumer, enterprise and cybersecurity. We’ve built and scaled startups, and worked with everyone from small businesses to the enterprise.',
       cta: 'Meet the team',
       portraitAlt: 'Portrait of {name}',
     },

@@ -28,7 +28,7 @@ const supportKo: (typeof support)['en'] = {
       },
       {
         title: '보안 이슈 신고',
-        body: 'hello@waffuru.ai로 제목을 Security로 해서 비공개로 보내 주세요.',
+        body: 'security@waffuru.ai로 제목을 Security로 해서 비공개로 보내 주세요.',
         href: mailto('Security'),
       },
       {
@@ -36,6 +36,11 @@ const supportKo: (typeof support)['en'] = {
         body: '기계가 읽을 수 있는 형식의 보안 연락처입니다.',
         href: '/.well-known/security.txt',
         file: true,
+      },
+      {
+        title: '취약점 공개 정책',
+        body: '어디까지가 범위인지, 얼마나 빨리 응답하는지, 선의의 연구를 위한 세이프 하버는 무엇인지.',
+        href: '/security',
       },
     ],
   },
@@ -63,7 +68,7 @@ const supportKo: (typeof support)['en'] = {
     {
       question: '보안 이슈는 어떻게 신고하나요?',
       answer:
-        '제목을 Security로 해서 hello@waffuru.ai로 재현할 수 있을 만큼 자세히 적어 이메일을 보내 주세요. 수정할 합리적인 시간을 가질 때까지는 비공개로 유지해 주시기 바랍니다. security.txt에도 같은 연락처가 기계가 읽을 수 있는 형식으로 적혀 있습니다.',
+        '제목을 Security로 해서 security@waffuru.ai로 재현할 수 있을 만큼 자세히 적어 이메일을 보내 주세요. 3 영업일 안에 접수를 알리고, 심각도에 따라 수정하며, 90일 안에 공개 시점을 함께 정합니다. 범위, 규칙, 세이프 하버는 [취약점 공개 정책](https://waffuru.ai/security)(영어)에 있습니다. security.txt에도 같은 연락처가 기계가 읽을 수 있는 형식으로 적혀 있습니다.',
     },
     {
       question: '내 데이터는 어떻게 되나요?',

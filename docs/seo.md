@@ -125,7 +125,7 @@ How to read an entry: **Primary** is the one phrase the page should win. **Secon
 ### Team `/about/team`
 
 - **Primary:** Waffuru team.
-- **Secondary:** the five people by name (Kyle Croll, Eric Gonzalez, Eric Kryski, Tom Turney, Cory Smith); Waffuru leadership team; TurboQuant+ researcher.
+- **Secondary:** the four people by name (Eric Kryski, Eric Gonzalez, Cory Smith, Tom Turney); Waffuru leadership team; TurboQuant+ researcher.
 - **Intent:** navigational; people search for the founders by name.
 - **Where:** `h1` "Who's in the kitchen." One `h2` or `h3` per person, formatted "Name, Role", with the `Person` JSON-LD the page already emits. Bios stay within the brief.
 

@@ -39,6 +39,7 @@ export function ProductPage({
   locale,
   dictionary,
   lead,
+  afterStory,
   children,
 }: {
   slug: ProductSlug;
@@ -46,6 +47,8 @@ export function ProductPage({
   dictionary: Dictionary;
   /** A section that leads straight after the hero (Iron's model menu). */
   lead?: React.ReactNode;
+  /** A section that follows the story (Butter's model menu). */
+  afterStory?: React.ReactNode;
   /**
    * Full sections with their own content files (Butter's measured research,
    * Iron's kernel). They follow what the product does and how you use it, as
@@ -97,6 +100,7 @@ export function ProductPage({
 
       {lead}
       <ProductStory story={copy.story} shared={shared} />
+      {afterStory}
       <CapabilityGrid capabilities={copy.capabilities} />
       {facts.code && copy.code && (
         <CodeSection copy={copy.code} sample={facts.code} />
@@ -105,7 +109,9 @@ export function ProductPage({
         <ExtraSections sections={copy.extras} />
       )}
       {children}
-      <SpecList specs={copy.specs} inProgressLabel={common.inProgress} />
+      {copy.specs && (
+        <SpecList specs={copy.specs} inProgressLabel={common.inProgress} />
+      )}
       {copy.platforms && (
         <PlatformTiers
           platforms={copy.platforms}

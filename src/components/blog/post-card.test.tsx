@@ -99,7 +99,7 @@ describe('AuthorByline', () => {
       ),
     );
     expect(container.textContent).toContain('By Eric Kryski');
-    expect(container.textContent).toContain('Chief Product Officer');
+    expect(container.textContent).toContain('Chief Executive Officer');
     expect(container.textContent).toContain('October 26, 2026');
     expect(container.textContent).toContain('5 min read');
     // The photo is the team member's, from the image manifest.

@@ -2,13 +2,13 @@ import type { butter } from './butter';
 
 const butterKo: (typeof butter)['en'] = {
   layer: '서빙',
-  tagline: '타협 없는 멀티모달 추론.',
+  tagline: '내 모델을, 내 하드웨어에서.',
   summary:
     'Apple 실리콘에는 Metal 위의 Swift를, CUDA를 비롯한 나머지에는 Rust를 씁니다. 2~8비트 양자화 체크포인트와 하이브리드·MoE 모델을 불러오고, OpenAI 호환 API와 Anthropic Messages API로 서빙합니다.',
   seo: {
-    title: 'Butter: 의존성을 최소화한 멀티모달 추론',
+    title: 'Butter: 내 모델을 내 하드웨어에서 돌리고 바꿔 쓰세요',
     description:
-      'macOS와 iOS는 Swift, 그 밖의 모든 곳은 Rust로 만든, 의존성을 최소화한 LLM 추론 엔진. Hugging Face 모델을 OpenAI 호환 API와 Anthropic Messages API로 서빙하며, 에이전트 하니스를 위해 만들었습니다.',
+      '이미 가진 하드웨어에서 돌아가는 프라이빗 LLM 서버. 오픈 모델을 Hugging Face에서 곧바로 불러오고, 요청에 따라 서빙할 모델을 바꾸며, OpenAI 호환 API와 Anthropic Messages API를 제공합니다. macOS와 iOS는 Swift, 그 밖의 모든 곳은 Rust로 만들었습니다.',
     keywords: [
       'LLM 추론 엔진',
       '로컬 LLM 서빙',
@@ -20,18 +20,12 @@ const butterKo: (typeof butter)['en'] = {
     ],
   },
   hero: {
-    title: '*타협* 없는 모델 서빙.',
-    lede: 'Butter는 최소한의 의존성으로 모델을 서빙합니다. macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 쓰며, 백엔드별로 튜닝한 커널 위에서 돌아갑니다. 안전성과 최고의 성능을 타협 없이 얻을 수 있습니다. Metal 커널은 미리 컴파일해 배포하며, 모델은 Hugging Face에서 곧바로 불러옵니다.',
+    title: '*고른* 모델을 돌리세요.',
+    lede: 'Butter는 이미 가진 Mac이나 GPU 워크스테이션을 프라이빗 AI 서버로 바꿔 줍니다. 내 모델을 가져오고, 모든 프롬프트를 사내에 두고, 토큰 요금은 내지 않습니다. 일이 바뀌면 모델도 바꾸세요. 모델은 Hugging Face에서 곧바로 불러오고, 기존 도구는 이미 쓰던 OpenAI와 Anthropic API로 연결됩니다.',
     highlights: [
-      {
-        value: '4',
-        label: '변환 없이 불러오는 체크포인트 형식',
-      },
-      {
-        value: '2–8 bit',
-        label: '양자화 체크포인트, 양자화된 KV 캐시까지',
-      },
-      { value: 'API 2종', label: 'OpenAI 호환과 Anthropic Messages' },
+      { value: '4', label: '변환 없이 불러오는 체크포인트 형식' },
+      { value: '오픈 모델', label: '텍스트, 비전, 음성, 옴니' },
+      { value: '모델 전환', label: '요청 시에, 대화는 이어서' },
     ],
   },
   story: {
@@ -56,8 +50,8 @@ const butterKo: (typeof butter)['en'] = {
         body: 'safetensors, MLX, JANG, GGUF를 Hugging Face에서 곧바로 가져옵니다. 변환 단계는 없습니다.',
       },
       {
-        title: '양자화, 하이브리드, MoE',
-        body: '2~8비트 양자화 체크포인트, MXFP4와 NVFP4 블록 스케일 체크포인트, 하이브리드 모델, 전문가 혼합(MoE) 모델을 실행합니다.',
+        title: '밀집, 하이브리드, MoE',
+        body: '밀집, 하이브리드, 전문가 혼합(MoE) 모델을 실행합니다. 2~8비트 양자화 체크포인트부터 MXFP4와 NVFP4 블록 스케일 체크포인트까지 지원합니다.',
       },
       {
         title: '들어맞는 KV 캐시',
@@ -85,6 +79,130 @@ const butterKo: (typeof butter)['en'] = {
       '예시입니다. 플레이스홀더는 사용하는 모델과 포트로 바꾸세요. 벤치마크가 아닙니다.',
   },
   extras: [
+    {
+      id: 'modalities',
+      heading: '텍스트, 비전, *오디오*.',
+      items: [
+        {
+          title: '텍스트',
+          body: '밀집, 하이브리드, 전문가 혼합(MoE) 모델. Llama, Gemma, Qwen, GPT-OSS 등.',
+        },
+        {
+          title: '멀티모달',
+          body: '비전-언어 모델과 옴니 모델. Gemma 4, Qwen3.8 VL, Mistral 3 VL 등.',
+        },
+        {
+          title: '오디오',
+          body: '음성 인식은 Whisper, Voxtral, Qwen3-ASR. 음성 합성은 Kokoro, FishSpeech, Marvis.',
+        },
+      ],
+    },
+    {
+      id: 'swap',
+      heading: '대화의 흐름을 놓치지 않고 모델을 *바꾸세요*.',
+      intro:
+        'butter serve 프로세스 하나가 요청마다 서빙할 모델을 바꿀 수 있어, 작업마다 알맞은 모델이 맡습니다.',
+      items: [
+        {
+          title: '요청에 따라 전환',
+          body: 'butter serve를 --model-swap으로 시작하면 요청에서 다른 모델을 지정할 수 있습니다. --model-swap-allow로 허용할 모델을 지정합니다. 기본값은 부팅 모델만 허용이므로, 직접 지정하지 않으면 아무것도 바뀌지 않습니다.',
+        },
+        {
+          title: '대화는 이어집니다',
+          body: '대화는 전환을 거쳐도 이어갈 수 있고, 기록을 다시 읽지 않고 재개됩니다. 인수 테스트에서 프리필이 반복된 경우는 없었고, 이어진 응답은 중단 없는 대화와 같았습니다.',
+        },
+        {
+          title: '잘못된 대상은 거부하거나 되돌립니다',
+          body: '형식이 잘못된 대상은 원래 모델로 되돌립니다. 손상된 아카이브는 그대로 보존하고, 할당량을 넘는 전환은 거부합니다.',
+        },
+        {
+          title: '최근 모델은 로드된 채로',
+          body: '최근 사용한 모델 중 제한된 수는 메모리에 로드된 채로 유지되므로, 그 모델로 돌아가는 것은 빠릅니다. 로드되어 있지 않은 모델은 디스크에서 불러오며 그만큼의 시간이 걸립니다. 시간 수치는 제시하지 않습니다.',
+        },
+      ],
+    },
+    {
+      id: 'tools',
+      heading: '*유효한* 상태로 돌아오는 도구 호출.',
+      intro:
+        '에이전트를 만드는 분께: 도구 호출의 결과는 루프가 그대로 실행할 수 있는 형태로 돌아옵니다.',
+      items: [
+        {
+          title: '타입은 스키마를 따릅니다',
+          body: '인자 타입은 스키마를 따르므로 정수는 정수로 남습니다.',
+        },
+        {
+          title: '불완전한 호출은 거부',
+          body: '불완전한 호출이나 선언하지 않은 도구에 대한 호출은 내보내지 않고 거부합니다.',
+        },
+        {
+          title: '받기 전에 검사',
+          body: '요청을 받기 전에 도구 스키마를 검증하고, 지원하지 않는 tool_choice는 처음부터 거부합니다.',
+        },
+        {
+          title: '스트리밍, 안정적인 id',
+          body: '호출은 델타로 스트리밍되며 id는 턴이 바뀌어도 고유하게 유지됩니다.',
+        },
+      ],
+    },
+    {
+      id: 'validation',
+      heading: '*InferenceX* 하니스로 검증했습니다.',
+      intro:
+        'InferenceX는 SemiAnalysis의 오픈 벤치마크 하니스입니다. 이 하니스의 점검 항목을 자체 하드웨어에서 Butter에 돌려, 써 보기 전에 무엇이 통과하는지 확인할 수 있게 했습니다.',
+      links: [
+        {
+          label: 'InferenceX',
+          href: 'https://github.com/SemiAnalysisAI/InferenceX',
+        },
+        {
+          label: 'AgentX',
+          href: 'https://inferencex.semianalysis.com/agentx/quickstart/',
+        },
+      ],
+      items: [
+        {
+          title: 'API 점검 모두 통과',
+          body: '하니스를 대상으로 돌리는 API와 스트리밍 점검이 Butter의 두 빌드에서 모두 통과합니다. Apple 실리콘용 Swift 빌드와 NVIDIA, AMD 등을 위한 Rust 빌드입니다.',
+        },
+        {
+          title: 'GSM8K 약 97%',
+          body: 'GSM8K 전체 문제에서 DGX Spark의 Qwen3.8-27B와 Strix Halo의 Qwen3.8-Flash-Next가 각각 약 97%를 기록해 하한선인 90%를 넘었습니다. 모든 답은 독립적으로 다시 채점했습니다.',
+        },
+        {
+          title: 'AgentX 실행이 깔끔하게 끝났습니다',
+          body: '짧은 AgentX 실행이 실패한 요청 없이 끝났고 공식 검증기를 통과했습니다. 작은 시험일 뿐 전체 재현은 아닙니다. 실행하는 과정에서 실제 버그도 드러나 고쳤습니다.',
+        },
+      ],
+      note: '자체 하드웨어에서 돌린 내부 실행이며, DGX Spark와 Strix Halo 모두 InferenceX 공식 대상이 아닙니다. InferenceX 공식 결과가 아니며 SemiAnalysis가 보증한 것도 아닙니다. 엔터프라이즈 하드웨어에서의 성능은 아직 검증하지 않았습니다.',
+    },
+    {
+      id: 'memory',
+      heading: '작성자가 직접 만든 네이티브 *TurboQuant+*.',
+      intro:
+        'TurboQuant+는 AI 메모리 캐시를 줄이기 위한 저희의 오픈 소스 작업입니다. Butter는 이를 네이티브로 실행하며, 같은 사람이 작성했고 추측 디코딩, 세션 재사용, 도구 루프까지 처리하는 서버에 맞게 다듬었습니다. 엔진 쪽 버전은 AURA라고 부릅니다.',
+      links: [
+        {
+          label: 'TurboQuant+',
+          href: 'https://github.com/TheTom/turboquant_plus',
+        },
+      ],
+      items: [
+        {
+          title: '최근 행은 정확하게 유지',
+          body: '오래된 기록만 압축합니다. 되감기, 중단 지점 자르기, 추측 검증은 손실 데이터를 건드리지 않습니다.',
+        },
+        {
+          title: '덧붙인 기능이 아니라 캐시의 일부',
+          body: '압축은 Butter 자체 KV 캐시의 한 모드이므로 세션 재사용, 스냅샷, 긴 멀티턴 대화가 그대로 동작합니다.',
+        },
+        {
+          title: '비트 폭을 선택',
+          body: '품질을 위해 기본은 8비트이며, 4비트와 키·값 별도 폭도 쓸 수 있습니다.',
+        },
+      ],
+      note: '지금은 옵트인 방식입니다. 압축은 약간의 품질을 메모리와 맞바꾸는 것이며, 그 트레이드오프를 측정합니다.',
+    },
     {
       id: 'agents',
       heading: '당신의 *에이전트* 하니스와 함께 동작합니다.',
@@ -147,95 +265,6 @@ const butterKo: (typeof butter)['en'] = {
       ],
     },
   ],
-  specs: {
-    heading: '기술 *세부 사항*.',
-    rows: [
-      {
-        term: '런타임',
-        detail:
-          'macOS와 iOS에는 Metal 위의 Swift(macOS 14 이상), CUDA를 비롯한 그 밖의 모든 곳에는 Rust. 의존성이 최소한이어서 공급망 위험이 적습니다.',
-      },
-      {
-        term: '모델 형식',
-        detail: 'Hugging Face에서 변환 없이 곧바로 불러옵니다.',
-        chips: [
-          { label: 'safetensors' },
-          { label: 'MLX' },
-          { label: 'JANG' },
-          { label: 'GGUF' },
-        ],
-      },
-      {
-        term: '양자화',
-        detail:
-          '2, 3, 4, 5, 6, 8비트 어파인 양자화 체크포인트, 비트 폭은 텐서별로 유도. MXFP4와 NVFP4 블록 스케일 체크포인트. CUDA에서는 블록 FP8.',
-      },
-      {
-        term: '아키텍처',
-        detail:
-          '밀집 모델, 하이브리드(어텐션과 순환의 혼합) 모델, 전문가 혼합(MoE) 모델.',
-      },
-      {
-        term: 'KV 캐시',
-        detail:
-          '양자화: 4비트 또는 8비트 어파인, 또는 AURA 압축. 모든 캐시는 컨텍스트 한도에서 도는 링입니다.',
-      },
-      {
-        term: '서빙 API',
-        detail:
-          'OpenAI Chat Completions와 Completions, Anthropic Messages, 토큰화와 토큰 수 계산 라우트, 헬스, 레디니스, Prometheus 메트릭. butter serve로 시작하며 --parallel로 동시 세션 수를 지정합니다.',
-        chips: [
-          { label: '스트리밍' },
-          { label: '도구 호출' },
-          { label: '추론 필드' },
-          { label: '접두사 재사용' },
-          { label: '비전 입력' },
-          { label: '추측 디코딩' },
-          { label: 'LoRA' },
-        ],
-      },
-      {
-        term: '에이전트 하네스',
-        detail:
-          '테스트 및 지원: Chat Completions를 쓰는 Oh My Pi, Messages를 쓰는 Claude Code 방식 클라이언트.',
-      },
-      {
-        term: '모달리티',
-        chips: [
-          { label: '텍스트' },
-          { label: '비전' },
-          { label: '음성 인식' },
-          { label: '음성 합성' },
-          { label: '옴니' },
-        ],
-      },
-      {
-        term: '모델 계열',
-        groups: [
-          { label: 'Meta', text: 'Llama 3, 3.1, 3.2, 3.3' },
-          { label: 'Google', text: 'Gemma 2, 3, 4; PaliGemma' },
-          { label: 'Qwen', text: '2, 3, 3.5, 3.6, 3.8; VL; Omni' },
-          { label: 'OpenAI', text: 'GPT-OSS 20B, 120B; Whisper' },
-          { label: 'Mistral', text: 'Mistral; Mistral 3 VL; Voxtral' },
-          { label: 'NVIDIA', text: 'Nemotron H; Nemotron VLM' },
-          { label: 'DeepSeek', text: 'V4' },
-          { label: 'IBM', text: 'Granite 3, 4' },
-          { label: 'Microsoft', text: 'Phi 3' },
-          { label: 'Liquid AI', text: 'LFM2, LFM2.5' },
-          { label: 'Ai2', text: 'OLMo 1, 2' },
-          { label: 'Hugging Face', text: 'SmolLM; SmolVLM' },
-          { label: 'TII', text: 'Falcon H1' },
-          { label: 'AI21', text: 'Jamba' },
-          { label: 'Apple', text: 'FastVLM' },
-          { label: 'Shanghai AI Lab', text: 'InternLM 2' },
-        ],
-      },
-      {
-        term: '제공 현황',
-        detail: '얼리 액세스 기간 동안 비공개 소스.',
-      },
-    ],
-  },
   platforms: {
     heading: '*구동*되는 곳.',
     intro:
@@ -277,12 +306,12 @@ const butterKo: (typeof butter)['en'] = {
     {
       question: '어떤 모델을 돌릴 수 있나요?',
       answer:
-        '현재 Llama, Gemma, Qwen, GPT-OSS, Mistral, Nemotron, Granite, Phi를 비롯해 위에 나열한 여러 모델을 텍스트, 비전, 음성, 옴니 변형까지 지원합니다.',
+        '다양한 오픈 모델군을 텍스트, 비전, 음성, 옴니 변형으로 지원합니다. 현재 지원하는 모델과 곧 지원할 모델은 이 페이지 위쪽의 모델 목록에서 확인할 수 있습니다.',
     },
     {
       question: 'Butter는 어떤 언어로 만들었나요?',
       answer:
-        'macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 써서 속도와 메모리 안전성을 갖췄습니다. Butter는 의존성을 최소한으로 유지해 공급망 공격의 여지를 줄이며, 백엔드별로 튜닝한 커널 위에서 돌아갑니다.',
+        'macOS와 iOS에는 Swift를, 그 밖의 모든 곳에는 Rust를 써서 메모리 안전성을 갖췄습니다. Butter는 의존성을 최소한으로 유지해 공급망 공격의 여지를 줄이며, 백엔드별로 튜닝한 커널 위에서 돌아갑니다.',
     },
     {
       question: '기존에 쓰던 도구와 에이전트 하니스도 연결할 수 있나요?',
@@ -290,13 +319,13 @@ const butterKo: (typeof butter)['en'] = {
         'Butter는 butter serve 프로세스 하나로 OpenAI Chat Completions API와 Anthropic Messages API를 제공하며, 스트리밍, 구조화된 도구 호출, 추론 필드, 재사용되는 프롬프트 접두사를 지원합니다. 두 API 중 하나를 쓰는 클라이언트라면 그대로 연결할 수 있습니다.',
     },
     {
-      question: '얼마나 빠른가요?',
+      question: '모델을 바꿀 수 있나요?',
       answer:
-        '128 GB M5 Max에서 Butter는 4-bit Qwen3.8-27B를 단일 요청 기준 초당 103 토큰(약 937 토큰 프롬프트, 그리디)으로, 동시 요청 8개 기준 합계 초당 146 토큰(요청당 약 26)으로 서빙했습니다. 결과는 모델, 프롬프트 길이, 하드웨어에 따라 달라지며, 시험 조건은 이 페이지의 측정 결과와 함께 적혀 있습니다.',
+        '네. butter serve를 --model-swap으로 시작하면 요청에서 서빙 모델을 바꿀 수 있습니다. --model-swap-allow로 허용할 모델을 지정하며, 기본값은 부팅 모델만 허용입니다. 대화는 전환을 거쳐도 이어갈 수 있고, 기록을 다시 읽지 않고 재개됩니다. 잘못된 대상은 안전하게 거부하거나 되돌립니다. 최근 사용한 모델 중 제한된 수는 메모리에 로드된 채로 유지되므로, 그 모델로 돌아가는 것은 빠릅니다. 로드되어 있지 않은 모델은 디스크에서 불러오며 그만큼의 시간이 걸립니다. 시간 수치는 제시하지 않습니다.',
     },
   ],
   cta: {
-    title: '*지연 시간*을 녹여 없애세요.',
+    title: '내 *모델*을 가져오세요.',
     body: 'Butter는 얼리 액세스 중이며 당분간 비공개 소스입니다. 접근을 신청해 주세요.',
     docsLabel: '문서 읽기',
   },

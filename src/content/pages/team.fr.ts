@@ -4,13 +4,13 @@ const teamPageFr: (typeof teamPage)['en'] = {
   seo: {
     title: 'Les fondateurs et l’équipe',
     description:
-      'Les personnes qui construisent Waffuru, avec une expérience de la cybersécurité, de l’armée, du grand public et de l’entreprise : elles ont fait grandir des startups et travaillé aussi bien avec des petites entreprises qu’avec de grands groupes.',
+      'Les personnes qui construisent Waffuru, avec une expérience du grand public, de l’entreprise et de la cybersécurité : elles ont fait grandir des startups et travaillé aussi bien avec des petites entreprises qu’avec de grands groupes.',
     keywords: ['équipe Waffuru', 'fondateurs Waffuru'],
   },
   hero: {
     label: 'Équipe',
     title: 'Qui est en *cuisine*.',
-    lede: 'Des bâtisseurs expérimentés, issus de la cybersécurité, de l’armée, du grand public et de l’entreprise. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
+    lede: 'Des bâtisseurs expérimentés, issus du grand public, de l’entreprise et de la cybersécurité. Nous avons créé et fait grandir des startups, et travaillé avec tout le monde, des petites entreprises aux grands groupes.',
   },
   portraitAlt: 'Portrait de {name}',
   linkAria: '{name} sur {network}',

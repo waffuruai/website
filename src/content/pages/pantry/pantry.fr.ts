@@ -121,32 +121,20 @@ const pantryFr: (typeof pantry)['en'] = {
         link: 'Guide d’installation complet',
       },
     ],
-    then: 'Ensuite, lancez l’analyse et consultez le plan :',
+    then: 'Ensuite, lancez l’analyse, consultez le plan et générez un rapport HTML :',
   },
   checks: {
     title: 'Vérifiez *tout* ce qu’il y a sur les étagères.',
     intro:
-      'Faire le tour du garde-manger, c’est voir ce que vous avez, ce qui est périmé et ce qu’il faut remplacer.',
+      'Faire le tour du garde-manger, c’est voir ce que vous avez, ce qui est périmé, ce qu’il faut remplacer et ce que quelqu’un a trafiqué.',
     items: [
       {
         title: 'Tout ce qui est installé',
-        body: 'Runtimes et compilateurs (chaque version conservée par vos gestionnaires de versions), gestionnaires de paquets, outils CLI, bases de données, Docker, Homebrew et paquets globaux.',
+        body: 'Runtimes et compilateurs (chaque version conservée par vos gestionnaires de versions), gestionnaires de paquets, outils CLI, bases de données, Docker, Homebrew, mise et paquets globaux.',
       },
       {
         title: 'Le lockfile de chaque dépôt',
-        body: 'Cargo, npm, pnpm, yarn, bun, Go, uv, poetry, pip, Bundler, Composer et d’autres, avant que du code vulnérable ne soit livré.',
-      },
-      {
-        title: 'Des malwares, pas seulement des CVE',
-        body: 'Chaque nom de paquet comparé à l’index des paquets malveillants d’OpenSSF, et les extensions d’éditeur à la liste des extensions malveillantes de VS Code.',
-      },
-      {
-        title: 'Secrets divulgués',
-        body: 'Identifiants commités n’importe où dans l’historique git d’un dépôt, signalés sous forme masquée.',
-      },
-      {
-        title: 'Vos outils de code IA',
-        body: 'Ce qu’exécutent réellement Claude Code, Codex, Cursor, Gemini CLI et d’autres agents : leurs serveurs MCP, plugins, skills et paquets intégrés.',
+        body: 'Cargo, npm, pnpm, yarn, bun, Deno, Swift, Go, uv, poetry, pip, Bundler, Composer, Maven, Gradle, NuGet et d’autres, avant que du code vulnérable ne soit livré.',
       },
       {
         title: 'OS, navigateurs et applications',
@@ -157,12 +145,60 @@ const pantryFr: (typeof pantry)['en'] = {
         body: 'Runtimes et bases de données qui ne reçoivent plus de correctifs de sécurité, avec la date de leur arrêt.',
       },
       {
+        title: 'Des malwares, pas seulement des CVE',
+        body: 'Chaque nom de paquet comparé à l’index des paquets malveillants d’OpenSSF, et les noms qui imitent un paquet populaire à une touche près.',
+      },
+      {
+        title: 'Secrets divulgués',
+        body: 'Identifiants commités n’importe où dans l’historique git d’un dépôt, signalés sous forme masquée, ainsi que les mots de passe faibles écrits en dur et les numéros de carte en clair.',
+      },
+      {
+        title: 'Vos outils de code IA',
+        body: 'Ce qu’exécutent réellement Claude Code, Codex, Cursor, Gemini CLI et d’autres agents : leurs serveurs MCP, plugins, skills et paquets intégrés, et tout serveur qui lance toujours la dernière version.',
+      },
+      {
+        title: 'Des dépôts qui s’exécutent à l’ouverture',
+        body: 'Un dépôt cloné peut exécuter du code dès que votre agent ou votre éditeur l’ouvre. Pantry trouve ces hooks, tâches et scripts d’installation, ainsi que les traces de campagnes connues de dépôts détournés. Vérifiez un clone avant de l’ouvrir.',
+      },
+      {
+        title: 'Instructions cachées',
+        body: 'Du texte qui se lit d’une façon et s’exécute d’une autre : Trojan Source, caractères invisibles qui glissent des instructions à votre assistant IA, prompts cachés dans des README et des pages, et liens conçus pour divulguer ce qu’un agent a lu.',
+      },
+      {
+        title: 'Code suspect',
+        body: 'Charges décodées à l’exécution, magasins d’identifiants lus et envoyés, keyloggers, code qui demande à votre portefeuille crypto de signer la cession du compte, et sudo ou persistance là où ils n’ont rien à faire.',
+      },
+      {
+        title: 'Documents piégés',
+        body: 'PDF qui exécutent du JavaScript, fichiers Office avec macros ou modèles distants et images qui cachent un programme, dans vos dépôts et dans Téléchargements, Bureau et Documents. Avec ClamAV aussi, s’il est installé.',
+      },
+      {
+        title: 'Clippers crypto',
+        body: 'Des malwares qui remplacent l’adresse de portefeuille que vous avez copiée par la leur. Pantry teste le presse-papiers, trouve les éléments de démarrage et les extensions qui le font, et peut surveiller le presse-papiers pendant que vous travaillez.',
+      },
+      {
+        title: 'Extensions d’éditeur',
+        body: 'Les extensions comparées à la liste des extensions malveillantes de VS Code, et si vos éditeurs attendent avant d’installer une nouvelle version, pour qu’une version détournée soit retirée avant de vous atteindre.',
+      },
+      {
+        title: 'Les réglages de votre machine',
+        body: 'Chiffrement du disque, pare-feu, Gatekeeper et SIP, mises à jour automatiques, services de partage, verrouillage de l’écran et chiffrement du DNS qui quitte la machine.',
+      },
+      {
         title: 'Autorités de certification compromises',
-        body: 'Les magasins de confiance de votre système, d’OpenSSL, de Homebrew, de Python et de Node, comparés aux autorités de certification dont on sait qu’elles ne sont plus approuvées.',
+        body: 'Les magasins de confiance de votre système, d’OpenSSL, de Homebrew, de Python et de Node, comparés aux autorités de certification dont on sait qu’elles ne sont plus approuvées. Pantry peut leur retirer votre confiance en attendant la mise à jour de l’OS.',
       },
       {
         title: 'Risques liés à la chaîne d’approvisionnement',
-        body: 'Licences hors de votre liste autorisée, scripts d’installation npm et images de conteneur à partir desquelles vos dépôts sont construits.',
+        body: 'Licences hors de votre liste autorisée, scripts d’installation, binaires précompilés sans code source et images de conteneur à partir desquelles vos dépôts sont construits.',
+      },
+      {
+        title: 'Exposé, sans correctif pour l’instant',
+        body: 'Face à une faille critique ou activement exploitée sans correctif, Pantry dit quoi faire en attendant, peut vérifier chaque heure si le correctif est sorti et installe une parade provisoire quand il en a une, comme pour une faille TCP du noyau Linux.',
+      },
+      {
+        title: 'Comptes compromis',
+        body: 'Seulement si vous dites oui : si votre adresse e-mail figure dans une fuite de données connue.',
       },
     ],
   },
@@ -277,7 +313,7 @@ const pantryFr: (typeof pantry)['en'] = {
     {
       question: 'Mon agent IA peut-il l’utiliser ?',
       answer:
-        'Oui. wpantry --json fournit à votre agent des résultats structurés, et wpantry skill affiche une skill qui lui apprend à trier et à corriger, sans jamais exécuter les étapes qui demandent sudo.',
+        'Oui. wpantry scan --json fournit à votre agent des résultats structurés, et wpantry skill affiche une skill qui lui apprend à trier et à corriger, sans jamais exécuter les étapes qui demandent sudo.',
     },
   ],
   cta: {

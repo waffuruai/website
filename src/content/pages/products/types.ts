@@ -59,6 +59,12 @@ export type Capability = { title: string; body: string };
  */
 export type ExtraSection = {
   id: string;
+  /**
+   * Names in the copy that link out. Each `label` is a term that appears
+   * verbatim (never translated) in the intro, an item body or the note; its
+   * first occurrence becomes a new-tab link to `href`.
+   */
+  links?: { label: string; href: string }[];
   heading: string;
   intro?: string;
   items: Capability[];
@@ -113,7 +119,8 @@ export type ProductCopy = {
   code?: { heading: string; intro?: string; caption?: string };
   /** Optional product-specific sections, in order, after the code sample. */
   extras?: ExtraSection[];
-  specs: { heading: string; intro?: string; rows: SpecRow[] };
+  /** Technical specifics; a product may omit the section (Butter today). */
+  specs?: { heading: string; intro?: string; rows: SpecRow[] };
   /**
    * Only where hardware tiers matter: Butter. Iron's tiers are part of its
    * kernel section (`kernel-code.ts`), so it leaves this out.

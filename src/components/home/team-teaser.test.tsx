@@ -43,11 +43,11 @@ describe('TeamTeaser', () => {
     expect(screen.getByText(home.en.team.intro)).toBeTruthy();
   });
 
-  it('shows all five people with their portrait, name and role', () => {
+  it('shows all four people with their portrait, name and role', () => {
     const { container } = renderTeaser();
     const people = screen.getAllByRole('listitem');
-    expect(people).toHaveLength(5);
-    expect(team).toHaveLength(5);
+    expect(people).toHaveLength(4);
+    expect(team).toHaveLength(4);
     team.forEach((member, index) => {
       const person = people[index];
       expect(
@@ -63,7 +63,7 @@ describe('TeamTeaser', () => {
         within(person).getByRole('img', { name: en.countries[member.country] }),
       ).toBeTruthy();
     });
-    expect(container.querySelectorAll('.wf-portrait')).toHaveLength(5);
+    expect(container.querySelectorAll('.wf-portrait')).toHaveLength(4);
   });
 
   it('keeps it short: no bios, one link to the team page', () => {

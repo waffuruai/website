@@ -126,32 +126,20 @@ export const pantry: Localized<PantryContent> = {
           link: 'Full install guide',
         },
       ],
-      then: 'Then scan, and see the plan:',
+      then: 'Then scan, see the plan, and write an HTML report:',
     },
     checks: {
       title: 'Verify *everything* on the shelves.',
       intro:
-        'A pantry check covers what you have, what is past its date and what needs to be replaced.',
+        'A pantry check covers what you have, what is past its date, what needs to be replaced and what someone has tampered with.',
       items: [
         {
           title: 'Everything installed',
-          body: 'Runtimes and compilers (every version your version managers keep), package managers, CLI tools, datastores, Docker, Homebrew and global packages.',
+          body: 'Runtimes and compilers (every version your version managers keep), package managers, CLI tools, datastores, Docker, Homebrew, mise and global packages.',
         },
         {
           title: 'Every repo’s lockfile',
-          body: 'Cargo, npm, pnpm, yarn, bun, Go, uv, poetry, pip, Bundler, Composer and more, before vulnerable code ships.',
-        },
-        {
-          title: 'Malware, not just CVEs',
-          body: 'Every package name against the OpenSSF malicious-packages index, and editor extensions against VS Code’s malicious list.',
-        },
-        {
-          title: 'Leaked secrets',
-          body: 'Credentials committed anywhere in a repo’s git history, reported redacted.',
-        },
-        {
-          title: 'Your AI coding tools',
-          body: 'What Claude Code, Codex, Cursor, Gemini CLI and other agents actually run: their MCP servers, plugins, skills and bundled packages.',
+          body: 'Cargo, npm, pnpm, yarn, bun, Deno, Swift, Go, uv, poetry, pip, Bundler, Composer, Maven, Gradle, NuGet and more, before vulnerable code ships.',
         },
         {
           title: 'OS, browsers and apps',
@@ -162,12 +150,60 @@ export const pantry: Localized<PantryContent> = {
           body: 'Runtimes and datastores that no longer get security fixes, with the date they stopped.',
         },
         {
+          title: 'Malware, not just CVEs',
+          body: 'Every package name against the OpenSSF malicious-packages index, and look-alike names one keystroke away from a popular package.',
+        },
+        {
+          title: 'Leaked secrets',
+          body: 'Credentials committed anywhere in a repo’s git history, reported redacted, plus weak passwords written into code and card numbers left in the clear.',
+        },
+        {
+          title: 'Your AI coding tools',
+          body: 'What Claude Code, Codex, Cursor, Gemini CLI and other agents actually run: their MCP servers, plugins, skills and bundled packages, and any server that always runs the latest release.',
+        },
+        {
+          title: 'Repos that run on open',
+          body: 'A cloned repo can run code the moment your agent or editor opens it. Pantry finds those hooks, tasks and install scripts, and the marks of known hijacked-repo campaigns. Check a clone before you open it.',
+        },
+        {
+          title: 'Hidden instructions',
+          body: 'Text that reads one way and runs another: Trojan Source, invisible characters that smuggle instructions to your AI assistant, prompts hidden in READMEs and pages, and links built to leak what an agent read.',
+        },
+        {
+          title: 'Suspicious code',
+          body: 'Payloads decoded at run time, credential stores read and sent, keyloggers, code asking your crypto wallet to sign its account away, and sudo or persistence where they do not belong.',
+        },
+        {
+          title: 'Booby-trapped documents',
+          body: 'PDFs that run JavaScript, Office files with macros or remote templates and images hiding a program, in your repos and in Downloads, Desktop and Documents. ClamAV too, when it is installed.',
+        },
+        {
+          title: 'Crypto clippers',
+          body: 'Malware that swaps a wallet address you copied for its own. Pantry tests the clipboard, finds the startup items and extensions that do it, and can guard the clipboard while you work.',
+        },
+        {
+          title: 'Editor extensions',
+          body: 'Extensions against VS Code’s malicious list, and whether your editors wait before installing a new version, so a hijacked release is pulled before it reaches you.',
+        },
+        {
+          title: 'Your machine’s settings',
+          body: 'Disk encryption, the firewall, Gatekeeper and SIP, automatic updates, sharing services, the screen lock and whether your DNS leaves the machine encrypted.',
+        },
+        {
           title: 'Compromised certificate authorities',
-          body: 'Your system, OpenSSL, Homebrew, Python and Node trust stores, checked against certificate authorities known to be distrusted.',
+          body: 'Your system, OpenSSL, Homebrew, Python and Node trust stores, checked against certificate authorities known to be distrusted. Pantry can distrust them for you until your OS update ships.',
         },
         {
           title: 'Supply-chain risk',
-          body: 'Licenses outside your allowlist, npm install scripts, and the container images your repos build from.',
+          body: 'Licenses outside your allowlist, install scripts, prebuilt binaries with no source, and the container images your repos build from.',
+        },
+        {
+          title: 'Exposed, with no fix yet',
+          body: 'For a critical or actively exploited bug with no patch, Pantry says what to do meanwhile, can check hourly for the fix, and installs a stopgap where it has one, such as for a Linux kernel TCP flaw.',
+        },
+        {
+          title: 'Breached accounts',
+          body: 'Only if you say yes: whether your email address appears in a known data breach.',
         },
       ],
     },
@@ -282,7 +318,7 @@ export const pantry: Localized<PantryContent> = {
       {
         question: 'Can my AI agent use it?',
         answer:
-          'Yes. wpantry --json gives your agent structured findings, and wpantry skill prints a skill that teaches it to triage and fix, and never to run the steps that need sudo.',
+          'Yes. wpantry scan --json gives your agent structured findings, and wpantry skill prints a skill that teaches it to triage and fix, and never to run the steps that need sudo.',
       },
     ],
     cta: {

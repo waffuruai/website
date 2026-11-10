@@ -51,6 +51,21 @@ $ curl http://localhost:<port>/v1/chat/completions \\
     name: 'Whisk',
     path: '/products/whisk',
     secondaryCta: 'sales',
+    code: {
+      filename: 'terminal',
+      label: 'whisk · illustrative',
+      language: 'shell',
+      // Commands and flags checked against Whisk's README on dev
+      // (`whisk serve --corpus-dir ... --daemon`, `whisk setup-hook
+      // --project ...`, `whisk ask ... --corpus-dir ... --json`). Placeholders
+      // keep the snippet true whatever the folder and project names are.
+      source: `$ whisk serve --corpus-dir <folder> --daemon
+
+$ whisk setup-hook --project <name>
+
+$ whisk ask "What are the renewal terms?" \\
+    --corpus-dir <folder> --json`,
+    },
   },
   waffle: {
     slug: 'waffle',

@@ -37,7 +37,10 @@ describe('/products/[slug] route', () => {
     expect(container.querySelectorAll('h1')).toHaveLength(1);
     expect(container.querySelector('h1')?.textContent).toBeTruthy();
     expect(container.textContent).toContain(name);
-    expect(container.querySelectorAll('dl dt').length).toBeGreaterThan(4);
+    // Butter has no technical specifics section; the others keep theirs.
+    if (slug !== 'butter')
+      expect(container.querySelectorAll('dl dt').length).toBeGreaterThan(4);
+    else expect(container.querySelector('#specs')).toBeNull();
     expect(
       container.querySelector('a[href^="https://forms.gle/"]'),
     ).not.toBeNull();
@@ -86,22 +89,18 @@ describe('/products/[slug] route', () => {
       (section) => section.id || section.getAttribute('aria-labelledby'),
     );
 
-  it('gives Butter its research after its own sections and before the specifics', async () => {
+  it('gives Butter its model menu right after the story and no figures sections', async () => {
     const { container } = await renderRoute('butter');
     const ids = sectionIds(container);
-    const research = [
+    expect(ids.indexOf('models')).toBe(ids.indexOf('story') + 1);
+    for (const gone of [
       'native-inference',
       'aura',
       'quantized-models',
       'tool-reliability',
-      'models',
-    ];
-    const at = research.map((id) => ids.indexOf(id));
-    expect(at).toEqual([...at].sort((a, b) => a - b));
-    expect(at[0]).toBe(ids.indexOf('quirks') + 1);
-    expect(ids.indexOf('specs')).toBe(at.at(-1)! + 1);
-    // The numbers and their test conditions are on the same page.
-    expect(container.textContent).toContain(
+    ])
+      expect(ids).not.toContain(gone);
+    expect(container.textContent).not.toContain(
       'See test conditions and limitations',
     );
   });
@@ -118,10 +117,10 @@ describe('/products/[slug] route', () => {
       ),
     ).toContain('You write this.Iron writes the rest.');
     expect(container.querySelector('#platforms')).toBeNull();
-    // It opens on the labs whose models run on it, before the story.
+    // The model menu is Butter's; Iron shows its ABI note after the capabilities.
     const ids = sectionIds(container);
-    expect(ids.indexOf('models')).toBeGreaterThan(-1);
-    expect(ids.indexOf('models')).toBeLessThan(ids.indexOf('story'));
+    expect(ids).not.toContain('models');
+    expect(ids.indexOf('abi')).toBeGreaterThan(ids.indexOf('capabilities'));
     const tiers = [...container.querySelectorAll('h4')].map(
       (heading) => heading.textContent,
     );
@@ -132,7 +131,7 @@ describe('/products/[slug] route', () => {
     ]);
   });
 
-  it.each(['syrup', 'whisk'])('adds no research to %s', async (slug) => {
+  it.each(['syrup'])('adds no research to %s', async (slug) => {
     const { container } = await renderRoute(slug);
     for (const id of ['native-inference', 'aura', 'models']) {
       expect(container.querySelector(`#${id}`)).toBeNull();
@@ -159,7 +158,7 @@ describe('/products/[slug] route', () => {
 
   it('localizes the research with the page', async () => {
     const { container } = await renderRoute('butter', 'ja');
-    expect(container.textContent).toContain('試験条件と制限を見る');
+    expect(container.textContent).toContain('メニューに並ぶモデル');
   });
 
   it('answers an unknown slug with a 404', async () => {
