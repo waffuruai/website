@@ -22,8 +22,7 @@ export type SupportContent = {
   cta: { title: string; body: string; docs: string; email: string };
 };
 
-// TODO(founder): add response expectations, a disclosure policy (safe harbour,
-// timelines) and a PGP key to the security answer below and to security.txt.
+// TODO(founder): publish a PGP key for security@ here and in security.txt once there is one.
 export const support: Localized<SupportContent> = {
   en: {
     seo: {
@@ -52,7 +51,7 @@ export const support: Localized<SupportContent> = {
         },
         {
           title: 'Report a security issue',
-          body: 'Privately, by email to hello@waffuru.ai with the subject Security.',
+          body: 'Privately, by email to security@waffuru.ai with the subject Security.',
           href: mailto('Security'),
         },
         {
@@ -60,6 +59,11 @@ export const support: Localized<SupportContent> = {
           body: 'Our security contact in machine-readable form.',
           href: '/.well-known/security.txt',
           file: true,
+        },
+        {
+          title: 'Disclosure policy',
+          body: 'What is in scope, how fast we respond, and the safe harbour for good-faith research.',
+          href: '/security',
         },
       ],
     },
@@ -87,7 +91,7 @@ export const support: Localized<SupportContent> = {
       {
         question: 'How do I report a security issue?',
         answer:
-          'Email hello@waffuru.ai with the subject Security and enough detail to reproduce it. Please keep it private until we have had a reasonable chance to fix it. Our security.txt lists the same contact in machine-readable form.',
+          'Email security@waffuru.ai with the subject Security and enough detail to reproduce it. We acknowledge within 3 business days, fix by severity, and agree public disclosure with you within 90 days; the [vulnerability disclosure policy](https://waffuru.ai/security) has the scope, the rules and the safe harbour. Our security.txt lists the same contact in machine-readable form.',
       },
       {
         question: 'What happens to my data?',

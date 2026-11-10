@@ -31,6 +31,7 @@ describe('Footer', () => {
       [en.footer.terms, '/legal/terms'],
       [en.footer.privacy, '/legal/privacy'],
       [en.footer.cookies, '/legal/cookies'],
+      [en.footer.security, '/security'],
     ]);
     expect(
       within(legal).getByRole('button', { name: en.consent.settings }),

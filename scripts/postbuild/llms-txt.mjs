@@ -42,6 +42,7 @@ export function sectionOf(path) {
       return 'Blog';
     case 'support':
     case 'contact':
+    case 'security':
       return 'Help';
     case 'legal':
       return 'Legal';
@@ -76,6 +77,7 @@ const PATH_ORDER = [
   '/blog',
   '/support',
   '/contact',
+  '/security',
   '/legal',
   '/legal/terms',
   '/legal/privacy',

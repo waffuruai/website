@@ -1,5 +1,5 @@
-Contact: mailto:hello@waffuru.ai?subject=Security
-Expires: 2027-10-22T00:00:00.000Z
+Contact: mailto:security@waffuru.ai
+Expires: 2027-10-31T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://waffuru.ai/.well-known/security.txt
-Policy: https://waffuru.ai/support
+Policy: https://waffuru.ai/security

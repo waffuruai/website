@@ -16,7 +16,7 @@ const contactZh: (typeof contact)['en'] = {
   hero: {
     label: '联系',
     title: '告诉我们你在*打造*什么。',
-    lede: '销售、合作、媒体、支持、安全与招聘，都可以发邮件到 hello@waffuru.ai。选择合适的主题即可。',
+    lede: '销售与合作请发邮件到 sales@waffuru.ai，安全问题报告请发到 security@waffuru.ai，媒体、支持与招聘请发到 hello@waffuru.ai。选择合适的主题即可。',
   },
   callouts: {
     title: '选一扇*门*。',

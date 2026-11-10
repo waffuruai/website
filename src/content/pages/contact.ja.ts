@@ -16,7 +16,7 @@ const contactJa: (typeof contact)['en'] = {
   hero: {
     label: 'お問い合わせ',
     title: '何を*つくって*いるか、聞かせてください。',
-    lede: '営業、提携、報道、サポート、セキュリティ、採用。どのご連絡も hello@waffuru.ai に届きます。内容に合うものをお選びください。',
+    lede: '営業と提携は sales@waffuru.ai、セキュリティの報告は security@waffuru.ai、報道・サポート・採用は hello@waffuru.ai に届きます。内容に合うものをお選びください。',
   },
   callouts: {
     title: 'ご用件の*入口*を選ぶ',

@@ -153,12 +153,12 @@ describe('public/.well-known/security.txt', async () => {
   const field = (name) => text.match(new RegExp(`^${name}: (.+)$`, 'm'))?.[1];
 
   it('has the RFC 9116 fields we promise', () => {
-    expect(field('Contact')).toBe('mailto:hello@waffuru.ai?subject=Security');
+    expect(field('Contact')).toBe('mailto:security@waffuru.ai');
     expect(field('Preferred-Languages')).toBe('en');
     expect(field('Canonical')).toBe(
       'https://waffuru.ai/.well-known/security.txt',
     );
-    expect(field('Policy')).toBe('https://waffuru.ai/support');
+    expect(field('Policy')).toBe('https://waffuru.ai/security');
   });
 
   it('has an Expires date at least a month away (renew it when this fails)', () => {
