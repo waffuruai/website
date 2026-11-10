@@ -265,7 +265,7 @@ const pantryKo: (typeof pantry)['en'] = {
     {
       question: 'AI 에이전트도 쓸 수 있나요?',
       answer:
-        '네. wpantry --json은 에이전트에게 구조화된 결과를 넘겨 주고, wpantry skill은 분류와 수정 방법, 그리고 sudo가 필요한 단계는 절대 실행하지 않는 법을 가르치는 스킬을 출력합니다.',
+        '네. wpantry scan --json은 에이전트에게 구조화된 결과를 넘겨 주고, wpantry skill은 분류와 수정 방법, 그리고 sudo가 필요한 단계는 절대 실행하지 않는 법을 가르치는 스킬을 출력합니다.',
     },
   ],
   cta: {

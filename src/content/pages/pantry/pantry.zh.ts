@@ -261,7 +261,7 @@ const pantryZh: (typeof pantry)['en'] = {
     {
       question: '我的 AI 智能体能用它吗？',
       answer:
-        '可以。wpantry --json 为你的智能体提供结构化的检查结果，wpantry skill 会输出一项技能，教它分诊和修复，并且绝不执行需要 sudo 的步骤。',
+        '可以。wpantry scan --json 为你的智能体提供结构化的检查结果，wpantry skill 会输出一项技能，教它分诊和修复，并且绝不执行需要 sudo 的步骤。',
     },
   ],
   cta: {
